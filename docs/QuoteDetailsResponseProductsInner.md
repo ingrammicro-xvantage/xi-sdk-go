@@ -1,0 +1,472 @@
+# QuoteDetailsResponseProductsInner
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**QuoteProductGuid** | Pointer to **string** | Quote Product GUID  is the primary quote key in Ingram Micro&#39;s CRM - needed to retrieve quote details. | [optional] 
+**LineNumber** | Pointer to **string** | Line number which the product will appear in the quote.  Line number is manditory when unique configurations are included in a quote and mainting the item line order is required. | [optional] 
+**Quantity** | Pointer to **int32** | Quantity of product line item quoted. | [optional] 
+**Notes** | Pointer to **string** | Product line item comments. | [optional] 
+**EAN** | Pointer to **string** | EANUPC | [optional] 
+**CoO** | Pointer to **string** | Country of Origin. | [optional] 
+**IngramPartNumber** | Pointer to **string** | Ingram Micro SKU (stock keeping unit). An identification, usually alphanumeric, of a particular product that allows it to be tracked for inventory purposes | [optional] 
+**VendorPartNumber** | Pointer to **string** | Vendor Part Number | [optional] 
+**Description** | Pointer to **string** | Product description.  Note - The quote view api returns only the product short description as maintained in Ingram Micro&#39;s crm system.  For long descriptions, please refer to alternative information sources. | [optional] 
+**Weight** | Pointer to **int32** | Weight is provided based on country standard.  For countries following Imperial standards - weight is presented as pounds with decimal.  In countries following metric standards, weight is provided as kilograms with decimal. | [optional] 
+**WeightUom** | Pointer to **string** | Unit of measure | [optional] 
+**IsSuggestionProduct** | Pointer to **bool** | Flag to indicate if a product line item is a suggested product.  The suggested product is provided in addition to the requested quoted products and a suggested option.  Suggested products are grouped together for subtotal and total calculations. | [optional] 
+**VpnCategory** | Pointer to **string** | Vendor product category specific to Cisco. HWDW (hardware) or service. | [optional] 
+**QuoteProductsSupplierPartAuxiliaryId** | Pointer to **string** | Vendor product configuration ID specific to Cisco. | [optional] 
+**VendorName** | Pointer to **string** | Vendor name of the product | [optional] 
+**Terms** | Pointer to **string** | Terms of the quote | [optional] 
+**Price** | Pointer to [**QuoteDetailsResponseProductsInnerPrice**](QuoteDetailsResponseProductsInnerPrice.md) |  | [optional] 
+
+## Methods
+
+### NewQuoteDetailsResponseProductsInner
+
+`func NewQuoteDetailsResponseProductsInner() *QuoteDetailsResponseProductsInner`
+
+NewQuoteDetailsResponseProductsInner instantiates a new QuoteDetailsResponseProductsInner object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewQuoteDetailsResponseProductsInnerWithDefaults
+
+`func NewQuoteDetailsResponseProductsInnerWithDefaults() *QuoteDetailsResponseProductsInner`
+
+NewQuoteDetailsResponseProductsInnerWithDefaults instantiates a new QuoteDetailsResponseProductsInner object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetQuoteProductGuid
+
+`func (o *QuoteDetailsResponseProductsInner) GetQuoteProductGuid() string`
+
+GetQuoteProductGuid returns the QuoteProductGuid field if non-nil, zero value otherwise.
+
+### GetQuoteProductGuidOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetQuoteProductGuidOk() (*string, bool)`
+
+GetQuoteProductGuidOk returns a tuple with the QuoteProductGuid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuoteProductGuid
+
+`func (o *QuoteDetailsResponseProductsInner) SetQuoteProductGuid(v string)`
+
+SetQuoteProductGuid sets QuoteProductGuid field to given value.
+
+### HasQuoteProductGuid
+
+`func (o *QuoteDetailsResponseProductsInner) HasQuoteProductGuid() bool`
+
+HasQuoteProductGuid returns a boolean if a field has been set.
+
+### GetLineNumber
+
+`func (o *QuoteDetailsResponseProductsInner) GetLineNumber() string`
+
+GetLineNumber returns the LineNumber field if non-nil, zero value otherwise.
+
+### GetLineNumberOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetLineNumberOk() (*string, bool)`
+
+GetLineNumberOk returns a tuple with the LineNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLineNumber
+
+`func (o *QuoteDetailsResponseProductsInner) SetLineNumber(v string)`
+
+SetLineNumber sets LineNumber field to given value.
+
+### HasLineNumber
+
+`func (o *QuoteDetailsResponseProductsInner) HasLineNumber() bool`
+
+HasLineNumber returns a boolean if a field has been set.
+
+### GetQuantity
+
+`func (o *QuoteDetailsResponseProductsInner) GetQuantity() int32`
+
+GetQuantity returns the Quantity field if non-nil, zero value otherwise.
+
+### GetQuantityOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetQuantityOk() (*int32, bool)`
+
+GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuantity
+
+`func (o *QuoteDetailsResponseProductsInner) SetQuantity(v int32)`
+
+SetQuantity sets Quantity field to given value.
+
+### HasQuantity
+
+`func (o *QuoteDetailsResponseProductsInner) HasQuantity() bool`
+
+HasQuantity returns a boolean if a field has been set.
+
+### GetNotes
+
+`func (o *QuoteDetailsResponseProductsInner) GetNotes() string`
+
+GetNotes returns the Notes field if non-nil, zero value otherwise.
+
+### GetNotesOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetNotesOk() (*string, bool)`
+
+GetNotesOk returns a tuple with the Notes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotes
+
+`func (o *QuoteDetailsResponseProductsInner) SetNotes(v string)`
+
+SetNotes sets Notes field to given value.
+
+### HasNotes
+
+`func (o *QuoteDetailsResponseProductsInner) HasNotes() bool`
+
+HasNotes returns a boolean if a field has been set.
+
+### GetEAN
+
+`func (o *QuoteDetailsResponseProductsInner) GetEAN() string`
+
+GetEAN returns the EAN field if non-nil, zero value otherwise.
+
+### GetEANOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetEANOk() (*string, bool)`
+
+GetEANOk returns a tuple with the EAN field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEAN
+
+`func (o *QuoteDetailsResponseProductsInner) SetEAN(v string)`
+
+SetEAN sets EAN field to given value.
+
+### HasEAN
+
+`func (o *QuoteDetailsResponseProductsInner) HasEAN() bool`
+
+HasEAN returns a boolean if a field has been set.
+
+### GetCoO
+
+`func (o *QuoteDetailsResponseProductsInner) GetCoO() string`
+
+GetCoO returns the CoO field if non-nil, zero value otherwise.
+
+### GetCoOOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetCoOOk() (*string, bool)`
+
+GetCoOOk returns a tuple with the CoO field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCoO
+
+`func (o *QuoteDetailsResponseProductsInner) SetCoO(v string)`
+
+SetCoO sets CoO field to given value.
+
+### HasCoO
+
+`func (o *QuoteDetailsResponseProductsInner) HasCoO() bool`
+
+HasCoO returns a boolean if a field has been set.
+
+### GetIngramPartNumber
+
+`func (o *QuoteDetailsResponseProductsInner) GetIngramPartNumber() string`
+
+GetIngramPartNumber returns the IngramPartNumber field if non-nil, zero value otherwise.
+
+### GetIngramPartNumberOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetIngramPartNumberOk() (*string, bool)`
+
+GetIngramPartNumberOk returns a tuple with the IngramPartNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIngramPartNumber
+
+`func (o *QuoteDetailsResponseProductsInner) SetIngramPartNumber(v string)`
+
+SetIngramPartNumber sets IngramPartNumber field to given value.
+
+### HasIngramPartNumber
+
+`func (o *QuoteDetailsResponseProductsInner) HasIngramPartNumber() bool`
+
+HasIngramPartNumber returns a boolean if a field has been set.
+
+### GetVendorPartNumber
+
+`func (o *QuoteDetailsResponseProductsInner) GetVendorPartNumber() string`
+
+GetVendorPartNumber returns the VendorPartNumber field if non-nil, zero value otherwise.
+
+### GetVendorPartNumberOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetVendorPartNumberOk() (*string, bool)`
+
+GetVendorPartNumberOk returns a tuple with the VendorPartNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVendorPartNumber
+
+`func (o *QuoteDetailsResponseProductsInner) SetVendorPartNumber(v string)`
+
+SetVendorPartNumber sets VendorPartNumber field to given value.
+
+### HasVendorPartNumber
+
+`func (o *QuoteDetailsResponseProductsInner) HasVendorPartNumber() bool`
+
+HasVendorPartNumber returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *QuoteDetailsResponseProductsInner) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *QuoteDetailsResponseProductsInner) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *QuoteDetailsResponseProductsInner) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### GetWeight
+
+`func (o *QuoteDetailsResponseProductsInner) GetWeight() int32`
+
+GetWeight returns the Weight field if non-nil, zero value otherwise.
+
+### GetWeightOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetWeightOk() (*int32, bool)`
+
+GetWeightOk returns a tuple with the Weight field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWeight
+
+`func (o *QuoteDetailsResponseProductsInner) SetWeight(v int32)`
+
+SetWeight sets Weight field to given value.
+
+### HasWeight
+
+`func (o *QuoteDetailsResponseProductsInner) HasWeight() bool`
+
+HasWeight returns a boolean if a field has been set.
+
+### GetWeightUom
+
+`func (o *QuoteDetailsResponseProductsInner) GetWeightUom() string`
+
+GetWeightUom returns the WeightUom field if non-nil, zero value otherwise.
+
+### GetWeightUomOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetWeightUomOk() (*string, bool)`
+
+GetWeightUomOk returns a tuple with the WeightUom field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWeightUom
+
+`func (o *QuoteDetailsResponseProductsInner) SetWeightUom(v string)`
+
+SetWeightUom sets WeightUom field to given value.
+
+### HasWeightUom
+
+`func (o *QuoteDetailsResponseProductsInner) HasWeightUom() bool`
+
+HasWeightUom returns a boolean if a field has been set.
+
+### GetIsSuggestionProduct
+
+`func (o *QuoteDetailsResponseProductsInner) GetIsSuggestionProduct() bool`
+
+GetIsSuggestionProduct returns the IsSuggestionProduct field if non-nil, zero value otherwise.
+
+### GetIsSuggestionProductOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetIsSuggestionProductOk() (*bool, bool)`
+
+GetIsSuggestionProductOk returns a tuple with the IsSuggestionProduct field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsSuggestionProduct
+
+`func (o *QuoteDetailsResponseProductsInner) SetIsSuggestionProduct(v bool)`
+
+SetIsSuggestionProduct sets IsSuggestionProduct field to given value.
+
+### HasIsSuggestionProduct
+
+`func (o *QuoteDetailsResponseProductsInner) HasIsSuggestionProduct() bool`
+
+HasIsSuggestionProduct returns a boolean if a field has been set.
+
+### GetVpnCategory
+
+`func (o *QuoteDetailsResponseProductsInner) GetVpnCategory() string`
+
+GetVpnCategory returns the VpnCategory field if non-nil, zero value otherwise.
+
+### GetVpnCategoryOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetVpnCategoryOk() (*string, bool)`
+
+GetVpnCategoryOk returns a tuple with the VpnCategory field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVpnCategory
+
+`func (o *QuoteDetailsResponseProductsInner) SetVpnCategory(v string)`
+
+SetVpnCategory sets VpnCategory field to given value.
+
+### HasVpnCategory
+
+`func (o *QuoteDetailsResponseProductsInner) HasVpnCategory() bool`
+
+HasVpnCategory returns a boolean if a field has been set.
+
+### GetQuoteProductsSupplierPartAuxiliaryId
+
+`func (o *QuoteDetailsResponseProductsInner) GetQuoteProductsSupplierPartAuxiliaryId() string`
+
+GetQuoteProductsSupplierPartAuxiliaryId returns the QuoteProductsSupplierPartAuxiliaryId field if non-nil, zero value otherwise.
+
+### GetQuoteProductsSupplierPartAuxiliaryIdOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetQuoteProductsSupplierPartAuxiliaryIdOk() (*string, bool)`
+
+GetQuoteProductsSupplierPartAuxiliaryIdOk returns a tuple with the QuoteProductsSupplierPartAuxiliaryId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuoteProductsSupplierPartAuxiliaryId
+
+`func (o *QuoteDetailsResponseProductsInner) SetQuoteProductsSupplierPartAuxiliaryId(v string)`
+
+SetQuoteProductsSupplierPartAuxiliaryId sets QuoteProductsSupplierPartAuxiliaryId field to given value.
+
+### HasQuoteProductsSupplierPartAuxiliaryId
+
+`func (o *QuoteDetailsResponseProductsInner) HasQuoteProductsSupplierPartAuxiliaryId() bool`
+
+HasQuoteProductsSupplierPartAuxiliaryId returns a boolean if a field has been set.
+
+### GetVendorName
+
+`func (o *QuoteDetailsResponseProductsInner) GetVendorName() string`
+
+GetVendorName returns the VendorName field if non-nil, zero value otherwise.
+
+### GetVendorNameOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetVendorNameOk() (*string, bool)`
+
+GetVendorNameOk returns a tuple with the VendorName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVendorName
+
+`func (o *QuoteDetailsResponseProductsInner) SetVendorName(v string)`
+
+SetVendorName sets VendorName field to given value.
+
+### HasVendorName
+
+`func (o *QuoteDetailsResponseProductsInner) HasVendorName() bool`
+
+HasVendorName returns a boolean if a field has been set.
+
+### GetTerms
+
+`func (o *QuoteDetailsResponseProductsInner) GetTerms() string`
+
+GetTerms returns the Terms field if non-nil, zero value otherwise.
+
+### GetTermsOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetTermsOk() (*string, bool)`
+
+GetTermsOk returns a tuple with the Terms field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTerms
+
+`func (o *QuoteDetailsResponseProductsInner) SetTerms(v string)`
+
+SetTerms sets Terms field to given value.
+
+### HasTerms
+
+`func (o *QuoteDetailsResponseProductsInner) HasTerms() bool`
+
+HasTerms returns a boolean if a field has been set.
+
+### GetPrice
+
+`func (o *QuoteDetailsResponseProductsInner) GetPrice() QuoteDetailsResponseProductsInnerPrice`
+
+GetPrice returns the Price field if non-nil, zero value otherwise.
+
+### GetPriceOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetPriceOk() (*QuoteDetailsResponseProductsInnerPrice, bool)`
+
+GetPriceOk returns a tuple with the Price field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrice
+
+`func (o *QuoteDetailsResponseProductsInner) SetPrice(v QuoteDetailsResponseProductsInnerPrice)`
+
+SetPrice sets Price field to given value.
+
+### HasPrice
+
+`func (o *QuoteDetailsResponseProductsInner) HasPrice() bool`
+
+HasPrice returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
