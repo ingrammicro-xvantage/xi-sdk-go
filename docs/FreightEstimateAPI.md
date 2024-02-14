@@ -1,6 +1,6 @@
 # \FreightEstimateAPI
 
-All URIs are relative to *https://api.ingrammicro.com:443/sandbox*
+All URIs are relative to *https://api.ingrammicro.com:443*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

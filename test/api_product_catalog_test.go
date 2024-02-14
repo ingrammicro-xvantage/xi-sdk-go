@@ -1,5 +1,5 @@
 /*
-Reseller API
+XI Sdk Resellers
 
 Testing ProductCatalogAPIService
 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IngramPartNumber** | Pointer to **string** | Ingram Micro unique part number for the product. | [optional] 
 **VendorPartNumber** | Pointer to **string** | Vendor’s part number for the product. | [optional] 
+**CustomerPartNumber** | Pointer to **string** | Reseller / end-user’s part number for the product. | [optional] 
 **ProductAuthorized** | Pointer to **bool** | Boolean that indicates whether a product is authorized. | [optional] 
 **Description** | Pointer to **string** | The description given for the product. | [optional] 
 **ProductDetailDescription** | Pointer to **string** | The detailed description given for the product. | [optional] 
@@ -16,9 +17,8 @@ Name | Type | Description | Notes
 **VendorNumber** | Pointer to **string** | Vendor number that identifies the product. | [optional] 
 **ProductStatusCode** | Pointer to **string** | Status code of the product. | [optional] 
 **ProductClass** | Pointer to **string** | Indicates whether the product is directly shipped from the vendor’s warehouse or if the product ships from Ingram Micro’s warehouse. Class Codes are Ingram classifications on how skus are stocked A &#x3D; Product that is stocked usually in all IM warehouses and replenished on a regular basis. B &#x3D; Product that is stocked in limited IM warehouses and replenished on a regular basis C &#x3D; Product that is stocked in fewer IM warehouses and replenished on a regular basis. D &#x3D; Product that Ingram Micro has elected to discontinue. E &#x3D; Product that will be phased out later, according to the vendor. You may not want to replenish this product, but instead sell down what is in stock. F &#x3D; Product that we carry for a specific customer or supplier under a contractual agreement. N &#x3D; New Sku. Classification before first receipt O &#x3D; Discontinued product to be liquidated S&#x3D; Order for Specialized Demand (Order to backorder) X&#x3D; direct ship from Vendor V &#x3D; product that vendor has elected to discontinue. | [optional] 
-**CustomerPartNumber** | Pointer to **string** | Reseller / end-user’s part number for the product. | [optional] 
-**Indicators** | Pointer to [**[]ProductDetailResponseIndicatorsInner**](ProductDetailResponseIndicatorsInner.md) | Indicators of the Product | [optional] 
-**CiscoFields** | Pointer to [**[]ProductDetailResponseCiscoFieldsInner**](ProductDetailResponseCiscoFieldsInner.md) | Cisco product related information. | [optional] 
+**Indicators** | Pointer to [**ProductDetailResponseIndicators**](ProductDetailResponseIndicators.md) |  | [optional] 
+**CiscoFields** | Pointer to [**ProductDetailResponseCiscoFields**](ProductDetailResponseCiscoFields.md) |  | [optional] 
 **TechnicalSpecifications** | Pointer to [**[]ProductDetailResponseTechnicalSpecificationsInner**](ProductDetailResponseTechnicalSpecificationsInner.md) | Technical specifications of the product. | [optional] 
 **WarrantyInformation** | Pointer to **[]map[string]interface{}** | Warranty information related to the product. | [optional] 
 **AdditionalInformation** | Pointer to [**ProductDetailResponseAdditionalInformation**](ProductDetailResponseAdditionalInformation.md) |  | [optional] 
@@ -91,6 +91,31 @@ SetVendorPartNumber sets VendorPartNumber field to given value.
 `func (o *ProductDetailResponse) HasVendorPartNumber() bool`
 
 HasVendorPartNumber returns a boolean if a field has been set.
+
+### GetCustomerPartNumber
+
+`func (o *ProductDetailResponse) GetCustomerPartNumber() string`
+
+GetCustomerPartNumber returns the CustomerPartNumber field if non-nil, zero value otherwise.
+
+### GetCustomerPartNumberOk
+
+`func (o *ProductDetailResponse) GetCustomerPartNumberOk() (*string, bool)`
+
+GetCustomerPartNumberOk returns a tuple with the CustomerPartNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomerPartNumber
+
+`func (o *ProductDetailResponse) SetCustomerPartNumber(v string)`
+
+SetCustomerPartNumber sets CustomerPartNumber field to given value.
+
+### HasCustomerPartNumber
+
+`func (o *ProductDetailResponse) HasCustomerPartNumber() bool`
+
+HasCustomerPartNumber returns a boolean if a field has been set.
 
 ### GetProductAuthorized
 
@@ -342,47 +367,22 @@ SetProductClass sets ProductClass field to given value.
 
 HasProductClass returns a boolean if a field has been set.
 
-### GetCustomerPartNumber
-
-`func (o *ProductDetailResponse) GetCustomerPartNumber() string`
-
-GetCustomerPartNumber returns the CustomerPartNumber field if non-nil, zero value otherwise.
-
-### GetCustomerPartNumberOk
-
-`func (o *ProductDetailResponse) GetCustomerPartNumberOk() (*string, bool)`
-
-GetCustomerPartNumberOk returns a tuple with the CustomerPartNumber field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCustomerPartNumber
-
-`func (o *ProductDetailResponse) SetCustomerPartNumber(v string)`
-
-SetCustomerPartNumber sets CustomerPartNumber field to given value.
-
-### HasCustomerPartNumber
-
-`func (o *ProductDetailResponse) HasCustomerPartNumber() bool`
-
-HasCustomerPartNumber returns a boolean if a field has been set.
-
 ### GetIndicators
 
-`func (o *ProductDetailResponse) GetIndicators() []ProductDetailResponseIndicatorsInner`
+`func (o *ProductDetailResponse) GetIndicators() ProductDetailResponseIndicators`
 
 GetIndicators returns the Indicators field if non-nil, zero value otherwise.
 
 ### GetIndicatorsOk
 
-`func (o *ProductDetailResponse) GetIndicatorsOk() (*[]ProductDetailResponseIndicatorsInner, bool)`
+`func (o *ProductDetailResponse) GetIndicatorsOk() (*ProductDetailResponseIndicators, bool)`
 
 GetIndicatorsOk returns a tuple with the Indicators field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIndicators
 
-`func (o *ProductDetailResponse) SetIndicators(v []ProductDetailResponseIndicatorsInner)`
+`func (o *ProductDetailResponse) SetIndicators(v ProductDetailResponseIndicators)`
 
 SetIndicators sets Indicators field to given value.
 
@@ -394,20 +394,20 @@ HasIndicators returns a boolean if a field has been set.
 
 ### GetCiscoFields
 
-`func (o *ProductDetailResponse) GetCiscoFields() []ProductDetailResponseCiscoFieldsInner`
+`func (o *ProductDetailResponse) GetCiscoFields() ProductDetailResponseCiscoFields`
 
 GetCiscoFields returns the CiscoFields field if non-nil, zero value otherwise.
 
 ### GetCiscoFieldsOk
 
-`func (o *ProductDetailResponse) GetCiscoFieldsOk() (*[]ProductDetailResponseCiscoFieldsInner, bool)`
+`func (o *ProductDetailResponse) GetCiscoFieldsOk() (*ProductDetailResponseCiscoFields, bool)`
 
 GetCiscoFieldsOk returns a tuple with the CiscoFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCiscoFields
 
-`func (o *ProductDetailResponse) SetCiscoFields(v []ProductDetailResponseCiscoFieldsInner)`
+`func (o *ProductDetailResponse) SetCiscoFields(v ProductDetailResponseCiscoFields)`
 
 SetCiscoFields sets CiscoFields field to given value.
 

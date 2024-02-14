@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **DealExpiryDate** | Pointer to **string** | Expiration date of the deal/Special bid. | [optional] 
 **PriceProtectionEndDate** | Pointer to **string** | The date on which the price protection will end. | [optional] 
 **CurrencyCode** | Pointer to **string** | Country specific currency code. | [optional] 
-**EndUserInfo** | Pointer to [**[]RenewalsDetailsResponseEndUserInfoInner**](RenewalsDetailsResponseEndUserInfoInner.md) |  | [optional] 
+**EndUserInfo** | Pointer to [**RenewalsDetailsResponseEndUserInfoInner**](RenewalsDetailsResponseEndUserInfoInner.md) |  | [optional] 
 **Products** | Pointer to [**[]DealsDetailsResponseProductsInner**](DealsDetailsResponseProductsInner.md) |  | [optional] 
 
 ## Methods
@@ -262,20 +262,20 @@ HasCurrencyCode returns a boolean if a field has been set.
 
 ### GetEndUserInfo
 
-`func (o *DealsDetailsResponse) GetEndUserInfo() []RenewalsDetailsResponseEndUserInfoInner`
+`func (o *DealsDetailsResponse) GetEndUserInfo() RenewalsDetailsResponseEndUserInfoInner`
 
 GetEndUserInfo returns the EndUserInfo field if non-nil, zero value otherwise.
 
 ### GetEndUserInfoOk
 
-`func (o *DealsDetailsResponse) GetEndUserInfoOk() (*[]RenewalsDetailsResponseEndUserInfoInner, bool)`
+`func (o *DealsDetailsResponse) GetEndUserInfoOk() (*RenewalsDetailsResponseEndUserInfoInner, bool)`
 
 GetEndUserInfoOk returns a tuple with the EndUserInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEndUserInfo
 
-`func (o *DealsDetailsResponse) SetEndUserInfo(v []RenewalsDetailsResponseEndUserInfoInner)`
+`func (o *DealsDetailsResponse) SetEndUserInfo(v RenewalsDetailsResponseEndUserInfoInner)`
 
 SetEndUserInfo sets EndUserInfo field to given value.
 
