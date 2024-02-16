@@ -29,7 +29,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "https://github.com/dprakash2101/GoSDK" ingrammicro-xvantage/xi-sdk-resellers-go ingrammicro-xvantage/xi-sdk-resellers-go
+	xi_sdk_resellers "github.com/ingrammicro-xvantage/xi-sdk-resellers-go ingrammicro-xvantage/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -108,7 +108,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	xi_sdk_resellers "https://github.com/dprakash2101/GoSDK" ingrammicro-xvantage/xi-sdk-resellers-go ingrammicro-xvantage/xi-sdk-resellers-go
+	xi_sdk_resellers "github.com/ingrammicro-xvantage/xi-sdk-resellers-go ingrammicro-xvantage/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -196,7 +196,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "https://github.com/dprakash2101/GoSDK" ingrammicro-xvantage/xi-sdk-resellers-go ingrammicro-xvantage/xi-sdk-resellers-go
+	xi_sdk_resellers "github.com/ingrammicro-xvantage/xi-sdk-resellers-go ingrammicro-xvantage/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -304,7 +304,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "https://github.com/dprakash2101/GoSDK" ingrammicro-xvantage/xi-sdk-resellers-go ingrammicro-xvantage/xi-sdk-resellers-go
+	xi_sdk_resellers "github.com/ingrammicro-xvantage/xi-sdk-resellers-go ingrammicro-xvantage/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -378,7 +378,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "https://github.com/dprakash2101/GoSDK" ingrammicro-xvantage/xi-sdk-resellers-go ingrammicro-xvantage/xi-sdk-resellers-go
+	xi_sdk_resellers "github.com/ingrammicro-xvantage/xi-sdk-resellers-go ingrammicro-xvantage/xi-sdk-resellers-go"
 )
 
 func main() {
