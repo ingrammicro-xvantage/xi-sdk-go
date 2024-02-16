@@ -26,7 +26,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	xi_sdk_resellers "https://github.com/dprakash2101/GoSDK"
 )
 
 func main() {
