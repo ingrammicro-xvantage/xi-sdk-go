@@ -13,16 +13,16 @@ jobs:
       - uses: actions/checkout@v2
       - name: Find and Replace
         run: |
-          find docs/ -type f -name "*.md" -exec sed -i 's/openapiclient "github.com\/GIT_USER_ID\/GIT_REPO_ID"/xi_sdk_resellers "https:\/\/github.com\/ingrammicro-xvantage\/xi-sdk-resellers-go"/g' {} +
-          - name: Commit changes
-          run: |
-            git config --global user.email "${{ secrets.ADMIN_EMAIL }}"
-            git config --global user.name "${{ secrets.ORG_NAME }}"
-            if git diff --quiet; then
-              echo "No changes to commit."
-            else
-              git add .
-              git commit -m "Replace openapiclient with Ingrammicroresellerapi"
-              git push https://${{secrets.WORKFLOW_TOKEN}}@github.com/ingrammicro-xvantage/xi-sdk-resellers-go.git main
-            fi
+          find docs/ -type f -name "*.md" -exec sed -i 's/openapiclient "github.com\/GIT_USER_ID\/GIT_REPO_ID"/xi_sdk_resellers "https:\/\/github.com\/ingrammicro-xvantag\/xi-sdk-resellers-go"/g' {} +
+      - name: Commit changes
+        run: |
+          git config --global user.email "${{ secrets.ADMIN_EMAIL }}"
+          git config --global user.name "${{ secrets.ORG_NAME }}"
+          if git diff --quiet; then
+            echo "No changes to commit."
+          else
+            git add .
+            git commit -m "Replace openapiclient with Ingrammicroresellerapi"
+            git push https://${{secrets.WORKFLOW_TOKEN}}@github.com/ingrammicro-xvantage/xi-sdk-resellers-go.git main
+          fi
         
