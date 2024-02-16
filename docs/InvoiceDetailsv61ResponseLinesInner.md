@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **CustomerPartNumber** | Pointer to **string** | Part number from customer&#39;s system. | [optional] 
 **VendorName** | Pointer to **string** | Name of the vendor. | [optional] 
 **ProductDescription** | Pointer to **string** | Description of the product. | [optional] 
-**UnitWeight** | Pointer to **string** | Weight of the product. | [optional] 
+**UnitWeight** | Pointer to **float32** | Weight of the product. | [optional] 
 **Quantity** | Pointer to **int32** | Quantity of the product. | [optional] 
 **UnitPrice** | Pointer to **float64** | Unit price of the product. | [optional] 
 **UnitOfMeasure** | Pointer to **string** | Unit of measure of the product. | [optional] 
@@ -220,20 +220,20 @@ HasProductDescription returns a boolean if a field has been set.
 
 ### GetUnitWeight
 
-`func (o *InvoiceDetailsv61ResponseLinesInner) GetUnitWeight() string`
+`func (o *InvoiceDetailsv61ResponseLinesInner) GetUnitWeight() float32`
 
 GetUnitWeight returns the UnitWeight field if non-nil, zero value otherwise.
 
 ### GetUnitWeightOk
 
-`func (o *InvoiceDetailsv61ResponseLinesInner) GetUnitWeightOk() (*string, bool)`
+`func (o *InvoiceDetailsv61ResponseLinesInner) GetUnitWeightOk() (*float32, bool)`
 
 GetUnitWeightOk returns a tuple with the UnitWeight field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUnitWeight
 
-`func (o *InvoiceDetailsv61ResponseLinesInner) SetUnitWeight(v string)`
+`func (o *InvoiceDetailsv61ResponseLinesInner) SetUnitWeight(v float32)`
 
 SetUnitWeight sets UnitWeight field to given value.
 

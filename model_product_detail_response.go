@@ -26,7 +26,7 @@ type ProductDetailResponse struct {
 	// Reseller / end-user’s part number for the product.
 	CustomerPartNumber *string `json:"customerPartNumber,omitempty"`
 	// Boolean that indicates whether a product is authorized.
-	ProductAuthorized *bool `json:"productAuthorized,omitempty"`
+	ProductAuthorized *string `json:"productAuthorized,omitempty"`
 	// The description given for the product.
 	Description *string `json:"description,omitempty"`
 	// The detailed description given for the product.
@@ -168,9 +168,9 @@ func (o *ProductDetailResponse) SetCustomerPartNumber(v string) {
 }
 
 // GetProductAuthorized returns the ProductAuthorized field value if set, zero value otherwise.
-func (o *ProductDetailResponse) GetProductAuthorized() bool {
+func (o *ProductDetailResponse) GetProductAuthorized() string {
 	if o == nil || IsNil(o.ProductAuthorized) {
-		var ret bool
+		var ret string
 		return ret
 	}
 	return *o.ProductAuthorized
@@ -178,7 +178,7 @@ func (o *ProductDetailResponse) GetProductAuthorized() bool {
 
 // GetProductAuthorizedOk returns a tuple with the ProductAuthorized field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponse) GetProductAuthorizedOk() (*bool, bool) {
+func (o *ProductDetailResponse) GetProductAuthorizedOk() (*string, bool) {
 	if o == nil || IsNil(o.ProductAuthorized) {
 		return nil, false
 	}
@@ -194,8 +194,8 @@ func (o *ProductDetailResponse) HasProductAuthorized() bool {
 	return false
 }
 
-// SetProductAuthorized gets a reference to the given bool and assigns it to the ProductAuthorized field.
-func (o *ProductDetailResponse) SetProductAuthorized(v bool) {
+// SetProductAuthorized gets a reference to the given string and assigns it to the ProductAuthorized field.
+func (o *ProductDetailResponse) SetProductAuthorized(v string) {
 	o.ProductAuthorized = &v
 }
 

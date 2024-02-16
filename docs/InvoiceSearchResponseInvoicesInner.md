@@ -10,11 +10,11 @@ Name | Type | Description | Notes
 **InvoiceStatus** | Pointer to **string** | Invoice Status. | [optional] 
 **InvoiceDate** | Pointer to **string** | Invoice Date. | [optional] 
 **InvoiceDueDate** | Pointer to **string** | Invoice Due Date. | [optional] 
-**InvoicedAmountDue** | Pointer to **string** | Invoice Amount. | [optional] 
+**InvoicedAmountDue** | Pointer to **float32** | Invoice Amount. | [optional] 
 **CustomerOrderNumber** | Pointer to **string** | Customer Order No. | [optional] 
 **OrderCreateDate** | Pointer to **string** | Order Create Date. | [optional] 
 **EndCustomerOrderNumber** | Pointer to **string** | End Customer Order number. | [optional] 
-**InvoiceAmountInclTax** | Pointer to **string** | Invoice Amount Inclusive of Taxes | [optional] 
+**InvoiceAmountInclTax** | Pointer to **float32** | Invoice Amount Inclusive of Taxes | [optional] 
 
 ## Methods
 
@@ -187,20 +187,20 @@ HasInvoiceDueDate returns a boolean if a field has been set.
 
 ### GetInvoicedAmountDue
 
-`func (o *InvoiceSearchResponseInvoicesInner) GetInvoicedAmountDue() string`
+`func (o *InvoiceSearchResponseInvoicesInner) GetInvoicedAmountDue() float32`
 
 GetInvoicedAmountDue returns the InvoicedAmountDue field if non-nil, zero value otherwise.
 
 ### GetInvoicedAmountDueOk
 
-`func (o *InvoiceSearchResponseInvoicesInner) GetInvoicedAmountDueOk() (*string, bool)`
+`func (o *InvoiceSearchResponseInvoicesInner) GetInvoicedAmountDueOk() (*float32, bool)`
 
 GetInvoicedAmountDueOk returns a tuple with the InvoicedAmountDue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInvoicedAmountDue
 
-`func (o *InvoiceSearchResponseInvoicesInner) SetInvoicedAmountDue(v string)`
+`func (o *InvoiceSearchResponseInvoicesInner) SetInvoicedAmountDue(v float32)`
 
 SetInvoicedAmountDue sets InvoicedAmountDue field to given value.
 
@@ -287,20 +287,20 @@ HasEndCustomerOrderNumber returns a boolean if a field has been set.
 
 ### GetInvoiceAmountInclTax
 
-`func (o *InvoiceSearchResponseInvoicesInner) GetInvoiceAmountInclTax() string`
+`func (o *InvoiceSearchResponseInvoicesInner) GetInvoiceAmountInclTax() float32`
 
 GetInvoiceAmountInclTax returns the InvoiceAmountInclTax field if non-nil, zero value otherwise.
 
 ### GetInvoiceAmountInclTaxOk
 
-`func (o *InvoiceSearchResponseInvoicesInner) GetInvoiceAmountInclTaxOk() (*string, bool)`
+`func (o *InvoiceSearchResponseInvoicesInner) GetInvoiceAmountInclTaxOk() (*float32, bool)`
 
 GetInvoiceAmountInclTaxOk returns a tuple with the InvoiceAmountInclTax field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInvoiceAmountInclTax
 
-`func (o *InvoiceSearchResponseInvoicesInner) SetInvoiceAmountInclTax(v string)`
+`func (o *InvoiceSearchResponseInvoicesInner) SetInvoiceAmountInclTax(v float32)`
 
 SetInvoiceAmountInclTax sets InvoiceAmountInclTax field to given value.
 

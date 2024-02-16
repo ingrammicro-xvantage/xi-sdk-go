@@ -56,13 +56,9 @@ type APIClient struct {
 
 	InvoicesAPI *InvoicesAPIService
 
-	InvoicesV6API *InvoicesV6APIService
-
 	OrderStatusAPI *OrderStatusAPIService
 
 	OrdersAPI *OrdersAPIService
-
-	OrdersV6API *OrdersV6APIService
 
 	ProductCatalogAPI *ProductCatalogAPIService
 
@@ -96,10 +92,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.DealsAPI = (*DealsAPIService)(&c.common)
 	c.FreightEstimateAPI = (*FreightEstimateAPIService)(&c.common)
 	c.InvoicesAPI = (*InvoicesAPIService)(&c.common)
-	c.InvoicesV6API = (*InvoicesV6APIService)(&c.common)
 	c.OrderStatusAPI = (*OrderStatusAPIService)(&c.common)
 	c.OrdersAPI = (*OrdersAPIService)(&c.common)
-	c.OrdersV6API = (*OrdersV6APIService)(&c.common)
 	c.ProductCatalogAPI = (*ProductCatalogAPIService)(&c.common)
 	c.QuoteToOrderAPI = (*QuoteToOrderAPIService)(&c.common)
 	c.QuotesAPI = (*QuotesAPIService)(&c.common)

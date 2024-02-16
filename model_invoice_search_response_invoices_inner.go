@@ -32,7 +32,7 @@ type InvoiceSearchResponseInvoicesInner struct {
 	// Invoice Due Date.
 	InvoiceDueDate *string `json:"invoiceDueDate,omitempty"`
 	// Invoice Amount.
-	InvoicedAmountDue *string `json:"invoicedAmountDue,omitempty"`
+	InvoicedAmountDue *float32 `json:"invoicedAmountDue,omitempty"`
 	// Customer Order No.
 	CustomerOrderNumber *string `json:"customerOrderNumber,omitempty"`
 	// Order Create Date.
@@ -40,7 +40,7 @@ type InvoiceSearchResponseInvoicesInner struct {
 	// End Customer Order number.
 	EndCustomerOrderNumber *string `json:"endCustomerOrderNumber,omitempty"`
 	// Invoice Amount Inclusive of Taxes
-	InvoiceAmountInclTax *string `json:"invoiceAmountInclTax,omitempty"`
+	InvoiceAmountInclTax *float32 `json:"invoiceAmountInclTax,omitempty"`
 }
 
 // NewInvoiceSearchResponseInvoicesInner instantiates a new InvoiceSearchResponseInvoicesInner object
@@ -253,9 +253,9 @@ func (o *InvoiceSearchResponseInvoicesInner) SetInvoiceDueDate(v string) {
 }
 
 // GetInvoicedAmountDue returns the InvoicedAmountDue field value if set, zero value otherwise.
-func (o *InvoiceSearchResponseInvoicesInner) GetInvoicedAmountDue() string {
+func (o *InvoiceSearchResponseInvoicesInner) GetInvoicedAmountDue() float32 {
 	if o == nil || IsNil(o.InvoicedAmountDue) {
-		var ret string
+		var ret float32
 		return ret
 	}
 	return *o.InvoicedAmountDue
@@ -263,7 +263,7 @@ func (o *InvoiceSearchResponseInvoicesInner) GetInvoicedAmountDue() string {
 
 // GetInvoicedAmountDueOk returns a tuple with the InvoicedAmountDue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvoiceSearchResponseInvoicesInner) GetInvoicedAmountDueOk() (*string, bool) {
+func (o *InvoiceSearchResponseInvoicesInner) GetInvoicedAmountDueOk() (*float32, bool) {
 	if o == nil || IsNil(o.InvoicedAmountDue) {
 		return nil, false
 	}
@@ -279,8 +279,8 @@ func (o *InvoiceSearchResponseInvoicesInner) HasInvoicedAmountDue() bool {
 	return false
 }
 
-// SetInvoicedAmountDue gets a reference to the given string and assigns it to the InvoicedAmountDue field.
-func (o *InvoiceSearchResponseInvoicesInner) SetInvoicedAmountDue(v string) {
+// SetInvoicedAmountDue gets a reference to the given float32 and assigns it to the InvoicedAmountDue field.
+func (o *InvoiceSearchResponseInvoicesInner) SetInvoicedAmountDue(v float32) {
 	o.InvoicedAmountDue = &v
 }
 
@@ -381,9 +381,9 @@ func (o *InvoiceSearchResponseInvoicesInner) SetEndCustomerOrderNumber(v string)
 }
 
 // GetInvoiceAmountInclTax returns the InvoiceAmountInclTax field value if set, zero value otherwise.
-func (o *InvoiceSearchResponseInvoicesInner) GetInvoiceAmountInclTax() string {
+func (o *InvoiceSearchResponseInvoicesInner) GetInvoiceAmountInclTax() float32 {
 	if o == nil || IsNil(o.InvoiceAmountInclTax) {
-		var ret string
+		var ret float32
 		return ret
 	}
 	return *o.InvoiceAmountInclTax
@@ -391,7 +391,7 @@ func (o *InvoiceSearchResponseInvoicesInner) GetInvoiceAmountInclTax() string {
 
 // GetInvoiceAmountInclTaxOk returns a tuple with the InvoiceAmountInclTax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvoiceSearchResponseInvoicesInner) GetInvoiceAmountInclTaxOk() (*string, bool) {
+func (o *InvoiceSearchResponseInvoicesInner) GetInvoiceAmountInclTaxOk() (*float32, bool) {
 	if o == nil || IsNil(o.InvoiceAmountInclTax) {
 		return nil, false
 	}
@@ -407,8 +407,8 @@ func (o *InvoiceSearchResponseInvoicesInner) HasInvoiceAmountInclTax() bool {
 	return false
 }
 
-// SetInvoiceAmountInclTax gets a reference to the given string and assigns it to the InvoiceAmountInclTax field.
-func (o *InvoiceSearchResponseInvoicesInner) SetInvoiceAmountInclTax(v string) {
+// SetInvoiceAmountInclTax gets a reference to the given float32 and assigns it to the InvoiceAmountInclTax field.
+func (o *InvoiceSearchResponseInvoicesInner) SetInvoiceAmountInclTax(v float32) {
 	o.InvoiceAmountInclTax = &v
 }
 

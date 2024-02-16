@@ -27,7 +27,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "github.com/ingrammicro-xvantage/xi-sdk-resellers-go ingrammicro-xvantage/xi-sdk-resellers-go"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -125,7 +125,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "github.com/ingrammicro-xvantage/xi-sdk-resellers-go ingrammicro-xvantage/xi-sdk-resellers-go"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -199,7 +199,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "github.com/ingrammicro-xvantage/xi-sdk-resellers-go ingrammicro-xvantage/xi-sdk-resellers-go"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {

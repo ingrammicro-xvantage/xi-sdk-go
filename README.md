@@ -29,7 +29,6 @@ Put the package under your project folder and add the following in import:
 ```go
 import xi_sdk_resellers "github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
 ```
-
 To use a proxy, set the environment variable `HTTP_PROXY`:
 
 ```go
@@ -88,14 +87,12 @@ Class | Method | HTTP request | Description
 *FreightEstimateAPI* | [**PostFreightestimate**](docs/FreightEstimateAPI.md#postfreightestimate) | **Post** /resellers/v6/freightestimate | Freight Estimate
 *InvoicesAPI* | [**GetInvoicedetailsV61**](docs/InvoicesAPI.md#getinvoicedetailsv61) | **Get** /resellers/v6.1/invoices/{invoiceNumber} | Get Invoice Details v6.1
 *InvoicesAPI* | [**GetResellersV6Invoicesearch**](docs/InvoicesAPI.md#getresellersv6invoicesearch) | **Get** /resellers/v6/invoices | Search your invoice
-*InvoicesV6API* | [**GetInvoicedetailsV6**](docs/InvoicesV6API.md#getinvoicedetailsv6) | **Get** /resellers/v6/invoices/{invoicenumber} | Get Invoice Details v6
 *OrderStatusAPI* | [**ResellersV1WebhooksOrderstatuseventPost**](docs/OrderStatusAPI.md#resellersv1webhooksorderstatuseventpost) | **Post** /resellers/v1/webhooks/orderstatusevent | Order Status
 *OrdersAPI* | [**DeleteOrdercancel**](docs/OrdersAPI.md#deleteordercancel) | **Delete** /resellers/v6/orders/{OrderNumber} | Cancel your Order
 *OrdersAPI* | [**GetOrderdetailsV61**](docs/OrdersAPI.md#getorderdetailsv61) | **Get** /resellers/v6.1/orders/{ordernumber} | Get Order Details v6.1
 *OrdersAPI* | [**GetResellersV6Ordersearch**](docs/OrdersAPI.md#getresellersv6ordersearch) | **Get** /resellers/v6/orders/search | Search your Orders
 *OrdersAPI* | [**PostCreateorderV6**](docs/OrdersAPI.md#postcreateorderv6) | **Post** /resellers/v6/orders | Create your Order
 *OrdersAPI* | [**PutOrdermodify**](docs/OrdersAPI.md#putordermodify) | **Put** /resellers/v6/orders/{orderNumber} | Modify your Order
-*OrdersV6API* | [**GetOrderdetailsV6**](docs/OrdersV6API.md#getorderdetailsv6) | **Get** /resellers/v6/orders/{ordernumber} | Get Order Details v6
 *ProductCatalogAPI* | [**GetResellerV6Productdetail**](docs/ProductCatalogAPI.md#getresellerv6productdetail) | **Get** /resellers/v6/catalog/details/{ingramPartNumber} | Product Details
 *ProductCatalogAPI* | [**GetResellerV6Productsearch**](docs/ProductCatalogAPI.md#getresellerv6productsearch) | **Get** /resellers/v6/catalog | Search Products
 *ProductCatalogAPI* | [**PostPriceandavailability**](docs/ProductCatalogAPI.md#postpriceandavailability) | **Post** /resellers/v6/catalog/priceandavailability | Price and Availability
@@ -113,7 +110,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [AddressType](docs/AddressType.md)
  - [AvailabilityAsyncNotificationRequest](docs/AvailabilityAsyncNotificationRequest.md)
  - [AvailabilityAsyncNotificationRequestResourceInner](docs/AvailabilityAsyncNotificationRequestResourceInner.md)
  - [AvailabilityAsyncNotificationRequestResourceInnerLinksInner](docs/AvailabilityAsyncNotificationRequestResourceInnerLinksInner.md)
@@ -138,12 +134,6 @@ Class | Method | HTTP request | Description
  - [GetResellerV6ValidateQuote400Response](docs/GetResellerV6ValidateQuote400Response.md)
  - [GetResellerV6ValidateQuote400ResponseFieldsInner](docs/GetResellerV6ValidateQuote400ResponseFieldsInner.md)
  - [GetResellerV6ValidateQuote500Response](docs/GetResellerV6ValidateQuote500Response.md)
- - [InvoiceDetailResponse](docs/InvoiceDetailResponse.md)
- - [InvoiceDetailResponseServiceresponse](docs/InvoiceDetailResponseServiceresponse.md)
- - [InvoiceDetailResponseServiceresponseInvoicedetailresponse](docs/InvoiceDetailResponseServiceresponseInvoicedetailresponse.md)
- - [InvoiceDetailResponseServiceresponseInvoicedetailresponseExtendedspecsInner](docs/InvoiceDetailResponseServiceresponseInvoicedetailresponseExtendedspecsInner.md)
- - [InvoiceDetailResponseServiceresponseInvoicedetailresponseMiscfeelineInner](docs/InvoiceDetailResponseServiceresponseInvoicedetailresponseMiscfeelineInner.md)
- - [InvoiceDetailResponseServiceresponseResponsepreamble](docs/InvoiceDetailResponseServiceresponseResponsepreamble.md)
  - [InvoiceDetailsv61Response](docs/InvoiceDetailsv61Response.md)
  - [InvoiceDetailsv61ResponseBillToInfo](docs/InvoiceDetailsv61ResponseBillToInfo.md)
  - [InvoiceDetailsv61ResponseFxRateInfo](docs/InvoiceDetailsv61ResponseFxRateInfo.md)
@@ -205,18 +195,6 @@ Class | Method | HTTP request | Description
  - [OrderDetailB2BLinesInnerShipmentDetailsInnerCarrierDetailsInnerTrackingDetailsInnerSerialNumbersInner](docs/OrderDetailB2BLinesInnerShipmentDetailsInnerCarrierDetailsInnerTrackingDetailsInnerSerialNumbersInner.md)
  - [OrderDetailB2BMiscellaneousChargesInner](docs/OrderDetailB2BMiscellaneousChargesInner.md)
  - [OrderDetailB2BShipToInfo](docs/OrderDetailB2BShipToInfo.md)
- - [OrderDetailResponse](docs/OrderDetailResponse.md)
- - [OrderDetailResponseBillToInfo](docs/OrderDetailResponseBillToInfo.md)
- - [OrderDetailResponseEndUserInfo](docs/OrderDetailResponseEndUserInfo.md)
- - [OrderDetailResponseLinesInner](docs/OrderDetailResponseLinesInner.md)
- - [OrderDetailResponseLinesInnerAdditionalAttributesInner](docs/OrderDetailResponseLinesInnerAdditionalAttributesInner.md)
- - [OrderDetailResponseLinesInnerLinksInner](docs/OrderDetailResponseLinesInnerLinksInner.md)
- - [OrderDetailResponseLinesInnerShipmentDetailsInner](docs/OrderDetailResponseLinesInnerShipmentDetailsInner.md)
- - [OrderDetailResponseLinesInnerShipmentDetailsInnerCarrierDetails](docs/OrderDetailResponseLinesInnerShipmentDetailsInnerCarrierDetails.md)
- - [OrderDetailResponseLinesInnerShipmentDetailsInnerCarrierDetailsTrackingDetailsInner](docs/OrderDetailResponseLinesInnerShipmentDetailsInnerCarrierDetailsTrackingDetailsInner.md)
- - [OrderDetailResponseLinesInnerShipmentDetailsInnerCarrierDetailsTrackingDetailsInnerSerialNumbersInner](docs/OrderDetailResponseLinesInnerShipmentDetailsInnerCarrierDetailsTrackingDetailsInnerSerialNumbersInner.md)
- - [OrderDetailResponseMiscellaneousChargesInner](docs/OrderDetailResponseMiscellaneousChargesInner.md)
- - [OrderDetailResponseShipToInfo](docs/OrderDetailResponseShipToInfo.md)
  - [OrderModifyRequest](docs/OrderModifyRequest.md)
  - [OrderModifyRequestAdditionalAttributesInner](docs/OrderModifyRequestAdditionalAttributesInner.md)
  - [OrderModifyRequestLinesInner](docs/OrderModifyRequestLinesInner.md)
@@ -263,9 +241,6 @@ Class | Method | HTTP request | Description
  - [ProductDetailResponseCiscoFields](docs/ProductDetailResponseCiscoFields.md)
  - [ProductDetailResponseIndicators](docs/ProductDetailResponseIndicators.md)
  - [ProductDetailResponseTechnicalSpecificationsInner](docs/ProductDetailResponseTechnicalSpecificationsInner.md)
- - [ProductLineType](docs/ProductLineType.md)
- - [ProductLineTypeSerialnumberdetailsInner](docs/ProductLineTypeSerialnumberdetailsInner.md)
- - [ProductLineTypeTrackingnumberdetailsInner](docs/ProductLineTypeTrackingnumberdetailsInner.md)
  - [ProductSearchResponse](docs/ProductSearchResponse.md)
  - [ProductSearchResponseCatalogInner](docs/ProductSearchResponseCatalogInner.md)
  - [ProductSearchResponseCatalogInnerLinksInner](docs/ProductSearchResponseCatalogInnerLinksInner.md)
@@ -367,14 +342,6 @@ Each of these functions takes a value of the given basic type and returns a poin
 * `PtrTime`
 
 ## Author
--[Ingram Micro Xvantage](https://github.com/ingrammicro-xvantage)
-
-## Contact
-
-For any inquiries or support, please feel free to contact us at:
-
-- Email: [xi_support@ingrammicro.com](xi_support@ingrammicro.com)
-
 
 
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IngramLineNumber** | Pointer to **string** | Unique Ingram Micro line number. | [optional] 
+**IngramLineNumber** | Pointer to **int32** | Unique Ingram Micro line number. | [optional] 
 **Description** | Pointer to **string** | The description of the line item product. | [optional] 
 **IngramPartNumber** | Pointer to **string** | Unique IngramMicro part number. | [optional] 
 **VendorPartNumber** | Pointer to **string** | The vendor&#39;s part number for the line item. | [optional] 
@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **UnitPrice** | Pointer to **float32** | The unit price of the line item. | [optional] 
 **ExtendedPrice** | Pointer to **float32** | Unit price X quantity for the line item. | [optional] 
 **Status** | Pointer to **string** | The status of the line item. | [optional] 
-**ReturnBranch** | Pointer to **int32** | The code of the return branch. | [optional] 
-**ShipFromBranch** | Pointer to **int32** | The code of the ship from branch. | [optional] 
+**ReturnBranch** | Pointer to **string** | The code of the return branch. | [optional] 
+**ShipFromBranch** | Pointer to **string** | The code of the ship from branch. | [optional] 
 
 ## Methods
 
@@ -41,20 +41,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetIngramLineNumber
 
-`func (o *ReturnsDetailsResponseProductsInner) GetIngramLineNumber() string`
+`func (o *ReturnsDetailsResponseProductsInner) GetIngramLineNumber() int32`
 
 GetIngramLineNumber returns the IngramLineNumber field if non-nil, zero value otherwise.
 
 ### GetIngramLineNumberOk
 
-`func (o *ReturnsDetailsResponseProductsInner) GetIngramLineNumberOk() (*string, bool)`
+`func (o *ReturnsDetailsResponseProductsInner) GetIngramLineNumberOk() (*int32, bool)`
 
 GetIngramLineNumberOk returns a tuple with the IngramLineNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIngramLineNumber
 
-`func (o *ReturnsDetailsResponseProductsInner) SetIngramLineNumber(v string)`
+`func (o *ReturnsDetailsResponseProductsInner) SetIngramLineNumber(v int32)`
 
 SetIngramLineNumber sets IngramLineNumber field to given value.
 
@@ -366,20 +366,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetReturnBranch
 
-`func (o *ReturnsDetailsResponseProductsInner) GetReturnBranch() int32`
+`func (o *ReturnsDetailsResponseProductsInner) GetReturnBranch() string`
 
 GetReturnBranch returns the ReturnBranch field if non-nil, zero value otherwise.
 
 ### GetReturnBranchOk
 
-`func (o *ReturnsDetailsResponseProductsInner) GetReturnBranchOk() (*int32, bool)`
+`func (o *ReturnsDetailsResponseProductsInner) GetReturnBranchOk() (*string, bool)`
 
 GetReturnBranchOk returns a tuple with the ReturnBranch field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReturnBranch
 
-`func (o *ReturnsDetailsResponseProductsInner) SetReturnBranch(v int32)`
+`func (o *ReturnsDetailsResponseProductsInner) SetReturnBranch(v string)`
 
 SetReturnBranch sets ReturnBranch field to given value.
 
@@ -391,20 +391,20 @@ HasReturnBranch returns a boolean if a field has been set.
 
 ### GetShipFromBranch
 
-`func (o *ReturnsDetailsResponseProductsInner) GetShipFromBranch() int32`
+`func (o *ReturnsDetailsResponseProductsInner) GetShipFromBranch() string`
 
 GetShipFromBranch returns the ShipFromBranch field if non-nil, zero value otherwise.
 
 ### GetShipFromBranchOk
 
-`func (o *ReturnsDetailsResponseProductsInner) GetShipFromBranchOk() (*int32, bool)`
+`func (o *ReturnsDetailsResponseProductsInner) GetShipFromBranchOk() (*string, bool)`
 
 GetShipFromBranchOk returns a tuple with the ShipFromBranch field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShipFromBranch
 
-`func (o *ReturnsDetailsResponseProductsInner) SetShipFromBranch(v int32)`
+`func (o *ReturnsDetailsResponseProductsInner) SetShipFromBranch(v string)`
 
 SetShipFromBranch sets ShipFromBranch field to given value.
 

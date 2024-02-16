@@ -34,7 +34,7 @@ type InvoiceDetailsv61ResponseLinesInner struct {
 	// Description of the product.
 	ProductDescription *string `json:"productDescription,omitempty"`
 	// Weight of the product.
-	UnitWeight *string `json:"unitWeight,omitempty"`
+	UnitWeight *float32 `json:"unitWeight,omitempty"`
 	// Quantity of the product.
 	Quantity *int32 `json:"quantity,omitempty"`
 	// Unit price of the product.
@@ -304,9 +304,9 @@ func (o *InvoiceDetailsv61ResponseLinesInner) SetProductDescription(v string) {
 }
 
 // GetUnitWeight returns the UnitWeight field value if set, zero value otherwise.
-func (o *InvoiceDetailsv61ResponseLinesInner) GetUnitWeight() string {
+func (o *InvoiceDetailsv61ResponseLinesInner) GetUnitWeight() float32 {
 	if o == nil || IsNil(o.UnitWeight) {
-		var ret string
+		var ret float32
 		return ret
 	}
 	return *o.UnitWeight
@@ -314,7 +314,7 @@ func (o *InvoiceDetailsv61ResponseLinesInner) GetUnitWeight() string {
 
 // GetUnitWeightOk returns a tuple with the UnitWeight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvoiceDetailsv61ResponseLinesInner) GetUnitWeightOk() (*string, bool) {
+func (o *InvoiceDetailsv61ResponseLinesInner) GetUnitWeightOk() (*float32, bool) {
 	if o == nil || IsNil(o.UnitWeight) {
 		return nil, false
 	}
@@ -330,8 +330,8 @@ func (o *InvoiceDetailsv61ResponseLinesInner) HasUnitWeight() bool {
 	return false
 }
 
-// SetUnitWeight gets a reference to the given string and assigns it to the UnitWeight field.
-func (o *InvoiceDetailsv61ResponseLinesInner) SetUnitWeight(v string) {
+// SetUnitWeight gets a reference to the given float32 and assigns it to the UnitWeight field.
+func (o *InvoiceDetailsv61ResponseLinesInner) SetUnitWeight(v float32) {
 	o.UnitWeight = &v
 }
 
