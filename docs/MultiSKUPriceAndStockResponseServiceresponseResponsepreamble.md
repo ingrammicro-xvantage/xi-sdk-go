@@ -1,4 +1,4 @@
-# PriceAndAvailabilityResponseServiceresponseResponsepreamble
+# MultiSKUPriceAndStockResponseServiceresponseResponsepreamble
 
 ## Properties
 
@@ -10,95 +10,95 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewPriceAndAvailabilityResponseServiceresponseResponsepreamble
+### NewMultiSKUPriceAndStockResponseServiceresponseResponsepreamble
 
-`func NewPriceAndAvailabilityResponseServiceresponseResponsepreamble() *PriceAndAvailabilityResponseServiceresponseResponsepreamble`
+`func NewMultiSKUPriceAndStockResponseServiceresponseResponsepreamble() *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble`
 
-NewPriceAndAvailabilityResponseServiceresponseResponsepreamble instantiates a new PriceAndAvailabilityResponseServiceresponseResponsepreamble object
+NewMultiSKUPriceAndStockResponseServiceresponseResponsepreamble instantiates a new MultiSKUPriceAndStockResponseServiceresponseResponsepreamble object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPriceAndAvailabilityResponseServiceresponseResponsepreambleWithDefaults
+### NewMultiSKUPriceAndStockResponseServiceresponseResponsepreambleWithDefaults
 
-`func NewPriceAndAvailabilityResponseServiceresponseResponsepreambleWithDefaults() *PriceAndAvailabilityResponseServiceresponseResponsepreamble`
+`func NewMultiSKUPriceAndStockResponseServiceresponseResponsepreambleWithDefaults() *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble`
 
-NewPriceAndAvailabilityResponseServiceresponseResponsepreambleWithDefaults instantiates a new PriceAndAvailabilityResponseServiceresponseResponsepreamble object
+NewMultiSKUPriceAndStockResponseServiceresponseResponsepreambleWithDefaults instantiates a new MultiSKUPriceAndStockResponseServiceresponseResponsepreamble object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetResponsestatus
 
-`func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetResponsestatus() string`
+`func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) GetResponsestatus() string`
 
 GetResponsestatus returns the Responsestatus field if non-nil, zero value otherwise.
 
 ### GetResponsestatusOk
 
-`func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetResponsestatusOk() (*string, bool)`
+`func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) GetResponsestatusOk() (*string, bool)`
 
 GetResponsestatusOk returns a tuple with the Responsestatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResponsestatus
 
-`func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) SetResponsestatus(v string)`
+`func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) SetResponsestatus(v string)`
 
 SetResponsestatus sets Responsestatus field to given value.
 
 ### HasResponsestatus
 
-`func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) HasResponsestatus() bool`
+`func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) HasResponsestatus() bool`
 
 HasResponsestatus returns a boolean if a field has been set.
 
 ### GetResponsemessage
 
-`func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetResponsemessage() string`
+`func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) GetResponsemessage() string`
 
 GetResponsemessage returns the Responsemessage field if non-nil, zero value otherwise.
 
 ### GetResponsemessageOk
 
-`func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetResponsemessageOk() (*string, bool)`
+`func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) GetResponsemessageOk() (*string, bool)`
 
 GetResponsemessageOk returns a tuple with the Responsemessage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResponsemessage
 
-`func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) SetResponsemessage(v string)`
+`func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) SetResponsemessage(v string)`
 
 SetResponsemessage sets Responsemessage field to given value.
 
 ### HasResponsemessage
 
-`func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) HasResponsemessage() bool`
+`func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) HasResponsemessage() bool`
 
 HasResponsemessage returns a boolean if a field has been set.
 
 ### GetStatuscode
 
-`func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetStatuscode() string`
+`func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) GetStatuscode() string`
 
 GetStatuscode returns the Statuscode field if non-nil, zero value otherwise.
 
 ### GetStatuscodeOk
 
-`func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetStatuscodeOk() (*string, bool)`
+`func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) GetStatuscodeOk() (*string, bool)`
 
 GetStatuscodeOk returns a tuple with the Statuscode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatuscode
 
-`func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) SetStatuscode(v string)`
+`func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) SetStatuscode(v string)`
 
 SetStatuscode sets Statuscode field to given value.
 
 ### HasStatuscode
 
-`func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) HasStatuscode() bool`
+`func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) HasStatuscode() bool`
 
 HasStatuscode returns a boolean if a field has been set.
 

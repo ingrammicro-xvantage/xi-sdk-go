@@ -1,5 +1,5 @@
 /*
-XI Sdk Resellers
+XI SDK Resellers
 
 For Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
 
@@ -19,7 +19,7 @@ var _ MappedNullable = &MultiSKUPriceAndStockResponseServiceresponse{}
 
 // MultiSKUPriceAndStockResponseServiceresponse struct for MultiSKUPriceAndStockResponseServiceresponse
 type MultiSKUPriceAndStockResponseServiceresponse struct {
-	Responsepreamble *PriceAndAvailabilityResponseServiceresponseResponsepreamble `json:"responsepreamble,omitempty"`
+	Responsepreamble *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble `json:"responsepreamble,omitempty"`
 	Priceandstockresponse *MultiSKUPriceAndStockResponseServiceresponsePriceandstockresponse `json:"priceandstockresponse,omitempty"`
 }
 
@@ -41,9 +41,9 @@ func NewMultiSKUPriceAndStockResponseServiceresponseWithDefaults() *MultiSKUPric
 }
 
 // GetResponsepreamble returns the Responsepreamble field value if set, zero value otherwise.
-func (o *MultiSKUPriceAndStockResponseServiceresponse) GetResponsepreamble() PriceAndAvailabilityResponseServiceresponseResponsepreamble {
+func (o *MultiSKUPriceAndStockResponseServiceresponse) GetResponsepreamble() MultiSKUPriceAndStockResponseServiceresponseResponsepreamble {
 	if o == nil || IsNil(o.Responsepreamble) {
-		var ret PriceAndAvailabilityResponseServiceresponseResponsepreamble
+		var ret MultiSKUPriceAndStockResponseServiceresponseResponsepreamble
 		return ret
 	}
 	return *o.Responsepreamble
@@ -51,7 +51,7 @@ func (o *MultiSKUPriceAndStockResponseServiceresponse) GetResponsepreamble() Pri
 
 // GetResponsepreambleOk returns a tuple with the Responsepreamble field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MultiSKUPriceAndStockResponseServiceresponse) GetResponsepreambleOk() (*PriceAndAvailabilityResponseServiceresponseResponsepreamble, bool) {
+func (o *MultiSKUPriceAndStockResponseServiceresponse) GetResponsepreambleOk() (*MultiSKUPriceAndStockResponseServiceresponseResponsepreamble, bool) {
 	if o == nil || IsNil(o.Responsepreamble) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *MultiSKUPriceAndStockResponseServiceresponse) HasResponsepreamble() boo
 	return false
 }
 
-// SetResponsepreamble gets a reference to the given PriceAndAvailabilityResponseServiceresponseResponsepreamble and assigns it to the Responsepreamble field.
-func (o *MultiSKUPriceAndStockResponseServiceresponse) SetResponsepreamble(v PriceAndAvailabilityResponseServiceresponseResponsepreamble) {
+// SetResponsepreamble gets a reference to the given MultiSKUPriceAndStockResponseServiceresponseResponsepreamble and assigns it to the Responsepreamble field.
+func (o *MultiSKUPriceAndStockResponseServiceresponse) SetResponsepreamble(v MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) {
 	o.Responsepreamble = &v
 }
 

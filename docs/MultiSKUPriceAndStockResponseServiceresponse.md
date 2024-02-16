@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Responsepreamble** | Pointer to [**PriceAndAvailabilityResponseServiceresponseResponsepreamble**](PriceAndAvailabilityResponseServiceresponseResponsepreamble.md) |  | [optional] 
+**Responsepreamble** | Pointer to [**MultiSKUPriceAndStockResponseServiceresponseResponsepreamble**](MultiSKUPriceAndStockResponseServiceresponseResponsepreamble.md) |  | [optional] 
 **Priceandstockresponse** | Pointer to [**MultiSKUPriceAndStockResponseServiceresponsePriceandstockresponse**](MultiSKUPriceAndStockResponseServiceresponsePriceandstockresponse.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetResponsepreamble
 
-`func (o *MultiSKUPriceAndStockResponseServiceresponse) GetResponsepreamble() PriceAndAvailabilityResponseServiceresponseResponsepreamble`
+`func (o *MultiSKUPriceAndStockResponseServiceresponse) GetResponsepreamble() MultiSKUPriceAndStockResponseServiceresponseResponsepreamble`
 
 GetResponsepreamble returns the Responsepreamble field if non-nil, zero value otherwise.
 
 ### GetResponsepreambleOk
 
-`func (o *MultiSKUPriceAndStockResponseServiceresponse) GetResponsepreambleOk() (*PriceAndAvailabilityResponseServiceresponseResponsepreamble, bool)`
+`func (o *MultiSKUPriceAndStockResponseServiceresponse) GetResponsepreambleOk() (*MultiSKUPriceAndStockResponseServiceresponseResponsepreamble, bool)`
 
 GetResponsepreambleOk returns a tuple with the Responsepreamble field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResponsepreamble
 
-`func (o *MultiSKUPriceAndStockResponseServiceresponse) SetResponsepreamble(v PriceAndAvailabilityResponseServiceresponseResponsepreamble)`
+`func (o *MultiSKUPriceAndStockResponseServiceresponse) SetResponsepreamble(v MultiSKUPriceAndStockResponseServiceresponseResponsepreamble)`
 
 SetResponsepreamble sets Responsepreamble field to given value.
 

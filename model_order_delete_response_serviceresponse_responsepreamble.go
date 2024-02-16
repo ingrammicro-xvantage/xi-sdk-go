@@ -1,5 +1,5 @@
 /*
-XI Sdk Resellers
+XI SDK Resellers
 
 For Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
 
@@ -14,35 +14,35 @@ import (
 	"encoding/json"
 )
 
-// checks if the OrderCancelResponseServiceresponseResponsepreamble type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &OrderCancelResponseServiceresponseResponsepreamble{}
+// checks if the OrderDeleteResponseServiceresponseResponsepreamble type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &OrderDeleteResponseServiceresponseResponsepreamble{}
 
-// OrderCancelResponseServiceresponseResponsepreamble struct for OrderCancelResponseServiceresponseResponsepreamble
-type OrderCancelResponseServiceresponseResponsepreamble struct {
+// OrderDeleteResponseServiceresponseResponsepreamble struct for OrderDeleteResponseServiceresponseResponsepreamble
+type OrderDeleteResponseServiceresponseResponsepreamble struct {
 	RequestStatus *string `json:"requestStatus,omitempty"`
 	ReturnCode *string `json:"returnCode,omitempty"`
 	ReturnMessage *string `json:"returnMessage,omitempty"`
 }
 
-// NewOrderCancelResponseServiceresponseResponsepreamble instantiates a new OrderCancelResponseServiceresponseResponsepreamble object
+// NewOrderDeleteResponseServiceresponseResponsepreamble instantiates a new OrderDeleteResponseServiceresponseResponsepreamble object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderCancelResponseServiceresponseResponsepreamble() *OrderCancelResponseServiceresponseResponsepreamble {
-	this := OrderCancelResponseServiceresponseResponsepreamble{}
+func NewOrderDeleteResponseServiceresponseResponsepreamble() *OrderDeleteResponseServiceresponseResponsepreamble {
+	this := OrderDeleteResponseServiceresponseResponsepreamble{}
 	return &this
 }
 
-// NewOrderCancelResponseServiceresponseResponsepreambleWithDefaults instantiates a new OrderCancelResponseServiceresponseResponsepreamble object
+// NewOrderDeleteResponseServiceresponseResponsepreambleWithDefaults instantiates a new OrderDeleteResponseServiceresponseResponsepreamble object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewOrderCancelResponseServiceresponseResponsepreambleWithDefaults() *OrderCancelResponseServiceresponseResponsepreamble {
-	this := OrderCancelResponseServiceresponseResponsepreamble{}
+func NewOrderDeleteResponseServiceresponseResponsepreambleWithDefaults() *OrderDeleteResponseServiceresponseResponsepreamble {
+	this := OrderDeleteResponseServiceresponseResponsepreamble{}
 	return &this
 }
 
 // GetRequestStatus returns the RequestStatus field value if set, zero value otherwise.
-func (o *OrderCancelResponseServiceresponseResponsepreamble) GetRequestStatus() string {
+func (o *OrderDeleteResponseServiceresponseResponsepreamble) GetRequestStatus() string {
 	if o == nil || IsNil(o.RequestStatus) {
 		var ret string
 		return ret
@@ -52,7 +52,7 @@ func (o *OrderCancelResponseServiceresponseResponsepreamble) GetRequestStatus() 
 
 // GetRequestStatusOk returns a tuple with the RequestStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCancelResponseServiceresponseResponsepreamble) GetRequestStatusOk() (*string, bool) {
+func (o *OrderDeleteResponseServiceresponseResponsepreamble) GetRequestStatusOk() (*string, bool) {
 	if o == nil || IsNil(o.RequestStatus) {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *OrderCancelResponseServiceresponseResponsepreamble) GetRequestStatusOk(
 }
 
 // HasRequestStatus returns a boolean if a field has been set.
-func (o *OrderCancelResponseServiceresponseResponsepreamble) HasRequestStatus() bool {
+func (o *OrderDeleteResponseServiceresponseResponsepreamble) HasRequestStatus() bool {
 	if o != nil && !IsNil(o.RequestStatus) {
 		return true
 	}
@@ -69,12 +69,12 @@ func (o *OrderCancelResponseServiceresponseResponsepreamble) HasRequestStatus() 
 }
 
 // SetRequestStatus gets a reference to the given string and assigns it to the RequestStatus field.
-func (o *OrderCancelResponseServiceresponseResponsepreamble) SetRequestStatus(v string) {
+func (o *OrderDeleteResponseServiceresponseResponsepreamble) SetRequestStatus(v string) {
 	o.RequestStatus = &v
 }
 
 // GetReturnCode returns the ReturnCode field value if set, zero value otherwise.
-func (o *OrderCancelResponseServiceresponseResponsepreamble) GetReturnCode() string {
+func (o *OrderDeleteResponseServiceresponseResponsepreamble) GetReturnCode() string {
 	if o == nil || IsNil(o.ReturnCode) {
 		var ret string
 		return ret
@@ -84,7 +84,7 @@ func (o *OrderCancelResponseServiceresponseResponsepreamble) GetReturnCode() str
 
 // GetReturnCodeOk returns a tuple with the ReturnCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCancelResponseServiceresponseResponsepreamble) GetReturnCodeOk() (*string, bool) {
+func (o *OrderDeleteResponseServiceresponseResponsepreamble) GetReturnCodeOk() (*string, bool) {
 	if o == nil || IsNil(o.ReturnCode) {
 		return nil, false
 	}
@@ -92,7 +92,7 @@ func (o *OrderCancelResponseServiceresponseResponsepreamble) GetReturnCodeOk() (
 }
 
 // HasReturnCode returns a boolean if a field has been set.
-func (o *OrderCancelResponseServiceresponseResponsepreamble) HasReturnCode() bool {
+func (o *OrderDeleteResponseServiceresponseResponsepreamble) HasReturnCode() bool {
 	if o != nil && !IsNil(o.ReturnCode) {
 		return true
 	}
@@ -101,12 +101,12 @@ func (o *OrderCancelResponseServiceresponseResponsepreamble) HasReturnCode() boo
 }
 
 // SetReturnCode gets a reference to the given string and assigns it to the ReturnCode field.
-func (o *OrderCancelResponseServiceresponseResponsepreamble) SetReturnCode(v string) {
+func (o *OrderDeleteResponseServiceresponseResponsepreamble) SetReturnCode(v string) {
 	o.ReturnCode = &v
 }
 
 // GetReturnMessage returns the ReturnMessage field value if set, zero value otherwise.
-func (o *OrderCancelResponseServiceresponseResponsepreamble) GetReturnMessage() string {
+func (o *OrderDeleteResponseServiceresponseResponsepreamble) GetReturnMessage() string {
 	if o == nil || IsNil(o.ReturnMessage) {
 		var ret string
 		return ret
@@ -116,7 +116,7 @@ func (o *OrderCancelResponseServiceresponseResponsepreamble) GetReturnMessage() 
 
 // GetReturnMessageOk returns a tuple with the ReturnMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCancelResponseServiceresponseResponsepreamble) GetReturnMessageOk() (*string, bool) {
+func (o *OrderDeleteResponseServiceresponseResponsepreamble) GetReturnMessageOk() (*string, bool) {
 	if o == nil || IsNil(o.ReturnMessage) {
 		return nil, false
 	}
@@ -124,7 +124,7 @@ func (o *OrderCancelResponseServiceresponseResponsepreamble) GetReturnMessageOk(
 }
 
 // HasReturnMessage returns a boolean if a field has been set.
-func (o *OrderCancelResponseServiceresponseResponsepreamble) HasReturnMessage() bool {
+func (o *OrderDeleteResponseServiceresponseResponsepreamble) HasReturnMessage() bool {
 	if o != nil && !IsNil(o.ReturnMessage) {
 		return true
 	}
@@ -133,11 +133,11 @@ func (o *OrderCancelResponseServiceresponseResponsepreamble) HasReturnMessage() 
 }
 
 // SetReturnMessage gets a reference to the given string and assigns it to the ReturnMessage field.
-func (o *OrderCancelResponseServiceresponseResponsepreamble) SetReturnMessage(v string) {
+func (o *OrderDeleteResponseServiceresponseResponsepreamble) SetReturnMessage(v string) {
 	o.ReturnMessage = &v
 }
 
-func (o OrderCancelResponseServiceresponseResponsepreamble) MarshalJSON() ([]byte, error) {
+func (o OrderDeleteResponseServiceresponseResponsepreamble) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -145,7 +145,7 @@ func (o OrderCancelResponseServiceresponseResponsepreamble) MarshalJSON() ([]byt
 	return json.Marshal(toSerialize)
 }
 
-func (o OrderCancelResponseServiceresponseResponsepreamble) ToMap() (map[string]interface{}, error) {
+func (o OrderDeleteResponseServiceresponseResponsepreamble) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.RequestStatus) {
 		toSerialize["requestStatus"] = o.RequestStatus
@@ -159,38 +159,38 @@ func (o OrderCancelResponseServiceresponseResponsepreamble) ToMap() (map[string]
 	return toSerialize, nil
 }
 
-type NullableOrderCancelResponseServiceresponseResponsepreamble struct {
-	value *OrderCancelResponseServiceresponseResponsepreamble
+type NullableOrderDeleteResponseServiceresponseResponsepreamble struct {
+	value *OrderDeleteResponseServiceresponseResponsepreamble
 	isSet bool
 }
 
-func (v NullableOrderCancelResponseServiceresponseResponsepreamble) Get() *OrderCancelResponseServiceresponseResponsepreamble {
+func (v NullableOrderDeleteResponseServiceresponseResponsepreamble) Get() *OrderDeleteResponseServiceresponseResponsepreamble {
 	return v.value
 }
 
-func (v *NullableOrderCancelResponseServiceresponseResponsepreamble) Set(val *OrderCancelResponseServiceresponseResponsepreamble) {
+func (v *NullableOrderDeleteResponseServiceresponseResponsepreamble) Set(val *OrderDeleteResponseServiceresponseResponsepreamble) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableOrderCancelResponseServiceresponseResponsepreamble) IsSet() bool {
+func (v NullableOrderDeleteResponseServiceresponseResponsepreamble) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableOrderCancelResponseServiceresponseResponsepreamble) Unset() {
+func (v *NullableOrderDeleteResponseServiceresponseResponsepreamble) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableOrderCancelResponseServiceresponseResponsepreamble(val *OrderCancelResponseServiceresponseResponsepreamble) *NullableOrderCancelResponseServiceresponseResponsepreamble {
-	return &NullableOrderCancelResponseServiceresponseResponsepreamble{value: val, isSet: true}
+func NewNullableOrderDeleteResponseServiceresponseResponsepreamble(val *OrderDeleteResponseServiceresponseResponsepreamble) *NullableOrderDeleteResponseServiceresponseResponsepreamble {
+	return &NullableOrderDeleteResponseServiceresponseResponsepreamble{value: val, isSet: true}
 }
 
-func (v NullableOrderCancelResponseServiceresponseResponsepreamble) MarshalJSON() ([]byte, error) {
+func (v NullableOrderDeleteResponseServiceresponseResponsepreamble) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableOrderCancelResponseServiceresponseResponsepreamble) UnmarshalJSON(src []byte) error {
+func (v *NullableOrderDeleteResponseServiceresponseResponsepreamble) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Serviceresponse** | Pointer to [**OrderCancelResponseServiceresponse**](OrderCancelResponseServiceresponse.md) |  | [optional] 
+**Serviceresponse** | Pointer to [**OrderDeleteResponseServiceresponse**](OrderDeleteResponseServiceresponse.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetServiceresponse
 
-`func (o *OrderDeleteResponse) GetServiceresponse() OrderCancelResponseServiceresponse`
+`func (o *OrderDeleteResponse) GetServiceresponse() OrderDeleteResponseServiceresponse`
 
 GetServiceresponse returns the Serviceresponse field if non-nil, zero value otherwise.
 
 ### GetServiceresponseOk
 
-`func (o *OrderDeleteResponse) GetServiceresponseOk() (*OrderCancelResponseServiceresponse, bool)`
+`func (o *OrderDeleteResponse) GetServiceresponseOk() (*OrderDeleteResponseServiceresponse, bool)`
 
 GetServiceresponseOk returns a tuple with the Serviceresponse field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServiceresponse
 
-`func (o *OrderDeleteResponse) SetServiceresponse(v OrderCancelResponseServiceresponse)`
+`func (o *OrderDeleteResponse) SetServiceresponse(v OrderDeleteResponseServiceresponse)`
 
 SetServiceresponse sets Serviceresponse field to given value.
 

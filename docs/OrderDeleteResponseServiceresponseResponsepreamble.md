@@ -1,4 +1,4 @@
-# OrderCancelResponseServiceresponseResponsepreamble
+# OrderDeleteResponseServiceresponseResponsepreamble
 
 ## Properties
 
@@ -10,95 +10,95 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewOrderCancelResponseServiceresponseResponsepreamble
+### NewOrderDeleteResponseServiceresponseResponsepreamble
 
-`func NewOrderCancelResponseServiceresponseResponsepreamble() *OrderCancelResponseServiceresponseResponsepreamble`
+`func NewOrderDeleteResponseServiceresponseResponsepreamble() *OrderDeleteResponseServiceresponseResponsepreamble`
 
-NewOrderCancelResponseServiceresponseResponsepreamble instantiates a new OrderCancelResponseServiceresponseResponsepreamble object
+NewOrderDeleteResponseServiceresponseResponsepreamble instantiates a new OrderDeleteResponseServiceresponseResponsepreamble object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewOrderCancelResponseServiceresponseResponsepreambleWithDefaults
+### NewOrderDeleteResponseServiceresponseResponsepreambleWithDefaults
 
-`func NewOrderCancelResponseServiceresponseResponsepreambleWithDefaults() *OrderCancelResponseServiceresponseResponsepreamble`
+`func NewOrderDeleteResponseServiceresponseResponsepreambleWithDefaults() *OrderDeleteResponseServiceresponseResponsepreamble`
 
-NewOrderCancelResponseServiceresponseResponsepreambleWithDefaults instantiates a new OrderCancelResponseServiceresponseResponsepreamble object
+NewOrderDeleteResponseServiceresponseResponsepreambleWithDefaults instantiates a new OrderDeleteResponseServiceresponseResponsepreamble object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetRequestStatus
 
-`func (o *OrderCancelResponseServiceresponseResponsepreamble) GetRequestStatus() string`
+`func (o *OrderDeleteResponseServiceresponseResponsepreamble) GetRequestStatus() string`
 
 GetRequestStatus returns the RequestStatus field if non-nil, zero value otherwise.
 
 ### GetRequestStatusOk
 
-`func (o *OrderCancelResponseServiceresponseResponsepreamble) GetRequestStatusOk() (*string, bool)`
+`func (o *OrderDeleteResponseServiceresponseResponsepreamble) GetRequestStatusOk() (*string, bool)`
 
 GetRequestStatusOk returns a tuple with the RequestStatus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRequestStatus
 
-`func (o *OrderCancelResponseServiceresponseResponsepreamble) SetRequestStatus(v string)`
+`func (o *OrderDeleteResponseServiceresponseResponsepreamble) SetRequestStatus(v string)`
 
 SetRequestStatus sets RequestStatus field to given value.
 
 ### HasRequestStatus
 
-`func (o *OrderCancelResponseServiceresponseResponsepreamble) HasRequestStatus() bool`
+`func (o *OrderDeleteResponseServiceresponseResponsepreamble) HasRequestStatus() bool`
 
 HasRequestStatus returns a boolean if a field has been set.
 
 ### GetReturnCode
 
-`func (o *OrderCancelResponseServiceresponseResponsepreamble) GetReturnCode() string`
+`func (o *OrderDeleteResponseServiceresponseResponsepreamble) GetReturnCode() string`
 
 GetReturnCode returns the ReturnCode field if non-nil, zero value otherwise.
 
 ### GetReturnCodeOk
 
-`func (o *OrderCancelResponseServiceresponseResponsepreamble) GetReturnCodeOk() (*string, bool)`
+`func (o *OrderDeleteResponseServiceresponseResponsepreamble) GetReturnCodeOk() (*string, bool)`
 
 GetReturnCodeOk returns a tuple with the ReturnCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReturnCode
 
-`func (o *OrderCancelResponseServiceresponseResponsepreamble) SetReturnCode(v string)`
+`func (o *OrderDeleteResponseServiceresponseResponsepreamble) SetReturnCode(v string)`
 
 SetReturnCode sets ReturnCode field to given value.
 
 ### HasReturnCode
 
-`func (o *OrderCancelResponseServiceresponseResponsepreamble) HasReturnCode() bool`
+`func (o *OrderDeleteResponseServiceresponseResponsepreamble) HasReturnCode() bool`
 
 HasReturnCode returns a boolean if a field has been set.
 
 ### GetReturnMessage
 
-`func (o *OrderCancelResponseServiceresponseResponsepreamble) GetReturnMessage() string`
+`func (o *OrderDeleteResponseServiceresponseResponsepreamble) GetReturnMessage() string`
 
 GetReturnMessage returns the ReturnMessage field if non-nil, zero value otherwise.
 
 ### GetReturnMessageOk
 
-`func (o *OrderCancelResponseServiceresponseResponsepreamble) GetReturnMessageOk() (*string, bool)`
+`func (o *OrderDeleteResponseServiceresponseResponsepreamble) GetReturnMessageOk() (*string, bool)`
 
 GetReturnMessageOk returns a tuple with the ReturnMessage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReturnMessage
 
-`func (o *OrderCancelResponseServiceresponseResponsepreamble) SetReturnMessage(v string)`
+`func (o *OrderDeleteResponseServiceresponseResponsepreamble) SetReturnMessage(v string)`
 
 SetReturnMessage sets ReturnMessage field to given value.
 
 ### HasReturnMessage
 
-`func (o *OrderCancelResponseServiceresponseResponsepreamble) HasReturnMessage() bool`
+`func (o *OrderDeleteResponseServiceresponseResponsepreamble) HasReturnMessage() bool`
 
 HasReturnMessage returns a boolean if a field has been set.
 

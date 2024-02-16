@@ -1,52 +1,52 @@
-# OrderCancelResponseServiceresponse
+# OrderDeleteResponseServiceresponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Responsepreamble** | Pointer to [**OrderCancelResponseServiceresponseResponsepreamble**](OrderCancelResponseServiceresponseResponsepreamble.md) |  | [optional] 
+**Responsepreamble** | Pointer to [**OrderDeleteResponseServiceresponseResponsepreamble**](OrderDeleteResponseServiceresponseResponsepreamble.md) |  | [optional] 
 
 ## Methods
 
-### NewOrderCancelResponseServiceresponse
+### NewOrderDeleteResponseServiceresponse
 
-`func NewOrderCancelResponseServiceresponse() *OrderCancelResponseServiceresponse`
+`func NewOrderDeleteResponseServiceresponse() *OrderDeleteResponseServiceresponse`
 
-NewOrderCancelResponseServiceresponse instantiates a new OrderCancelResponseServiceresponse object
+NewOrderDeleteResponseServiceresponse instantiates a new OrderDeleteResponseServiceresponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewOrderCancelResponseServiceresponseWithDefaults
+### NewOrderDeleteResponseServiceresponseWithDefaults
 
-`func NewOrderCancelResponseServiceresponseWithDefaults() *OrderCancelResponseServiceresponse`
+`func NewOrderDeleteResponseServiceresponseWithDefaults() *OrderDeleteResponseServiceresponse`
 
-NewOrderCancelResponseServiceresponseWithDefaults instantiates a new OrderCancelResponseServiceresponse object
+NewOrderDeleteResponseServiceresponseWithDefaults instantiates a new OrderDeleteResponseServiceresponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetResponsepreamble
 
-`func (o *OrderCancelResponseServiceresponse) GetResponsepreamble() OrderCancelResponseServiceresponseResponsepreamble`
+`func (o *OrderDeleteResponseServiceresponse) GetResponsepreamble() OrderDeleteResponseServiceresponseResponsepreamble`
 
 GetResponsepreamble returns the Responsepreamble field if non-nil, zero value otherwise.
 
 ### GetResponsepreambleOk
 
-`func (o *OrderCancelResponseServiceresponse) GetResponsepreambleOk() (*OrderCancelResponseServiceresponseResponsepreamble, bool)`
+`func (o *OrderDeleteResponseServiceresponse) GetResponsepreambleOk() (*OrderDeleteResponseServiceresponseResponsepreamble, bool)`
 
 GetResponsepreambleOk returns a tuple with the Responsepreamble field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResponsepreamble
 
-`func (o *OrderCancelResponseServiceresponse) SetResponsepreamble(v OrderCancelResponseServiceresponseResponsepreamble)`
+`func (o *OrderDeleteResponseServiceresponse) SetResponsepreamble(v OrderDeleteResponseServiceresponseResponsepreamble)`
 
 SetResponsepreamble sets Responsepreamble field to given value.
 
 ### HasResponsepreamble
 
-`func (o *OrderCancelResponseServiceresponse) HasResponsepreamble() bool`
+`func (o *OrderDeleteResponseServiceresponse) HasResponsepreamble() bool`
 
 HasResponsepreamble returns a boolean if a field has been set.
 

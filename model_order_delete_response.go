@@ -1,5 +1,5 @@
 /*
-XI Sdk Resellers
+XI SDK Resellers
 
 For Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
 
@@ -19,7 +19,7 @@ var _ MappedNullable = &OrderDeleteResponse{}
 
 // OrderDeleteResponse Response schema for order delete endpoint
 type OrderDeleteResponse struct {
-	Serviceresponse *OrderCancelResponseServiceresponse `json:"serviceresponse,omitempty"`
+	Serviceresponse *OrderDeleteResponseServiceresponse `json:"serviceresponse,omitempty"`
 }
 
 // NewOrderDeleteResponse instantiates a new OrderDeleteResponse object
@@ -40,9 +40,9 @@ func NewOrderDeleteResponseWithDefaults() *OrderDeleteResponse {
 }
 
 // GetServiceresponse returns the Serviceresponse field value if set, zero value otherwise.
-func (o *OrderDeleteResponse) GetServiceresponse() OrderCancelResponseServiceresponse {
+func (o *OrderDeleteResponse) GetServiceresponse() OrderDeleteResponseServiceresponse {
 	if o == nil || IsNil(o.Serviceresponse) {
-		var ret OrderCancelResponseServiceresponse
+		var ret OrderDeleteResponseServiceresponse
 		return ret
 	}
 	return *o.Serviceresponse
@@ -50,7 +50,7 @@ func (o *OrderDeleteResponse) GetServiceresponse() OrderCancelResponseServiceres
 
 // GetServiceresponseOk returns a tuple with the Serviceresponse field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderDeleteResponse) GetServiceresponseOk() (*OrderCancelResponseServiceresponse, bool) {
+func (o *OrderDeleteResponse) GetServiceresponseOk() (*OrderDeleteResponseServiceresponse, bool) {
 	if o == nil || IsNil(o.Serviceresponse) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *OrderDeleteResponse) HasServiceresponse() bool {
 	return false
 }
 
-// SetServiceresponse gets a reference to the given OrderCancelResponseServiceresponse and assigns it to the Serviceresponse field.
-func (o *OrderDeleteResponse) SetServiceresponse(v OrderCancelResponseServiceresponse) {
+// SetServiceresponse gets a reference to the given OrderDeleteResponseServiceresponse and assigns it to the Serviceresponse field.
+func (o *OrderDeleteResponse) SetServiceresponse(v OrderDeleteResponseServiceresponse) {
 	o.Serviceresponse = &v
 }
 

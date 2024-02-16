@@ -1,5 +1,5 @@
 /*
-XI Sdk Resellers
+XI SDK Resellers
 
 Testing RenewalsAPIService
 

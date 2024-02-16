@@ -1,5 +1,5 @@
 /*
-XI Sdk Resellers
+XI SDK Resellers
 
 For Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
 
@@ -17,9 +17,17 @@ import (
 // checks if the PriceAndAvailabilityRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PriceAndAvailabilityRequest{}
 
-// PriceAndAvailabilityRequest Request object model for the multi sku price and stock API endpoint
+// PriceAndAvailabilityRequest struct for PriceAndAvailabilityRequest
 type PriceAndAvailabilityRequest struct {
-	Servicerequest *PriceAndAvailabilityRequestServicerequest `json:"servicerequest,omitempty"`
+	// Boolean value that will display Discount details in the response when true.
+	ShowAvailableDiscounts *bool `json:"showAvailableDiscounts,omitempty"`
+	// Boolean value that will display reserve inventory details in the response when true.
+	ShowReserveInventoryDetails *bool `json:"showReserveInventoryDetails,omitempty"`
+	// Pre-approved special pricing/bid number provided to the reseller by the vendor for special pricing and discounts. Used to track the bid number where different line items have different bid numbers.
+	SpecialBidNumber *string `json:"specialBidNumber,omitempty"`
+	AvailabilityByWarehouse []PriceAndAvailabilityRequestAvailabilityByWarehouseInner `json:"availabilityByWarehouse,omitempty"`
+	Products []PriceAndAvailabilityRequestProductsInner `json:"products,omitempty"`
+	AdditionalAttributes []PriceAndAvailabilityRequestAdditionalAttributesInner `json:"additionalAttributes,omitempty"`
 }
 
 // NewPriceAndAvailabilityRequest instantiates a new PriceAndAvailabilityRequest object
@@ -39,36 +47,196 @@ func NewPriceAndAvailabilityRequestWithDefaults() *PriceAndAvailabilityRequest {
 	return &this
 }
 
-// GetServicerequest returns the Servicerequest field value if set, zero value otherwise.
-func (o *PriceAndAvailabilityRequest) GetServicerequest() PriceAndAvailabilityRequestServicerequest {
-	if o == nil || IsNil(o.Servicerequest) {
-		var ret PriceAndAvailabilityRequestServicerequest
+// GetShowAvailableDiscounts returns the ShowAvailableDiscounts field value if set, zero value otherwise.
+func (o *PriceAndAvailabilityRequest) GetShowAvailableDiscounts() bool {
+	if o == nil || IsNil(o.ShowAvailableDiscounts) {
+		var ret bool
 		return ret
 	}
-	return *o.Servicerequest
+	return *o.ShowAvailableDiscounts
 }
 
-// GetServicerequestOk returns a tuple with the Servicerequest field value if set, nil otherwise
+// GetShowAvailableDiscountsOk returns a tuple with the ShowAvailableDiscounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceAndAvailabilityRequest) GetServicerequestOk() (*PriceAndAvailabilityRequestServicerequest, bool) {
-	if o == nil || IsNil(o.Servicerequest) {
+func (o *PriceAndAvailabilityRequest) GetShowAvailableDiscountsOk() (*bool, bool) {
+	if o == nil || IsNil(o.ShowAvailableDiscounts) {
 		return nil, false
 	}
-	return o.Servicerequest, true
+	return o.ShowAvailableDiscounts, true
 }
 
-// HasServicerequest returns a boolean if a field has been set.
-func (o *PriceAndAvailabilityRequest) HasServicerequest() bool {
-	if o != nil && !IsNil(o.Servicerequest) {
+// HasShowAvailableDiscounts returns a boolean if a field has been set.
+func (o *PriceAndAvailabilityRequest) HasShowAvailableDiscounts() bool {
+	if o != nil && !IsNil(o.ShowAvailableDiscounts) {
 		return true
 	}
 
 	return false
 }
 
-// SetServicerequest gets a reference to the given PriceAndAvailabilityRequestServicerequest and assigns it to the Servicerequest field.
-func (o *PriceAndAvailabilityRequest) SetServicerequest(v PriceAndAvailabilityRequestServicerequest) {
-	o.Servicerequest = &v
+// SetShowAvailableDiscounts gets a reference to the given bool and assigns it to the ShowAvailableDiscounts field.
+func (o *PriceAndAvailabilityRequest) SetShowAvailableDiscounts(v bool) {
+	o.ShowAvailableDiscounts = &v
+}
+
+// GetShowReserveInventoryDetails returns the ShowReserveInventoryDetails field value if set, zero value otherwise.
+func (o *PriceAndAvailabilityRequest) GetShowReserveInventoryDetails() bool {
+	if o == nil || IsNil(o.ShowReserveInventoryDetails) {
+		var ret bool
+		return ret
+	}
+	return *o.ShowReserveInventoryDetails
+}
+
+// GetShowReserveInventoryDetailsOk returns a tuple with the ShowReserveInventoryDetails field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceAndAvailabilityRequest) GetShowReserveInventoryDetailsOk() (*bool, bool) {
+	if o == nil || IsNil(o.ShowReserveInventoryDetails) {
+		return nil, false
+	}
+	return o.ShowReserveInventoryDetails, true
+}
+
+// HasShowReserveInventoryDetails returns a boolean if a field has been set.
+func (o *PriceAndAvailabilityRequest) HasShowReserveInventoryDetails() bool {
+	if o != nil && !IsNil(o.ShowReserveInventoryDetails) {
+		return true
+	}
+
+	return false
+}
+
+// SetShowReserveInventoryDetails gets a reference to the given bool and assigns it to the ShowReserveInventoryDetails field.
+func (o *PriceAndAvailabilityRequest) SetShowReserveInventoryDetails(v bool) {
+	o.ShowReserveInventoryDetails = &v
+}
+
+// GetSpecialBidNumber returns the SpecialBidNumber field value if set, zero value otherwise.
+func (o *PriceAndAvailabilityRequest) GetSpecialBidNumber() string {
+	if o == nil || IsNil(o.SpecialBidNumber) {
+		var ret string
+		return ret
+	}
+	return *o.SpecialBidNumber
+}
+
+// GetSpecialBidNumberOk returns a tuple with the SpecialBidNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceAndAvailabilityRequest) GetSpecialBidNumberOk() (*string, bool) {
+	if o == nil || IsNil(o.SpecialBidNumber) {
+		return nil, false
+	}
+	return o.SpecialBidNumber, true
+}
+
+// HasSpecialBidNumber returns a boolean if a field has been set.
+func (o *PriceAndAvailabilityRequest) HasSpecialBidNumber() bool {
+	if o != nil && !IsNil(o.SpecialBidNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetSpecialBidNumber gets a reference to the given string and assigns it to the SpecialBidNumber field.
+func (o *PriceAndAvailabilityRequest) SetSpecialBidNumber(v string) {
+	o.SpecialBidNumber = &v
+}
+
+// GetAvailabilityByWarehouse returns the AvailabilityByWarehouse field value if set, zero value otherwise.
+func (o *PriceAndAvailabilityRequest) GetAvailabilityByWarehouse() []PriceAndAvailabilityRequestAvailabilityByWarehouseInner {
+	if o == nil || IsNil(o.AvailabilityByWarehouse) {
+		var ret []PriceAndAvailabilityRequestAvailabilityByWarehouseInner
+		return ret
+	}
+	return o.AvailabilityByWarehouse
+}
+
+// GetAvailabilityByWarehouseOk returns a tuple with the AvailabilityByWarehouse field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceAndAvailabilityRequest) GetAvailabilityByWarehouseOk() ([]PriceAndAvailabilityRequestAvailabilityByWarehouseInner, bool) {
+	if o == nil || IsNil(o.AvailabilityByWarehouse) {
+		return nil, false
+	}
+	return o.AvailabilityByWarehouse, true
+}
+
+// HasAvailabilityByWarehouse returns a boolean if a field has been set.
+func (o *PriceAndAvailabilityRequest) HasAvailabilityByWarehouse() bool {
+	if o != nil && !IsNil(o.AvailabilityByWarehouse) {
+		return true
+	}
+
+	return false
+}
+
+// SetAvailabilityByWarehouse gets a reference to the given []PriceAndAvailabilityRequestAvailabilityByWarehouseInner and assigns it to the AvailabilityByWarehouse field.
+func (o *PriceAndAvailabilityRequest) SetAvailabilityByWarehouse(v []PriceAndAvailabilityRequestAvailabilityByWarehouseInner) {
+	o.AvailabilityByWarehouse = v
+}
+
+// GetProducts returns the Products field value if set, zero value otherwise.
+func (o *PriceAndAvailabilityRequest) GetProducts() []PriceAndAvailabilityRequestProductsInner {
+	if o == nil || IsNil(o.Products) {
+		var ret []PriceAndAvailabilityRequestProductsInner
+		return ret
+	}
+	return o.Products
+}
+
+// GetProductsOk returns a tuple with the Products field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceAndAvailabilityRequest) GetProductsOk() ([]PriceAndAvailabilityRequestProductsInner, bool) {
+	if o == nil || IsNil(o.Products) {
+		return nil, false
+	}
+	return o.Products, true
+}
+
+// HasProducts returns a boolean if a field has been set.
+func (o *PriceAndAvailabilityRequest) HasProducts() bool {
+	if o != nil && !IsNil(o.Products) {
+		return true
+	}
+
+	return false
+}
+
+// SetProducts gets a reference to the given []PriceAndAvailabilityRequestProductsInner and assigns it to the Products field.
+func (o *PriceAndAvailabilityRequest) SetProducts(v []PriceAndAvailabilityRequestProductsInner) {
+	o.Products = v
+}
+
+// GetAdditionalAttributes returns the AdditionalAttributes field value if set, zero value otherwise.
+func (o *PriceAndAvailabilityRequest) GetAdditionalAttributes() []PriceAndAvailabilityRequestAdditionalAttributesInner {
+	if o == nil || IsNil(o.AdditionalAttributes) {
+		var ret []PriceAndAvailabilityRequestAdditionalAttributesInner
+		return ret
+	}
+	return o.AdditionalAttributes
+}
+
+// GetAdditionalAttributesOk returns a tuple with the AdditionalAttributes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceAndAvailabilityRequest) GetAdditionalAttributesOk() ([]PriceAndAvailabilityRequestAdditionalAttributesInner, bool) {
+	if o == nil || IsNil(o.AdditionalAttributes) {
+		return nil, false
+	}
+	return o.AdditionalAttributes, true
+}
+
+// HasAdditionalAttributes returns a boolean if a field has been set.
+func (o *PriceAndAvailabilityRequest) HasAdditionalAttributes() bool {
+	if o != nil && !IsNil(o.AdditionalAttributes) {
+		return true
+	}
+
+	return false
+}
+
+// SetAdditionalAttributes gets a reference to the given []PriceAndAvailabilityRequestAdditionalAttributesInner and assigns it to the AdditionalAttributes field.
+func (o *PriceAndAvailabilityRequest) SetAdditionalAttributes(v []PriceAndAvailabilityRequestAdditionalAttributesInner) {
+	o.AdditionalAttributes = v
 }
 
 func (o PriceAndAvailabilityRequest) MarshalJSON() ([]byte, error) {
@@ -81,8 +249,23 @@ func (o PriceAndAvailabilityRequest) MarshalJSON() ([]byte, error) {
 
 func (o PriceAndAvailabilityRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Servicerequest) {
-		toSerialize["servicerequest"] = o.Servicerequest
+	if !IsNil(o.ShowAvailableDiscounts) {
+		toSerialize["showAvailableDiscounts"] = o.ShowAvailableDiscounts
+	}
+	if !IsNil(o.ShowReserveInventoryDetails) {
+		toSerialize["showReserveInventoryDetails"] = o.ShowReserveInventoryDetails
+	}
+	if !IsNil(o.SpecialBidNumber) {
+		toSerialize["specialBidNumber"] = o.SpecialBidNumber
+	}
+	if !IsNil(o.AvailabilityByWarehouse) {
+		toSerialize["availabilityByWarehouse"] = o.AvailabilityByWarehouse
+	}
+	if !IsNil(o.Products) {
+		toSerialize["products"] = o.Products
+	}
+	if !IsNil(o.AdditionalAttributes) {
+		toSerialize["additionalAttributes"] = o.AdditionalAttributes
 	}
 	return toSerialize, nil
 }

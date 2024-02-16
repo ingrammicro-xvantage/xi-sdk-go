@@ -1,5 +1,5 @@
 /*
-XI Sdk Resellers
+XI SDK Resellers
 
 For Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
 
@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the PriceAndAvailabilityResponseServiceresponseResponsepreamble type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PriceAndAvailabilityResponseServiceresponseResponsepreamble{}
+// checks if the MultiSKUPriceAndStockResponseServiceresponseResponsepreamble type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MultiSKUPriceAndStockResponseServiceresponseResponsepreamble{}
 
-// PriceAndAvailabilityResponseServiceresponseResponsepreamble struct for PriceAndAvailabilityResponseServiceresponseResponsepreamble
-type PriceAndAvailabilityResponseServiceresponseResponsepreamble struct {
+// MultiSKUPriceAndStockResponseServiceresponseResponsepreamble struct for MultiSKUPriceAndStockResponseServiceresponseResponsepreamble
+type MultiSKUPriceAndStockResponseServiceresponseResponsepreamble struct {
 	// SUCCESS or FAILED, sometimes PARTIAL SUCCESS if connection to 1 of the systems fails
 	Responsestatus *string `json:"responsestatus,omitempty"`
 	// Overall status message including error message
@@ -27,25 +27,25 @@ type PriceAndAvailabilityResponseServiceresponseResponsepreamble struct {
 	Statuscode *string `json:"statuscode,omitempty"`
 }
 
-// NewPriceAndAvailabilityResponseServiceresponseResponsepreamble instantiates a new PriceAndAvailabilityResponseServiceresponseResponsepreamble object
+// NewMultiSKUPriceAndStockResponseServiceresponseResponsepreamble instantiates a new MultiSKUPriceAndStockResponseServiceresponseResponsepreamble object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceAndAvailabilityResponseServiceresponseResponsepreamble() *PriceAndAvailabilityResponseServiceresponseResponsepreamble {
-	this := PriceAndAvailabilityResponseServiceresponseResponsepreamble{}
+func NewMultiSKUPriceAndStockResponseServiceresponseResponsepreamble() *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble {
+	this := MultiSKUPriceAndStockResponseServiceresponseResponsepreamble{}
 	return &this
 }
 
-// NewPriceAndAvailabilityResponseServiceresponseResponsepreambleWithDefaults instantiates a new PriceAndAvailabilityResponseServiceresponseResponsepreamble object
+// NewMultiSKUPriceAndStockResponseServiceresponseResponsepreambleWithDefaults instantiates a new MultiSKUPriceAndStockResponseServiceresponseResponsepreamble object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPriceAndAvailabilityResponseServiceresponseResponsepreambleWithDefaults() *PriceAndAvailabilityResponseServiceresponseResponsepreamble {
-	this := PriceAndAvailabilityResponseServiceresponseResponsepreamble{}
+func NewMultiSKUPriceAndStockResponseServiceresponseResponsepreambleWithDefaults() *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble {
+	this := MultiSKUPriceAndStockResponseServiceresponseResponsepreamble{}
 	return &this
 }
 
 // GetResponsestatus returns the Responsestatus field value if set, zero value otherwise.
-func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetResponsestatus() string {
+func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) GetResponsestatus() string {
 	if o == nil || IsNil(o.Responsestatus) {
 		var ret string
 		return ret
@@ -55,7 +55,7 @@ func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetRespons
 
 // GetResponsestatusOk returns a tuple with the Responsestatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetResponsestatusOk() (*string, bool) {
+func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) GetResponsestatusOk() (*string, bool) {
 	if o == nil || IsNil(o.Responsestatus) {
 		return nil, false
 	}
@@ -63,7 +63,7 @@ func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetRespons
 }
 
 // HasResponsestatus returns a boolean if a field has been set.
-func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) HasResponsestatus() bool {
+func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) HasResponsestatus() bool {
 	if o != nil && !IsNil(o.Responsestatus) {
 		return true
 	}
@@ -72,12 +72,12 @@ func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) HasRespons
 }
 
 // SetResponsestatus gets a reference to the given string and assigns it to the Responsestatus field.
-func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) SetResponsestatus(v string) {
+func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) SetResponsestatus(v string) {
 	o.Responsestatus = &v
 }
 
 // GetResponsemessage returns the Responsemessage field value if set, zero value otherwise.
-func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetResponsemessage() string {
+func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) GetResponsemessage() string {
 	if o == nil || IsNil(o.Responsemessage) {
 		var ret string
 		return ret
@@ -87,7 +87,7 @@ func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetRespons
 
 // GetResponsemessageOk returns a tuple with the Responsemessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetResponsemessageOk() (*string, bool) {
+func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) GetResponsemessageOk() (*string, bool) {
 	if o == nil || IsNil(o.Responsemessage) {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetRespons
 }
 
 // HasResponsemessage returns a boolean if a field has been set.
-func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) HasResponsemessage() bool {
+func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) HasResponsemessage() bool {
 	if o != nil && !IsNil(o.Responsemessage) {
 		return true
 	}
@@ -104,12 +104,12 @@ func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) HasRespons
 }
 
 // SetResponsemessage gets a reference to the given string and assigns it to the Responsemessage field.
-func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) SetResponsemessage(v string) {
+func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) SetResponsemessage(v string) {
 	o.Responsemessage = &v
 }
 
 // GetStatuscode returns the Statuscode field value if set, zero value otherwise.
-func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetStatuscode() string {
+func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) GetStatuscode() string {
 	if o == nil || IsNil(o.Statuscode) {
 		var ret string
 		return ret
@@ -119,7 +119,7 @@ func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetStatusc
 
 // GetStatuscodeOk returns a tuple with the Statuscode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetStatuscodeOk() (*string, bool) {
+func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) GetStatuscodeOk() (*string, bool) {
 	if o == nil || IsNil(o.Statuscode) {
 		return nil, false
 	}
@@ -127,7 +127,7 @@ func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) GetStatusc
 }
 
 // HasStatuscode returns a boolean if a field has been set.
-func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) HasStatuscode() bool {
+func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) HasStatuscode() bool {
 	if o != nil && !IsNil(o.Statuscode) {
 		return true
 	}
@@ -136,11 +136,11 @@ func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) HasStatusc
 }
 
 // SetStatuscode gets a reference to the given string and assigns it to the Statuscode field.
-func (o *PriceAndAvailabilityResponseServiceresponseResponsepreamble) SetStatuscode(v string) {
+func (o *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) SetStatuscode(v string) {
 	o.Statuscode = &v
 }
 
-func (o PriceAndAvailabilityResponseServiceresponseResponsepreamble) MarshalJSON() ([]byte, error) {
+func (o MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -148,7 +148,7 @@ func (o PriceAndAvailabilityResponseServiceresponseResponsepreamble) MarshalJSON
 	return json.Marshal(toSerialize)
 }
 
-func (o PriceAndAvailabilityResponseServiceresponseResponsepreamble) ToMap() (map[string]interface{}, error) {
+func (o MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Responsestatus) {
 		toSerialize["responsestatus"] = o.Responsestatus
@@ -162,38 +162,38 @@ func (o PriceAndAvailabilityResponseServiceresponseResponsepreamble) ToMap() (ma
 	return toSerialize, nil
 }
 
-type NullablePriceAndAvailabilityResponseServiceresponseResponsepreamble struct {
-	value *PriceAndAvailabilityResponseServiceresponseResponsepreamble
+type NullableMultiSKUPriceAndStockResponseServiceresponseResponsepreamble struct {
+	value *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble
 	isSet bool
 }
 
-func (v NullablePriceAndAvailabilityResponseServiceresponseResponsepreamble) Get() *PriceAndAvailabilityResponseServiceresponseResponsepreamble {
+func (v NullableMultiSKUPriceAndStockResponseServiceresponseResponsepreamble) Get() *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble {
 	return v.value
 }
 
-func (v *NullablePriceAndAvailabilityResponseServiceresponseResponsepreamble) Set(val *PriceAndAvailabilityResponseServiceresponseResponsepreamble) {
+func (v *NullableMultiSKUPriceAndStockResponseServiceresponseResponsepreamble) Set(val *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullablePriceAndAvailabilityResponseServiceresponseResponsepreamble) IsSet() bool {
+func (v NullableMultiSKUPriceAndStockResponseServiceresponseResponsepreamble) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullablePriceAndAvailabilityResponseServiceresponseResponsepreamble) Unset() {
+func (v *NullableMultiSKUPriceAndStockResponseServiceresponseResponsepreamble) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullablePriceAndAvailabilityResponseServiceresponseResponsepreamble(val *PriceAndAvailabilityResponseServiceresponseResponsepreamble) *NullablePriceAndAvailabilityResponseServiceresponseResponsepreamble {
-	return &NullablePriceAndAvailabilityResponseServiceresponseResponsepreamble{value: val, isSet: true}
+func NewNullableMultiSKUPriceAndStockResponseServiceresponseResponsepreamble(val *MultiSKUPriceAndStockResponseServiceresponseResponsepreamble) *NullableMultiSKUPriceAndStockResponseServiceresponseResponsepreamble {
+	return &NullableMultiSKUPriceAndStockResponseServiceresponseResponsepreamble{value: val, isSet: true}
 }
 
-func (v NullablePriceAndAvailabilityResponseServiceresponseResponsepreamble) MarshalJSON() ([]byte, error) {
+func (v NullableMultiSKUPriceAndStockResponseServiceresponseResponsepreamble) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullablePriceAndAvailabilityResponseServiceresponseResponsepreamble) UnmarshalJSON(src []byte) error {
+func (v *NullableMultiSKUPriceAndStockResponseServiceresponseResponsepreamble) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
