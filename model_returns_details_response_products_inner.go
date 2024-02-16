@@ -20,7 +20,7 @@ var _ MappedNullable = &ReturnsDetailsResponseProductsInner{}
 // ReturnsDetailsResponseProductsInner struct for ReturnsDetailsResponseProductsInner
 type ReturnsDetailsResponseProductsInner struct {
 	// Unique Ingram Micro line number.
-	IngramLineNumber *string `json:"ingramLineNumber,omitempty"`
+	IngramLineNumber *int32 `json:"ingramLineNumber,omitempty"`
 	// The description of the line item product.
 	Description *string `json:"description,omitempty"`
 	// Unique IngramMicro part number.
@@ -46,9 +46,9 @@ type ReturnsDetailsResponseProductsInner struct {
 	// The status of the line item.
 	Status *string `json:"status,omitempty"`
 	// The code of the return branch.
-	ReturnBranch *int32 `json:"returnBranch,omitempty"`
+	ReturnBranch *string `json:"returnBranch,omitempty"`
 	// The code of the ship from branch.
-	ShipFromBranch *int32 `json:"shipFromBranch,omitempty"`
+	ShipFromBranch *string `json:"shipFromBranch,omitempty"`
 }
 
 // NewReturnsDetailsResponseProductsInner instantiates a new ReturnsDetailsResponseProductsInner object
@@ -69,9 +69,9 @@ func NewReturnsDetailsResponseProductsInnerWithDefaults() *ReturnsDetailsRespons
 }
 
 // GetIngramLineNumber returns the IngramLineNumber field value if set, zero value otherwise.
-func (o *ReturnsDetailsResponseProductsInner) GetIngramLineNumber() string {
+func (o *ReturnsDetailsResponseProductsInner) GetIngramLineNumber() int32 {
 	if o == nil || IsNil(o.IngramLineNumber) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.IngramLineNumber
@@ -79,7 +79,7 @@ func (o *ReturnsDetailsResponseProductsInner) GetIngramLineNumber() string {
 
 // GetIngramLineNumberOk returns a tuple with the IngramLineNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReturnsDetailsResponseProductsInner) GetIngramLineNumberOk() (*string, bool) {
+func (o *ReturnsDetailsResponseProductsInner) GetIngramLineNumberOk() (*int32, bool) {
 	if o == nil || IsNil(o.IngramLineNumber) {
 		return nil, false
 	}
@@ -95,8 +95,8 @@ func (o *ReturnsDetailsResponseProductsInner) HasIngramLineNumber() bool {
 	return false
 }
 
-// SetIngramLineNumber gets a reference to the given string and assigns it to the IngramLineNumber field.
-func (o *ReturnsDetailsResponseProductsInner) SetIngramLineNumber(v string) {
+// SetIngramLineNumber gets a reference to the given int32 and assigns it to the IngramLineNumber field.
+func (o *ReturnsDetailsResponseProductsInner) SetIngramLineNumber(v int32) {
 	o.IngramLineNumber = &v
 }
 
@@ -485,9 +485,9 @@ func (o *ReturnsDetailsResponseProductsInner) SetStatus(v string) {
 }
 
 // GetReturnBranch returns the ReturnBranch field value if set, zero value otherwise.
-func (o *ReturnsDetailsResponseProductsInner) GetReturnBranch() int32 {
+func (o *ReturnsDetailsResponseProductsInner) GetReturnBranch() string {
 	if o == nil || IsNil(o.ReturnBranch) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.ReturnBranch
@@ -495,7 +495,7 @@ func (o *ReturnsDetailsResponseProductsInner) GetReturnBranch() int32 {
 
 // GetReturnBranchOk returns a tuple with the ReturnBranch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReturnsDetailsResponseProductsInner) GetReturnBranchOk() (*int32, bool) {
+func (o *ReturnsDetailsResponseProductsInner) GetReturnBranchOk() (*string, bool) {
 	if o == nil || IsNil(o.ReturnBranch) {
 		return nil, false
 	}
@@ -511,15 +511,15 @@ func (o *ReturnsDetailsResponseProductsInner) HasReturnBranch() bool {
 	return false
 }
 
-// SetReturnBranch gets a reference to the given int32 and assigns it to the ReturnBranch field.
-func (o *ReturnsDetailsResponseProductsInner) SetReturnBranch(v int32) {
+// SetReturnBranch gets a reference to the given string and assigns it to the ReturnBranch field.
+func (o *ReturnsDetailsResponseProductsInner) SetReturnBranch(v string) {
 	o.ReturnBranch = &v
 }
 
 // GetShipFromBranch returns the ShipFromBranch field value if set, zero value otherwise.
-func (o *ReturnsDetailsResponseProductsInner) GetShipFromBranch() int32 {
+func (o *ReturnsDetailsResponseProductsInner) GetShipFromBranch() string {
 	if o == nil || IsNil(o.ShipFromBranch) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.ShipFromBranch
@@ -527,7 +527,7 @@ func (o *ReturnsDetailsResponseProductsInner) GetShipFromBranch() int32 {
 
 // GetShipFromBranchOk returns a tuple with the ShipFromBranch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReturnsDetailsResponseProductsInner) GetShipFromBranchOk() (*int32, bool) {
+func (o *ReturnsDetailsResponseProductsInner) GetShipFromBranchOk() (*string, bool) {
 	if o == nil || IsNil(o.ShipFromBranch) {
 		return nil, false
 	}
@@ -543,8 +543,8 @@ func (o *ReturnsDetailsResponseProductsInner) HasShipFromBranch() bool {
 	return false
 }
 
-// SetShipFromBranch gets a reference to the given int32 and assigns it to the ShipFromBranch field.
-func (o *ReturnsDetailsResponseProductsInner) SetShipFromBranch(v int32) {
+// SetShipFromBranch gets a reference to the given string and assigns it to the ShipFromBranch field.
+func (o *ReturnsDetailsResponseProductsInner) SetShipFromBranch(v string) {
 	o.ShipFromBranch = &v
 }
 
