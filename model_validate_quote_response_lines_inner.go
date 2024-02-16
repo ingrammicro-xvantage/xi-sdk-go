@@ -1,5 +1,5 @@
 /*
-XI SDK Resellers
+XI Sdk Resellers
 
 For Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
 
@@ -26,7 +26,7 @@ type ValidateQuoteResponseLinesInner struct {
 	// The quantity of the line item.
 	Quantity *string `json:"quantity,omitempty"`
 	// The object containing the list of fields required at a line level by the vendor.
-	VmfAdditionalAttributesLines []ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner `json:"vmfAdditionalAttributesLines,omitempty"`
+	VmfAdditionalAttributesLines []QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner `json:"vmfAdditionalAttributesLines,omitempty"`
 }
 
 // NewValidateQuoteResponseLinesInner instantiates a new ValidateQuoteResponseLinesInner object
@@ -143,9 +143,9 @@ func (o *ValidateQuoteResponseLinesInner) SetQuantity(v string) {
 }
 
 // GetVmfAdditionalAttributesLines returns the VmfAdditionalAttributesLines field value if set, zero value otherwise.
-func (o *ValidateQuoteResponseLinesInner) GetVmfAdditionalAttributesLines() []ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner {
+func (o *ValidateQuoteResponseLinesInner) GetVmfAdditionalAttributesLines() []QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner {
 	if o == nil || IsNil(o.VmfAdditionalAttributesLines) {
-		var ret []ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner
+		var ret []QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner
 		return ret
 	}
 	return o.VmfAdditionalAttributesLines
@@ -153,7 +153,7 @@ func (o *ValidateQuoteResponseLinesInner) GetVmfAdditionalAttributesLines() []Va
 
 // GetVmfAdditionalAttributesLinesOk returns a tuple with the VmfAdditionalAttributesLines field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ValidateQuoteResponseLinesInner) GetVmfAdditionalAttributesLinesOk() ([]ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner, bool) {
+func (o *ValidateQuoteResponseLinesInner) GetVmfAdditionalAttributesLinesOk() ([]QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner, bool) {
 	if o == nil || IsNil(o.VmfAdditionalAttributesLines) {
 		return nil, false
 	}
@@ -169,8 +169,8 @@ func (o *ValidateQuoteResponseLinesInner) HasVmfAdditionalAttributesLines() bool
 	return false
 }
 
-// SetVmfAdditionalAttributesLines gets a reference to the given []ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner and assigns it to the VmfAdditionalAttributesLines field.
-func (o *ValidateQuoteResponseLinesInner) SetVmfAdditionalAttributesLines(v []ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner) {
+// SetVmfAdditionalAttributesLines gets a reference to the given []QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner and assigns it to the VmfAdditionalAttributesLines field.
+func (o *ValidateQuoteResponseLinesInner) SetVmfAdditionalAttributesLines(v []QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner) {
 	o.VmfAdditionalAttributesLines = v
 }
 

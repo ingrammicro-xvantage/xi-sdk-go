@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Totalamount** | Pointer to **float64** |  | [optional] 
 **Shiptosuffix** | Pointer to **string** |  | [optional] 
 **Billtosuffix** | Pointer to **string** |  | [optional] 
-**Freightamount** | Pointer to **float64** |  | [optional] 
+**Freightamount** | Pointer to **float64** | May not be available in all countries | [optional] 
 **Paymentterms** | Pointer to **string** |  | [optional] 
 **Orderdate** | Pointer to **string** |  | [optional] 
 **Carrier** | Pointer to **string** |  | [optional] 
@@ -25,6 +25,27 @@ Name | Type | Description | Notes
 **Enduserponumber** | Pointer to **string** |  | [optional] 
 **Freightforwardercode** | Pointer to **string** |  | [optional] 
 **Creditmemoreasoncode** | Pointer to **string** |  | [optional] 
+**Fulfillmentflag** | Pointer to **string** |  | [optional] 
+**Holdreason** | Pointer to **string** |  | [optional] 
+**Shipcomplete** | Pointer to **string** |  | [optional] 
+**Shipdate** | Pointer to **string** |  | [optional] 
+**Companycurrency** | Pointer to **string** |  | [optional] 
+**Currencycode** | Pointer to **string** |  | [optional] 
+**Currencyrate** | Pointer to **string** |  | [optional] 
+**Globalorderid** | Pointer to **string** |  | [optional] 
+**Originalshipcode** | Pointer to **string** |  | [optional] 
+**Ordertype** | Pointer to **string** |  | [optional] 
+**Orderstatus** | Pointer to **string** |  | [optional] 
+**Totalotherfees** | Pointer to **float32** |  | [optional] 
+**Totalsales** | Pointer to **string** |  | [optional] 
+**Weight** | Pointer to **string** |  | [optional] 
+**Shippableswitch** | Pointer to **string** |  | [optional] 
+**Soldto** | Pointer to [**AddressType**](AddressType.md) |  | [optional] 
+**Billto** | Pointer to [**AddressType**](AddressType.md) |  | [optional] 
+**Shoptoaddress** | Pointer to [**AddressType**](AddressType.md) |  | [optional] 
+**Lines** | Pointer to [**[]ProductLineType**](ProductLineType.md) |  | [optional] 
+**Extendedspecs** | Pointer to [**[]InvoiceDetailResponseServiceresponseInvoicedetailresponseExtendedspecsInner**](InvoiceDetailResponseServiceresponseInvoicedetailresponseExtendedspecsInner.md) |  | [optional] 
+**Miscfeeline** | Pointer to [**[]InvoiceDetailResponseServiceresponseInvoicedetailresponseMiscfeelineInner**](InvoiceDetailResponseServiceresponseInvoicedetailresponseMiscfeelineInner.md) |  | [optional] 
 
 ## Methods
 
@@ -569,6 +590,531 @@ SetCreditmemoreasoncode sets Creditmemoreasoncode field to given value.
 `func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasCreditmemoreasoncode() bool`
 
 HasCreditmemoreasoncode returns a boolean if a field has been set.
+
+### GetFulfillmentflag
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetFulfillmentflag() string`
+
+GetFulfillmentflag returns the Fulfillmentflag field if non-nil, zero value otherwise.
+
+### GetFulfillmentflagOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetFulfillmentflagOk() (*string, bool)`
+
+GetFulfillmentflagOk returns a tuple with the Fulfillmentflag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFulfillmentflag
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetFulfillmentflag(v string)`
+
+SetFulfillmentflag sets Fulfillmentflag field to given value.
+
+### HasFulfillmentflag
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasFulfillmentflag() bool`
+
+HasFulfillmentflag returns a boolean if a field has been set.
+
+### GetHoldreason
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetHoldreason() string`
+
+GetHoldreason returns the Holdreason field if non-nil, zero value otherwise.
+
+### GetHoldreasonOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetHoldreasonOk() (*string, bool)`
+
+GetHoldreasonOk returns a tuple with the Holdreason field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHoldreason
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetHoldreason(v string)`
+
+SetHoldreason sets Holdreason field to given value.
+
+### HasHoldreason
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasHoldreason() bool`
+
+HasHoldreason returns a boolean if a field has been set.
+
+### GetShipcomplete
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetShipcomplete() string`
+
+GetShipcomplete returns the Shipcomplete field if non-nil, zero value otherwise.
+
+### GetShipcompleteOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetShipcompleteOk() (*string, bool)`
+
+GetShipcompleteOk returns a tuple with the Shipcomplete field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShipcomplete
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetShipcomplete(v string)`
+
+SetShipcomplete sets Shipcomplete field to given value.
+
+### HasShipcomplete
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasShipcomplete() bool`
+
+HasShipcomplete returns a boolean if a field has been set.
+
+### GetShipdate
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetShipdate() string`
+
+GetShipdate returns the Shipdate field if non-nil, zero value otherwise.
+
+### GetShipdateOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetShipdateOk() (*string, bool)`
+
+GetShipdateOk returns a tuple with the Shipdate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShipdate
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetShipdate(v string)`
+
+SetShipdate sets Shipdate field to given value.
+
+### HasShipdate
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasShipdate() bool`
+
+HasShipdate returns a boolean if a field has been set.
+
+### GetCompanycurrency
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetCompanycurrency() string`
+
+GetCompanycurrency returns the Companycurrency field if non-nil, zero value otherwise.
+
+### GetCompanycurrencyOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetCompanycurrencyOk() (*string, bool)`
+
+GetCompanycurrencyOk returns a tuple with the Companycurrency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompanycurrency
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetCompanycurrency(v string)`
+
+SetCompanycurrency sets Companycurrency field to given value.
+
+### HasCompanycurrency
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasCompanycurrency() bool`
+
+HasCompanycurrency returns a boolean if a field has been set.
+
+### GetCurrencycode
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetCurrencycode() string`
+
+GetCurrencycode returns the Currencycode field if non-nil, zero value otherwise.
+
+### GetCurrencycodeOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetCurrencycodeOk() (*string, bool)`
+
+GetCurrencycodeOk returns a tuple with the Currencycode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrencycode
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetCurrencycode(v string)`
+
+SetCurrencycode sets Currencycode field to given value.
+
+### HasCurrencycode
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasCurrencycode() bool`
+
+HasCurrencycode returns a boolean if a field has been set.
+
+### GetCurrencyrate
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetCurrencyrate() string`
+
+GetCurrencyrate returns the Currencyrate field if non-nil, zero value otherwise.
+
+### GetCurrencyrateOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetCurrencyrateOk() (*string, bool)`
+
+GetCurrencyrateOk returns a tuple with the Currencyrate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrencyrate
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetCurrencyrate(v string)`
+
+SetCurrencyrate sets Currencyrate field to given value.
+
+### HasCurrencyrate
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasCurrencyrate() bool`
+
+HasCurrencyrate returns a boolean if a field has been set.
+
+### GetGlobalorderid
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetGlobalorderid() string`
+
+GetGlobalorderid returns the Globalorderid field if non-nil, zero value otherwise.
+
+### GetGlobalorderidOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetGlobalorderidOk() (*string, bool)`
+
+GetGlobalorderidOk returns a tuple with the Globalorderid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGlobalorderid
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetGlobalorderid(v string)`
+
+SetGlobalorderid sets Globalorderid field to given value.
+
+### HasGlobalorderid
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasGlobalorderid() bool`
+
+HasGlobalorderid returns a boolean if a field has been set.
+
+### GetOriginalshipcode
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetOriginalshipcode() string`
+
+GetOriginalshipcode returns the Originalshipcode field if non-nil, zero value otherwise.
+
+### GetOriginalshipcodeOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetOriginalshipcodeOk() (*string, bool)`
+
+GetOriginalshipcodeOk returns a tuple with the Originalshipcode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOriginalshipcode
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetOriginalshipcode(v string)`
+
+SetOriginalshipcode sets Originalshipcode field to given value.
+
+### HasOriginalshipcode
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasOriginalshipcode() bool`
+
+HasOriginalshipcode returns a boolean if a field has been set.
+
+### GetOrdertype
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetOrdertype() string`
+
+GetOrdertype returns the Ordertype field if non-nil, zero value otherwise.
+
+### GetOrdertypeOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetOrdertypeOk() (*string, bool)`
+
+GetOrdertypeOk returns a tuple with the Ordertype field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrdertype
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetOrdertype(v string)`
+
+SetOrdertype sets Ordertype field to given value.
+
+### HasOrdertype
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasOrdertype() bool`
+
+HasOrdertype returns a boolean if a field has been set.
+
+### GetOrderstatus
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetOrderstatus() string`
+
+GetOrderstatus returns the Orderstatus field if non-nil, zero value otherwise.
+
+### GetOrderstatusOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetOrderstatusOk() (*string, bool)`
+
+GetOrderstatusOk returns a tuple with the Orderstatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrderstatus
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetOrderstatus(v string)`
+
+SetOrderstatus sets Orderstatus field to given value.
+
+### HasOrderstatus
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasOrderstatus() bool`
+
+HasOrderstatus returns a boolean if a field has been set.
+
+### GetTotalotherfees
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetTotalotherfees() float32`
+
+GetTotalotherfees returns the Totalotherfees field if non-nil, zero value otherwise.
+
+### GetTotalotherfeesOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetTotalotherfeesOk() (*float32, bool)`
+
+GetTotalotherfeesOk returns a tuple with the Totalotherfees field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalotherfees
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetTotalotherfees(v float32)`
+
+SetTotalotherfees sets Totalotherfees field to given value.
+
+### HasTotalotherfees
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasTotalotherfees() bool`
+
+HasTotalotherfees returns a boolean if a field has been set.
+
+### GetTotalsales
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetTotalsales() string`
+
+GetTotalsales returns the Totalsales field if non-nil, zero value otherwise.
+
+### GetTotalsalesOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetTotalsalesOk() (*string, bool)`
+
+GetTotalsalesOk returns a tuple with the Totalsales field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalsales
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetTotalsales(v string)`
+
+SetTotalsales sets Totalsales field to given value.
+
+### HasTotalsales
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasTotalsales() bool`
+
+HasTotalsales returns a boolean if a field has been set.
+
+### GetWeight
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetWeight() string`
+
+GetWeight returns the Weight field if non-nil, zero value otherwise.
+
+### GetWeightOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetWeightOk() (*string, bool)`
+
+GetWeightOk returns a tuple with the Weight field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWeight
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetWeight(v string)`
+
+SetWeight sets Weight field to given value.
+
+### HasWeight
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasWeight() bool`
+
+HasWeight returns a boolean if a field has been set.
+
+### GetShippableswitch
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetShippableswitch() string`
+
+GetShippableswitch returns the Shippableswitch field if non-nil, zero value otherwise.
+
+### GetShippableswitchOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetShippableswitchOk() (*string, bool)`
+
+GetShippableswitchOk returns a tuple with the Shippableswitch field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShippableswitch
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetShippableswitch(v string)`
+
+SetShippableswitch sets Shippableswitch field to given value.
+
+### HasShippableswitch
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasShippableswitch() bool`
+
+HasShippableswitch returns a boolean if a field has been set.
+
+### GetSoldto
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetSoldto() AddressType`
+
+GetSoldto returns the Soldto field if non-nil, zero value otherwise.
+
+### GetSoldtoOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetSoldtoOk() (*AddressType, bool)`
+
+GetSoldtoOk returns a tuple with the Soldto field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSoldto
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetSoldto(v AddressType)`
+
+SetSoldto sets Soldto field to given value.
+
+### HasSoldto
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasSoldto() bool`
+
+HasSoldto returns a boolean if a field has been set.
+
+### GetBillto
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetBillto() AddressType`
+
+GetBillto returns the Billto field if non-nil, zero value otherwise.
+
+### GetBilltoOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetBilltoOk() (*AddressType, bool)`
+
+GetBilltoOk returns a tuple with the Billto field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBillto
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetBillto(v AddressType)`
+
+SetBillto sets Billto field to given value.
+
+### HasBillto
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasBillto() bool`
+
+HasBillto returns a boolean if a field has been set.
+
+### GetShoptoaddress
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetShoptoaddress() AddressType`
+
+GetShoptoaddress returns the Shoptoaddress field if non-nil, zero value otherwise.
+
+### GetShoptoaddressOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetShoptoaddressOk() (*AddressType, bool)`
+
+GetShoptoaddressOk returns a tuple with the Shoptoaddress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShoptoaddress
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetShoptoaddress(v AddressType)`
+
+SetShoptoaddress sets Shoptoaddress field to given value.
+
+### HasShoptoaddress
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasShoptoaddress() bool`
+
+HasShoptoaddress returns a boolean if a field has been set.
+
+### GetLines
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetLines() []ProductLineType`
+
+GetLines returns the Lines field if non-nil, zero value otherwise.
+
+### GetLinesOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetLinesOk() (*[]ProductLineType, bool)`
+
+GetLinesOk returns a tuple with the Lines field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLines
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetLines(v []ProductLineType)`
+
+SetLines sets Lines field to given value.
+
+### HasLines
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasLines() bool`
+
+HasLines returns a boolean if a field has been set.
+
+### GetExtendedspecs
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetExtendedspecs() []InvoiceDetailResponseServiceresponseInvoicedetailresponseExtendedspecsInner`
+
+GetExtendedspecs returns the Extendedspecs field if non-nil, zero value otherwise.
+
+### GetExtendedspecsOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetExtendedspecsOk() (*[]InvoiceDetailResponseServiceresponseInvoicedetailresponseExtendedspecsInner, bool)`
+
+GetExtendedspecsOk returns a tuple with the Extendedspecs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtendedspecs
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetExtendedspecs(v []InvoiceDetailResponseServiceresponseInvoicedetailresponseExtendedspecsInner)`
+
+SetExtendedspecs sets Extendedspecs field to given value.
+
+### HasExtendedspecs
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasExtendedspecs() bool`
+
+HasExtendedspecs returns a boolean if a field has been set.
+
+### GetMiscfeeline
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetMiscfeeline() []InvoiceDetailResponseServiceresponseInvoicedetailresponseMiscfeelineInner`
+
+GetMiscfeeline returns the Miscfeeline field if non-nil, zero value otherwise.
+
+### GetMiscfeelineOk
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetMiscfeelineOk() (*[]InvoiceDetailResponseServiceresponseInvoicedetailresponseMiscfeelineInner, bool)`
+
+GetMiscfeelineOk returns a tuple with the Miscfeeline field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMiscfeeline
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetMiscfeeline(v []InvoiceDetailResponseServiceresponseInvoicedetailresponseMiscfeelineInner)`
+
+SetMiscfeeline sets Miscfeeline field to given value.
+
+### HasMiscfeeline
+
+`func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasMiscfeeline() bool`
+
+HasMiscfeeline returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

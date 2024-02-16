@@ -1,5 +1,5 @@
 /*
-XI SDK Resellers
+XI Sdk Resellers
 
 For Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
 
@@ -17,9 +17,15 @@ import (
 // checks if the OrderModifyRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &OrderModifyRequest{}
 
-// OrderModifyRequest Request schema for order modify endpoint
+// OrderModifyRequest struct for OrderModifyRequest
 type OrderModifyRequest struct {
-	Servicerequest *OrderModifyRequestServicerequest `json:"servicerequest,omitempty"`
+	// Shipment-level notes.
+	Notes *string `json:"notes,omitempty"`
+	ShipToInfo *OrderModifyRequestShipToInfo `json:"shipToInfo,omitempty"`
+	// The order line items.
+	Lines []OrderModifyRequestLinesInner `json:"lines,omitempty"`
+	// Header-level additional attributes.
+	AdditionalAttributes []OrderModifyRequestAdditionalAttributesInner `json:"additionalAttributes,omitempty"`
 }
 
 // NewOrderModifyRequest instantiates a new OrderModifyRequest object
@@ -39,36 +45,132 @@ func NewOrderModifyRequestWithDefaults() *OrderModifyRequest {
 	return &this
 }
 
-// GetServicerequest returns the Servicerequest field value if set, zero value otherwise.
-func (o *OrderModifyRequest) GetServicerequest() OrderModifyRequestServicerequest {
-	if o == nil || IsNil(o.Servicerequest) {
-		var ret OrderModifyRequestServicerequest
+// GetNotes returns the Notes field value if set, zero value otherwise.
+func (o *OrderModifyRequest) GetNotes() string {
+	if o == nil || IsNil(o.Notes) {
+		var ret string
 		return ret
 	}
-	return *o.Servicerequest
+	return *o.Notes
 }
 
-// GetServicerequestOk returns a tuple with the Servicerequest field value if set, nil otherwise
+// GetNotesOk returns a tuple with the Notes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderModifyRequest) GetServicerequestOk() (*OrderModifyRequestServicerequest, bool) {
-	if o == nil || IsNil(o.Servicerequest) {
+func (o *OrderModifyRequest) GetNotesOk() (*string, bool) {
+	if o == nil || IsNil(o.Notes) {
 		return nil, false
 	}
-	return o.Servicerequest, true
+	return o.Notes, true
 }
 
-// HasServicerequest returns a boolean if a field has been set.
-func (o *OrderModifyRequest) HasServicerequest() bool {
-	if o != nil && !IsNil(o.Servicerequest) {
+// HasNotes returns a boolean if a field has been set.
+func (o *OrderModifyRequest) HasNotes() bool {
+	if o != nil && !IsNil(o.Notes) {
 		return true
 	}
 
 	return false
 }
 
-// SetServicerequest gets a reference to the given OrderModifyRequestServicerequest and assigns it to the Servicerequest field.
-func (o *OrderModifyRequest) SetServicerequest(v OrderModifyRequestServicerequest) {
-	o.Servicerequest = &v
+// SetNotes gets a reference to the given string and assigns it to the Notes field.
+func (o *OrderModifyRequest) SetNotes(v string) {
+	o.Notes = &v
+}
+
+// GetShipToInfo returns the ShipToInfo field value if set, zero value otherwise.
+func (o *OrderModifyRequest) GetShipToInfo() OrderModifyRequestShipToInfo {
+	if o == nil || IsNil(o.ShipToInfo) {
+		var ret OrderModifyRequestShipToInfo
+		return ret
+	}
+	return *o.ShipToInfo
+}
+
+// GetShipToInfoOk returns a tuple with the ShipToInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderModifyRequest) GetShipToInfoOk() (*OrderModifyRequestShipToInfo, bool) {
+	if o == nil || IsNil(o.ShipToInfo) {
+		return nil, false
+	}
+	return o.ShipToInfo, true
+}
+
+// HasShipToInfo returns a boolean if a field has been set.
+func (o *OrderModifyRequest) HasShipToInfo() bool {
+	if o != nil && !IsNil(o.ShipToInfo) {
+		return true
+	}
+
+	return false
+}
+
+// SetShipToInfo gets a reference to the given OrderModifyRequestShipToInfo and assigns it to the ShipToInfo field.
+func (o *OrderModifyRequest) SetShipToInfo(v OrderModifyRequestShipToInfo) {
+	o.ShipToInfo = &v
+}
+
+// GetLines returns the Lines field value if set, zero value otherwise.
+func (o *OrderModifyRequest) GetLines() []OrderModifyRequestLinesInner {
+	if o == nil || IsNil(o.Lines) {
+		var ret []OrderModifyRequestLinesInner
+		return ret
+	}
+	return o.Lines
+}
+
+// GetLinesOk returns a tuple with the Lines field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderModifyRequest) GetLinesOk() ([]OrderModifyRequestLinesInner, bool) {
+	if o == nil || IsNil(o.Lines) {
+		return nil, false
+	}
+	return o.Lines, true
+}
+
+// HasLines returns a boolean if a field has been set.
+func (o *OrderModifyRequest) HasLines() bool {
+	if o != nil && !IsNil(o.Lines) {
+		return true
+	}
+
+	return false
+}
+
+// SetLines gets a reference to the given []OrderModifyRequestLinesInner and assigns it to the Lines field.
+func (o *OrderModifyRequest) SetLines(v []OrderModifyRequestLinesInner) {
+	o.Lines = v
+}
+
+// GetAdditionalAttributes returns the AdditionalAttributes field value if set, zero value otherwise.
+func (o *OrderModifyRequest) GetAdditionalAttributes() []OrderModifyRequestAdditionalAttributesInner {
+	if o == nil || IsNil(o.AdditionalAttributes) {
+		var ret []OrderModifyRequestAdditionalAttributesInner
+		return ret
+	}
+	return o.AdditionalAttributes
+}
+
+// GetAdditionalAttributesOk returns a tuple with the AdditionalAttributes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderModifyRequest) GetAdditionalAttributesOk() ([]OrderModifyRequestAdditionalAttributesInner, bool) {
+	if o == nil || IsNil(o.AdditionalAttributes) {
+		return nil, false
+	}
+	return o.AdditionalAttributes, true
+}
+
+// HasAdditionalAttributes returns a boolean if a field has been set.
+func (o *OrderModifyRequest) HasAdditionalAttributes() bool {
+	if o != nil && !IsNil(o.AdditionalAttributes) {
+		return true
+	}
+
+	return false
+}
+
+// SetAdditionalAttributes gets a reference to the given []OrderModifyRequestAdditionalAttributesInner and assigns it to the AdditionalAttributes field.
+func (o *OrderModifyRequest) SetAdditionalAttributes(v []OrderModifyRequestAdditionalAttributesInner) {
+	o.AdditionalAttributes = v
 }
 
 func (o OrderModifyRequest) MarshalJSON() ([]byte, error) {
@@ -81,8 +183,17 @@ func (o OrderModifyRequest) MarshalJSON() ([]byte, error) {
 
 func (o OrderModifyRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Servicerequest) {
-		toSerialize["servicerequest"] = o.Servicerequest
+	if !IsNil(o.Notes) {
+		toSerialize["notes"] = o.Notes
+	}
+	if !IsNil(o.ShipToInfo) {
+		toSerialize["shipToInfo"] = o.ShipToInfo
+	}
+	if !IsNil(o.Lines) {
+		toSerialize["lines"] = o.Lines
+	}
+	if !IsNil(o.AdditionalAttributes) {
+		toSerialize["additionalAttributes"] = o.AdditionalAttributes
 	}
 	return toSerialize, nil
 }

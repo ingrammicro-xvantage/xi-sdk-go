@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **CustomerLineNumber** | Pointer to **string** | The reseller&#39;s line item number for reference in their system. | [optional] 
 **IngramPartNumber** | Pointer to **string** | Unique IngramMicro part number. | [optional] 
 **Quantity** | Pointer to **string** | The quantity of the line item. | [optional] 
-**VmfAdditionalAttributesLines** | Pointer to [**[]ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner**](ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner.md) | The object containing the list of fields required at a line level by the vendor. | [optional] 
+**VmfAdditionalAttributesLines** | Pointer to [**[]QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner**](QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner.md) | The object containing the list of fields required at a line level by the vendor. | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasQuantity returns a boolean if a field has been set.
 
 ### GetVmfAdditionalAttributesLines
 
-`func (o *QuoteToOrderDetailsDTOLinesInner) GetVmfAdditionalAttributesLines() []ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner`
+`func (o *QuoteToOrderDetailsDTOLinesInner) GetVmfAdditionalAttributesLines() []QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner`
 
 GetVmfAdditionalAttributesLines returns the VmfAdditionalAttributesLines field if non-nil, zero value otherwise.
 
 ### GetVmfAdditionalAttributesLinesOk
 
-`func (o *QuoteToOrderDetailsDTOLinesInner) GetVmfAdditionalAttributesLinesOk() (*[]ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner, bool)`
+`func (o *QuoteToOrderDetailsDTOLinesInner) GetVmfAdditionalAttributesLinesOk() (*[]QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner, bool)`
 
 GetVmfAdditionalAttributesLinesOk returns a tuple with the VmfAdditionalAttributesLines field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVmfAdditionalAttributesLines
 
-`func (o *QuoteToOrderDetailsDTOLinesInner) SetVmfAdditionalAttributesLines(v []ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner)`
+`func (o *QuoteToOrderDetailsDTOLinesInner) SetVmfAdditionalAttributesLines(v []QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner)`
 
 SetVmfAdditionalAttributesLines sets VmfAdditionalAttributesLines field to given value.
 

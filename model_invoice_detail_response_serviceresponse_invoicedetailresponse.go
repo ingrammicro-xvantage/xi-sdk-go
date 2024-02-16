@@ -1,5 +1,5 @@
 /*
-XI SDK Resellers
+XI Sdk Resellers
 
 For Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
 
@@ -30,6 +30,7 @@ type InvoiceDetailResponseServiceresponseInvoicedetailresponse struct {
 	Totalamount *float64 `json:"totalamount,omitempty"`
 	Shiptosuffix *string `json:"shiptosuffix,omitempty"`
 	Billtosuffix *string `json:"billtosuffix,omitempty"`
+	// May not be available in all countries
 	Freightamount *float64 `json:"freightamount,omitempty"`
 	Paymentterms *string `json:"paymentterms,omitempty"`
 	Orderdate *string `json:"orderdate,omitempty"`
@@ -40,6 +41,27 @@ type InvoiceDetailResponseServiceresponseInvoicedetailresponse struct {
 	Enduserponumber *string `json:"enduserponumber,omitempty"`
 	Freightforwardercode *string `json:"freightforwardercode,omitempty"`
 	Creditmemoreasoncode *string `json:"creditmemoreasoncode,omitempty"`
+	Fulfillmentflag *string `json:"fulfillmentflag,omitempty"`
+	Holdreason *string `json:"holdreason,omitempty"`
+	Shipcomplete *string `json:"shipcomplete,omitempty"`
+	Shipdate *string `json:"shipdate,omitempty"`
+	Companycurrency *string `json:"companycurrency,omitempty"`
+	Currencycode *string `json:"currencycode,omitempty"`
+	Currencyrate *string `json:"currencyrate,omitempty"`
+	Globalorderid *string `json:"globalorderid,omitempty"`
+	Originalshipcode *string `json:"originalshipcode,omitempty"`
+	Ordertype *string `json:"ordertype,omitempty"`
+	Orderstatus *string `json:"orderstatus,omitempty"`
+	Totalotherfees *float32 `json:"totalotherfees,omitempty"`
+	Totalsales *string `json:"totalsales,omitempty"`
+	Weight *string `json:"weight,omitempty"`
+	Shippableswitch *string `json:"shippableswitch,omitempty"`
+	Soldto *AddressType `json:"soldto,omitempty"`
+	Billto *AddressType `json:"billto,omitempty"`
+	Shoptoaddress *AddressType `json:"shoptoaddress,omitempty"`
+	Lines []ProductLineType `json:"lines,omitempty"`
+	Extendedspecs []InvoiceDetailResponseServiceresponseInvoicedetailresponseExtendedspecsInner `json:"extendedspecs,omitempty"`
+	Miscfeeline []InvoiceDetailResponseServiceresponseInvoicedetailresponseMiscfeelineInner `json:"miscfeeline,omitempty"`
 }
 
 // NewInvoiceDetailResponseServiceresponseInvoicedetailresponse instantiates a new InvoiceDetailResponseServiceresponseInvoicedetailresponse object
@@ -731,6 +753,678 @@ func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetCreditmem
 	o.Creditmemoreasoncode = &v
 }
 
+// GetFulfillmentflag returns the Fulfillmentflag field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetFulfillmentflag() string {
+	if o == nil || IsNil(o.Fulfillmentflag) {
+		var ret string
+		return ret
+	}
+	return *o.Fulfillmentflag
+}
+
+// GetFulfillmentflagOk returns a tuple with the Fulfillmentflag field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetFulfillmentflagOk() (*string, bool) {
+	if o == nil || IsNil(o.Fulfillmentflag) {
+		return nil, false
+	}
+	return o.Fulfillmentflag, true
+}
+
+// HasFulfillmentflag returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasFulfillmentflag() bool {
+	if o != nil && !IsNil(o.Fulfillmentflag) {
+		return true
+	}
+
+	return false
+}
+
+// SetFulfillmentflag gets a reference to the given string and assigns it to the Fulfillmentflag field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetFulfillmentflag(v string) {
+	o.Fulfillmentflag = &v
+}
+
+// GetHoldreason returns the Holdreason field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetHoldreason() string {
+	if o == nil || IsNil(o.Holdreason) {
+		var ret string
+		return ret
+	}
+	return *o.Holdreason
+}
+
+// GetHoldreasonOk returns a tuple with the Holdreason field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetHoldreasonOk() (*string, bool) {
+	if o == nil || IsNil(o.Holdreason) {
+		return nil, false
+	}
+	return o.Holdreason, true
+}
+
+// HasHoldreason returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasHoldreason() bool {
+	if o != nil && !IsNil(o.Holdreason) {
+		return true
+	}
+
+	return false
+}
+
+// SetHoldreason gets a reference to the given string and assigns it to the Holdreason field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetHoldreason(v string) {
+	o.Holdreason = &v
+}
+
+// GetShipcomplete returns the Shipcomplete field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetShipcomplete() string {
+	if o == nil || IsNil(o.Shipcomplete) {
+		var ret string
+		return ret
+	}
+	return *o.Shipcomplete
+}
+
+// GetShipcompleteOk returns a tuple with the Shipcomplete field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetShipcompleteOk() (*string, bool) {
+	if o == nil || IsNil(o.Shipcomplete) {
+		return nil, false
+	}
+	return o.Shipcomplete, true
+}
+
+// HasShipcomplete returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasShipcomplete() bool {
+	if o != nil && !IsNil(o.Shipcomplete) {
+		return true
+	}
+
+	return false
+}
+
+// SetShipcomplete gets a reference to the given string and assigns it to the Shipcomplete field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetShipcomplete(v string) {
+	o.Shipcomplete = &v
+}
+
+// GetShipdate returns the Shipdate field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetShipdate() string {
+	if o == nil || IsNil(o.Shipdate) {
+		var ret string
+		return ret
+	}
+	return *o.Shipdate
+}
+
+// GetShipdateOk returns a tuple with the Shipdate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetShipdateOk() (*string, bool) {
+	if o == nil || IsNil(o.Shipdate) {
+		return nil, false
+	}
+	return o.Shipdate, true
+}
+
+// HasShipdate returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasShipdate() bool {
+	if o != nil && !IsNil(o.Shipdate) {
+		return true
+	}
+
+	return false
+}
+
+// SetShipdate gets a reference to the given string and assigns it to the Shipdate field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetShipdate(v string) {
+	o.Shipdate = &v
+}
+
+// GetCompanycurrency returns the Companycurrency field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetCompanycurrency() string {
+	if o == nil || IsNil(o.Companycurrency) {
+		var ret string
+		return ret
+	}
+	return *o.Companycurrency
+}
+
+// GetCompanycurrencyOk returns a tuple with the Companycurrency field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetCompanycurrencyOk() (*string, bool) {
+	if o == nil || IsNil(o.Companycurrency) {
+		return nil, false
+	}
+	return o.Companycurrency, true
+}
+
+// HasCompanycurrency returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasCompanycurrency() bool {
+	if o != nil && !IsNil(o.Companycurrency) {
+		return true
+	}
+
+	return false
+}
+
+// SetCompanycurrency gets a reference to the given string and assigns it to the Companycurrency field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetCompanycurrency(v string) {
+	o.Companycurrency = &v
+}
+
+// GetCurrencycode returns the Currencycode field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetCurrencycode() string {
+	if o == nil || IsNil(o.Currencycode) {
+		var ret string
+		return ret
+	}
+	return *o.Currencycode
+}
+
+// GetCurrencycodeOk returns a tuple with the Currencycode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetCurrencycodeOk() (*string, bool) {
+	if o == nil || IsNil(o.Currencycode) {
+		return nil, false
+	}
+	return o.Currencycode, true
+}
+
+// HasCurrencycode returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasCurrencycode() bool {
+	if o != nil && !IsNil(o.Currencycode) {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrencycode gets a reference to the given string and assigns it to the Currencycode field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetCurrencycode(v string) {
+	o.Currencycode = &v
+}
+
+// GetCurrencyrate returns the Currencyrate field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetCurrencyrate() string {
+	if o == nil || IsNil(o.Currencyrate) {
+		var ret string
+		return ret
+	}
+	return *o.Currencyrate
+}
+
+// GetCurrencyrateOk returns a tuple with the Currencyrate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetCurrencyrateOk() (*string, bool) {
+	if o == nil || IsNil(o.Currencyrate) {
+		return nil, false
+	}
+	return o.Currencyrate, true
+}
+
+// HasCurrencyrate returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasCurrencyrate() bool {
+	if o != nil && !IsNil(o.Currencyrate) {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrencyrate gets a reference to the given string and assigns it to the Currencyrate field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetCurrencyrate(v string) {
+	o.Currencyrate = &v
+}
+
+// GetGlobalorderid returns the Globalorderid field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetGlobalorderid() string {
+	if o == nil || IsNil(o.Globalorderid) {
+		var ret string
+		return ret
+	}
+	return *o.Globalorderid
+}
+
+// GetGlobalorderidOk returns a tuple with the Globalorderid field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetGlobalorderidOk() (*string, bool) {
+	if o == nil || IsNil(o.Globalorderid) {
+		return nil, false
+	}
+	return o.Globalorderid, true
+}
+
+// HasGlobalorderid returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasGlobalorderid() bool {
+	if o != nil && !IsNil(o.Globalorderid) {
+		return true
+	}
+
+	return false
+}
+
+// SetGlobalorderid gets a reference to the given string and assigns it to the Globalorderid field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetGlobalorderid(v string) {
+	o.Globalorderid = &v
+}
+
+// GetOriginalshipcode returns the Originalshipcode field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetOriginalshipcode() string {
+	if o == nil || IsNil(o.Originalshipcode) {
+		var ret string
+		return ret
+	}
+	return *o.Originalshipcode
+}
+
+// GetOriginalshipcodeOk returns a tuple with the Originalshipcode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetOriginalshipcodeOk() (*string, bool) {
+	if o == nil || IsNil(o.Originalshipcode) {
+		return nil, false
+	}
+	return o.Originalshipcode, true
+}
+
+// HasOriginalshipcode returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasOriginalshipcode() bool {
+	if o != nil && !IsNil(o.Originalshipcode) {
+		return true
+	}
+
+	return false
+}
+
+// SetOriginalshipcode gets a reference to the given string and assigns it to the Originalshipcode field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetOriginalshipcode(v string) {
+	o.Originalshipcode = &v
+}
+
+// GetOrdertype returns the Ordertype field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetOrdertype() string {
+	if o == nil || IsNil(o.Ordertype) {
+		var ret string
+		return ret
+	}
+	return *o.Ordertype
+}
+
+// GetOrdertypeOk returns a tuple with the Ordertype field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetOrdertypeOk() (*string, bool) {
+	if o == nil || IsNil(o.Ordertype) {
+		return nil, false
+	}
+	return o.Ordertype, true
+}
+
+// HasOrdertype returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasOrdertype() bool {
+	if o != nil && !IsNil(o.Ordertype) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrdertype gets a reference to the given string and assigns it to the Ordertype field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetOrdertype(v string) {
+	o.Ordertype = &v
+}
+
+// GetOrderstatus returns the Orderstatus field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetOrderstatus() string {
+	if o == nil || IsNil(o.Orderstatus) {
+		var ret string
+		return ret
+	}
+	return *o.Orderstatus
+}
+
+// GetOrderstatusOk returns a tuple with the Orderstatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetOrderstatusOk() (*string, bool) {
+	if o == nil || IsNil(o.Orderstatus) {
+		return nil, false
+	}
+	return o.Orderstatus, true
+}
+
+// HasOrderstatus returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasOrderstatus() bool {
+	if o != nil && !IsNil(o.Orderstatus) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrderstatus gets a reference to the given string and assigns it to the Orderstatus field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetOrderstatus(v string) {
+	o.Orderstatus = &v
+}
+
+// GetTotalotherfees returns the Totalotherfees field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetTotalotherfees() float32 {
+	if o == nil || IsNil(o.Totalotherfees) {
+		var ret float32
+		return ret
+	}
+	return *o.Totalotherfees
+}
+
+// GetTotalotherfeesOk returns a tuple with the Totalotherfees field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetTotalotherfeesOk() (*float32, bool) {
+	if o == nil || IsNil(o.Totalotherfees) {
+		return nil, false
+	}
+	return o.Totalotherfees, true
+}
+
+// HasTotalotherfees returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasTotalotherfees() bool {
+	if o != nil && !IsNil(o.Totalotherfees) {
+		return true
+	}
+
+	return false
+}
+
+// SetTotalotherfees gets a reference to the given float32 and assigns it to the Totalotherfees field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetTotalotherfees(v float32) {
+	o.Totalotherfees = &v
+}
+
+// GetTotalsales returns the Totalsales field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetTotalsales() string {
+	if o == nil || IsNil(o.Totalsales) {
+		var ret string
+		return ret
+	}
+	return *o.Totalsales
+}
+
+// GetTotalsalesOk returns a tuple with the Totalsales field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetTotalsalesOk() (*string, bool) {
+	if o == nil || IsNil(o.Totalsales) {
+		return nil, false
+	}
+	return o.Totalsales, true
+}
+
+// HasTotalsales returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasTotalsales() bool {
+	if o != nil && !IsNil(o.Totalsales) {
+		return true
+	}
+
+	return false
+}
+
+// SetTotalsales gets a reference to the given string and assigns it to the Totalsales field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetTotalsales(v string) {
+	o.Totalsales = &v
+}
+
+// GetWeight returns the Weight field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetWeight() string {
+	if o == nil || IsNil(o.Weight) {
+		var ret string
+		return ret
+	}
+	return *o.Weight
+}
+
+// GetWeightOk returns a tuple with the Weight field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetWeightOk() (*string, bool) {
+	if o == nil || IsNil(o.Weight) {
+		return nil, false
+	}
+	return o.Weight, true
+}
+
+// HasWeight returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasWeight() bool {
+	if o != nil && !IsNil(o.Weight) {
+		return true
+	}
+
+	return false
+}
+
+// SetWeight gets a reference to the given string and assigns it to the Weight field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetWeight(v string) {
+	o.Weight = &v
+}
+
+// GetShippableswitch returns the Shippableswitch field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetShippableswitch() string {
+	if o == nil || IsNil(o.Shippableswitch) {
+		var ret string
+		return ret
+	}
+	return *o.Shippableswitch
+}
+
+// GetShippableswitchOk returns a tuple with the Shippableswitch field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetShippableswitchOk() (*string, bool) {
+	if o == nil || IsNil(o.Shippableswitch) {
+		return nil, false
+	}
+	return o.Shippableswitch, true
+}
+
+// HasShippableswitch returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasShippableswitch() bool {
+	if o != nil && !IsNil(o.Shippableswitch) {
+		return true
+	}
+
+	return false
+}
+
+// SetShippableswitch gets a reference to the given string and assigns it to the Shippableswitch field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetShippableswitch(v string) {
+	o.Shippableswitch = &v
+}
+
+// GetSoldto returns the Soldto field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetSoldto() AddressType {
+	if o == nil || IsNil(o.Soldto) {
+		var ret AddressType
+		return ret
+	}
+	return *o.Soldto
+}
+
+// GetSoldtoOk returns a tuple with the Soldto field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetSoldtoOk() (*AddressType, bool) {
+	if o == nil || IsNil(o.Soldto) {
+		return nil, false
+	}
+	return o.Soldto, true
+}
+
+// HasSoldto returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasSoldto() bool {
+	if o != nil && !IsNil(o.Soldto) {
+		return true
+	}
+
+	return false
+}
+
+// SetSoldto gets a reference to the given AddressType and assigns it to the Soldto field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetSoldto(v AddressType) {
+	o.Soldto = &v
+}
+
+// GetBillto returns the Billto field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetBillto() AddressType {
+	if o == nil || IsNil(o.Billto) {
+		var ret AddressType
+		return ret
+	}
+	return *o.Billto
+}
+
+// GetBilltoOk returns a tuple with the Billto field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetBilltoOk() (*AddressType, bool) {
+	if o == nil || IsNil(o.Billto) {
+		return nil, false
+	}
+	return o.Billto, true
+}
+
+// HasBillto returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasBillto() bool {
+	if o != nil && !IsNil(o.Billto) {
+		return true
+	}
+
+	return false
+}
+
+// SetBillto gets a reference to the given AddressType and assigns it to the Billto field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetBillto(v AddressType) {
+	o.Billto = &v
+}
+
+// GetShoptoaddress returns the Shoptoaddress field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetShoptoaddress() AddressType {
+	if o == nil || IsNil(o.Shoptoaddress) {
+		var ret AddressType
+		return ret
+	}
+	return *o.Shoptoaddress
+}
+
+// GetShoptoaddressOk returns a tuple with the Shoptoaddress field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetShoptoaddressOk() (*AddressType, bool) {
+	if o == nil || IsNil(o.Shoptoaddress) {
+		return nil, false
+	}
+	return o.Shoptoaddress, true
+}
+
+// HasShoptoaddress returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasShoptoaddress() bool {
+	if o != nil && !IsNil(o.Shoptoaddress) {
+		return true
+	}
+
+	return false
+}
+
+// SetShoptoaddress gets a reference to the given AddressType and assigns it to the Shoptoaddress field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetShoptoaddress(v AddressType) {
+	o.Shoptoaddress = &v
+}
+
+// GetLines returns the Lines field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetLines() []ProductLineType {
+	if o == nil || IsNil(o.Lines) {
+		var ret []ProductLineType
+		return ret
+	}
+	return o.Lines
+}
+
+// GetLinesOk returns a tuple with the Lines field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetLinesOk() ([]ProductLineType, bool) {
+	if o == nil || IsNil(o.Lines) {
+		return nil, false
+	}
+	return o.Lines, true
+}
+
+// HasLines returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasLines() bool {
+	if o != nil && !IsNil(o.Lines) {
+		return true
+	}
+
+	return false
+}
+
+// SetLines gets a reference to the given []ProductLineType and assigns it to the Lines field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetLines(v []ProductLineType) {
+	o.Lines = v
+}
+
+// GetExtendedspecs returns the Extendedspecs field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetExtendedspecs() []InvoiceDetailResponseServiceresponseInvoicedetailresponseExtendedspecsInner {
+	if o == nil || IsNil(o.Extendedspecs) {
+		var ret []InvoiceDetailResponseServiceresponseInvoicedetailresponseExtendedspecsInner
+		return ret
+	}
+	return o.Extendedspecs
+}
+
+// GetExtendedspecsOk returns a tuple with the Extendedspecs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetExtendedspecsOk() ([]InvoiceDetailResponseServiceresponseInvoicedetailresponseExtendedspecsInner, bool) {
+	if o == nil || IsNil(o.Extendedspecs) {
+		return nil, false
+	}
+	return o.Extendedspecs, true
+}
+
+// HasExtendedspecs returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasExtendedspecs() bool {
+	if o != nil && !IsNil(o.Extendedspecs) {
+		return true
+	}
+
+	return false
+}
+
+// SetExtendedspecs gets a reference to the given []InvoiceDetailResponseServiceresponseInvoicedetailresponseExtendedspecsInner and assigns it to the Extendedspecs field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetExtendedspecs(v []InvoiceDetailResponseServiceresponseInvoicedetailresponseExtendedspecsInner) {
+	o.Extendedspecs = v
+}
+
+// GetMiscfeeline returns the Miscfeeline field value if set, zero value otherwise.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetMiscfeeline() []InvoiceDetailResponseServiceresponseInvoicedetailresponseMiscfeelineInner {
+	if o == nil || IsNil(o.Miscfeeline) {
+		var ret []InvoiceDetailResponseServiceresponseInvoicedetailresponseMiscfeelineInner
+		return ret
+	}
+	return o.Miscfeeline
+}
+
+// GetMiscfeelineOk returns a tuple with the Miscfeeline field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) GetMiscfeelineOk() ([]InvoiceDetailResponseServiceresponseInvoicedetailresponseMiscfeelineInner, bool) {
+	if o == nil || IsNil(o.Miscfeeline) {
+		return nil, false
+	}
+	return o.Miscfeeline, true
+}
+
+// HasMiscfeeline returns a boolean if a field has been set.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) HasMiscfeeline() bool {
+	if o != nil && !IsNil(o.Miscfeeline) {
+		return true
+	}
+
+	return false
+}
+
+// SetMiscfeeline gets a reference to the given []InvoiceDetailResponseServiceresponseInvoicedetailresponseMiscfeelineInner and assigns it to the Miscfeeline field.
+func (o *InvoiceDetailResponseServiceresponseInvoicedetailresponse) SetMiscfeeline(v []InvoiceDetailResponseServiceresponseInvoicedetailresponseMiscfeelineInner) {
+	o.Miscfeeline = v
+}
+
 func (o InvoiceDetailResponseServiceresponseInvoicedetailresponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -803,6 +1497,69 @@ func (o InvoiceDetailResponseServiceresponseInvoicedetailresponse) ToMap() (map[
 	}
 	if !IsNil(o.Creditmemoreasoncode) {
 		toSerialize["creditmemoreasoncode"] = o.Creditmemoreasoncode
+	}
+	if !IsNil(o.Fulfillmentflag) {
+		toSerialize["fulfillmentflag"] = o.Fulfillmentflag
+	}
+	if !IsNil(o.Holdreason) {
+		toSerialize["holdreason"] = o.Holdreason
+	}
+	if !IsNil(o.Shipcomplete) {
+		toSerialize["shipcomplete"] = o.Shipcomplete
+	}
+	if !IsNil(o.Shipdate) {
+		toSerialize["shipdate"] = o.Shipdate
+	}
+	if !IsNil(o.Companycurrency) {
+		toSerialize["companycurrency"] = o.Companycurrency
+	}
+	if !IsNil(o.Currencycode) {
+		toSerialize["currencycode"] = o.Currencycode
+	}
+	if !IsNil(o.Currencyrate) {
+		toSerialize["currencyrate"] = o.Currencyrate
+	}
+	if !IsNil(o.Globalorderid) {
+		toSerialize["globalorderid"] = o.Globalorderid
+	}
+	if !IsNil(o.Originalshipcode) {
+		toSerialize["originalshipcode"] = o.Originalshipcode
+	}
+	if !IsNil(o.Ordertype) {
+		toSerialize["ordertype"] = o.Ordertype
+	}
+	if !IsNil(o.Orderstatus) {
+		toSerialize["orderstatus"] = o.Orderstatus
+	}
+	if !IsNil(o.Totalotherfees) {
+		toSerialize["totalotherfees"] = o.Totalotherfees
+	}
+	if !IsNil(o.Totalsales) {
+		toSerialize["totalsales"] = o.Totalsales
+	}
+	if !IsNil(o.Weight) {
+		toSerialize["weight"] = o.Weight
+	}
+	if !IsNil(o.Shippableswitch) {
+		toSerialize["shippableswitch"] = o.Shippableswitch
+	}
+	if !IsNil(o.Soldto) {
+		toSerialize["soldto"] = o.Soldto
+	}
+	if !IsNil(o.Billto) {
+		toSerialize["billto"] = o.Billto
+	}
+	if !IsNil(o.Shoptoaddress) {
+		toSerialize["shoptoaddress"] = o.Shoptoaddress
+	}
+	if !IsNil(o.Lines) {
+		toSerialize["lines"] = o.Lines
+	}
+	if !IsNil(o.Extendedspecs) {
+		toSerialize["extendedspecs"] = o.Extendedspecs
+	}
+	if !IsNil(o.Miscfeeline) {
+		toSerialize["miscfeeline"] = o.Miscfeeline
 	}
 	return toSerialize, nil
 }

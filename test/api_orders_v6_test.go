@@ -1,5 +1,5 @@
 /*
-XI SDK Resellers
+XI Sdk Resellers
 
 Testing OrdersV6APIService
 
