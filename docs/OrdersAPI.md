@@ -29,7 +29,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	xi_sdk_resellers "https://github.com/ingrammicro-xvantag/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -108,7 +108,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	xi_sdk_resellers "https://github.com/ingrammicro-xvantag/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -196,7 +196,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	xi_sdk_resellers "https://github.com/ingrammicro-xvantag/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -304,7 +304,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	xi_sdk_resellers "https://github.com/ingrammicro-xvantag/xi-sdk-resellers-go"
 )
 
 func main() {
@@ -378,7 +378,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	xi_sdk_resellers "https://github.com/ingrammicro-xvantag/xi-sdk-resellers-go"
 )
 
 func main() {
