@@ -30,6 +30,12 @@ Put the package under your project folder and add the following in import:
 import xi_sdk_resellers "github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
 ```
 
+To use a proxy, set the environment variable `HTTP_PROXY`:
+
+```go
+os.Setenv("HTTP_PROXY", "http://proxy_name:proxy_port")
+```
+
 ## Configuration of Server URL
 
 Default configuration comes with `Servers` field that contains server objects as defined in the OpenAPI specification.
