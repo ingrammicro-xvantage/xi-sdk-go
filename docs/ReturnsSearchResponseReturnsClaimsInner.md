@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | Type of request. | [optional] 
 **ReturnReason** | Pointer to **string** | The reason for the return. | [optional] 
 **ReferenceNumber** | Pointer to **string** | The reference number for the return. | [optional] 
-**EstimatedTotalValue** | Pointer to **string** | The estimated total value of the return. | [optional] 
+**EstimatedTotalValue** | Pointer to **float64** | The estimated total value of the return. | [optional] 
 **Credit** | Pointer to **float32** | The amount of credit. | [optional] 
 **ModifiedOn** | Pointer to **string** | The date on which the return request was last updated. | [optional] 
 **Status** | Pointer to **string** | The status of the request. | [optional] 
@@ -187,20 +187,20 @@ HasReferenceNumber returns a boolean if a field has been set.
 
 ### GetEstimatedTotalValue
 
-`func (o *ReturnsSearchResponseReturnsClaimsInner) GetEstimatedTotalValue() string`
+`func (o *ReturnsSearchResponseReturnsClaimsInner) GetEstimatedTotalValue() float64`
 
 GetEstimatedTotalValue returns the EstimatedTotalValue field if non-nil, zero value otherwise.
 
 ### GetEstimatedTotalValueOk
 
-`func (o *ReturnsSearchResponseReturnsClaimsInner) GetEstimatedTotalValueOk() (*string, bool)`
+`func (o *ReturnsSearchResponseReturnsClaimsInner) GetEstimatedTotalValueOk() (*float64, bool)`
 
 GetEstimatedTotalValueOk returns a tuple with the EstimatedTotalValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEstimatedTotalValue
 
-`func (o *ReturnsSearchResponseReturnsClaimsInner) SetEstimatedTotalValue(v string)`
+`func (o *ReturnsSearchResponseReturnsClaimsInner) SetEstimatedTotalValue(v float64)`
 
 SetEstimatedTotalValue sets EstimatedTotalValue field to given value.
 

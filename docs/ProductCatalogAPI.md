@@ -1,6 +1,6 @@
 # \ProductCatalogAPI
 
-All URIs are relative to *https://api.ingrammicro.com:443/sandbox*
+All URIs are relative to *https://api.ingrammicro.com:443*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -203,7 +203,7 @@ import (
 )
 
 func main() {
-	includeAvailability := []bool{false} // []bool | Pass boolean value as input, if true the response will contain warehouse availability details, if false the response will not hold warehouse availability details
+	includeAvailability := true // bool | Pass boolean value as input, if true the response will contain warehouse availability details, if false the response will not hold warehouse availability details
 	includePricing := true // bool | Pass boolean value as input, if true the response will contain Pricing details of the Product, if false the response will not hold Pricing details.
 	iMCustomerNumber := "20-222222" // string | Your unique Ingram Micro customer number.
 	iMCountryCode := "US" // string | Two-character ISO country code.
@@ -235,7 +235,7 @@ Other parameters are passed through a pointer to a apiPostPriceandavailabilityRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **includeAvailability** | **[]bool** | Pass boolean value as input, if true the response will contain warehouse availability details, if false the response will not hold warehouse availability details | 
+ **includeAvailability** | **bool** | Pass boolean value as input, if true the response will contain warehouse availability details, if false the response will not hold warehouse availability details | 
  **includePricing** | **bool** | Pass boolean value as input, if true the response will contain Pricing details of the Product, if false the response will not hold Pricing details. | 
  **iMCustomerNumber** | **string** | Your unique Ingram Micro customer number. | 
  **iMCountryCode** | **string** | Two-character ISO country code. | 

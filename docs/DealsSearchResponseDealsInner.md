@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **EndUser** | Pointer to **string** | The end user/customer&#39;s name. | [optional] 
 **Vendor** | Pointer to **string** | The vendor&#39;s name. | [optional] 
 **DealExpiryDate** | Pointer to **string** | Expiration date of the deal/Special bid. | [optional] 
-**Links** | Pointer to [**[]RenewalsSearchResponseRenewalsInnerLinksInner**](RenewalsSearchResponseRenewalsInnerLinksInner.md) |  | [optional] 
+**Links** | Pointer to [**RenewalsSearchResponseRenewalsInnerLinksInner**](RenewalsSearchResponseRenewalsInnerLinksInner.md) |  | [optional] 
 
 ## Methods
 
@@ -157,20 +157,20 @@ HasDealExpiryDate returns a boolean if a field has been set.
 
 ### GetLinks
 
-`func (o *DealsSearchResponseDealsInner) GetLinks() []RenewalsSearchResponseRenewalsInnerLinksInner`
+`func (o *DealsSearchResponseDealsInner) GetLinks() RenewalsSearchResponseRenewalsInnerLinksInner`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *DealsSearchResponseDealsInner) GetLinksOk() (*[]RenewalsSearchResponseRenewalsInnerLinksInner, bool)`
+`func (o *DealsSearchResponseDealsInner) GetLinksOk() (*RenewalsSearchResponseRenewalsInnerLinksInner, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *DealsSearchResponseDealsInner) SetLinks(v []RenewalsSearchResponseRenewalsInnerLinksInner)`
+`func (o *DealsSearchResponseDealsInner) SetLinks(v RenewalsSearchResponseRenewalsInnerLinksInner)`
 
 SetLinks sets Links field to given value.
 

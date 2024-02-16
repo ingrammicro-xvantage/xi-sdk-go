@@ -1,11 +1,11 @@
 # \InvoicesAPI
 
-All URIs are relative to *https://api.ingrammicro.com:443/sandbox*
+All URIs are relative to *https://api.ingrammicro.com:443*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetInvoicedetailsV61**](InvoicesAPI.md#GetInvoicedetailsV61) | **Get** /resellers/v6.1/invoices/{invoiceNumber} | Get Invoice Details v6.1
-[**GetResellersV6Invoicesearch**](InvoicesAPI.md#GetResellersV6Invoicesearch) | **Get** /resellers/v6/invoices/ | Search your invoice
+[**GetResellersV6Invoicesearch**](InvoicesAPI.md#GetResellersV6Invoicesearch) | **Get** /resellers/v6/invoices | Search your invoice
 
 
 

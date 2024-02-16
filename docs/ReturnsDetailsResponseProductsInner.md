@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **Upc** | Pointer to **string** | The UPC code of a product. | [optional] 
 **InvoiceDate** | Pointer to **string** | The date of the invoice. | [optional] 
 **InvoiceNumber** | Pointer to **string** | Ingram micro Invoice number. | [optional] 
-**CustomerOrderNumber** | Pointer to **int32** | The reseller&#39;s order number for reference in their system. | [optional] 
-**RequestDetails** | Pointer to **int32** | Request details. | [optional] 
-**Quantity** | Pointer to **int32** | The quantity of the line item. | [optional] 
+**CustomerOrderNumber** | Pointer to **string** | The reseller&#39;s order number for reference in their system. | [optional] 
+**RequestDetails** | Pointer to **string** | Request details. | [optional] 
+**Quantity** | Pointer to **float32** | The quantity of the line item. | [optional] 
 **UnitPrice** | Pointer to **float32** | The unit price of the line item. | [optional] 
 **ExtendedPrice** | Pointer to **float32** | Unit price X quantity for the line item. | [optional] 
 **Status** | Pointer to **string** | The status of the line item. | [optional] 
@@ -216,20 +216,20 @@ HasInvoiceNumber returns a boolean if a field has been set.
 
 ### GetCustomerOrderNumber
 
-`func (o *ReturnsDetailsResponseProductsInner) GetCustomerOrderNumber() int32`
+`func (o *ReturnsDetailsResponseProductsInner) GetCustomerOrderNumber() string`
 
 GetCustomerOrderNumber returns the CustomerOrderNumber field if non-nil, zero value otherwise.
 
 ### GetCustomerOrderNumberOk
 
-`func (o *ReturnsDetailsResponseProductsInner) GetCustomerOrderNumberOk() (*int32, bool)`
+`func (o *ReturnsDetailsResponseProductsInner) GetCustomerOrderNumberOk() (*string, bool)`
 
 GetCustomerOrderNumberOk returns a tuple with the CustomerOrderNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomerOrderNumber
 
-`func (o *ReturnsDetailsResponseProductsInner) SetCustomerOrderNumber(v int32)`
+`func (o *ReturnsDetailsResponseProductsInner) SetCustomerOrderNumber(v string)`
 
 SetCustomerOrderNumber sets CustomerOrderNumber field to given value.
 
@@ -241,20 +241,20 @@ HasCustomerOrderNumber returns a boolean if a field has been set.
 
 ### GetRequestDetails
 
-`func (o *ReturnsDetailsResponseProductsInner) GetRequestDetails() int32`
+`func (o *ReturnsDetailsResponseProductsInner) GetRequestDetails() string`
 
 GetRequestDetails returns the RequestDetails field if non-nil, zero value otherwise.
 
 ### GetRequestDetailsOk
 
-`func (o *ReturnsDetailsResponseProductsInner) GetRequestDetailsOk() (*int32, bool)`
+`func (o *ReturnsDetailsResponseProductsInner) GetRequestDetailsOk() (*string, bool)`
 
 GetRequestDetailsOk returns a tuple with the RequestDetails field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRequestDetails
 
-`func (o *ReturnsDetailsResponseProductsInner) SetRequestDetails(v int32)`
+`func (o *ReturnsDetailsResponseProductsInner) SetRequestDetails(v string)`
 
 SetRequestDetails sets RequestDetails field to given value.
 
@@ -266,20 +266,20 @@ HasRequestDetails returns a boolean if a field has been set.
 
 ### GetQuantity
 
-`func (o *ReturnsDetailsResponseProductsInner) GetQuantity() int32`
+`func (o *ReturnsDetailsResponseProductsInner) GetQuantity() float32`
 
 GetQuantity returns the Quantity field if non-nil, zero value otherwise.
 
 ### GetQuantityOk
 
-`func (o *ReturnsDetailsResponseProductsInner) GetQuantityOk() (*int32, bool)`
+`func (o *ReturnsDetailsResponseProductsInner) GetQuantityOk() (*float32, bool)`
 
 GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQuantity
 
-`func (o *ReturnsDetailsResponseProductsInner) SetQuantity(v int32)`
+`func (o *ReturnsDetailsResponseProductsInner) SetQuantity(v float32)`
 
 SetQuantity sets Quantity field to given value.
 

@@ -1,6 +1,6 @@
 # \OrdersAPI
 
-All URIs are relative to *https://api.ingrammicro.com:443/sandbox*
+All URIs are relative to *https://api.ingrammicro.com:443*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -311,7 +311,7 @@ func main() {
 	iMCustomerNumber := "20-222222" // string | Your unique Ingram Micro customer number.
 	iMCountryCode := "US" // string | Two-character ISO country code.
 	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction accross all the systems.
-	orderCreateRequest := *openapiclient.NewOrderCreateRequest() // OrderCreateRequest | 
+	orderCreateRequest := *openapiclient.NewOrderCreateRequest("CustomerOrderNumber_example") // OrderCreateRequest | 
 	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany (optional)
 
 	configuration := openapiclient.NewConfiguration()
