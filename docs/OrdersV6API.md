@@ -26,7 +26,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	xi_sdk_resellers "https://github.com/dprakash2101/GoSDK"
+	xi_sdk_resellers "https://github.com/dprakash2101/GoSDK" ingrammicro-xvantage/xi-sdk-resellers-go
 )
 
 func main() {
