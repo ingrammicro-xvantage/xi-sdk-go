@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **QuantityAvailable** | Pointer to **int32** | The quantity of the product available in a given warehouse. | [optional] 
 **QuantityBackordered** | Pointer to **int32** | The quantity of a product backordered in a given warehouse. | [optional] 
 **QuantityBackorderedEta** | Pointer to **string** | The estimated time of arrival of a product that has been backordered in a given warehouse. | [optional] 
+**QuantityOnOrder** | Pointer to **int32** | The quantity of the product on order. | [optional] 
 **BackOrderInfo** | Pointer to [**[]PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner**](PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner.md) | *Currently, this feature is not available in these countries (Mexico, Turkey, New Zealand, Colombia, Chile, Brazil, Peru, Western Sahara). | [optional] 
 
 ## Methods
@@ -154,6 +155,31 @@ SetQuantityBackorderedEta sets QuantityBackorderedEta field to given value.
 `func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) HasQuantityBackorderedEta() bool`
 
 HasQuantityBackorderedEta returns a boolean if a field has been set.
+
+### GetQuantityOnOrder
+
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetQuantityOnOrder() int32`
+
+GetQuantityOnOrder returns the QuantityOnOrder field if non-nil, zero value otherwise.
+
+### GetQuantityOnOrderOk
+
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetQuantityOnOrderOk() (*int32, bool)`
+
+GetQuantityOnOrderOk returns a tuple with the QuantityOnOrder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuantityOnOrder
+
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetQuantityOnOrder(v int32)`
+
+SetQuantityOnOrder sets QuantityOnOrder field to given value.
+
+### HasQuantityOnOrder
+
+`func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) HasQuantityOnOrder() bool`
+
+HasQuantityOnOrder returns a boolean if a field has been set.
 
 ### GetBackOrderInfo
 

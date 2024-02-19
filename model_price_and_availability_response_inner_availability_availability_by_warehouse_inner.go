@@ -29,6 +29,8 @@ type PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner s
 	QuantityBackordered *int32 `json:"quantityBackordered,omitempty"`
 	// The estimated time of arrival of a product that has been backordered in a given warehouse.
 	QuantityBackorderedEta *string `json:"quantityBackorderedEta,omitempty"`
+	// The quantity of the product on order.
+	QuantityOnOrder *int32 `json:"quantityOnOrder,omitempty"`
 	// *Currently, this feature is not available in these countries (Mexico, Turkey, New Zealand, Colombia, Chile, Brazil, Peru, Western Sahara).
 	BackOrderInfo []PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner `json:"backOrderInfo,omitempty"`
 }
@@ -210,6 +212,38 @@ func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInn
 	o.QuantityBackorderedEta = &v
 }
 
+// GetQuantityOnOrder returns the QuantityOnOrder field value if set, zero value otherwise.
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetQuantityOnOrder() int32 {
+	if o == nil || IsNil(o.QuantityOnOrder) {
+		var ret int32
+		return ret
+	}
+	return *o.QuantityOnOrder
+}
+
+// GetQuantityOnOrderOk returns a tuple with the QuantityOnOrder field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetQuantityOnOrderOk() (*int32, bool) {
+	if o == nil || IsNil(o.QuantityOnOrder) {
+		return nil, false
+	}
+	return o.QuantityOnOrder, true
+}
+
+// HasQuantityOnOrder returns a boolean if a field has been set.
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) HasQuantityOnOrder() bool {
+	if o != nil && !IsNil(o.QuantityOnOrder) {
+		return true
+	}
+
+	return false
+}
+
+// SetQuantityOnOrder gets a reference to the given int32 and assigns it to the QuantityOnOrder field.
+func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) SetQuantityOnOrder(v int32) {
+	o.QuantityOnOrder = &v
+}
+
 // GetBackOrderInfo returns the BackOrderInfo field value if set, zero value otherwise.
 func (o *PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner) GetBackOrderInfo() []PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInnerBackOrderInfoInner {
 	if o == nil || IsNil(o.BackOrderInfo) {
@@ -266,6 +300,9 @@ func (o PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInne
 	}
 	if !IsNil(o.QuantityBackorderedEta) {
 		toSerialize["quantityBackorderedEta"] = o.QuantityBackorderedEta
+	}
+	if !IsNil(o.QuantityOnOrder) {
+		toSerialize["quantityOnOrder"] = o.QuantityOnOrder
 	}
 	if !IsNil(o.BackOrderInfo) {
 		toSerialize["backOrderInfo"] = o.BackOrderInfo

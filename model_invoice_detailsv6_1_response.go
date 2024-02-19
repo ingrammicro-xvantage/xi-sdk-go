@@ -29,8 +29,10 @@ type InvoiceDetailsv61Response struct {
 	CustomerOrderNumber *string `json:"customerOrderNumber,omitempty"`
 	// The end customer's order number for reference in their system.
 	EndCustomerOrderNumber *string `json:"endCustomerOrderNumber,omitempty"`
+	// The end customer's order number for reference in their system.
+	OrderNumber *string `json:"orderNumber,omitempty"`
 	// The date and time in UTC format that the order was created.
-	OrderDate *string `json:"OrderDate,omitempty"`
+	OrderDate *string `json:"orderDate,omitempty"`
 	// Bill to party
 	BillToID *string `json:"billToID,omitempty"`
 	// Type of the Invoice
@@ -228,6 +230,38 @@ func (o *InvoiceDetailsv61Response) HasEndCustomerOrderNumber() bool {
 // SetEndCustomerOrderNumber gets a reference to the given string and assigns it to the EndCustomerOrderNumber field.
 func (o *InvoiceDetailsv61Response) SetEndCustomerOrderNumber(v string) {
 	o.EndCustomerOrderNumber = &v
+}
+
+// GetOrderNumber returns the OrderNumber field value if set, zero value otherwise.
+func (o *InvoiceDetailsv61Response) GetOrderNumber() string {
+	if o == nil || IsNil(o.OrderNumber) {
+		var ret string
+		return ret
+	}
+	return *o.OrderNumber
+}
+
+// GetOrderNumberOk returns a tuple with the OrderNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailsv61Response) GetOrderNumberOk() (*string, bool) {
+	if o == nil || IsNil(o.OrderNumber) {
+		return nil, false
+	}
+	return o.OrderNumber, true
+}
+
+// HasOrderNumber returns a boolean if a field has been set.
+func (o *InvoiceDetailsv61Response) HasOrderNumber() bool {
+	if o != nil && !IsNil(o.OrderNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrderNumber gets a reference to the given string and assigns it to the OrderNumber field.
+func (o *InvoiceDetailsv61Response) SetOrderNumber(v string) {
+	o.OrderNumber = &v
 }
 
 // GetOrderDate returns the OrderDate field value if set, zero value otherwise.
@@ -703,8 +737,11 @@ func (o InvoiceDetailsv61Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.EndCustomerOrderNumber) {
 		toSerialize["endCustomerOrderNumber"] = o.EndCustomerOrderNumber
 	}
+	if !IsNil(o.OrderNumber) {
+		toSerialize["orderNumber"] = o.OrderNumber
+	}
 	if !IsNil(o.OrderDate) {
-		toSerialize["OrderDate"] = o.OrderDate
+		toSerialize["orderDate"] = o.OrderDate
 	}
 	if !IsNil(o.BillToID) {
 		toSerialize["billToID"] = o.BillToID

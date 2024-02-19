@@ -33,6 +33,8 @@ type QuoteDetailsResponse struct {
 	IngramQuoteExpiryDate *string `json:"ingramQuoteExpiryDate,omitempty"`
 	// Three letter currency code.
 	CurrencyCode *string `json:"currencyCode,omitempty"`
+	// Closing Reason for quote.
+	ClosingReason *string `json:"closingReason,omitempty"`
 	// Price discount identifyer to specify  a pricing discount that has been applied to the quote. If present - the priceDeviationStartDate and priceDeviationExpiryDate must be presented. Cisco refers to this as a Dart
 	SpecialBidId *string `json:"specialBidId,omitempty"`
 	// If price discount has been applied to the quote - the starting date the discount begins.
@@ -308,6 +310,38 @@ func (o *QuoteDetailsResponse) HasCurrencyCode() bool {
 // SetCurrencyCode gets a reference to the given string and assigns it to the CurrencyCode field.
 func (o *QuoteDetailsResponse) SetCurrencyCode(v string) {
 	o.CurrencyCode = &v
+}
+
+// GetClosingReason returns the ClosingReason field value if set, zero value otherwise.
+func (o *QuoteDetailsResponse) GetClosingReason() string {
+	if o == nil || IsNil(o.ClosingReason) {
+		var ret string
+		return ret
+	}
+	return *o.ClosingReason
+}
+
+// GetClosingReasonOk returns a tuple with the ClosingReason field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponse) GetClosingReasonOk() (*string, bool) {
+	if o == nil || IsNil(o.ClosingReason) {
+		return nil, false
+	}
+	return o.ClosingReason, true
+}
+
+// HasClosingReason returns a boolean if a field has been set.
+func (o *QuoteDetailsResponse) HasClosingReason() bool {
+	if o != nil && !IsNil(o.ClosingReason) {
+		return true
+	}
+
+	return false
+}
+
+// SetClosingReason gets a reference to the given string and assigns it to the ClosingReason field.
+func (o *QuoteDetailsResponse) SetClosingReason(v string) {
+	o.ClosingReason = &v
 }
 
 // GetSpecialBidId returns the SpecialBidId field value if set, zero value otherwise.
@@ -948,6 +982,9 @@ func (o QuoteDetailsResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CurrencyCode) {
 		toSerialize["currencyCode"] = o.CurrencyCode
+	}
+	if !IsNil(o.ClosingReason) {
+		toSerialize["closingReason"] = o.ClosingReason
 	}
 	if !IsNil(o.SpecialBidId) {
 		toSerialize["specialBidId"] = o.SpecialBidId

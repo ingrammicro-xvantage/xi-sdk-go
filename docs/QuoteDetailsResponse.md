@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **LastModifiedDate** | Pointer to **string** | Date the Quote was last updated or modified. | [optional] 
 **IngramQuoteExpiryDate** | Pointer to **string** | Quote expiration date. | [optional] 
 **CurrencyCode** | Pointer to **string** | Three letter currency code. | [optional] 
+**ClosingReason** | Pointer to **string** | Closing Reason for quote. | [optional] 
 **SpecialBidId** | Pointer to **string** | Price discount identifyer to specify  a pricing discount that has been applied to the quote. If present - the priceDeviationStartDate and priceDeviationExpiryDate must be presented. Cisco refers to this as a Dart | [optional] 
 **SpecialBidEffectiveDate** | Pointer to **string** | If price discount has been applied to the quote - the starting date the discount begins. | [optional] 
 **SpecialBidExpirationDate** | Pointer to **string** | If a price discount has been applied to the quote - The date the discount expires and will no longer be applicable. | [optional] 
@@ -224,6 +225,31 @@ SetCurrencyCode sets CurrencyCode field to given value.
 `func (o *QuoteDetailsResponse) HasCurrencyCode() bool`
 
 HasCurrencyCode returns a boolean if a field has been set.
+
+### GetClosingReason
+
+`func (o *QuoteDetailsResponse) GetClosingReason() string`
+
+GetClosingReason returns the ClosingReason field if non-nil, zero value otherwise.
+
+### GetClosingReasonOk
+
+`func (o *QuoteDetailsResponse) GetClosingReasonOk() (*string, bool)`
+
+GetClosingReasonOk returns a tuple with the ClosingReason field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClosingReason
+
+`func (o *QuoteDetailsResponse) SetClosingReason(v string)`
+
+SetClosingReason sets ClosingReason field to given value.
+
+### HasClosingReason
+
+`func (o *QuoteDetailsResponse) HasClosingReason() bool`
+
+HasClosingReason returns a boolean if a field has been set.
 
 ### GetSpecialBidId
 
