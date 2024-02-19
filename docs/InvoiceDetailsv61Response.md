@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **InvoiceDate** | Pointer to **string** | Date of an Invoice. | [optional] 
 **CustomerOrderNumber** | Pointer to **string** | The reseller&#39;s order number for reference in their system. | [optional] 
 **EndCustomerOrderNumber** | Pointer to **string** | The end customer&#39;s order number for reference in their system. | [optional] 
+**OrderNumber** | Pointer to **string** | The end customer&#39;s order number for reference in their system. | [optional] 
 **OrderDate** | Pointer to **string** | The date and time in UTC format that the order was created. | [optional] 
 **BillToID** | Pointer to **string** | Bill to party | [optional] 
 **InvoiceType** | Pointer to **string** | Type of the Invoice | [optional] 
@@ -167,6 +168,31 @@ SetEndCustomerOrderNumber sets EndCustomerOrderNumber field to given value.
 `func (o *InvoiceDetailsv61Response) HasEndCustomerOrderNumber() bool`
 
 HasEndCustomerOrderNumber returns a boolean if a field has been set.
+
+### GetOrderNumber
+
+`func (o *InvoiceDetailsv61Response) GetOrderNumber() string`
+
+GetOrderNumber returns the OrderNumber field if non-nil, zero value otherwise.
+
+### GetOrderNumberOk
+
+`func (o *InvoiceDetailsv61Response) GetOrderNumberOk() (*string, bool)`
+
+GetOrderNumberOk returns a tuple with the OrderNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrderNumber
+
+`func (o *InvoiceDetailsv61Response) SetOrderNumber(v string)`
+
+SetOrderNumber sets OrderNumber field to given value.
+
+### HasOrderNumber
+
+`func (o *InvoiceDetailsv61Response) HasOrderNumber() bool`
+
+HasOrderNumber returns a boolean if a field has been set.
 
 ### GetOrderDate
 

@@ -50,6 +50,8 @@ type OrderDetailB2B struct {
 	TotalWeight *float64 `json:"totalWeight,omitempty"`
 	// Total tax on the orders placed.
 	TotalTax *float64 `json:"totalTax,omitempty"`
+	// Total fees on the orders placed.
+	TotalFees *float64 `json:"totalFees,omitempty"`
 	// The payment terms of the order. (Ex- Net 30 days).
 	PaymentTerms *string `json:"paymentTerms,omitempty"`
 	// The header-level notes for the order.
@@ -559,6 +561,38 @@ func (o *OrderDetailB2B) SetTotalTax(v float64) {
 	o.TotalTax = &v
 }
 
+// GetTotalFees returns the TotalFees field value if set, zero value otherwise.
+func (o *OrderDetailB2B) GetTotalFees() float64 {
+	if o == nil || IsNil(o.TotalFees) {
+		var ret float64
+		return ret
+	}
+	return *o.TotalFees
+}
+
+// GetTotalFeesOk returns a tuple with the TotalFees field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDetailB2B) GetTotalFeesOk() (*float64, bool) {
+	if o == nil || IsNil(o.TotalFees) {
+		return nil, false
+	}
+	return o.TotalFees, true
+}
+
+// HasTotalFees returns a boolean if a field has been set.
+func (o *OrderDetailB2B) HasTotalFees() bool {
+	if o != nil && !IsNil(o.TotalFees) {
+		return true
+	}
+
+	return false
+}
+
+// SetTotalFees gets a reference to the given float64 and assigns it to the TotalFees field.
+func (o *OrderDetailB2B) SetTotalFees(v float64) {
+	o.TotalFees = &v
+}
+
 // GetPaymentTerms returns the PaymentTerms field value if set, zero value otherwise.
 func (o *OrderDetailB2B) GetPaymentTerms() string {
 	if o == nil || IsNil(o.PaymentTerms) {
@@ -872,6 +906,9 @@ func (o OrderDetailB2B) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.TotalTax) {
 		toSerialize["totalTax"] = o.TotalTax
+	}
+	if !IsNil(o.TotalFees) {
+		toSerialize["totalFees"] = o.TotalFees
 	}
 	if !IsNil(o.PaymentTerms) {
 		toSerialize["paymentTerms"] = o.PaymentTerms

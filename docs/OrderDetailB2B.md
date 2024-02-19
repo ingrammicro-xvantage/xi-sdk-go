@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **CurrencyCode** | Pointer to **string** | The country-specific three digit ISO 4217 currency code for the order. | [optional] 
 **TotalWeight** | Pointer to **float64** | Total order weight. unit -- North america - Pounds , other countries will be KG. | [optional] 
 **TotalTax** | Pointer to **float64** | Total tax on the orders placed. | [optional] 
+**TotalFees** | Pointer to **float64** | Total fees on the orders placed. | [optional] 
 **PaymentTerms** | Pointer to **string** | The payment terms of the order. (Ex- Net 30 days). | [optional] 
 **Notes** | Pointer to **string** | The header-level notes for the order. | [optional] 
 **BillToInfo** | Pointer to [**OrderDetailB2BBillToInfo**](OrderDetailB2BBillToInfo.md) |  | [optional] 
@@ -421,6 +422,31 @@ SetTotalTax sets TotalTax field to given value.
 `func (o *OrderDetailB2B) HasTotalTax() bool`
 
 HasTotalTax returns a boolean if a field has been set.
+
+### GetTotalFees
+
+`func (o *OrderDetailB2B) GetTotalFees() float64`
+
+GetTotalFees returns the TotalFees field if non-nil, zero value otherwise.
+
+### GetTotalFeesOk
+
+`func (o *OrderDetailB2B) GetTotalFeesOk() (*float64, bool)`
+
+GetTotalFeesOk returns a tuple with the TotalFees field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalFees
+
+`func (o *OrderDetailB2B) SetTotalFees(v float64)`
+
+SetTotalFees sets TotalFees field to given value.
+
+### HasTotalFees
+
+`func (o *OrderDetailB2B) HasTotalFees() bool`
+
+HasTotalFees returns a boolean if a field has been set.
 
 ### GetPaymentTerms
 
