@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **SpecialBidNumber** | Pointer to **string** | The line-level bid number provided to the reseller by the vendor for special pricing and discounts. Used to track the bid number in the case of split orders or where different line items have different bid numbers. Line-level bid numbers take precedence over header-level bid numbers. | [optional] 
 **RequestedDeliverydate** | Pointer to **string** | Reseller-requested delivery date. Delivery date is not guaranteed. | [optional] 
 **PromisedDeliveryDate** | Pointer to **string** | The delivery date promised by IngramMicro. | [optional] 
+**BackOrderETAData** | Pointer to **string** | Backorder ETA date | [optional] 
 **LineNotes** | Pointer to **string** | Line-level notes for the order. | [optional] 
 **ShipmentDetails** | Pointer to [**[]OrderDetailB2BLinesInnerShipmentDetailsInner**](OrderDetailB2BLinesInnerShipmentDetailsInner.md) | Shipping details for the line item. | [optional] 
 **ServiceContractInfo** | Pointer to [**OrderDetailB2BLinesInnerServiceContractInfo**](OrderDetailB2BLinesInnerServiceContractInfo.md) |  | [optional] 
@@ -603,6 +604,31 @@ SetPromisedDeliveryDate sets PromisedDeliveryDate field to given value.
 `func (o *OrderDetailB2BLinesInner) HasPromisedDeliveryDate() bool`
 
 HasPromisedDeliveryDate returns a boolean if a field has been set.
+
+### GetBackOrderETAData
+
+`func (o *OrderDetailB2BLinesInner) GetBackOrderETAData() string`
+
+GetBackOrderETAData returns the BackOrderETAData field if non-nil, zero value otherwise.
+
+### GetBackOrderETADataOk
+
+`func (o *OrderDetailB2BLinesInner) GetBackOrderETADataOk() (*string, bool)`
+
+GetBackOrderETADataOk returns a tuple with the BackOrderETAData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackOrderETAData
+
+`func (o *OrderDetailB2BLinesInner) SetBackOrderETAData(v string)`
+
+SetBackOrderETAData sets BackOrderETAData field to given value.
+
+### HasBackOrderETAData
+
+`func (o *OrderDetailB2BLinesInner) HasBackOrderETAData() bool`
+
+HasBackOrderETAData returns a boolean if a field has been set.
 
 ### GetLineNotes
 

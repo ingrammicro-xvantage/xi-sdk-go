@@ -8,6 +8,10 @@ Name | Type | Description | Notes
 **VendorName** | Pointer to **string** | The name of the vendor. | [optional] 
 **VmfAdditionalAttributes** | Pointer to [**[]ValidateQuoteResponseVmfAdditionalAttributesInner**](ValidateQuoteResponseVmfAdditionalAttributesInner.md) | The object containing the list of fields required at a header level by the vendor. | [optional] 
 **Lines** | Pointer to [**[]ValidateQuoteResponseLinesInner**](ValidateQuoteResponseLinesInner.md) | The object containing the lines from the quote. | [optional] 
+**QuoteType** | Pointer to **int32** |  | [optional] 
+**VendorGroupName** | Pointer to **string** |  | [optional] 
+**VendorQuoteNumber** | Pointer to **string** |  | [optional] 
+**VendorMasterNumber** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -127,6 +131,106 @@ SetLines sets Lines field to given value.
 `func (o *ValidateQuoteResponse) HasLines() bool`
 
 HasLines returns a boolean if a field has been set.
+
+### GetQuoteType
+
+`func (o *ValidateQuoteResponse) GetQuoteType() int32`
+
+GetQuoteType returns the QuoteType field if non-nil, zero value otherwise.
+
+### GetQuoteTypeOk
+
+`func (o *ValidateQuoteResponse) GetQuoteTypeOk() (*int32, bool)`
+
+GetQuoteTypeOk returns a tuple with the QuoteType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuoteType
+
+`func (o *ValidateQuoteResponse) SetQuoteType(v int32)`
+
+SetQuoteType sets QuoteType field to given value.
+
+### HasQuoteType
+
+`func (o *ValidateQuoteResponse) HasQuoteType() bool`
+
+HasQuoteType returns a boolean if a field has been set.
+
+### GetVendorGroupName
+
+`func (o *ValidateQuoteResponse) GetVendorGroupName() string`
+
+GetVendorGroupName returns the VendorGroupName field if non-nil, zero value otherwise.
+
+### GetVendorGroupNameOk
+
+`func (o *ValidateQuoteResponse) GetVendorGroupNameOk() (*string, bool)`
+
+GetVendorGroupNameOk returns a tuple with the VendorGroupName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVendorGroupName
+
+`func (o *ValidateQuoteResponse) SetVendorGroupName(v string)`
+
+SetVendorGroupName sets VendorGroupName field to given value.
+
+### HasVendorGroupName
+
+`func (o *ValidateQuoteResponse) HasVendorGroupName() bool`
+
+HasVendorGroupName returns a boolean if a field has been set.
+
+### GetVendorQuoteNumber
+
+`func (o *ValidateQuoteResponse) GetVendorQuoteNumber() string`
+
+GetVendorQuoteNumber returns the VendorQuoteNumber field if non-nil, zero value otherwise.
+
+### GetVendorQuoteNumberOk
+
+`func (o *ValidateQuoteResponse) GetVendorQuoteNumberOk() (*string, bool)`
+
+GetVendorQuoteNumberOk returns a tuple with the VendorQuoteNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVendorQuoteNumber
+
+`func (o *ValidateQuoteResponse) SetVendorQuoteNumber(v string)`
+
+SetVendorQuoteNumber sets VendorQuoteNumber field to given value.
+
+### HasVendorQuoteNumber
+
+`func (o *ValidateQuoteResponse) HasVendorQuoteNumber() bool`
+
+HasVendorQuoteNumber returns a boolean if a field has been set.
+
+### GetVendorMasterNumber
+
+`func (o *ValidateQuoteResponse) GetVendorMasterNumber() string`
+
+GetVendorMasterNumber returns the VendorMasterNumber field if non-nil, zero value otherwise.
+
+### GetVendorMasterNumberOk
+
+`func (o *ValidateQuoteResponse) GetVendorMasterNumberOk() (*string, bool)`
+
+GetVendorMasterNumberOk returns a tuple with the VendorMasterNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVendorMasterNumber
+
+`func (o *ValidateQuoteResponse) SetVendorMasterNumber(v string)`
+
+SetVendorMasterNumber sets VendorMasterNumber field to given value.
+
+### HasVendorMasterNumber
+
+`func (o *ValidateQuoteResponse) HasVendorMasterNumber() bool`
+
+HasVendorMasterNumber returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

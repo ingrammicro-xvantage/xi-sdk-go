@@ -27,6 +27,10 @@ type ValidateQuoteResponse struct {
 	VmfAdditionalAttributes []ValidateQuoteResponseVmfAdditionalAttributesInner `json:"vmfAdditionalAttributes,omitempty"`
 	// The object containing the lines from the quote.
 	Lines []ValidateQuoteResponseLinesInner `json:"lines,omitempty"`
+	QuoteType *int32 `json:"quoteType,omitempty"`
+	VendorGroupName *string `json:"vendorGroupName,omitempty"`
+	VendorQuoteNumber *string `json:"vendorQuoteNumber,omitempty"`
+	VendorMasterNumber *string `json:"vendorMasterNumber,omitempty"`
 }
 
 // NewValidateQuoteResponse instantiates a new ValidateQuoteResponse object
@@ -174,6 +178,134 @@ func (o *ValidateQuoteResponse) SetLines(v []ValidateQuoteResponseLinesInner) {
 	o.Lines = v
 }
 
+// GetQuoteType returns the QuoteType field value if set, zero value otherwise.
+func (o *ValidateQuoteResponse) GetQuoteType() int32 {
+	if o == nil || IsNil(o.QuoteType) {
+		var ret int32
+		return ret
+	}
+	return *o.QuoteType
+}
+
+// GetQuoteTypeOk returns a tuple with the QuoteType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ValidateQuoteResponse) GetQuoteTypeOk() (*int32, bool) {
+	if o == nil || IsNil(o.QuoteType) {
+		return nil, false
+	}
+	return o.QuoteType, true
+}
+
+// HasQuoteType returns a boolean if a field has been set.
+func (o *ValidateQuoteResponse) HasQuoteType() bool {
+	if o != nil && !IsNil(o.QuoteType) {
+		return true
+	}
+
+	return false
+}
+
+// SetQuoteType gets a reference to the given int32 and assigns it to the QuoteType field.
+func (o *ValidateQuoteResponse) SetQuoteType(v int32) {
+	o.QuoteType = &v
+}
+
+// GetVendorGroupName returns the VendorGroupName field value if set, zero value otherwise.
+func (o *ValidateQuoteResponse) GetVendorGroupName() string {
+	if o == nil || IsNil(o.VendorGroupName) {
+		var ret string
+		return ret
+	}
+	return *o.VendorGroupName
+}
+
+// GetVendorGroupNameOk returns a tuple with the VendorGroupName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ValidateQuoteResponse) GetVendorGroupNameOk() (*string, bool) {
+	if o == nil || IsNil(o.VendorGroupName) {
+		return nil, false
+	}
+	return o.VendorGroupName, true
+}
+
+// HasVendorGroupName returns a boolean if a field has been set.
+func (o *ValidateQuoteResponse) HasVendorGroupName() bool {
+	if o != nil && !IsNil(o.VendorGroupName) {
+		return true
+	}
+
+	return false
+}
+
+// SetVendorGroupName gets a reference to the given string and assigns it to the VendorGroupName field.
+func (o *ValidateQuoteResponse) SetVendorGroupName(v string) {
+	o.VendorGroupName = &v
+}
+
+// GetVendorQuoteNumber returns the VendorQuoteNumber field value if set, zero value otherwise.
+func (o *ValidateQuoteResponse) GetVendorQuoteNumber() string {
+	if o == nil || IsNil(o.VendorQuoteNumber) {
+		var ret string
+		return ret
+	}
+	return *o.VendorQuoteNumber
+}
+
+// GetVendorQuoteNumberOk returns a tuple with the VendorQuoteNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ValidateQuoteResponse) GetVendorQuoteNumberOk() (*string, bool) {
+	if o == nil || IsNil(o.VendorQuoteNumber) {
+		return nil, false
+	}
+	return o.VendorQuoteNumber, true
+}
+
+// HasVendorQuoteNumber returns a boolean if a field has been set.
+func (o *ValidateQuoteResponse) HasVendorQuoteNumber() bool {
+	if o != nil && !IsNil(o.VendorQuoteNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetVendorQuoteNumber gets a reference to the given string and assigns it to the VendorQuoteNumber field.
+func (o *ValidateQuoteResponse) SetVendorQuoteNumber(v string) {
+	o.VendorQuoteNumber = &v
+}
+
+// GetVendorMasterNumber returns the VendorMasterNumber field value if set, zero value otherwise.
+func (o *ValidateQuoteResponse) GetVendorMasterNumber() string {
+	if o == nil || IsNil(o.VendorMasterNumber) {
+		var ret string
+		return ret
+	}
+	return *o.VendorMasterNumber
+}
+
+// GetVendorMasterNumberOk returns a tuple with the VendorMasterNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ValidateQuoteResponse) GetVendorMasterNumberOk() (*string, bool) {
+	if o == nil || IsNil(o.VendorMasterNumber) {
+		return nil, false
+	}
+	return o.VendorMasterNumber, true
+}
+
+// HasVendorMasterNumber returns a boolean if a field has been set.
+func (o *ValidateQuoteResponse) HasVendorMasterNumber() bool {
+	if o != nil && !IsNil(o.VendorMasterNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetVendorMasterNumber gets a reference to the given string and assigns it to the VendorMasterNumber field.
+func (o *ValidateQuoteResponse) SetVendorMasterNumber(v string) {
+	o.VendorMasterNumber = &v
+}
+
 func (o ValidateQuoteResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -195,6 +327,18 @@ func (o ValidateQuoteResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Lines) {
 		toSerialize["lines"] = o.Lines
+	}
+	if !IsNil(o.QuoteType) {
+		toSerialize["quoteType"] = o.QuoteType
+	}
+	if !IsNil(o.VendorGroupName) {
+		toSerialize["vendorGroupName"] = o.VendorGroupName
+	}
+	if !IsNil(o.VendorQuoteNumber) {
+		toSerialize["vendorQuoteNumber"] = o.VendorQuoteNumber
+	}
+	if !IsNil(o.VendorMasterNumber) {
+		toSerialize["vendorMasterNumber"] = o.VendorMasterNumber
 	}
 	return toSerialize, nil
 }

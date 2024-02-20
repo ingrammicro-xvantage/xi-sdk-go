@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **IntroPreamble** | Pointer to **string** | Introductory paragraph included in each quote.  Legally required - must be included when presenting the quote details. | [optional] 
 **PurchaseInstructions** | Pointer to **string** | Purchase instructions.  Legally required - must be included when presenting the quote details. | [optional] 
 **LegalTerms** | Pointer to **string** | Legal terms -  Legally required - must be included when presenting the quote details. | [optional] 
+**QuoteType** | Pointer to **string** |  | [optional] 
 **LeaseInfo** | Pointer to **string** | Lease information. | [optional] 
 **LeasingInstructions** | Pointer to **string** | Leasing information | [optional] 
 **ResellerInfo** | Pointer to [**QuoteDetailsResponseResellerInfo**](QuoteDetailsResponseResellerInfo.md) |  | [optional] 
@@ -475,6 +476,31 @@ SetLegalTerms sets LegalTerms field to given value.
 `func (o *QuoteDetailsResponse) HasLegalTerms() bool`
 
 HasLegalTerms returns a boolean if a field has been set.
+
+### GetQuoteType
+
+`func (o *QuoteDetailsResponse) GetQuoteType() string`
+
+GetQuoteType returns the QuoteType field if non-nil, zero value otherwise.
+
+### GetQuoteTypeOk
+
+`func (o *QuoteDetailsResponse) GetQuoteTypeOk() (*string, bool)`
+
+GetQuoteTypeOk returns a tuple with the QuoteType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuoteType
+
+`func (o *QuoteDetailsResponse) SetQuoteType(v string)`
+
+SetQuoteType sets QuoteType field to given value.
+
+### HasQuoteType
+
+`func (o *QuoteDetailsResponse) HasQuoteType() bool`
+
+HasQuoteType returns a boolean if a field has been set.
 
 ### GetLeaseInfo
 

@@ -12,13 +12,14 @@ Name | Type | Description | Notes
 **InvoiceDate** | Pointer to **string** | The date of the invoice. | [optional] 
 **InvoiceNumber** | Pointer to **string** | Ingram micro Invoice number. | [optional] 
 **CustomerOrderNumber** | Pointer to **string** | The reseller&#39;s order number for reference in their system. | [optional] 
-**RequestDetails** | Pointer to **string** | Request details. | [optional] 
 **Quantity** | Pointer to **float32** | The quantity of the line item. | [optional] 
 **UnitPrice** | Pointer to **float32** | The unit price of the line item. | [optional] 
 **ExtendedPrice** | Pointer to **float32** | Unit price X quantity for the line item. | [optional] 
 **Status** | Pointer to **string** | The status of the line item. | [optional] 
 **ReturnBranch** | Pointer to **string** | The code of the return branch. | [optional] 
 **ShipFromBranch** | Pointer to **string** | The code of the ship from branch. | [optional] 
+**RequestDetails** | Pointer to **string** | Request details. | [optional] 
+**AdditionalDetails** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -239,31 +240,6 @@ SetCustomerOrderNumber sets CustomerOrderNumber field to given value.
 
 HasCustomerOrderNumber returns a boolean if a field has been set.
 
-### GetRequestDetails
-
-`func (o *ReturnsDetailsResponseProductsInner) GetRequestDetails() string`
-
-GetRequestDetails returns the RequestDetails field if non-nil, zero value otherwise.
-
-### GetRequestDetailsOk
-
-`func (o *ReturnsDetailsResponseProductsInner) GetRequestDetailsOk() (*string, bool)`
-
-GetRequestDetailsOk returns a tuple with the RequestDetails field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRequestDetails
-
-`func (o *ReturnsDetailsResponseProductsInner) SetRequestDetails(v string)`
-
-SetRequestDetails sets RequestDetails field to given value.
-
-### HasRequestDetails
-
-`func (o *ReturnsDetailsResponseProductsInner) HasRequestDetails() bool`
-
-HasRequestDetails returns a boolean if a field has been set.
-
 ### GetQuantity
 
 `func (o *ReturnsDetailsResponseProductsInner) GetQuantity() float32`
@@ -413,6 +389,56 @@ SetShipFromBranch sets ShipFromBranch field to given value.
 `func (o *ReturnsDetailsResponseProductsInner) HasShipFromBranch() bool`
 
 HasShipFromBranch returns a boolean if a field has been set.
+
+### GetRequestDetails
+
+`func (o *ReturnsDetailsResponseProductsInner) GetRequestDetails() string`
+
+GetRequestDetails returns the RequestDetails field if non-nil, zero value otherwise.
+
+### GetRequestDetailsOk
+
+`func (o *ReturnsDetailsResponseProductsInner) GetRequestDetailsOk() (*string, bool)`
+
+GetRequestDetailsOk returns a tuple with the RequestDetails field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestDetails
+
+`func (o *ReturnsDetailsResponseProductsInner) SetRequestDetails(v string)`
+
+SetRequestDetails sets RequestDetails field to given value.
+
+### HasRequestDetails
+
+`func (o *ReturnsDetailsResponseProductsInner) HasRequestDetails() bool`
+
+HasRequestDetails returns a boolean if a field has been set.
+
+### GetAdditionalDetails
+
+`func (o *ReturnsDetailsResponseProductsInner) GetAdditionalDetails() string`
+
+GetAdditionalDetails returns the AdditionalDetails field if non-nil, zero value otherwise.
+
+### GetAdditionalDetailsOk
+
+`func (o *ReturnsDetailsResponseProductsInner) GetAdditionalDetailsOk() (*string, bool)`
+
+GetAdditionalDetailsOk returns a tuple with the AdditionalDetails field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAdditionalDetails
+
+`func (o *ReturnsDetailsResponseProductsInner) SetAdditionalDetails(v string)`
+
+SetAdditionalDetails sets AdditionalDetails field to given value.
+
+### HasAdditionalDetails
+
+`func (o *ReturnsDetailsResponseProductsInner) HasAdditionalDetails() bool`
+
+HasAdditionalDetails returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

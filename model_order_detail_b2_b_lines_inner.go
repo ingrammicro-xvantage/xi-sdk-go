@@ -63,6 +63,8 @@ type OrderDetailB2BLinesInner struct {
 	RequestedDeliverydate *string `json:"requestedDeliverydate,omitempty"`
 	// The delivery date promised by IngramMicro.
 	PromisedDeliveryDate *string `json:"promisedDeliveryDate,omitempty"`
+	// Backorder ETA date
+	BackOrderETAData *string `json:"backOrderETAData,omitempty"`
 	// Line-level notes for the order.
 	LineNotes *string `json:"lineNotes,omitempty"`
 	// Shipping details for the line item.
@@ -796,6 +798,38 @@ func (o *OrderDetailB2BLinesInner) SetPromisedDeliveryDate(v string) {
 	o.PromisedDeliveryDate = &v
 }
 
+// GetBackOrderETAData returns the BackOrderETAData field value if set, zero value otherwise.
+func (o *OrderDetailB2BLinesInner) GetBackOrderETAData() string {
+	if o == nil || IsNil(o.BackOrderETAData) {
+		var ret string
+		return ret
+	}
+	return *o.BackOrderETAData
+}
+
+// GetBackOrderETADataOk returns a tuple with the BackOrderETAData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDetailB2BLinesInner) GetBackOrderETADataOk() (*string, bool) {
+	if o == nil || IsNil(o.BackOrderETAData) {
+		return nil, false
+	}
+	return o.BackOrderETAData, true
+}
+
+// HasBackOrderETAData returns a boolean if a field has been set.
+func (o *OrderDetailB2BLinesInner) HasBackOrderETAData() bool {
+	if o != nil && !IsNil(o.BackOrderETAData) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackOrderETAData gets a reference to the given string and assigns it to the BackOrderETAData field.
+func (o *OrderDetailB2BLinesInner) SetBackOrderETAData(v string) {
+	o.BackOrderETAData = &v
+}
+
 // GetLineNotes returns the LineNotes field value if set, zero value otherwise.
 func (o *OrderDetailB2BLinesInner) GetLineNotes() string {
 	if o == nil || IsNil(o.LineNotes) {
@@ -1130,6 +1164,9 @@ func (o OrderDetailB2BLinesInner) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PromisedDeliveryDate) {
 		toSerialize["promisedDeliveryDate"] = o.PromisedDeliveryDate
+	}
+	if !IsNil(o.BackOrderETAData) {
+		toSerialize["backOrderETAData"] = o.BackOrderETAData
 	}
 	if !IsNil(o.LineNotes) {
 		toSerialize["lineNotes"] = o.LineNotes
