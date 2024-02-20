@@ -53,6 +53,7 @@ type QuoteDetailsResponse struct {
 	PurchaseInstructions *string `json:"purchaseInstructions,omitempty"`
 	// Legal terms -  Legally required - must be included when presenting the quote details.
 	LegalTerms *string `json:"legalTerms,omitempty"`
+	QuoteType *string `json:"quoteType,omitempty"`
 	// Lease information.
 	LeaseInfo *string `json:"leaseInfo,omitempty"`
 	// Leasing information
@@ -632,6 +633,38 @@ func (o *QuoteDetailsResponse) SetLegalTerms(v string) {
 	o.LegalTerms = &v
 }
 
+// GetQuoteType returns the QuoteType field value if set, zero value otherwise.
+func (o *QuoteDetailsResponse) GetQuoteType() string {
+	if o == nil || IsNil(o.QuoteType) {
+		var ret string
+		return ret
+	}
+	return *o.QuoteType
+}
+
+// GetQuoteTypeOk returns a tuple with the QuoteType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponse) GetQuoteTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.QuoteType) {
+		return nil, false
+	}
+	return o.QuoteType, true
+}
+
+// HasQuoteType returns a boolean if a field has been set.
+func (o *QuoteDetailsResponse) HasQuoteType() bool {
+	if o != nil && !IsNil(o.QuoteType) {
+		return true
+	}
+
+	return false
+}
+
+// SetQuoteType gets a reference to the given string and assigns it to the QuoteType field.
+func (o *QuoteDetailsResponse) SetQuoteType(v string) {
+	o.QuoteType = &v
+}
+
 // GetLeaseInfo returns the LeaseInfo field value if set, zero value otherwise.
 func (o *QuoteDetailsResponse) GetLeaseInfo() string {
 	if o == nil || IsNil(o.LeaseInfo) {
@@ -1012,6 +1045,9 @@ func (o QuoteDetailsResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.LegalTerms) {
 		toSerialize["legalTerms"] = o.LegalTerms
+	}
+	if !IsNil(o.QuoteType) {
+		toSerialize["quoteType"] = o.QuoteType
 	}
 	if !IsNil(o.LeaseInfo) {
 		toSerialize["leaseInfo"] = o.LeaseInfo

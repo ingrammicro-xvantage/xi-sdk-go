@@ -35,8 +35,6 @@ type ReturnsDetailsResponseProductsInner struct {
 	InvoiceNumber *string `json:"invoiceNumber,omitempty"`
 	// The reseller's order number for reference in their system.
 	CustomerOrderNumber *string `json:"customerOrderNumber,omitempty"`
-	// Request details.
-	RequestDetails *string `json:"requestDetails,omitempty"`
 	// The quantity of the line item.
 	Quantity *float32 `json:"quantity,omitempty"`
 	// The unit price of the line item.
@@ -49,6 +47,9 @@ type ReturnsDetailsResponseProductsInner struct {
 	ReturnBranch *string `json:"returnBranch,omitempty"`
 	// The code of the ship from branch.
 	ShipFromBranch *string `json:"shipFromBranch,omitempty"`
+	// Request details.
+	RequestDetails *string `json:"requestDetails,omitempty"`
+	AdditionalDetails *string `json:"additionalDetails,omitempty"`
 }
 
 // NewReturnsDetailsResponseProductsInner instantiates a new ReturnsDetailsResponseProductsInner object
@@ -324,38 +325,6 @@ func (o *ReturnsDetailsResponseProductsInner) SetCustomerOrderNumber(v string) {
 	o.CustomerOrderNumber = &v
 }
 
-// GetRequestDetails returns the RequestDetails field value if set, zero value otherwise.
-func (o *ReturnsDetailsResponseProductsInner) GetRequestDetails() string {
-	if o == nil || IsNil(o.RequestDetails) {
-		var ret string
-		return ret
-	}
-	return *o.RequestDetails
-}
-
-// GetRequestDetailsOk returns a tuple with the RequestDetails field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ReturnsDetailsResponseProductsInner) GetRequestDetailsOk() (*string, bool) {
-	if o == nil || IsNil(o.RequestDetails) {
-		return nil, false
-	}
-	return o.RequestDetails, true
-}
-
-// HasRequestDetails returns a boolean if a field has been set.
-func (o *ReturnsDetailsResponseProductsInner) HasRequestDetails() bool {
-	if o != nil && !IsNil(o.RequestDetails) {
-		return true
-	}
-
-	return false
-}
-
-// SetRequestDetails gets a reference to the given string and assigns it to the RequestDetails field.
-func (o *ReturnsDetailsResponseProductsInner) SetRequestDetails(v string) {
-	o.RequestDetails = &v
-}
-
 // GetQuantity returns the Quantity field value if set, zero value otherwise.
 func (o *ReturnsDetailsResponseProductsInner) GetQuantity() float32 {
 	if o == nil || IsNil(o.Quantity) {
@@ -548,6 +517,70 @@ func (o *ReturnsDetailsResponseProductsInner) SetShipFromBranch(v string) {
 	o.ShipFromBranch = &v
 }
 
+// GetRequestDetails returns the RequestDetails field value if set, zero value otherwise.
+func (o *ReturnsDetailsResponseProductsInner) GetRequestDetails() string {
+	if o == nil || IsNil(o.RequestDetails) {
+		var ret string
+		return ret
+	}
+	return *o.RequestDetails
+}
+
+// GetRequestDetailsOk returns a tuple with the RequestDetails field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReturnsDetailsResponseProductsInner) GetRequestDetailsOk() (*string, bool) {
+	if o == nil || IsNil(o.RequestDetails) {
+		return nil, false
+	}
+	return o.RequestDetails, true
+}
+
+// HasRequestDetails returns a boolean if a field has been set.
+func (o *ReturnsDetailsResponseProductsInner) HasRequestDetails() bool {
+	if o != nil && !IsNil(o.RequestDetails) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequestDetails gets a reference to the given string and assigns it to the RequestDetails field.
+func (o *ReturnsDetailsResponseProductsInner) SetRequestDetails(v string) {
+	o.RequestDetails = &v
+}
+
+// GetAdditionalDetails returns the AdditionalDetails field value if set, zero value otherwise.
+func (o *ReturnsDetailsResponseProductsInner) GetAdditionalDetails() string {
+	if o == nil || IsNil(o.AdditionalDetails) {
+		var ret string
+		return ret
+	}
+	return *o.AdditionalDetails
+}
+
+// GetAdditionalDetailsOk returns a tuple with the AdditionalDetails field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReturnsDetailsResponseProductsInner) GetAdditionalDetailsOk() (*string, bool) {
+	if o == nil || IsNil(o.AdditionalDetails) {
+		return nil, false
+	}
+	return o.AdditionalDetails, true
+}
+
+// HasAdditionalDetails returns a boolean if a field has been set.
+func (o *ReturnsDetailsResponseProductsInner) HasAdditionalDetails() bool {
+	if o != nil && !IsNil(o.AdditionalDetails) {
+		return true
+	}
+
+	return false
+}
+
+// SetAdditionalDetails gets a reference to the given string and assigns it to the AdditionalDetails field.
+func (o *ReturnsDetailsResponseProductsInner) SetAdditionalDetails(v string) {
+	o.AdditionalDetails = &v
+}
+
 func (o ReturnsDetailsResponseProductsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -582,9 +615,6 @@ func (o ReturnsDetailsResponseProductsInner) ToMap() (map[string]interface{}, er
 	if !IsNil(o.CustomerOrderNumber) {
 		toSerialize["customerOrderNumber"] = o.CustomerOrderNumber
 	}
-	if !IsNil(o.RequestDetails) {
-		toSerialize["requestDetails"] = o.RequestDetails
-	}
 	if !IsNil(o.Quantity) {
 		toSerialize["quantity"] = o.Quantity
 	}
@@ -602,6 +632,12 @@ func (o ReturnsDetailsResponseProductsInner) ToMap() (map[string]interface{}, er
 	}
 	if !IsNil(o.ShipFromBranch) {
 		toSerialize["shipFromBranch"] = o.ShipFromBranch
+	}
+	if !IsNil(o.RequestDetails) {
+		toSerialize["requestDetails"] = o.RequestDetails
+	}
+	if !IsNil(o.AdditionalDetails) {
+		toSerialize["additionalDetails"] = o.AdditionalDetails
 	}
 	return toSerialize, nil
 }

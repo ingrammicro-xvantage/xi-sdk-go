@@ -36,7 +36,7 @@ type ProductDetailResponse struct {
 	// The category of the product.
 	ProductCategory *string `json:"productCategory,omitempty"`
 	// The sub-category of the product.
-	ProductSubcategory *string `json:"productSubcategory,omitempty"`
+	ProductSubCategory *string `json:"productSubCategory,omitempty"`
 	// Vendor name for the order.
 	VendorName *string `json:"vendorName,omitempty"`
 	// Vendor number that identifies the product.
@@ -327,36 +327,36 @@ func (o *ProductDetailResponse) SetProductCategory(v string) {
 	o.ProductCategory = &v
 }
 
-// GetProductSubcategory returns the ProductSubcategory field value if set, zero value otherwise.
-func (o *ProductDetailResponse) GetProductSubcategory() string {
-	if o == nil || IsNil(o.ProductSubcategory) {
+// GetProductSubCategory returns the ProductSubCategory field value if set, zero value otherwise.
+func (o *ProductDetailResponse) GetProductSubCategory() string {
+	if o == nil || IsNil(o.ProductSubCategory) {
 		var ret string
 		return ret
 	}
-	return *o.ProductSubcategory
+	return *o.ProductSubCategory
 }
 
-// GetProductSubcategoryOk returns a tuple with the ProductSubcategory field value if set, nil otherwise
+// GetProductSubCategoryOk returns a tuple with the ProductSubCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponse) GetProductSubcategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.ProductSubcategory) {
+func (o *ProductDetailResponse) GetProductSubCategoryOk() (*string, bool) {
+	if o == nil || IsNil(o.ProductSubCategory) {
 		return nil, false
 	}
-	return o.ProductSubcategory, true
+	return o.ProductSubCategory, true
 }
 
-// HasProductSubcategory returns a boolean if a field has been set.
-func (o *ProductDetailResponse) HasProductSubcategory() bool {
-	if o != nil && !IsNil(o.ProductSubcategory) {
+// HasProductSubCategory returns a boolean if a field has been set.
+func (o *ProductDetailResponse) HasProductSubCategory() bool {
+	if o != nil && !IsNil(o.ProductSubCategory) {
 		return true
 	}
 
 	return false
 }
 
-// SetProductSubcategory gets a reference to the given string and assigns it to the ProductSubcategory field.
-func (o *ProductDetailResponse) SetProductSubcategory(v string) {
-	o.ProductSubcategory = &v
+// SetProductSubCategory gets a reference to the given string and assigns it to the ProductSubCategory field.
+func (o *ProductDetailResponse) SetProductSubCategory(v string) {
+	o.ProductSubCategory = &v
 }
 
 // GetVendorName returns the VendorName field value if set, zero value otherwise.
@@ -681,8 +681,8 @@ func (o ProductDetailResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ProductCategory) {
 		toSerialize["productCategory"] = o.ProductCategory
 	}
-	if !IsNil(o.ProductSubcategory) {
-		toSerialize["productSubcategory"] = o.ProductSubcategory
+	if !IsNil(o.ProductSubCategory) {
+		toSerialize["productSubCategory"] = o.ProductSubCategory
 	}
 	if !IsNil(o.VendorName) {
 		toSerialize["vendorName"] = o.VendorName

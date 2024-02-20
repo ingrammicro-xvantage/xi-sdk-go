@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ## PostRenewalssearch
 
-> RenewalsSearchResponse PostRenewalssearch(ctx).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).ContentType(contentType).IMSenderID(iMSenderID).CustomerOrderNumber(customerOrderNumber).IngramPurchaseOrderNumber(ingramPurchaseOrderNumber).SerialNumber(serialNumber).Page(page).Size(size).Sort(sort).RenewalsSearchRequest(renewalsSearchRequest).Execute()
+> RenewalsSearchResponse PostRenewalssearch(ctx).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).CustomerOrderNumber(customerOrderNumber).IngramPurchaseOrderNumber(ingramPurchaseOrderNumber).SerialNumber(serialNumber).Page(page).Size(size).Sort(sort).RenewalsSearchRequest(renewalsSearchRequest).Execute()
 
 Renewals Search
 
@@ -111,7 +111,6 @@ func main() {
 	iMCustomerNumber := "20-222222" // string | Your unique Ingram Micro customer number.
 	iMCountryCode := "US" // string | Two-character ISO country code.
 	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction across all the systems.
-	contentType := "application/json" // string | The media type for JSON Request.
 	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany (optional)
 	customerOrderNumber := "customerOrderNumber_example" // string | The reseller's unique PO/Order number. (optional)
 	ingramPurchaseOrderNumber := "ingramPurchaseOrderNumber_example" // string | Sales order number. (optional)
@@ -123,7 +122,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.RenewalsAPI.PostRenewalssearch(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).ContentType(contentType).IMSenderID(iMSenderID).CustomerOrderNumber(customerOrderNumber).IngramPurchaseOrderNumber(ingramPurchaseOrderNumber).SerialNumber(serialNumber).Page(page).Size(size).Sort(sort).RenewalsSearchRequest(renewalsSearchRequest).Execute()
+	resp, r, err := apiClient.RenewalsAPI.PostRenewalssearch(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).CustomerOrderNumber(customerOrderNumber).IngramPurchaseOrderNumber(ingramPurchaseOrderNumber).SerialNumber(serialNumber).Page(page).Size(size).Sort(sort).RenewalsSearchRequest(renewalsSearchRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RenewalsAPI.PostRenewalssearch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -147,7 +146,6 @@ Name | Type | Description  | Notes
  **iMCustomerNumber** | **string** | Your unique Ingram Micro customer number. | 
  **iMCountryCode** | **string** | Two-character ISO country code. | 
  **iMCorrelationID** | **string** | Unique transaction number to identify each transaction across all the systems. | 
- **contentType** | **string** | The media type for JSON Request. | 
  **iMSenderID** | **string** | Unique value used to identify the sender of the transaction. Example: MyCompany | 
  **customerOrderNumber** | **string** | The reseller&#39;s unique PO/Order number. | 
  **ingramPurchaseOrderNumber** | **string** | Sales order number. | 

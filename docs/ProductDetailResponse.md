@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **ProductDetailDescription** | Pointer to **string** | The detailed description given for the product. | [optional] 
 **Upc** | Pointer to **string** | The UPC code for the product. Consists of 12 numeric digits that are uniquely assigned to each trade item. | [optional] 
 **ProductCategory** | Pointer to **string** | The category of the product. | [optional] 
-**ProductSubcategory** | Pointer to **string** | The sub-category of the product. | [optional] 
+**ProductSubCategory** | Pointer to **string** | The sub-category of the product. | [optional] 
 **VendorName** | Pointer to **string** | Vendor name for the order. | [optional] 
 **VendorNumber** | Pointer to **string** | Vendor number that identifies the product. | [optional] 
 **ProductStatusCode** | Pointer to **string** | Status code of the product. | [optional] 
@@ -242,30 +242,30 @@ SetProductCategory sets ProductCategory field to given value.
 
 HasProductCategory returns a boolean if a field has been set.
 
-### GetProductSubcategory
+### GetProductSubCategory
 
-`func (o *ProductDetailResponse) GetProductSubcategory() string`
+`func (o *ProductDetailResponse) GetProductSubCategory() string`
 
-GetProductSubcategory returns the ProductSubcategory field if non-nil, zero value otherwise.
+GetProductSubCategory returns the ProductSubCategory field if non-nil, zero value otherwise.
 
-### GetProductSubcategoryOk
+### GetProductSubCategoryOk
 
-`func (o *ProductDetailResponse) GetProductSubcategoryOk() (*string, bool)`
+`func (o *ProductDetailResponse) GetProductSubCategoryOk() (*string, bool)`
 
-GetProductSubcategoryOk returns a tuple with the ProductSubcategory field if it's non-nil, zero value otherwise
+GetProductSubCategoryOk returns a tuple with the ProductSubCategory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProductSubcategory
+### SetProductSubCategory
 
-`func (o *ProductDetailResponse) SetProductSubcategory(v string)`
+`func (o *ProductDetailResponse) SetProductSubCategory(v string)`
 
-SetProductSubcategory sets ProductSubcategory field to given value.
+SetProductSubCategory sets ProductSubCategory field to given value.
 
-### HasProductSubcategory
+### HasProductSubCategory
 
-`func (o *ProductDetailResponse) HasProductSubcategory() bool`
+`func (o *ProductDetailResponse) HasProductSubCategory() bool`
 
-HasProductSubcategory returns a boolean if a field has been set.
+HasProductSubCategory returns a boolean if a field has been set.
 
 ### GetVendorName
 

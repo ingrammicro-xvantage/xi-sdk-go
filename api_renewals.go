@@ -208,7 +208,6 @@ type ApiPostRenewalssearchRequest struct {
 	iMCustomerNumber *string
 	iMCountryCode *string
 	iMCorrelationID *string
-	contentType *string
 	iMSenderID *string
 	customerOrderNumber *string
 	ingramPurchaseOrderNumber *string
@@ -234,12 +233,6 @@ func (r ApiPostRenewalssearchRequest) IMCountryCode(iMCountryCode string) ApiPos
 // Unique transaction number to identify each transaction across all the systems.
 func (r ApiPostRenewalssearchRequest) IMCorrelationID(iMCorrelationID string) ApiPostRenewalssearchRequest {
 	r.iMCorrelationID = &iMCorrelationID
-	return r
-}
-
-// The media type for JSON Request.
-func (r ApiPostRenewalssearchRequest) ContentType(contentType string) ApiPostRenewalssearchRequest {
-	r.contentType = &contentType
 	return r
 }
 
@@ -350,9 +343,6 @@ func (a *RenewalsAPIService) PostRenewalssearchExecute(r ApiPostRenewalssearchRe
 	if strlen(*r.iMCorrelationID) > 32 {
 		return localVarReturnValue, nil, reportError("iMCorrelationID must have less than 32 elements")
 	}
-	if r.contentType == nil {
-		return localVarReturnValue, nil, reportError("contentType is required and must be specified")
-	}
 
 	if r.customerOrderNumber != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "customerOrderNumber", r.customerOrderNumber, "")
@@ -395,7 +385,6 @@ func (a *RenewalsAPIService) PostRenewalssearchExecute(r ApiPostRenewalssearchRe
 	if r.iMSenderID != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "Content Type", r.contentType, "")
 	// body params
 	localVarPostBody = r.renewalsSearchRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
