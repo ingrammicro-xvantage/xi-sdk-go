@@ -12,9 +12,12 @@ Name | Type | Description | Notes
 **InvoiceDueDate** | Pointer to **string** | Invoice Due Date. | [optional] 
 **InvoicedAmountDue** | Pointer to **float32** | Invoice Amount. | [optional] 
 **CustomerOrderNumber** | Pointer to **string** | Customer Order No. | [optional] 
-**OrderCreateDate** | Pointer to **string** | Order Create Date. | [optional] 
 **EndCustomerOrderNumber** | Pointer to **string** | End Customer Order number. | [optional] 
+**OrderCreateDate** | Pointer to **string** | Order Create Date. | [optional] 
 **InvoiceAmountInclTax** | Pointer to **float32** | Invoice Amount Inclusive of Taxes | [optional] 
+**Forgntotalamount** | Pointer to **float32** |  | [optional] 
+**GstInvoiceNumber** | Pointer to **string** |  | [optional] 
+**Isfeccenabled** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -235,31 +238,6 @@ SetCustomerOrderNumber sets CustomerOrderNumber field to given value.
 
 HasCustomerOrderNumber returns a boolean if a field has been set.
 
-### GetOrderCreateDate
-
-`func (o *InvoiceSearchResponseInvoicesInner) GetOrderCreateDate() string`
-
-GetOrderCreateDate returns the OrderCreateDate field if non-nil, zero value otherwise.
-
-### GetOrderCreateDateOk
-
-`func (o *InvoiceSearchResponseInvoicesInner) GetOrderCreateDateOk() (*string, bool)`
-
-GetOrderCreateDateOk returns a tuple with the OrderCreateDate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOrderCreateDate
-
-`func (o *InvoiceSearchResponseInvoicesInner) SetOrderCreateDate(v string)`
-
-SetOrderCreateDate sets OrderCreateDate field to given value.
-
-### HasOrderCreateDate
-
-`func (o *InvoiceSearchResponseInvoicesInner) HasOrderCreateDate() bool`
-
-HasOrderCreateDate returns a boolean if a field has been set.
-
 ### GetEndCustomerOrderNumber
 
 `func (o *InvoiceSearchResponseInvoicesInner) GetEndCustomerOrderNumber() string`
@@ -285,6 +263,31 @@ SetEndCustomerOrderNumber sets EndCustomerOrderNumber field to given value.
 
 HasEndCustomerOrderNumber returns a boolean if a field has been set.
 
+### GetOrderCreateDate
+
+`func (o *InvoiceSearchResponseInvoicesInner) GetOrderCreateDate() string`
+
+GetOrderCreateDate returns the OrderCreateDate field if non-nil, zero value otherwise.
+
+### GetOrderCreateDateOk
+
+`func (o *InvoiceSearchResponseInvoicesInner) GetOrderCreateDateOk() (*string, bool)`
+
+GetOrderCreateDateOk returns a tuple with the OrderCreateDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrderCreateDate
+
+`func (o *InvoiceSearchResponseInvoicesInner) SetOrderCreateDate(v string)`
+
+SetOrderCreateDate sets OrderCreateDate field to given value.
+
+### HasOrderCreateDate
+
+`func (o *InvoiceSearchResponseInvoicesInner) HasOrderCreateDate() bool`
+
+HasOrderCreateDate returns a boolean if a field has been set.
+
 ### GetInvoiceAmountInclTax
 
 `func (o *InvoiceSearchResponseInvoicesInner) GetInvoiceAmountInclTax() float32`
@@ -309,6 +312,81 @@ SetInvoiceAmountInclTax sets InvoiceAmountInclTax field to given value.
 `func (o *InvoiceSearchResponseInvoicesInner) HasInvoiceAmountInclTax() bool`
 
 HasInvoiceAmountInclTax returns a boolean if a field has been set.
+
+### GetForgntotalamount
+
+`func (o *InvoiceSearchResponseInvoicesInner) GetForgntotalamount() float32`
+
+GetForgntotalamount returns the Forgntotalamount field if non-nil, zero value otherwise.
+
+### GetForgntotalamountOk
+
+`func (o *InvoiceSearchResponseInvoicesInner) GetForgntotalamountOk() (*float32, bool)`
+
+GetForgntotalamountOk returns a tuple with the Forgntotalamount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetForgntotalamount
+
+`func (o *InvoiceSearchResponseInvoicesInner) SetForgntotalamount(v float32)`
+
+SetForgntotalamount sets Forgntotalamount field to given value.
+
+### HasForgntotalamount
+
+`func (o *InvoiceSearchResponseInvoicesInner) HasForgntotalamount() bool`
+
+HasForgntotalamount returns a boolean if a field has been set.
+
+### GetGstInvoiceNumber
+
+`func (o *InvoiceSearchResponseInvoicesInner) GetGstInvoiceNumber() string`
+
+GetGstInvoiceNumber returns the GstInvoiceNumber field if non-nil, zero value otherwise.
+
+### GetGstInvoiceNumberOk
+
+`func (o *InvoiceSearchResponseInvoicesInner) GetGstInvoiceNumberOk() (*string, bool)`
+
+GetGstInvoiceNumberOk returns a tuple with the GstInvoiceNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGstInvoiceNumber
+
+`func (o *InvoiceSearchResponseInvoicesInner) SetGstInvoiceNumber(v string)`
+
+SetGstInvoiceNumber sets GstInvoiceNumber field to given value.
+
+### HasGstInvoiceNumber
+
+`func (o *InvoiceSearchResponseInvoicesInner) HasGstInvoiceNumber() bool`
+
+HasGstInvoiceNumber returns a boolean if a field has been set.
+
+### GetIsfeccenabled
+
+`func (o *InvoiceSearchResponseInvoicesInner) GetIsfeccenabled() bool`
+
+GetIsfeccenabled returns the Isfeccenabled field if non-nil, zero value otherwise.
+
+### GetIsfeccenabledOk
+
+`func (o *InvoiceSearchResponseInvoicesInner) GetIsfeccenabledOk() (*bool, bool)`
+
+GetIsfeccenabledOk returns a tuple with the Isfeccenabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsfeccenabled
+
+`func (o *InvoiceSearchResponseInvoicesInner) SetIsfeccenabled(v bool)`
+
+SetIsfeccenabled sets Isfeccenabled field to given value.
+
+### HasIsfeccenabled
+
+`func (o *InvoiceSearchResponseInvoicesInner) HasIsfeccenabled() bool`
+
+HasIsfeccenabled returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

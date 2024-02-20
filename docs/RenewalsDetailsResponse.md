@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RenewalId** | Pointer to **string** | Unique Ingram renewal ID. | [optional] 
+**RenewalId** | Pointer to **int32** | Unique Ingram renewal ID. | [optional] 
 **IngramOrderNumber** | Pointer to **string** | The IngramMicro sales order number. | [optional] 
 **IngramOrderDate** | Pointer to **string** | The IngramMicro sales order date. | [optional] 
 **ExpirationDate** | Pointer to **string** | Renewal expiration date. | [optional] 
 **IngramPurchaseOrderNumber** | Pointer to **string** | Ingram purchase order number. | [optional] 
 **CustomerOrderNumber** | Pointer to **string** | The reseller&#39;s order number for reference in their system. | [optional] 
 **EndCustomerOrderNumber** | Pointer to **string** | The end customer&#39;s order number for reference in their system. | [optional] 
-**RenewalValue** | Pointer to **float32** | The value of the renewal. | [optional] 
+**RenewalValue** | Pointer to **float64** | The value of the renewal. | [optional] 
 **EndUser** | Pointer to **string** | The company name for the end user/customer. | [optional] 
 **Vendor** | Pointer to **string** | The name of the vendor. | [optional] 
 **Status** | Pointer to **string** | The status of the renewal. | [optional] 
@@ -41,20 +41,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRenewalId
 
-`func (o *RenewalsDetailsResponse) GetRenewalId() string`
+`func (o *RenewalsDetailsResponse) GetRenewalId() int32`
 
 GetRenewalId returns the RenewalId field if non-nil, zero value otherwise.
 
 ### GetRenewalIdOk
 
-`func (o *RenewalsDetailsResponse) GetRenewalIdOk() (*string, bool)`
+`func (o *RenewalsDetailsResponse) GetRenewalIdOk() (*int32, bool)`
 
 GetRenewalIdOk returns a tuple with the RenewalId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRenewalId
 
-`func (o *RenewalsDetailsResponse) SetRenewalId(v string)`
+`func (o *RenewalsDetailsResponse) SetRenewalId(v int32)`
 
 SetRenewalId sets RenewalId field to given value.
 
@@ -216,20 +216,20 @@ HasEndCustomerOrderNumber returns a boolean if a field has been set.
 
 ### GetRenewalValue
 
-`func (o *RenewalsDetailsResponse) GetRenewalValue() float32`
+`func (o *RenewalsDetailsResponse) GetRenewalValue() float64`
 
 GetRenewalValue returns the RenewalValue field if non-nil, zero value otherwise.
 
 ### GetRenewalValueOk
 
-`func (o *RenewalsDetailsResponse) GetRenewalValueOk() (*float32, bool)`
+`func (o *RenewalsDetailsResponse) GetRenewalValueOk() (*float64, bool)`
 
 GetRenewalValueOk returns a tuple with the RenewalValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRenewalValue
 
-`func (o *RenewalsDetailsResponse) SetRenewalValue(v float32)`
+`func (o *RenewalsDetailsResponse) SetRenewalValue(v float64)`
 
 SetRenewalValue sets RenewalValue field to given value.
 
