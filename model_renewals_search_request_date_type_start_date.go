@@ -14,36 +14,36 @@ import (
 	"encoding/json"
 )
 
-// checks if the RenewalsSearchRequestDataTypeExpirationDate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &RenewalsSearchRequestDataTypeExpirationDate{}
+// checks if the RenewalsSearchRequestDateTypeStartDate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RenewalsSearchRequestDateTypeStartDate{}
 
-// RenewalsSearchRequestDataTypeExpirationDate struct for RenewalsSearchRequestDataTypeExpirationDate
-type RenewalsSearchRequestDataTypeExpirationDate struct {
-	// Custom start date for expiration date.
+// RenewalsSearchRequestDateTypeStartDate struct for RenewalsSearchRequestDateTypeStartDate
+type RenewalsSearchRequestDateTypeStartDate struct {
+	// Custom from date for Renewal Start date.
 	CustomStartDate *string `json:"customStartDate,omitempty"`
-	// Custom end date for expiration date.
+	// Custom to date for Renewal Start date.
 	CustomEndDate *string `json:"customEndDate,omitempty"`
 }
 
-// NewRenewalsSearchRequestDataTypeExpirationDate instantiates a new RenewalsSearchRequestDataTypeExpirationDate object
+// NewRenewalsSearchRequestDateTypeStartDate instantiates a new RenewalsSearchRequestDateTypeStartDate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRenewalsSearchRequestDataTypeExpirationDate() *RenewalsSearchRequestDataTypeExpirationDate {
-	this := RenewalsSearchRequestDataTypeExpirationDate{}
+func NewRenewalsSearchRequestDateTypeStartDate() *RenewalsSearchRequestDateTypeStartDate {
+	this := RenewalsSearchRequestDateTypeStartDate{}
 	return &this
 }
 
-// NewRenewalsSearchRequestDataTypeExpirationDateWithDefaults instantiates a new RenewalsSearchRequestDataTypeExpirationDate object
+// NewRenewalsSearchRequestDateTypeStartDateWithDefaults instantiates a new RenewalsSearchRequestDateTypeStartDate object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRenewalsSearchRequestDataTypeExpirationDateWithDefaults() *RenewalsSearchRequestDataTypeExpirationDate {
-	this := RenewalsSearchRequestDataTypeExpirationDate{}
+func NewRenewalsSearchRequestDateTypeStartDateWithDefaults() *RenewalsSearchRequestDateTypeStartDate {
+	this := RenewalsSearchRequestDateTypeStartDate{}
 	return &this
 }
 
 // GetCustomStartDate returns the CustomStartDate field value if set, zero value otherwise.
-func (o *RenewalsSearchRequestDataTypeExpirationDate) GetCustomStartDate() string {
+func (o *RenewalsSearchRequestDateTypeStartDate) GetCustomStartDate() string {
 	if o == nil || IsNil(o.CustomStartDate) {
 		var ret string
 		return ret
@@ -53,7 +53,7 @@ func (o *RenewalsSearchRequestDataTypeExpirationDate) GetCustomStartDate() strin
 
 // GetCustomStartDateOk returns a tuple with the CustomStartDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsSearchRequestDataTypeExpirationDate) GetCustomStartDateOk() (*string, bool) {
+func (o *RenewalsSearchRequestDateTypeStartDate) GetCustomStartDateOk() (*string, bool) {
 	if o == nil || IsNil(o.CustomStartDate) {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *RenewalsSearchRequestDataTypeExpirationDate) GetCustomStartDateOk() (*s
 }
 
 // HasCustomStartDate returns a boolean if a field has been set.
-func (o *RenewalsSearchRequestDataTypeExpirationDate) HasCustomStartDate() bool {
+func (o *RenewalsSearchRequestDateTypeStartDate) HasCustomStartDate() bool {
 	if o != nil && !IsNil(o.CustomStartDate) {
 		return true
 	}
@@ -70,12 +70,12 @@ func (o *RenewalsSearchRequestDataTypeExpirationDate) HasCustomStartDate() bool 
 }
 
 // SetCustomStartDate gets a reference to the given string and assigns it to the CustomStartDate field.
-func (o *RenewalsSearchRequestDataTypeExpirationDate) SetCustomStartDate(v string) {
+func (o *RenewalsSearchRequestDateTypeStartDate) SetCustomStartDate(v string) {
 	o.CustomStartDate = &v
 }
 
 // GetCustomEndDate returns the CustomEndDate field value if set, zero value otherwise.
-func (o *RenewalsSearchRequestDataTypeExpirationDate) GetCustomEndDate() string {
+func (o *RenewalsSearchRequestDateTypeStartDate) GetCustomEndDate() string {
 	if o == nil || IsNil(o.CustomEndDate) {
 		var ret string
 		return ret
@@ -85,7 +85,7 @@ func (o *RenewalsSearchRequestDataTypeExpirationDate) GetCustomEndDate() string 
 
 // GetCustomEndDateOk returns a tuple with the CustomEndDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsSearchRequestDataTypeExpirationDate) GetCustomEndDateOk() (*string, bool) {
+func (o *RenewalsSearchRequestDateTypeStartDate) GetCustomEndDateOk() (*string, bool) {
 	if o == nil || IsNil(o.CustomEndDate) {
 		return nil, false
 	}
@@ -93,7 +93,7 @@ func (o *RenewalsSearchRequestDataTypeExpirationDate) GetCustomEndDateOk() (*str
 }
 
 // HasCustomEndDate returns a boolean if a field has been set.
-func (o *RenewalsSearchRequestDataTypeExpirationDate) HasCustomEndDate() bool {
+func (o *RenewalsSearchRequestDateTypeStartDate) HasCustomEndDate() bool {
 	if o != nil && !IsNil(o.CustomEndDate) {
 		return true
 	}
@@ -102,11 +102,11 @@ func (o *RenewalsSearchRequestDataTypeExpirationDate) HasCustomEndDate() bool {
 }
 
 // SetCustomEndDate gets a reference to the given string and assigns it to the CustomEndDate field.
-func (o *RenewalsSearchRequestDataTypeExpirationDate) SetCustomEndDate(v string) {
+func (o *RenewalsSearchRequestDateTypeStartDate) SetCustomEndDate(v string) {
 	o.CustomEndDate = &v
 }
 
-func (o RenewalsSearchRequestDataTypeExpirationDate) MarshalJSON() ([]byte, error) {
+func (o RenewalsSearchRequestDateTypeStartDate) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -114,7 +114,7 @@ func (o RenewalsSearchRequestDataTypeExpirationDate) MarshalJSON() ([]byte, erro
 	return json.Marshal(toSerialize)
 }
 
-func (o RenewalsSearchRequestDataTypeExpirationDate) ToMap() (map[string]interface{}, error) {
+func (o RenewalsSearchRequestDateTypeStartDate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.CustomStartDate) {
 		toSerialize["customStartDate"] = o.CustomStartDate
@@ -125,38 +125,38 @@ func (o RenewalsSearchRequestDataTypeExpirationDate) ToMap() (map[string]interfa
 	return toSerialize, nil
 }
 
-type NullableRenewalsSearchRequestDataTypeExpirationDate struct {
-	value *RenewalsSearchRequestDataTypeExpirationDate
+type NullableRenewalsSearchRequestDateTypeStartDate struct {
+	value *RenewalsSearchRequestDateTypeStartDate
 	isSet bool
 }
 
-func (v NullableRenewalsSearchRequestDataTypeExpirationDate) Get() *RenewalsSearchRequestDataTypeExpirationDate {
+func (v NullableRenewalsSearchRequestDateTypeStartDate) Get() *RenewalsSearchRequestDateTypeStartDate {
 	return v.value
 }
 
-func (v *NullableRenewalsSearchRequestDataTypeExpirationDate) Set(val *RenewalsSearchRequestDataTypeExpirationDate) {
+func (v *NullableRenewalsSearchRequestDateTypeStartDate) Set(val *RenewalsSearchRequestDateTypeStartDate) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableRenewalsSearchRequestDataTypeExpirationDate) IsSet() bool {
+func (v NullableRenewalsSearchRequestDateTypeStartDate) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableRenewalsSearchRequestDataTypeExpirationDate) Unset() {
+func (v *NullableRenewalsSearchRequestDateTypeStartDate) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableRenewalsSearchRequestDataTypeExpirationDate(val *RenewalsSearchRequestDataTypeExpirationDate) *NullableRenewalsSearchRequestDataTypeExpirationDate {
-	return &NullableRenewalsSearchRequestDataTypeExpirationDate{value: val, isSet: true}
+func NewNullableRenewalsSearchRequestDateTypeStartDate(val *RenewalsSearchRequestDateTypeStartDate) *NullableRenewalsSearchRequestDateTypeStartDate {
+	return &NullableRenewalsSearchRequestDateTypeStartDate{value: val, isSet: true}
 }
 
-func (v NullableRenewalsSearchRequestDataTypeExpirationDate) MarshalJSON() ([]byte, error) {
+func (v NullableRenewalsSearchRequestDateTypeStartDate) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableRenewalsSearchRequestDataTypeExpirationDate) UnmarshalJSON(src []byte) error {
+func (v *NullableRenewalsSearchRequestDateTypeStartDate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

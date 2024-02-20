@@ -1,4 +1,4 @@
-# RenewalsSearchRequestDataTypeStartDate
+# RenewalsSearchRequestDateTypeStartDate
 
 ## Properties
 
@@ -9,70 +9,70 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewRenewalsSearchRequestDataTypeStartDate
+### NewRenewalsSearchRequestDateTypeStartDate
 
-`func NewRenewalsSearchRequestDataTypeStartDate() *RenewalsSearchRequestDataTypeStartDate`
+`func NewRenewalsSearchRequestDateTypeStartDate() *RenewalsSearchRequestDateTypeStartDate`
 
-NewRenewalsSearchRequestDataTypeStartDate instantiates a new RenewalsSearchRequestDataTypeStartDate object
+NewRenewalsSearchRequestDateTypeStartDate instantiates a new RenewalsSearchRequestDateTypeStartDate object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRenewalsSearchRequestDataTypeStartDateWithDefaults
+### NewRenewalsSearchRequestDateTypeStartDateWithDefaults
 
-`func NewRenewalsSearchRequestDataTypeStartDateWithDefaults() *RenewalsSearchRequestDataTypeStartDate`
+`func NewRenewalsSearchRequestDateTypeStartDateWithDefaults() *RenewalsSearchRequestDateTypeStartDate`
 
-NewRenewalsSearchRequestDataTypeStartDateWithDefaults instantiates a new RenewalsSearchRequestDataTypeStartDate object
+NewRenewalsSearchRequestDateTypeStartDateWithDefaults instantiates a new RenewalsSearchRequestDateTypeStartDate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCustomStartDate
 
-`func (o *RenewalsSearchRequestDataTypeStartDate) GetCustomStartDate() string`
+`func (o *RenewalsSearchRequestDateTypeStartDate) GetCustomStartDate() string`
 
 GetCustomStartDate returns the CustomStartDate field if non-nil, zero value otherwise.
 
 ### GetCustomStartDateOk
 
-`func (o *RenewalsSearchRequestDataTypeStartDate) GetCustomStartDateOk() (*string, bool)`
+`func (o *RenewalsSearchRequestDateTypeStartDate) GetCustomStartDateOk() (*string, bool)`
 
 GetCustomStartDateOk returns a tuple with the CustomStartDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomStartDate
 
-`func (o *RenewalsSearchRequestDataTypeStartDate) SetCustomStartDate(v string)`
+`func (o *RenewalsSearchRequestDateTypeStartDate) SetCustomStartDate(v string)`
 
 SetCustomStartDate sets CustomStartDate field to given value.
 
 ### HasCustomStartDate
 
-`func (o *RenewalsSearchRequestDataTypeStartDate) HasCustomStartDate() bool`
+`func (o *RenewalsSearchRequestDateTypeStartDate) HasCustomStartDate() bool`
 
 HasCustomStartDate returns a boolean if a field has been set.
 
 ### GetCustomEndDate
 
-`func (o *RenewalsSearchRequestDataTypeStartDate) GetCustomEndDate() string`
+`func (o *RenewalsSearchRequestDateTypeStartDate) GetCustomEndDate() string`
 
 GetCustomEndDate returns the CustomEndDate field if non-nil, zero value otherwise.
 
 ### GetCustomEndDateOk
 
-`func (o *RenewalsSearchRequestDataTypeStartDate) GetCustomEndDateOk() (*string, bool)`
+`func (o *RenewalsSearchRequestDateTypeStartDate) GetCustomEndDateOk() (*string, bool)`
 
 GetCustomEndDateOk returns a tuple with the CustomEndDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomEndDate
 
-`func (o *RenewalsSearchRequestDataTypeStartDate) SetCustomEndDate(v string)`
+`func (o *RenewalsSearchRequestDateTypeStartDate) SetCustomEndDate(v string)`
 
 SetCustomEndDate sets CustomEndDate field to given value.
 
 ### HasCustomEndDate
 
-`func (o *RenewalsSearchRequestDataTypeStartDate) HasCustomEndDate() bool`
+`func (o *RenewalsSearchRequestDateTypeStartDate) HasCustomEndDate() bool`
 
 HasCustomEndDate returns a boolean if a field has been set.
 

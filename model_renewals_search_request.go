@@ -20,7 +20,7 @@ var _ MappedNullable = &RenewalsSearchRequest{}
 // RenewalsSearchRequest struct for RenewalsSearchRequest
 type RenewalsSearchRequest struct {
 	Status *RenewalsSearchRequestStatus `json:"status,omitempty"`
-	DataType *RenewalsSearchRequestDataType `json:"dataType,omitempty"`
+	DateType *RenewalsSearchRequestDateType `json:"dateType,omitempty"`
 	// The name of the Vendor.
 	Vendor *string `json:"vendor,omitempty"`
 	// The name of the enduser. 
@@ -76,36 +76,36 @@ func (o *RenewalsSearchRequest) SetStatus(v RenewalsSearchRequestStatus) {
 	o.Status = &v
 }
 
-// GetDataType returns the DataType field value if set, zero value otherwise.
-func (o *RenewalsSearchRequest) GetDataType() RenewalsSearchRequestDataType {
-	if o == nil || IsNil(o.DataType) {
-		var ret RenewalsSearchRequestDataType
+// GetDateType returns the DateType field value if set, zero value otherwise.
+func (o *RenewalsSearchRequest) GetDateType() RenewalsSearchRequestDateType {
+	if o == nil || IsNil(o.DateType) {
+		var ret RenewalsSearchRequestDateType
 		return ret
 	}
-	return *o.DataType
+	return *o.DateType
 }
 
-// GetDataTypeOk returns a tuple with the DataType field value if set, nil otherwise
+// GetDateTypeOk returns a tuple with the DateType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsSearchRequest) GetDataTypeOk() (*RenewalsSearchRequestDataType, bool) {
-	if o == nil || IsNil(o.DataType) {
+func (o *RenewalsSearchRequest) GetDateTypeOk() (*RenewalsSearchRequestDateType, bool) {
+	if o == nil || IsNil(o.DateType) {
 		return nil, false
 	}
-	return o.DataType, true
+	return o.DateType, true
 }
 
-// HasDataType returns a boolean if a field has been set.
-func (o *RenewalsSearchRequest) HasDataType() bool {
-	if o != nil && !IsNil(o.DataType) {
+// HasDateType returns a boolean if a field has been set.
+func (o *RenewalsSearchRequest) HasDateType() bool {
+	if o != nil && !IsNil(o.DateType) {
 		return true
 	}
 
 	return false
 }
 
-// SetDataType gets a reference to the given RenewalsSearchRequestDataType and assigns it to the DataType field.
-func (o *RenewalsSearchRequest) SetDataType(v RenewalsSearchRequestDataType) {
-	o.DataType = &v
+// SetDateType gets a reference to the given RenewalsSearchRequestDateType and assigns it to the DateType field.
+func (o *RenewalsSearchRequest) SetDateType(v RenewalsSearchRequestDateType) {
+	o.DateType = &v
 }
 
 // GetVendor returns the Vendor field value if set, zero value otherwise.
@@ -185,8 +185,8 @@ func (o RenewalsSearchRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.DataType) {
-		toSerialize["dataType"] = o.DataType
+	if !IsNil(o.DateType) {
+		toSerialize["dateType"] = o.DateType
 	}
 	if !IsNil(o.Vendor) {
 		toSerialize["vendor"] = o.Vendor

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Status** | Pointer to [**RenewalsSearchRequestStatus**](RenewalsSearchRequestStatus.md) |  | [optional] 
-**DataType** | Pointer to [**RenewalsSearchRequestDataType**](RenewalsSearchRequestDataType.md) |  | [optional] 
+**DateType** | Pointer to [**RenewalsSearchRequestDateType**](RenewalsSearchRequestDateType.md) |  | [optional] 
 **Vendor** | Pointer to **string** | The name of the Vendor. | [optional] 
 **EndUser** | Pointer to **string** | The name of the enduser.  | [optional] 
 
@@ -53,30 +53,30 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
-### GetDataType
+### GetDateType
 
-`func (o *RenewalsSearchRequest) GetDataType() RenewalsSearchRequestDataType`
+`func (o *RenewalsSearchRequest) GetDateType() RenewalsSearchRequestDateType`
 
-GetDataType returns the DataType field if non-nil, zero value otherwise.
+GetDateType returns the DateType field if non-nil, zero value otherwise.
 
-### GetDataTypeOk
+### GetDateTypeOk
 
-`func (o *RenewalsSearchRequest) GetDataTypeOk() (*RenewalsSearchRequestDataType, bool)`
+`func (o *RenewalsSearchRequest) GetDateTypeOk() (*RenewalsSearchRequestDateType, bool)`
 
-GetDataTypeOk returns a tuple with the DataType field if it's non-nil, zero value otherwise
+GetDateTypeOk returns a tuple with the DateType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDataType
+### SetDateType
 
-`func (o *RenewalsSearchRequest) SetDataType(v RenewalsSearchRequestDataType)`
+`func (o *RenewalsSearchRequest) SetDateType(v RenewalsSearchRequestDateType)`
 
-SetDataType sets DataType field to given value.
+SetDateType sets DateType field to given value.
 
-### HasDataType
+### HasDateType
 
-`func (o *RenewalsSearchRequest) HasDataType() bool`
+`func (o *RenewalsSearchRequest) HasDateType() bool`
 
-HasDataType returns a boolean if a field has been set.
+HasDateType returns a boolean if a field has been set.
 
 ### GetVendor
 
