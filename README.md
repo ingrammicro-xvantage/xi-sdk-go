@@ -26,7 +26,7 @@ go get golang.org/x/net/context
 Put the package under your project folder and add the following in import:
 
 ```go
-import xi_sdk_resellers "github.com/GIT_USER_ID/GIT_REPO_ID"
+import xi_sdk_resellers "github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
 ```
 
 To use a proxy, set the environment variable `HTTP_PROXY`:
@@ -267,11 +267,11 @@ Class | Method | HTTP request | Description
  - [RenewalsDetailsResponseProductsInner](docs/RenewalsDetailsResponseProductsInner.md)
  - [RenewalsDetailsResponseReferenceNumberInner](docs/RenewalsDetailsResponseReferenceNumberInner.md)
  - [RenewalsSearchRequest](docs/RenewalsSearchRequest.md)
- - [RenewalsSearchRequestDataType](docs/RenewalsSearchRequestDataType.md)
- - [RenewalsSearchRequestDataTypeEndDate](docs/RenewalsSearchRequestDataTypeEndDate.md)
- - [RenewalsSearchRequestDataTypeExpirationDate](docs/RenewalsSearchRequestDataTypeExpirationDate.md)
- - [RenewalsSearchRequestDataTypeInvoiceDate](docs/RenewalsSearchRequestDataTypeInvoiceDate.md)
- - [RenewalsSearchRequestDataTypeStartDate](docs/RenewalsSearchRequestDataTypeStartDate.md)
+ - [RenewalsSearchRequestDateType](docs/RenewalsSearchRequestDateType.md)
+ - [RenewalsSearchRequestDateTypeEndDate](docs/RenewalsSearchRequestDateTypeEndDate.md)
+ - [RenewalsSearchRequestDateTypeExpirationDate](docs/RenewalsSearchRequestDateTypeExpirationDate.md)
+ - [RenewalsSearchRequestDateTypeInvoiceDate](docs/RenewalsSearchRequestDateTypeInvoiceDate.md)
+ - [RenewalsSearchRequestDateTypeStartDate](docs/RenewalsSearchRequestDateTypeStartDate.md)
  - [RenewalsSearchRequestStatus](docs/RenewalsSearchRequestStatus.md)
  - [RenewalsSearchRequestStatusOpporutinyStatus](docs/RenewalsSearchRequestStatusOpporutinyStatus.md)
  - [RenewalsSearchResponse](docs/RenewalsSearchResponse.md)
@@ -350,5 +350,3 @@ Each of these functions takes a value of the given basic type and returns a poin
 For any inquiries or support, please feel free to contact us at:
 
 - Email: [xi_support@ingrammicro.com](xi_support@ingrammicro.com)
-
-

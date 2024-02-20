@@ -395,7 +395,7 @@ func (a *RenewalsAPIService) PostRenewalssearchExecute(r ApiPostRenewalssearchRe
 	if r.iMSenderID != nil {
 		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "Content type", r.contentType, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "Content Type", r.contentType, "")
 	// body params
 	localVarPostBody = r.renewalsSearchRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
