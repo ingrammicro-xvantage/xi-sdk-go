@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **SpecialBidNumber** | Pointer to **string** | The line-level bid number provided to the reseller by the vendor for special pricing and discounts. Used to track the bid number in the case of split orders or where different line items have different bid numbers. Line-level bid numbers take precedence over header-level bid numbers. | [optional] 
 **RequestedDeliverydate** | Pointer to **string** | Reseller-requested delivery date. Delivery date is not guaranteed. | [optional] 
 **PromisedDeliveryDate** | Pointer to **string** | The delivery date promised by IngramMicro. | [optional] 
-**BackOrderETAData** | Pointer to **string** | Backorder ETA date | [optional] 
+**BackOrderETADate** | Pointer to **string** | Backorder ETA date | [optional] 
 **LineNotes** | Pointer to **string** | Line-level notes for the order. | [optional] 
 **ShipmentDetails** | Pointer to [**[]OrderDetailB2BLinesInnerShipmentDetailsInner**](OrderDetailB2BLinesInnerShipmentDetailsInner.md) | Shipping details for the line item. | [optional] 
 **ServiceContractInfo** | Pointer to [**OrderDetailB2BLinesInnerServiceContractInfo**](OrderDetailB2BLinesInnerServiceContractInfo.md) |  | [optional] 
@@ -605,30 +605,30 @@ SetPromisedDeliveryDate sets PromisedDeliveryDate field to given value.
 
 HasPromisedDeliveryDate returns a boolean if a field has been set.
 
-### GetBackOrderETAData
+### GetBackOrderETADate
 
-`func (o *OrderDetailB2BLinesInner) GetBackOrderETAData() string`
+`func (o *OrderDetailB2BLinesInner) GetBackOrderETADate() string`
 
-GetBackOrderETAData returns the BackOrderETAData field if non-nil, zero value otherwise.
+GetBackOrderETADate returns the BackOrderETADate field if non-nil, zero value otherwise.
 
-### GetBackOrderETADataOk
+### GetBackOrderETADateOk
 
-`func (o *OrderDetailB2BLinesInner) GetBackOrderETADataOk() (*string, bool)`
+`func (o *OrderDetailB2BLinesInner) GetBackOrderETADateOk() (*string, bool)`
 
-GetBackOrderETADataOk returns a tuple with the BackOrderETAData field if it's non-nil, zero value otherwise
+GetBackOrderETADateOk returns a tuple with the BackOrderETADate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBackOrderETAData
+### SetBackOrderETADate
 
-`func (o *OrderDetailB2BLinesInner) SetBackOrderETAData(v string)`
+`func (o *OrderDetailB2BLinesInner) SetBackOrderETADate(v string)`
 
-SetBackOrderETAData sets BackOrderETAData field to given value.
+SetBackOrderETADate sets BackOrderETADate field to given value.
 
-### HasBackOrderETAData
+### HasBackOrderETADate
 
-`func (o *OrderDetailB2BLinesInner) HasBackOrderETAData() bool`
+`func (o *OrderDetailB2BLinesInner) HasBackOrderETADate() bool`
 
-HasBackOrderETAData returns a boolean if a field has been set.
+HasBackOrderETADate returns a boolean if a field has been set.
 
 ### GetLineNotes
 
