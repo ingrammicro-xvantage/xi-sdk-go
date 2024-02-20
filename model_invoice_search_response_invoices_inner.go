@@ -35,12 +35,15 @@ type InvoiceSearchResponseInvoicesInner struct {
 	InvoicedAmountDue *float32 `json:"invoicedAmountDue,omitempty"`
 	// Customer Order No.
 	CustomerOrderNumber *string `json:"customerOrderNumber,omitempty"`
-	// Order Create Date.
-	OrderCreateDate *string `json:"orderCreateDate,omitempty"`
 	// End Customer Order number.
 	EndCustomerOrderNumber *string `json:"endCustomerOrderNumber,omitempty"`
+	// Order Create Date.
+	OrderCreateDate *string `json:"orderCreateDate,omitempty"`
 	// Invoice Amount Inclusive of Taxes
 	InvoiceAmountInclTax *float32 `json:"invoiceAmountInclTax,omitempty"`
+	Forgntotalamount *float32 `json:"forgntotalamount,omitempty"`
+	GstInvoiceNumber *string `json:"gstInvoiceNumber,omitempty"`
+	Isfeccenabled *bool `json:"isfeccenabled,omitempty"`
 }
 
 // NewInvoiceSearchResponseInvoicesInner instantiates a new InvoiceSearchResponseInvoicesInner object
@@ -316,38 +319,6 @@ func (o *InvoiceSearchResponseInvoicesInner) SetCustomerOrderNumber(v string) {
 	o.CustomerOrderNumber = &v
 }
 
-// GetOrderCreateDate returns the OrderCreateDate field value if set, zero value otherwise.
-func (o *InvoiceSearchResponseInvoicesInner) GetOrderCreateDate() string {
-	if o == nil || IsNil(o.OrderCreateDate) {
-		var ret string
-		return ret
-	}
-	return *o.OrderCreateDate
-}
-
-// GetOrderCreateDateOk returns a tuple with the OrderCreateDate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InvoiceSearchResponseInvoicesInner) GetOrderCreateDateOk() (*string, bool) {
-	if o == nil || IsNil(o.OrderCreateDate) {
-		return nil, false
-	}
-	return o.OrderCreateDate, true
-}
-
-// HasOrderCreateDate returns a boolean if a field has been set.
-func (o *InvoiceSearchResponseInvoicesInner) HasOrderCreateDate() bool {
-	if o != nil && !IsNil(o.OrderCreateDate) {
-		return true
-	}
-
-	return false
-}
-
-// SetOrderCreateDate gets a reference to the given string and assigns it to the OrderCreateDate field.
-func (o *InvoiceSearchResponseInvoicesInner) SetOrderCreateDate(v string) {
-	o.OrderCreateDate = &v
-}
-
 // GetEndCustomerOrderNumber returns the EndCustomerOrderNumber field value if set, zero value otherwise.
 func (o *InvoiceSearchResponseInvoicesInner) GetEndCustomerOrderNumber() string {
 	if o == nil || IsNil(o.EndCustomerOrderNumber) {
@@ -380,6 +351,38 @@ func (o *InvoiceSearchResponseInvoicesInner) SetEndCustomerOrderNumber(v string)
 	o.EndCustomerOrderNumber = &v
 }
 
+// GetOrderCreateDate returns the OrderCreateDate field value if set, zero value otherwise.
+func (o *InvoiceSearchResponseInvoicesInner) GetOrderCreateDate() string {
+	if o == nil || IsNil(o.OrderCreateDate) {
+		var ret string
+		return ret
+	}
+	return *o.OrderCreateDate
+}
+
+// GetOrderCreateDateOk returns a tuple with the OrderCreateDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceSearchResponseInvoicesInner) GetOrderCreateDateOk() (*string, bool) {
+	if o == nil || IsNil(o.OrderCreateDate) {
+		return nil, false
+	}
+	return o.OrderCreateDate, true
+}
+
+// HasOrderCreateDate returns a boolean if a field has been set.
+func (o *InvoiceSearchResponseInvoicesInner) HasOrderCreateDate() bool {
+	if o != nil && !IsNil(o.OrderCreateDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrderCreateDate gets a reference to the given string and assigns it to the OrderCreateDate field.
+func (o *InvoiceSearchResponseInvoicesInner) SetOrderCreateDate(v string) {
+	o.OrderCreateDate = &v
+}
+
 // GetInvoiceAmountInclTax returns the InvoiceAmountInclTax field value if set, zero value otherwise.
 func (o *InvoiceSearchResponseInvoicesInner) GetInvoiceAmountInclTax() float32 {
 	if o == nil || IsNil(o.InvoiceAmountInclTax) {
@@ -410,6 +413,102 @@ func (o *InvoiceSearchResponseInvoicesInner) HasInvoiceAmountInclTax() bool {
 // SetInvoiceAmountInclTax gets a reference to the given float32 and assigns it to the InvoiceAmountInclTax field.
 func (o *InvoiceSearchResponseInvoicesInner) SetInvoiceAmountInclTax(v float32) {
 	o.InvoiceAmountInclTax = &v
+}
+
+// GetForgntotalamount returns the Forgntotalamount field value if set, zero value otherwise.
+func (o *InvoiceSearchResponseInvoicesInner) GetForgntotalamount() float32 {
+	if o == nil || IsNil(o.Forgntotalamount) {
+		var ret float32
+		return ret
+	}
+	return *o.Forgntotalamount
+}
+
+// GetForgntotalamountOk returns a tuple with the Forgntotalamount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceSearchResponseInvoicesInner) GetForgntotalamountOk() (*float32, bool) {
+	if o == nil || IsNil(o.Forgntotalamount) {
+		return nil, false
+	}
+	return o.Forgntotalamount, true
+}
+
+// HasForgntotalamount returns a boolean if a field has been set.
+func (o *InvoiceSearchResponseInvoicesInner) HasForgntotalamount() bool {
+	if o != nil && !IsNil(o.Forgntotalamount) {
+		return true
+	}
+
+	return false
+}
+
+// SetForgntotalamount gets a reference to the given float32 and assigns it to the Forgntotalamount field.
+func (o *InvoiceSearchResponseInvoicesInner) SetForgntotalamount(v float32) {
+	o.Forgntotalamount = &v
+}
+
+// GetGstInvoiceNumber returns the GstInvoiceNumber field value if set, zero value otherwise.
+func (o *InvoiceSearchResponseInvoicesInner) GetGstInvoiceNumber() string {
+	if o == nil || IsNil(o.GstInvoiceNumber) {
+		var ret string
+		return ret
+	}
+	return *o.GstInvoiceNumber
+}
+
+// GetGstInvoiceNumberOk returns a tuple with the GstInvoiceNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceSearchResponseInvoicesInner) GetGstInvoiceNumberOk() (*string, bool) {
+	if o == nil || IsNil(o.GstInvoiceNumber) {
+		return nil, false
+	}
+	return o.GstInvoiceNumber, true
+}
+
+// HasGstInvoiceNumber returns a boolean if a field has been set.
+func (o *InvoiceSearchResponseInvoicesInner) HasGstInvoiceNumber() bool {
+	if o != nil && !IsNil(o.GstInvoiceNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetGstInvoiceNumber gets a reference to the given string and assigns it to the GstInvoiceNumber field.
+func (o *InvoiceSearchResponseInvoicesInner) SetGstInvoiceNumber(v string) {
+	o.GstInvoiceNumber = &v
+}
+
+// GetIsfeccenabled returns the Isfeccenabled field value if set, zero value otherwise.
+func (o *InvoiceSearchResponseInvoicesInner) GetIsfeccenabled() bool {
+	if o == nil || IsNil(o.Isfeccenabled) {
+		var ret bool
+		return ret
+	}
+	return *o.Isfeccenabled
+}
+
+// GetIsfeccenabledOk returns a tuple with the Isfeccenabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceSearchResponseInvoicesInner) GetIsfeccenabledOk() (*bool, bool) {
+	if o == nil || IsNil(o.Isfeccenabled) {
+		return nil, false
+	}
+	return o.Isfeccenabled, true
+}
+
+// HasIsfeccenabled returns a boolean if a field has been set.
+func (o *InvoiceSearchResponseInvoicesInner) HasIsfeccenabled() bool {
+	if o != nil && !IsNil(o.Isfeccenabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsfeccenabled gets a reference to the given bool and assigns it to the Isfeccenabled field.
+func (o *InvoiceSearchResponseInvoicesInner) SetIsfeccenabled(v bool) {
+	o.Isfeccenabled = &v
 }
 
 func (o InvoiceSearchResponseInvoicesInner) MarshalJSON() ([]byte, error) {
@@ -446,14 +545,23 @@ func (o InvoiceSearchResponseInvoicesInner) ToMap() (map[string]interface{}, err
 	if !IsNil(o.CustomerOrderNumber) {
 		toSerialize["customerOrderNumber"] = o.CustomerOrderNumber
 	}
-	if !IsNil(o.OrderCreateDate) {
-		toSerialize["orderCreateDate"] = o.OrderCreateDate
-	}
 	if !IsNil(o.EndCustomerOrderNumber) {
 		toSerialize["endCustomerOrderNumber"] = o.EndCustomerOrderNumber
 	}
+	if !IsNil(o.OrderCreateDate) {
+		toSerialize["orderCreateDate"] = o.OrderCreateDate
+	}
 	if !IsNil(o.InvoiceAmountInclTax) {
 		toSerialize["invoiceAmountInclTax"] = o.InvoiceAmountInclTax
+	}
+	if !IsNil(o.Forgntotalamount) {
+		toSerialize["forgntotalamount"] = o.Forgntotalamount
+	}
+	if !IsNil(o.GstInvoiceNumber) {
+		toSerialize["gstInvoiceNumber"] = o.GstInvoiceNumber
+	}
+	if !IsNil(o.Isfeccenabled) {
+		toSerialize["isfeccenabled"] = o.Isfeccenabled
 	}
 	return toSerialize, nil
 }

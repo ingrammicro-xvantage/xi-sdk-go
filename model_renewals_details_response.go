@@ -20,7 +20,7 @@ var _ MappedNullable = &RenewalsDetailsResponse{}
 // RenewalsDetailsResponse struct for RenewalsDetailsResponse
 type RenewalsDetailsResponse struct {
 	// Unique Ingram renewal ID.
-	RenewalId *string `json:"renewalId,omitempty"`
+	RenewalId *int32 `json:"renewalId,omitempty"`
 	// The IngramMicro sales order number.
 	IngramOrderNumber *string `json:"ingramOrderNumber,omitempty"`
 	// The IngramMicro sales order date.
@@ -34,7 +34,7 @@ type RenewalsDetailsResponse struct {
 	// The end customer's order number for reference in their system.
 	EndCustomerOrderNumber *string `json:"endCustomerOrderNumber,omitempty"`
 	// The value of the renewal.
-	RenewalValue *float32 `json:"renewalValue,omitempty"`
+	RenewalValue *float64 `json:"renewalValue,omitempty"`
 	// The company name for the end user/customer.
 	EndUser *string `json:"endUser,omitempty"`
 	// The name of the vendor.
@@ -65,9 +65,9 @@ func NewRenewalsDetailsResponseWithDefaults() *RenewalsDetailsResponse {
 }
 
 // GetRenewalId returns the RenewalId field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponse) GetRenewalId() string {
+func (o *RenewalsDetailsResponse) GetRenewalId() int32 {
 	if o == nil || IsNil(o.RenewalId) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.RenewalId
@@ -75,7 +75,7 @@ func (o *RenewalsDetailsResponse) GetRenewalId() string {
 
 // GetRenewalIdOk returns a tuple with the RenewalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponse) GetRenewalIdOk() (*string, bool) {
+func (o *RenewalsDetailsResponse) GetRenewalIdOk() (*int32, bool) {
 	if o == nil || IsNil(o.RenewalId) {
 		return nil, false
 	}
@@ -91,8 +91,8 @@ func (o *RenewalsDetailsResponse) HasRenewalId() bool {
 	return false
 }
 
-// SetRenewalId gets a reference to the given string and assigns it to the RenewalId field.
-func (o *RenewalsDetailsResponse) SetRenewalId(v string) {
+// SetRenewalId gets a reference to the given int32 and assigns it to the RenewalId field.
+func (o *RenewalsDetailsResponse) SetRenewalId(v int32) {
 	o.RenewalId = &v
 }
 
@@ -289,9 +289,9 @@ func (o *RenewalsDetailsResponse) SetEndCustomerOrderNumber(v string) {
 }
 
 // GetRenewalValue returns the RenewalValue field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponse) GetRenewalValue() float32 {
+func (o *RenewalsDetailsResponse) GetRenewalValue() float64 {
 	if o == nil || IsNil(o.RenewalValue) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.RenewalValue
@@ -299,7 +299,7 @@ func (o *RenewalsDetailsResponse) GetRenewalValue() float32 {
 
 // GetRenewalValueOk returns a tuple with the RenewalValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponse) GetRenewalValueOk() (*float32, bool) {
+func (o *RenewalsDetailsResponse) GetRenewalValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.RenewalValue) {
 		return nil, false
 	}
@@ -315,8 +315,8 @@ func (o *RenewalsDetailsResponse) HasRenewalValue() bool {
 	return false
 }
 
-// SetRenewalValue gets a reference to the given float32 and assigns it to the RenewalValue field.
-func (o *RenewalsDetailsResponse) SetRenewalValue(v float32) {
+// SetRenewalValue gets a reference to the given float64 and assigns it to the RenewalValue field.
+func (o *RenewalsDetailsResponse) SetRenewalValue(v float64) {
 	o.RenewalValue = &v
 }
 
