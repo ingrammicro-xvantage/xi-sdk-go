@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Headername** | Pointer to **string** | Example : &#39;Basic&#39; | [optional] 
+**HeaderName** | Pointer to **string** | Example : &#39;Basic&#39; | [optional] 
 **Attributevalue** | Pointer to **string** | Example : &#39;LCD Monitor&#39; | [optional] 
 **Attributedisplay** | Pointer to **string** | Example : &#39;Basic|Product Type|LCD Monitor&#39; | [optional] 
 **Attributename** | Pointer to **string** | Example : &#39;Product Type&#39; | [optional] 
@@ -28,30 +28,30 @@ NewProductDetailResponseTechnicalSpecificationsInnerWithDefaults instantiates a 
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetHeadername
+### GetHeaderName
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetHeadername() string`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetHeaderName() string`
 
-GetHeadername returns the Headername field if non-nil, zero value otherwise.
+GetHeaderName returns the HeaderName field if non-nil, zero value otherwise.
 
-### GetHeadernameOk
+### GetHeaderNameOk
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetHeadernameOk() (*string, bool)`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetHeaderNameOk() (*string, bool)`
 
-GetHeadernameOk returns a tuple with the Headername field if it's non-nil, zero value otherwise
+GetHeaderNameOk returns a tuple with the HeaderName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHeadername
+### SetHeaderName
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) SetHeadername(v string)`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) SetHeaderName(v string)`
 
-SetHeadername sets Headername field to given value.
+SetHeaderName sets HeaderName field to given value.
 
-### HasHeadername
+### HasHeaderName
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) HasHeadername() bool`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) HasHeaderName() bool`
 
-HasHeadername returns a boolean if a field has been set.
+HasHeaderName returns a boolean if a field has been set.
 
 ### GetAttributevalue
 

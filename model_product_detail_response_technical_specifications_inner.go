@@ -20,7 +20,7 @@ var _ MappedNullable = &ProductDetailResponseTechnicalSpecificationsInner{}
 // ProductDetailResponseTechnicalSpecificationsInner struct for ProductDetailResponseTechnicalSpecificationsInner
 type ProductDetailResponseTechnicalSpecificationsInner struct {
 	// Example : 'Basic'
-	Headername *string `json:"headername,omitempty"`
+	HeaderName *string `json:"headerName,omitempty"`
 	// Example : 'LCD Monitor'
 	Attributevalue *string `json:"attributevalue,omitempty"`
 	// Example : 'Basic|Product Type|LCD Monitor'
@@ -46,36 +46,36 @@ func NewProductDetailResponseTechnicalSpecificationsInnerWithDefaults() *Product
 	return &this
 }
 
-// GetHeadername returns the Headername field value if set, zero value otherwise.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) GetHeadername() string {
-	if o == nil || IsNil(o.Headername) {
+// GetHeaderName returns the HeaderName field value if set, zero value otherwise.
+func (o *ProductDetailResponseTechnicalSpecificationsInner) GetHeaderName() string {
+	if o == nil || IsNil(o.HeaderName) {
 		var ret string
 		return ret
 	}
-	return *o.Headername
+	return *o.HeaderName
 }
 
-// GetHeadernameOk returns a tuple with the Headername field value if set, nil otherwise
+// GetHeaderNameOk returns a tuple with the HeaderName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) GetHeadernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Headername) {
+func (o *ProductDetailResponseTechnicalSpecificationsInner) GetHeaderNameOk() (*string, bool) {
+	if o == nil || IsNil(o.HeaderName) {
 		return nil, false
 	}
-	return o.Headername, true
+	return o.HeaderName, true
 }
 
-// HasHeadername returns a boolean if a field has been set.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) HasHeadername() bool {
-	if o != nil && !IsNil(o.Headername) {
+// HasHeaderName returns a boolean if a field has been set.
+func (o *ProductDetailResponseTechnicalSpecificationsInner) HasHeaderName() bool {
+	if o != nil && !IsNil(o.HeaderName) {
 		return true
 	}
 
 	return false
 }
 
-// SetHeadername gets a reference to the given string and assigns it to the Headername field.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) SetHeadername(v string) {
-	o.Headername = &v
+// SetHeaderName gets a reference to the given string and assigns it to the HeaderName field.
+func (o *ProductDetailResponseTechnicalSpecificationsInner) SetHeaderName(v string) {
+	o.HeaderName = &v
 }
 
 // GetAttributevalue returns the Attributevalue field value if set, zero value otherwise.
@@ -184,8 +184,8 @@ func (o ProductDetailResponseTechnicalSpecificationsInner) MarshalJSON() ([]byte
 
 func (o ProductDetailResponseTechnicalSpecificationsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Headername) {
-		toSerialize["headername"] = o.Headername
+	if !IsNil(o.HeaderName) {
+		toSerialize["headerName"] = o.HeaderName
 	}
 	if !IsNil(o.Attributevalue) {
 		toSerialize["attributevalue"] = o.Attributevalue
