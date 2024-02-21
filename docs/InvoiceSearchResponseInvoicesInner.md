@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **InvoiceAmountInclTax** | Pointer to **float32** | Invoice Amount Inclusive of Taxes | [optional] 
 **Forgntotalamount** | Pointer to **float32** |  | [optional] 
 **GstInvoiceNumber** | Pointer to **string** |  | [optional] 
-**Isfeccenabled** | Pointer to **bool** |  | [optional] 
+**Isfseccenabled** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -363,30 +363,30 @@ SetGstInvoiceNumber sets GstInvoiceNumber field to given value.
 
 HasGstInvoiceNumber returns a boolean if a field has been set.
 
-### GetIsfeccenabled
+### GetIsfseccenabled
 
-`func (o *InvoiceSearchResponseInvoicesInner) GetIsfeccenabled() bool`
+`func (o *InvoiceSearchResponseInvoicesInner) GetIsfseccenabled() bool`
 
-GetIsfeccenabled returns the Isfeccenabled field if non-nil, zero value otherwise.
+GetIsfseccenabled returns the Isfseccenabled field if non-nil, zero value otherwise.
 
-### GetIsfeccenabledOk
+### GetIsfseccenabledOk
 
-`func (o *InvoiceSearchResponseInvoicesInner) GetIsfeccenabledOk() (*bool, bool)`
+`func (o *InvoiceSearchResponseInvoicesInner) GetIsfseccenabledOk() (*bool, bool)`
 
-GetIsfeccenabledOk returns a tuple with the Isfeccenabled field if it's non-nil, zero value otherwise
+GetIsfseccenabledOk returns a tuple with the Isfseccenabled field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIsfeccenabled
+### SetIsfseccenabled
 
-`func (o *InvoiceSearchResponseInvoicesInner) SetIsfeccenabled(v bool)`
+`func (o *InvoiceSearchResponseInvoicesInner) SetIsfseccenabled(v bool)`
 
-SetIsfeccenabled sets Isfeccenabled field to given value.
+SetIsfseccenabled sets Isfseccenabled field to given value.
 
-### HasIsfeccenabled
+### HasIsfseccenabled
 
-`func (o *InvoiceSearchResponseInvoicesInner) HasIsfeccenabled() bool`
+`func (o *InvoiceSearchResponseInvoicesInner) HasIsfseccenabled() bool`
 
-HasIsfeccenabled returns a boolean if a field has been set.
+HasIsfseccenabled returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -12,7 +12,6 @@ package xi_sdk_resellers
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the OrderDetailB2B type satisfies the MappedNullable interface at compile time
@@ -23,7 +22,7 @@ type OrderDetailB2B struct {
 	// The IngramMicro sales order number.
 	IngramOrderNumber *string `json:"ingramOrderNumber,omitempty"`
 	// The IngramMicro sales order date.
-	IngramOrderDate *time.Time `json:"ingramOrderDate,omitempty"`
+	IngramOrderDate *string `json:"ingramOrderDate,omitempty"`
 	// The IngramMicro sales order type.
 	OrderType *string `json:"orderType,omitempty"`
 	// The reseller's order number for reference in their system.
@@ -114,9 +113,9 @@ func (o *OrderDetailB2B) SetIngramOrderNumber(v string) {
 }
 
 // GetIngramOrderDate returns the IngramOrderDate field value if set, zero value otherwise.
-func (o *OrderDetailB2B) GetIngramOrderDate() time.Time {
+func (o *OrderDetailB2B) GetIngramOrderDate() string {
 	if o == nil || IsNil(o.IngramOrderDate) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.IngramOrderDate
@@ -124,7 +123,7 @@ func (o *OrderDetailB2B) GetIngramOrderDate() time.Time {
 
 // GetIngramOrderDateOk returns a tuple with the IngramOrderDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderDetailB2B) GetIngramOrderDateOk() (*time.Time, bool) {
+func (o *OrderDetailB2B) GetIngramOrderDateOk() (*string, bool) {
 	if o == nil || IsNil(o.IngramOrderDate) {
 		return nil, false
 	}
@@ -140,8 +139,8 @@ func (o *OrderDetailB2B) HasIngramOrderDate() bool {
 	return false
 }
 
-// SetIngramOrderDate gets a reference to the given time.Time and assigns it to the IngramOrderDate field.
-func (o *OrderDetailB2B) SetIngramOrderDate(v time.Time) {
+// SetIngramOrderDate gets a reference to the given string and assigns it to the IngramOrderDate field.
+func (o *OrderDetailB2B) SetIngramOrderDate(v string) {
 	o.IngramOrderDate = &v
 }
 

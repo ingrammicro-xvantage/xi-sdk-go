@@ -43,7 +43,7 @@ type InvoiceSearchResponseInvoicesInner struct {
 	InvoiceAmountInclTax *float32 `json:"invoiceAmountInclTax,omitempty"`
 	Forgntotalamount *float32 `json:"forgntotalamount,omitempty"`
 	GstInvoiceNumber *string `json:"gstInvoiceNumber,omitempty"`
-	Isfeccenabled *bool `json:"isfeccenabled,omitempty"`
+	Isfseccenabled *bool `json:"isfseccenabled,omitempty"`
 }
 
 // NewInvoiceSearchResponseInvoicesInner instantiates a new InvoiceSearchResponseInvoicesInner object
@@ -479,36 +479,36 @@ func (o *InvoiceSearchResponseInvoicesInner) SetGstInvoiceNumber(v string) {
 	o.GstInvoiceNumber = &v
 }
 
-// GetIsfeccenabled returns the Isfeccenabled field value if set, zero value otherwise.
-func (o *InvoiceSearchResponseInvoicesInner) GetIsfeccenabled() bool {
-	if o == nil || IsNil(o.Isfeccenabled) {
+// GetIsfseccenabled returns the Isfseccenabled field value if set, zero value otherwise.
+func (o *InvoiceSearchResponseInvoicesInner) GetIsfseccenabled() bool {
+	if o == nil || IsNil(o.Isfseccenabled) {
 		var ret bool
 		return ret
 	}
-	return *o.Isfeccenabled
+	return *o.Isfseccenabled
 }
 
-// GetIsfeccenabledOk returns a tuple with the Isfeccenabled field value if set, nil otherwise
+// GetIsfseccenabledOk returns a tuple with the Isfseccenabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvoiceSearchResponseInvoicesInner) GetIsfeccenabledOk() (*bool, bool) {
-	if o == nil || IsNil(o.Isfeccenabled) {
+func (o *InvoiceSearchResponseInvoicesInner) GetIsfseccenabledOk() (*bool, bool) {
+	if o == nil || IsNil(o.Isfseccenabled) {
 		return nil, false
 	}
-	return o.Isfeccenabled, true
+	return o.Isfseccenabled, true
 }
 
-// HasIsfeccenabled returns a boolean if a field has been set.
-func (o *InvoiceSearchResponseInvoicesInner) HasIsfeccenabled() bool {
-	if o != nil && !IsNil(o.Isfeccenabled) {
+// HasIsfseccenabled returns a boolean if a field has been set.
+func (o *InvoiceSearchResponseInvoicesInner) HasIsfseccenabled() bool {
+	if o != nil && !IsNil(o.Isfseccenabled) {
 		return true
 	}
 
 	return false
 }
 
-// SetIsfeccenabled gets a reference to the given bool and assigns it to the Isfeccenabled field.
-func (o *InvoiceSearchResponseInvoicesInner) SetIsfeccenabled(v bool) {
-	o.Isfeccenabled = &v
+// SetIsfseccenabled gets a reference to the given bool and assigns it to the Isfseccenabled field.
+func (o *InvoiceSearchResponseInvoicesInner) SetIsfseccenabled(v bool) {
+	o.Isfseccenabled = &v
 }
 
 func (o InvoiceSearchResponseInvoicesInner) MarshalJSON() ([]byte, error) {
@@ -560,8 +560,8 @@ func (o InvoiceSearchResponseInvoicesInner) ToMap() (map[string]interface{}, err
 	if !IsNil(o.GstInvoiceNumber) {
 		toSerialize["gstInvoiceNumber"] = o.GstInvoiceNumber
 	}
-	if !IsNil(o.Isfeccenabled) {
-		toSerialize["isfeccenabled"] = o.Isfeccenabled
+	if !IsNil(o.Isfseccenabled) {
+		toSerialize["isfseccenabled"] = o.Isfseccenabled
 	}
 	return toSerialize, nil
 }

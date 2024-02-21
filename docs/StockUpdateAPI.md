@@ -23,7 +23,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "https://github.com/ingrammicro-xvantag/xi-sdk-resellers-go"
+	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
 )
 
 func main() {

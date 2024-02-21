@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the RenewalsDetailsResponseEndUserInfoInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &RenewalsDetailsResponseEndUserInfoInner{}
+// checks if the RenewalsDetailsResponseEndUserInfo type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RenewalsDetailsResponseEndUserInfo{}
 
-// RenewalsDetailsResponseEndUserInfoInner struct for RenewalsDetailsResponseEndUserInfoInner
-type RenewalsDetailsResponseEndUserInfoInner struct {
+// RenewalsDetailsResponseEndUserInfo struct for RenewalsDetailsResponseEndUserInfo
+type RenewalsDetailsResponseEndUserInfo struct {
 	// The contact name for the end user/customer.
 	Contact *string `json:"contact,omitempty"`
 	// The name1 for the end user/customer.
@@ -49,25 +49,25 @@ type RenewalsDetailsResponseEndUserInfoInner struct {
 	Email *string `json:"email,omitempty"`
 }
 
-// NewRenewalsDetailsResponseEndUserInfoInner instantiates a new RenewalsDetailsResponseEndUserInfoInner object
+// NewRenewalsDetailsResponseEndUserInfo instantiates a new RenewalsDetailsResponseEndUserInfo object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRenewalsDetailsResponseEndUserInfoInner() *RenewalsDetailsResponseEndUserInfoInner {
-	this := RenewalsDetailsResponseEndUserInfoInner{}
+func NewRenewalsDetailsResponseEndUserInfo() *RenewalsDetailsResponseEndUserInfo {
+	this := RenewalsDetailsResponseEndUserInfo{}
 	return &this
 }
 
-// NewRenewalsDetailsResponseEndUserInfoInnerWithDefaults instantiates a new RenewalsDetailsResponseEndUserInfoInner object
+// NewRenewalsDetailsResponseEndUserInfoWithDefaults instantiates a new RenewalsDetailsResponseEndUserInfo object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRenewalsDetailsResponseEndUserInfoInnerWithDefaults() *RenewalsDetailsResponseEndUserInfoInner {
-	this := RenewalsDetailsResponseEndUserInfoInner{}
+func NewRenewalsDetailsResponseEndUserInfoWithDefaults() *RenewalsDetailsResponseEndUserInfo {
+	this := RenewalsDetailsResponseEndUserInfo{}
 	return &this
 }
 
 // GetContact returns the Contact field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetContact() string {
+func (o *RenewalsDetailsResponseEndUserInfo) GetContact() string {
 	if o == nil || IsNil(o.Contact) {
 		var ret string
 		return ret
@@ -77,7 +77,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetContact() string {
 
 // GetContactOk returns a tuple with the Contact field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetContactOk() (*string, bool) {
+func (o *RenewalsDetailsResponseEndUserInfo) GetContactOk() (*string, bool) {
 	if o == nil || IsNil(o.Contact) {
 		return nil, false
 	}
@@ -85,7 +85,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetContactOk() (*string, bool)
 }
 
 // HasContact returns a boolean if a field has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) HasContact() bool {
+func (o *RenewalsDetailsResponseEndUserInfo) HasContact() bool {
 	if o != nil && !IsNil(o.Contact) {
 		return true
 	}
@@ -94,12 +94,12 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) HasContact() bool {
 }
 
 // SetContact gets a reference to the given string and assigns it to the Contact field.
-func (o *RenewalsDetailsResponseEndUserInfoInner) SetContact(v string) {
+func (o *RenewalsDetailsResponseEndUserInfo) SetContact(v string) {
 	o.Contact = &v
 }
 
 // GetName1 returns the Name1 field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetName1() string {
+func (o *RenewalsDetailsResponseEndUserInfo) GetName1() string {
 	if o == nil || IsNil(o.Name1) {
 		var ret string
 		return ret
@@ -109,7 +109,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetName1() string {
 
 // GetName1Ok returns a tuple with the Name1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetName1Ok() (*string, bool) {
+func (o *RenewalsDetailsResponseEndUserInfo) GetName1Ok() (*string, bool) {
 	if o == nil || IsNil(o.Name1) {
 		return nil, false
 	}
@@ -117,7 +117,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetName1Ok() (*string, bool) {
 }
 
 // HasName1 returns a boolean if a field has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) HasName1() bool {
+func (o *RenewalsDetailsResponseEndUserInfo) HasName1() bool {
 	if o != nil && !IsNil(o.Name1) {
 		return true
 	}
@@ -126,12 +126,12 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) HasName1() bool {
 }
 
 // SetName1 gets a reference to the given string and assigns it to the Name1 field.
-func (o *RenewalsDetailsResponseEndUserInfoInner) SetName1(v string) {
+func (o *RenewalsDetailsResponseEndUserInfo) SetName1(v string) {
 	o.Name1 = &v
 }
 
 // GetName2 returns the Name2 field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetName2() string {
+func (o *RenewalsDetailsResponseEndUserInfo) GetName2() string {
 	if o == nil || IsNil(o.Name2) {
 		var ret string
 		return ret
@@ -141,7 +141,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetName2() string {
 
 // GetName2Ok returns a tuple with the Name2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetName2Ok() (*string, bool) {
+func (o *RenewalsDetailsResponseEndUserInfo) GetName2Ok() (*string, bool) {
 	if o == nil || IsNil(o.Name2) {
 		return nil, false
 	}
@@ -149,7 +149,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetName2Ok() (*string, bool) {
 }
 
 // HasName2 returns a boolean if a field has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) HasName2() bool {
+func (o *RenewalsDetailsResponseEndUserInfo) HasName2() bool {
 	if o != nil && !IsNil(o.Name2) {
 		return true
 	}
@@ -158,12 +158,12 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) HasName2() bool {
 }
 
 // SetName2 gets a reference to the given string and assigns it to the Name2 field.
-func (o *RenewalsDetailsResponseEndUserInfoInner) SetName2(v string) {
+func (o *RenewalsDetailsResponseEndUserInfo) SetName2(v string) {
 	o.Name2 = &v
 }
 
 // GetCompanyName returns the CompanyName field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetCompanyName() string {
+func (o *RenewalsDetailsResponseEndUserInfo) GetCompanyName() string {
 	if o == nil || IsNil(o.CompanyName) {
 		var ret string
 		return ret
@@ -173,7 +173,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetCompanyName() string {
 
 // GetCompanyNameOk returns a tuple with the CompanyName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetCompanyNameOk() (*string, bool) {
+func (o *RenewalsDetailsResponseEndUserInfo) GetCompanyNameOk() (*string, bool) {
 	if o == nil || IsNil(o.CompanyName) {
 		return nil, false
 	}
@@ -181,7 +181,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetCompanyNameOk() (*string, b
 }
 
 // HasCompanyName returns a boolean if a field has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) HasCompanyName() bool {
+func (o *RenewalsDetailsResponseEndUserInfo) HasCompanyName() bool {
 	if o != nil && !IsNil(o.CompanyName) {
 		return true
 	}
@@ -190,12 +190,12 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) HasCompanyName() bool {
 }
 
 // SetCompanyName gets a reference to the given string and assigns it to the CompanyName field.
-func (o *RenewalsDetailsResponseEndUserInfoInner) SetCompanyName(v string) {
+func (o *RenewalsDetailsResponseEndUserInfo) SetCompanyName(v string) {
 	o.CompanyName = &v
 }
 
 // GetAddressLine1 returns the AddressLine1 field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetAddressLine1() string {
+func (o *RenewalsDetailsResponseEndUserInfo) GetAddressLine1() string {
 	if o == nil || IsNil(o.AddressLine1) {
 		var ret string
 		return ret
@@ -205,7 +205,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetAddressLine1() string {
 
 // GetAddressLine1Ok returns a tuple with the AddressLine1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetAddressLine1Ok() (*string, bool) {
+func (o *RenewalsDetailsResponseEndUserInfo) GetAddressLine1Ok() (*string, bool) {
 	if o == nil || IsNil(o.AddressLine1) {
 		return nil, false
 	}
@@ -213,7 +213,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetAddressLine1Ok() (*string, 
 }
 
 // HasAddressLine1 returns a boolean if a field has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) HasAddressLine1() bool {
+func (o *RenewalsDetailsResponseEndUserInfo) HasAddressLine1() bool {
 	if o != nil && !IsNil(o.AddressLine1) {
 		return true
 	}
@@ -222,12 +222,12 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) HasAddressLine1() bool {
 }
 
 // SetAddressLine1 gets a reference to the given string and assigns it to the AddressLine1 field.
-func (o *RenewalsDetailsResponseEndUserInfoInner) SetAddressLine1(v string) {
+func (o *RenewalsDetailsResponseEndUserInfo) SetAddressLine1(v string) {
 	o.AddressLine1 = &v
 }
 
 // GetAddressLine2 returns the AddressLine2 field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetAddressLine2() string {
+func (o *RenewalsDetailsResponseEndUserInfo) GetAddressLine2() string {
 	if o == nil || IsNil(o.AddressLine2) {
 		var ret string
 		return ret
@@ -237,7 +237,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetAddressLine2() string {
 
 // GetAddressLine2Ok returns a tuple with the AddressLine2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetAddressLine2Ok() (*string, bool) {
+func (o *RenewalsDetailsResponseEndUserInfo) GetAddressLine2Ok() (*string, bool) {
 	if o == nil || IsNil(o.AddressLine2) {
 		return nil, false
 	}
@@ -245,7 +245,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetAddressLine2Ok() (*string, 
 }
 
 // HasAddressLine2 returns a boolean if a field has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) HasAddressLine2() bool {
+func (o *RenewalsDetailsResponseEndUserInfo) HasAddressLine2() bool {
 	if o != nil && !IsNil(o.AddressLine2) {
 		return true
 	}
@@ -254,12 +254,12 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) HasAddressLine2() bool {
 }
 
 // SetAddressLine2 gets a reference to the given string and assigns it to the AddressLine2 field.
-func (o *RenewalsDetailsResponseEndUserInfoInner) SetAddressLine2(v string) {
+func (o *RenewalsDetailsResponseEndUserInfo) SetAddressLine2(v string) {
 	o.AddressLine2 = &v
 }
 
 // GetAddressLine3 returns the AddressLine3 field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetAddressLine3() string {
+func (o *RenewalsDetailsResponseEndUserInfo) GetAddressLine3() string {
 	if o == nil || IsNil(o.AddressLine3) {
 		var ret string
 		return ret
@@ -269,7 +269,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetAddressLine3() string {
 
 // GetAddressLine3Ok returns a tuple with the AddressLine3 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetAddressLine3Ok() (*string, bool) {
+func (o *RenewalsDetailsResponseEndUserInfo) GetAddressLine3Ok() (*string, bool) {
 	if o == nil || IsNil(o.AddressLine3) {
 		return nil, false
 	}
@@ -277,7 +277,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetAddressLine3Ok() (*string, 
 }
 
 // HasAddressLine3 returns a boolean if a field has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) HasAddressLine3() bool {
+func (o *RenewalsDetailsResponseEndUserInfo) HasAddressLine3() bool {
 	if o != nil && !IsNil(o.AddressLine3) {
 		return true
 	}
@@ -286,12 +286,12 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) HasAddressLine3() bool {
 }
 
 // SetAddressLine3 gets a reference to the given string and assigns it to the AddressLine3 field.
-func (o *RenewalsDetailsResponseEndUserInfoInner) SetAddressLine3(v string) {
+func (o *RenewalsDetailsResponseEndUserInfo) SetAddressLine3(v string) {
 	o.AddressLine3 = &v
 }
 
 // GetAddressLine4 returns the AddressLine4 field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetAddressLine4() string {
+func (o *RenewalsDetailsResponseEndUserInfo) GetAddressLine4() string {
 	if o == nil || IsNil(o.AddressLine4) {
 		var ret string
 		return ret
@@ -301,7 +301,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetAddressLine4() string {
 
 // GetAddressLine4Ok returns a tuple with the AddressLine4 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetAddressLine4Ok() (*string, bool) {
+func (o *RenewalsDetailsResponseEndUserInfo) GetAddressLine4Ok() (*string, bool) {
 	if o == nil || IsNil(o.AddressLine4) {
 		return nil, false
 	}
@@ -309,7 +309,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetAddressLine4Ok() (*string, 
 }
 
 // HasAddressLine4 returns a boolean if a field has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) HasAddressLine4() bool {
+func (o *RenewalsDetailsResponseEndUserInfo) HasAddressLine4() bool {
 	if o != nil && !IsNil(o.AddressLine4) {
 		return true
 	}
@@ -318,12 +318,12 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) HasAddressLine4() bool {
 }
 
 // SetAddressLine4 gets a reference to the given string and assigns it to the AddressLine4 field.
-func (o *RenewalsDetailsResponseEndUserInfoInner) SetAddressLine4(v string) {
+func (o *RenewalsDetailsResponseEndUserInfo) SetAddressLine4(v string) {
 	o.AddressLine4 = &v
 }
 
 // GetCity returns the City field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetCity() string {
+func (o *RenewalsDetailsResponseEndUserInfo) GetCity() string {
 	if o == nil || IsNil(o.City) {
 		var ret string
 		return ret
@@ -333,7 +333,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetCity() string {
 
 // GetCityOk returns a tuple with the City field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetCityOk() (*string, bool) {
+func (o *RenewalsDetailsResponseEndUserInfo) GetCityOk() (*string, bool) {
 	if o == nil || IsNil(o.City) {
 		return nil, false
 	}
@@ -341,7 +341,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetCityOk() (*string, bool) {
 }
 
 // HasCity returns a boolean if a field has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) HasCity() bool {
+func (o *RenewalsDetailsResponseEndUserInfo) HasCity() bool {
 	if o != nil && !IsNil(o.City) {
 		return true
 	}
@@ -350,12 +350,12 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) HasCity() bool {
 }
 
 // SetCity gets a reference to the given string and assigns it to the City field.
-func (o *RenewalsDetailsResponseEndUserInfoInner) SetCity(v string) {
+func (o *RenewalsDetailsResponseEndUserInfo) SetCity(v string) {
 	o.City = &v
 }
 
 // GetState returns the State field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetState() string {
+func (o *RenewalsDetailsResponseEndUserInfo) GetState() string {
 	if o == nil || IsNil(o.State) {
 		var ret string
 		return ret
@@ -365,7 +365,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetState() string {
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetStateOk() (*string, bool) {
+func (o *RenewalsDetailsResponseEndUserInfo) GetStateOk() (*string, bool) {
 	if o == nil || IsNil(o.State) {
 		return nil, false
 	}
@@ -373,7 +373,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetStateOk() (*string, bool) {
 }
 
 // HasState returns a boolean if a field has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) HasState() bool {
+func (o *RenewalsDetailsResponseEndUserInfo) HasState() bool {
 	if o != nil && !IsNil(o.State) {
 		return true
 	}
@@ -382,12 +382,12 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) HasState() bool {
 }
 
 // SetState gets a reference to the given string and assigns it to the State field.
-func (o *RenewalsDetailsResponseEndUserInfoInner) SetState(v string) {
+func (o *RenewalsDetailsResponseEndUserInfo) SetState(v string) {
 	o.State = &v
 }
 
 // GetPostalCode returns the PostalCode field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetPostalCode() string {
+func (o *RenewalsDetailsResponseEndUserInfo) GetPostalCode() string {
 	if o == nil || IsNil(o.PostalCode) {
 		var ret string
 		return ret
@@ -397,7 +397,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetPostalCode() string {
 
 // GetPostalCodeOk returns a tuple with the PostalCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetPostalCodeOk() (*string, bool) {
+func (o *RenewalsDetailsResponseEndUserInfo) GetPostalCodeOk() (*string, bool) {
 	if o == nil || IsNil(o.PostalCode) {
 		return nil, false
 	}
@@ -405,7 +405,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetPostalCodeOk() (*string, bo
 }
 
 // HasPostalCode returns a boolean if a field has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) HasPostalCode() bool {
+func (o *RenewalsDetailsResponseEndUserInfo) HasPostalCode() bool {
 	if o != nil && !IsNil(o.PostalCode) {
 		return true
 	}
@@ -414,12 +414,12 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) HasPostalCode() bool {
 }
 
 // SetPostalCode gets a reference to the given string and assigns it to the PostalCode field.
-func (o *RenewalsDetailsResponseEndUserInfoInner) SetPostalCode(v string) {
+func (o *RenewalsDetailsResponseEndUserInfo) SetPostalCode(v string) {
 	o.PostalCode = &v
 }
 
 // GetCountryCode returns the CountryCode field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetCountryCode() string {
+func (o *RenewalsDetailsResponseEndUserInfo) GetCountryCode() string {
 	if o == nil || IsNil(o.CountryCode) {
 		var ret string
 		return ret
@@ -429,7 +429,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetCountryCode() string {
 
 // GetCountryCodeOk returns a tuple with the CountryCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetCountryCodeOk() (*string, bool) {
+func (o *RenewalsDetailsResponseEndUserInfo) GetCountryCodeOk() (*string, bool) {
 	if o == nil || IsNil(o.CountryCode) {
 		return nil, false
 	}
@@ -437,7 +437,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetCountryCodeOk() (*string, b
 }
 
 // HasCountryCode returns a boolean if a field has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) HasCountryCode() bool {
+func (o *RenewalsDetailsResponseEndUserInfo) HasCountryCode() bool {
 	if o != nil && !IsNil(o.CountryCode) {
 		return true
 	}
@@ -446,12 +446,12 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) HasCountryCode() bool {
 }
 
 // SetCountryCode gets a reference to the given string and assigns it to the CountryCode field.
-func (o *RenewalsDetailsResponseEndUserInfoInner) SetCountryCode(v string) {
+func (o *RenewalsDetailsResponseEndUserInfo) SetCountryCode(v string) {
 	o.CountryCode = &v
 }
 
 // GetPhoneNumber returns the PhoneNumber field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetPhoneNumber() string {
+func (o *RenewalsDetailsResponseEndUserInfo) GetPhoneNumber() string {
 	if o == nil || IsNil(o.PhoneNumber) {
 		var ret string
 		return ret
@@ -461,7 +461,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetPhoneNumber() string {
 
 // GetPhoneNumberOk returns a tuple with the PhoneNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetPhoneNumberOk() (*string, bool) {
+func (o *RenewalsDetailsResponseEndUserInfo) GetPhoneNumberOk() (*string, bool) {
 	if o == nil || IsNil(o.PhoneNumber) {
 		return nil, false
 	}
@@ -469,7 +469,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetPhoneNumberOk() (*string, b
 }
 
 // HasPhoneNumber returns a boolean if a field has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) HasPhoneNumber() bool {
+func (o *RenewalsDetailsResponseEndUserInfo) HasPhoneNumber() bool {
 	if o != nil && !IsNil(o.PhoneNumber) {
 		return true
 	}
@@ -478,12 +478,12 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) HasPhoneNumber() bool {
 }
 
 // SetPhoneNumber gets a reference to the given string and assigns it to the PhoneNumber field.
-func (o *RenewalsDetailsResponseEndUserInfoInner) SetPhoneNumber(v string) {
+func (o *RenewalsDetailsResponseEndUserInfo) SetPhoneNumber(v string) {
 	o.PhoneNumber = &v
 }
 
 // GetEmail returns the Email field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetEmail() string {
+func (o *RenewalsDetailsResponseEndUserInfo) GetEmail() string {
 	if o == nil || IsNil(o.Email) {
 		var ret string
 		return ret
@@ -493,7 +493,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetEmail() string {
 
 // GetEmailOk returns a tuple with the Email field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) GetEmailOk() (*string, bool) {
+func (o *RenewalsDetailsResponseEndUserInfo) GetEmailOk() (*string, bool) {
 	if o == nil || IsNil(o.Email) {
 		return nil, false
 	}
@@ -501,7 +501,7 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) GetEmailOk() (*string, bool) {
 }
 
 // HasEmail returns a boolean if a field has been set.
-func (o *RenewalsDetailsResponseEndUserInfoInner) HasEmail() bool {
+func (o *RenewalsDetailsResponseEndUserInfo) HasEmail() bool {
 	if o != nil && !IsNil(o.Email) {
 		return true
 	}
@@ -510,11 +510,11 @@ func (o *RenewalsDetailsResponseEndUserInfoInner) HasEmail() bool {
 }
 
 // SetEmail gets a reference to the given string and assigns it to the Email field.
-func (o *RenewalsDetailsResponseEndUserInfoInner) SetEmail(v string) {
+func (o *RenewalsDetailsResponseEndUserInfo) SetEmail(v string) {
 	o.Email = &v
 }
 
-func (o RenewalsDetailsResponseEndUserInfoInner) MarshalJSON() ([]byte, error) {
+func (o RenewalsDetailsResponseEndUserInfo) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -522,7 +522,7 @@ func (o RenewalsDetailsResponseEndUserInfoInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o RenewalsDetailsResponseEndUserInfoInner) ToMap() (map[string]interface{}, error) {
+func (o RenewalsDetailsResponseEndUserInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Contact) {
 		toSerialize["contact"] = o.Contact
@@ -569,38 +569,38 @@ func (o RenewalsDetailsResponseEndUserInfoInner) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 
-type NullableRenewalsDetailsResponseEndUserInfoInner struct {
-	value *RenewalsDetailsResponseEndUserInfoInner
+type NullableRenewalsDetailsResponseEndUserInfo struct {
+	value *RenewalsDetailsResponseEndUserInfo
 	isSet bool
 }
 
-func (v NullableRenewalsDetailsResponseEndUserInfoInner) Get() *RenewalsDetailsResponseEndUserInfoInner {
+func (v NullableRenewalsDetailsResponseEndUserInfo) Get() *RenewalsDetailsResponseEndUserInfo {
 	return v.value
 }
 
-func (v *NullableRenewalsDetailsResponseEndUserInfoInner) Set(val *RenewalsDetailsResponseEndUserInfoInner) {
+func (v *NullableRenewalsDetailsResponseEndUserInfo) Set(val *RenewalsDetailsResponseEndUserInfo) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableRenewalsDetailsResponseEndUserInfoInner) IsSet() bool {
+func (v NullableRenewalsDetailsResponseEndUserInfo) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableRenewalsDetailsResponseEndUserInfoInner) Unset() {
+func (v *NullableRenewalsDetailsResponseEndUserInfo) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableRenewalsDetailsResponseEndUserInfoInner(val *RenewalsDetailsResponseEndUserInfoInner) *NullableRenewalsDetailsResponseEndUserInfoInner {
-	return &NullableRenewalsDetailsResponseEndUserInfoInner{value: val, isSet: true}
+func NewNullableRenewalsDetailsResponseEndUserInfo(val *RenewalsDetailsResponseEndUserInfo) *NullableRenewalsDetailsResponseEndUserInfo {
+	return &NullableRenewalsDetailsResponseEndUserInfo{value: val, isSet: true}
 }
 
-func (v NullableRenewalsDetailsResponseEndUserInfoInner) MarshalJSON() ([]byte, error) {
+func (v NullableRenewalsDetailsResponseEndUserInfo) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableRenewalsDetailsResponseEndUserInfoInner) UnmarshalJSON(src []byte) error {
+func (v *NullableRenewalsDetailsResponseEndUserInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

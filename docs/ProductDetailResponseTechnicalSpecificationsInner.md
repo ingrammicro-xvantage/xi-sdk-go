@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Headername** | Pointer to **string** | Example : &#39;Basic&#39; | [optional] 
-**Attributevalue** | Pointer to **string** | Example : &#39;LCD Monitor&#39; | [optional] 
-**Attributedisplay** | Pointer to **string** | Example : &#39;Basic|Product Type|LCD Monitor&#39; | [optional] 
-**Attributename** | Pointer to **string** | Example : &#39;Product Type&#39; | [optional] 
+**HeaderName** | Pointer to **string** | Example : &#39;Basic&#39; | [optional] 
+**AttributeName** | Pointer to **string** | Example : &#39;Product Type&#39; | [optional] 
+**AttributeDisplay** | Pointer to **string** | Example : &#39;Basic|Product Type|LCD Monitor&#39; | [optional] 
+**AttributeValue** | Pointer to **string** | Example : &#39;LCD Monitor&#39; | [optional] 
 
 ## Methods
 
@@ -28,105 +28,105 @@ NewProductDetailResponseTechnicalSpecificationsInnerWithDefaults instantiates a 
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetHeadername
+### GetHeaderName
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetHeadername() string`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetHeaderName() string`
 
-GetHeadername returns the Headername field if non-nil, zero value otherwise.
+GetHeaderName returns the HeaderName field if non-nil, zero value otherwise.
 
-### GetHeadernameOk
+### GetHeaderNameOk
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetHeadernameOk() (*string, bool)`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetHeaderNameOk() (*string, bool)`
 
-GetHeadernameOk returns a tuple with the Headername field if it's non-nil, zero value otherwise
+GetHeaderNameOk returns a tuple with the HeaderName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHeadername
+### SetHeaderName
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) SetHeadername(v string)`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) SetHeaderName(v string)`
 
-SetHeadername sets Headername field to given value.
+SetHeaderName sets HeaderName field to given value.
 
-### HasHeadername
+### HasHeaderName
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) HasHeadername() bool`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) HasHeaderName() bool`
 
-HasHeadername returns a boolean if a field has been set.
+HasHeaderName returns a boolean if a field has been set.
 
-### GetAttributevalue
+### GetAttributeName
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributevalue() string`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributeName() string`
 
-GetAttributevalue returns the Attributevalue field if non-nil, zero value otherwise.
+GetAttributeName returns the AttributeName field if non-nil, zero value otherwise.
 
-### GetAttributevalueOk
+### GetAttributeNameOk
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributevalueOk() (*string, bool)`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributeNameOk() (*string, bool)`
 
-GetAttributevalueOk returns a tuple with the Attributevalue field if it's non-nil, zero value otherwise
+GetAttributeNameOk returns a tuple with the AttributeName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAttributevalue
+### SetAttributeName
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) SetAttributevalue(v string)`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) SetAttributeName(v string)`
 
-SetAttributevalue sets Attributevalue field to given value.
+SetAttributeName sets AttributeName field to given value.
 
-### HasAttributevalue
+### HasAttributeName
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) HasAttributevalue() bool`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) HasAttributeName() bool`
 
-HasAttributevalue returns a boolean if a field has been set.
+HasAttributeName returns a boolean if a field has been set.
 
-### GetAttributedisplay
+### GetAttributeDisplay
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributedisplay() string`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributeDisplay() string`
 
-GetAttributedisplay returns the Attributedisplay field if non-nil, zero value otherwise.
+GetAttributeDisplay returns the AttributeDisplay field if non-nil, zero value otherwise.
 
-### GetAttributedisplayOk
+### GetAttributeDisplayOk
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributedisplayOk() (*string, bool)`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributeDisplayOk() (*string, bool)`
 
-GetAttributedisplayOk returns a tuple with the Attributedisplay field if it's non-nil, zero value otherwise
+GetAttributeDisplayOk returns a tuple with the AttributeDisplay field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAttributedisplay
+### SetAttributeDisplay
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) SetAttributedisplay(v string)`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) SetAttributeDisplay(v string)`
 
-SetAttributedisplay sets Attributedisplay field to given value.
+SetAttributeDisplay sets AttributeDisplay field to given value.
 
-### HasAttributedisplay
+### HasAttributeDisplay
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) HasAttributedisplay() bool`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) HasAttributeDisplay() bool`
 
-HasAttributedisplay returns a boolean if a field has been set.
+HasAttributeDisplay returns a boolean if a field has been set.
 
-### GetAttributename
+### GetAttributeValue
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributename() string`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributeValue() string`
 
-GetAttributename returns the Attributename field if non-nil, zero value otherwise.
+GetAttributeValue returns the AttributeValue field if non-nil, zero value otherwise.
 
-### GetAttributenameOk
+### GetAttributeValueOk
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributenameOk() (*string, bool)`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributeValueOk() (*string, bool)`
 
-GetAttributenameOk returns a tuple with the Attributename field if it's non-nil, zero value otherwise
+GetAttributeValueOk returns a tuple with the AttributeValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAttributename
+### SetAttributeValue
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) SetAttributename(v string)`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) SetAttributeValue(v string)`
 
-SetAttributename sets Attributename field to given value.
+SetAttributeValue sets AttributeValue field to given value.
 
-### HasAttributename
+### HasAttributeValue
 
-`func (o *ProductDetailResponseTechnicalSpecificationsInner) HasAttributename() bool`
+`func (o *ProductDetailResponseTechnicalSpecificationsInner) HasAttributeValue() bool`
 
-HasAttributename returns a boolean if a field has been set.
+HasAttributeValue returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

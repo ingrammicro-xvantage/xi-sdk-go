@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **Quantity** | Pointer to **int32** | The quantity shipped of the line item. | [optional] 
 **DeliveryNumber** | Pointer to **string** | The actual date of delivery of the line item. | [optional] 
 **EstimatedShipDate** | Pointer to **string** | The date the line item is expected to be shipped. | [optional] 
+**ShippedDate** | Pointer to **string** |  | [optional] 
+**EstimatedDeliveryDate** | Pointer to **string** |  | [optional] 
 **ShipFromWarehouseId** | Pointer to **string** | The ID of the warehouse the product will ship from. | [optional] 
 **ShipFromLocation** | Pointer to **string** | The city and state the line item ships from. | [optional] 
 **InvoiceNumber** | Pointer to **string** | The Ingram Micro invoice number for the line item. | [optional] 
@@ -106,6 +108,56 @@ SetEstimatedShipDate sets EstimatedShipDate field to given value.
 `func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) HasEstimatedShipDate() bool`
 
 HasEstimatedShipDate returns a boolean if a field has been set.
+
+### GetShippedDate
+
+`func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) GetShippedDate() string`
+
+GetShippedDate returns the ShippedDate field if non-nil, zero value otherwise.
+
+### GetShippedDateOk
+
+`func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) GetShippedDateOk() (*string, bool)`
+
+GetShippedDateOk returns a tuple with the ShippedDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShippedDate
+
+`func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) SetShippedDate(v string)`
+
+SetShippedDate sets ShippedDate field to given value.
+
+### HasShippedDate
+
+`func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) HasShippedDate() bool`
+
+HasShippedDate returns a boolean if a field has been set.
+
+### GetEstimatedDeliveryDate
+
+`func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) GetEstimatedDeliveryDate() string`
+
+GetEstimatedDeliveryDate returns the EstimatedDeliveryDate field if non-nil, zero value otherwise.
+
+### GetEstimatedDeliveryDateOk
+
+`func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) GetEstimatedDeliveryDateOk() (*string, bool)`
+
+GetEstimatedDeliveryDateOk returns a tuple with the EstimatedDeliveryDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEstimatedDeliveryDate
+
+`func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) SetEstimatedDeliveryDate(v string)`
+
+SetEstimatedDeliveryDate sets EstimatedDeliveryDate field to given value.
+
+### HasEstimatedDeliveryDate
+
+`func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) HasEstimatedDeliveryDate() bool`
+
+HasEstimatedDeliveryDate returns a boolean if a field has been set.
 
 ### GetShipFromWarehouseId
 

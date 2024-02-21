@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IngramOrderNumber** | Pointer to **string** | The IngramMicro sales order number. | [optional] 
-**IngramOrderDate** | Pointer to **time.Time** | The IngramMicro sales order date. | [optional] 
+**IngramOrderDate** | Pointer to **string** | The IngramMicro sales order date. | [optional] 
 **OrderType** | Pointer to **string** | The IngramMicro sales order type. | [optional] 
 **CustomerOrderNumber** | Pointer to **string** | The reseller&#39;s order number for reference in their system. | [optional] 
 **EndCustomerOrderNumber** | Pointer to **string** | The end customer&#39;s order number for reference in their system. | [optional] 
@@ -75,20 +75,20 @@ HasIngramOrderNumber returns a boolean if a field has been set.
 
 ### GetIngramOrderDate
 
-`func (o *OrderDetailB2B) GetIngramOrderDate() time.Time`
+`func (o *OrderDetailB2B) GetIngramOrderDate() string`
 
 GetIngramOrderDate returns the IngramOrderDate field if non-nil, zero value otherwise.
 
 ### GetIngramOrderDateOk
 
-`func (o *OrderDetailB2B) GetIngramOrderDateOk() (*time.Time, bool)`
+`func (o *OrderDetailB2B) GetIngramOrderDateOk() (*string, bool)`
 
 GetIngramOrderDateOk returns a tuple with the IngramOrderDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIngramOrderDate
 
-`func (o *OrderDetailB2B) SetIngramOrderDate(v time.Time)`
+`func (o *OrderDetailB2B) SetIngramOrderDate(v string)`
 
 SetIngramOrderDate sets IngramOrderDate field to given value.
 

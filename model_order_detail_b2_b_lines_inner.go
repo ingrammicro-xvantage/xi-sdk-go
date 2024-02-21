@@ -64,7 +64,7 @@ type OrderDetailB2BLinesInner struct {
 	// The delivery date promised by IngramMicro.
 	PromisedDeliveryDate *string `json:"promisedDeliveryDate,omitempty"`
 	// Backorder ETA date
-	BackOrderETAData *string `json:"backOrderETAData,omitempty"`
+	BackOrderETADate *string `json:"backOrderETADate,omitempty"`
 	// Line-level notes for the order.
 	LineNotes *string `json:"lineNotes,omitempty"`
 	// Shipping details for the line item.
@@ -798,36 +798,36 @@ func (o *OrderDetailB2BLinesInner) SetPromisedDeliveryDate(v string) {
 	o.PromisedDeliveryDate = &v
 }
 
-// GetBackOrderETAData returns the BackOrderETAData field value if set, zero value otherwise.
-func (o *OrderDetailB2BLinesInner) GetBackOrderETAData() string {
-	if o == nil || IsNil(o.BackOrderETAData) {
+// GetBackOrderETADate returns the BackOrderETADate field value if set, zero value otherwise.
+func (o *OrderDetailB2BLinesInner) GetBackOrderETADate() string {
+	if o == nil || IsNil(o.BackOrderETADate) {
 		var ret string
 		return ret
 	}
-	return *o.BackOrderETAData
+	return *o.BackOrderETADate
 }
 
-// GetBackOrderETADataOk returns a tuple with the BackOrderETAData field value if set, nil otherwise
+// GetBackOrderETADateOk returns a tuple with the BackOrderETADate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderDetailB2BLinesInner) GetBackOrderETADataOk() (*string, bool) {
-	if o == nil || IsNil(o.BackOrderETAData) {
+func (o *OrderDetailB2BLinesInner) GetBackOrderETADateOk() (*string, bool) {
+	if o == nil || IsNil(o.BackOrderETADate) {
 		return nil, false
 	}
-	return o.BackOrderETAData, true
+	return o.BackOrderETADate, true
 }
 
-// HasBackOrderETAData returns a boolean if a field has been set.
-func (o *OrderDetailB2BLinesInner) HasBackOrderETAData() bool {
-	if o != nil && !IsNil(o.BackOrderETAData) {
+// HasBackOrderETADate returns a boolean if a field has been set.
+func (o *OrderDetailB2BLinesInner) HasBackOrderETADate() bool {
+	if o != nil && !IsNil(o.BackOrderETADate) {
 		return true
 	}
 
 	return false
 }
 
-// SetBackOrderETAData gets a reference to the given string and assigns it to the BackOrderETAData field.
-func (o *OrderDetailB2BLinesInner) SetBackOrderETAData(v string) {
-	o.BackOrderETAData = &v
+// SetBackOrderETADate gets a reference to the given string and assigns it to the BackOrderETADate field.
+func (o *OrderDetailB2BLinesInner) SetBackOrderETADate(v string) {
+	o.BackOrderETADate = &v
 }
 
 // GetLineNotes returns the LineNotes field value if set, zero value otherwise.
@@ -1165,8 +1165,8 @@ func (o OrderDetailB2BLinesInner) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PromisedDeliveryDate) {
 		toSerialize["promisedDeliveryDate"] = o.PromisedDeliveryDate
 	}
-	if !IsNil(o.BackOrderETAData) {
-		toSerialize["backOrderETAData"] = o.BackOrderETAData
+	if !IsNil(o.BackOrderETADate) {
+		toSerialize["backOrderETADate"] = o.BackOrderETADate
 	}
 	if !IsNil(o.LineNotes) {
 		toSerialize["lineNotes"] = o.LineNotes

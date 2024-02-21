@@ -37,7 +37,7 @@ type DealsDetailsResponse struct {
 	PriceProtectionEndDate *string `json:"priceProtectionEndDate,omitempty"`
 	// Country specific currency code.
 	CurrencyCode *string `json:"currencyCode,omitempty"`
-	EndUserInfo *RenewalsDetailsResponseEndUserInfoInner `json:"endUserInfo,omitempty"`
+	EndUserInfo *RenewalsDetailsResponseEndUserInfo `json:"endUserInfo,omitempty"`
 	Products []DealsDetailsResponseProductsInner `json:"products,omitempty"`
 }
 
@@ -347,9 +347,9 @@ func (o *DealsDetailsResponse) SetCurrencyCode(v string) {
 }
 
 // GetEndUserInfo returns the EndUserInfo field value if set, zero value otherwise.
-func (o *DealsDetailsResponse) GetEndUserInfo() RenewalsDetailsResponseEndUserInfoInner {
+func (o *DealsDetailsResponse) GetEndUserInfo() RenewalsDetailsResponseEndUserInfo {
 	if o == nil || IsNil(o.EndUserInfo) {
-		var ret RenewalsDetailsResponseEndUserInfoInner
+		var ret RenewalsDetailsResponseEndUserInfo
 		return ret
 	}
 	return *o.EndUserInfo
@@ -357,7 +357,7 @@ func (o *DealsDetailsResponse) GetEndUserInfo() RenewalsDetailsResponseEndUserIn
 
 // GetEndUserInfoOk returns a tuple with the EndUserInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DealsDetailsResponse) GetEndUserInfoOk() (*RenewalsDetailsResponseEndUserInfoInner, bool) {
+func (o *DealsDetailsResponse) GetEndUserInfoOk() (*RenewalsDetailsResponseEndUserInfo, bool) {
 	if o == nil || IsNil(o.EndUserInfo) {
 		return nil, false
 	}
@@ -373,8 +373,8 @@ func (o *DealsDetailsResponse) HasEndUserInfo() bool {
 	return false
 }
 
-// SetEndUserInfo gets a reference to the given RenewalsDetailsResponseEndUserInfoInner and assigns it to the EndUserInfo field.
-func (o *DealsDetailsResponse) SetEndUserInfo(v RenewalsDetailsResponseEndUserInfoInner) {
+// SetEndUserInfo gets a reference to the given RenewalsDetailsResponseEndUserInfo and assigns it to the EndUserInfo field.
+func (o *DealsDetailsResponse) SetEndUserInfo(v RenewalsDetailsResponseEndUserInfo) {
 	o.EndUserInfo = &v
 }
 

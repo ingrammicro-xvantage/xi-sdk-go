@@ -20,7 +20,7 @@ var _ MappedNullable = &RenewalsSearchResponseRenewalsInner{}
 // RenewalsSearchResponseRenewalsInner struct for RenewalsSearchResponseRenewalsInner
 type RenewalsSearchResponseRenewalsInner struct {
 	// Unique renewal ID.
-	RenewalId *string `json:"renewalId,omitempty"`
+	RenewalId *int32 `json:"renewalId,omitempty"`
 	// The reseller's order number for reference in their system.
 	CustomerOrderNumber *string `json:"customerOrderNumber,omitempty"`
 	// Renewal reference number. It could be notification id or quote number.
@@ -32,7 +32,7 @@ type RenewalsSearchResponseRenewalsInner struct {
 	// Renewal expiration date.
 	ExpirationDate *string `json:"expirationDate,omitempty"`
 	// The value of the renewal.
-	RenewalValue *string `json:"renewalValue,omitempty"`
+	RenewalValue *float64 `json:"renewalValue,omitempty"`
 	// The status of the renewal.
 	Status *string `json:"status,omitempty"`
 	Links []RenewalsSearchResponseRenewalsInnerLinksInner `json:"links,omitempty"`
@@ -56,9 +56,9 @@ func NewRenewalsSearchResponseRenewalsInnerWithDefaults() *RenewalsSearchRespons
 }
 
 // GetRenewalId returns the RenewalId field value if set, zero value otherwise.
-func (o *RenewalsSearchResponseRenewalsInner) GetRenewalId() string {
+func (o *RenewalsSearchResponseRenewalsInner) GetRenewalId() int32 {
 	if o == nil || IsNil(o.RenewalId) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.RenewalId
@@ -66,7 +66,7 @@ func (o *RenewalsSearchResponseRenewalsInner) GetRenewalId() string {
 
 // GetRenewalIdOk returns a tuple with the RenewalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsSearchResponseRenewalsInner) GetRenewalIdOk() (*string, bool) {
+func (o *RenewalsSearchResponseRenewalsInner) GetRenewalIdOk() (*int32, bool) {
 	if o == nil || IsNil(o.RenewalId) {
 		return nil, false
 	}
@@ -82,8 +82,8 @@ func (o *RenewalsSearchResponseRenewalsInner) HasRenewalId() bool {
 	return false
 }
 
-// SetRenewalId gets a reference to the given string and assigns it to the RenewalId field.
-func (o *RenewalsSearchResponseRenewalsInner) SetRenewalId(v string) {
+// SetRenewalId gets a reference to the given int32 and assigns it to the RenewalId field.
+func (o *RenewalsSearchResponseRenewalsInner) SetRenewalId(v int32) {
 	o.RenewalId = &v
 }
 
@@ -248,9 +248,9 @@ func (o *RenewalsSearchResponseRenewalsInner) SetExpirationDate(v string) {
 }
 
 // GetRenewalValue returns the RenewalValue field value if set, zero value otherwise.
-func (o *RenewalsSearchResponseRenewalsInner) GetRenewalValue() string {
+func (o *RenewalsSearchResponseRenewalsInner) GetRenewalValue() float64 {
 	if o == nil || IsNil(o.RenewalValue) {
-		var ret string
+		var ret float64
 		return ret
 	}
 	return *o.RenewalValue
@@ -258,7 +258,7 @@ func (o *RenewalsSearchResponseRenewalsInner) GetRenewalValue() string {
 
 // GetRenewalValueOk returns a tuple with the RenewalValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsSearchResponseRenewalsInner) GetRenewalValueOk() (*string, bool) {
+func (o *RenewalsSearchResponseRenewalsInner) GetRenewalValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.RenewalValue) {
 		return nil, false
 	}
@@ -274,8 +274,8 @@ func (o *RenewalsSearchResponseRenewalsInner) HasRenewalValue() bool {
 	return false
 }
 
-// SetRenewalValue gets a reference to the given string and assigns it to the RenewalValue field.
-func (o *RenewalsSearchResponseRenewalsInner) SetRenewalValue(v string) {
+// SetRenewalValue gets a reference to the given float64 and assigns it to the RenewalValue field.
+func (o *RenewalsSearchResponseRenewalsInner) SetRenewalValue(v float64) {
 	o.RenewalValue = &v
 }
 

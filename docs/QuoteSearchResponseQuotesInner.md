@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **Vendor** | Pointer to **string** | Name of the vendor. | [optional] 
 **CreatedBy** | Pointer to **string** | Name of the end user/customer who created a quote. | [optional] 
 **QuoteType** | Pointer to **string** | Type of quote | [optional] 
-**Links** | Pointer to [**[]QuoteSearchResponseQuotesInnerLinksInner**](QuoteSearchResponseQuotesInnerLinksInner.md) |  | [optional] 
+**Links** | Pointer to [**QuoteSearchResponseQuotesInnerLinks**](QuoteSearchResponseQuotesInnerLinks.md) |  | [optional] 
 
 ## Methods
 
@@ -417,20 +417,20 @@ HasQuoteType returns a boolean if a field has been set.
 
 ### GetLinks
 
-`func (o *QuoteSearchResponseQuotesInner) GetLinks() []QuoteSearchResponseQuotesInnerLinksInner`
+`func (o *QuoteSearchResponseQuotesInner) GetLinks() QuoteSearchResponseQuotesInnerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *QuoteSearchResponseQuotesInner) GetLinksOk() (*[]QuoteSearchResponseQuotesInnerLinksInner, bool)`
+`func (o *QuoteSearchResponseQuotesInner) GetLinksOk() (*QuoteSearchResponseQuotesInnerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *QuoteSearchResponseQuotesInner) SetLinks(v []QuoteSearchResponseQuotesInnerLinksInner)`
+`func (o *QuoteSearchResponseQuotesInner) SetLinks(v QuoteSearchResponseQuotesInnerLinks)`
 
 SetLinks sets Links field to given value.
 

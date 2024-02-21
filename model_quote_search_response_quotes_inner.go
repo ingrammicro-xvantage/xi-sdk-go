@@ -48,7 +48,7 @@ type QuoteSearchResponseQuotesInner struct {
 	CreatedBy *string `json:"createdBy,omitempty"`
 	// Type of quote
 	QuoteType *string `json:"quoteType,omitempty"`
-	Links []QuoteSearchResponseQuotesInnerLinksInner `json:"links,omitempty"`
+	Links *QuoteSearchResponseQuotesInnerLinks `json:"links,omitempty"`
 }
 
 // NewQuoteSearchResponseQuotesInner instantiates a new QuoteSearchResponseQuotesInner object
@@ -549,17 +549,17 @@ func (o *QuoteSearchResponseQuotesInner) SetQuoteType(v string) {
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *QuoteSearchResponseQuotesInner) GetLinks() []QuoteSearchResponseQuotesInnerLinksInner {
+func (o *QuoteSearchResponseQuotesInner) GetLinks() QuoteSearchResponseQuotesInnerLinks {
 	if o == nil || IsNil(o.Links) {
-		var ret []QuoteSearchResponseQuotesInnerLinksInner
+		var ret QuoteSearchResponseQuotesInnerLinks
 		return ret
 	}
-	return o.Links
+	return *o.Links
 }
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteSearchResponseQuotesInner) GetLinksOk() ([]QuoteSearchResponseQuotesInnerLinksInner, bool) {
+func (o *QuoteSearchResponseQuotesInner) GetLinksOk() (*QuoteSearchResponseQuotesInnerLinks, bool) {
 	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
@@ -575,9 +575,9 @@ func (o *QuoteSearchResponseQuotesInner) HasLinks() bool {
 	return false
 }
 
-// SetLinks gets a reference to the given []QuoteSearchResponseQuotesInnerLinksInner and assigns it to the Links field.
-func (o *QuoteSearchResponseQuotesInner) SetLinks(v []QuoteSearchResponseQuotesInnerLinksInner) {
-	o.Links = v
+// SetLinks gets a reference to the given QuoteSearchResponseQuotesInnerLinks and assigns it to the Links field.
+func (o *QuoteSearchResponseQuotesInner) SetLinks(v QuoteSearchResponseQuotesInnerLinks) {
+	o.Links = &v
 }
 
 func (o QuoteSearchResponseQuotesInner) MarshalJSON() ([]byte, error) {

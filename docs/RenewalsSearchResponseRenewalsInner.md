@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RenewalId** | Pointer to **string** | Unique renewal ID. | [optional] 
+**RenewalId** | Pointer to **int32** | Unique renewal ID. | [optional] 
 **CustomerOrderNumber** | Pointer to **string** | The reseller&#39;s order number for reference in their system. | [optional] 
 **ReferenceNumber** | Pointer to **string** | Renewal reference number. It could be notification id or quote number. | [optional] 
 **EndUser** | Pointer to **string** | The company name for the end user/customer. | [optional] 
 **Vendor** | Pointer to **string** | The name of the vendor. | [optional] 
 **ExpirationDate** | Pointer to **string** | Renewal expiration date. | [optional] 
-**RenewalValue** | Pointer to **string** | The value of the renewal. | [optional] 
+**RenewalValue** | Pointer to **float64** | The value of the renewal. | [optional] 
 **Status** | Pointer to **string** | The status of the renewal. | [optional] 
 **Links** | Pointer to [**[]RenewalsSearchResponseRenewalsInnerLinksInner**](RenewalsSearchResponseRenewalsInnerLinksInner.md) |  | [optional] 
 
@@ -35,20 +35,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRenewalId
 
-`func (o *RenewalsSearchResponseRenewalsInner) GetRenewalId() string`
+`func (o *RenewalsSearchResponseRenewalsInner) GetRenewalId() int32`
 
 GetRenewalId returns the RenewalId field if non-nil, zero value otherwise.
 
 ### GetRenewalIdOk
 
-`func (o *RenewalsSearchResponseRenewalsInner) GetRenewalIdOk() (*string, bool)`
+`func (o *RenewalsSearchResponseRenewalsInner) GetRenewalIdOk() (*int32, bool)`
 
 GetRenewalIdOk returns a tuple with the RenewalId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRenewalId
 
-`func (o *RenewalsSearchResponseRenewalsInner) SetRenewalId(v string)`
+`func (o *RenewalsSearchResponseRenewalsInner) SetRenewalId(v int32)`
 
 SetRenewalId sets RenewalId field to given value.
 
@@ -185,20 +185,20 @@ HasExpirationDate returns a boolean if a field has been set.
 
 ### GetRenewalValue
 
-`func (o *RenewalsSearchResponseRenewalsInner) GetRenewalValue() string`
+`func (o *RenewalsSearchResponseRenewalsInner) GetRenewalValue() float64`
 
 GetRenewalValue returns the RenewalValue field if non-nil, zero value otherwise.
 
 ### GetRenewalValueOk
 
-`func (o *RenewalsSearchResponseRenewalsInner) GetRenewalValueOk() (*string, bool)`
+`func (o *RenewalsSearchResponseRenewalsInner) GetRenewalValueOk() (*float64, bool)`
 
 GetRenewalValueOk returns a tuple with the RenewalValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRenewalValue
 
-`func (o *RenewalsSearchResponseRenewalsInner) SetRenewalValue(v string)`
+`func (o *RenewalsSearchResponseRenewalsInner) SetRenewalValue(v float64)`
 
 SetRenewalValue sets RenewalValue field to given value.
 

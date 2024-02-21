@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **QuoteType** | Pointer to **string** |  | [optional] 
 **LeaseInfo** | Pointer to **string** | Lease information. | [optional] 
 **LeasingInstructions** | Pointer to **string** | Leasing information | [optional] 
+**QuoteSybType** | Pointer to **string** |  | [optional] 
 **ResellerInfo** | Pointer to [**QuoteDetailsResponseResellerInfo**](QuoteDetailsResponseResellerInfo.md) |  | [optional] 
 **EndUserInfo** | Pointer to [**QuoteDetailsResponseEndUserInfo**](QuoteDetailsResponseEndUserInfo.md) |  | [optional] 
 **Products** | Pointer to [**[]QuoteDetailsResponseProductsInner**](QuoteDetailsResponseProductsInner.md) |  | [optional] 
@@ -551,6 +552,31 @@ SetLeasingInstructions sets LeasingInstructions field to given value.
 `func (o *QuoteDetailsResponse) HasLeasingInstructions() bool`
 
 HasLeasingInstructions returns a boolean if a field has been set.
+
+### GetQuoteSybType
+
+`func (o *QuoteDetailsResponse) GetQuoteSybType() string`
+
+GetQuoteSybType returns the QuoteSybType field if non-nil, zero value otherwise.
+
+### GetQuoteSybTypeOk
+
+`func (o *QuoteDetailsResponse) GetQuoteSybTypeOk() (*string, bool)`
+
+GetQuoteSybTypeOk returns a tuple with the QuoteSybType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuoteSybType
+
+`func (o *QuoteDetailsResponse) SetQuoteSybType(v string)`
+
+SetQuoteSybType sets QuoteSybType field to given value.
+
+### HasQuoteSybType
+
+`func (o *QuoteDetailsResponse) HasQuoteSybType() bool`
+
+HasQuoteSybType returns a boolean if a field has been set.
 
 ### GetResellerInfo
 

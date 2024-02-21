@@ -20,13 +20,13 @@ var _ MappedNullable = &ProductDetailResponseTechnicalSpecificationsInner{}
 // ProductDetailResponseTechnicalSpecificationsInner struct for ProductDetailResponseTechnicalSpecificationsInner
 type ProductDetailResponseTechnicalSpecificationsInner struct {
 	// Example : 'Basic'
-	Headername *string `json:"headername,omitempty"`
-	// Example : 'LCD Monitor'
-	Attributevalue *string `json:"attributevalue,omitempty"`
-	// Example : 'Basic|Product Type|LCD Monitor'
-	Attributedisplay *string `json:"attributedisplay,omitempty"`
+	HeaderName *string `json:"headerName,omitempty"`
 	// Example : 'Product Type'
-	Attributename *string `json:"attributename,omitempty"`
+	AttributeName *string `json:"attributeName,omitempty"`
+	// Example : 'Basic|Product Type|LCD Monitor'
+	AttributeDisplay *string `json:"attributeDisplay,omitempty"`
+	// Example : 'LCD Monitor'
+	AttributeValue *string `json:"attributeValue,omitempty"`
 }
 
 // NewProductDetailResponseTechnicalSpecificationsInner instantiates a new ProductDetailResponseTechnicalSpecificationsInner object
@@ -46,132 +46,132 @@ func NewProductDetailResponseTechnicalSpecificationsInnerWithDefaults() *Product
 	return &this
 }
 
-// GetHeadername returns the Headername field value if set, zero value otherwise.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) GetHeadername() string {
-	if o == nil || IsNil(o.Headername) {
+// GetHeaderName returns the HeaderName field value if set, zero value otherwise.
+func (o *ProductDetailResponseTechnicalSpecificationsInner) GetHeaderName() string {
+	if o == nil || IsNil(o.HeaderName) {
 		var ret string
 		return ret
 	}
-	return *o.Headername
+	return *o.HeaderName
 }
 
-// GetHeadernameOk returns a tuple with the Headername field value if set, nil otherwise
+// GetHeaderNameOk returns a tuple with the HeaderName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) GetHeadernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Headername) {
+func (o *ProductDetailResponseTechnicalSpecificationsInner) GetHeaderNameOk() (*string, bool) {
+	if o == nil || IsNil(o.HeaderName) {
 		return nil, false
 	}
-	return o.Headername, true
+	return o.HeaderName, true
 }
 
-// HasHeadername returns a boolean if a field has been set.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) HasHeadername() bool {
-	if o != nil && !IsNil(o.Headername) {
+// HasHeaderName returns a boolean if a field has been set.
+func (o *ProductDetailResponseTechnicalSpecificationsInner) HasHeaderName() bool {
+	if o != nil && !IsNil(o.HeaderName) {
 		return true
 	}
 
 	return false
 }
 
-// SetHeadername gets a reference to the given string and assigns it to the Headername field.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) SetHeadername(v string) {
-	o.Headername = &v
+// SetHeaderName gets a reference to the given string and assigns it to the HeaderName field.
+func (o *ProductDetailResponseTechnicalSpecificationsInner) SetHeaderName(v string) {
+	o.HeaderName = &v
 }
 
-// GetAttributevalue returns the Attributevalue field value if set, zero value otherwise.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributevalue() string {
-	if o == nil || IsNil(o.Attributevalue) {
+// GetAttributeName returns the AttributeName field value if set, zero value otherwise.
+func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributeName() string {
+	if o == nil || IsNil(o.AttributeName) {
 		var ret string
 		return ret
 	}
-	return *o.Attributevalue
+	return *o.AttributeName
 }
 
-// GetAttributevalueOk returns a tuple with the Attributevalue field value if set, nil otherwise
+// GetAttributeNameOk returns a tuple with the AttributeName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributevalueOk() (*string, bool) {
-	if o == nil || IsNil(o.Attributevalue) {
+func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributeNameOk() (*string, bool) {
+	if o == nil || IsNil(o.AttributeName) {
 		return nil, false
 	}
-	return o.Attributevalue, true
+	return o.AttributeName, true
 }
 
-// HasAttributevalue returns a boolean if a field has been set.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) HasAttributevalue() bool {
-	if o != nil && !IsNil(o.Attributevalue) {
+// HasAttributeName returns a boolean if a field has been set.
+func (o *ProductDetailResponseTechnicalSpecificationsInner) HasAttributeName() bool {
+	if o != nil && !IsNil(o.AttributeName) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributevalue gets a reference to the given string and assigns it to the Attributevalue field.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) SetAttributevalue(v string) {
-	o.Attributevalue = &v
+// SetAttributeName gets a reference to the given string and assigns it to the AttributeName field.
+func (o *ProductDetailResponseTechnicalSpecificationsInner) SetAttributeName(v string) {
+	o.AttributeName = &v
 }
 
-// GetAttributedisplay returns the Attributedisplay field value if set, zero value otherwise.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributedisplay() string {
-	if o == nil || IsNil(o.Attributedisplay) {
+// GetAttributeDisplay returns the AttributeDisplay field value if set, zero value otherwise.
+func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributeDisplay() string {
+	if o == nil || IsNil(o.AttributeDisplay) {
 		var ret string
 		return ret
 	}
-	return *o.Attributedisplay
+	return *o.AttributeDisplay
 }
 
-// GetAttributedisplayOk returns a tuple with the Attributedisplay field value if set, nil otherwise
+// GetAttributeDisplayOk returns a tuple with the AttributeDisplay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributedisplayOk() (*string, bool) {
-	if o == nil || IsNil(o.Attributedisplay) {
+func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributeDisplayOk() (*string, bool) {
+	if o == nil || IsNil(o.AttributeDisplay) {
 		return nil, false
 	}
-	return o.Attributedisplay, true
+	return o.AttributeDisplay, true
 }
 
-// HasAttributedisplay returns a boolean if a field has been set.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) HasAttributedisplay() bool {
-	if o != nil && !IsNil(o.Attributedisplay) {
+// HasAttributeDisplay returns a boolean if a field has been set.
+func (o *ProductDetailResponseTechnicalSpecificationsInner) HasAttributeDisplay() bool {
+	if o != nil && !IsNil(o.AttributeDisplay) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributedisplay gets a reference to the given string and assigns it to the Attributedisplay field.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) SetAttributedisplay(v string) {
-	o.Attributedisplay = &v
+// SetAttributeDisplay gets a reference to the given string and assigns it to the AttributeDisplay field.
+func (o *ProductDetailResponseTechnicalSpecificationsInner) SetAttributeDisplay(v string) {
+	o.AttributeDisplay = &v
 }
 
-// GetAttributename returns the Attributename field value if set, zero value otherwise.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributename() string {
-	if o == nil || IsNil(o.Attributename) {
+// GetAttributeValue returns the AttributeValue field value if set, zero value otherwise.
+func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributeValue() string {
+	if o == nil || IsNil(o.AttributeValue) {
 		var ret string
 		return ret
 	}
-	return *o.Attributename
+	return *o.AttributeValue
 }
 
-// GetAttributenameOk returns a tuple with the Attributename field value if set, nil otherwise
+// GetAttributeValueOk returns a tuple with the AttributeValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributenameOk() (*string, bool) {
-	if o == nil || IsNil(o.Attributename) {
+func (o *ProductDetailResponseTechnicalSpecificationsInner) GetAttributeValueOk() (*string, bool) {
+	if o == nil || IsNil(o.AttributeValue) {
 		return nil, false
 	}
-	return o.Attributename, true
+	return o.AttributeValue, true
 }
 
-// HasAttributename returns a boolean if a field has been set.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) HasAttributename() bool {
-	if o != nil && !IsNil(o.Attributename) {
+// HasAttributeValue returns a boolean if a field has been set.
+func (o *ProductDetailResponseTechnicalSpecificationsInner) HasAttributeValue() bool {
+	if o != nil && !IsNil(o.AttributeValue) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributename gets a reference to the given string and assigns it to the Attributename field.
-func (o *ProductDetailResponseTechnicalSpecificationsInner) SetAttributename(v string) {
-	o.Attributename = &v
+// SetAttributeValue gets a reference to the given string and assigns it to the AttributeValue field.
+func (o *ProductDetailResponseTechnicalSpecificationsInner) SetAttributeValue(v string) {
+	o.AttributeValue = &v
 }
 
 func (o ProductDetailResponseTechnicalSpecificationsInner) MarshalJSON() ([]byte, error) {
@@ -184,17 +184,17 @@ func (o ProductDetailResponseTechnicalSpecificationsInner) MarshalJSON() ([]byte
 
 func (o ProductDetailResponseTechnicalSpecificationsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Headername) {
-		toSerialize["headername"] = o.Headername
+	if !IsNil(o.HeaderName) {
+		toSerialize["headerName"] = o.HeaderName
 	}
-	if !IsNil(o.Attributevalue) {
-		toSerialize["attributevalue"] = o.Attributevalue
+	if !IsNil(o.AttributeName) {
+		toSerialize["attributeName"] = o.AttributeName
 	}
-	if !IsNil(o.Attributedisplay) {
-		toSerialize["attributedisplay"] = o.Attributedisplay
+	if !IsNil(o.AttributeDisplay) {
+		toSerialize["attributeDisplay"] = o.AttributeDisplay
 	}
-	if !IsNil(o.Attributename) {
-		toSerialize["attributename"] = o.Attributename
+	if !IsNil(o.AttributeValue) {
+		toSerialize["attributeValue"] = o.AttributeValue
 	}
 	return toSerialize, nil
 }

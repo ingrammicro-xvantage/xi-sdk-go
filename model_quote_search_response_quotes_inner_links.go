@@ -14,35 +14,35 @@ import (
 	"encoding/json"
 )
 
-// checks if the QuoteSearchResponseQuotesInnerLinksInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &QuoteSearchResponseQuotesInnerLinksInner{}
+// checks if the QuoteSearchResponseQuotesInnerLinks type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &QuoteSearchResponseQuotesInnerLinks{}
 
-// QuoteSearchResponseQuotesInnerLinksInner struct for QuoteSearchResponseQuotesInnerLinksInner
-type QuoteSearchResponseQuotesInnerLinksInner struct {
+// QuoteSearchResponseQuotesInnerLinks struct for QuoteSearchResponseQuotesInnerLinks
+type QuoteSearchResponseQuotesInnerLinks struct {
 	Topic *string `json:"topic,omitempty"`
 	Href *string `json:"href,omitempty"`
 	Type *string `json:"type,omitempty"`
 }
 
-// NewQuoteSearchResponseQuotesInnerLinksInner instantiates a new QuoteSearchResponseQuotesInnerLinksInner object
+// NewQuoteSearchResponseQuotesInnerLinks instantiates a new QuoteSearchResponseQuotesInnerLinks object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewQuoteSearchResponseQuotesInnerLinksInner() *QuoteSearchResponseQuotesInnerLinksInner {
-	this := QuoteSearchResponseQuotesInnerLinksInner{}
+func NewQuoteSearchResponseQuotesInnerLinks() *QuoteSearchResponseQuotesInnerLinks {
+	this := QuoteSearchResponseQuotesInnerLinks{}
 	return &this
 }
 
-// NewQuoteSearchResponseQuotesInnerLinksInnerWithDefaults instantiates a new QuoteSearchResponseQuotesInnerLinksInner object
+// NewQuoteSearchResponseQuotesInnerLinksWithDefaults instantiates a new QuoteSearchResponseQuotesInnerLinks object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewQuoteSearchResponseQuotesInnerLinksInnerWithDefaults() *QuoteSearchResponseQuotesInnerLinksInner {
-	this := QuoteSearchResponseQuotesInnerLinksInner{}
+func NewQuoteSearchResponseQuotesInnerLinksWithDefaults() *QuoteSearchResponseQuotesInnerLinks {
+	this := QuoteSearchResponseQuotesInnerLinks{}
 	return &this
 }
 
 // GetTopic returns the Topic field value if set, zero value otherwise.
-func (o *QuoteSearchResponseQuotesInnerLinksInner) GetTopic() string {
+func (o *QuoteSearchResponseQuotesInnerLinks) GetTopic() string {
 	if o == nil || IsNil(o.Topic) {
 		var ret string
 		return ret
@@ -52,7 +52,7 @@ func (o *QuoteSearchResponseQuotesInnerLinksInner) GetTopic() string {
 
 // GetTopicOk returns a tuple with the Topic field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteSearchResponseQuotesInnerLinksInner) GetTopicOk() (*string, bool) {
+func (o *QuoteSearchResponseQuotesInnerLinks) GetTopicOk() (*string, bool) {
 	if o == nil || IsNil(o.Topic) {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *QuoteSearchResponseQuotesInnerLinksInner) GetTopicOk() (*string, bool) 
 }
 
 // HasTopic returns a boolean if a field has been set.
-func (o *QuoteSearchResponseQuotesInnerLinksInner) HasTopic() bool {
+func (o *QuoteSearchResponseQuotesInnerLinks) HasTopic() bool {
 	if o != nil && !IsNil(o.Topic) {
 		return true
 	}
@@ -69,12 +69,12 @@ func (o *QuoteSearchResponseQuotesInnerLinksInner) HasTopic() bool {
 }
 
 // SetTopic gets a reference to the given string and assigns it to the Topic field.
-func (o *QuoteSearchResponseQuotesInnerLinksInner) SetTopic(v string) {
+func (o *QuoteSearchResponseQuotesInnerLinks) SetTopic(v string) {
 	o.Topic = &v
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
-func (o *QuoteSearchResponseQuotesInnerLinksInner) GetHref() string {
+func (o *QuoteSearchResponseQuotesInnerLinks) GetHref() string {
 	if o == nil || IsNil(o.Href) {
 		var ret string
 		return ret
@@ -84,7 +84,7 @@ func (o *QuoteSearchResponseQuotesInnerLinksInner) GetHref() string {
 
 // GetHrefOk returns a tuple with the Href field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteSearchResponseQuotesInnerLinksInner) GetHrefOk() (*string, bool) {
+func (o *QuoteSearchResponseQuotesInnerLinks) GetHrefOk() (*string, bool) {
 	if o == nil || IsNil(o.Href) {
 		return nil, false
 	}
@@ -92,7 +92,7 @@ func (o *QuoteSearchResponseQuotesInnerLinksInner) GetHrefOk() (*string, bool) {
 }
 
 // HasHref returns a boolean if a field has been set.
-func (o *QuoteSearchResponseQuotesInnerLinksInner) HasHref() bool {
+func (o *QuoteSearchResponseQuotesInnerLinks) HasHref() bool {
 	if o != nil && !IsNil(o.Href) {
 		return true
 	}
@@ -101,12 +101,12 @@ func (o *QuoteSearchResponseQuotesInnerLinksInner) HasHref() bool {
 }
 
 // SetHref gets a reference to the given string and assigns it to the Href field.
-func (o *QuoteSearchResponseQuotesInnerLinksInner) SetHref(v string) {
+func (o *QuoteSearchResponseQuotesInnerLinks) SetHref(v string) {
 	o.Href = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *QuoteSearchResponseQuotesInnerLinksInner) GetType() string {
+func (o *QuoteSearchResponseQuotesInnerLinks) GetType() string {
 	if o == nil || IsNil(o.Type) {
 		var ret string
 		return ret
@@ -116,7 +116,7 @@ func (o *QuoteSearchResponseQuotesInnerLinksInner) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteSearchResponseQuotesInnerLinksInner) GetTypeOk() (*string, bool) {
+func (o *QuoteSearchResponseQuotesInnerLinks) GetTypeOk() (*string, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -124,7 +124,7 @@ func (o *QuoteSearchResponseQuotesInnerLinksInner) GetTypeOk() (*string, bool) {
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *QuoteSearchResponseQuotesInnerLinksInner) HasType() bool {
+func (o *QuoteSearchResponseQuotesInnerLinks) HasType() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -133,11 +133,11 @@ func (o *QuoteSearchResponseQuotesInnerLinksInner) HasType() bool {
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
-func (o *QuoteSearchResponseQuotesInnerLinksInner) SetType(v string) {
+func (o *QuoteSearchResponseQuotesInnerLinks) SetType(v string) {
 	o.Type = &v
 }
 
-func (o QuoteSearchResponseQuotesInnerLinksInner) MarshalJSON() ([]byte, error) {
+func (o QuoteSearchResponseQuotesInnerLinks) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -145,7 +145,7 @@ func (o QuoteSearchResponseQuotesInnerLinksInner) MarshalJSON() ([]byte, error) 
 	return json.Marshal(toSerialize)
 }
 
-func (o QuoteSearchResponseQuotesInnerLinksInner) ToMap() (map[string]interface{}, error) {
+func (o QuoteSearchResponseQuotesInnerLinks) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Topic) {
 		toSerialize["topic"] = o.Topic
@@ -159,38 +159,38 @@ func (o QuoteSearchResponseQuotesInnerLinksInner) ToMap() (map[string]interface{
 	return toSerialize, nil
 }
 
-type NullableQuoteSearchResponseQuotesInnerLinksInner struct {
-	value *QuoteSearchResponseQuotesInnerLinksInner
+type NullableQuoteSearchResponseQuotesInnerLinks struct {
+	value *QuoteSearchResponseQuotesInnerLinks
 	isSet bool
 }
 
-func (v NullableQuoteSearchResponseQuotesInnerLinksInner) Get() *QuoteSearchResponseQuotesInnerLinksInner {
+func (v NullableQuoteSearchResponseQuotesInnerLinks) Get() *QuoteSearchResponseQuotesInnerLinks {
 	return v.value
 }
 
-func (v *NullableQuoteSearchResponseQuotesInnerLinksInner) Set(val *QuoteSearchResponseQuotesInnerLinksInner) {
+func (v *NullableQuoteSearchResponseQuotesInnerLinks) Set(val *QuoteSearchResponseQuotesInnerLinks) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableQuoteSearchResponseQuotesInnerLinksInner) IsSet() bool {
+func (v NullableQuoteSearchResponseQuotesInnerLinks) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableQuoteSearchResponseQuotesInnerLinksInner) Unset() {
+func (v *NullableQuoteSearchResponseQuotesInnerLinks) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableQuoteSearchResponseQuotesInnerLinksInner(val *QuoteSearchResponseQuotesInnerLinksInner) *NullableQuoteSearchResponseQuotesInnerLinksInner {
-	return &NullableQuoteSearchResponseQuotesInnerLinksInner{value: val, isSet: true}
+func NewNullableQuoteSearchResponseQuotesInnerLinks(val *QuoteSearchResponseQuotesInnerLinks) *NullableQuoteSearchResponseQuotesInnerLinks {
+	return &NullableQuoteSearchResponseQuotesInnerLinks{value: val, isSet: true}
 }
 
-func (v NullableQuoteSearchResponseQuotesInnerLinksInner) MarshalJSON() ([]byte, error) {
+func (v NullableQuoteSearchResponseQuotesInnerLinks) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableQuoteSearchResponseQuotesInnerLinksInner) UnmarshalJSON(src []byte) error {
+func (v *NullableQuoteSearchResponseQuotesInnerLinks) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
