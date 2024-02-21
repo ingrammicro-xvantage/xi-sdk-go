@@ -11,11 +11,12 @@ Name | Type | Description | Notes
 **LastModifiedDate** | Pointer to **string** | Date the Quote was last updated or modified. | [optional] 
 **IngramQuoteExpiryDate** | Pointer to **string** | Quote expiration date. | [optional] 
 **CurrencyCode** | Pointer to **string** | Three letter currency code. | [optional] 
-**ClosingReason** | Pointer to **string** | Closing Reason for quote. | [optional] 
 **SpecialBidId** | Pointer to **string** | Price discount identifyer to specify  a pricing discount that has been applied to the quote. If present - the priceDeviationStartDate and priceDeviationExpiryDate must be presented. Cisco refers to this as a Dart | [optional] 
 **SpecialBidEffectiveDate** | Pointer to **string** | If price discount has been applied to the quote - the starting date the discount begins. | [optional] 
 **SpecialBidExpirationDate** | Pointer to **string** | If a price discount has been applied to the quote - The date the discount expires and will no longer be applicable. | [optional] 
 **Status** | Pointer to **string** | This refers to the primary status of the quote.  API responses will return | [optional] 
+**ClosingReason** | Pointer to **string** | Closing Reason for quote. | [optional] 
+**DateClosed** | Pointer to **string** |  | [optional] 
 **CustomerNeed** | Pointer to **string** | Details related to the customer&#39;s request for the quote entered by the sales representative or system generated. | [optional] 
 **ProposedSolution** | Pointer to **string** | Ingram Micro proposed solution and summary of quote. | [optional] 
 **IntroPreamble** | Pointer to **string** | Introductory paragraph included in each quote.  Legally required - must be included when presenting the quote details. | [optional] 
@@ -24,7 +25,7 @@ Name | Type | Description | Notes
 **QuoteType** | Pointer to **string** |  | [optional] 
 **LeaseInfo** | Pointer to **string** | Lease information. | [optional] 
 **LeasingInstructions** | Pointer to **string** | Leasing information | [optional] 
-**QuoteSybType** | Pointer to **string** |  | [optional] 
+**QuoteSubType** | Pointer to **string** |  | [optional] 
 **ResellerInfo** | Pointer to [**QuoteDetailsResponseResellerInfo**](QuoteDetailsResponseResellerInfo.md) |  | [optional] 
 **EndUserInfo** | Pointer to [**QuoteDetailsResponseEndUserInfo**](QuoteDetailsResponseEndUserInfo.md) |  | [optional] 
 **Products** | Pointer to [**[]QuoteDetailsResponseProductsInner**](QuoteDetailsResponseProductsInner.md) |  | [optional] 
@@ -228,31 +229,6 @@ SetCurrencyCode sets CurrencyCode field to given value.
 
 HasCurrencyCode returns a boolean if a field has been set.
 
-### GetClosingReason
-
-`func (o *QuoteDetailsResponse) GetClosingReason() string`
-
-GetClosingReason returns the ClosingReason field if non-nil, zero value otherwise.
-
-### GetClosingReasonOk
-
-`func (o *QuoteDetailsResponse) GetClosingReasonOk() (*string, bool)`
-
-GetClosingReasonOk returns a tuple with the ClosingReason field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClosingReason
-
-`func (o *QuoteDetailsResponse) SetClosingReason(v string)`
-
-SetClosingReason sets ClosingReason field to given value.
-
-### HasClosingReason
-
-`func (o *QuoteDetailsResponse) HasClosingReason() bool`
-
-HasClosingReason returns a boolean if a field has been set.
-
 ### GetSpecialBidId
 
 `func (o *QuoteDetailsResponse) GetSpecialBidId() string`
@@ -352,6 +328,56 @@ SetStatus sets Status field to given value.
 `func (o *QuoteDetailsResponse) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetClosingReason
+
+`func (o *QuoteDetailsResponse) GetClosingReason() string`
+
+GetClosingReason returns the ClosingReason field if non-nil, zero value otherwise.
+
+### GetClosingReasonOk
+
+`func (o *QuoteDetailsResponse) GetClosingReasonOk() (*string, bool)`
+
+GetClosingReasonOk returns a tuple with the ClosingReason field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClosingReason
+
+`func (o *QuoteDetailsResponse) SetClosingReason(v string)`
+
+SetClosingReason sets ClosingReason field to given value.
+
+### HasClosingReason
+
+`func (o *QuoteDetailsResponse) HasClosingReason() bool`
+
+HasClosingReason returns a boolean if a field has been set.
+
+### GetDateClosed
+
+`func (o *QuoteDetailsResponse) GetDateClosed() string`
+
+GetDateClosed returns the DateClosed field if non-nil, zero value otherwise.
+
+### GetDateClosedOk
+
+`func (o *QuoteDetailsResponse) GetDateClosedOk() (*string, bool)`
+
+GetDateClosedOk returns a tuple with the DateClosed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDateClosed
+
+`func (o *QuoteDetailsResponse) SetDateClosed(v string)`
+
+SetDateClosed sets DateClosed field to given value.
+
+### HasDateClosed
+
+`func (o *QuoteDetailsResponse) HasDateClosed() bool`
+
+HasDateClosed returns a boolean if a field has been set.
 
 ### GetCustomerNeed
 
@@ -553,30 +579,30 @@ SetLeasingInstructions sets LeasingInstructions field to given value.
 
 HasLeasingInstructions returns a boolean if a field has been set.
 
-### GetQuoteSybType
+### GetQuoteSubType
 
-`func (o *QuoteDetailsResponse) GetQuoteSybType() string`
+`func (o *QuoteDetailsResponse) GetQuoteSubType() string`
 
-GetQuoteSybType returns the QuoteSybType field if non-nil, zero value otherwise.
+GetQuoteSubType returns the QuoteSubType field if non-nil, zero value otherwise.
 
-### GetQuoteSybTypeOk
+### GetQuoteSubTypeOk
 
-`func (o *QuoteDetailsResponse) GetQuoteSybTypeOk() (*string, bool)`
+`func (o *QuoteDetailsResponse) GetQuoteSubTypeOk() (*string, bool)`
 
-GetQuoteSybTypeOk returns a tuple with the QuoteSybType field if it's non-nil, zero value otherwise
+GetQuoteSubTypeOk returns a tuple with the QuoteSubType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetQuoteSybType
+### SetQuoteSubType
 
-`func (o *QuoteDetailsResponse) SetQuoteSybType(v string)`
+`func (o *QuoteDetailsResponse) SetQuoteSubType(v string)`
 
-SetQuoteSybType sets QuoteSybType field to given value.
+SetQuoteSubType sets QuoteSubType field to given value.
 
-### HasQuoteSybType
+### HasQuoteSubType
 
-`func (o *QuoteDetailsResponse) HasQuoteSybType() bool`
+`func (o *QuoteDetailsResponse) HasQuoteSubType() bool`
 
-HasQuoteSybType returns a boolean if a field has been set.
+HasQuoteSubType returns a boolean if a field has been set.
 
 ### GetResellerInfo
 

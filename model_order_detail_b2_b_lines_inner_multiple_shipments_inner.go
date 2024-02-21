@@ -22,11 +22,11 @@ type OrderDetailB2BLinesInnerMultipleShipmentsInner struct {
 	// Line number.
 	LineNumber *string `json:"lineNumber,omitempty"`
 	// Requested quantity.
-	RequestedQuantity *string `json:"requestedQuantity,omitempty"`
+	RequestedQuantity *int32 `json:"requestedQuantity,omitempty"`
 	// Confirmed quantity.
-	ConfirmedQuantity *string `json:"confirmedQuantity,omitempty"`
+	ConfirmedQuantity *int32 `json:"confirmedQuantity,omitempty"`
 	// Date type. Example Single or multiple dates.
-	DataType *string `json:"dataType,omitempty"`
+	DateType *string `json:"dateType,omitempty"`
 	DateRange *OrderDetailB2BLinesInnerEstimatedDatesInnerShipShipDateRange `json:"dateRange,omitempty"`
 	// Source.
 	Source *string `json:"source,omitempty"`
@@ -88,9 +88,9 @@ func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) SetLineNumber(v string)
 }
 
 // GetRequestedQuantity returns the RequestedQuantity field value if set, zero value otherwise.
-func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetRequestedQuantity() string {
+func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetRequestedQuantity() int32 {
 	if o == nil || IsNil(o.RequestedQuantity) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.RequestedQuantity
@@ -98,7 +98,7 @@ func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetRequestedQuantity() 
 
 // GetRequestedQuantityOk returns a tuple with the RequestedQuantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetRequestedQuantityOk() (*string, bool) {
+func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetRequestedQuantityOk() (*int32, bool) {
 	if o == nil || IsNil(o.RequestedQuantity) {
 		return nil, false
 	}
@@ -114,15 +114,15 @@ func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) HasRequestedQuantity() 
 	return false
 }
 
-// SetRequestedQuantity gets a reference to the given string and assigns it to the RequestedQuantity field.
-func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) SetRequestedQuantity(v string) {
+// SetRequestedQuantity gets a reference to the given int32 and assigns it to the RequestedQuantity field.
+func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) SetRequestedQuantity(v int32) {
 	o.RequestedQuantity = &v
 }
 
 // GetConfirmedQuantity returns the ConfirmedQuantity field value if set, zero value otherwise.
-func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetConfirmedQuantity() string {
+func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetConfirmedQuantity() int32 {
 	if o == nil || IsNil(o.ConfirmedQuantity) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.ConfirmedQuantity
@@ -130,7 +130,7 @@ func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetConfirmedQuantity() 
 
 // GetConfirmedQuantityOk returns a tuple with the ConfirmedQuantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetConfirmedQuantityOk() (*string, bool) {
+func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetConfirmedQuantityOk() (*int32, bool) {
 	if o == nil || IsNil(o.ConfirmedQuantity) {
 		return nil, false
 	}
@@ -146,41 +146,41 @@ func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) HasConfirmedQuantity() 
 	return false
 }
 
-// SetConfirmedQuantity gets a reference to the given string and assigns it to the ConfirmedQuantity field.
-func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) SetConfirmedQuantity(v string) {
+// SetConfirmedQuantity gets a reference to the given int32 and assigns it to the ConfirmedQuantity field.
+func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) SetConfirmedQuantity(v int32) {
 	o.ConfirmedQuantity = &v
 }
 
-// GetDataType returns the DataType field value if set, zero value otherwise.
-func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetDataType() string {
-	if o == nil || IsNil(o.DataType) {
+// GetDateType returns the DateType field value if set, zero value otherwise.
+func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetDateType() string {
+	if o == nil || IsNil(o.DateType) {
 		var ret string
 		return ret
 	}
-	return *o.DataType
+	return *o.DateType
 }
 
-// GetDataTypeOk returns a tuple with the DataType field value if set, nil otherwise
+// GetDateTypeOk returns a tuple with the DateType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetDataTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.DataType) {
+func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetDateTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.DateType) {
 		return nil, false
 	}
-	return o.DataType, true
+	return o.DateType, true
 }
 
-// HasDataType returns a boolean if a field has been set.
-func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) HasDataType() bool {
-	if o != nil && !IsNil(o.DataType) {
+// HasDateType returns a boolean if a field has been set.
+func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) HasDateType() bool {
+	if o != nil && !IsNil(o.DateType) {
 		return true
 	}
 
 	return false
 }
 
-// SetDataType gets a reference to the given string and assigns it to the DataType field.
-func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) SetDataType(v string) {
-	o.DataType = &v
+// SetDateType gets a reference to the given string and assigns it to the DateType field.
+func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) SetDateType(v string) {
+	o.DateType = &v
 }
 
 // GetDateRange returns the DateRange field value if set, zero value otherwise.
@@ -362,8 +362,8 @@ func (o OrderDetailB2BLinesInnerMultipleShipmentsInner) ToMap() (map[string]inte
 	if !IsNil(o.ConfirmedQuantity) {
 		toSerialize["confirmedQuantity"] = o.ConfirmedQuantity
 	}
-	if !IsNil(o.DataType) {
-		toSerialize["dataType"] = o.DataType
+	if !IsNil(o.DateType) {
+		toSerialize["dateType"] = o.DateType
 	}
 	if !IsNil(o.DateRange) {
 		toSerialize["dateRange"] = o.DateRange
