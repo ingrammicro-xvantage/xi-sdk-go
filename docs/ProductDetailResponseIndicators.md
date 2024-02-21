@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **IsBackOrderAllowed** | Pointer to **bool** | Boolean that indicates whether back order is allowed for the product. | [optional] 
 **IsShippedFromPartner** | Pointer to **bool** | Boolean that indicates whether product is shipped from the partner. | [optional] 
 **IsReplacementProduct** | Pointer to **bool** | Boolean that indicates whether product is a replacement product. | [optional] 
+**ReplacementType** | Pointer to **string** |  | [optional] 
 **IsDirectship** | Pointer to **bool** | Boolean that indicates whether it’s a direct ship product. | [optional] 
 **IsDownloadable** | Pointer to **bool** | Boolean that indicates whether product is downloadable. | [optional] 
 **IsDigitalType** | Pointer to **bool** | Boolean that indicates whether it’s a digital product.  | [optional] 
@@ -204,6 +205,31 @@ SetIsReplacementProduct sets IsReplacementProduct field to given value.
 `func (o *ProductDetailResponseIndicators) HasIsReplacementProduct() bool`
 
 HasIsReplacementProduct returns a boolean if a field has been set.
+
+### GetReplacementType
+
+`func (o *ProductDetailResponseIndicators) GetReplacementType() string`
+
+GetReplacementType returns the ReplacementType field if non-nil, zero value otherwise.
+
+### GetReplacementTypeOk
+
+`func (o *ProductDetailResponseIndicators) GetReplacementTypeOk() (*string, bool)`
+
+GetReplacementTypeOk returns a tuple with the ReplacementType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReplacementType
+
+`func (o *ProductDetailResponseIndicators) SetReplacementType(v string)`
+
+SetReplacementType sets ReplacementType field to given value.
+
+### HasReplacementType
+
+`func (o *ProductDetailResponseIndicators) HasReplacementType() bool`
+
+HasReplacementType returns a boolean if a field has been set.
 
 ### GetIsDirectship
 

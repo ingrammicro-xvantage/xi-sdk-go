@@ -31,6 +31,7 @@ type ProductDetailResponseIndicators struct {
 	IsShippedFromPartner *bool `json:"isShippedFromPartner,omitempty"`
 	// Boolean that indicates whether product is a replacement product.
 	IsReplacementProduct *bool `json:"isReplacementProduct,omitempty"`
+	ReplacementType *string `json:"replacementType,omitempty"`
 	// Boolean that indicates whether it’s a direct ship product.
 	IsDirectship *bool `json:"isDirectship,omitempty"`
 	// Boolean that indicates whether product is downloadable.
@@ -290,6 +291,38 @@ func (o *ProductDetailResponseIndicators) HasIsReplacementProduct() bool {
 // SetIsReplacementProduct gets a reference to the given bool and assigns it to the IsReplacementProduct field.
 func (o *ProductDetailResponseIndicators) SetIsReplacementProduct(v bool) {
 	o.IsReplacementProduct = &v
+}
+
+// GetReplacementType returns the ReplacementType field value if set, zero value otherwise.
+func (o *ProductDetailResponseIndicators) GetReplacementType() string {
+	if o == nil || IsNil(o.ReplacementType) {
+		var ret string
+		return ret
+	}
+	return *o.ReplacementType
+}
+
+// GetReplacementTypeOk returns a tuple with the ReplacementType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductDetailResponseIndicators) GetReplacementTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.ReplacementType) {
+		return nil, false
+	}
+	return o.ReplacementType, true
+}
+
+// HasReplacementType returns a boolean if a field has been set.
+func (o *ProductDetailResponseIndicators) HasReplacementType() bool {
+	if o != nil && !IsNil(o.ReplacementType) {
+		return true
+	}
+
+	return false
+}
+
+// SetReplacementType gets a reference to the given string and assigns it to the ReplacementType field.
+func (o *ProductDetailResponseIndicators) SetReplacementType(v string) {
+	o.ReplacementType = &v
 }
 
 // GetIsDirectship returns the IsDirectship field value if set, zero value otherwise.
@@ -1119,6 +1152,9 @@ func (o ProductDetailResponseIndicators) ToMap() (map[string]interface{}, error)
 	}
 	if !IsNil(o.IsReplacementProduct) {
 		toSerialize["isReplacementProduct"] = o.IsReplacementProduct
+	}
+	if !IsNil(o.ReplacementType) {
+		toSerialize["replacementType"] = o.ReplacementType
 	}
 	if !IsNil(o.IsDirectship) {
 		toSerialize["isDirectship"] = o.IsDirectship
