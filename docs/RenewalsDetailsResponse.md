@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to **string** | The status of the renewal. | [optional] 
 **EndUserInfo** | Pointer to [**RenewalsDetailsResponseEndUserInfo**](RenewalsDetailsResponseEndUserInfo.md) |  | [optional] 
 **ReferenceNumber** | Pointer to [**RenewalsDetailsResponseReferenceNumber**](RenewalsDetailsResponseReferenceNumber.md) |  | [optional] 
-**Products** | Pointer to [**RenewalsDetailsResponseProducts**](RenewalsDetailsResponseProducts.md) |  | [optional] 
+**Products** | Pointer to [**[]RenewalsDetailsResponseProductsInner**](RenewalsDetailsResponseProductsInner.md) |  | [optional] 
 **AdditionalAttributes** | Pointer to [**[]RenewalsDetailsResponseAdditionalAttributesInner**](RenewalsDetailsResponseAdditionalAttributesInner.md) |  | [optional] 
 
 ## Methods
@@ -366,20 +366,20 @@ HasReferenceNumber returns a boolean if a field has been set.
 
 ### GetProducts
 
-`func (o *RenewalsDetailsResponse) GetProducts() RenewalsDetailsResponseProducts`
+`func (o *RenewalsDetailsResponse) GetProducts() []RenewalsDetailsResponseProductsInner`
 
 GetProducts returns the Products field if non-nil, zero value otherwise.
 
 ### GetProductsOk
 
-`func (o *RenewalsDetailsResponse) GetProductsOk() (*RenewalsDetailsResponseProducts, bool)`
+`func (o *RenewalsDetailsResponse) GetProductsOk() (*[]RenewalsDetailsResponseProductsInner, bool)`
 
 GetProductsOk returns a tuple with the Products field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProducts
 
-`func (o *RenewalsDetailsResponse) SetProducts(v RenewalsDetailsResponseProducts)`
+`func (o *RenewalsDetailsResponse) SetProducts(v []RenewalsDetailsResponseProductsInner)`
 
 SetProducts sets Products field to given value.
 

@@ -179,7 +179,7 @@ docs/RenewalsAPI.md
 docs/RenewalsDetailsResponse.md
 docs/RenewalsDetailsResponseAdditionalAttributesInner.md
 docs/RenewalsDetailsResponseEndUserInfo.md
-docs/RenewalsDetailsResponseProducts.md
+docs/RenewalsDetailsResponseProductsInner.md
 docs/RenewalsDetailsResponseReferenceNumber.md
 docs/RenewalsSearchRequest.md
 docs/RenewalsSearchRequestDateType.md
@@ -364,7 +364,7 @@ model_quote_to_order_response.go
 model_renewals_details_response.go
 model_renewals_details_response_additional_attributes_inner.go
 model_renewals_details_response_end_user_info.go
-model_renewals_details_response_products.go
+model_renewals_details_response_products_inner.go
 model_renewals_details_response_reference_number.go
 model_renewals_search_request.go
 model_renewals_search_request_date_type.go

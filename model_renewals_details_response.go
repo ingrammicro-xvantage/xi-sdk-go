@@ -43,7 +43,7 @@ type RenewalsDetailsResponse struct {
 	Status *string `json:"status,omitempty"`
 	EndUserInfo *RenewalsDetailsResponseEndUserInfo `json:"endUserInfo,omitempty"`
 	ReferenceNumber *RenewalsDetailsResponseReferenceNumber `json:"referenceNumber,omitempty"`
-	Products *RenewalsDetailsResponseProducts `json:"products,omitempty"`
+	Products []RenewalsDetailsResponseProductsInner `json:"products,omitempty"`
 	AdditionalAttributes []RenewalsDetailsResponseAdditionalAttributesInner `json:"additionalAttributes,omitempty"`
 }
 
@@ -481,17 +481,17 @@ func (o *RenewalsDetailsResponse) SetReferenceNumber(v RenewalsDetailsResponseRe
 }
 
 // GetProducts returns the Products field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponse) GetProducts() RenewalsDetailsResponseProducts {
+func (o *RenewalsDetailsResponse) GetProducts() []RenewalsDetailsResponseProductsInner {
 	if o == nil || IsNil(o.Products) {
-		var ret RenewalsDetailsResponseProducts
+		var ret []RenewalsDetailsResponseProductsInner
 		return ret
 	}
-	return *o.Products
+	return o.Products
 }
 
 // GetProductsOk returns a tuple with the Products field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponse) GetProductsOk() (*RenewalsDetailsResponseProducts, bool) {
+func (o *RenewalsDetailsResponse) GetProductsOk() ([]RenewalsDetailsResponseProductsInner, bool) {
 	if o == nil || IsNil(o.Products) {
 		return nil, false
 	}
@@ -507,9 +507,9 @@ func (o *RenewalsDetailsResponse) HasProducts() bool {
 	return false
 }
 
-// SetProducts gets a reference to the given RenewalsDetailsResponseProducts and assigns it to the Products field.
-func (o *RenewalsDetailsResponse) SetProducts(v RenewalsDetailsResponseProducts) {
-	o.Products = &v
+// SetProducts gets a reference to the given []RenewalsDetailsResponseProductsInner and assigns it to the Products field.
+func (o *RenewalsDetailsResponse) SetProducts(v []RenewalsDetailsResponseProductsInner) {
+	o.Products = v
 }
 
 // GetAdditionalAttributes returns the AdditionalAttributes field value if set, zero value otherwise.

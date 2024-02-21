@@ -260,7 +260,7 @@ Class | Method | HTTP request | Description
  - [RenewalsDetailsResponse](docs/RenewalsDetailsResponse.md)
  - [RenewalsDetailsResponseAdditionalAttributesInner](docs/RenewalsDetailsResponseAdditionalAttributesInner.md)
  - [RenewalsDetailsResponseEndUserInfo](docs/RenewalsDetailsResponseEndUserInfo.md)
- - [RenewalsDetailsResponseProducts](docs/RenewalsDetailsResponseProducts.md)
+ - [RenewalsDetailsResponseProductsInner](docs/RenewalsDetailsResponseProductsInner.md)
  - [RenewalsDetailsResponseReferenceNumber](docs/RenewalsDetailsResponseReferenceNumber.md)
  - [RenewalsSearchRequest](docs/RenewalsSearchRequest.md)
  - [RenewalsSearchRequestDateType](docs/RenewalsSearchRequestDateType.md)
