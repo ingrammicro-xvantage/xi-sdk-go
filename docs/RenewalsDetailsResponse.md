@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RenewalId** | Pointer to **int32** | Unique Ingram renewal ID. | [optional] 
+**RenewalId** | Pointer to **string** | Unique Ingram renewal ID. | [optional] 
 **IngramOrderNumber** | Pointer to **string** | The IngramMicro sales order number. | [optional] 
 **IngramOrderDate** | Pointer to **string** | The IngramMicro sales order date. | [optional] 
 **ExpirationDate** | Pointer to **string** | Renewal expiration date. | [optional] 
 **IngramPurchaseOrderNumber** | Pointer to **string** | Ingram purchase order number. | [optional] 
 **CustomerOrderNumber** | Pointer to **string** | The reseller&#39;s order number for reference in their system. | [optional] 
 **EndCustomerOrderNumber** | Pointer to **string** | The end customer&#39;s order number for reference in their system. | [optional] 
-**RenewalValue** | Pointer to **float64** | The value of the renewal. | [optional] 
+**RenewalValue** | Pointer to **string** | The value of the renewal. | [optional] 
 **EndUser** | Pointer to **string** | The company name for the end user/customer. | [optional] 
 **Vendor** | Pointer to **string** | The name of the vendor. | [optional] 
 **Status** | Pointer to **string** | The status of the renewal. | [optional] 
-**EndUserInfo** | Pointer to [**[]RenewalsDetailsResponseEndUserInfoInner**](RenewalsDetailsResponseEndUserInfoInner.md) |  | [optional] 
-**ReferenceNumber** | Pointer to [**[]RenewalsDetailsResponseReferenceNumberInner**](RenewalsDetailsResponseReferenceNumberInner.md) |  | [optional] 
-**Products** | Pointer to [**[]RenewalsDetailsResponseProductsInner**](RenewalsDetailsResponseProductsInner.md) |  | [optional] 
+**EndUserInfo** | Pointer to [**RenewalsDetailsResponseEndUserInfo**](RenewalsDetailsResponseEndUserInfo.md) |  | [optional] 
+**ReferenceNumber** | Pointer to [**RenewalsDetailsResponseReferenceNumber**](RenewalsDetailsResponseReferenceNumber.md) |  | [optional] 
+**Products** | Pointer to [**RenewalsDetailsResponseProducts**](RenewalsDetailsResponseProducts.md) |  | [optional] 
 **AdditionalAttributes** | Pointer to [**[]RenewalsDetailsResponseAdditionalAttributesInner**](RenewalsDetailsResponseAdditionalAttributesInner.md) |  | [optional] 
 
 ## Methods
@@ -41,20 +41,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRenewalId
 
-`func (o *RenewalsDetailsResponse) GetRenewalId() int32`
+`func (o *RenewalsDetailsResponse) GetRenewalId() string`
 
 GetRenewalId returns the RenewalId field if non-nil, zero value otherwise.
 
 ### GetRenewalIdOk
 
-`func (o *RenewalsDetailsResponse) GetRenewalIdOk() (*int32, bool)`
+`func (o *RenewalsDetailsResponse) GetRenewalIdOk() (*string, bool)`
 
 GetRenewalIdOk returns a tuple with the RenewalId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRenewalId
 
-`func (o *RenewalsDetailsResponse) SetRenewalId(v int32)`
+`func (o *RenewalsDetailsResponse) SetRenewalId(v string)`
 
 SetRenewalId sets RenewalId field to given value.
 
@@ -216,20 +216,20 @@ HasEndCustomerOrderNumber returns a boolean if a field has been set.
 
 ### GetRenewalValue
 
-`func (o *RenewalsDetailsResponse) GetRenewalValue() float64`
+`func (o *RenewalsDetailsResponse) GetRenewalValue() string`
 
 GetRenewalValue returns the RenewalValue field if non-nil, zero value otherwise.
 
 ### GetRenewalValueOk
 
-`func (o *RenewalsDetailsResponse) GetRenewalValueOk() (*float64, bool)`
+`func (o *RenewalsDetailsResponse) GetRenewalValueOk() (*string, bool)`
 
 GetRenewalValueOk returns a tuple with the RenewalValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRenewalValue
 
-`func (o *RenewalsDetailsResponse) SetRenewalValue(v float64)`
+`func (o *RenewalsDetailsResponse) SetRenewalValue(v string)`
 
 SetRenewalValue sets RenewalValue field to given value.
 
@@ -316,20 +316,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetEndUserInfo
 
-`func (o *RenewalsDetailsResponse) GetEndUserInfo() []RenewalsDetailsResponseEndUserInfoInner`
+`func (o *RenewalsDetailsResponse) GetEndUserInfo() RenewalsDetailsResponseEndUserInfo`
 
 GetEndUserInfo returns the EndUserInfo field if non-nil, zero value otherwise.
 
 ### GetEndUserInfoOk
 
-`func (o *RenewalsDetailsResponse) GetEndUserInfoOk() (*[]RenewalsDetailsResponseEndUserInfoInner, bool)`
+`func (o *RenewalsDetailsResponse) GetEndUserInfoOk() (*RenewalsDetailsResponseEndUserInfo, bool)`
 
 GetEndUserInfoOk returns a tuple with the EndUserInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEndUserInfo
 
-`func (o *RenewalsDetailsResponse) SetEndUserInfo(v []RenewalsDetailsResponseEndUserInfoInner)`
+`func (o *RenewalsDetailsResponse) SetEndUserInfo(v RenewalsDetailsResponseEndUserInfo)`
 
 SetEndUserInfo sets EndUserInfo field to given value.
 
@@ -341,20 +341,20 @@ HasEndUserInfo returns a boolean if a field has been set.
 
 ### GetReferenceNumber
 
-`func (o *RenewalsDetailsResponse) GetReferenceNumber() []RenewalsDetailsResponseReferenceNumberInner`
+`func (o *RenewalsDetailsResponse) GetReferenceNumber() RenewalsDetailsResponseReferenceNumber`
 
 GetReferenceNumber returns the ReferenceNumber field if non-nil, zero value otherwise.
 
 ### GetReferenceNumberOk
 
-`func (o *RenewalsDetailsResponse) GetReferenceNumberOk() (*[]RenewalsDetailsResponseReferenceNumberInner, bool)`
+`func (o *RenewalsDetailsResponse) GetReferenceNumberOk() (*RenewalsDetailsResponseReferenceNumber, bool)`
 
 GetReferenceNumberOk returns a tuple with the ReferenceNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReferenceNumber
 
-`func (o *RenewalsDetailsResponse) SetReferenceNumber(v []RenewalsDetailsResponseReferenceNumberInner)`
+`func (o *RenewalsDetailsResponse) SetReferenceNumber(v RenewalsDetailsResponseReferenceNumber)`
 
 SetReferenceNumber sets ReferenceNumber field to given value.
 
@@ -366,20 +366,20 @@ HasReferenceNumber returns a boolean if a field has been set.
 
 ### GetProducts
 
-`func (o *RenewalsDetailsResponse) GetProducts() []RenewalsDetailsResponseProductsInner`
+`func (o *RenewalsDetailsResponse) GetProducts() RenewalsDetailsResponseProducts`
 
 GetProducts returns the Products field if non-nil, zero value otherwise.
 
 ### GetProductsOk
 
-`func (o *RenewalsDetailsResponse) GetProductsOk() (*[]RenewalsDetailsResponseProductsInner, bool)`
+`func (o *RenewalsDetailsResponse) GetProductsOk() (*RenewalsDetailsResponseProducts, bool)`
 
 GetProductsOk returns a tuple with the Products field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProducts
 
-`func (o *RenewalsDetailsResponse) SetProducts(v []RenewalsDetailsResponseProductsInner)`
+`func (o *RenewalsDetailsResponse) SetProducts(v RenewalsDetailsResponseProducts)`
 
 SetProducts sets Products field to given value.
 

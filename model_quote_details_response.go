@@ -58,6 +58,7 @@ type QuoteDetailsResponse struct {
 	LeaseInfo *string `json:"leaseInfo,omitempty"`
 	// Leasing information
 	LeasingInstructions *string `json:"leasingInstructions,omitempty"`
+	QuoteSybType *string `json:"quoteSybType,omitempty"`
 	ResellerInfo *QuoteDetailsResponseResellerInfo `json:"resellerInfo,omitempty"`
 	EndUserInfo *QuoteDetailsResponseEndUserInfo `json:"endUserInfo,omitempty"`
 	Products []QuoteDetailsResponseProductsInner `json:"products,omitempty"`
@@ -729,6 +730,38 @@ func (o *QuoteDetailsResponse) SetLeasingInstructions(v string) {
 	o.LeasingInstructions = &v
 }
 
+// GetQuoteSybType returns the QuoteSybType field value if set, zero value otherwise.
+func (o *QuoteDetailsResponse) GetQuoteSybType() string {
+	if o == nil || IsNil(o.QuoteSybType) {
+		var ret string
+		return ret
+	}
+	return *o.QuoteSybType
+}
+
+// GetQuoteSybTypeOk returns a tuple with the QuoteSybType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponse) GetQuoteSybTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.QuoteSybType) {
+		return nil, false
+	}
+	return o.QuoteSybType, true
+}
+
+// HasQuoteSybType returns a boolean if a field has been set.
+func (o *QuoteDetailsResponse) HasQuoteSybType() bool {
+	if o != nil && !IsNil(o.QuoteSybType) {
+		return true
+	}
+
+	return false
+}
+
+// SetQuoteSybType gets a reference to the given string and assigns it to the QuoteSybType field.
+func (o *QuoteDetailsResponse) SetQuoteSybType(v string) {
+	o.QuoteSybType = &v
+}
+
 // GetResellerInfo returns the ResellerInfo field value if set, zero value otherwise.
 func (o *QuoteDetailsResponse) GetResellerInfo() QuoteDetailsResponseResellerInfo {
 	if o == nil || IsNil(o.ResellerInfo) {
@@ -1054,6 +1087,9 @@ func (o QuoteDetailsResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.LeasingInstructions) {
 		toSerialize["leasingInstructions"] = o.LeasingInstructions
+	}
+	if !IsNil(o.QuoteSybType) {
+		toSerialize["quoteSybType"] = o.QuoteSybType
 	}
 	if !IsNil(o.ResellerInfo) {
 		toSerialize["resellerInfo"] = o.ResellerInfo

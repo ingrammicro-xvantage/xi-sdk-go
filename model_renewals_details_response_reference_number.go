@@ -14,36 +14,36 @@ import (
 	"encoding/json"
 )
 
-// checks if the RenewalsDetailsResponseReferenceNumberInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &RenewalsDetailsResponseReferenceNumberInner{}
+// checks if the RenewalsDetailsResponseReferenceNumber type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RenewalsDetailsResponseReferenceNumber{}
 
-// RenewalsDetailsResponseReferenceNumberInner struct for RenewalsDetailsResponseReferenceNumberInner
-type RenewalsDetailsResponseReferenceNumberInner struct {
+// RenewalsDetailsResponseReferenceNumber struct for RenewalsDetailsResponseReferenceNumber
+type RenewalsDetailsResponseReferenceNumber struct {
 	// Notification id of the communication sent from Ingram.
 	NotificationId *string `json:"notificationId,omitempty"`
 	// Quote number for the renewal.
 	QuoteNumber *string `json:"quoteNumber,omitempty"`
 }
 
-// NewRenewalsDetailsResponseReferenceNumberInner instantiates a new RenewalsDetailsResponseReferenceNumberInner object
+// NewRenewalsDetailsResponseReferenceNumber instantiates a new RenewalsDetailsResponseReferenceNumber object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRenewalsDetailsResponseReferenceNumberInner() *RenewalsDetailsResponseReferenceNumberInner {
-	this := RenewalsDetailsResponseReferenceNumberInner{}
+func NewRenewalsDetailsResponseReferenceNumber() *RenewalsDetailsResponseReferenceNumber {
+	this := RenewalsDetailsResponseReferenceNumber{}
 	return &this
 }
 
-// NewRenewalsDetailsResponseReferenceNumberInnerWithDefaults instantiates a new RenewalsDetailsResponseReferenceNumberInner object
+// NewRenewalsDetailsResponseReferenceNumberWithDefaults instantiates a new RenewalsDetailsResponseReferenceNumber object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRenewalsDetailsResponseReferenceNumberInnerWithDefaults() *RenewalsDetailsResponseReferenceNumberInner {
-	this := RenewalsDetailsResponseReferenceNumberInner{}
+func NewRenewalsDetailsResponseReferenceNumberWithDefaults() *RenewalsDetailsResponseReferenceNumber {
+	this := RenewalsDetailsResponseReferenceNumber{}
 	return &this
 }
 
 // GetNotificationId returns the NotificationId field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponseReferenceNumberInner) GetNotificationId() string {
+func (o *RenewalsDetailsResponseReferenceNumber) GetNotificationId() string {
 	if o == nil || IsNil(o.NotificationId) {
 		var ret string
 		return ret
@@ -53,7 +53,7 @@ func (o *RenewalsDetailsResponseReferenceNumberInner) GetNotificationId() string
 
 // GetNotificationIdOk returns a tuple with the NotificationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponseReferenceNumberInner) GetNotificationIdOk() (*string, bool) {
+func (o *RenewalsDetailsResponseReferenceNumber) GetNotificationIdOk() (*string, bool) {
 	if o == nil || IsNil(o.NotificationId) {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *RenewalsDetailsResponseReferenceNumberInner) GetNotificationIdOk() (*st
 }
 
 // HasNotificationId returns a boolean if a field has been set.
-func (o *RenewalsDetailsResponseReferenceNumberInner) HasNotificationId() bool {
+func (o *RenewalsDetailsResponseReferenceNumber) HasNotificationId() bool {
 	if o != nil && !IsNil(o.NotificationId) {
 		return true
 	}
@@ -70,12 +70,12 @@ func (o *RenewalsDetailsResponseReferenceNumberInner) HasNotificationId() bool {
 }
 
 // SetNotificationId gets a reference to the given string and assigns it to the NotificationId field.
-func (o *RenewalsDetailsResponseReferenceNumberInner) SetNotificationId(v string) {
+func (o *RenewalsDetailsResponseReferenceNumber) SetNotificationId(v string) {
 	o.NotificationId = &v
 }
 
 // GetQuoteNumber returns the QuoteNumber field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponseReferenceNumberInner) GetQuoteNumber() string {
+func (o *RenewalsDetailsResponseReferenceNumber) GetQuoteNumber() string {
 	if o == nil || IsNil(o.QuoteNumber) {
 		var ret string
 		return ret
@@ -85,7 +85,7 @@ func (o *RenewalsDetailsResponseReferenceNumberInner) GetQuoteNumber() string {
 
 // GetQuoteNumberOk returns a tuple with the QuoteNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponseReferenceNumberInner) GetQuoteNumberOk() (*string, bool) {
+func (o *RenewalsDetailsResponseReferenceNumber) GetQuoteNumberOk() (*string, bool) {
 	if o == nil || IsNil(o.QuoteNumber) {
 		return nil, false
 	}
@@ -93,7 +93,7 @@ func (o *RenewalsDetailsResponseReferenceNumberInner) GetQuoteNumberOk() (*strin
 }
 
 // HasQuoteNumber returns a boolean if a field has been set.
-func (o *RenewalsDetailsResponseReferenceNumberInner) HasQuoteNumber() bool {
+func (o *RenewalsDetailsResponseReferenceNumber) HasQuoteNumber() bool {
 	if o != nil && !IsNil(o.QuoteNumber) {
 		return true
 	}
@@ -102,11 +102,11 @@ func (o *RenewalsDetailsResponseReferenceNumberInner) HasQuoteNumber() bool {
 }
 
 // SetQuoteNumber gets a reference to the given string and assigns it to the QuoteNumber field.
-func (o *RenewalsDetailsResponseReferenceNumberInner) SetQuoteNumber(v string) {
+func (o *RenewalsDetailsResponseReferenceNumber) SetQuoteNumber(v string) {
 	o.QuoteNumber = &v
 }
 
-func (o RenewalsDetailsResponseReferenceNumberInner) MarshalJSON() ([]byte, error) {
+func (o RenewalsDetailsResponseReferenceNumber) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -114,7 +114,7 @@ func (o RenewalsDetailsResponseReferenceNumberInner) MarshalJSON() ([]byte, erro
 	return json.Marshal(toSerialize)
 }
 
-func (o RenewalsDetailsResponseReferenceNumberInner) ToMap() (map[string]interface{}, error) {
+func (o RenewalsDetailsResponseReferenceNumber) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.NotificationId) {
 		toSerialize["notificationId"] = o.NotificationId
@@ -125,38 +125,38 @@ func (o RenewalsDetailsResponseReferenceNumberInner) ToMap() (map[string]interfa
 	return toSerialize, nil
 }
 
-type NullableRenewalsDetailsResponseReferenceNumberInner struct {
-	value *RenewalsDetailsResponseReferenceNumberInner
+type NullableRenewalsDetailsResponseReferenceNumber struct {
+	value *RenewalsDetailsResponseReferenceNumber
 	isSet bool
 }
 
-func (v NullableRenewalsDetailsResponseReferenceNumberInner) Get() *RenewalsDetailsResponseReferenceNumberInner {
+func (v NullableRenewalsDetailsResponseReferenceNumber) Get() *RenewalsDetailsResponseReferenceNumber {
 	return v.value
 }
 
-func (v *NullableRenewalsDetailsResponseReferenceNumberInner) Set(val *RenewalsDetailsResponseReferenceNumberInner) {
+func (v *NullableRenewalsDetailsResponseReferenceNumber) Set(val *RenewalsDetailsResponseReferenceNumber) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableRenewalsDetailsResponseReferenceNumberInner) IsSet() bool {
+func (v NullableRenewalsDetailsResponseReferenceNumber) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableRenewalsDetailsResponseReferenceNumberInner) Unset() {
+func (v *NullableRenewalsDetailsResponseReferenceNumber) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableRenewalsDetailsResponseReferenceNumberInner(val *RenewalsDetailsResponseReferenceNumberInner) *NullableRenewalsDetailsResponseReferenceNumberInner {
-	return &NullableRenewalsDetailsResponseReferenceNumberInner{value: val, isSet: true}
+func NewNullableRenewalsDetailsResponseReferenceNumber(val *RenewalsDetailsResponseReferenceNumber) *NullableRenewalsDetailsResponseReferenceNumber {
+	return &NullableRenewalsDetailsResponseReferenceNumber{value: val, isSet: true}
 }
 
-func (v NullableRenewalsDetailsResponseReferenceNumberInner) MarshalJSON() ([]byte, error) {
+func (v NullableRenewalsDetailsResponseReferenceNumber) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableRenewalsDetailsResponseReferenceNumberInner) UnmarshalJSON(src []byte) error {
+func (v *NullableRenewalsDetailsResponseReferenceNumber) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

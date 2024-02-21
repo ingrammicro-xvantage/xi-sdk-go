@@ -20,7 +20,7 @@ var _ MappedNullable = &RenewalsDetailsResponse{}
 // RenewalsDetailsResponse struct for RenewalsDetailsResponse
 type RenewalsDetailsResponse struct {
 	// Unique Ingram renewal ID.
-	RenewalId *int32 `json:"renewalId,omitempty"`
+	RenewalId *string `json:"renewalId,omitempty"`
 	// The IngramMicro sales order number.
 	IngramOrderNumber *string `json:"ingramOrderNumber,omitempty"`
 	// The IngramMicro sales order date.
@@ -34,16 +34,16 @@ type RenewalsDetailsResponse struct {
 	// The end customer's order number for reference in their system.
 	EndCustomerOrderNumber *string `json:"endCustomerOrderNumber,omitempty"`
 	// The value of the renewal.
-	RenewalValue *float64 `json:"renewalValue,omitempty"`
+	RenewalValue *string `json:"renewalValue,omitempty"`
 	// The company name for the end user/customer.
 	EndUser *string `json:"endUser,omitempty"`
 	// The name of the vendor.
 	Vendor *string `json:"vendor,omitempty"`
 	// The status of the renewal.
 	Status *string `json:"status,omitempty"`
-	EndUserInfo []RenewalsDetailsResponseEndUserInfoInner `json:"endUserInfo,omitempty"`
-	ReferenceNumber []RenewalsDetailsResponseReferenceNumberInner `json:"referenceNumber,omitempty"`
-	Products []RenewalsDetailsResponseProductsInner `json:"products,omitempty"`
+	EndUserInfo *RenewalsDetailsResponseEndUserInfo `json:"endUserInfo,omitempty"`
+	ReferenceNumber *RenewalsDetailsResponseReferenceNumber `json:"referenceNumber,omitempty"`
+	Products *RenewalsDetailsResponseProducts `json:"products,omitempty"`
 	AdditionalAttributes []RenewalsDetailsResponseAdditionalAttributesInner `json:"additionalAttributes,omitempty"`
 }
 
@@ -65,9 +65,9 @@ func NewRenewalsDetailsResponseWithDefaults() *RenewalsDetailsResponse {
 }
 
 // GetRenewalId returns the RenewalId field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponse) GetRenewalId() int32 {
+func (o *RenewalsDetailsResponse) GetRenewalId() string {
 	if o == nil || IsNil(o.RenewalId) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.RenewalId
@@ -75,7 +75,7 @@ func (o *RenewalsDetailsResponse) GetRenewalId() int32 {
 
 // GetRenewalIdOk returns a tuple with the RenewalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponse) GetRenewalIdOk() (*int32, bool) {
+func (o *RenewalsDetailsResponse) GetRenewalIdOk() (*string, bool) {
 	if o == nil || IsNil(o.RenewalId) {
 		return nil, false
 	}
@@ -91,8 +91,8 @@ func (o *RenewalsDetailsResponse) HasRenewalId() bool {
 	return false
 }
 
-// SetRenewalId gets a reference to the given int32 and assigns it to the RenewalId field.
-func (o *RenewalsDetailsResponse) SetRenewalId(v int32) {
+// SetRenewalId gets a reference to the given string and assigns it to the RenewalId field.
+func (o *RenewalsDetailsResponse) SetRenewalId(v string) {
 	o.RenewalId = &v
 }
 
@@ -289,9 +289,9 @@ func (o *RenewalsDetailsResponse) SetEndCustomerOrderNumber(v string) {
 }
 
 // GetRenewalValue returns the RenewalValue field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponse) GetRenewalValue() float64 {
+func (o *RenewalsDetailsResponse) GetRenewalValue() string {
 	if o == nil || IsNil(o.RenewalValue) {
-		var ret float64
+		var ret string
 		return ret
 	}
 	return *o.RenewalValue
@@ -299,7 +299,7 @@ func (o *RenewalsDetailsResponse) GetRenewalValue() float64 {
 
 // GetRenewalValueOk returns a tuple with the RenewalValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponse) GetRenewalValueOk() (*float64, bool) {
+func (o *RenewalsDetailsResponse) GetRenewalValueOk() (*string, bool) {
 	if o == nil || IsNil(o.RenewalValue) {
 		return nil, false
 	}
@@ -315,8 +315,8 @@ func (o *RenewalsDetailsResponse) HasRenewalValue() bool {
 	return false
 }
 
-// SetRenewalValue gets a reference to the given float64 and assigns it to the RenewalValue field.
-func (o *RenewalsDetailsResponse) SetRenewalValue(v float64) {
+// SetRenewalValue gets a reference to the given string and assigns it to the RenewalValue field.
+func (o *RenewalsDetailsResponse) SetRenewalValue(v string) {
 	o.RenewalValue = &v
 }
 
@@ -417,17 +417,17 @@ func (o *RenewalsDetailsResponse) SetStatus(v string) {
 }
 
 // GetEndUserInfo returns the EndUserInfo field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponse) GetEndUserInfo() []RenewalsDetailsResponseEndUserInfoInner {
+func (o *RenewalsDetailsResponse) GetEndUserInfo() RenewalsDetailsResponseEndUserInfo {
 	if o == nil || IsNil(o.EndUserInfo) {
-		var ret []RenewalsDetailsResponseEndUserInfoInner
+		var ret RenewalsDetailsResponseEndUserInfo
 		return ret
 	}
-	return o.EndUserInfo
+	return *o.EndUserInfo
 }
 
 // GetEndUserInfoOk returns a tuple with the EndUserInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponse) GetEndUserInfoOk() ([]RenewalsDetailsResponseEndUserInfoInner, bool) {
+func (o *RenewalsDetailsResponse) GetEndUserInfoOk() (*RenewalsDetailsResponseEndUserInfo, bool) {
 	if o == nil || IsNil(o.EndUserInfo) {
 		return nil, false
 	}
@@ -443,23 +443,23 @@ func (o *RenewalsDetailsResponse) HasEndUserInfo() bool {
 	return false
 }
 
-// SetEndUserInfo gets a reference to the given []RenewalsDetailsResponseEndUserInfoInner and assigns it to the EndUserInfo field.
-func (o *RenewalsDetailsResponse) SetEndUserInfo(v []RenewalsDetailsResponseEndUserInfoInner) {
-	o.EndUserInfo = v
+// SetEndUserInfo gets a reference to the given RenewalsDetailsResponseEndUserInfo and assigns it to the EndUserInfo field.
+func (o *RenewalsDetailsResponse) SetEndUserInfo(v RenewalsDetailsResponseEndUserInfo) {
+	o.EndUserInfo = &v
 }
 
 // GetReferenceNumber returns the ReferenceNumber field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponse) GetReferenceNumber() []RenewalsDetailsResponseReferenceNumberInner {
+func (o *RenewalsDetailsResponse) GetReferenceNumber() RenewalsDetailsResponseReferenceNumber {
 	if o == nil || IsNil(o.ReferenceNumber) {
-		var ret []RenewalsDetailsResponseReferenceNumberInner
+		var ret RenewalsDetailsResponseReferenceNumber
 		return ret
 	}
-	return o.ReferenceNumber
+	return *o.ReferenceNumber
 }
 
 // GetReferenceNumberOk returns a tuple with the ReferenceNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponse) GetReferenceNumberOk() ([]RenewalsDetailsResponseReferenceNumberInner, bool) {
+func (o *RenewalsDetailsResponse) GetReferenceNumberOk() (*RenewalsDetailsResponseReferenceNumber, bool) {
 	if o == nil || IsNil(o.ReferenceNumber) {
 		return nil, false
 	}
@@ -475,23 +475,23 @@ func (o *RenewalsDetailsResponse) HasReferenceNumber() bool {
 	return false
 }
 
-// SetReferenceNumber gets a reference to the given []RenewalsDetailsResponseReferenceNumberInner and assigns it to the ReferenceNumber field.
-func (o *RenewalsDetailsResponse) SetReferenceNumber(v []RenewalsDetailsResponseReferenceNumberInner) {
-	o.ReferenceNumber = v
+// SetReferenceNumber gets a reference to the given RenewalsDetailsResponseReferenceNumber and assigns it to the ReferenceNumber field.
+func (o *RenewalsDetailsResponse) SetReferenceNumber(v RenewalsDetailsResponseReferenceNumber) {
+	o.ReferenceNumber = &v
 }
 
 // GetProducts returns the Products field value if set, zero value otherwise.
-func (o *RenewalsDetailsResponse) GetProducts() []RenewalsDetailsResponseProductsInner {
+func (o *RenewalsDetailsResponse) GetProducts() RenewalsDetailsResponseProducts {
 	if o == nil || IsNil(o.Products) {
-		var ret []RenewalsDetailsResponseProductsInner
+		var ret RenewalsDetailsResponseProducts
 		return ret
 	}
-	return o.Products
+	return *o.Products
 }
 
 // GetProductsOk returns a tuple with the Products field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RenewalsDetailsResponse) GetProductsOk() ([]RenewalsDetailsResponseProductsInner, bool) {
+func (o *RenewalsDetailsResponse) GetProductsOk() (*RenewalsDetailsResponseProducts, bool) {
 	if o == nil || IsNil(o.Products) {
 		return nil, false
 	}
@@ -507,9 +507,9 @@ func (o *RenewalsDetailsResponse) HasProducts() bool {
 	return false
 }
 
-// SetProducts gets a reference to the given []RenewalsDetailsResponseProductsInner and assigns it to the Products field.
-func (o *RenewalsDetailsResponse) SetProducts(v []RenewalsDetailsResponseProductsInner) {
-	o.Products = v
+// SetProducts gets a reference to the given RenewalsDetailsResponseProducts and assigns it to the Products field.
+func (o *RenewalsDetailsResponse) SetProducts(v RenewalsDetailsResponseProducts) {
+	o.Products = &v
 }
 
 // GetAdditionalAttributes returns the AdditionalAttributes field value if set, zero value otherwise.

@@ -25,6 +25,8 @@ type OrderDetailB2BLinesInnerShipmentDetailsInner struct {
 	DeliveryNumber *string `json:"deliveryNumber,omitempty"`
 	// The date the line item is expected to be shipped.
 	EstimatedShipDate *string `json:"estimatedShipDate,omitempty"`
+	ShippedDate *string `json:"shippedDate,omitempty"`
+	EstimatedDeliveryDate *string `json:"estimatedDeliveryDate,omitempty"`
 	// The ID of the warehouse the product will ship from.
 	ShipFromWarehouseId *string `json:"shipFromWarehouseId,omitempty"`
 	// The city and state the line item ships from.
@@ -148,6 +150,70 @@ func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) HasEstimatedShipDate() bo
 // SetEstimatedShipDate gets a reference to the given string and assigns it to the EstimatedShipDate field.
 func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) SetEstimatedShipDate(v string) {
 	o.EstimatedShipDate = &v
+}
+
+// GetShippedDate returns the ShippedDate field value if set, zero value otherwise.
+func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) GetShippedDate() string {
+	if o == nil || IsNil(o.ShippedDate) {
+		var ret string
+		return ret
+	}
+	return *o.ShippedDate
+}
+
+// GetShippedDateOk returns a tuple with the ShippedDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) GetShippedDateOk() (*string, bool) {
+	if o == nil || IsNil(o.ShippedDate) {
+		return nil, false
+	}
+	return o.ShippedDate, true
+}
+
+// HasShippedDate returns a boolean if a field has been set.
+func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) HasShippedDate() bool {
+	if o != nil && !IsNil(o.ShippedDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetShippedDate gets a reference to the given string and assigns it to the ShippedDate field.
+func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) SetShippedDate(v string) {
+	o.ShippedDate = &v
+}
+
+// GetEstimatedDeliveryDate returns the EstimatedDeliveryDate field value if set, zero value otherwise.
+func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) GetEstimatedDeliveryDate() string {
+	if o == nil || IsNil(o.EstimatedDeliveryDate) {
+		var ret string
+		return ret
+	}
+	return *o.EstimatedDeliveryDate
+}
+
+// GetEstimatedDeliveryDateOk returns a tuple with the EstimatedDeliveryDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) GetEstimatedDeliveryDateOk() (*string, bool) {
+	if o == nil || IsNil(o.EstimatedDeliveryDate) {
+		return nil, false
+	}
+	return o.EstimatedDeliveryDate, true
+}
+
+// HasEstimatedDeliveryDate returns a boolean if a field has been set.
+func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) HasEstimatedDeliveryDate() bool {
+	if o != nil && !IsNil(o.EstimatedDeliveryDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetEstimatedDeliveryDate gets a reference to the given string and assigns it to the EstimatedDeliveryDate field.
+func (o *OrderDetailB2BLinesInnerShipmentDetailsInner) SetEstimatedDeliveryDate(v string) {
+	o.EstimatedDeliveryDate = &v
 }
 
 // GetShipFromWarehouseId returns the ShipFromWarehouseId field value if set, zero value otherwise.
@@ -329,6 +395,12 @@ func (o OrderDetailB2BLinesInnerShipmentDetailsInner) ToMap() (map[string]interf
 	}
 	if !IsNil(o.EstimatedShipDate) {
 		toSerialize["estimatedShipDate"] = o.EstimatedShipDate
+	}
+	if !IsNil(o.ShippedDate) {
+		toSerialize["shippedDate"] = o.ShippedDate
+	}
+	if !IsNil(o.EstimatedDeliveryDate) {
+		toSerialize["estimatedDeliveryDate"] = o.EstimatedDeliveryDate
 	}
 	if !IsNil(o.ShipFromWarehouseId) {
 		toSerialize["shipFromWarehouseId"] = o.ShipFromWarehouseId

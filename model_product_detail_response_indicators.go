@@ -24,7 +24,7 @@ type ProductDetailResponseIndicators struct {
 	// Boolean that indicates whether it’s a new product. 
 	IsNewProduct *bool `json:"isNewProduct,omitempty"`
 	// Boolean that indicates whether there is any limit to return the product.
-	HasReturnLimits *bool `json:"HasReturnLimits,omitempty"`
+	HasReturnLimits *bool `json:"hasReturnLimits,omitempty"`
 	// Boolean that indicates whether back order is allowed for the product.
 	IsBackOrderAllowed *bool `json:"IsBackOrderAllowed,omitempty"`
 	// Boolean that indicates whether product is shipped from the partner.
@@ -1109,7 +1109,7 @@ func (o ProductDetailResponseIndicators) ToMap() (map[string]interface{}, error)
 		toSerialize["isNewProduct"] = o.IsNewProduct
 	}
 	if !IsNil(o.HasReturnLimits) {
-		toSerialize["HasReturnLimits"] = o.HasReturnLimits
+		toSerialize["hasReturnLimits"] = o.HasReturnLimits
 	}
 	if !IsNil(o.IsBackOrderAllowed) {
 		toSerialize["IsBackOrderAllowed"] = o.IsBackOrderAllowed
