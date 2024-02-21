@@ -48,6 +48,7 @@ type ProductDetailResponseIndicators struct {
 	HasAcopQuantityBreak *bool `json:"hasAcopQuantityBreak,omitempty"`
 	// Boolean that indicates whether product has any standard web discount.
 	HasStdWebDiscount *bool `json:"hasStdWebDiscount,omitempty"`
+	HasAcopWebDiscount *bool `json:"hasAcopWebDiscount,omitempty"`
 	// Boolean that indicates whether product has any special bid.
 	HasSpecialBid *bool `json:"hasSpecialBid,omitempty"`
 	// Boolean that indicates whether product is exportable.
@@ -55,7 +56,7 @@ type ProductDetailResponseIndicators struct {
 	// Boolean that indicates whether it’s a discontinued product.
 	IsDiscontinuedProduct *bool `json:"isDiscontinuedProduct,omitempty"`
 	// Boolean that indicates whether product is refurbished.
-	IsRefurbishedProduct *bool `json:"isRefurbishedProduct,omitempty"`
+	IsRefurbished *bool `json:"isRefurbished,omitempty"`
 	// Boolean that indicates if the product can be returned.
 	IsReturnableProduct *bool `json:"isReturnableProduct,omitempty"`
 	// Boolean that indicates whether it’s a Ingram shipped product.
@@ -581,6 +582,38 @@ func (o *ProductDetailResponseIndicators) SetHasStdWebDiscount(v bool) {
 	o.HasStdWebDiscount = &v
 }
 
+// GetHasAcopWebDiscount returns the HasAcopWebDiscount field value if set, zero value otherwise.
+func (o *ProductDetailResponseIndicators) GetHasAcopWebDiscount() bool {
+	if o == nil || IsNil(o.HasAcopWebDiscount) {
+		var ret bool
+		return ret
+	}
+	return *o.HasAcopWebDiscount
+}
+
+// GetHasAcopWebDiscountOk returns a tuple with the HasAcopWebDiscount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductDetailResponseIndicators) GetHasAcopWebDiscountOk() (*bool, bool) {
+	if o == nil || IsNil(o.HasAcopWebDiscount) {
+		return nil, false
+	}
+	return o.HasAcopWebDiscount, true
+}
+
+// HasHasAcopWebDiscount returns a boolean if a field has been set.
+func (o *ProductDetailResponseIndicators) HasHasAcopWebDiscount() bool {
+	if o != nil && !IsNil(o.HasAcopWebDiscount) {
+		return true
+	}
+
+	return false
+}
+
+// SetHasAcopWebDiscount gets a reference to the given bool and assigns it to the HasAcopWebDiscount field.
+func (o *ProductDetailResponseIndicators) SetHasAcopWebDiscount(v bool) {
+	o.HasAcopWebDiscount = &v
+}
+
 // GetHasSpecialBid returns the HasSpecialBid field value if set, zero value otherwise.
 func (o *ProductDetailResponseIndicators) GetHasSpecialBid() bool {
 	if o == nil || IsNil(o.HasSpecialBid) {
@@ -677,36 +710,36 @@ func (o *ProductDetailResponseIndicators) SetIsDiscontinuedProduct(v bool) {
 	o.IsDiscontinuedProduct = &v
 }
 
-// GetIsRefurbishedProduct returns the IsRefurbishedProduct field value if set, zero value otherwise.
-func (o *ProductDetailResponseIndicators) GetIsRefurbishedProduct() bool {
-	if o == nil || IsNil(o.IsRefurbishedProduct) {
+// GetIsRefurbished returns the IsRefurbished field value if set, zero value otherwise.
+func (o *ProductDetailResponseIndicators) GetIsRefurbished() bool {
+	if o == nil || IsNil(o.IsRefurbished) {
 		var ret bool
 		return ret
 	}
-	return *o.IsRefurbishedProduct
+	return *o.IsRefurbished
 }
 
-// GetIsRefurbishedProductOk returns a tuple with the IsRefurbishedProduct field value if set, nil otherwise
+// GetIsRefurbishedOk returns a tuple with the IsRefurbished field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponseIndicators) GetIsRefurbishedProductOk() (*bool, bool) {
-	if o == nil || IsNil(o.IsRefurbishedProduct) {
+func (o *ProductDetailResponseIndicators) GetIsRefurbishedOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsRefurbished) {
 		return nil, false
 	}
-	return o.IsRefurbishedProduct, true
+	return o.IsRefurbished, true
 }
 
-// HasIsRefurbishedProduct returns a boolean if a field has been set.
-func (o *ProductDetailResponseIndicators) HasIsRefurbishedProduct() bool {
-	if o != nil && !IsNil(o.IsRefurbishedProduct) {
+// HasIsRefurbished returns a boolean if a field has been set.
+func (o *ProductDetailResponseIndicators) HasIsRefurbished() bool {
+	if o != nil && !IsNil(o.IsRefurbished) {
 		return true
 	}
 
 	return false
 }
 
-// SetIsRefurbishedProduct gets a reference to the given bool and assigns it to the IsRefurbishedProduct field.
-func (o *ProductDetailResponseIndicators) SetIsRefurbishedProduct(v bool) {
-	o.IsRefurbishedProduct = &v
+// SetIsRefurbished gets a reference to the given bool and assigns it to the IsRefurbished field.
+func (o *ProductDetailResponseIndicators) SetIsRefurbished(v bool) {
+	o.IsRefurbished = &v
 }
 
 // GetIsReturnableProduct returns the IsReturnableProduct field value if set, zero value otherwise.
@@ -1180,6 +1213,9 @@ func (o ProductDetailResponseIndicators) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.HasStdWebDiscount) {
 		toSerialize["hasStdWebDiscount"] = o.HasStdWebDiscount
 	}
+	if !IsNil(o.HasAcopWebDiscount) {
+		toSerialize["hasAcopWebDiscount"] = o.HasAcopWebDiscount
+	}
 	if !IsNil(o.HasSpecialBid) {
 		toSerialize["hasSpecialBid"] = o.HasSpecialBid
 	}
@@ -1189,8 +1225,8 @@ func (o ProductDetailResponseIndicators) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.IsDiscontinuedProduct) {
 		toSerialize["isDiscontinuedProduct"] = o.IsDiscontinuedProduct
 	}
-	if !IsNil(o.IsRefurbishedProduct) {
-		toSerialize["isRefurbishedProduct"] = o.IsRefurbishedProduct
+	if !IsNil(o.IsRefurbished) {
+		toSerialize["isRefurbished"] = o.IsRefurbished
 	}
 	if !IsNil(o.IsReturnableProduct) {
 		toSerialize["isReturnableProduct"] = o.IsReturnableProduct
