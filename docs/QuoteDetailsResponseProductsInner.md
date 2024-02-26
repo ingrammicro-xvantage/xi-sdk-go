@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **LineNumber** | Pointer to **string** | Line number which the product will appear in the quote.  Line number is manditory when unique configurations are included in a quote and mainting the item line order is required. | [optional] 
 **Quantity** | Pointer to **int32** | Quantity of product line item quoted. | [optional] 
 **Notes** | Pointer to **string** | Product line item comments. | [optional] 
-**EAN** | Pointer to **string** | EANUPC | [optional] 
-**CoO** | Pointer to **string** | Country of Origin. | [optional] 
+**Ean** | Pointer to **string** | EANUPC | [optional] 
+**Coo** | Pointer to **string** | Country of Origin. | [optional] 
 **IngramPartNumber** | Pointer to **string** | Ingram Micro SKU (stock keeping unit). An identification, usually alphanumeric, of a particular product that allows it to be tracked for inventory purposes | [optional] 
 **VendorPartNumber** | Pointer to **string** | Vendor Part Number | [optional] 
 **Description** | Pointer to **string** | Product description.  Note - The quote view api returns only the product short description as maintained in Ingram Micro&#39;s crm system.  For long descriptions, please refer to alternative information sources. | [optional] 
@@ -141,55 +141,55 @@ SetNotes sets Notes field to given value.
 
 HasNotes returns a boolean if a field has been set.
 
-### GetEAN
+### GetEan
 
-`func (o *QuoteDetailsResponseProductsInner) GetEAN() string`
+`func (o *QuoteDetailsResponseProductsInner) GetEan() string`
 
-GetEAN returns the EAN field if non-nil, zero value otherwise.
+GetEan returns the Ean field if non-nil, zero value otherwise.
 
-### GetEANOk
+### GetEanOk
 
-`func (o *QuoteDetailsResponseProductsInner) GetEANOk() (*string, bool)`
+`func (o *QuoteDetailsResponseProductsInner) GetEanOk() (*string, bool)`
 
-GetEANOk returns a tuple with the EAN field if it's non-nil, zero value otherwise
+GetEanOk returns a tuple with the Ean field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEAN
+### SetEan
 
-`func (o *QuoteDetailsResponseProductsInner) SetEAN(v string)`
+`func (o *QuoteDetailsResponseProductsInner) SetEan(v string)`
 
-SetEAN sets EAN field to given value.
+SetEan sets Ean field to given value.
 
-### HasEAN
+### HasEan
 
-`func (o *QuoteDetailsResponseProductsInner) HasEAN() bool`
+`func (o *QuoteDetailsResponseProductsInner) HasEan() bool`
 
-HasEAN returns a boolean if a field has been set.
+HasEan returns a boolean if a field has been set.
 
-### GetCoO
+### GetCoo
 
-`func (o *QuoteDetailsResponseProductsInner) GetCoO() string`
+`func (o *QuoteDetailsResponseProductsInner) GetCoo() string`
 
-GetCoO returns the CoO field if non-nil, zero value otherwise.
+GetCoo returns the Coo field if non-nil, zero value otherwise.
 
-### GetCoOOk
+### GetCooOk
 
-`func (o *QuoteDetailsResponseProductsInner) GetCoOOk() (*string, bool)`
+`func (o *QuoteDetailsResponseProductsInner) GetCooOk() (*string, bool)`
 
-GetCoOOk returns a tuple with the CoO field if it's non-nil, zero value otherwise
+GetCooOk returns a tuple with the Coo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCoO
+### SetCoo
 
-`func (o *QuoteDetailsResponseProductsInner) SetCoO(v string)`
+`func (o *QuoteDetailsResponseProductsInner) SetCoo(v string)`
 
-SetCoO sets CoO field to given value.
+SetCoo sets Coo field to given value.
 
-### HasCoO
+### HasCoo
 
-`func (o *QuoteDetailsResponseProductsInner) HasCoO() bool`
+`func (o *QuoteDetailsResponseProductsInner) HasCoo() bool`
 
-HasCoO returns a boolean if a field has been set.
+HasCoo returns a boolean if a field has been set.
 
 ### GetIngramPartNumber
 
