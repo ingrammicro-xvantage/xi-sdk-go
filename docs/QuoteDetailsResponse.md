@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **ExtendedMsrpTotal** | Pointer to **int32** | Total extended MSRP for all products included in the quote | [optional] 
 **QuantityTotal** | Pointer to **int32** | Total quantity of all items in the quote. | [optional] 
 **ExtendedQuotePriceTotal** | Pointer to **int32** | Total amount of quoted price for all products in the quote including both solution products and suggested products. | [optional] 
+**TotalQuoteAmount** | Pointer to **string** |  | [optional] 
 **AdditionalAttributes** | Pointer to [**[]QuoteDetailsResponseAdditionalAttributesInner**](QuoteDetailsResponseAdditionalAttributesInner.md) |  | [optional] 
 
 ## Methods
@@ -778,6 +779,31 @@ SetExtendedQuotePriceTotal sets ExtendedQuotePriceTotal field to given value.
 `func (o *QuoteDetailsResponse) HasExtendedQuotePriceTotal() bool`
 
 HasExtendedQuotePriceTotal returns a boolean if a field has been set.
+
+### GetTotalQuoteAmount
+
+`func (o *QuoteDetailsResponse) GetTotalQuoteAmount() string`
+
+GetTotalQuoteAmount returns the TotalQuoteAmount field if non-nil, zero value otherwise.
+
+### GetTotalQuoteAmountOk
+
+`func (o *QuoteDetailsResponse) GetTotalQuoteAmountOk() (*string, bool)`
+
+GetTotalQuoteAmountOk returns a tuple with the TotalQuoteAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalQuoteAmount
+
+`func (o *QuoteDetailsResponse) SetTotalQuoteAmount(v string)`
+
+SetTotalQuoteAmount sets TotalQuoteAmount field to given value.
+
+### HasTotalQuoteAmount
+
+`func (o *QuoteDetailsResponse) HasTotalQuoteAmount() bool`
+
+HasTotalQuoteAmount returns a boolean if a field has been set.
 
 ### GetAdditionalAttributes
 

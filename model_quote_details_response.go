@@ -71,6 +71,7 @@ type QuoteDetailsResponse struct {
 	QuantityTotal *int32 `json:"quantityTotal,omitempty"`
 	// Total amount of quoted price for all products in the quote including both solution products and suggested products.
 	ExtendedQuotePriceTotal *int32 `json:"extendedQuotePriceTotal,omitempty"`
+	TotalQuoteAmount *string `json:"totalQuoteAmount,omitempty"`
 	AdditionalAttributes []QuoteDetailsResponseAdditionalAttributesInner `json:"additionalAttributes,omitempty"`
 }
 
@@ -1019,6 +1020,38 @@ func (o *QuoteDetailsResponse) SetExtendedQuotePriceTotal(v int32) {
 	o.ExtendedQuotePriceTotal = &v
 }
 
+// GetTotalQuoteAmount returns the TotalQuoteAmount field value if set, zero value otherwise.
+func (o *QuoteDetailsResponse) GetTotalQuoteAmount() string {
+	if o == nil || IsNil(o.TotalQuoteAmount) {
+		var ret string
+		return ret
+	}
+	return *o.TotalQuoteAmount
+}
+
+// GetTotalQuoteAmountOk returns a tuple with the TotalQuoteAmount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponse) GetTotalQuoteAmountOk() (*string, bool) {
+	if o == nil || IsNil(o.TotalQuoteAmount) {
+		return nil, false
+	}
+	return o.TotalQuoteAmount, true
+}
+
+// HasTotalQuoteAmount returns a boolean if a field has been set.
+func (o *QuoteDetailsResponse) HasTotalQuoteAmount() bool {
+	if o != nil && !IsNil(o.TotalQuoteAmount) {
+		return true
+	}
+
+	return false
+}
+
+// SetTotalQuoteAmount gets a reference to the given string and assigns it to the TotalQuoteAmount field.
+func (o *QuoteDetailsResponse) SetTotalQuoteAmount(v string) {
+	o.TotalQuoteAmount = &v
+}
+
 // GetAdditionalAttributes returns the AdditionalAttributes field value if set, zero value otherwise.
 func (o *QuoteDetailsResponse) GetAdditionalAttributes() []QuoteDetailsResponseAdditionalAttributesInner {
 	if o == nil || IsNil(o.AdditionalAttributes) {
@@ -1147,6 +1180,9 @@ func (o QuoteDetailsResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ExtendedQuotePriceTotal) {
 		toSerialize["extendedQuotePriceTotal"] = o.ExtendedQuotePriceTotal
+	}
+	if !IsNil(o.TotalQuoteAmount) {
+		toSerialize["totalQuoteAmount"] = o.TotalQuoteAmount
 	}
 	if !IsNil(o.AdditionalAttributes) {
 		toSerialize["additionalAttributes"] = o.AdditionalAttributes
