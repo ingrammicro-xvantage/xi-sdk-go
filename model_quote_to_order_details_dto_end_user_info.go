@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the QuoteToOrderDetailsDTOEndUserInfoInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &QuoteToOrderDetailsDTOEndUserInfoInner{}
+// checks if the QuoteToOrderDetailsDTOEndUserInfo type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &QuoteToOrderDetailsDTOEndUserInfo{}
 
-// QuoteToOrderDetailsDTOEndUserInfoInner struct for QuoteToOrderDetailsDTOEndUserInfoInner
-type QuoteToOrderDetailsDTOEndUserInfoInner struct {
+// QuoteToOrderDetailsDTOEndUserInfo The contact information for the end user/customer provided by the reseller. Used to determine pricing and discounts.
+type QuoteToOrderDetailsDTOEndUserInfo struct {
 	// The company name for the end user/customer.
 	CompanyName *string `json:"companyName,omitempty"`
 	// The contact name for the end user/customer.
@@ -43,25 +43,25 @@ type QuoteToOrderDetailsDTOEndUserInfoInner struct {
 	PhoneNumber *string `json:"phoneNumber,omitempty"`
 }
 
-// NewQuoteToOrderDetailsDTOEndUserInfoInner instantiates a new QuoteToOrderDetailsDTOEndUserInfoInner object
+// NewQuoteToOrderDetailsDTOEndUserInfo instantiates a new QuoteToOrderDetailsDTOEndUserInfo object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewQuoteToOrderDetailsDTOEndUserInfoInner() *QuoteToOrderDetailsDTOEndUserInfoInner {
-	this := QuoteToOrderDetailsDTOEndUserInfoInner{}
+func NewQuoteToOrderDetailsDTOEndUserInfo() *QuoteToOrderDetailsDTOEndUserInfo {
+	this := QuoteToOrderDetailsDTOEndUserInfo{}
 	return &this
 }
 
-// NewQuoteToOrderDetailsDTOEndUserInfoInnerWithDefaults instantiates a new QuoteToOrderDetailsDTOEndUserInfoInner object
+// NewQuoteToOrderDetailsDTOEndUserInfoWithDefaults instantiates a new QuoteToOrderDetailsDTOEndUserInfo object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewQuoteToOrderDetailsDTOEndUserInfoInnerWithDefaults() *QuoteToOrderDetailsDTOEndUserInfoInner {
-	this := QuoteToOrderDetailsDTOEndUserInfoInner{}
+func NewQuoteToOrderDetailsDTOEndUserInfoWithDefaults() *QuoteToOrderDetailsDTOEndUserInfo {
+	this := QuoteToOrderDetailsDTOEndUserInfo{}
 	return &this
 }
 
 // GetCompanyName returns the CompanyName field value if set, zero value otherwise.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetCompanyName() string {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetCompanyName() string {
 	if o == nil || IsNil(o.CompanyName) {
 		var ret string
 		return ret
@@ -71,7 +71,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetCompanyName() string {
 
 // GetCompanyNameOk returns a tuple with the CompanyName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetCompanyNameOk() (*string, bool) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetCompanyNameOk() (*string, bool) {
 	if o == nil || IsNil(o.CompanyName) {
 		return nil, false
 	}
@@ -79,7 +79,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetCompanyNameOk() (*string, bo
 }
 
 // HasCompanyName returns a boolean if a field has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasCompanyName() bool {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) HasCompanyName() bool {
 	if o != nil && !IsNil(o.CompanyName) {
 		return true
 	}
@@ -88,12 +88,12 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasCompanyName() bool {
 }
 
 // SetCompanyName gets a reference to the given string and assigns it to the CompanyName field.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) SetCompanyName(v string) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) SetCompanyName(v string) {
 	o.CompanyName = &v
 }
 
 // GetContact returns the Contact field value if set, zero value otherwise.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetContact() string {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetContact() string {
 	if o == nil || IsNil(o.Contact) {
 		var ret string
 		return ret
@@ -103,7 +103,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetContact() string {
 
 // GetContactOk returns a tuple with the Contact field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetContactOk() (*string, bool) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetContactOk() (*string, bool) {
 	if o == nil || IsNil(o.Contact) {
 		return nil, false
 	}
@@ -111,7 +111,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetContactOk() (*string, bool) 
 }
 
 // HasContact returns a boolean if a field has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasContact() bool {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) HasContact() bool {
 	if o != nil && !IsNil(o.Contact) {
 		return true
 	}
@@ -120,12 +120,12 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasContact() bool {
 }
 
 // SetContact gets a reference to the given string and assigns it to the Contact field.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) SetContact(v string) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) SetContact(v string) {
 	o.Contact = &v
 }
 
 // GetAddressLine1 returns the AddressLine1 field value if set, zero value otherwise.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetAddressLine1() string {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetAddressLine1() string {
 	if o == nil || IsNil(o.AddressLine1) {
 		var ret string
 		return ret
@@ -135,7 +135,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetAddressLine1() string {
 
 // GetAddressLine1Ok returns a tuple with the AddressLine1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetAddressLine1Ok() (*string, bool) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetAddressLine1Ok() (*string, bool) {
 	if o == nil || IsNil(o.AddressLine1) {
 		return nil, false
 	}
@@ -143,7 +143,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetAddressLine1Ok() (*string, b
 }
 
 // HasAddressLine1 returns a boolean if a field has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasAddressLine1() bool {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) HasAddressLine1() bool {
 	if o != nil && !IsNil(o.AddressLine1) {
 		return true
 	}
@@ -152,12 +152,12 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasAddressLine1() bool {
 }
 
 // SetAddressLine1 gets a reference to the given string and assigns it to the AddressLine1 field.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) SetAddressLine1(v string) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) SetAddressLine1(v string) {
 	o.AddressLine1 = &v
 }
 
 // GetAddressLine2 returns the AddressLine2 field value if set, zero value otherwise.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetAddressLine2() string {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetAddressLine2() string {
 	if o == nil || IsNil(o.AddressLine2) {
 		var ret string
 		return ret
@@ -167,7 +167,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetAddressLine2() string {
 
 // GetAddressLine2Ok returns a tuple with the AddressLine2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetAddressLine2Ok() (*string, bool) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetAddressLine2Ok() (*string, bool) {
 	if o == nil || IsNil(o.AddressLine2) {
 		return nil, false
 	}
@@ -175,7 +175,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetAddressLine2Ok() (*string, b
 }
 
 // HasAddressLine2 returns a boolean if a field has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasAddressLine2() bool {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) HasAddressLine2() bool {
 	if o != nil && !IsNil(o.AddressLine2) {
 		return true
 	}
@@ -184,12 +184,12 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasAddressLine2() bool {
 }
 
 // SetAddressLine2 gets a reference to the given string and assigns it to the AddressLine2 field.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) SetAddressLine2(v string) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) SetAddressLine2(v string) {
 	o.AddressLine2 = &v
 }
 
 // GetAddressLine3 returns the AddressLine3 field value if set, zero value otherwise.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetAddressLine3() string {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetAddressLine3() string {
 	if o == nil || IsNil(o.AddressLine3) {
 		var ret string
 		return ret
@@ -199,7 +199,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetAddressLine3() string {
 
 // GetAddressLine3Ok returns a tuple with the AddressLine3 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetAddressLine3Ok() (*string, bool) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetAddressLine3Ok() (*string, bool) {
 	if o == nil || IsNil(o.AddressLine3) {
 		return nil, false
 	}
@@ -207,7 +207,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetAddressLine3Ok() (*string, b
 }
 
 // HasAddressLine3 returns a boolean if a field has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasAddressLine3() bool {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) HasAddressLine3() bool {
 	if o != nil && !IsNil(o.AddressLine3) {
 		return true
 	}
@@ -216,12 +216,12 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasAddressLine3() bool {
 }
 
 // SetAddressLine3 gets a reference to the given string and assigns it to the AddressLine3 field.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) SetAddressLine3(v string) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) SetAddressLine3(v string) {
 	o.AddressLine3 = &v
 }
 
 // GetCity returns the City field value if set, zero value otherwise.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetCity() string {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetCity() string {
 	if o == nil || IsNil(o.City) {
 		var ret string
 		return ret
@@ -231,7 +231,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetCity() string {
 
 // GetCityOk returns a tuple with the City field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetCityOk() (*string, bool) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetCityOk() (*string, bool) {
 	if o == nil || IsNil(o.City) {
 		return nil, false
 	}
@@ -239,7 +239,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetCityOk() (*string, bool) {
 }
 
 // HasCity returns a boolean if a field has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasCity() bool {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) HasCity() bool {
 	if o != nil && !IsNil(o.City) {
 		return true
 	}
@@ -248,12 +248,12 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasCity() bool {
 }
 
 // SetCity gets a reference to the given string and assigns it to the City field.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) SetCity(v string) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) SetCity(v string) {
 	o.City = &v
 }
 
 // GetState returns the State field value if set, zero value otherwise.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetState() string {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetState() string {
 	if o == nil || IsNil(o.State) {
 		var ret string
 		return ret
@@ -263,7 +263,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetState() string {
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetStateOk() (*string, bool) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetStateOk() (*string, bool) {
 	if o == nil || IsNil(o.State) {
 		return nil, false
 	}
@@ -271,7 +271,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetStateOk() (*string, bool) {
 }
 
 // HasState returns a boolean if a field has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasState() bool {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) HasState() bool {
 	if o != nil && !IsNil(o.State) {
 		return true
 	}
@@ -280,12 +280,12 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasState() bool {
 }
 
 // SetState gets a reference to the given string and assigns it to the State field.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) SetState(v string) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) SetState(v string) {
 	o.State = &v
 }
 
 // GetPostalCode returns the PostalCode field value if set, zero value otherwise.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetPostalCode() string {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetPostalCode() string {
 	if o == nil || IsNil(o.PostalCode) {
 		var ret string
 		return ret
@@ -295,7 +295,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetPostalCode() string {
 
 // GetPostalCodeOk returns a tuple with the PostalCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetPostalCodeOk() (*string, bool) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetPostalCodeOk() (*string, bool) {
 	if o == nil || IsNil(o.PostalCode) {
 		return nil, false
 	}
@@ -303,7 +303,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetPostalCodeOk() (*string, boo
 }
 
 // HasPostalCode returns a boolean if a field has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasPostalCode() bool {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) HasPostalCode() bool {
 	if o != nil && !IsNil(o.PostalCode) {
 		return true
 	}
@@ -312,12 +312,12 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasPostalCode() bool {
 }
 
 // SetPostalCode gets a reference to the given string and assigns it to the PostalCode field.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) SetPostalCode(v string) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) SetPostalCode(v string) {
 	o.PostalCode = &v
 }
 
 // GetCountryCode returns the CountryCode field value if set, zero value otherwise.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetCountryCode() string {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetCountryCode() string {
 	if o == nil || IsNil(o.CountryCode) {
 		var ret string
 		return ret
@@ -327,7 +327,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetCountryCode() string {
 
 // GetCountryCodeOk returns a tuple with the CountryCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetCountryCodeOk() (*string, bool) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetCountryCodeOk() (*string, bool) {
 	if o == nil || IsNil(o.CountryCode) {
 		return nil, false
 	}
@@ -335,7 +335,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetCountryCodeOk() (*string, bo
 }
 
 // HasCountryCode returns a boolean if a field has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasCountryCode() bool {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) HasCountryCode() bool {
 	if o != nil && !IsNil(o.CountryCode) {
 		return true
 	}
@@ -344,12 +344,12 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasCountryCode() bool {
 }
 
 // SetCountryCode gets a reference to the given string and assigns it to the CountryCode field.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) SetCountryCode(v string) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) SetCountryCode(v string) {
 	o.CountryCode = &v
 }
 
 // GetEmail returns the Email field value if set, zero value otherwise.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetEmail() string {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetEmail() string {
 	if o == nil || IsNil(o.Email) {
 		var ret string
 		return ret
@@ -359,7 +359,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetEmail() string {
 
 // GetEmailOk returns a tuple with the Email field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetEmailOk() (*string, bool) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetEmailOk() (*string, bool) {
 	if o == nil || IsNil(o.Email) {
 		return nil, false
 	}
@@ -367,7 +367,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetEmailOk() (*string, bool) {
 }
 
 // HasEmail returns a boolean if a field has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasEmail() bool {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) HasEmail() bool {
 	if o != nil && !IsNil(o.Email) {
 		return true
 	}
@@ -376,12 +376,12 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasEmail() bool {
 }
 
 // SetEmail gets a reference to the given string and assigns it to the Email field.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) SetEmail(v string) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) SetEmail(v string) {
 	o.Email = &v
 }
 
 // GetPhoneNumber returns the PhoneNumber field value if set, zero value otherwise.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetPhoneNumber() string {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetPhoneNumber() string {
 	if o == nil || IsNil(o.PhoneNumber) {
 		var ret string
 		return ret
@@ -391,7 +391,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetPhoneNumber() string {
 
 // GetPhoneNumberOk returns a tuple with the PhoneNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetPhoneNumberOk() (*string, bool) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) GetPhoneNumberOk() (*string, bool) {
 	if o == nil || IsNil(o.PhoneNumber) {
 		return nil, false
 	}
@@ -399,7 +399,7 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) GetPhoneNumberOk() (*string, bo
 }
 
 // HasPhoneNumber returns a boolean if a field has been set.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasPhoneNumber() bool {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) HasPhoneNumber() bool {
 	if o != nil && !IsNil(o.PhoneNumber) {
 		return true
 	}
@@ -408,11 +408,11 @@ func (o *QuoteToOrderDetailsDTOEndUserInfoInner) HasPhoneNumber() bool {
 }
 
 // SetPhoneNumber gets a reference to the given string and assigns it to the PhoneNumber field.
-func (o *QuoteToOrderDetailsDTOEndUserInfoInner) SetPhoneNumber(v string) {
+func (o *QuoteToOrderDetailsDTOEndUserInfo) SetPhoneNumber(v string) {
 	o.PhoneNumber = &v
 }
 
-func (o QuoteToOrderDetailsDTOEndUserInfoInner) MarshalJSON() ([]byte, error) {
+func (o QuoteToOrderDetailsDTOEndUserInfo) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -420,7 +420,7 @@ func (o QuoteToOrderDetailsDTOEndUserInfoInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o QuoteToOrderDetailsDTOEndUserInfoInner) ToMap() (map[string]interface{}, error) {
+func (o QuoteToOrderDetailsDTOEndUserInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.CompanyName) {
 		toSerialize["companyName"] = o.CompanyName
@@ -458,38 +458,38 @@ func (o QuoteToOrderDetailsDTOEndUserInfoInner) ToMap() (map[string]interface{},
 	return toSerialize, nil
 }
 
-type NullableQuoteToOrderDetailsDTOEndUserInfoInner struct {
-	value *QuoteToOrderDetailsDTOEndUserInfoInner
+type NullableQuoteToOrderDetailsDTOEndUserInfo struct {
+	value *QuoteToOrderDetailsDTOEndUserInfo
 	isSet bool
 }
 
-func (v NullableQuoteToOrderDetailsDTOEndUserInfoInner) Get() *QuoteToOrderDetailsDTOEndUserInfoInner {
+func (v NullableQuoteToOrderDetailsDTOEndUserInfo) Get() *QuoteToOrderDetailsDTOEndUserInfo {
 	return v.value
 }
 
-func (v *NullableQuoteToOrderDetailsDTOEndUserInfoInner) Set(val *QuoteToOrderDetailsDTOEndUserInfoInner) {
+func (v *NullableQuoteToOrderDetailsDTOEndUserInfo) Set(val *QuoteToOrderDetailsDTOEndUserInfo) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableQuoteToOrderDetailsDTOEndUserInfoInner) IsSet() bool {
+func (v NullableQuoteToOrderDetailsDTOEndUserInfo) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableQuoteToOrderDetailsDTOEndUserInfoInner) Unset() {
+func (v *NullableQuoteToOrderDetailsDTOEndUserInfo) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableQuoteToOrderDetailsDTOEndUserInfoInner(val *QuoteToOrderDetailsDTOEndUserInfoInner) *NullableQuoteToOrderDetailsDTOEndUserInfoInner {
-	return &NullableQuoteToOrderDetailsDTOEndUserInfoInner{value: val, isSet: true}
+func NewNullableQuoteToOrderDetailsDTOEndUserInfo(val *QuoteToOrderDetailsDTOEndUserInfo) *NullableQuoteToOrderDetailsDTOEndUserInfo {
+	return &NullableQuoteToOrderDetailsDTOEndUserInfo{value: val, isSet: true}
 }
 
-func (v NullableQuoteToOrderDetailsDTOEndUserInfoInner) MarshalJSON() ([]byte, error) {
+func (v NullableQuoteToOrderDetailsDTOEndUserInfo) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableQuoteToOrderDetailsDTOEndUserInfoInner) UnmarshalJSON(src []byte) error {
+func (v *NullableQuoteToOrderDetailsDTOEndUserInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

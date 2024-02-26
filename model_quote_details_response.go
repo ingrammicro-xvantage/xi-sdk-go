@@ -33,8 +33,6 @@ type QuoteDetailsResponse struct {
 	IngramQuoteExpiryDate *string `json:"ingramQuoteExpiryDate,omitempty"`
 	// Three letter currency code.
 	CurrencyCode *string `json:"currencyCode,omitempty"`
-	// Closing Reason for quote.
-	ClosingReason *string `json:"closingReason,omitempty"`
 	// Price discount identifyer to specify  a pricing discount that has been applied to the quote. If present - the priceDeviationStartDate and priceDeviationExpiryDate must be presented. Cisco refers to this as a Dart
 	SpecialBidId *string `json:"specialBidId,omitempty"`
 	// If price discount has been applied to the quote - the starting date the discount begins.
@@ -43,6 +41,9 @@ type QuoteDetailsResponse struct {
 	SpecialBidExpirationDate *string `json:"specialBidExpirationDate,omitempty"`
 	// This refers to the primary status of the quote.  API responses will return
 	Status *string `json:"status,omitempty"`
+	// Closing Reason for quote.
+	ClosingReason *string `json:"closingReason,omitempty"`
+	DateClosed *string `json:"dateClosed,omitempty"`
 	// Details related to the customer's request for the quote entered by the sales representative or system generated.
 	CustomerNeed *string `json:"customerNeed,omitempty"`
 	// Ingram Micro proposed solution and summary of quote.
@@ -58,7 +59,7 @@ type QuoteDetailsResponse struct {
 	LeaseInfo *string `json:"leaseInfo,omitempty"`
 	// Leasing information
 	LeasingInstructions *string `json:"leasingInstructions,omitempty"`
-	QuoteSybType *string `json:"quoteSybType,omitempty"`
+	QuoteSubType *string `json:"quoteSubType,omitempty"`
 	ResellerInfo *QuoteDetailsResponseResellerInfo `json:"resellerInfo,omitempty"`
 	EndUserInfo *QuoteDetailsResponseEndUserInfo `json:"endUserInfo,omitempty"`
 	Products []QuoteDetailsResponseProductsInner `json:"products,omitempty"`
@@ -70,6 +71,7 @@ type QuoteDetailsResponse struct {
 	QuantityTotal *int32 `json:"quantityTotal,omitempty"`
 	// Total amount of quoted price for all products in the quote including both solution products and suggested products.
 	ExtendedQuotePriceTotal *int32 `json:"extendedQuotePriceTotal,omitempty"`
+	TotalQuoteAmount *string `json:"totalQuoteAmount,omitempty"`
 	AdditionalAttributes []QuoteDetailsResponseAdditionalAttributesInner `json:"additionalAttributes,omitempty"`
 }
 
@@ -314,38 +316,6 @@ func (o *QuoteDetailsResponse) SetCurrencyCode(v string) {
 	o.CurrencyCode = &v
 }
 
-// GetClosingReason returns the ClosingReason field value if set, zero value otherwise.
-func (o *QuoteDetailsResponse) GetClosingReason() string {
-	if o == nil || IsNil(o.ClosingReason) {
-		var ret string
-		return ret
-	}
-	return *o.ClosingReason
-}
-
-// GetClosingReasonOk returns a tuple with the ClosingReason field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *QuoteDetailsResponse) GetClosingReasonOk() (*string, bool) {
-	if o == nil || IsNil(o.ClosingReason) {
-		return nil, false
-	}
-	return o.ClosingReason, true
-}
-
-// HasClosingReason returns a boolean if a field has been set.
-func (o *QuoteDetailsResponse) HasClosingReason() bool {
-	if o != nil && !IsNil(o.ClosingReason) {
-		return true
-	}
-
-	return false
-}
-
-// SetClosingReason gets a reference to the given string and assigns it to the ClosingReason field.
-func (o *QuoteDetailsResponse) SetClosingReason(v string) {
-	o.ClosingReason = &v
-}
-
 // GetSpecialBidId returns the SpecialBidId field value if set, zero value otherwise.
 func (o *QuoteDetailsResponse) GetSpecialBidId() string {
 	if o == nil || IsNil(o.SpecialBidId) {
@@ -472,6 +442,70 @@ func (o *QuoteDetailsResponse) HasStatus() bool {
 // SetStatus gets a reference to the given string and assigns it to the Status field.
 func (o *QuoteDetailsResponse) SetStatus(v string) {
 	o.Status = &v
+}
+
+// GetClosingReason returns the ClosingReason field value if set, zero value otherwise.
+func (o *QuoteDetailsResponse) GetClosingReason() string {
+	if o == nil || IsNil(o.ClosingReason) {
+		var ret string
+		return ret
+	}
+	return *o.ClosingReason
+}
+
+// GetClosingReasonOk returns a tuple with the ClosingReason field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponse) GetClosingReasonOk() (*string, bool) {
+	if o == nil || IsNil(o.ClosingReason) {
+		return nil, false
+	}
+	return o.ClosingReason, true
+}
+
+// HasClosingReason returns a boolean if a field has been set.
+func (o *QuoteDetailsResponse) HasClosingReason() bool {
+	if o != nil && !IsNil(o.ClosingReason) {
+		return true
+	}
+
+	return false
+}
+
+// SetClosingReason gets a reference to the given string and assigns it to the ClosingReason field.
+func (o *QuoteDetailsResponse) SetClosingReason(v string) {
+	o.ClosingReason = &v
+}
+
+// GetDateClosed returns the DateClosed field value if set, zero value otherwise.
+func (o *QuoteDetailsResponse) GetDateClosed() string {
+	if o == nil || IsNil(o.DateClosed) {
+		var ret string
+		return ret
+	}
+	return *o.DateClosed
+}
+
+// GetDateClosedOk returns a tuple with the DateClosed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponse) GetDateClosedOk() (*string, bool) {
+	if o == nil || IsNil(o.DateClosed) {
+		return nil, false
+	}
+	return o.DateClosed, true
+}
+
+// HasDateClosed returns a boolean if a field has been set.
+func (o *QuoteDetailsResponse) HasDateClosed() bool {
+	if o != nil && !IsNil(o.DateClosed) {
+		return true
+	}
+
+	return false
+}
+
+// SetDateClosed gets a reference to the given string and assigns it to the DateClosed field.
+func (o *QuoteDetailsResponse) SetDateClosed(v string) {
+	o.DateClosed = &v
 }
 
 // GetCustomerNeed returns the CustomerNeed field value if set, zero value otherwise.
@@ -730,36 +764,36 @@ func (o *QuoteDetailsResponse) SetLeasingInstructions(v string) {
 	o.LeasingInstructions = &v
 }
 
-// GetQuoteSybType returns the QuoteSybType field value if set, zero value otherwise.
-func (o *QuoteDetailsResponse) GetQuoteSybType() string {
-	if o == nil || IsNil(o.QuoteSybType) {
+// GetQuoteSubType returns the QuoteSubType field value if set, zero value otherwise.
+func (o *QuoteDetailsResponse) GetQuoteSubType() string {
+	if o == nil || IsNil(o.QuoteSubType) {
 		var ret string
 		return ret
 	}
-	return *o.QuoteSybType
+	return *o.QuoteSubType
 }
 
-// GetQuoteSybTypeOk returns a tuple with the QuoteSybType field value if set, nil otherwise
+// GetQuoteSubTypeOk returns a tuple with the QuoteSubType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteDetailsResponse) GetQuoteSybTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.QuoteSybType) {
+func (o *QuoteDetailsResponse) GetQuoteSubTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.QuoteSubType) {
 		return nil, false
 	}
-	return o.QuoteSybType, true
+	return o.QuoteSubType, true
 }
 
-// HasQuoteSybType returns a boolean if a field has been set.
-func (o *QuoteDetailsResponse) HasQuoteSybType() bool {
-	if o != nil && !IsNil(o.QuoteSybType) {
+// HasQuoteSubType returns a boolean if a field has been set.
+func (o *QuoteDetailsResponse) HasQuoteSubType() bool {
+	if o != nil && !IsNil(o.QuoteSubType) {
 		return true
 	}
 
 	return false
 }
 
-// SetQuoteSybType gets a reference to the given string and assigns it to the QuoteSybType field.
-func (o *QuoteDetailsResponse) SetQuoteSybType(v string) {
-	o.QuoteSybType = &v
+// SetQuoteSubType gets a reference to the given string and assigns it to the QuoteSubType field.
+func (o *QuoteDetailsResponse) SetQuoteSubType(v string) {
+	o.QuoteSubType = &v
 }
 
 // GetResellerInfo returns the ResellerInfo field value if set, zero value otherwise.
@@ -986,6 +1020,38 @@ func (o *QuoteDetailsResponse) SetExtendedQuotePriceTotal(v int32) {
 	o.ExtendedQuotePriceTotal = &v
 }
 
+// GetTotalQuoteAmount returns the TotalQuoteAmount field value if set, zero value otherwise.
+func (o *QuoteDetailsResponse) GetTotalQuoteAmount() string {
+	if o == nil || IsNil(o.TotalQuoteAmount) {
+		var ret string
+		return ret
+	}
+	return *o.TotalQuoteAmount
+}
+
+// GetTotalQuoteAmountOk returns a tuple with the TotalQuoteAmount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponse) GetTotalQuoteAmountOk() (*string, bool) {
+	if o == nil || IsNil(o.TotalQuoteAmount) {
+		return nil, false
+	}
+	return o.TotalQuoteAmount, true
+}
+
+// HasTotalQuoteAmount returns a boolean if a field has been set.
+func (o *QuoteDetailsResponse) HasTotalQuoteAmount() bool {
+	if o != nil && !IsNil(o.TotalQuoteAmount) {
+		return true
+	}
+
+	return false
+}
+
+// SetTotalQuoteAmount gets a reference to the given string and assigns it to the TotalQuoteAmount field.
+func (o *QuoteDetailsResponse) SetTotalQuoteAmount(v string) {
+	o.TotalQuoteAmount = &v
+}
+
 // GetAdditionalAttributes returns the AdditionalAttributes field value if set, zero value otherwise.
 func (o *QuoteDetailsResponse) GetAdditionalAttributes() []QuoteDetailsResponseAdditionalAttributesInner {
 	if o == nil || IsNil(o.AdditionalAttributes) {
@@ -1049,9 +1115,6 @@ func (o QuoteDetailsResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CurrencyCode) {
 		toSerialize["currencyCode"] = o.CurrencyCode
 	}
-	if !IsNil(o.ClosingReason) {
-		toSerialize["closingReason"] = o.ClosingReason
-	}
 	if !IsNil(o.SpecialBidId) {
 		toSerialize["specialBidId"] = o.SpecialBidId
 	}
@@ -1063,6 +1126,12 @@ func (o QuoteDetailsResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
+	}
+	if !IsNil(o.ClosingReason) {
+		toSerialize["closingReason"] = o.ClosingReason
+	}
+	if !IsNil(o.DateClosed) {
+		toSerialize["dateClosed"] = o.DateClosed
 	}
 	if !IsNil(o.CustomerNeed) {
 		toSerialize["customerNeed"] = o.CustomerNeed
@@ -1088,8 +1157,8 @@ func (o QuoteDetailsResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LeasingInstructions) {
 		toSerialize["leasingInstructions"] = o.LeasingInstructions
 	}
-	if !IsNil(o.QuoteSybType) {
-		toSerialize["quoteSybType"] = o.QuoteSybType
+	if !IsNil(o.QuoteSubType) {
+		toSerialize["quoteSubType"] = o.QuoteSubType
 	}
 	if !IsNil(o.ResellerInfo) {
 		toSerialize["resellerInfo"] = o.ResellerInfo
@@ -1111,6 +1180,9 @@ func (o QuoteDetailsResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ExtendedQuotePriceTotal) {
 		toSerialize["extendedQuotePriceTotal"] = o.ExtendedQuotePriceTotal
+	}
+	if !IsNil(o.TotalQuoteAmount) {
+		toSerialize["totalQuoteAmount"] = o.TotalQuoteAmount
 	}
 	if !IsNil(o.AdditionalAttributes) {
 		toSerialize["additionalAttributes"] = o.AdditionalAttributes

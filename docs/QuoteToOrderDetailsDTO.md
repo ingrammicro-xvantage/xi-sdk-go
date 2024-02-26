@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **CustomerOrderNumber** | Pointer to **NullableString** | The reseller&#39;s order number for reference in their system. | [optional] 
 **EnduserOrderNumber** | Pointer to **NullableString** | The end customer&#39;s order number for reference in their system. | [optional] 
 **BillToAddressId** | Pointer to **NullableString** | Suffix used to identify billing address. Created during onboarding. Resellers are provided with one or more address IDs depending on how many bill to addresses they need for various flooring companies they are using for credit. | [optional] 
-**EndUserInfo** | Pointer to [**[]QuoteToOrderDetailsDTOEndUserInfoInner**](QuoteToOrderDetailsDTOEndUserInfoInner.md) | The contact information for the end user/customer provided by the reseller. Used to determine pricing and discounts. | [optional] 
-**ShipToInfo** | Pointer to [**[]QuoteToOrderDetailsDTOShipToInfoInner**](QuoteToOrderDetailsDTOShipToInfoInner.md) | The shipping information provided by the reseller for order delivery. | [optional] 
+**EndUserInfo** | Pointer to [**QuoteToOrderDetailsDTOEndUserInfo**](QuoteToOrderDetailsDTOEndUserInfo.md) |  | [optional] 
+**ShipToInfo** | Pointer to [**QuoteToOrderDetailsDTOShipToInfo**](QuoteToOrderDetailsDTOShipToInfo.md) |  | [optional] 
 **AdditionalAttributes** | Pointer to [**[]QuoteToOrderDetailsDTOAdditionalAttributesInner**](QuoteToOrderDetailsDTOAdditionalAttributesInner.md) | Additional order create attributes. | [optional] 
 **VmfadditionalAttributes** | Pointer to [**[]QuoteToOrderDetailsDTOVmfadditionalAttributesInner**](QuoteToOrderDetailsDTOVmfadditionalAttributesInner.md) | The object containing the list of fields required at a header level by the vendor. | [optional] 
 **Lines** | Pointer to [**[]QuoteToOrderDetailsDTOLinesInner**](QuoteToOrderDetailsDTOLinesInner.md) | The object containing the lines that require vendor mandatory fields. | [optional] 
@@ -175,20 +175,20 @@ HasBillToAddressId returns a boolean if a field has been set.
 UnsetBillToAddressId ensures that no value is present for BillToAddressId, not even an explicit nil
 ### GetEndUserInfo
 
-`func (o *QuoteToOrderDetailsDTO) GetEndUserInfo() []QuoteToOrderDetailsDTOEndUserInfoInner`
+`func (o *QuoteToOrderDetailsDTO) GetEndUserInfo() QuoteToOrderDetailsDTOEndUserInfo`
 
 GetEndUserInfo returns the EndUserInfo field if non-nil, zero value otherwise.
 
 ### GetEndUserInfoOk
 
-`func (o *QuoteToOrderDetailsDTO) GetEndUserInfoOk() (*[]QuoteToOrderDetailsDTOEndUserInfoInner, bool)`
+`func (o *QuoteToOrderDetailsDTO) GetEndUserInfoOk() (*QuoteToOrderDetailsDTOEndUserInfo, bool)`
 
 GetEndUserInfoOk returns a tuple with the EndUserInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEndUserInfo
 
-`func (o *QuoteToOrderDetailsDTO) SetEndUserInfo(v []QuoteToOrderDetailsDTOEndUserInfoInner)`
+`func (o *QuoteToOrderDetailsDTO) SetEndUserInfo(v QuoteToOrderDetailsDTOEndUserInfo)`
 
 SetEndUserInfo sets EndUserInfo field to given value.
 
@@ -200,20 +200,20 @@ HasEndUserInfo returns a boolean if a field has been set.
 
 ### GetShipToInfo
 
-`func (o *QuoteToOrderDetailsDTO) GetShipToInfo() []QuoteToOrderDetailsDTOShipToInfoInner`
+`func (o *QuoteToOrderDetailsDTO) GetShipToInfo() QuoteToOrderDetailsDTOShipToInfo`
 
 GetShipToInfo returns the ShipToInfo field if non-nil, zero value otherwise.
 
 ### GetShipToInfoOk
 
-`func (o *QuoteToOrderDetailsDTO) GetShipToInfoOk() (*[]QuoteToOrderDetailsDTOShipToInfoInner, bool)`
+`func (o *QuoteToOrderDetailsDTO) GetShipToInfoOk() (*QuoteToOrderDetailsDTOShipToInfo, bool)`
 
 GetShipToInfoOk returns a tuple with the ShipToInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShipToInfo
 
-`func (o *QuoteToOrderDetailsDTO) SetShipToInfo(v []QuoteToOrderDetailsDTOShipToInfoInner)`
+`func (o *QuoteToOrderDetailsDTO) SetShipToInfo(v QuoteToOrderDetailsDTOShipToInfo)`
 
 SetShipToInfo sets ShipToInfo field to given value.
 

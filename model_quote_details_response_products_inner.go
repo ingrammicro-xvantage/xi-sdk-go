@@ -28,9 +28,9 @@ type QuoteDetailsResponseProductsInner struct {
 	// Product line item comments.
 	Notes *string `json:"notes,omitempty"`
 	// EANUPC
-	EAN *string `json:"EAN,omitempty"`
+	Ean *string `json:"ean,omitempty"`
 	// Country of Origin.
-	CoO *string `json:"CoO,omitempty"`
+	Coo *string `json:"coo,omitempty"`
 	// Ingram Micro SKU (stock keeping unit). An identification, usually alphanumeric, of a particular product that allows it to be tracked for inventory purposes
 	IngramPartNumber *string `json:"ingramPartNumber,omitempty"`
 	// Vendor Part Number
@@ -199,68 +199,68 @@ func (o *QuoteDetailsResponseProductsInner) SetNotes(v string) {
 	o.Notes = &v
 }
 
-// GetEAN returns the EAN field value if set, zero value otherwise.
-func (o *QuoteDetailsResponseProductsInner) GetEAN() string {
-	if o == nil || IsNil(o.EAN) {
+// GetEan returns the Ean field value if set, zero value otherwise.
+func (o *QuoteDetailsResponseProductsInner) GetEan() string {
+	if o == nil || IsNil(o.Ean) {
 		var ret string
 		return ret
 	}
-	return *o.EAN
+	return *o.Ean
 }
 
-// GetEANOk returns a tuple with the EAN field value if set, nil otherwise
+// GetEanOk returns a tuple with the Ean field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteDetailsResponseProductsInner) GetEANOk() (*string, bool) {
-	if o == nil || IsNil(o.EAN) {
+func (o *QuoteDetailsResponseProductsInner) GetEanOk() (*string, bool) {
+	if o == nil || IsNil(o.Ean) {
 		return nil, false
 	}
-	return o.EAN, true
+	return o.Ean, true
 }
 
-// HasEAN returns a boolean if a field has been set.
-func (o *QuoteDetailsResponseProductsInner) HasEAN() bool {
-	if o != nil && !IsNil(o.EAN) {
+// HasEan returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInner) HasEan() bool {
+	if o != nil && !IsNil(o.Ean) {
 		return true
 	}
 
 	return false
 }
 
-// SetEAN gets a reference to the given string and assigns it to the EAN field.
-func (o *QuoteDetailsResponseProductsInner) SetEAN(v string) {
-	o.EAN = &v
+// SetEan gets a reference to the given string and assigns it to the Ean field.
+func (o *QuoteDetailsResponseProductsInner) SetEan(v string) {
+	o.Ean = &v
 }
 
-// GetCoO returns the CoO field value if set, zero value otherwise.
-func (o *QuoteDetailsResponseProductsInner) GetCoO() string {
-	if o == nil || IsNil(o.CoO) {
+// GetCoo returns the Coo field value if set, zero value otherwise.
+func (o *QuoteDetailsResponseProductsInner) GetCoo() string {
+	if o == nil || IsNil(o.Coo) {
 		var ret string
 		return ret
 	}
-	return *o.CoO
+	return *o.Coo
 }
 
-// GetCoOOk returns a tuple with the CoO field value if set, nil otherwise
+// GetCooOk returns a tuple with the Coo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteDetailsResponseProductsInner) GetCoOOk() (*string, bool) {
-	if o == nil || IsNil(o.CoO) {
+func (o *QuoteDetailsResponseProductsInner) GetCooOk() (*string, bool) {
+	if o == nil || IsNil(o.Coo) {
 		return nil, false
 	}
-	return o.CoO, true
+	return o.Coo, true
 }
 
-// HasCoO returns a boolean if a field has been set.
-func (o *QuoteDetailsResponseProductsInner) HasCoO() bool {
-	if o != nil && !IsNil(o.CoO) {
+// HasCoo returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInner) HasCoo() bool {
+	if o != nil && !IsNil(o.Coo) {
 		return true
 	}
 
 	return false
 }
 
-// SetCoO gets a reference to the given string and assigns it to the CoO field.
-func (o *QuoteDetailsResponseProductsInner) SetCoO(v string) {
-	o.CoO = &v
+// SetCoo gets a reference to the given string and assigns it to the Coo field.
+func (o *QuoteDetailsResponseProductsInner) SetCoo(v string) {
+	o.Coo = &v
 }
 
 // GetIngramPartNumber returns the IngramPartNumber field value if set, zero value otherwise.
@@ -637,11 +637,11 @@ func (o QuoteDetailsResponseProductsInner) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Notes) {
 		toSerialize["notes"] = o.Notes
 	}
-	if !IsNil(o.EAN) {
-		toSerialize["EAN"] = o.EAN
+	if !IsNil(o.Ean) {
+		toSerialize["ean"] = o.Ean
 	}
-	if !IsNil(o.CoO) {
-		toSerialize["CoO"] = o.CoO
+	if !IsNil(o.Coo) {
+		toSerialize["coo"] = o.Coo
 	}
 	if !IsNil(o.IngramPartNumber) {
 		toSerialize["ingramPartNumber"] = o.IngramPartNumber

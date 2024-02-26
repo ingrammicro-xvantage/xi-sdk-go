@@ -27,10 +27,8 @@ type QuoteToOrderDetailsDTO struct {
 	EnduserOrderNumber NullableString `json:"enduserOrderNumber,omitempty"`
 	// Suffix used to identify billing address. Created during onboarding. Resellers are provided with one or more address IDs depending on how many bill to addresses they need for various flooring companies they are using for credit.
 	BillToAddressId NullableString `json:"billToAddressId,omitempty"`
-	// The contact information for the end user/customer provided by the reseller. Used to determine pricing and discounts.
-	EndUserInfo []QuoteToOrderDetailsDTOEndUserInfoInner `json:"endUserInfo,omitempty"`
-	// The shipping information provided by the reseller for order delivery.
-	ShipToInfo []QuoteToOrderDetailsDTOShipToInfoInner `json:"shipToInfo,omitempty"`
+	EndUserInfo *QuoteToOrderDetailsDTOEndUserInfo `json:"endUserInfo,omitempty"`
+	ShipToInfo *QuoteToOrderDetailsDTOShipToInfo `json:"shipToInfo,omitempty"`
 	// Additional order create attributes.
 	AdditionalAttributes []QuoteToOrderDetailsDTOAdditionalAttributesInner `json:"additionalAttributes,omitempty"`
 	// The object containing the list of fields required at a header level by the vendor.
@@ -225,17 +223,17 @@ func (o *QuoteToOrderDetailsDTO) UnsetBillToAddressId() {
 }
 
 // GetEndUserInfo returns the EndUserInfo field value if set, zero value otherwise.
-func (o *QuoteToOrderDetailsDTO) GetEndUserInfo() []QuoteToOrderDetailsDTOEndUserInfoInner {
+func (o *QuoteToOrderDetailsDTO) GetEndUserInfo() QuoteToOrderDetailsDTOEndUserInfo {
 	if o == nil || IsNil(o.EndUserInfo) {
-		var ret []QuoteToOrderDetailsDTOEndUserInfoInner
+		var ret QuoteToOrderDetailsDTOEndUserInfo
 		return ret
 	}
-	return o.EndUserInfo
+	return *o.EndUserInfo
 }
 
 // GetEndUserInfoOk returns a tuple with the EndUserInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteToOrderDetailsDTO) GetEndUserInfoOk() ([]QuoteToOrderDetailsDTOEndUserInfoInner, bool) {
+func (o *QuoteToOrderDetailsDTO) GetEndUserInfoOk() (*QuoteToOrderDetailsDTOEndUserInfo, bool) {
 	if o == nil || IsNil(o.EndUserInfo) {
 		return nil, false
 	}
@@ -251,23 +249,23 @@ func (o *QuoteToOrderDetailsDTO) HasEndUserInfo() bool {
 	return false
 }
 
-// SetEndUserInfo gets a reference to the given []QuoteToOrderDetailsDTOEndUserInfoInner and assigns it to the EndUserInfo field.
-func (o *QuoteToOrderDetailsDTO) SetEndUserInfo(v []QuoteToOrderDetailsDTOEndUserInfoInner) {
-	o.EndUserInfo = v
+// SetEndUserInfo gets a reference to the given QuoteToOrderDetailsDTOEndUserInfo and assigns it to the EndUserInfo field.
+func (o *QuoteToOrderDetailsDTO) SetEndUserInfo(v QuoteToOrderDetailsDTOEndUserInfo) {
+	o.EndUserInfo = &v
 }
 
 // GetShipToInfo returns the ShipToInfo field value if set, zero value otherwise.
-func (o *QuoteToOrderDetailsDTO) GetShipToInfo() []QuoteToOrderDetailsDTOShipToInfoInner {
+func (o *QuoteToOrderDetailsDTO) GetShipToInfo() QuoteToOrderDetailsDTOShipToInfo {
 	if o == nil || IsNil(o.ShipToInfo) {
-		var ret []QuoteToOrderDetailsDTOShipToInfoInner
+		var ret QuoteToOrderDetailsDTOShipToInfo
 		return ret
 	}
-	return o.ShipToInfo
+	return *o.ShipToInfo
 }
 
 // GetShipToInfoOk returns a tuple with the ShipToInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteToOrderDetailsDTO) GetShipToInfoOk() ([]QuoteToOrderDetailsDTOShipToInfoInner, bool) {
+func (o *QuoteToOrderDetailsDTO) GetShipToInfoOk() (*QuoteToOrderDetailsDTOShipToInfo, bool) {
 	if o == nil || IsNil(o.ShipToInfo) {
 		return nil, false
 	}
@@ -283,9 +281,9 @@ func (o *QuoteToOrderDetailsDTO) HasShipToInfo() bool {
 	return false
 }
 
-// SetShipToInfo gets a reference to the given []QuoteToOrderDetailsDTOShipToInfoInner and assigns it to the ShipToInfo field.
-func (o *QuoteToOrderDetailsDTO) SetShipToInfo(v []QuoteToOrderDetailsDTOShipToInfoInner) {
-	o.ShipToInfo = v
+// SetShipToInfo gets a reference to the given QuoteToOrderDetailsDTOShipToInfo and assigns it to the ShipToInfo field.
+func (o *QuoteToOrderDetailsDTO) SetShipToInfo(v QuoteToOrderDetailsDTOShipToInfo) {
+	o.ShipToInfo = &v
 }
 
 // GetAdditionalAttributes returns the AdditionalAttributes field value if set, zero value otherwise.

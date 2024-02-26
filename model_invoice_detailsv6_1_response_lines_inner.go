@@ -25,6 +25,7 @@ type InvoiceDetailsv61ResponseLinesInner struct {
 	CustomerLineNumber *string `json:"customerLineNumber,omitempty"`
 	// Ingram Micro SKU (stock keeping unit). An identification, usually alphanumeric, of a particular product that allows it to be tracked for inventory purposes.
 	IngramPartNumber *string `json:"ingramPartNumber,omitempty"`
+	Upc *string `json:"upc,omitempty"`
 	// Vendor Part Number.
 	VendorPartNumber *string `json:"vendorPartNumber,omitempty"`
 	// Part number from customer's system.
@@ -173,6 +174,38 @@ func (o *InvoiceDetailsv61ResponseLinesInner) HasIngramPartNumber() bool {
 // SetIngramPartNumber gets a reference to the given string and assigns it to the IngramPartNumber field.
 func (o *InvoiceDetailsv61ResponseLinesInner) SetIngramPartNumber(v string) {
 	o.IngramPartNumber = &v
+}
+
+// GetUpc returns the Upc field value if set, zero value otherwise.
+func (o *InvoiceDetailsv61ResponseLinesInner) GetUpc() string {
+	if o == nil || IsNil(o.Upc) {
+		var ret string
+		return ret
+	}
+	return *o.Upc
+}
+
+// GetUpcOk returns a tuple with the Upc field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceDetailsv61ResponseLinesInner) GetUpcOk() (*string, bool) {
+	if o == nil || IsNil(o.Upc) {
+		return nil, false
+	}
+	return o.Upc, true
+}
+
+// HasUpc returns a boolean if a field has been set.
+func (o *InvoiceDetailsv61ResponseLinesInner) HasUpc() bool {
+	if o != nil && !IsNil(o.Upc) {
+		return true
+	}
+
+	return false
+}
+
+// SetUpc gets a reference to the given string and assigns it to the Upc field.
+func (o *InvoiceDetailsv61ResponseLinesInner) SetUpc(v string) {
+	o.Upc = &v
 }
 
 // GetVendorPartNumber returns the VendorPartNumber field value if set, zero value otherwise.
@@ -706,6 +739,9 @@ func (o InvoiceDetailsv61ResponseLinesInner) ToMap() (map[string]interface{}, er
 	}
 	if !IsNil(o.IngramPartNumber) {
 		toSerialize["ingramPartNumber"] = o.IngramPartNumber
+	}
+	if !IsNil(o.Upc) {
+		toSerialize["upc"] = o.Upc
 	}
 	if !IsNil(o.VendorPartNumber) {
 		toSerialize["vendorPartNumber"] = o.VendorPartNumber

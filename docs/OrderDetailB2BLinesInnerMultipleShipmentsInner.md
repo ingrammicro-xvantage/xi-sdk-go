@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LineNumber** | Pointer to **string** | Line number. | [optional] 
-**RequestedQuantity** | Pointer to **string** | Requested quantity. | [optional] 
-**ConfirmedQuantity** | Pointer to **string** | Confirmed quantity. | [optional] 
-**DataType** | Pointer to **string** | Date type. Example Single or multiple dates. | [optional] 
+**RequestedQuantity** | Pointer to **int32** | Requested quantity. | [optional] 
+**ConfirmedQuantity** | Pointer to **int32** | Confirmed quantity. | [optional] 
+**DateType** | Pointer to **string** | Date type. Example Single or multiple dates. | [optional] 
 **DateRange** | Pointer to [**OrderDetailB2BLinesInnerEstimatedDatesInnerShipShipDateRange**](OrderDetailB2BLinesInnerEstimatedDatesInnerShipShipDateRange.md) |  | [optional] 
 **Source** | Pointer to **string** | Source. | [optional] 
 **Description** | Pointer to **string** | Description. | [optional] 
@@ -60,20 +60,20 @@ HasLineNumber returns a boolean if a field has been set.
 
 ### GetRequestedQuantity
 
-`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetRequestedQuantity() string`
+`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetRequestedQuantity() int32`
 
 GetRequestedQuantity returns the RequestedQuantity field if non-nil, zero value otherwise.
 
 ### GetRequestedQuantityOk
 
-`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetRequestedQuantityOk() (*string, bool)`
+`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetRequestedQuantityOk() (*int32, bool)`
 
 GetRequestedQuantityOk returns a tuple with the RequestedQuantity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRequestedQuantity
 
-`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) SetRequestedQuantity(v string)`
+`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) SetRequestedQuantity(v int32)`
 
 SetRequestedQuantity sets RequestedQuantity field to given value.
 
@@ -85,20 +85,20 @@ HasRequestedQuantity returns a boolean if a field has been set.
 
 ### GetConfirmedQuantity
 
-`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetConfirmedQuantity() string`
+`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetConfirmedQuantity() int32`
 
 GetConfirmedQuantity returns the ConfirmedQuantity field if non-nil, zero value otherwise.
 
 ### GetConfirmedQuantityOk
 
-`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetConfirmedQuantityOk() (*string, bool)`
+`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetConfirmedQuantityOk() (*int32, bool)`
 
 GetConfirmedQuantityOk returns a tuple with the ConfirmedQuantity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfirmedQuantity
 
-`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) SetConfirmedQuantity(v string)`
+`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) SetConfirmedQuantity(v int32)`
 
 SetConfirmedQuantity sets ConfirmedQuantity field to given value.
 
@@ -108,30 +108,30 @@ SetConfirmedQuantity sets ConfirmedQuantity field to given value.
 
 HasConfirmedQuantity returns a boolean if a field has been set.
 
-### GetDataType
+### GetDateType
 
-`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetDataType() string`
+`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetDateType() string`
 
-GetDataType returns the DataType field if non-nil, zero value otherwise.
+GetDateType returns the DateType field if non-nil, zero value otherwise.
 
-### GetDataTypeOk
+### GetDateTypeOk
 
-`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetDataTypeOk() (*string, bool)`
+`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) GetDateTypeOk() (*string, bool)`
 
-GetDataTypeOk returns a tuple with the DataType field if it's non-nil, zero value otherwise
+GetDateTypeOk returns a tuple with the DateType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDataType
+### SetDateType
 
-`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) SetDataType(v string)`
+`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) SetDateType(v string)`
 
-SetDataType sets DataType field to given value.
+SetDateType sets DateType field to given value.
 
-### HasDataType
+### HasDateType
 
-`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) HasDataType() bool`
+`func (o *OrderDetailB2BLinesInnerMultipleShipmentsInner) HasDateType() bool`
 
-HasDataType returns a boolean if a field has been set.
+HasDateType returns a boolean if a field has been set.
 
 ### GetDateRange
 

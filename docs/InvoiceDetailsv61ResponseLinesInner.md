@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **IngramLineNumber** | Pointer to **string** | Unique line number from Ingram. | [optional] 
 **CustomerLineNumber** | Pointer to **string** | Line number passes by customer while creating an order. | [optional] [default to "0"]
 **IngramPartNumber** | Pointer to **string** | Ingram Micro SKU (stock keeping unit). An identification, usually alphanumeric, of a particular product that allows it to be tracked for inventory purposes. | [optional] 
+**Upc** | Pointer to **string** |  | [optional] 
 **VendorPartNumber** | Pointer to **string** | Vendor Part Number. | [optional] 
 **CustomerPartNumber** | Pointer to **string** | Part number from customer&#39;s system. | [optional] 
 **VendorName** | Pointer to **string** | Name of the vendor. | [optional] 
@@ -117,6 +118,31 @@ SetIngramPartNumber sets IngramPartNumber field to given value.
 `func (o *InvoiceDetailsv61ResponseLinesInner) HasIngramPartNumber() bool`
 
 HasIngramPartNumber returns a boolean if a field has been set.
+
+### GetUpc
+
+`func (o *InvoiceDetailsv61ResponseLinesInner) GetUpc() string`
+
+GetUpc returns the Upc field if non-nil, zero value otherwise.
+
+### GetUpcOk
+
+`func (o *InvoiceDetailsv61ResponseLinesInner) GetUpcOk() (*string, bool)`
+
+GetUpcOk returns a tuple with the Upc field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpc
+
+`func (o *InvoiceDetailsv61ResponseLinesInner) SetUpc(v string)`
+
+SetUpc sets Upc field to given value.
+
+### HasUpc
+
+`func (o *InvoiceDetailsv61ResponseLinesInner) HasUpc() bool`
+
+HasUpc returns a boolean if a field has been set.
 
 ### GetVendorPartNumber
 
