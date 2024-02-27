@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **QuoteProductsSupplierPartAuxiliaryId** | Pointer to **string** | Vendor product configuration ID specific to Cisco. | [optional] 
 **VendorName** | Pointer to **string** | Vendor name of the product | [optional] 
 **Terms** | Pointer to **string** | Terms of the quote | [optional] 
+**IsSubscription** | Pointer to **bool** |  | [optional] 
+**ResellerMargin** | Pointer to **string** |  | [optional] 
 **Price** | Pointer to [**QuoteDetailsResponseProductsInnerPrice**](QuoteDetailsResponseProductsInnerPrice.md) |  | [optional] 
 
 ## Methods
@@ -440,6 +442,56 @@ SetTerms sets Terms field to given value.
 `func (o *QuoteDetailsResponseProductsInner) HasTerms() bool`
 
 HasTerms returns a boolean if a field has been set.
+
+### GetIsSubscription
+
+`func (o *QuoteDetailsResponseProductsInner) GetIsSubscription() bool`
+
+GetIsSubscription returns the IsSubscription field if non-nil, zero value otherwise.
+
+### GetIsSubscriptionOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetIsSubscriptionOk() (*bool, bool)`
+
+GetIsSubscriptionOk returns a tuple with the IsSubscription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsSubscription
+
+`func (o *QuoteDetailsResponseProductsInner) SetIsSubscription(v bool)`
+
+SetIsSubscription sets IsSubscription field to given value.
+
+### HasIsSubscription
+
+`func (o *QuoteDetailsResponseProductsInner) HasIsSubscription() bool`
+
+HasIsSubscription returns a boolean if a field has been set.
+
+### GetResellerMargin
+
+`func (o *QuoteDetailsResponseProductsInner) GetResellerMargin() string`
+
+GetResellerMargin returns the ResellerMargin field if non-nil, zero value otherwise.
+
+### GetResellerMarginOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetResellerMarginOk() (*string, bool)`
+
+GetResellerMarginOk returns a tuple with the ResellerMargin field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResellerMargin
+
+`func (o *QuoteDetailsResponseProductsInner) SetResellerMargin(v string)`
+
+SetResellerMargin sets ResellerMargin field to given value.
+
+### HasResellerMargin
+
+`func (o *QuoteDetailsResponseProductsInner) HasResellerMargin() bool`
+
+HasResellerMargin returns a boolean if a field has been set.
 
 ### GetPrice
 
