@@ -3,6 +3,7 @@
 .travis.yml
 README.md
 api/openapi.yaml
+api_accesstoken.go
 api_deals.go
 api_freight_estimate.go
 api_invoices.go
@@ -16,6 +17,8 @@ api_returns.go
 api_stock_update.go
 client.go
 configuration.go
+docs/AccesstokenAPI.md
+docs/AccesstokenResponse.md
 docs/AvailabilityAsyncNotificationRequest.md
 docs/AvailabilityAsyncNotificationRequestResourceInner.md
 docs/AvailabilityAsyncNotificationRequestResourceInnerLinksInner.md
@@ -39,6 +42,10 @@ docs/FreightResponseFreightEstimateResponse.md
 docs/FreightResponseFreightEstimateResponseDistributionInner.md
 docs/FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner.md
 docs/FreightResponseFreightEstimateResponseLinesInner.md
+docs/GetAccesstoken400Response.md
+docs/GetAccesstoken500Response.md
+docs/GetAccesstoken500ResponseFault.md
+docs/GetAccesstoken500ResponseFaultDetail.md
 docs/GetResellerV6ValidateQuote400Response.md
 docs/GetResellerV6ValidateQuote400ResponseFieldsInner.md
 docs/GetResellerV6ValidateQuote500Response.md
@@ -210,6 +217,7 @@ docs/ValidateQuoteResponseVmfAdditionalAttributesInner.md
 git_push.sh
 go.mod
 go.sum
+model_accesstoken_response.go
 model_availability_async_notification_request.go
 model_availability_async_notification_request_resource_inner.go
 model_availability_async_notification_request_resource_inner_links_inner.go
@@ -231,6 +239,10 @@ model_freight_response_freight_estimate_response.go
 model_freight_response_freight_estimate_response_distribution_inner.go
 model_freight_response_freight_estimate_response_distribution_inner_carrier_list_inner.go
 model_freight_response_freight_estimate_response_lines_inner.go
+model_get_accesstoken_400_response.go
+model_get_accesstoken_500_response.go
+model_get_accesstoken_500_response_fault.go
+model_get_accesstoken_500_response_fault_detail.go
 model_get_reseller_v6_validate_quote_400_response.go
 model_get_reseller_v6_validate_quote_400_response_fields_inner.go
 model_get_reseller_v6_validate_quote_500_response.go
@@ -391,6 +403,7 @@ model_validate_quote_response.go
 model_validate_quote_response_lines_inner.go
 model_validate_quote_response_vmf_additional_attributes_inner.go
 response.go
+test/api_accesstoken_test.go
 test/api_deals_test.go
 test/api_freight_estimate_test.go
 test/api_invoices_test.go

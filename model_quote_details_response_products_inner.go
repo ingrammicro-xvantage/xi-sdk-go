@@ -51,6 +51,8 @@ type QuoteDetailsResponseProductsInner struct {
 	VendorName *string `json:"vendorName,omitempty"`
 	// Terms of the quote
 	Terms *string `json:"terms,omitempty"`
+	IsSubscription *bool `json:"isSubscription,omitempty"`
+	ResellerMargin *string `json:"resellerMargin,omitempty"`
 	Price *QuoteDetailsResponseProductsInnerPrice `json:"price,omitempty"`
 }
 
@@ -583,6 +585,70 @@ func (o *QuoteDetailsResponseProductsInner) SetTerms(v string) {
 	o.Terms = &v
 }
 
+// GetIsSubscription returns the IsSubscription field value if set, zero value otherwise.
+func (o *QuoteDetailsResponseProductsInner) GetIsSubscription() bool {
+	if o == nil || IsNil(o.IsSubscription) {
+		var ret bool
+		return ret
+	}
+	return *o.IsSubscription
+}
+
+// GetIsSubscriptionOk returns a tuple with the IsSubscription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponseProductsInner) GetIsSubscriptionOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsSubscription) {
+		return nil, false
+	}
+	return o.IsSubscription, true
+}
+
+// HasIsSubscription returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInner) HasIsSubscription() bool {
+	if o != nil && !IsNil(o.IsSubscription) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsSubscription gets a reference to the given bool and assigns it to the IsSubscription field.
+func (o *QuoteDetailsResponseProductsInner) SetIsSubscription(v bool) {
+	o.IsSubscription = &v
+}
+
+// GetResellerMargin returns the ResellerMargin field value if set, zero value otherwise.
+func (o *QuoteDetailsResponseProductsInner) GetResellerMargin() string {
+	if o == nil || IsNil(o.ResellerMargin) {
+		var ret string
+		return ret
+	}
+	return *o.ResellerMargin
+}
+
+// GetResellerMarginOk returns a tuple with the ResellerMargin field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponseProductsInner) GetResellerMarginOk() (*string, bool) {
+	if o == nil || IsNil(o.ResellerMargin) {
+		return nil, false
+	}
+	return o.ResellerMargin, true
+}
+
+// HasResellerMargin returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInner) HasResellerMargin() bool {
+	if o != nil && !IsNil(o.ResellerMargin) {
+		return true
+	}
+
+	return false
+}
+
+// SetResellerMargin gets a reference to the given string and assigns it to the ResellerMargin field.
+func (o *QuoteDetailsResponseProductsInner) SetResellerMargin(v string) {
+	o.ResellerMargin = &v
+}
+
 // GetPrice returns the Price field value if set, zero value otherwise.
 func (o *QuoteDetailsResponseProductsInner) GetPrice() QuoteDetailsResponseProductsInnerPrice {
 	if o == nil || IsNil(o.Price) {
@@ -672,6 +738,12 @@ func (o QuoteDetailsResponseProductsInner) ToMap() (map[string]interface{}, erro
 	}
 	if !IsNil(o.Terms) {
 		toSerialize["terms"] = o.Terms
+	}
+	if !IsNil(o.IsSubscription) {
+		toSerialize["isSubscription"] = o.IsSubscription
+	}
+	if !IsNil(o.ResellerMargin) {
+		toSerialize["resellerMargin"] = o.ResellerMargin
 	}
 	if !IsNil(o.Price) {
 		toSerialize["price"] = o.Price

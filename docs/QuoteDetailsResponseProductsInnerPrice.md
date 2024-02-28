@@ -8,7 +8,12 @@ Name | Type | Description | Notes
 **Msrp** | Pointer to **int32** | Manufacturer Suggested Retail Price | [optional] 
 **ExtendedMsrp** | Pointer to **int32** | Extended MSRP - Manufacturer Suggested Retail Price X Quantity | [optional] 
 **ExtendedQuotePrice** | Pointer to **int32** | Extended reseller quoted price (cost to reseller) X Quantity | [optional] 
-**DiscountOffList** | Pointer to **float32** | Discount off list percentage | [optional] 
+**DiscountOffList** | Pointer to **string** | Discount off list percentage extended | [optional] 
+**Vendorprice** | Pointer to **float32** |  | [optional] 
+**Extendedvendorprice** | Pointer to **float32** |  | [optional] 
+**TotalVisibleReserveQuantity** | Pointer to **int32** |  | [optional] 
+**Type** | Pointer to **string** |  | [optional] 
+**RecurringPriceModel** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -131,20 +136,20 @@ HasExtendedQuotePrice returns a boolean if a field has been set.
 
 ### GetDiscountOffList
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetDiscountOffList() float32`
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetDiscountOffList() string`
 
 GetDiscountOffList returns the DiscountOffList field if non-nil, zero value otherwise.
 
 ### GetDiscountOffListOk
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetDiscountOffListOk() (*float32, bool)`
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetDiscountOffListOk() (*string, bool)`
 
 GetDiscountOffListOk returns a tuple with the DiscountOffList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDiscountOffList
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) SetDiscountOffList(v float32)`
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetDiscountOffList(v string)`
 
 SetDiscountOffList sets DiscountOffList field to given value.
 
@@ -153,6 +158,131 @@ SetDiscountOffList sets DiscountOffList field to given value.
 `func (o *QuoteDetailsResponseProductsInnerPrice) HasDiscountOffList() bool`
 
 HasDiscountOffList returns a boolean if a field has been set.
+
+### GetVendorprice
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetVendorprice() float32`
+
+GetVendorprice returns the Vendorprice field if non-nil, zero value otherwise.
+
+### GetVendorpriceOk
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetVendorpriceOk() (*float32, bool)`
+
+GetVendorpriceOk returns a tuple with the Vendorprice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVendorprice
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetVendorprice(v float32)`
+
+SetVendorprice sets Vendorprice field to given value.
+
+### HasVendorprice
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) HasVendorprice() bool`
+
+HasVendorprice returns a boolean if a field has been set.
+
+### GetExtendedvendorprice
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedvendorprice() float32`
+
+GetExtendedvendorprice returns the Extendedvendorprice field if non-nil, zero value otherwise.
+
+### GetExtendedvendorpriceOk
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedvendorpriceOk() (*float32, bool)`
+
+GetExtendedvendorpriceOk returns a tuple with the Extendedvendorprice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtendedvendorprice
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetExtendedvendorprice(v float32)`
+
+SetExtendedvendorprice sets Extendedvendorprice field to given value.
+
+### HasExtendedvendorprice
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) HasExtendedvendorprice() bool`
+
+HasExtendedvendorprice returns a boolean if a field has been set.
+
+### GetTotalVisibleReserveQuantity
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetTotalVisibleReserveQuantity() int32`
+
+GetTotalVisibleReserveQuantity returns the TotalVisibleReserveQuantity field if non-nil, zero value otherwise.
+
+### GetTotalVisibleReserveQuantityOk
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetTotalVisibleReserveQuantityOk() (*int32, bool)`
+
+GetTotalVisibleReserveQuantityOk returns a tuple with the TotalVisibleReserveQuantity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalVisibleReserveQuantity
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetTotalVisibleReserveQuantity(v int32)`
+
+SetTotalVisibleReserveQuantity sets TotalVisibleReserveQuantity field to given value.
+
+### HasTotalVisibleReserveQuantity
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) HasTotalVisibleReserveQuantity() bool`
+
+HasTotalVisibleReserveQuantity returns a boolean if a field has been set.
+
+### GetType
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### GetRecurringPriceModel
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetRecurringPriceModel() string`
+
+GetRecurringPriceModel returns the RecurringPriceModel field if non-nil, zero value otherwise.
+
+### GetRecurringPriceModelOk
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetRecurringPriceModelOk() (*string, bool)`
+
+GetRecurringPriceModelOk returns a tuple with the RecurringPriceModel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRecurringPriceModel
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetRecurringPriceModel(v string)`
+
+SetRecurringPriceModel sets RecurringPriceModel field to given value.
+
+### HasRecurringPriceModel
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) HasRecurringPriceModel() bool`
+
+HasRecurringPriceModel returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
