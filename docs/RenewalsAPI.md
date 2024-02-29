@@ -36,8 +36,8 @@ func main() {
 	renewalId := "123456" // string | Unique Ingram renewal ID.
 	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany (optional)
 
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := xi_sdk_resellers.NewConfiguration()
+	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
 	resp, r, err := apiClient.RenewalsAPI.GetResellersV6Renewalsdetails(context.Background(), renewalId).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RenewalsAPI.GetResellersV6Renewalsdetails``: %v\n", err)
@@ -120,8 +120,8 @@ func main() {
 	sort := "sort_example" // string | Refers to the column selected to apply the sorting criteria. (optional)
 	renewalsSearchRequest := *openapiclient.NewRenewalsSearchRequest() // RenewalsSearchRequest |  (optional)
 
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := xi_sdk_resellers.NewConfiguration()
+	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
 	resp, r, err := apiClient.RenewalsAPI.PostRenewalssearch(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).CustomerOrderNumber(customerOrderNumber).IngramPurchaseOrderNumber(ingramPurchaseOrderNumber).SerialNumber(serialNumber).Page(page).Size(size).Sort(sort).RenewalsSearchRequest(renewalsSearchRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RenewalsAPI.PostRenewalssearch``: %v\n", err)

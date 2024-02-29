@@ -36,8 +36,8 @@ func main() {
 	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. (optional)
 	freightRequest := *openapiclient.NewFreightRequest() // FreightRequest |  (optional)
 
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := xi_sdk_resellers.NewConfiguration()
+	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
 	resp, r, err := apiClient.FreightEstimateAPI.PostFreightestimate(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMCustomerContact(iMCustomerContact).IMSenderID(iMSenderID).FreightRequest(freightRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `FreightEstimateAPI.PostFreightestimate``: %v\n", err)

@@ -37,8 +37,8 @@ func main() {
 	iMEnvironment := "prodChicago" // string | Environment name.
 	dealId := "12345678" // string | Unique deal ID.
 
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := xi_sdk_resellers.NewConfiguration()
+	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
 	resp, r, err := apiClient.DealsAPI.GetResellersV6Dealsdetails(context.Background(), dealId).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMApplicationId(iMApplicationId).IMEnvironment(iMEnvironment).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DealsAPI.GetResellersV6Dealsdetails``: %v\n", err)
@@ -118,8 +118,8 @@ func main() {
 	vendor := "Cisco" // string | The vendor's name. (optional)
 	dealId := "12345678" // string | Deal/Special bid number. (optional)
 
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := xi_sdk_resellers.NewConfiguration()
+	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
 	resp, r, err := apiClient.DealsAPI.GetResellersV6Dealssearch(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).EndUser(endUser).Vendor(vendor).DealId(dealId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DealsAPI.GetResellersV6Dealssearch``: %v\n", err)

@@ -35,8 +35,8 @@ func main() {
 	quoteToOrderDetailsDTO := *openapiclient.NewQuoteToOrderDetailsDTO() // QuoteToOrderDetailsDTO | 
 	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. (optional)
 
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := xi_sdk_resellers.NewConfiguration()
+	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
 	resp, r, err := apiClient.QuoteToOrderAPI.PostQuoteToOrderV6(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).QuoteToOrderDetailsDTO(quoteToOrderDetailsDTO).IMSenderID(iMSenderID).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `QuoteToOrderAPI.PostQuoteToOrderV6``: %v\n", err)
