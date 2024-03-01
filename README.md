@@ -69,6 +69,9 @@ ctx = context.WithValue(context.Background(), xi_sdk_resellers.ContextOperationS
 	},
 })
 ```
+## Getting Started
+
+Quickstart on creating an application can be found [here](getting-started.md)
 
 ## Documentation for API Endpoints
 
