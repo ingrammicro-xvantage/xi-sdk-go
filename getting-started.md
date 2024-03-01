@@ -15,13 +15,13 @@
 ![quickstart-new-project](./assets/images/quickstart-new-project.png)
 
 * Create a new module `Testing_XI_SDKs_Go_App`
-* Open a new terminal window (Ctrl+Shift+`)
+* Open a new terminal window (<code>Ctrl+Shift+`</code>)
 * Type `go mod init Testing_XI_SDKs_Go_App` → It should create a `go.mod` file.
 ![quickstart-new-project](./assets/images/quickstart-new-mod.png)
 
 ### Step 2: Install XI SDK package and all dependencies to your project from Go Modules
 
-* Open a new terminal window (Ctrl+Shift+`)
+* Open a new terminal window (<code>Ctrl+Shift+`</code>)
 * Type: `go get -u github.com/ingrammicro-xvantage/xi-sdk-resellers-go`
 
 ![quickstart-new-project](./assets/images/quickstart-install-package.png)
@@ -104,7 +104,7 @@ func main() {
 
 ### Step 4: Run the application
 
-* Open terminal window (Ctrl+Shift+`) and type go run main.go
+* Open terminal window (<code>Ctrl+Shift+`</code>) and type go run main.go
 
 If everything is correct and the product exists, the console should return something like this.
 
