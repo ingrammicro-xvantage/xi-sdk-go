@@ -1,4 +1,4 @@
-# XI SDK Quickstart for C#
+# XI SDK Quickstart for Go
 
 ![Go icon](./assets/images/Go-icon.png)
 
