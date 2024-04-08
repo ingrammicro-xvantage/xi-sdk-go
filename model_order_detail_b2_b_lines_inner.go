@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For Ingram Micro Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
+For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -75,6 +75,7 @@ type OrderDetailB2BLinesInner struct {
 	EstimatedDates []OrderDetailB2BLinesInnerEstimatedDatesInner `json:"estimatedDates,omitempty"`
 	ScheduleLines []OrderDetailB2BLinesInnerScheduleLinesInner `json:"scheduleLines,omitempty"`
 	MultipleShipments []OrderDetailB2BLinesInnerMultipleShipmentsInner `json:"multipleShipments,omitempty"`
+	DefaultCarrierName *string `json:"defaultCarrierName,omitempty"`
 }
 
 // NewOrderDetailB2BLinesInner instantiates a new OrderDetailB2BLinesInner object
@@ -883,7 +884,7 @@ func (o *OrderDetailB2BLinesInner) GetShipmentDetailsOk() ([]OrderDetailB2BLines
 
 // HasShipmentDetails returns a boolean if a field has been set.
 func (o *OrderDetailB2BLinesInner) HasShipmentDetails() bool {
-	if o != nil && IsNil(o.ShipmentDetails) {
+	if o != nil && !IsNil(o.ShipmentDetails) {
 		return true
 	}
 
@@ -948,7 +949,7 @@ func (o *OrderDetailB2BLinesInner) GetAdditionalAttributesOk() ([]OrderDetailB2B
 
 // HasAdditionalAttributes returns a boolean if a field has been set.
 func (o *OrderDetailB2BLinesInner) HasAdditionalAttributes() bool {
-	if o != nil && IsNil(o.AdditionalAttributes) {
+	if o != nil && !IsNil(o.AdditionalAttributes) {
 		return true
 	}
 
@@ -981,7 +982,7 @@ func (o *OrderDetailB2BLinesInner) GetLinksOk() ([]OrderDetailB2BLinesInnerLinks
 
 // HasLinks returns a boolean if a field has been set.
 func (o *OrderDetailB2BLinesInner) HasLinks() bool {
-	if o != nil && IsNil(o.Links) {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 
@@ -1089,6 +1090,38 @@ func (o *OrderDetailB2BLinesInner) SetMultipleShipments(v []OrderDetailB2BLinesI
 	o.MultipleShipments = v
 }
 
+// GetDefaultCarrierName returns the DefaultCarrierName field value if set, zero value otherwise.
+func (o *OrderDetailB2BLinesInner) GetDefaultCarrierName() string {
+	if o == nil || IsNil(o.DefaultCarrierName) {
+		var ret string
+		return ret
+	}
+	return *o.DefaultCarrierName
+}
+
+// GetDefaultCarrierNameOk returns a tuple with the DefaultCarrierName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDetailB2BLinesInner) GetDefaultCarrierNameOk() (*string, bool) {
+	if o == nil || IsNil(o.DefaultCarrierName) {
+		return nil, false
+	}
+	return o.DefaultCarrierName, true
+}
+
+// HasDefaultCarrierName returns a boolean if a field has been set.
+func (o *OrderDetailB2BLinesInner) HasDefaultCarrierName() bool {
+	if o != nil && !IsNil(o.DefaultCarrierName) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultCarrierName gets a reference to the given string and assigns it to the DefaultCarrierName field.
+func (o *OrderDetailB2BLinesInner) SetDefaultCarrierName(v string) {
+	o.DefaultCarrierName = &v
+}
+
 func (o OrderDetailB2BLinesInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -1191,6 +1224,9 @@ func (o OrderDetailB2BLinesInner) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.MultipleShipments) {
 		toSerialize["multipleShipments"] = o.MultipleShipments
+	}
+	if !IsNil(o.DefaultCarrierName) {
+		toSerialize["defaultCarrierName"] = o.DefaultCarrierName
 	}
 	return toSerialize, nil
 }

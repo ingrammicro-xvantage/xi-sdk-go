@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For Ingram Micro Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
+For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -24,9 +24,9 @@ type ValidateQuoteResponseLinesInner struct {
 	// Unique Ingram Micro part number.
 	IngramPartNumber *string `json:"ingramPartNumber,omitempty"`
 	// The quantity of the line item.
-	Quantity *string `json:"quantity,omitempty"`
+	Quantity *int32 `json:"quantity,omitempty"`
 	// The object containing the list of fields required at a line level by the vendor.
-	VmfAdditionalAttributesLines []QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner `json:"vmfAdditionalAttributesLines,omitempty"`
+	VmfAdditionalAttributesLines []ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner `json:"vmfAdditionalAttributesLines,omitempty"`
 }
 
 // NewValidateQuoteResponseLinesInner instantiates a new ValidateQuoteResponseLinesInner object
@@ -111,9 +111,9 @@ func (o *ValidateQuoteResponseLinesInner) SetIngramPartNumber(v string) {
 }
 
 // GetQuantity returns the Quantity field value if set, zero value otherwise.
-func (o *ValidateQuoteResponseLinesInner) GetQuantity() string {
+func (o *ValidateQuoteResponseLinesInner) GetQuantity() int32 {
 	if o == nil || IsNil(o.Quantity) {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.Quantity
@@ -121,7 +121,7 @@ func (o *ValidateQuoteResponseLinesInner) GetQuantity() string {
 
 // GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ValidateQuoteResponseLinesInner) GetQuantityOk() (*string, bool) {
+func (o *ValidateQuoteResponseLinesInner) GetQuantityOk() (*int32, bool) {
 	if o == nil || IsNil(o.Quantity) {
 		return nil, false
 	}
@@ -137,15 +137,15 @@ func (o *ValidateQuoteResponseLinesInner) HasQuantity() bool {
 	return false
 }
 
-// SetQuantity gets a reference to the given string and assigns it to the Quantity field.
-func (o *ValidateQuoteResponseLinesInner) SetQuantity(v string) {
+// SetQuantity gets a reference to the given int32 and assigns it to the Quantity field.
+func (o *ValidateQuoteResponseLinesInner) SetQuantity(v int32) {
 	o.Quantity = &v
 }
 
 // GetVmfAdditionalAttributesLines returns the VmfAdditionalAttributesLines field value if set, zero value otherwise.
-func (o *ValidateQuoteResponseLinesInner) GetVmfAdditionalAttributesLines() []QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner {
+func (o *ValidateQuoteResponseLinesInner) GetVmfAdditionalAttributesLines() []ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner {
 	if o == nil || IsNil(o.VmfAdditionalAttributesLines) {
-		var ret []QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner
+		var ret []ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner
 		return ret
 	}
 	return o.VmfAdditionalAttributesLines
@@ -153,7 +153,7 @@ func (o *ValidateQuoteResponseLinesInner) GetVmfAdditionalAttributesLines() []Qu
 
 // GetVmfAdditionalAttributesLinesOk returns a tuple with the VmfAdditionalAttributesLines field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ValidateQuoteResponseLinesInner) GetVmfAdditionalAttributesLinesOk() ([]QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner, bool) {
+func (o *ValidateQuoteResponseLinesInner) GetVmfAdditionalAttributesLinesOk() ([]ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner, bool) {
 	if o == nil || IsNil(o.VmfAdditionalAttributesLines) {
 		return nil, false
 	}
@@ -169,8 +169,8 @@ func (o *ValidateQuoteResponseLinesInner) HasVmfAdditionalAttributesLines() bool
 	return false
 }
 
-// SetVmfAdditionalAttributesLines gets a reference to the given []QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner and assigns it to the VmfAdditionalAttributesLines field.
-func (o *ValidateQuoteResponseLinesInner) SetVmfAdditionalAttributesLines(v []QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner) {
+// SetVmfAdditionalAttributesLines gets a reference to the given []ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner and assigns it to the VmfAdditionalAttributesLines field.
+func (o *ValidateQuoteResponseLinesInner) SetVmfAdditionalAttributesLines(v []ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner) {
 	o.VmfAdditionalAttributesLines = v
 }
 

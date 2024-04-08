@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **DiscountAmount** | Pointer to **float64** | Discount amount. | [optional] 
 **DiscountType** | Pointer to **string** | Type of discount. | [optional] 
 **TotalTaxAmount** | Pointer to **float64** | Total Tax amount. | [optional] 
-**InvoicesAmountDue** | Pointer to **float64** | Total amount due for the invoice. | [optional] 
+**InvoicedAmountDue** | Pointer to **float64** | Total amount due for the invoice. | [optional] 
 **FreightAmount** | Pointer to **float64** | Freight amount | [optional] 
 
 ## Methods
@@ -130,30 +130,30 @@ SetTotalTaxAmount sets TotalTaxAmount field to given value.
 
 HasTotalTaxAmount returns a boolean if a field has been set.
 
-### GetInvoicesAmountDue
+### GetInvoicedAmountDue
 
-`func (o *InvoiceDetailsv61ResponseSummaryTotals) GetInvoicesAmountDue() float64`
+`func (o *InvoiceDetailsv61ResponseSummaryTotals) GetInvoicedAmountDue() float64`
 
-GetInvoicesAmountDue returns the InvoicesAmountDue field if non-nil, zero value otherwise.
+GetInvoicedAmountDue returns the InvoicedAmountDue field if non-nil, zero value otherwise.
 
-### GetInvoicesAmountDueOk
+### GetInvoicedAmountDueOk
 
-`func (o *InvoiceDetailsv61ResponseSummaryTotals) GetInvoicesAmountDueOk() (*float64, bool)`
+`func (o *InvoiceDetailsv61ResponseSummaryTotals) GetInvoicedAmountDueOk() (*float64, bool)`
 
-GetInvoicesAmountDueOk returns a tuple with the InvoicesAmountDue field if it's non-nil, zero value otherwise
+GetInvoicedAmountDueOk returns a tuple with the InvoicedAmountDue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetInvoicesAmountDue
+### SetInvoicedAmountDue
 
-`func (o *InvoiceDetailsv61ResponseSummaryTotals) SetInvoicesAmountDue(v float64)`
+`func (o *InvoiceDetailsv61ResponseSummaryTotals) SetInvoicedAmountDue(v float64)`
 
-SetInvoicesAmountDue sets InvoicesAmountDue field to given value.
+SetInvoicedAmountDue sets InvoicedAmountDue field to given value.
 
-### HasInvoicesAmountDue
+### HasInvoicedAmountDue
 
-`func (o *InvoiceDetailsv61ResponseSummaryTotals) HasInvoicesAmountDue() bool`
+`func (o *InvoiceDetailsv61ResponseSummaryTotals) HasInvoicedAmountDue() bool`
 
-HasInvoicesAmountDue returns a boolean if a field has been set.
+HasInvoicedAmountDue returns a boolean if a field has been set.
 
 ### GetFreightAmount
 

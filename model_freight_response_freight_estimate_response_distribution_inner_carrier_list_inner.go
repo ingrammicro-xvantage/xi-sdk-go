@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For Ingram Micro Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
+For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -26,9 +26,9 @@ type FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner str
 	// Mode of the carrier.
 	CarrierMode *string `json:"carrierMode,omitempty"`
 	// Estimated freight charge.
-	EstimatedFreightCharge *float32 `json:"estimatedFreightCharge,omitempty"`
+	EstimatedFreightCharge *string `json:"estimatedFreightCharge,omitempty"`
 	// Number of transit days.
-	DaysInTransit *int32 `json:"daysInTransit,omitempty"`
+	DaysInTransit *string `json:"daysInTransit,omitempty"`
 }
 
 // NewFreightResponseFreightEstimateResponseDistributionInnerCarrierListInner instantiates a new FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner object
@@ -145,9 +145,9 @@ func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner
 }
 
 // GetEstimatedFreightCharge returns the EstimatedFreightCharge field value if set, zero value otherwise.
-func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) GetEstimatedFreightCharge() float32 {
+func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) GetEstimatedFreightCharge() string {
 	if o == nil || IsNil(o.EstimatedFreightCharge) {
-		var ret float32
+		var ret string
 		return ret
 	}
 	return *o.EstimatedFreightCharge
@@ -155,7 +155,7 @@ func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner
 
 // GetEstimatedFreightChargeOk returns a tuple with the EstimatedFreightCharge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) GetEstimatedFreightChargeOk() (*float32, bool) {
+func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) GetEstimatedFreightChargeOk() (*string, bool) {
 	if o == nil || IsNil(o.EstimatedFreightCharge) {
 		return nil, false
 	}
@@ -171,15 +171,15 @@ func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner
 	return false
 }
 
-// SetEstimatedFreightCharge gets a reference to the given float32 and assigns it to the EstimatedFreightCharge field.
-func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) SetEstimatedFreightCharge(v float32) {
+// SetEstimatedFreightCharge gets a reference to the given string and assigns it to the EstimatedFreightCharge field.
+func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) SetEstimatedFreightCharge(v string) {
 	o.EstimatedFreightCharge = &v
 }
 
 // GetDaysInTransit returns the DaysInTransit field value if set, zero value otherwise.
-func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) GetDaysInTransit() int32 {
+func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) GetDaysInTransit() string {
 	if o == nil || IsNil(o.DaysInTransit) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.DaysInTransit
@@ -187,7 +187,7 @@ func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner
 
 // GetDaysInTransitOk returns a tuple with the DaysInTransit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) GetDaysInTransitOk() (*int32, bool) {
+func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) GetDaysInTransitOk() (*string, bool) {
 	if o == nil || IsNil(o.DaysInTransit) {
 		return nil, false
 	}
@@ -203,8 +203,8 @@ func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner
 	return false
 }
 
-// SetDaysInTransit gets a reference to the given int32 and assigns it to the DaysInTransit field.
-func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) SetDaysInTransit(v int32) {
+// SetDaysInTransit gets a reference to the given string and assigns it to the DaysInTransit field.
+func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) SetDaysInTransit(v string) {
 	o.DaysInTransit = &v
 }
 

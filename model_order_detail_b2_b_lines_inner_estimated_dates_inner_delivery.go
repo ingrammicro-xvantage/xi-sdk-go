@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For Ingram Micro Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
+For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -27,7 +27,7 @@ type OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery struct {
 	// Delivery description.
 	DeliveryDescription *string `json:"deliveryDescription,omitempty"`
 	// Delivery date.
-	DeliveredDate *string `json:"deliveredDate,omitempty"`
+	DeliveryDate *string `json:"deliveryDate,omitempty"`
 }
 
 // NewOrderDetailB2BLinesInnerEstimatedDatesInnerDelivery instantiates a new OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery object
@@ -175,36 +175,36 @@ func (o *OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) SetDeliveryDescrip
 	o.DeliveryDescription = &v
 }
 
-// GetDeliveredDate returns the DeliveredDate field value if set, zero value otherwise.
-func (o *OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) GetDeliveredDate() string {
-	if o == nil || IsNil(o.DeliveredDate) {
+// GetDeliveryDate returns the DeliveryDate field value if set, zero value otherwise.
+func (o *OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) GetDeliveryDate() string {
+	if o == nil || IsNil(o.DeliveryDate) {
 		var ret string
 		return ret
 	}
-	return *o.DeliveredDate
+	return *o.DeliveryDate
 }
 
-// GetDeliveredDateOk returns a tuple with the DeliveredDate field value if set, nil otherwise
+// GetDeliveryDateOk returns a tuple with the DeliveryDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) GetDeliveredDateOk() (*string, bool) {
-	if o == nil || IsNil(o.DeliveredDate) {
+func (o *OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) GetDeliveryDateOk() (*string, bool) {
+	if o == nil || IsNil(o.DeliveryDate) {
 		return nil, false
 	}
-	return o.DeliveredDate, true
+	return o.DeliveryDate, true
 }
 
-// HasDeliveredDate returns a boolean if a field has been set.
-func (o *OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) HasDeliveredDate() bool {
-	if o != nil && !IsNil(o.DeliveredDate) {
+// HasDeliveryDate returns a boolean if a field has been set.
+func (o *OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) HasDeliveryDate() bool {
+	if o != nil && !IsNil(o.DeliveryDate) {
 		return true
 	}
 
 	return false
 }
 
-// SetDeliveredDate gets a reference to the given string and assigns it to the DeliveredDate field.
-func (o *OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) SetDeliveredDate(v string) {
-	o.DeliveredDate = &v
+// SetDeliveryDate gets a reference to the given string and assigns it to the DeliveryDate field.
+func (o *OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) SetDeliveryDate(v string) {
+	o.DeliveryDate = &v
 }
 
 func (o OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) MarshalJSON() ([]byte, error) {
@@ -229,8 +229,8 @@ func (o OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) ToMap() (map[string
 	if !IsNil(o.DeliveryDescription) {
 		toSerialize["deliveryDescription"] = o.DeliveryDescription
 	}
-	if !IsNil(o.DeliveredDate) {
-		toSerialize["deliveredDate"] = o.DeliveredDate
+	if !IsNil(o.DeliveryDate) {
+		toSerialize["deliveryDate"] = o.DeliveryDate
 	}
 	return toSerialize, nil
 }

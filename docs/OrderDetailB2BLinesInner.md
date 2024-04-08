@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **EstimatedDates** | Pointer to [**[]OrderDetailB2BLinesInnerEstimatedDatesInner**](OrderDetailB2BLinesInnerEstimatedDatesInner.md) |  | [optional] 
 **ScheduleLines** | Pointer to [**[]OrderDetailB2BLinesInnerScheduleLinesInner**](OrderDetailB2BLinesInnerScheduleLinesInner.md) |  | [optional] 
 **MultipleShipments** | Pointer to [**[]OrderDetailB2BLinesInnerMultipleShipmentsInner**](OrderDetailB2BLinesInnerMultipleShipmentsInner.md) |  | [optional] 
+**DefaultCarrierName** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -859,6 +860,31 @@ SetMultipleShipments sets MultipleShipments field to given value.
 `func (o *OrderDetailB2BLinesInner) HasMultipleShipments() bool`
 
 HasMultipleShipments returns a boolean if a field has been set.
+
+### GetDefaultCarrierName
+
+`func (o *OrderDetailB2BLinesInner) GetDefaultCarrierName() string`
+
+GetDefaultCarrierName returns the DefaultCarrierName field if non-nil, zero value otherwise.
+
+### GetDefaultCarrierNameOk
+
+`func (o *OrderDetailB2BLinesInner) GetDefaultCarrierNameOk() (*string, bool)`
+
+GetDefaultCarrierNameOk returns a tuple with the DefaultCarrierName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultCarrierName
+
+`func (o *OrderDetailB2BLinesInner) SetDefaultCarrierName(v string)`
+
+SetDefaultCarrierName sets DefaultCarrierName field to given value.
+
+### HasDefaultCarrierName
+
+`func (o *OrderDetailB2BLinesInner) HasDefaultCarrierName() bool`
+
+HasDefaultCarrierName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
