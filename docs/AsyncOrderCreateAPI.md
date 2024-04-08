@@ -1,18 +1,18 @@
-# \QuoteToOrderAPI
+# \AsyncOrderCreateAPI
 
 All URIs are relative to *https://api.ingrammicro.com:443*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**PostQuoteToOrderV6**](QuoteToOrderAPI.md#PostQuoteToOrderV6) | **Post** /resellers/v6/q2o/orders | Quote To Order
+[**PostAsyncOrderCreateV7**](AsyncOrderCreateAPI.md#PostAsyncOrderCreateV7) | **Post** /resellers/v7/orders | Async Order Create
 
 
 
-## PostQuoteToOrderV6
+## PostAsyncOrderCreateV7
 
-> QuoteToOrderResponse PostQuoteToOrderV6(ctx).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).QuoteToOrderDetailsDTO(quoteToOrderDetailsDTO).IMSenderID(iMSenderID).Execute()
+> AsyncOrderCreateResponse PostAsyncOrderCreateV7(ctx).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).AsyncOrderCreateDTO(asyncOrderCreateDTO).IMSenderID(iMSenderID).Execute()
 
-Quote To Order
+Async Order Create
 
 
 
@@ -32,18 +32,24 @@ func main() {
 	iMCustomerNumber := "20-222222" // string | Your unique Ingram Micro customer number.
 	iMCountryCode := "US" // string | Two-character ISO country code.
 	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction accross all the systems.
-	quoteToOrderDetailsDTO := *openapiclient.NewQuoteToOrderDetailsDTO() // QuoteToOrderDetailsDTO | 
+	asyncOrderCreateDTO := *openapiclient.NewAsyncOrderCreateDTO() // AsyncOrderCreateDTO | 
 	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. (optional)
 
+<<<<<<< HEAD:docs/AsyncOrderCreateAPI.md
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AsyncOrderCreateAPI.PostAsyncOrderCreateV7(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).AsyncOrderCreateDTO(asyncOrderCreateDTO).IMSenderID(iMSenderID).Execute()
+=======
 	configuration := xi_sdk_resellers.NewConfiguration()
 	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
 	resp, r, err := apiClient.QuoteToOrderAPI.PostQuoteToOrderV6(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).QuoteToOrderDetailsDTO(quoteToOrderDetailsDTO).IMSenderID(iMSenderID).Execute()
+>>>>>>> main:docs/QuoteToOrderAPI.md
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `QuoteToOrderAPI.PostQuoteToOrderV6``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AsyncOrderCreateAPI.PostAsyncOrderCreateV7``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostQuoteToOrderV6`: QuoteToOrderResponse
-	fmt.Fprintf(os.Stdout, "Response from `QuoteToOrderAPI.PostQuoteToOrderV6`: %v\n", resp)
+	// response from `PostAsyncOrderCreateV7`: AsyncOrderCreateResponse
+	fmt.Fprintf(os.Stdout, "Response from `AsyncOrderCreateAPI.PostAsyncOrderCreateV7`: %v\n", resp)
 }
 ```
 
@@ -53,7 +59,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostQuoteToOrderV6Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiPostAsyncOrderCreateV7Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -61,12 +67,12 @@ Name | Type | Description  | Notes
  **iMCustomerNumber** | **string** | Your unique Ingram Micro customer number. | 
  **iMCountryCode** | **string** | Two-character ISO country code. | 
  **iMCorrelationID** | **string** | Unique transaction number to identify each transaction accross all the systems. | 
- **quoteToOrderDetailsDTO** | [**QuoteToOrderDetailsDTO**](QuoteToOrderDetailsDTO.md) |  | 
+ **asyncOrderCreateDTO** | [**AsyncOrderCreateDTO**](AsyncOrderCreateDTO.md) |  | 
  **iMSenderID** | **string** | Unique value used to identify the sender of the transaction. | 
 
 ### Return type
 
-[**QuoteToOrderResponse**](QuoteToOrderResponse.md)
+[**AsyncOrderCreateResponse**](AsyncOrderCreateResponse.md)
 
 ### Authorization
 

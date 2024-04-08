@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **DeliveryDateRange** | Pointer to [**OrderDetailB2BLinesInnerEstimatedDatesInnerDeliveryDeliveryDateRange**](OrderDetailB2BLinesInnerEstimatedDatesInnerDeliveryDeliveryDateRange.md) |  | [optional] 
 **DeliverySource** | Pointer to **string** | Source of the delivery. | [optional] 
 **DeliveryDescription** | Pointer to **string** | Delivery description. | [optional] 
-**DeliveredDate** | Pointer to **string** | Delivery date. | [optional] 
+**DeliveryDate** | Pointer to **string** | Delivery date. | [optional] 
 
 ## Methods
 
@@ -129,30 +129,30 @@ SetDeliveryDescription sets DeliveryDescription field to given value.
 
 HasDeliveryDescription returns a boolean if a field has been set.
 
-### GetDeliveredDate
+### GetDeliveryDate
 
-`func (o *OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) GetDeliveredDate() string`
+`func (o *OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) GetDeliveryDate() string`
 
-GetDeliveredDate returns the DeliveredDate field if non-nil, zero value otherwise.
+GetDeliveryDate returns the DeliveryDate field if non-nil, zero value otherwise.
 
-### GetDeliveredDateOk
+### GetDeliveryDateOk
 
-`func (o *OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) GetDeliveredDateOk() (*string, bool)`
+`func (o *OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) GetDeliveryDateOk() (*string, bool)`
 
-GetDeliveredDateOk returns a tuple with the DeliveredDate field if it's non-nil, zero value otherwise
+GetDeliveryDateOk returns a tuple with the DeliveryDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDeliveredDate
+### SetDeliveryDate
 
-`func (o *OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) SetDeliveredDate(v string)`
+`func (o *OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) SetDeliveryDate(v string)`
 
-SetDeliveredDate sets DeliveredDate field to given value.
+SetDeliveryDate sets DeliveryDate field to given value.
 
-### HasDeliveredDate
+### HasDeliveryDate
 
-`func (o *OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) HasDeliveredDate() bool`
+`func (o *OrderDetailB2BLinesInnerEstimatedDatesInnerDelivery) HasDeliveryDate() bool`
 
-HasDeliveredDate returns a boolean if a field has been set.
+HasDeliveryDate returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

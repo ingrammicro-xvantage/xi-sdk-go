@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ## GetResellersV6Dealssearch
 
-> DealsSearchResponse GetResellersV6Dealssearch(ctx).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).EndUser(endUser).Vendor(vendor).DealId(dealId).Execute()
+> DealsSearchResponse GetResellersV6Dealssearch(ctx).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).EndUser(endUser).Vendor(vendor).DealId(dealId).Size(size).Page(page).Execute()
 
 Deals Search
 
@@ -117,10 +117,12 @@ func main() {
 	endUser := "EnduserCompany" // string | The end user/customer's name. (optional)
 	vendor := "Cisco" // string | The vendor's name. (optional)
 	dealId := "12345678" // string | Deal/Special bid number. (optional)
+	size := int32(56) // int32 | The number of records required in the call - max records 100 per page. (optional)
+	page := int32(56) // int32 | The page number reference. (optional)
 
-	configuration := xi_sdk_resellers.NewConfiguration()
-	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
-	resp, r, err := apiClient.DealsAPI.GetResellersV6Dealssearch(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).EndUser(endUser).Vendor(vendor).DealId(dealId).Execute()
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DealsAPI.GetResellersV6Dealssearch(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).EndUser(endUser).Vendor(vendor).DealId(dealId).Size(size).Page(page).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DealsAPI.GetResellersV6Dealssearch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -148,6 +150,8 @@ Name | Type | Description  | Notes
  **endUser** | **string** | The end user/customer&#39;s name. | 
  **vendor** | **string** | The vendor&#39;s name. | 
  **dealId** | **string** | Deal/Special bid number. | 
+ **size** | **int32** | The number of records required in the call - max records 100 per page. | 
+ **page** | **int32** | The page number reference. | 
 
 ### Return type
 

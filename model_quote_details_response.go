@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
+For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -66,11 +66,11 @@ type QuoteDetailsResponse struct {
 	// Total number of products included in the quote
 	ProductsCount *int32 `json:"productsCount,omitempty"`
 	// Total extended MSRP for all products included in the quote
-	ExtendedMsrpTotal *int32 `json:"extendedMsrpTotal,omitempty"`
+	ExtendedMsrpTotal *float32 `json:"extendedMsrpTotal,omitempty"`
 	// Total quantity of all items in the quote.
 	QuantityTotal *int32 `json:"quantityTotal,omitempty"`
 	// Total amount of quoted price for all products in the quote including both solution products and suggested products.
-	ExtendedQuotePriceTotal *int32 `json:"extendedQuotePriceTotal,omitempty"`
+	ExtendedQuotePriceTotal *float32 `json:"extendedQuotePriceTotal,omitempty"`
 	TotalQuoteAmount *string `json:"totalQuoteAmount,omitempty"`
 	AdditionalAttributes []QuoteDetailsResponseAdditionalAttributesInner `json:"additionalAttributes,omitempty"`
 }
@@ -925,9 +925,9 @@ func (o *QuoteDetailsResponse) SetProductsCount(v int32) {
 }
 
 // GetExtendedMsrpTotal returns the ExtendedMsrpTotal field value if set, zero value otherwise.
-func (o *QuoteDetailsResponse) GetExtendedMsrpTotal() int32 {
+func (o *QuoteDetailsResponse) GetExtendedMsrpTotal() float32 {
 	if o == nil || IsNil(o.ExtendedMsrpTotal) {
-		var ret int32
+		var ret float32
 		return ret
 	}
 	return *o.ExtendedMsrpTotal
@@ -935,7 +935,7 @@ func (o *QuoteDetailsResponse) GetExtendedMsrpTotal() int32 {
 
 // GetExtendedMsrpTotalOk returns a tuple with the ExtendedMsrpTotal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteDetailsResponse) GetExtendedMsrpTotalOk() (*int32, bool) {
+func (o *QuoteDetailsResponse) GetExtendedMsrpTotalOk() (*float32, bool) {
 	if o == nil || IsNil(o.ExtendedMsrpTotal) {
 		return nil, false
 	}
@@ -951,8 +951,8 @@ func (o *QuoteDetailsResponse) HasExtendedMsrpTotal() bool {
 	return false
 }
 
-// SetExtendedMsrpTotal gets a reference to the given int32 and assigns it to the ExtendedMsrpTotal field.
-func (o *QuoteDetailsResponse) SetExtendedMsrpTotal(v int32) {
+// SetExtendedMsrpTotal gets a reference to the given float32 and assigns it to the ExtendedMsrpTotal field.
+func (o *QuoteDetailsResponse) SetExtendedMsrpTotal(v float32) {
 	o.ExtendedMsrpTotal = &v
 }
 
@@ -989,9 +989,9 @@ func (o *QuoteDetailsResponse) SetQuantityTotal(v int32) {
 }
 
 // GetExtendedQuotePriceTotal returns the ExtendedQuotePriceTotal field value if set, zero value otherwise.
-func (o *QuoteDetailsResponse) GetExtendedQuotePriceTotal() int32 {
+func (o *QuoteDetailsResponse) GetExtendedQuotePriceTotal() float32 {
 	if o == nil || IsNil(o.ExtendedQuotePriceTotal) {
-		var ret int32
+		var ret float32
 		return ret
 	}
 	return *o.ExtendedQuotePriceTotal
@@ -999,7 +999,7 @@ func (o *QuoteDetailsResponse) GetExtendedQuotePriceTotal() int32 {
 
 // GetExtendedQuotePriceTotalOk returns a tuple with the ExtendedQuotePriceTotal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteDetailsResponse) GetExtendedQuotePriceTotalOk() (*int32, bool) {
+func (o *QuoteDetailsResponse) GetExtendedQuotePriceTotalOk() (*float32, bool) {
 	if o == nil || IsNil(o.ExtendedQuotePriceTotal) {
 		return nil, false
 	}
@@ -1015,8 +1015,8 @@ func (o *QuoteDetailsResponse) HasExtendedQuotePriceTotal() bool {
 	return false
 }
 
-// SetExtendedQuotePriceTotal gets a reference to the given int32 and assigns it to the ExtendedQuotePriceTotal field.
-func (o *QuoteDetailsResponse) SetExtendedQuotePriceTotal(v int32) {
+// SetExtendedQuotePriceTotal gets a reference to the given float32 and assigns it to the ExtendedQuotePriceTotal field.
+func (o *QuoteDetailsResponse) SetExtendedQuotePriceTotal(v float32) {
 	o.ExtendedQuotePriceTotal = &v
 }
 

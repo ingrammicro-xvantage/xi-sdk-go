@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
+For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -52,6 +52,8 @@ type APIClient struct {
 
 	AccesstokenAPI *AccesstokenAPIService
 
+	AsyncOrderCreateAPI *AsyncOrderCreateAPIService
+
 	DealsAPI *DealsAPIService
 
 	FreightEstimateAPI *FreightEstimateAPIService
@@ -63,8 +65,6 @@ type APIClient struct {
 	OrdersAPI *OrdersAPIService
 
 	ProductCatalogAPI *ProductCatalogAPIService
-
-	QuoteToOrderAPI *QuoteToOrderAPIService
 
 	QuotesAPI *QuotesAPIService
 
@@ -92,13 +92,13 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 
 	// API Services
 	c.AccesstokenAPI = (*AccesstokenAPIService)(&c.common)
+	c.AsyncOrderCreateAPI = (*AsyncOrderCreateAPIService)(&c.common)
 	c.DealsAPI = (*DealsAPIService)(&c.common)
 	c.FreightEstimateAPI = (*FreightEstimateAPIService)(&c.common)
 	c.InvoicesAPI = (*InvoicesAPIService)(&c.common)
 	c.OrderStatusAPI = (*OrderStatusAPIService)(&c.common)
 	c.OrdersAPI = (*OrdersAPIService)(&c.common)
 	c.ProductCatalogAPI = (*ProductCatalogAPIService)(&c.common)
-	c.QuoteToOrderAPI = (*QuoteToOrderAPIService)(&c.common)
 	c.QuotesAPI = (*QuotesAPIService)(&c.common)
 	c.RenewalsAPI = (*RenewalsAPIService)(&c.common)
 	c.ReturnsAPI = (*ReturnsAPIService)(&c.common)

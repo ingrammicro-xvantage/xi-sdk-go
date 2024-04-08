@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-Testing QuoteToOrderAPIService
+Testing AsyncOrderCreateAPIService
 
 */
 
@@ -17,16 +17,16 @@ import (
 	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
-func Test_xi_sdk_resellers_QuoteToOrderAPIService(t *testing.T) {
+func Test_xi_sdk_resellers_AsyncOrderCreateAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test QuoteToOrderAPIService PostQuoteToOrderV6", func(t *testing.T) {
+	t.Run("Test AsyncOrderCreateAPIService PostAsyncOrderCreateV7", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.QuoteToOrderAPI.PostQuoteToOrderV6(context.Background()).Execute()
+		resp, httpRes, err := apiClient.AsyncOrderCreateAPI.PostAsyncOrderCreateV7(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

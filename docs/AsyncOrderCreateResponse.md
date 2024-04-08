@@ -1,4 +1,4 @@
-# QuoteToOrderResponse
+# AsyncOrderCreateResponse
 
 ## Properties
 
@@ -10,95 +10,95 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewQuoteToOrderResponse
+### NewAsyncOrderCreateResponse
 
-`func NewQuoteToOrderResponse() *QuoteToOrderResponse`
+`func NewAsyncOrderCreateResponse() *AsyncOrderCreateResponse`
 
-NewQuoteToOrderResponse instantiates a new QuoteToOrderResponse object
+NewAsyncOrderCreateResponse instantiates a new AsyncOrderCreateResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewQuoteToOrderResponseWithDefaults
+### NewAsyncOrderCreateResponseWithDefaults
 
-`func NewQuoteToOrderResponseWithDefaults() *QuoteToOrderResponse`
+`func NewAsyncOrderCreateResponseWithDefaults() *AsyncOrderCreateResponse`
 
-NewQuoteToOrderResponseWithDefaults instantiates a new QuoteToOrderResponse object
+NewAsyncOrderCreateResponseWithDefaults instantiates a new AsyncOrderCreateResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetQuoteNumber
 
-`func (o *QuoteToOrderResponse) GetQuoteNumber() string`
+`func (o *AsyncOrderCreateResponse) GetQuoteNumber() string`
 
 GetQuoteNumber returns the QuoteNumber field if non-nil, zero value otherwise.
 
 ### GetQuoteNumberOk
 
-`func (o *QuoteToOrderResponse) GetQuoteNumberOk() (*string, bool)`
+`func (o *AsyncOrderCreateResponse) GetQuoteNumberOk() (*string, bool)`
 
 GetQuoteNumberOk returns a tuple with the QuoteNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQuoteNumber
 
-`func (o *QuoteToOrderResponse) SetQuoteNumber(v string)`
+`func (o *AsyncOrderCreateResponse) SetQuoteNumber(v string)`
 
 SetQuoteNumber sets QuoteNumber field to given value.
 
 ### HasQuoteNumber
 
-`func (o *QuoteToOrderResponse) HasQuoteNumber() bool`
+`func (o *AsyncOrderCreateResponse) HasQuoteNumber() bool`
 
 HasQuoteNumber returns a boolean if a field has been set.
 
 ### GetConfirmationNumber
 
-`func (o *QuoteToOrderResponse) GetConfirmationNumber() string`
+`func (o *AsyncOrderCreateResponse) GetConfirmationNumber() string`
 
 GetConfirmationNumber returns the ConfirmationNumber field if non-nil, zero value otherwise.
 
 ### GetConfirmationNumberOk
 
-`func (o *QuoteToOrderResponse) GetConfirmationNumberOk() (*string, bool)`
+`func (o *AsyncOrderCreateResponse) GetConfirmationNumberOk() (*string, bool)`
 
 GetConfirmationNumberOk returns a tuple with the ConfirmationNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfirmationNumber
 
-`func (o *QuoteToOrderResponse) SetConfirmationNumber(v string)`
+`func (o *AsyncOrderCreateResponse) SetConfirmationNumber(v string)`
 
 SetConfirmationNumber sets ConfirmationNumber field to given value.
 
 ### HasConfirmationNumber
 
-`func (o *QuoteToOrderResponse) HasConfirmationNumber() bool`
+`func (o *AsyncOrderCreateResponse) HasConfirmationNumber() bool`
 
 HasConfirmationNumber returns a boolean if a field has been set.
 
 ### GetMessage
 
-`func (o *QuoteToOrderResponse) GetMessage() string`
+`func (o *AsyncOrderCreateResponse) GetMessage() string`
 
 GetMessage returns the Message field if non-nil, zero value otherwise.
 
 ### GetMessageOk
 
-`func (o *QuoteToOrderResponse) GetMessageOk() (*string, bool)`
+`func (o *AsyncOrderCreateResponse) GetMessageOk() (*string, bool)`
 
 GetMessageOk returns a tuple with the Message field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMessage
 
-`func (o *QuoteToOrderResponse) SetMessage(v string)`
+`func (o *AsyncOrderCreateResponse) SetMessage(v string)`
 
 SetMessage sets Message field to given value.
 
 ### HasMessage
 
-`func (o *QuoteToOrderResponse) HasMessage() bool`
+`func (o *AsyncOrderCreateResponse) HasMessage() bool`
 
 HasMessage returns a boolean if a field has been set.
 

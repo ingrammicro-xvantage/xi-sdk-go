@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**QuotePrice** | Pointer to **int32** | Ingram Micro quoted price specific to the reseller and quote. | [optional] 
-**Msrp** | Pointer to **int32** | Manufacturer Suggested Retail Price | [optional] 
-**ExtendedMsrp** | Pointer to **int32** | Extended MSRP - Manufacturer Suggested Retail Price X Quantity | [optional] 
-**ExtendedQuotePrice** | Pointer to **int32** | Extended reseller quoted price (cost to reseller) X Quantity | [optional] 
+**QuotePrice** | Pointer to **float32** | Ingram Micro quoted price specific to the reseller and quote. | [optional] 
+**Msrp** | Pointer to **float32** | Manufacturer Suggested Retail Price | [optional] 
+**ExtendedMsrp** | Pointer to **float32** | Extended MSRP - Manufacturer Suggested Retail Price X Quantity | [optional] 
+**ExtendedQuotePrice** | Pointer to **float32** | Extended reseller quoted price (cost to reseller) X Quantity | [optional] 
 **DiscountOffList** | Pointer to **string** | Discount off list percentage extended | [optional] 
 **Vendorprice** | Pointer to **float32** |  | [optional] 
 **Extendedvendorprice** | Pointer to **float32** |  | [optional] 
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetQuotePrice
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetQuotePrice() int32`
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetQuotePrice() float32`
 
 GetQuotePrice returns the QuotePrice field if non-nil, zero value otherwise.
 
 ### GetQuotePriceOk
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetQuotePriceOk() (*int32, bool)`
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetQuotePriceOk() (*float32, bool)`
 
 GetQuotePriceOk returns a tuple with the QuotePrice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQuotePrice
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) SetQuotePrice(v int32)`
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetQuotePrice(v float32)`
 
 SetQuotePrice sets QuotePrice field to given value.
 
@@ -61,20 +61,20 @@ HasQuotePrice returns a boolean if a field has been set.
 
 ### GetMsrp
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetMsrp() int32`
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetMsrp() float32`
 
 GetMsrp returns the Msrp field if non-nil, zero value otherwise.
 
 ### GetMsrpOk
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetMsrpOk() (*int32, bool)`
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetMsrpOk() (*float32, bool)`
 
 GetMsrpOk returns a tuple with the Msrp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMsrp
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) SetMsrp(v int32)`
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetMsrp(v float32)`
 
 SetMsrp sets Msrp field to given value.
 
@@ -86,20 +86,20 @@ HasMsrp returns a boolean if a field has been set.
 
 ### GetExtendedMsrp
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedMsrp() int32`
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedMsrp() float32`
 
 GetExtendedMsrp returns the ExtendedMsrp field if non-nil, zero value otherwise.
 
 ### GetExtendedMsrpOk
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedMsrpOk() (*int32, bool)`
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedMsrpOk() (*float32, bool)`
 
 GetExtendedMsrpOk returns a tuple with the ExtendedMsrp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExtendedMsrp
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) SetExtendedMsrp(v int32)`
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetExtendedMsrp(v float32)`
 
 SetExtendedMsrp sets ExtendedMsrp field to given value.
 
@@ -111,20 +111,20 @@ HasExtendedMsrp returns a boolean if a field has been set.
 
 ### GetExtendedQuotePrice
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedQuotePrice() int32`
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedQuotePrice() float32`
 
 GetExtendedQuotePrice returns the ExtendedQuotePrice field if non-nil, zero value otherwise.
 
 ### GetExtendedQuotePriceOk
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedQuotePriceOk() (*int32, bool)`
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedQuotePriceOk() (*float32, bool)`
 
 GetExtendedQuotePriceOk returns a tuple with the ExtendedQuotePrice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExtendedQuotePrice
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) SetExtendedQuotePrice(v int32)`
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetExtendedQuotePrice(v float32)`
 
 SetExtendedQuotePrice sets ExtendedQuotePrice field to given value.
 

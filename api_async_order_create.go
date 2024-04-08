@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
+For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -19,83 +19,88 @@ import (
 )
 
 
-// QuoteToOrderAPIService QuoteToOrderAPI service
-type QuoteToOrderAPIService service
+// AsyncOrderCreateAPIService AsyncOrderCreateAPI service
+type AsyncOrderCreateAPIService service
 
-type ApiPostQuoteToOrderV6Request struct {
+type ApiPostAsyncOrderCreateV7Request struct {
 	ctx context.Context
-	ApiService *QuoteToOrderAPIService
+	ApiService *AsyncOrderCreateAPIService
 	iMCustomerNumber *string
 	iMCountryCode *string
 	iMCorrelationID *string
-	quoteToOrderDetailsDTO *QuoteToOrderDetailsDTO
+	asyncOrderCreateDTO *AsyncOrderCreateDTO
 	iMSenderID *string
 }
 
 // Your unique Ingram Micro customer number.
-func (r ApiPostQuoteToOrderV6Request) IMCustomerNumber(iMCustomerNumber string) ApiPostQuoteToOrderV6Request {
+func (r ApiPostAsyncOrderCreateV7Request) IMCustomerNumber(iMCustomerNumber string) ApiPostAsyncOrderCreateV7Request {
 	r.iMCustomerNumber = &iMCustomerNumber
 	return r
 }
 
 // Two-character ISO country code.
-func (r ApiPostQuoteToOrderV6Request) IMCountryCode(iMCountryCode string) ApiPostQuoteToOrderV6Request {
+func (r ApiPostAsyncOrderCreateV7Request) IMCountryCode(iMCountryCode string) ApiPostAsyncOrderCreateV7Request {
 	r.iMCountryCode = &iMCountryCode
 	return r
 }
 
 // Unique transaction number to identify each transaction accross all the systems.
-func (r ApiPostQuoteToOrderV6Request) IMCorrelationID(iMCorrelationID string) ApiPostQuoteToOrderV6Request {
+func (r ApiPostAsyncOrderCreateV7Request) IMCorrelationID(iMCorrelationID string) ApiPostAsyncOrderCreateV7Request {
 	r.iMCorrelationID = &iMCorrelationID
 	return r
 }
 
-func (r ApiPostQuoteToOrderV6Request) QuoteToOrderDetailsDTO(quoteToOrderDetailsDTO QuoteToOrderDetailsDTO) ApiPostQuoteToOrderV6Request {
-	r.quoteToOrderDetailsDTO = &quoteToOrderDetailsDTO
+func (r ApiPostAsyncOrderCreateV7Request) AsyncOrderCreateDTO(asyncOrderCreateDTO AsyncOrderCreateDTO) ApiPostAsyncOrderCreateV7Request {
+	r.asyncOrderCreateDTO = &asyncOrderCreateDTO
 	return r
 }
 
 // Unique value used to identify the sender of the transaction.
-func (r ApiPostQuoteToOrderV6Request) IMSenderID(iMSenderID string) ApiPostQuoteToOrderV6Request {
+func (r ApiPostAsyncOrderCreateV7Request) IMSenderID(iMSenderID string) ApiPostAsyncOrderCreateV7Request {
 	r.iMSenderID = &iMSenderID
 	return r
 }
 
-func (r ApiPostQuoteToOrderV6Request) Execute() (*QuoteToOrderResponse, *http.Response, error) {
-	return r.ApiService.PostQuoteToOrderV6Execute(r)
+func (r ApiPostAsyncOrderCreateV7Request) Execute() (*AsyncOrderCreateResponse, *http.Response, error) {
+	return r.ApiService.PostAsyncOrderCreateV7Execute(r)
 }
 
 /*
-PostQuoteToOrderV6 Quote To Order
+PostAsyncOrderCreateV7 Async Order Create
 
-The “Quote to Order” (QTO) endpoint allows a customer to create an order using the existing quote which is in “Ready to Order” status. A customer can create an order using Configure to order (CTO) quote or a non-configure to order (Non-CTO) quote. Upon successful submission of the order create request, a confirmation message will be returned as an API response. <br > <br >Ingram Micro offers webhooks as a method to send notifications to Resellers once the order creation request is received. All the updates related to Order creation will be pushed as a notification to the customer via a pre-defined callback URL as an HTTP post. <br > <br > **Prerequisite:** Pre-defined callback URL <br > <br > Before creating an order using the quote, it’s recommended to validate the quote using the “Validate Quote” endpoint. Validate Quote endpoint will not only validate the quote but also outline all the mandatory fields required by the vendor at a header level and at the line level which a customer need to pass to the Quote To Order endpoint request.  For a detailed understanding of the “Validate Quote” endpoint, review the “Validate Quote” endpoint documentation. <br ><br > **How it works:** <br ><br > - The customer validates the quote with a quote number from Validate Quote endpoint. <br > - The customer copies all the mandatory fields required by the vendor and adds them to the QTO request body. <br > - The customer provides all the values for Vendor mandatory fields along with other required information for QTO to create an order. <br > - After the order creation request receipt acknowledgment from the QTO endpoint, all further order creation updates will be provided via webhook push notification.
+This API will allow customers to perform both standard ordering and quote to order functionality via a single API enabling them to have a single endpoint to cater to all types of orders.
+
+This approach will standardize the ordering flow for customers where they will get the response for all orders on to their webhooks.
+
+It provides the much-awaited async ordering flow for Reseller API where large orders can also be placed via a single API with guaranteed delivery.
+
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostQuoteToOrderV6Request
+ @return ApiPostAsyncOrderCreateV7Request
 */
-func (a *QuoteToOrderAPIService) PostQuoteToOrderV6(ctx context.Context) ApiPostQuoteToOrderV6Request {
-	return ApiPostQuoteToOrderV6Request{
+func (a *AsyncOrderCreateAPIService) PostAsyncOrderCreateV7(ctx context.Context) ApiPostAsyncOrderCreateV7Request {
+	return ApiPostAsyncOrderCreateV7Request{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return QuoteToOrderResponse
-func (a *QuoteToOrderAPIService) PostQuoteToOrderV6Execute(r ApiPostQuoteToOrderV6Request) (*QuoteToOrderResponse, *http.Response, error) {
+//  @return AsyncOrderCreateResponse
+func (a *AsyncOrderCreateAPIService) PostAsyncOrderCreateV7Execute(r ApiPostAsyncOrderCreateV7Request) (*AsyncOrderCreateResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *QuoteToOrderResponse
+		localVarReturnValue  *AsyncOrderCreateResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QuoteToOrderAPIService.PostQuoteToOrderV6")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AsyncOrderCreateAPIService.PostAsyncOrderCreateV7")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/resellers/v6/q2o/orders"
+	localVarPath := localBasePath + "/resellers/v7/orders"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -121,8 +126,8 @@ func (a *QuoteToOrderAPIService) PostQuoteToOrderV6Execute(r ApiPostQuoteToOrder
 	if strlen(*r.iMCorrelationID) > 32 {
 		return localVarReturnValue, nil, reportError("iMCorrelationID must have less than 32 elements")
 	}
-	if r.quoteToOrderDetailsDTO == nil {
-		return localVarReturnValue, nil, reportError("quoteToOrderDetailsDTO is required and must be specified")
+	if r.asyncOrderCreateDTO == nil {
+		return localVarReturnValue, nil, reportError("asyncOrderCreateDTO is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -149,7 +154,7 @@ func (a *QuoteToOrderAPIService) PostQuoteToOrderV6Execute(r ApiPostQuoteToOrder
 	}
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
 	// body params
-	localVarPostBody = r.quoteToOrderDetailsDTO
+	localVarPostBody = r.asyncOrderCreateDTO
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -173,7 +178,7 @@ func (a *QuoteToOrderAPIService) PostQuoteToOrderV6Execute(r ApiPostQuoteToOrder
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v PostQuoteToOrderV6400Response
+			var v PostAsyncOrderCreateV7400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

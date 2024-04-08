@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
+For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -20,13 +20,13 @@ var _ MappedNullable = &QuoteDetailsResponseProductsInnerPrice{}
 // QuoteDetailsResponseProductsInnerPrice struct for QuoteDetailsResponseProductsInnerPrice
 type QuoteDetailsResponseProductsInnerPrice struct {
 	// Ingram Micro quoted price specific to the reseller and quote.
-	QuotePrice *int32 `json:"quotePrice,omitempty"`
+	QuotePrice *float32 `json:"quotePrice,omitempty"`
 	// Manufacturer Suggested Retail Price
-	Msrp *int32 `json:"msrp,omitempty"`
+	Msrp *float32 `json:"msrp,omitempty"`
 	// Extended MSRP - Manufacturer Suggested Retail Price X Quantity
-	ExtendedMsrp *int32 `json:"extendedMsrp,omitempty"`
+	ExtendedMsrp *float32 `json:"extendedMsrp,omitempty"`
 	// Extended reseller quoted price (cost to reseller) X Quantity
-	ExtendedQuotePrice *int32 `json:"extendedQuotePrice,omitempty"`
+	ExtendedQuotePrice *float32 `json:"extendedQuotePrice,omitempty"`
 	// Discount off list percentage extended
 	DiscountOffList *string `json:"discountOffList,omitempty"`
 	Vendorprice *float32 `json:"vendorprice,omitempty"`
@@ -54,9 +54,9 @@ func NewQuoteDetailsResponseProductsInnerPriceWithDefaults() *QuoteDetailsRespon
 }
 
 // GetQuotePrice returns the QuotePrice field value if set, zero value otherwise.
-func (o *QuoteDetailsResponseProductsInnerPrice) GetQuotePrice() int32 {
+func (o *QuoteDetailsResponseProductsInnerPrice) GetQuotePrice() float32 {
 	if o == nil || IsNil(o.QuotePrice) {
-		var ret int32
+		var ret float32
 		return ret
 	}
 	return *o.QuotePrice
@@ -64,7 +64,7 @@ func (o *QuoteDetailsResponseProductsInnerPrice) GetQuotePrice() int32 {
 
 // GetQuotePriceOk returns a tuple with the QuotePrice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteDetailsResponseProductsInnerPrice) GetQuotePriceOk() (*int32, bool) {
+func (o *QuoteDetailsResponseProductsInnerPrice) GetQuotePriceOk() (*float32, bool) {
 	if o == nil || IsNil(o.QuotePrice) {
 		return nil, false
 	}
@@ -80,15 +80,15 @@ func (o *QuoteDetailsResponseProductsInnerPrice) HasQuotePrice() bool {
 	return false
 }
 
-// SetQuotePrice gets a reference to the given int32 and assigns it to the QuotePrice field.
-func (o *QuoteDetailsResponseProductsInnerPrice) SetQuotePrice(v int32) {
+// SetQuotePrice gets a reference to the given float32 and assigns it to the QuotePrice field.
+func (o *QuoteDetailsResponseProductsInnerPrice) SetQuotePrice(v float32) {
 	o.QuotePrice = &v
 }
 
 // GetMsrp returns the Msrp field value if set, zero value otherwise.
-func (o *QuoteDetailsResponseProductsInnerPrice) GetMsrp() int32 {
+func (o *QuoteDetailsResponseProductsInnerPrice) GetMsrp() float32 {
 	if o == nil || IsNil(o.Msrp) {
-		var ret int32
+		var ret float32
 		return ret
 	}
 	return *o.Msrp
@@ -96,7 +96,7 @@ func (o *QuoteDetailsResponseProductsInnerPrice) GetMsrp() int32 {
 
 // GetMsrpOk returns a tuple with the Msrp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteDetailsResponseProductsInnerPrice) GetMsrpOk() (*int32, bool) {
+func (o *QuoteDetailsResponseProductsInnerPrice) GetMsrpOk() (*float32, bool) {
 	if o == nil || IsNil(o.Msrp) {
 		return nil, false
 	}
@@ -112,15 +112,15 @@ func (o *QuoteDetailsResponseProductsInnerPrice) HasMsrp() bool {
 	return false
 }
 
-// SetMsrp gets a reference to the given int32 and assigns it to the Msrp field.
-func (o *QuoteDetailsResponseProductsInnerPrice) SetMsrp(v int32) {
+// SetMsrp gets a reference to the given float32 and assigns it to the Msrp field.
+func (o *QuoteDetailsResponseProductsInnerPrice) SetMsrp(v float32) {
 	o.Msrp = &v
 }
 
 // GetExtendedMsrp returns the ExtendedMsrp field value if set, zero value otherwise.
-func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedMsrp() int32 {
+func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedMsrp() float32 {
 	if o == nil || IsNil(o.ExtendedMsrp) {
-		var ret int32
+		var ret float32
 		return ret
 	}
 	return *o.ExtendedMsrp
@@ -128,7 +128,7 @@ func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedMsrp() int32 {
 
 // GetExtendedMsrpOk returns a tuple with the ExtendedMsrp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedMsrpOk() (*int32, bool) {
+func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedMsrpOk() (*float32, bool) {
 	if o == nil || IsNil(o.ExtendedMsrp) {
 		return nil, false
 	}
@@ -144,15 +144,15 @@ func (o *QuoteDetailsResponseProductsInnerPrice) HasExtendedMsrp() bool {
 	return false
 }
 
-// SetExtendedMsrp gets a reference to the given int32 and assigns it to the ExtendedMsrp field.
-func (o *QuoteDetailsResponseProductsInnerPrice) SetExtendedMsrp(v int32) {
+// SetExtendedMsrp gets a reference to the given float32 and assigns it to the ExtendedMsrp field.
+func (o *QuoteDetailsResponseProductsInnerPrice) SetExtendedMsrp(v float32) {
 	o.ExtendedMsrp = &v
 }
 
 // GetExtendedQuotePrice returns the ExtendedQuotePrice field value if set, zero value otherwise.
-func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedQuotePrice() int32 {
+func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedQuotePrice() float32 {
 	if o == nil || IsNil(o.ExtendedQuotePrice) {
-		var ret int32
+		var ret float32
 		return ret
 	}
 	return *o.ExtendedQuotePrice
@@ -160,7 +160,7 @@ func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedQuotePrice() int32 {
 
 // GetExtendedQuotePriceOk returns a tuple with the ExtendedQuotePrice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedQuotePriceOk() (*int32, bool) {
+func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedQuotePriceOk() (*float32, bool) {
 	if o == nil || IsNil(o.ExtendedQuotePrice) {
 		return nil, false
 	}
@@ -176,8 +176,8 @@ func (o *QuoteDetailsResponseProductsInnerPrice) HasExtendedQuotePrice() bool {
 	return false
 }
 
-// SetExtendedQuotePrice gets a reference to the given int32 and assigns it to the ExtendedQuotePrice field.
-func (o *QuoteDetailsResponseProductsInnerPrice) SetExtendedQuotePrice(v int32) {
+// SetExtendedQuotePrice gets a reference to the given float32 and assigns it to the ExtendedQuotePrice field.
+func (o *QuoteDetailsResponseProductsInnerPrice) SetExtendedQuotePrice(v float32) {
 	o.ExtendedQuotePrice = &v
 }
 

@@ -1,4 +1,4 @@
-# QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner
+# ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner
 
 ## Properties
 
@@ -10,95 +10,95 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewQuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner
+### NewValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner
 
-`func NewQuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner() *QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner`
+`func NewValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner() *ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner`
 
-NewQuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner instantiates a new QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner object
+NewValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner instantiates a new ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewQuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInnerWithDefaults
+### NewValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInnerWithDefaults
 
-`func NewQuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInnerWithDefaults() *QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner`
+`func NewValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInnerWithDefaults() *ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner`
 
-NewQuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInnerWithDefaults instantiates a new QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner object
+NewValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInnerWithDefaults instantiates a new ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetAttributeName
 
-`func (o *QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner) GetAttributeName() string`
+`func (o *ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner) GetAttributeName() string`
 
 GetAttributeName returns the AttributeName field if non-nil, zero value otherwise.
 
 ### GetAttributeNameOk
 
-`func (o *QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner) GetAttributeNameOk() (*string, bool)`
+`func (o *ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner) GetAttributeNameOk() (*string, bool)`
 
 GetAttributeNameOk returns a tuple with the AttributeName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributeName
 
-`func (o *QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner) SetAttributeName(v string)`
+`func (o *ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner) SetAttributeName(v string)`
 
 SetAttributeName sets AttributeName field to given value.
 
 ### HasAttributeName
 
-`func (o *QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner) HasAttributeName() bool`
+`func (o *ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner) HasAttributeName() bool`
 
 HasAttributeName returns a boolean if a field has been set.
 
 ### GetAttributeValue
 
-`func (o *QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner) GetAttributeValue() string`
+`func (o *ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner) GetAttributeValue() string`
 
 GetAttributeValue returns the AttributeValue field if non-nil, zero value otherwise.
 
 ### GetAttributeValueOk
 
-`func (o *QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner) GetAttributeValueOk() (*string, bool)`
+`func (o *ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner) GetAttributeValueOk() (*string, bool)`
 
 GetAttributeValueOk returns a tuple with the AttributeValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributeValue
 
-`func (o *QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner) SetAttributeValue(v string)`
+`func (o *ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner) SetAttributeValue(v string)`
 
 SetAttributeValue sets AttributeValue field to given value.
 
 ### HasAttributeValue
 
-`func (o *QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner) HasAttributeValue() bool`
+`func (o *ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner) HasAttributeValue() bool`
 
 HasAttributeValue returns a boolean if a field has been set.
 
 ### GetAttributeDescription
 
-`func (o *QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner) GetAttributeDescription() string`
+`func (o *ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner) GetAttributeDescription() string`
 
 GetAttributeDescription returns the AttributeDescription field if non-nil, zero value otherwise.
 
 ### GetAttributeDescriptionOk
 
-`func (o *QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner) GetAttributeDescriptionOk() (*string, bool)`
+`func (o *ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner) GetAttributeDescriptionOk() (*string, bool)`
 
 GetAttributeDescriptionOk returns a tuple with the AttributeDescription field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributeDescription
 
-`func (o *QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner) SetAttributeDescription(v string)`
+`func (o *ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner) SetAttributeDescription(v string)`
 
 SetAttributeDescription sets AttributeDescription field to given value.
 
 ### HasAttributeDescription
 
-`func (o *QuoteToOrderDetailsDTOLinesInnerVmfAdditionalAttributesLinesInner) HasAttributeDescription() bool`
+`func (o *ValidateQuoteResponseLinesInnerVmfAdditionalAttributesLinesInner) HasAttributeDescription() bool`
 
 HasAttributeDescription returns a boolean if a field has been set.
 

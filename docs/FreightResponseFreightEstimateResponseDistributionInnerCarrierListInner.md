@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **CarrierCode** | Pointer to **string** | The code for the shipping carrier for the line item. | [optional] 
 **ShipVia** | Pointer to **string** | The name of the shipping carrier. | [optional] 
 **CarrierMode** | Pointer to **string** | Mode of the carrier. | [optional] 
-**EstimatedFreightCharge** | Pointer to **float32** | Estimated freight charge. | [optional] 
-**DaysInTransit** | Pointer to **int32** | Number of transit days. | [optional] 
+**EstimatedFreightCharge** | Pointer to **string** | Estimated freight charge. | [optional] 
+**DaysInTransit** | Pointer to **string** | Number of transit days. | [optional] 
 
 ## Methods
 
@@ -106,20 +106,20 @@ HasCarrierMode returns a boolean if a field has been set.
 
 ### GetEstimatedFreightCharge
 
-`func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) GetEstimatedFreightCharge() float32`
+`func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) GetEstimatedFreightCharge() string`
 
 GetEstimatedFreightCharge returns the EstimatedFreightCharge field if non-nil, zero value otherwise.
 
 ### GetEstimatedFreightChargeOk
 
-`func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) GetEstimatedFreightChargeOk() (*float32, bool)`
+`func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) GetEstimatedFreightChargeOk() (*string, bool)`
 
 GetEstimatedFreightChargeOk returns a tuple with the EstimatedFreightCharge field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEstimatedFreightCharge
 
-`func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) SetEstimatedFreightCharge(v float32)`
+`func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) SetEstimatedFreightCharge(v string)`
 
 SetEstimatedFreightCharge sets EstimatedFreightCharge field to given value.
 
@@ -131,20 +131,20 @@ HasEstimatedFreightCharge returns a boolean if a field has been set.
 
 ### GetDaysInTransit
 
-`func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) GetDaysInTransit() int32`
+`func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) GetDaysInTransit() string`
 
 GetDaysInTransit returns the DaysInTransit field if non-nil, zero value otherwise.
 
 ### GetDaysInTransitOk
 
-`func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) GetDaysInTransitOk() (*int32, bool)`
+`func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) GetDaysInTransitOk() (*string, bool)`
 
 GetDaysInTransitOk returns a tuple with the DaysInTransit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDaysInTransit
 
-`func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) SetDaysInTransit(v int32)`
+`func (o *FreightResponseFreightEstimateResponseDistributionInnerCarrierListInner) SetDaysInTransit(v string)`
 
 SetDaysInTransit sets DaysInTransit field to given value.
 

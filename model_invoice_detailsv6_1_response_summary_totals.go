@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
+For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -28,7 +28,7 @@ type InvoiceDetailsv61ResponseSummaryTotals struct {
 	// Total Tax amount.
 	TotalTaxAmount *float64 `json:"totalTaxAmount,omitempty"`
 	// Total amount due for the invoice.
-	InvoicesAmountDue *float64 `json:"invoicesAmountDue,omitempty"`
+	InvoicedAmountDue *float64 `json:"invoicedAmountDue,omitempty"`
 	// Freight amount
 	FreightAmount *float64 `json:"freightAmount,omitempty"`
 }
@@ -178,36 +178,36 @@ func (o *InvoiceDetailsv61ResponseSummaryTotals) SetTotalTaxAmount(v float64) {
 	o.TotalTaxAmount = &v
 }
 
-// GetInvoicesAmountDue returns the InvoicesAmountDue field value if set, zero value otherwise.
-func (o *InvoiceDetailsv61ResponseSummaryTotals) GetInvoicesAmountDue() float64 {
-	if o == nil || IsNil(o.InvoicesAmountDue) {
+// GetInvoicedAmountDue returns the InvoicedAmountDue field value if set, zero value otherwise.
+func (o *InvoiceDetailsv61ResponseSummaryTotals) GetInvoicedAmountDue() float64 {
+	if o == nil || IsNil(o.InvoicedAmountDue) {
 		var ret float64
 		return ret
 	}
-	return *o.InvoicesAmountDue
+	return *o.InvoicedAmountDue
 }
 
-// GetInvoicesAmountDueOk returns a tuple with the InvoicesAmountDue field value if set, nil otherwise
+// GetInvoicedAmountDueOk returns a tuple with the InvoicedAmountDue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvoiceDetailsv61ResponseSummaryTotals) GetInvoicesAmountDueOk() (*float64, bool) {
-	if o == nil || IsNil(o.InvoicesAmountDue) {
+func (o *InvoiceDetailsv61ResponseSummaryTotals) GetInvoicedAmountDueOk() (*float64, bool) {
+	if o == nil || IsNil(o.InvoicedAmountDue) {
 		return nil, false
 	}
-	return o.InvoicesAmountDue, true
+	return o.InvoicedAmountDue, true
 }
 
-// HasInvoicesAmountDue returns a boolean if a field has been set.
-func (o *InvoiceDetailsv61ResponseSummaryTotals) HasInvoicesAmountDue() bool {
-	if o != nil && !IsNil(o.InvoicesAmountDue) {
+// HasInvoicedAmountDue returns a boolean if a field has been set.
+func (o *InvoiceDetailsv61ResponseSummaryTotals) HasInvoicedAmountDue() bool {
+	if o != nil && !IsNil(o.InvoicedAmountDue) {
 		return true
 	}
 
 	return false
 }
 
-// SetInvoicesAmountDue gets a reference to the given float64 and assigns it to the InvoicesAmountDue field.
-func (o *InvoiceDetailsv61ResponseSummaryTotals) SetInvoicesAmountDue(v float64) {
-	o.InvoicesAmountDue = &v
+// SetInvoicedAmountDue gets a reference to the given float64 and assigns it to the InvoicedAmountDue field.
+func (o *InvoiceDetailsv61ResponseSummaryTotals) SetInvoicedAmountDue(v float64) {
+	o.InvoicedAmountDue = &v
 }
 
 // GetFreightAmount returns the FreightAmount field value if set, zero value otherwise.
@@ -264,8 +264,8 @@ func (o InvoiceDetailsv61ResponseSummaryTotals) ToMap() (map[string]interface{},
 	if !IsNil(o.TotalTaxAmount) {
 		toSerialize["totalTaxAmount"] = o.TotalTaxAmount
 	}
-	if !IsNil(o.InvoicesAmountDue) {
-		toSerialize["invoicesAmountDue"] = o.InvoicesAmountDue
+	if !IsNil(o.InvoicedAmountDue) {
+		toSerialize["invoicedAmountDue"] = o.InvoicedAmountDue
 	}
 	if !IsNil(o.FreightAmount) {
 		toSerialize["freightAmount"] = o.FreightAmount

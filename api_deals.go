@@ -1,7 +1,7 @@
 /*
 XI Sdk Resellers
 
-For Resellers. Who are looking to Innovate with Ingram Micro's API SolutionsAutomate your eCommerce with our offering of APIs and Webhooks to create a seamless experience for your customers.
+For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 API version: 1.0.0
 */
@@ -230,6 +230,8 @@ type ApiGetResellersV6DealssearchRequest struct {
 	endUser *string
 	vendor *string
 	dealId *string
+	size *int32
+	page *int32
 }
 
 // Your unique Ingram Micro customer number.
@@ -271,6 +273,18 @@ func (r ApiGetResellersV6DealssearchRequest) Vendor(vendor string) ApiGetReselle
 // Deal/Special bid number.
 func (r ApiGetResellersV6DealssearchRequest) DealId(dealId string) ApiGetResellersV6DealssearchRequest {
 	r.dealId = &dealId
+	return r
+}
+
+// The number of records required in the call - max records 100 per page.
+func (r ApiGetResellersV6DealssearchRequest) Size(size int32) ApiGetResellersV6DealssearchRequest {
+	r.size = &size
+	return r
+}
+
+// The page number reference.
+func (r ApiGetResellersV6DealssearchRequest) Page(page int32) ApiGetResellersV6DealssearchRequest {
+	r.page = &page
 	return r
 }
 
@@ -343,6 +357,12 @@ func (a *DealsAPIService) GetResellersV6DealssearchExecute(r ApiGetResellersV6De
 	}
 	if r.dealId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "dealId", r.dealId, "")
+	}
+	if r.size != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "Size", r.size, "")
+	}
+	if r.page != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "Page", r.page, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
