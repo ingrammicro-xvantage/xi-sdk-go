@@ -36,8 +36,8 @@ func main() {
 	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. (optional)
 
 <<<<<<< HEAD:docs/AsyncOrderCreateAPI.md
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := xi_sdk_resellers.NewConfiguration()
+	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
 	resp, r, err := apiClient.AsyncOrderCreateAPI.PostAsyncOrderCreateV7(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).AsyncOrderCreateDTO(asyncOrderCreateDTO).IMSenderID(iMSenderID).Execute()
 =======
 	configuration := xi_sdk_resellers.NewConfiguration()
