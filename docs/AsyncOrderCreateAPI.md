@@ -35,15 +35,9 @@ func main() {
 	asyncOrderCreateDTO := *openapiclient.NewAsyncOrderCreateDTO() // AsyncOrderCreateDTO | 
 	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. (optional)
 
-<<<<<<< HEAD:docs/AsyncOrderCreateAPI.md
 	configuration := xi_sdk_resellers.NewConfiguration()
 	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
 	resp, r, err := apiClient.AsyncOrderCreateAPI.PostAsyncOrderCreateV7(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).AsyncOrderCreateDTO(asyncOrderCreateDTO).IMSenderID(iMSenderID).Execute()
-=======
-	configuration := xi_sdk_resellers.NewConfiguration()
-	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
-	resp, r, err := apiClient.QuoteToOrderAPI.PostQuoteToOrderV6(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).QuoteToOrderDetailsDTO(quoteToOrderDetailsDTO).IMSenderID(iMSenderID).Execute()
->>>>>>> main:docs/QuoteToOrderAPI.md
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AsyncOrderCreateAPI.PostAsyncOrderCreateV7``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
