@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **State** | Pointer to **string** | The end user/customer&#39;s state. Required for Impulse countries but optional for EMEA countries. | [optional] 
 **PostalCode** | Pointer to **string** | The end user/customer&#39;s zip or postal code. Required for Impulse countries. | [optional] 
 **CountryCode** | Pointer to **string** | The end user/customer&#39;s two-character ISO country code. | [optional] 
-**PhoneNumber** | Pointer to **int32** | The end user/customer&#39;s phone number. | [optional] 
+**PhoneNumber** | Pointer to **string** | The end user/customer&#39;s phone number. | [optional] 
 **Email** | Pointer to **string** | The end user/customer&#39;s email. | [optional] 
 
 ## Methods
@@ -366,20 +366,20 @@ HasCountryCode returns a boolean if a field has been set.
 
 ### GetPhoneNumber
 
-`func (o *OrderCreateRequestEndUserInfo) GetPhoneNumber() int32`
+`func (o *OrderCreateRequestEndUserInfo) GetPhoneNumber() string`
 
 GetPhoneNumber returns the PhoneNumber field if non-nil, zero value otherwise.
 
 ### GetPhoneNumberOk
 
-`func (o *OrderCreateRequestEndUserInfo) GetPhoneNumberOk() (*int32, bool)`
+`func (o *OrderCreateRequestEndUserInfo) GetPhoneNumberOk() (*string, bool)`
 
 GetPhoneNumberOk returns a tuple with the PhoneNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPhoneNumber
 
-`func (o *OrderCreateRequestEndUserInfo) SetPhoneNumber(v int32)`
+`func (o *OrderCreateRequestEndUserInfo) SetPhoneNumber(v string)`
 
 SetPhoneNumber sets PhoneNumber field to given value.
 
