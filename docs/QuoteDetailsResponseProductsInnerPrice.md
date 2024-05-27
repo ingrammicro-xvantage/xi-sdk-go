@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** |  | [optional] 
 **RecurringPriceModel** | Pointer to **string** |  | [optional] 
 **UnitOfMeasure** | Pointer to **string** |  | [optional] 
-**Tax** | Pointer to **string** |  | [optional] 
+**Tax** | Pointer to **float32** |  | [optional] 
 **Extrafees** | Pointer to **float32** |  | [optional] 
 **ExtraFeesDetails** | Pointer to [**[]QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner**](QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner.md) |  | [optional] 
 **Discounts** | Pointer to [**[]QuoteDetailsResponseProductsInnerPriceDiscountsInner**](QuoteDetailsResponseProductsInnerPriceDiscountsInner.md) |  | [optional] 
@@ -238,20 +238,20 @@ HasUnitOfMeasure returns a boolean if a field has been set.
 
 ### GetTax
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetTax() string`
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetTax() float32`
 
 GetTax returns the Tax field if non-nil, zero value otherwise.
 
 ### GetTaxOk
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetTaxOk() (*string, bool)`
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetTaxOk() (*float32, bool)`
 
 GetTaxOk returns a tuple with the Tax field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTax
 
-`func (o *QuoteDetailsResponseProductsInnerPrice) SetTax(v string)`
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetTax(v float32)`
 
 SetTax sets Tax field to given value.
 

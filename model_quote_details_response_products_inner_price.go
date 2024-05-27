@@ -32,7 +32,7 @@ type QuoteDetailsResponseProductsInnerPrice struct {
 	Type *string `json:"type,omitempty"`
 	RecurringPriceModel *string `json:"recurringPriceModel,omitempty"`
 	UnitOfMeasure *string `json:"unitOfMeasure,omitempty"`
-	Tax *string `json:"tax,omitempty"`
+	Tax *float32 `json:"tax,omitempty"`
 	Extrafees *float32 `json:"extrafees,omitempty"`
 	ExtraFeesDetails []QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner `json:"extraFeesDetails,omitempty"`
 	Discounts []QuoteDetailsResponseProductsInnerPriceDiscountsInner `json:"discounts,omitempty"`
@@ -312,9 +312,9 @@ func (o *QuoteDetailsResponseProductsInnerPrice) SetUnitOfMeasure(v string) {
 }
 
 // GetTax returns the Tax field value if set, zero value otherwise.
-func (o *QuoteDetailsResponseProductsInnerPrice) GetTax() string {
+func (o *QuoteDetailsResponseProductsInnerPrice) GetTax() float32 {
 	if o == nil || IsNil(o.Tax) {
-		var ret string
+		var ret float32
 		return ret
 	}
 	return *o.Tax
@@ -322,7 +322,7 @@ func (o *QuoteDetailsResponseProductsInnerPrice) GetTax() string {
 
 // GetTaxOk returns a tuple with the Tax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteDetailsResponseProductsInnerPrice) GetTaxOk() (*string, bool) {
+func (o *QuoteDetailsResponseProductsInnerPrice) GetTaxOk() (*float32, bool) {
 	if o == nil || IsNil(o.Tax) {
 		return nil, false
 	}
@@ -338,8 +338,8 @@ func (o *QuoteDetailsResponseProductsInnerPrice) HasTax() bool {
 	return false
 }
 
-// SetTax gets a reference to the given string and assigns it to the Tax field.
-func (o *QuoteDetailsResponseProductsInnerPrice) SetTax(v string) {
+// SetTax gets a reference to the given float32 and assigns it to the Tax field.
+func (o *QuoteDetailsResponseProductsInnerPrice) SetTax(v float32) {
 	o.Tax = &v
 }
 

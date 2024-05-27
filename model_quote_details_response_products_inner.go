@@ -38,7 +38,7 @@ type QuoteDetailsResponseProductsInner struct {
 	// Product description.  Note - The quote view api returns only the product short description as maintained in Ingram Micro's crm system.  For long descriptions, please refer to alternative information sources.
 	Description *string `json:"description,omitempty"`
 	// Weight is provided based on country standard.  For countries following Imperial standards - weight is presented as pounds with decimal.  In countries following metric standards, weight is provided as kilograms with decimal.
-	Weight *int32 `json:"weight,omitempty"`
+	Weight *float32 `json:"weight,omitempty"`
 	// Unit of measure
 	WeightUom *string `json:"weightUom,omitempty"`
 	// Flag to indicate if a product line item is a suggested product.  The suggested product is provided in addition to the requested quoted products and a suggested option.  Suggested products are grouped together for subtotal and total calculations.
@@ -368,9 +368,9 @@ func (o *QuoteDetailsResponseProductsInner) SetDescription(v string) {
 }
 
 // GetWeight returns the Weight field value if set, zero value otherwise.
-func (o *QuoteDetailsResponseProductsInner) GetWeight() int32 {
+func (o *QuoteDetailsResponseProductsInner) GetWeight() float32 {
 	if o == nil || IsNil(o.Weight) {
-		var ret int32
+		var ret float32
 		return ret
 	}
 	return *o.Weight
@@ -378,7 +378,7 @@ func (o *QuoteDetailsResponseProductsInner) GetWeight() int32 {
 
 // GetWeightOk returns a tuple with the Weight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QuoteDetailsResponseProductsInner) GetWeightOk() (*int32, bool) {
+func (o *QuoteDetailsResponseProductsInner) GetWeightOk() (*float32, bool) {
 	if o == nil || IsNil(o.Weight) {
 		return nil, false
 	}
@@ -394,8 +394,8 @@ func (o *QuoteDetailsResponseProductsInner) HasWeight() bool {
 	return false
 }
 
-// SetWeight gets a reference to the given int32 and assigns it to the Weight field.
-func (o *QuoteDetailsResponseProductsInner) SetWeight(v int32) {
+// SetWeight gets a reference to the given float32 and assigns it to the Weight field.
+func (o *QuoteDetailsResponseProductsInner) SetWeight(v float32) {
 	o.Weight = &v
 }
 

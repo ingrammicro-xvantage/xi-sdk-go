@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **IngramPartNumber** | Pointer to **string** | Ingram Micro SKU (stock keeping unit). An identification, usually alphanumeric, of a particular product that allows it to be tracked for inventory purposes | [optional] 
 **VendorPartNumber** | Pointer to **string** | Vendor Part Number | [optional] 
 **Description** | Pointer to **string** | Product description.  Note - The quote view api returns only the product short description as maintained in Ingram Micro&#39;s crm system.  For long descriptions, please refer to alternative information sources. | [optional] 
-**Weight** | Pointer to **int32** | Weight is provided based on country standard.  For countries following Imperial standards - weight is presented as pounds with decimal.  In countries following metric standards, weight is provided as kilograms with decimal. | [optional] 
+**Weight** | Pointer to **float32** | Weight is provided based on country standard.  For countries following Imperial standards - weight is presented as pounds with decimal.  In countries following metric standards, weight is provided as kilograms with decimal. | [optional] 
 **WeightUom** | Pointer to **string** | Unit of measure | [optional] 
 **IsSuggestionProduct** | Pointer to **bool** | Flag to indicate if a product line item is a suggested product.  The suggested product is provided in addition to the requested quoted products and a suggested option.  Suggested products are grouped together for subtotal and total calculations. | [optional] 
 **VpnCategory** | Pointer to **string** | Vendor product category specific to Cisco. HWDW (hardware) or service. | [optional] 
@@ -276,20 +276,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetWeight
 
-`func (o *QuoteDetailsResponseProductsInner) GetWeight() int32`
+`func (o *QuoteDetailsResponseProductsInner) GetWeight() float32`
 
 GetWeight returns the Weight field if non-nil, zero value otherwise.
 
 ### GetWeightOk
 
-`func (o *QuoteDetailsResponseProductsInner) GetWeightOk() (*int32, bool)`
+`func (o *QuoteDetailsResponseProductsInner) GetWeightOk() (*float32, bool)`
 
 GetWeightOk returns a tuple with the Weight field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWeight
 
-`func (o *QuoteDetailsResponseProductsInner) SetWeight(v int32)`
+`func (o *QuoteDetailsResponseProductsInner) SetWeight(v float32)`
 
 SetWeight sets Weight field to given value.
 
