@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the PostAsyncOrderCreateV7500Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PostAsyncOrderCreateV7500Response{}
+// checks if the PostCreateorderV7500Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PostCreateorderV7500Response{}
 
-// PostAsyncOrderCreateV7500Response struct for PostAsyncOrderCreateV7500Response
-type PostAsyncOrderCreateV7500Response struct {
+// PostCreateorderV7500Response struct for PostCreateorderV7500Response
+type PostCreateorderV7500Response struct {
 	// Unique Id to identify error.
 	Traceid *string `json:"traceid,omitempty"`
 	// Describes the type of the error.
@@ -28,25 +28,25 @@ type PostAsyncOrderCreateV7500Response struct {
 	Fields []map[string]interface{} `json:"fields,omitempty"`
 }
 
-// NewPostAsyncOrderCreateV7500Response instantiates a new PostAsyncOrderCreateV7500Response object
+// NewPostCreateorderV7500Response instantiates a new PostCreateorderV7500Response object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPostAsyncOrderCreateV7500Response() *PostAsyncOrderCreateV7500Response {
-	this := PostAsyncOrderCreateV7500Response{}
+func NewPostCreateorderV7500Response() *PostCreateorderV7500Response {
+	this := PostCreateorderV7500Response{}
 	return &this
 }
 
-// NewPostAsyncOrderCreateV7500ResponseWithDefaults instantiates a new PostAsyncOrderCreateV7500Response object
+// NewPostCreateorderV7500ResponseWithDefaults instantiates a new PostCreateorderV7500Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPostAsyncOrderCreateV7500ResponseWithDefaults() *PostAsyncOrderCreateV7500Response {
-	this := PostAsyncOrderCreateV7500Response{}
+func NewPostCreateorderV7500ResponseWithDefaults() *PostCreateorderV7500Response {
+	this := PostCreateorderV7500Response{}
 	return &this
 }
 
 // GetTraceid returns the Traceid field value if set, zero value otherwise.
-func (o *PostAsyncOrderCreateV7500Response) GetTraceid() string {
+func (o *PostCreateorderV7500Response) GetTraceid() string {
 	if o == nil || IsNil(o.Traceid) {
 		var ret string
 		return ret
@@ -56,7 +56,7 @@ func (o *PostAsyncOrderCreateV7500Response) GetTraceid() string {
 
 // GetTraceidOk returns a tuple with the Traceid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PostAsyncOrderCreateV7500Response) GetTraceidOk() (*string, bool) {
+func (o *PostCreateorderV7500Response) GetTraceidOk() (*string, bool) {
 	if o == nil || IsNil(o.Traceid) {
 		return nil, false
 	}
@@ -64,7 +64,7 @@ func (o *PostAsyncOrderCreateV7500Response) GetTraceidOk() (*string, bool) {
 }
 
 // HasTraceid returns a boolean if a field has been set.
-func (o *PostAsyncOrderCreateV7500Response) HasTraceid() bool {
+func (o *PostCreateorderV7500Response) HasTraceid() bool {
 	if o != nil && !IsNil(o.Traceid) {
 		return true
 	}
@@ -73,12 +73,12 @@ func (o *PostAsyncOrderCreateV7500Response) HasTraceid() bool {
 }
 
 // SetTraceid gets a reference to the given string and assigns it to the Traceid field.
-func (o *PostAsyncOrderCreateV7500Response) SetTraceid(v string) {
+func (o *PostCreateorderV7500Response) SetTraceid(v string) {
 	o.Traceid = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *PostAsyncOrderCreateV7500Response) GetType() string {
+func (o *PostCreateorderV7500Response) GetType() string {
 	if o == nil || IsNil(o.Type) {
 		var ret string
 		return ret
@@ -88,7 +88,7 @@ func (o *PostAsyncOrderCreateV7500Response) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PostAsyncOrderCreateV7500Response) GetTypeOk() (*string, bool) {
+func (o *PostCreateorderV7500Response) GetTypeOk() (*string, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -96,7 +96,7 @@ func (o *PostAsyncOrderCreateV7500Response) GetTypeOk() (*string, bool) {
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *PostAsyncOrderCreateV7500Response) HasType() bool {
+func (o *PostCreateorderV7500Response) HasType() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -105,12 +105,12 @@ func (o *PostAsyncOrderCreateV7500Response) HasType() bool {
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
-func (o *PostAsyncOrderCreateV7500Response) SetType(v string) {
+func (o *PostCreateorderV7500Response) SetType(v string) {
 	o.Type = &v
 }
 
 // GetMessage returns the Message field value if set, zero value otherwise.
-func (o *PostAsyncOrderCreateV7500Response) GetMessage() string {
+func (o *PostCreateorderV7500Response) GetMessage() string {
 	if o == nil || IsNil(o.Message) {
 		var ret string
 		return ret
@@ -120,7 +120,7 @@ func (o *PostAsyncOrderCreateV7500Response) GetMessage() string {
 
 // GetMessageOk returns a tuple with the Message field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PostAsyncOrderCreateV7500Response) GetMessageOk() (*string, bool) {
+func (o *PostCreateorderV7500Response) GetMessageOk() (*string, bool) {
 	if o == nil || IsNil(o.Message) {
 		return nil, false
 	}
@@ -128,7 +128,7 @@ func (o *PostAsyncOrderCreateV7500Response) GetMessageOk() (*string, bool) {
 }
 
 // HasMessage returns a boolean if a field has been set.
-func (o *PostAsyncOrderCreateV7500Response) HasMessage() bool {
+func (o *PostCreateorderV7500Response) HasMessage() bool {
 	if o != nil && !IsNil(o.Message) {
 		return true
 	}
@@ -137,12 +137,12 @@ func (o *PostAsyncOrderCreateV7500Response) HasMessage() bool {
 }
 
 // SetMessage gets a reference to the given string and assigns it to the Message field.
-func (o *PostAsyncOrderCreateV7500Response) SetMessage(v string) {
+func (o *PostCreateorderV7500Response) SetMessage(v string) {
 	o.Message = &v
 }
 
 // GetFields returns the Fields field value if set, zero value otherwise.
-func (o *PostAsyncOrderCreateV7500Response) GetFields() []map[string]interface{} {
+func (o *PostCreateorderV7500Response) GetFields() []map[string]interface{} {
 	if o == nil || IsNil(o.Fields) {
 		var ret []map[string]interface{}
 		return ret
@@ -152,7 +152,7 @@ func (o *PostAsyncOrderCreateV7500Response) GetFields() []map[string]interface{}
 
 // GetFieldsOk returns a tuple with the Fields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PostAsyncOrderCreateV7500Response) GetFieldsOk() ([]map[string]interface{}, bool) {
+func (o *PostCreateorderV7500Response) GetFieldsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Fields) {
 		return nil, false
 	}
@@ -160,7 +160,7 @@ func (o *PostAsyncOrderCreateV7500Response) GetFieldsOk() ([]map[string]interfac
 }
 
 // HasFields returns a boolean if a field has been set.
-func (o *PostAsyncOrderCreateV7500Response) HasFields() bool {
+func (o *PostCreateorderV7500Response) HasFields() bool {
 	if o != nil && !IsNil(o.Fields) {
 		return true
 	}
@@ -169,11 +169,11 @@ func (o *PostAsyncOrderCreateV7500Response) HasFields() bool {
 }
 
 // SetFields gets a reference to the given []map[string]interface{} and assigns it to the Fields field.
-func (o *PostAsyncOrderCreateV7500Response) SetFields(v []map[string]interface{}) {
+func (o *PostCreateorderV7500Response) SetFields(v []map[string]interface{}) {
 	o.Fields = v
 }
 
-func (o PostAsyncOrderCreateV7500Response) MarshalJSON() ([]byte, error) {
+func (o PostCreateorderV7500Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -181,7 +181,7 @@ func (o PostAsyncOrderCreateV7500Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o PostAsyncOrderCreateV7500Response) ToMap() (map[string]interface{}, error) {
+func (o PostCreateorderV7500Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Traceid) {
 		toSerialize["traceid"] = o.Traceid
@@ -198,38 +198,38 @@ func (o PostAsyncOrderCreateV7500Response) ToMap() (map[string]interface{}, erro
 	return toSerialize, nil
 }
 
-type NullablePostAsyncOrderCreateV7500Response struct {
-	value *PostAsyncOrderCreateV7500Response
+type NullablePostCreateorderV7500Response struct {
+	value *PostCreateorderV7500Response
 	isSet bool
 }
 
-func (v NullablePostAsyncOrderCreateV7500Response) Get() *PostAsyncOrderCreateV7500Response {
+func (v NullablePostCreateorderV7500Response) Get() *PostCreateorderV7500Response {
 	return v.value
 }
 
-func (v *NullablePostAsyncOrderCreateV7500Response) Set(val *PostAsyncOrderCreateV7500Response) {
+func (v *NullablePostCreateorderV7500Response) Set(val *PostCreateorderV7500Response) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullablePostAsyncOrderCreateV7500Response) IsSet() bool {
+func (v NullablePostCreateorderV7500Response) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullablePostAsyncOrderCreateV7500Response) Unset() {
+func (v *NullablePostCreateorderV7500Response) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullablePostAsyncOrderCreateV7500Response(val *PostAsyncOrderCreateV7500Response) *NullablePostAsyncOrderCreateV7500Response {
-	return &NullablePostAsyncOrderCreateV7500Response{value: val, isSet: true}
+func NewNullablePostCreateorderV7500Response(val *PostCreateorderV7500Response) *NullablePostCreateorderV7500Response {
+	return &NullablePostCreateorderV7500Response{value: val, isSet: true}
 }
 
-func (v NullablePostAsyncOrderCreateV7500Response) MarshalJSON() ([]byte, error) {
+func (v NullablePostCreateorderV7500Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullablePostAsyncOrderCreateV7500Response) UnmarshalJSON(src []byte) error {
+func (v *NullablePostCreateorderV7500Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

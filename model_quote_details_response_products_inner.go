@@ -51,9 +51,15 @@ type QuoteDetailsResponseProductsInner struct {
 	VendorName *string `json:"vendorName,omitempty"`
 	// Terms of the quote
 	Terms *string `json:"terms,omitempty"`
+	PlanDescription *string `json:"planDescription,omitempty"`
 	IsSubscription *bool `json:"isSubscription,omitempty"`
 	ResellerMargin *string `json:"resellerMargin,omitempty"`
+	RequestedStartDate *string `json:"requestedStartDate,omitempty"`
+	StartDate *string `json:"startDate,omitempty"`
+	EndDate *string `json:"endDate,omitempty"`
+	SerialNumber *string `json:"serialNumber,omitempty"`
 	Price *QuoteDetailsResponseProductsInnerPrice `json:"price,omitempty"`
+	BillDetails []QuoteDetailsResponseProductsInnerBillDetailsInner `json:"billDetails,omitempty"`
 }
 
 // NewQuoteDetailsResponseProductsInner instantiates a new QuoteDetailsResponseProductsInner object
@@ -585,6 +591,38 @@ func (o *QuoteDetailsResponseProductsInner) SetTerms(v string) {
 	o.Terms = &v
 }
 
+// GetPlanDescription returns the PlanDescription field value if set, zero value otherwise.
+func (o *QuoteDetailsResponseProductsInner) GetPlanDescription() string {
+	if o == nil || IsNil(o.PlanDescription) {
+		var ret string
+		return ret
+	}
+	return *o.PlanDescription
+}
+
+// GetPlanDescriptionOk returns a tuple with the PlanDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponseProductsInner) GetPlanDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.PlanDescription) {
+		return nil, false
+	}
+	return o.PlanDescription, true
+}
+
+// HasPlanDescription returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInner) HasPlanDescription() bool {
+	if o != nil && !IsNil(o.PlanDescription) {
+		return true
+	}
+
+	return false
+}
+
+// SetPlanDescription gets a reference to the given string and assigns it to the PlanDescription field.
+func (o *QuoteDetailsResponseProductsInner) SetPlanDescription(v string) {
+	o.PlanDescription = &v
+}
+
 // GetIsSubscription returns the IsSubscription field value if set, zero value otherwise.
 func (o *QuoteDetailsResponseProductsInner) GetIsSubscription() bool {
 	if o == nil || IsNil(o.IsSubscription) {
@@ -649,6 +687,134 @@ func (o *QuoteDetailsResponseProductsInner) SetResellerMargin(v string) {
 	o.ResellerMargin = &v
 }
 
+// GetRequestedStartDate returns the RequestedStartDate field value if set, zero value otherwise.
+func (o *QuoteDetailsResponseProductsInner) GetRequestedStartDate() string {
+	if o == nil || IsNil(o.RequestedStartDate) {
+		var ret string
+		return ret
+	}
+	return *o.RequestedStartDate
+}
+
+// GetRequestedStartDateOk returns a tuple with the RequestedStartDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponseProductsInner) GetRequestedStartDateOk() (*string, bool) {
+	if o == nil || IsNil(o.RequestedStartDate) {
+		return nil, false
+	}
+	return o.RequestedStartDate, true
+}
+
+// HasRequestedStartDate returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInner) HasRequestedStartDate() bool {
+	if o != nil && !IsNil(o.RequestedStartDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequestedStartDate gets a reference to the given string and assigns it to the RequestedStartDate field.
+func (o *QuoteDetailsResponseProductsInner) SetRequestedStartDate(v string) {
+	o.RequestedStartDate = &v
+}
+
+// GetStartDate returns the StartDate field value if set, zero value otherwise.
+func (o *QuoteDetailsResponseProductsInner) GetStartDate() string {
+	if o == nil || IsNil(o.StartDate) {
+		var ret string
+		return ret
+	}
+	return *o.StartDate
+}
+
+// GetStartDateOk returns a tuple with the StartDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponseProductsInner) GetStartDateOk() (*string, bool) {
+	if o == nil || IsNil(o.StartDate) {
+		return nil, false
+	}
+	return o.StartDate, true
+}
+
+// HasStartDate returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInner) HasStartDate() bool {
+	if o != nil && !IsNil(o.StartDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetStartDate gets a reference to the given string and assigns it to the StartDate field.
+func (o *QuoteDetailsResponseProductsInner) SetStartDate(v string) {
+	o.StartDate = &v
+}
+
+// GetEndDate returns the EndDate field value if set, zero value otherwise.
+func (o *QuoteDetailsResponseProductsInner) GetEndDate() string {
+	if o == nil || IsNil(o.EndDate) {
+		var ret string
+		return ret
+	}
+	return *o.EndDate
+}
+
+// GetEndDateOk returns a tuple with the EndDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponseProductsInner) GetEndDateOk() (*string, bool) {
+	if o == nil || IsNil(o.EndDate) {
+		return nil, false
+	}
+	return o.EndDate, true
+}
+
+// HasEndDate returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInner) HasEndDate() bool {
+	if o != nil && !IsNil(o.EndDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetEndDate gets a reference to the given string and assigns it to the EndDate field.
+func (o *QuoteDetailsResponseProductsInner) SetEndDate(v string) {
+	o.EndDate = &v
+}
+
+// GetSerialNumber returns the SerialNumber field value if set, zero value otherwise.
+func (o *QuoteDetailsResponseProductsInner) GetSerialNumber() string {
+	if o == nil || IsNil(o.SerialNumber) {
+		var ret string
+		return ret
+	}
+	return *o.SerialNumber
+}
+
+// GetSerialNumberOk returns a tuple with the SerialNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponseProductsInner) GetSerialNumberOk() (*string, bool) {
+	if o == nil || IsNil(o.SerialNumber) {
+		return nil, false
+	}
+	return o.SerialNumber, true
+}
+
+// HasSerialNumber returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInner) HasSerialNumber() bool {
+	if o != nil && !IsNil(o.SerialNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetSerialNumber gets a reference to the given string and assigns it to the SerialNumber field.
+func (o *QuoteDetailsResponseProductsInner) SetSerialNumber(v string) {
+	o.SerialNumber = &v
+}
+
 // GetPrice returns the Price field value if set, zero value otherwise.
 func (o *QuoteDetailsResponseProductsInner) GetPrice() QuoteDetailsResponseProductsInnerPrice {
 	if o == nil || IsNil(o.Price) {
@@ -679,6 +845,38 @@ func (o *QuoteDetailsResponseProductsInner) HasPrice() bool {
 // SetPrice gets a reference to the given QuoteDetailsResponseProductsInnerPrice and assigns it to the Price field.
 func (o *QuoteDetailsResponseProductsInner) SetPrice(v QuoteDetailsResponseProductsInnerPrice) {
 	o.Price = &v
+}
+
+// GetBillDetails returns the BillDetails field value if set, zero value otherwise.
+func (o *QuoteDetailsResponseProductsInner) GetBillDetails() []QuoteDetailsResponseProductsInnerBillDetailsInner {
+	if o == nil || IsNil(o.BillDetails) {
+		var ret []QuoteDetailsResponseProductsInnerBillDetailsInner
+		return ret
+	}
+	return o.BillDetails
+}
+
+// GetBillDetailsOk returns a tuple with the BillDetails field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponseProductsInner) GetBillDetailsOk() ([]QuoteDetailsResponseProductsInnerBillDetailsInner, bool) {
+	if o == nil || IsNil(o.BillDetails) {
+		return nil, false
+	}
+	return o.BillDetails, true
+}
+
+// HasBillDetails returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInner) HasBillDetails() bool {
+	if o != nil && !IsNil(o.BillDetails) {
+		return true
+	}
+
+	return false
+}
+
+// SetBillDetails gets a reference to the given []QuoteDetailsResponseProductsInnerBillDetailsInner and assigns it to the BillDetails field.
+func (o *QuoteDetailsResponseProductsInner) SetBillDetails(v []QuoteDetailsResponseProductsInnerBillDetailsInner) {
+	o.BillDetails = v
 }
 
 func (o QuoteDetailsResponseProductsInner) MarshalJSON() ([]byte, error) {
@@ -739,14 +937,32 @@ func (o QuoteDetailsResponseProductsInner) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Terms) {
 		toSerialize["terms"] = o.Terms
 	}
+	if !IsNil(o.PlanDescription) {
+		toSerialize["planDescription"] = o.PlanDescription
+	}
 	if !IsNil(o.IsSubscription) {
 		toSerialize["isSubscription"] = o.IsSubscription
 	}
 	if !IsNil(o.ResellerMargin) {
 		toSerialize["resellerMargin"] = o.ResellerMargin
 	}
+	if !IsNil(o.RequestedStartDate) {
+		toSerialize["requestedStartDate"] = o.RequestedStartDate
+	}
+	if !IsNil(o.StartDate) {
+		toSerialize["startDate"] = o.StartDate
+	}
+	if !IsNil(o.EndDate) {
+		toSerialize["endDate"] = o.EndDate
+	}
+	if !IsNil(o.SerialNumber) {
+		toSerialize["serialNumber"] = o.SerialNumber
+	}
 	if !IsNil(o.Price) {
 		toSerialize["price"] = o.Price
+	}
+	if !IsNil(o.BillDetails) {
+		toSerialize["billDetails"] = o.BillDetails
 	}
 	return toSerialize, nil
 }

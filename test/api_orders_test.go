@@ -61,11 +61,11 @@ func Test_xi_sdk_resellers_OrdersAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test OrdersAPIService PostAsyncOrderCreateV7", func(t *testing.T) {
+	t.Run("Test OrdersAPIService PostCreateorderV6", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.OrdersAPI.PostAsyncOrderCreateV7(context.Background()).Execute()
+		resp, httpRes, err := apiClient.OrdersAPI.PostCreateorderV6(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -73,11 +73,11 @@ func Test_xi_sdk_resellers_OrdersAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test OrdersAPIService PostCreateorderV6", func(t *testing.T) {
+	t.Run("Test OrdersAPIService PostCreateorderV7", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.OrdersAPI.PostCreateorderV6(context.Background()).Execute()
+		resp, httpRes, err := apiClient.OrdersAPI.PostCreateorderV7(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

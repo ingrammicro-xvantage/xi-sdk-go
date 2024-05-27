@@ -29,11 +29,13 @@ type QuoteDetailsResponseProductsInnerPrice struct {
 	ExtendedQuotePrice *float32 `json:"extendedQuotePrice,omitempty"`
 	// Discount off list percentage extended
 	DiscountOffList *string `json:"discountOffList,omitempty"`
-	Vendorprice *float32 `json:"vendorprice,omitempty"`
-	Extendedvendorprice *float32 `json:"extendedvendorprice,omitempty"`
-	TotalVisibleReserveQuantity *int32 `json:"totalVisibleReserveQuantity,omitempty"`
 	Type *string `json:"type,omitempty"`
 	RecurringPriceModel *string `json:"recurringPriceModel,omitempty"`
+	UnitOfMeasure *string `json:"unitOfMeasure,omitempty"`
+	Tax *string `json:"tax,omitempty"`
+	Extrafees *float32 `json:"extrafees,omitempty"`
+	ExtraFeesDetails []QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner `json:"extraFeesDetails,omitempty"`
+	Discounts []QuoteDetailsResponseProductsInnerPriceDiscountsInner `json:"discounts,omitempty"`
 }
 
 // NewQuoteDetailsResponseProductsInnerPrice instantiates a new QuoteDetailsResponseProductsInnerPrice object
@@ -213,102 +215,6 @@ func (o *QuoteDetailsResponseProductsInnerPrice) SetDiscountOffList(v string) {
 	o.DiscountOffList = &v
 }
 
-// GetVendorprice returns the Vendorprice field value if set, zero value otherwise.
-func (o *QuoteDetailsResponseProductsInnerPrice) GetVendorprice() float32 {
-	if o == nil || IsNil(o.Vendorprice) {
-		var ret float32
-		return ret
-	}
-	return *o.Vendorprice
-}
-
-// GetVendorpriceOk returns a tuple with the Vendorprice field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *QuoteDetailsResponseProductsInnerPrice) GetVendorpriceOk() (*float32, bool) {
-	if o == nil || IsNil(o.Vendorprice) {
-		return nil, false
-	}
-	return o.Vendorprice, true
-}
-
-// HasVendorprice returns a boolean if a field has been set.
-func (o *QuoteDetailsResponseProductsInnerPrice) HasVendorprice() bool {
-	if o != nil && !IsNil(o.Vendorprice) {
-		return true
-	}
-
-	return false
-}
-
-// SetVendorprice gets a reference to the given float32 and assigns it to the Vendorprice field.
-func (o *QuoteDetailsResponseProductsInnerPrice) SetVendorprice(v float32) {
-	o.Vendorprice = &v
-}
-
-// GetExtendedvendorprice returns the Extendedvendorprice field value if set, zero value otherwise.
-func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedvendorprice() float32 {
-	if o == nil || IsNil(o.Extendedvendorprice) {
-		var ret float32
-		return ret
-	}
-	return *o.Extendedvendorprice
-}
-
-// GetExtendedvendorpriceOk returns a tuple with the Extendedvendorprice field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedvendorpriceOk() (*float32, bool) {
-	if o == nil || IsNil(o.Extendedvendorprice) {
-		return nil, false
-	}
-	return o.Extendedvendorprice, true
-}
-
-// HasExtendedvendorprice returns a boolean if a field has been set.
-func (o *QuoteDetailsResponseProductsInnerPrice) HasExtendedvendorprice() bool {
-	if o != nil && !IsNil(o.Extendedvendorprice) {
-		return true
-	}
-
-	return false
-}
-
-// SetExtendedvendorprice gets a reference to the given float32 and assigns it to the Extendedvendorprice field.
-func (o *QuoteDetailsResponseProductsInnerPrice) SetExtendedvendorprice(v float32) {
-	o.Extendedvendorprice = &v
-}
-
-// GetTotalVisibleReserveQuantity returns the TotalVisibleReserveQuantity field value if set, zero value otherwise.
-func (o *QuoteDetailsResponseProductsInnerPrice) GetTotalVisibleReserveQuantity() int32 {
-	if o == nil || IsNil(o.TotalVisibleReserveQuantity) {
-		var ret int32
-		return ret
-	}
-	return *o.TotalVisibleReserveQuantity
-}
-
-// GetTotalVisibleReserveQuantityOk returns a tuple with the TotalVisibleReserveQuantity field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *QuoteDetailsResponseProductsInnerPrice) GetTotalVisibleReserveQuantityOk() (*int32, bool) {
-	if o == nil || IsNil(o.TotalVisibleReserveQuantity) {
-		return nil, false
-	}
-	return o.TotalVisibleReserveQuantity, true
-}
-
-// HasTotalVisibleReserveQuantity returns a boolean if a field has been set.
-func (o *QuoteDetailsResponseProductsInnerPrice) HasTotalVisibleReserveQuantity() bool {
-	if o != nil && !IsNil(o.TotalVisibleReserveQuantity) {
-		return true
-	}
-
-	return false
-}
-
-// SetTotalVisibleReserveQuantity gets a reference to the given int32 and assigns it to the TotalVisibleReserveQuantity field.
-func (o *QuoteDetailsResponseProductsInnerPrice) SetTotalVisibleReserveQuantity(v int32) {
-	o.TotalVisibleReserveQuantity = &v
-}
-
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *QuoteDetailsResponseProductsInnerPrice) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -373,6 +279,166 @@ func (o *QuoteDetailsResponseProductsInnerPrice) SetRecurringPriceModel(v string
 	o.RecurringPriceModel = &v
 }
 
+// GetUnitOfMeasure returns the UnitOfMeasure field value if set, zero value otherwise.
+func (o *QuoteDetailsResponseProductsInnerPrice) GetUnitOfMeasure() string {
+	if o == nil || IsNil(o.UnitOfMeasure) {
+		var ret string
+		return ret
+	}
+	return *o.UnitOfMeasure
+}
+
+// GetUnitOfMeasureOk returns a tuple with the UnitOfMeasure field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponseProductsInnerPrice) GetUnitOfMeasureOk() (*string, bool) {
+	if o == nil || IsNil(o.UnitOfMeasure) {
+		return nil, false
+	}
+	return o.UnitOfMeasure, true
+}
+
+// HasUnitOfMeasure returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInnerPrice) HasUnitOfMeasure() bool {
+	if o != nil && !IsNil(o.UnitOfMeasure) {
+		return true
+	}
+
+	return false
+}
+
+// SetUnitOfMeasure gets a reference to the given string and assigns it to the UnitOfMeasure field.
+func (o *QuoteDetailsResponseProductsInnerPrice) SetUnitOfMeasure(v string) {
+	o.UnitOfMeasure = &v
+}
+
+// GetTax returns the Tax field value if set, zero value otherwise.
+func (o *QuoteDetailsResponseProductsInnerPrice) GetTax() string {
+	if o == nil || IsNil(o.Tax) {
+		var ret string
+		return ret
+	}
+	return *o.Tax
+}
+
+// GetTaxOk returns a tuple with the Tax field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponseProductsInnerPrice) GetTaxOk() (*string, bool) {
+	if o == nil || IsNil(o.Tax) {
+		return nil, false
+	}
+	return o.Tax, true
+}
+
+// HasTax returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInnerPrice) HasTax() bool {
+	if o != nil && !IsNil(o.Tax) {
+		return true
+	}
+
+	return false
+}
+
+// SetTax gets a reference to the given string and assigns it to the Tax field.
+func (o *QuoteDetailsResponseProductsInnerPrice) SetTax(v string) {
+	o.Tax = &v
+}
+
+// GetExtrafees returns the Extrafees field value if set, zero value otherwise.
+func (o *QuoteDetailsResponseProductsInnerPrice) GetExtrafees() float32 {
+	if o == nil || IsNil(o.Extrafees) {
+		var ret float32
+		return ret
+	}
+	return *o.Extrafees
+}
+
+// GetExtrafeesOk returns a tuple with the Extrafees field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponseProductsInnerPrice) GetExtrafeesOk() (*float32, bool) {
+	if o == nil || IsNil(o.Extrafees) {
+		return nil, false
+	}
+	return o.Extrafees, true
+}
+
+// HasExtrafees returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInnerPrice) HasExtrafees() bool {
+	if o != nil && !IsNil(o.Extrafees) {
+		return true
+	}
+
+	return false
+}
+
+// SetExtrafees gets a reference to the given float32 and assigns it to the Extrafees field.
+func (o *QuoteDetailsResponseProductsInnerPrice) SetExtrafees(v float32) {
+	o.Extrafees = &v
+}
+
+// GetExtraFeesDetails returns the ExtraFeesDetails field value if set, zero value otherwise.
+func (o *QuoteDetailsResponseProductsInnerPrice) GetExtraFeesDetails() []QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner {
+	if o == nil || IsNil(o.ExtraFeesDetails) {
+		var ret []QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner
+		return ret
+	}
+	return o.ExtraFeesDetails
+}
+
+// GetExtraFeesDetailsOk returns a tuple with the ExtraFeesDetails field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponseProductsInnerPrice) GetExtraFeesDetailsOk() ([]QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner, bool) {
+	if o == nil || IsNil(o.ExtraFeesDetails) {
+		return nil, false
+	}
+	return o.ExtraFeesDetails, true
+}
+
+// HasExtraFeesDetails returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInnerPrice) HasExtraFeesDetails() bool {
+	if o != nil && !IsNil(o.ExtraFeesDetails) {
+		return true
+	}
+
+	return false
+}
+
+// SetExtraFeesDetails gets a reference to the given []QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner and assigns it to the ExtraFeesDetails field.
+func (o *QuoteDetailsResponseProductsInnerPrice) SetExtraFeesDetails(v []QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner) {
+	o.ExtraFeesDetails = v
+}
+
+// GetDiscounts returns the Discounts field value if set, zero value otherwise.
+func (o *QuoteDetailsResponseProductsInnerPrice) GetDiscounts() []QuoteDetailsResponseProductsInnerPriceDiscountsInner {
+	if o == nil || IsNil(o.Discounts) {
+		var ret []QuoteDetailsResponseProductsInnerPriceDiscountsInner
+		return ret
+	}
+	return o.Discounts
+}
+
+// GetDiscountsOk returns a tuple with the Discounts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteDetailsResponseProductsInnerPrice) GetDiscountsOk() ([]QuoteDetailsResponseProductsInnerPriceDiscountsInner, bool) {
+	if o == nil || IsNil(o.Discounts) {
+		return nil, false
+	}
+	return o.Discounts, true
+}
+
+// HasDiscounts returns a boolean if a field has been set.
+func (o *QuoteDetailsResponseProductsInnerPrice) HasDiscounts() bool {
+	if o != nil && !IsNil(o.Discounts) {
+		return true
+	}
+
+	return false
+}
+
+// SetDiscounts gets a reference to the given []QuoteDetailsResponseProductsInnerPriceDiscountsInner and assigns it to the Discounts field.
+func (o *QuoteDetailsResponseProductsInnerPrice) SetDiscounts(v []QuoteDetailsResponseProductsInnerPriceDiscountsInner) {
+	o.Discounts = v
+}
+
 func (o QuoteDetailsResponseProductsInnerPrice) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -398,20 +464,26 @@ func (o QuoteDetailsResponseProductsInnerPrice) ToMap() (map[string]interface{},
 	if !IsNil(o.DiscountOffList) {
 		toSerialize["discountOffList"] = o.DiscountOffList
 	}
-	if !IsNil(o.Vendorprice) {
-		toSerialize["vendorprice"] = o.Vendorprice
-	}
-	if !IsNil(o.Extendedvendorprice) {
-		toSerialize["extendedvendorprice"] = o.Extendedvendorprice
-	}
-	if !IsNil(o.TotalVisibleReserveQuantity) {
-		toSerialize["totalVisibleReserveQuantity"] = o.TotalVisibleReserveQuantity
-	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
 	if !IsNil(o.RecurringPriceModel) {
 		toSerialize["recurringPriceModel"] = o.RecurringPriceModel
+	}
+	if !IsNil(o.UnitOfMeasure) {
+		toSerialize["unitOfMeasure"] = o.UnitOfMeasure
+	}
+	if !IsNil(o.Tax) {
+		toSerialize["tax"] = o.Tax
+	}
+	if !IsNil(o.Extrafees) {
+		toSerialize["extrafees"] = o.Extrafees
+	}
+	if !IsNil(o.ExtraFeesDetails) {
+		toSerialize["extraFeesDetails"] = o.ExtraFeesDetails
+	}
+	if !IsNil(o.Discounts) {
+		toSerialize["discounts"] = o.Discounts
 	}
 	return toSerialize, nil
 }

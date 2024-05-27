@@ -27,8 +27,6 @@ type AsyncOrderCreateDTOEndUserInfo struct {
 	CompanyName *string `json:"companyName,omitempty"`
 	Name1 *string `json:"name1,omitempty"`
 	Name2 *string `json:"name2,omitempty"`
-	// The contact Id for the end user/customer.
-	ContactId *string `json:"contactId,omitempty"`
 	// The address line 1 for the end user/customer.
 	AddressLine1 *string `json:"addressLine1,omitempty"`
 	// The address line 2 for the end user/customer.
@@ -37,6 +35,7 @@ type AsyncOrderCreateDTOEndUserInfo struct {
 	AddressLine3 *string `json:"addressLine3,omitempty"`
 	// The contact name for the end user/customer.
 	Contact *string `json:"contact,omitempty"`
+	Name3 *string `json:"name3,omitempty"`
 	// The end user/customer's city.
 	City *string `json:"city,omitempty"`
 	// The end user/customer's state.
@@ -230,38 +229,6 @@ func (o *AsyncOrderCreateDTOEndUserInfo) SetName2(v string) {
 	o.Name2 = &v
 }
 
-// GetContactId returns the ContactId field value if set, zero value otherwise.
-func (o *AsyncOrderCreateDTOEndUserInfo) GetContactId() string {
-	if o == nil || IsNil(o.ContactId) {
-		var ret string
-		return ret
-	}
-	return *o.ContactId
-}
-
-// GetContactIdOk returns a tuple with the ContactId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AsyncOrderCreateDTOEndUserInfo) GetContactIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ContactId) {
-		return nil, false
-	}
-	return o.ContactId, true
-}
-
-// HasContactId returns a boolean if a field has been set.
-func (o *AsyncOrderCreateDTOEndUserInfo) HasContactId() bool {
-	if o != nil && !IsNil(o.ContactId) {
-		return true
-	}
-
-	return false
-}
-
-// SetContactId gets a reference to the given string and assigns it to the ContactId field.
-func (o *AsyncOrderCreateDTOEndUserInfo) SetContactId(v string) {
-	o.ContactId = &v
-}
-
 // GetAddressLine1 returns the AddressLine1 field value if set, zero value otherwise.
 func (o *AsyncOrderCreateDTOEndUserInfo) GetAddressLine1() string {
 	if o == nil || IsNil(o.AddressLine1) {
@@ -388,6 +355,38 @@ func (o *AsyncOrderCreateDTOEndUserInfo) HasContact() bool {
 // SetContact gets a reference to the given string and assigns it to the Contact field.
 func (o *AsyncOrderCreateDTOEndUserInfo) SetContact(v string) {
 	o.Contact = &v
+}
+
+// GetName3 returns the Name3 field value if set, zero value otherwise.
+func (o *AsyncOrderCreateDTOEndUserInfo) GetName3() string {
+	if o == nil || IsNil(o.Name3) {
+		var ret string
+		return ret
+	}
+	return *o.Name3
+}
+
+// GetName3Ok returns a tuple with the Name3 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AsyncOrderCreateDTOEndUserInfo) GetName3Ok() (*string, bool) {
+	if o == nil || IsNil(o.Name3) {
+		return nil, false
+	}
+	return o.Name3, true
+}
+
+// HasName3 returns a boolean if a field has been set.
+func (o *AsyncOrderCreateDTOEndUserInfo) HasName3() bool {
+	if o != nil && !IsNil(o.Name3) {
+		return true
+	}
+
+	return false
+}
+
+// SetName3 gets a reference to the given string and assigns it to the Name3 field.
+func (o *AsyncOrderCreateDTOEndUserInfo) SetName3(v string) {
+	o.Name3 = &v
 }
 
 // GetCity returns the City field value if set, zero value otherwise.
@@ -639,9 +638,6 @@ func (o AsyncOrderCreateDTOEndUserInfo) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Name2) {
 		toSerialize["name2"] = o.Name2
 	}
-	if !IsNil(o.ContactId) {
-		toSerialize["contactId"] = o.ContactId
-	}
 	if !IsNil(o.AddressLine1) {
 		toSerialize["addressLine1"] = o.AddressLine1
 	}
@@ -653,6 +649,9 @@ func (o AsyncOrderCreateDTOEndUserInfo) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.Contact) {
 		toSerialize["contact"] = o.Contact
+	}
+	if !IsNil(o.Name3) {
+		toSerialize["name3"] = o.Name3
 	}
 	if !IsNil(o.City) {
 		toSerialize["city"] = o.City

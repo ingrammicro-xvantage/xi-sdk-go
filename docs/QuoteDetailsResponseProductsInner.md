@@ -20,9 +20,15 @@ Name | Type | Description | Notes
 **QuoteProductsSupplierPartAuxiliaryId** | Pointer to **string** | Vendor product configuration ID specific to Cisco. | [optional] 
 **VendorName** | Pointer to **string** | Vendor name of the product | [optional] 
 **Terms** | Pointer to **string** | Terms of the quote | [optional] 
+**PlanDescription** | Pointer to **string** |  | [optional] 
 **IsSubscription** | Pointer to **bool** |  | [optional] 
 **ResellerMargin** | Pointer to **string** |  | [optional] 
+**RequestedStartDate** | Pointer to **string** |  | [optional] 
+**StartDate** | Pointer to **string** |  | [optional] 
+**EndDate** | Pointer to **string** |  | [optional] 
+**SerialNumber** | Pointer to **string** |  | [optional] 
 **Price** | Pointer to [**QuoteDetailsResponseProductsInnerPrice**](QuoteDetailsResponseProductsInnerPrice.md) |  | [optional] 
+**BillDetails** | Pointer to [**[]QuoteDetailsResponseProductsInnerBillDetailsInner**](QuoteDetailsResponseProductsInnerBillDetailsInner.md) |  | [optional] 
 
 ## Methods
 
@@ -443,6 +449,31 @@ SetTerms sets Terms field to given value.
 
 HasTerms returns a boolean if a field has been set.
 
+### GetPlanDescription
+
+`func (o *QuoteDetailsResponseProductsInner) GetPlanDescription() string`
+
+GetPlanDescription returns the PlanDescription field if non-nil, zero value otherwise.
+
+### GetPlanDescriptionOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetPlanDescriptionOk() (*string, bool)`
+
+GetPlanDescriptionOk returns a tuple with the PlanDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanDescription
+
+`func (o *QuoteDetailsResponseProductsInner) SetPlanDescription(v string)`
+
+SetPlanDescription sets PlanDescription field to given value.
+
+### HasPlanDescription
+
+`func (o *QuoteDetailsResponseProductsInner) HasPlanDescription() bool`
+
+HasPlanDescription returns a boolean if a field has been set.
+
 ### GetIsSubscription
 
 `func (o *QuoteDetailsResponseProductsInner) GetIsSubscription() bool`
@@ -493,6 +524,106 @@ SetResellerMargin sets ResellerMargin field to given value.
 
 HasResellerMargin returns a boolean if a field has been set.
 
+### GetRequestedStartDate
+
+`func (o *QuoteDetailsResponseProductsInner) GetRequestedStartDate() string`
+
+GetRequestedStartDate returns the RequestedStartDate field if non-nil, zero value otherwise.
+
+### GetRequestedStartDateOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetRequestedStartDateOk() (*string, bool)`
+
+GetRequestedStartDateOk returns a tuple with the RequestedStartDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestedStartDate
+
+`func (o *QuoteDetailsResponseProductsInner) SetRequestedStartDate(v string)`
+
+SetRequestedStartDate sets RequestedStartDate field to given value.
+
+### HasRequestedStartDate
+
+`func (o *QuoteDetailsResponseProductsInner) HasRequestedStartDate() bool`
+
+HasRequestedStartDate returns a boolean if a field has been set.
+
+### GetStartDate
+
+`func (o *QuoteDetailsResponseProductsInner) GetStartDate() string`
+
+GetStartDate returns the StartDate field if non-nil, zero value otherwise.
+
+### GetStartDateOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetStartDateOk() (*string, bool)`
+
+GetStartDateOk returns a tuple with the StartDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStartDate
+
+`func (o *QuoteDetailsResponseProductsInner) SetStartDate(v string)`
+
+SetStartDate sets StartDate field to given value.
+
+### HasStartDate
+
+`func (o *QuoteDetailsResponseProductsInner) HasStartDate() bool`
+
+HasStartDate returns a boolean if a field has been set.
+
+### GetEndDate
+
+`func (o *QuoteDetailsResponseProductsInner) GetEndDate() string`
+
+GetEndDate returns the EndDate field if non-nil, zero value otherwise.
+
+### GetEndDateOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetEndDateOk() (*string, bool)`
+
+GetEndDateOk returns a tuple with the EndDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEndDate
+
+`func (o *QuoteDetailsResponseProductsInner) SetEndDate(v string)`
+
+SetEndDate sets EndDate field to given value.
+
+### HasEndDate
+
+`func (o *QuoteDetailsResponseProductsInner) HasEndDate() bool`
+
+HasEndDate returns a boolean if a field has been set.
+
+### GetSerialNumber
+
+`func (o *QuoteDetailsResponseProductsInner) GetSerialNumber() string`
+
+GetSerialNumber returns the SerialNumber field if non-nil, zero value otherwise.
+
+### GetSerialNumberOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetSerialNumberOk() (*string, bool)`
+
+GetSerialNumberOk returns a tuple with the SerialNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSerialNumber
+
+`func (o *QuoteDetailsResponseProductsInner) SetSerialNumber(v string)`
+
+SetSerialNumber sets SerialNumber field to given value.
+
+### HasSerialNumber
+
+`func (o *QuoteDetailsResponseProductsInner) HasSerialNumber() bool`
+
+HasSerialNumber returns a boolean if a field has been set.
+
 ### GetPrice
 
 `func (o *QuoteDetailsResponseProductsInner) GetPrice() QuoteDetailsResponseProductsInnerPrice`
@@ -517,6 +648,31 @@ SetPrice sets Price field to given value.
 `func (o *QuoteDetailsResponseProductsInner) HasPrice() bool`
 
 HasPrice returns a boolean if a field has been set.
+
+### GetBillDetails
+
+`func (o *QuoteDetailsResponseProductsInner) GetBillDetails() []QuoteDetailsResponseProductsInnerBillDetailsInner`
+
+GetBillDetails returns the BillDetails field if non-nil, zero value otherwise.
+
+### GetBillDetailsOk
+
+`func (o *QuoteDetailsResponseProductsInner) GetBillDetailsOk() (*[]QuoteDetailsResponseProductsInnerBillDetailsInner, bool)`
+
+GetBillDetailsOk returns a tuple with the BillDetails field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBillDetails
+
+`func (o *QuoteDetailsResponseProductsInner) SetBillDetails(v []QuoteDetailsResponseProductsInnerBillDetailsInner)`
+
+SetBillDetails sets BillDetails field to given value.
+
+### HasBillDetails
+
+`func (o *QuoteDetailsResponseProductsInner) HasBillDetails() bool`
+
+HasBillDetails returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

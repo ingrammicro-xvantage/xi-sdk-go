@@ -24,7 +24,7 @@ type AsyncOrderCreateDTO struct {
 	// The reseller's order number for reference in their system.
 	CustomerOrderNumber NullableString `json:"customerOrderNumber,omitempty"`
 	// The end customer's order number for reference in their system.
-	EndcustomerOrderNumber NullableString `json:"endcustomerOrderNumber,omitempty"`
+	EndCustomerOrderNumber NullableString `json:"endCustomerOrderNumber,omitempty"`
 	// Order header level notes.
 	Notes *string `json:"notes,omitempty"`
 	// Suffix used to identify billing address. Created during onboarding. Resellers are provided with one or more address IDs depending on how many bill to addresses they need for various flooring companies they are using for credit.
@@ -152,46 +152,46 @@ func (o *AsyncOrderCreateDTO) UnsetCustomerOrderNumber() {
 	o.CustomerOrderNumber.Unset()
 }
 
-// GetEndcustomerOrderNumber returns the EndcustomerOrderNumber field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AsyncOrderCreateDTO) GetEndcustomerOrderNumber() string {
-	if o == nil || IsNil(o.EndcustomerOrderNumber.Get()) {
+// GetEndCustomerOrderNumber returns the EndCustomerOrderNumber field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AsyncOrderCreateDTO) GetEndCustomerOrderNumber() string {
+	if o == nil || IsNil(o.EndCustomerOrderNumber.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.EndcustomerOrderNumber.Get()
+	return *o.EndCustomerOrderNumber.Get()
 }
 
-// GetEndcustomerOrderNumberOk returns a tuple with the EndcustomerOrderNumber field value if set, nil otherwise
+// GetEndCustomerOrderNumberOk returns a tuple with the EndCustomerOrderNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AsyncOrderCreateDTO) GetEndcustomerOrderNumberOk() (*string, bool) {
+func (o *AsyncOrderCreateDTO) GetEndCustomerOrderNumberOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.EndcustomerOrderNumber.Get(), o.EndcustomerOrderNumber.IsSet()
+	return o.EndCustomerOrderNumber.Get(), o.EndCustomerOrderNumber.IsSet()
 }
 
-// HasEndcustomerOrderNumber returns a boolean if a field has been set.
-func (o *AsyncOrderCreateDTO) HasEndcustomerOrderNumber() bool {
-	if o != nil && o.EndcustomerOrderNumber.IsSet() {
+// HasEndCustomerOrderNumber returns a boolean if a field has been set.
+func (o *AsyncOrderCreateDTO) HasEndCustomerOrderNumber() bool {
+	if o != nil && o.EndCustomerOrderNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEndcustomerOrderNumber gets a reference to the given NullableString and assigns it to the EndcustomerOrderNumber field.
-func (o *AsyncOrderCreateDTO) SetEndcustomerOrderNumber(v string) {
-	o.EndcustomerOrderNumber.Set(&v)
+// SetEndCustomerOrderNumber gets a reference to the given NullableString and assigns it to the EndCustomerOrderNumber field.
+func (o *AsyncOrderCreateDTO) SetEndCustomerOrderNumber(v string) {
+	o.EndCustomerOrderNumber.Set(&v)
 }
-// SetEndcustomerOrderNumberNil sets the value for EndcustomerOrderNumber to be an explicit nil
-func (o *AsyncOrderCreateDTO) SetEndcustomerOrderNumberNil() {
-	o.EndcustomerOrderNumber.Set(nil)
+// SetEndCustomerOrderNumberNil sets the value for EndCustomerOrderNumber to be an explicit nil
+func (o *AsyncOrderCreateDTO) SetEndCustomerOrderNumberNil() {
+	o.EndCustomerOrderNumber.Set(nil)
 }
 
-// UnsetEndcustomerOrderNumber ensures that no value is present for EndcustomerOrderNumber, not even an explicit nil
-func (o *AsyncOrderCreateDTO) UnsetEndcustomerOrderNumber() {
-	o.EndcustomerOrderNumber.Unset()
+// UnsetEndCustomerOrderNumber ensures that no value is present for EndCustomerOrderNumber, not even an explicit nil
+func (o *AsyncOrderCreateDTO) UnsetEndCustomerOrderNumber() {
+	o.EndCustomerOrderNumber.Unset()
 }
 
 // GetNotes returns the Notes field value if set, zero value otherwise.
@@ -668,8 +668,8 @@ func (o AsyncOrderCreateDTO) ToMap() (map[string]interface{}, error) {
 	if o.CustomerOrderNumber.IsSet() {
 		toSerialize["customerOrderNumber"] = o.CustomerOrderNumber.Get()
 	}
-	if o.EndcustomerOrderNumber.IsSet() {
-		toSerialize["endcustomerOrderNumber"] = o.EndcustomerOrderNumber.Get()
+	if o.EndCustomerOrderNumber.IsSet() {
+		toSerialize["endCustomerOrderNumber"] = o.EndCustomerOrderNumber.Get()
 	}
 	if !IsNil(o.Notes) {
 		toSerialize["notes"] = o.Notes

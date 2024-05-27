@@ -7,8 +7,8 @@ Method | HTTP request | Description
 [**DeleteOrdercancel**](OrdersAPI.md#DeleteOrdercancel) | **Delete** /resellers/v6/orders/{OrderNumber} | Cancel your Order
 [**GetOrderdetailsV61**](OrdersAPI.md#GetOrderdetailsV61) | **Get** /resellers/v6.1/orders/{ordernumber} | Get Order Details v6.1
 [**GetResellersV6Ordersearch**](OrdersAPI.md#GetResellersV6Ordersearch) | **Get** /resellers/v6/orders/search | Search your Orders
-[**PostAsyncOrderCreateV7**](OrdersAPI.md#PostAsyncOrderCreateV7) | **Post** /resellers/v7/orders | Async Order Create
 [**PostCreateorderV6**](OrdersAPI.md#PostCreateorderV6) | **Post** /resellers/v6/orders | Create your Order
+[**PostCreateorderV7**](OrdersAPI.md#PostCreateorderV7) | **Post** /resellers/v7/orders | Create your Order v7
 [**PutOrdermodify**](OrdersAPI.md#PutOrdermodify) | **Put** /resellers/v6/orders/{orderNumber} | Modify your Order
 
 
@@ -288,80 +288,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PostAsyncOrderCreateV7
-
-> AsyncOrderCreateResponse PostAsyncOrderCreateV7(ctx).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).AsyncOrderCreateDTO(asyncOrderCreateDTO).IMSenderID(iMSenderID).Execute()
-
-Async Order Create
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	iMCustomerNumber := "20-222222" // string | Your unique Ingram Micro customer number.
-	iMCountryCode := "US" // string | Two-character ISO country code.
-	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction accross all the systems.
-	asyncOrderCreateDTO := *openapiclient.NewAsyncOrderCreateDTO() // AsyncOrderCreateDTO | 
-	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OrdersAPI.PostAsyncOrderCreateV7(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).AsyncOrderCreateDTO(asyncOrderCreateDTO).IMSenderID(iMSenderID).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `OrdersAPI.PostAsyncOrderCreateV7``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PostAsyncOrderCreateV7`: AsyncOrderCreateResponse
-	fmt.Fprintf(os.Stdout, "Response from `OrdersAPI.PostAsyncOrderCreateV7`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAsyncOrderCreateV7Request struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **iMCustomerNumber** | **string** | Your unique Ingram Micro customer number. | 
- **iMCountryCode** | **string** | Two-character ISO country code. | 
- **iMCorrelationID** | **string** | Unique transaction number to identify each transaction accross all the systems. | 
- **asyncOrderCreateDTO** | [**AsyncOrderCreateDTO**](AsyncOrderCreateDTO.md) |  | 
- **iMSenderID** | **string** | Unique value used to identify the sender of the transaction. | 
-
-### Return type
-
-[**AsyncOrderCreateResponse**](AsyncOrderCreateResponse.md)
-
-### Authorization
-
-[application](../README.md#application)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## PostCreateorderV6
 
 > OrderCreateResponse PostCreateorderV6(ctx).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).OrderCreateRequest(orderCreateRequest).IMSenderID(iMSenderID).Execute()
@@ -421,6 +347,80 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OrderCreateResponse**](OrderCreateResponse.md)
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostCreateorderV7
+
+> AsyncOrderCreateResponse PostCreateorderV7(ctx).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).AsyncOrderCreateDTO(asyncOrderCreateDTO).IMSenderID(iMSenderID).Execute()
+
+Create your Order v7
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	iMCustomerNumber := "20-222222" // string | Your unique Ingram Micro customer number.
+	iMCountryCode := "US" // string | Two-character ISO country code.
+	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction accross all the systems.
+	asyncOrderCreateDTO := *openapiclient.NewAsyncOrderCreateDTO() // AsyncOrderCreateDTO | 
+	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OrdersAPI.PostCreateorderV7(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).AsyncOrderCreateDTO(asyncOrderCreateDTO).IMSenderID(iMSenderID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OrdersAPI.PostCreateorderV7``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PostCreateorderV7`: AsyncOrderCreateResponse
+	fmt.Fprintf(os.Stdout, "Response from `OrdersAPI.PostCreateorderV7`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostCreateorderV7Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iMCustomerNumber** | **string** | Your unique Ingram Micro customer number. | 
+ **iMCountryCode** | **string** | Two-character ISO country code. | 
+ **iMCorrelationID** | **string** | Unique transaction number to identify each transaction accross all the systems. | 
+ **asyncOrderCreateDTO** | [**AsyncOrderCreateDTO**](AsyncOrderCreateDTO.md) |  | 
+ **iMSenderID** | **string** | Unique value used to identify the sender of the transaction. | 
+
+### Return type
+
+[**AsyncOrderCreateResponse**](AsyncOrderCreateResponse.md)
 
 ### Authorization
 

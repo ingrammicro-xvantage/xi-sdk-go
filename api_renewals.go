@@ -178,7 +178,7 @@ func (a *RenewalsAPIService) GetResellersV6RenewalsdetailsExecute(r ApiGetResell
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
-			var v PostAsyncOrderCreateV7500Response
+			var v PostCreateorderV7500Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -421,7 +421,7 @@ func (a *RenewalsAPIService) PostRenewalssearchExecute(r ApiPostRenewalssearchRe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
-			var v PostAsyncOrderCreateV7500Response
+			var v PostCreateorderV7500Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

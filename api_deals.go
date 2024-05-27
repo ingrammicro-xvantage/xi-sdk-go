@@ -196,7 +196,7 @@ func (a *DealsAPIService) GetResellersV6DealsdetailsExecute(r ApiGetResellersV6D
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
-			var v PostAsyncOrderCreateV7500Response
+			var v PostCreateorderV7500Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -421,7 +421,7 @@ func (a *DealsAPIService) GetResellersV6DealssearchExecute(r ApiGetResellersV6De
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
-			var v PostAsyncOrderCreateV7500Response
+			var v PostCreateorderV7500Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
