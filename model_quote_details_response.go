@@ -79,10 +79,10 @@ type QuoteDetailsResponse struct {
 	QuantityTotal *int32 `json:"quantityTotal,omitempty"`
 	ExtraFeesTotal *float32 `json:"extraFeesTotal,omitempty"`
 	ExtraFeesTotalDetails []QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner `json:"extraFeesTotalDetails,omitempty"`
-	TaxTotal *float32 `json:"taxTotal,omitempty"`
+	TaxTotal NullableFloat32 `json:"taxTotal,omitempty"`
 	// Total amount of quoted price for all products in the quote including both solution products and suggested products.
 	ExtendedQuotePriceTotal *float32 `json:"extendedQuotePriceTotal,omitempty"`
-	FreightAmount *float32 `json:"freightAmount,omitempty"`
+	FreightAmount NullableFloat32 `json:"freightAmount,omitempty"`
 	TotalQuoteAmount *string `json:"totalQuoteAmount,omitempty"`
 	AdditionalAttributes []QuoteDetailsResponseAdditionalAttributesInner `json:"additionalAttributes,omitempty"`
 }
@@ -1256,36 +1256,46 @@ func (o *QuoteDetailsResponse) SetExtraFeesTotalDetails(v []QuoteDetailsResponse
 	o.ExtraFeesTotalDetails = v
 }
 
-// GetTaxTotal returns the TaxTotal field value if set, zero value otherwise.
+// GetTaxTotal returns the TaxTotal field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QuoteDetailsResponse) GetTaxTotal() float32 {
-	if o == nil || IsNil(o.TaxTotal) {
+	if o == nil || IsNil(o.TaxTotal.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.TaxTotal
+	return *o.TaxTotal.Get()
 }
 
 // GetTaxTotalOk returns a tuple with the TaxTotal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QuoteDetailsResponse) GetTaxTotalOk() (*float32, bool) {
-	if o == nil || IsNil(o.TaxTotal) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TaxTotal, true
+	return o.TaxTotal.Get(), o.TaxTotal.IsSet()
 }
 
 // HasTaxTotal returns a boolean if a field has been set.
 func (o *QuoteDetailsResponse) HasTaxTotal() bool {
-	if o != nil && !IsNil(o.TaxTotal) {
+	if o != nil && o.TaxTotal.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTaxTotal gets a reference to the given float32 and assigns it to the TaxTotal field.
+// SetTaxTotal gets a reference to the given NullableFloat32 and assigns it to the TaxTotal field.
 func (o *QuoteDetailsResponse) SetTaxTotal(v float32) {
-	o.TaxTotal = &v
+	o.TaxTotal.Set(&v)
+}
+// SetTaxTotalNil sets the value for TaxTotal to be an explicit nil
+func (o *QuoteDetailsResponse) SetTaxTotalNil() {
+	o.TaxTotal.Set(nil)
+}
+
+// UnsetTaxTotal ensures that no value is present for TaxTotal, not even an explicit nil
+func (o *QuoteDetailsResponse) UnsetTaxTotal() {
+	o.TaxTotal.Unset()
 }
 
 // GetExtendedQuotePriceTotal returns the ExtendedQuotePriceTotal field value if set, zero value otherwise.
@@ -1320,36 +1330,46 @@ func (o *QuoteDetailsResponse) SetExtendedQuotePriceTotal(v float32) {
 	o.ExtendedQuotePriceTotal = &v
 }
 
-// GetFreightAmount returns the FreightAmount field value if set, zero value otherwise.
+// GetFreightAmount returns the FreightAmount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QuoteDetailsResponse) GetFreightAmount() float32 {
-	if o == nil || IsNil(o.FreightAmount) {
+	if o == nil || IsNil(o.FreightAmount.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.FreightAmount
+	return *o.FreightAmount.Get()
 }
 
 // GetFreightAmountOk returns a tuple with the FreightAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QuoteDetailsResponse) GetFreightAmountOk() (*float32, bool) {
-	if o == nil || IsNil(o.FreightAmount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FreightAmount, true
+	return o.FreightAmount.Get(), o.FreightAmount.IsSet()
 }
 
 // HasFreightAmount returns a boolean if a field has been set.
 func (o *QuoteDetailsResponse) HasFreightAmount() bool {
-	if o != nil && !IsNil(o.FreightAmount) {
+	if o != nil && o.FreightAmount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFreightAmount gets a reference to the given float32 and assigns it to the FreightAmount field.
+// SetFreightAmount gets a reference to the given NullableFloat32 and assigns it to the FreightAmount field.
 func (o *QuoteDetailsResponse) SetFreightAmount(v float32) {
-	o.FreightAmount = &v
+	o.FreightAmount.Set(&v)
+}
+// SetFreightAmountNil sets the value for FreightAmount to be an explicit nil
+func (o *QuoteDetailsResponse) SetFreightAmountNil() {
+	o.FreightAmount.Set(nil)
+}
+
+// UnsetFreightAmount ensures that no value is present for FreightAmount, not even an explicit nil
+func (o *QuoteDetailsResponse) UnsetFreightAmount() {
+	o.FreightAmount.Unset()
 }
 
 // GetTotalQuoteAmount returns the TotalQuoteAmount field value if set, zero value otherwise.
@@ -1534,14 +1554,14 @@ func (o QuoteDetailsResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ExtraFeesTotalDetails) {
 		toSerialize["extraFeesTotalDetails"] = o.ExtraFeesTotalDetails
 	}
-	if !IsNil(o.TaxTotal) {
-		toSerialize["taxTotal"] = o.TaxTotal
+	if o.TaxTotal.IsSet() {
+		toSerialize["taxTotal"] = o.TaxTotal.Get()
 	}
 	if !IsNil(o.ExtendedQuotePriceTotal) {
 		toSerialize["extendedQuotePriceTotal"] = o.ExtendedQuotePriceTotal
 	}
-	if !IsNil(o.FreightAmount) {
-		toSerialize["freightAmount"] = o.FreightAmount
+	if o.FreightAmount.IsSet() {
+		toSerialize["freightAmount"] = o.FreightAmount.Get()
 	}
 	if !IsNil(o.TotalQuoteAmount) {
 		toSerialize["totalQuoteAmount"] = o.TotalQuoteAmount

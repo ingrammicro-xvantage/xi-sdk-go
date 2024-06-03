@@ -40,9 +40,9 @@ Name | Type | Description | Notes
 **QuantityTotal** | Pointer to **int32** | Total quantity of all items in the quote. | [optional] 
 **ExtraFeesTotal** | Pointer to **float32** |  | [optional] 
 **ExtraFeesTotalDetails** | Pointer to [**[]QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner**](QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner.md) |  | [optional] 
-**TaxTotal** | Pointer to **float32** |  | [optional] 
+**TaxTotal** | Pointer to **NullableFloat32** |  | [optional] 
 **ExtendedQuotePriceTotal** | Pointer to **float32** | Total amount of quoted price for all products in the quote including both solution products and suggested products. | [optional] 
-**FreightAmount** | Pointer to **float32** |  | [optional] 
+**FreightAmount** | Pointer to **NullableFloat32** |  | [optional] 
 **TotalQuoteAmount** | Pointer to **string** |  | [optional] 
 **AdditionalAttributes** | Pointer to [**[]QuoteDetailsResponseAdditionalAttributesInner**](QuoteDetailsResponseAdditionalAttributesInner.md) |  | [optional] 
 
@@ -990,6 +990,16 @@ SetTaxTotal sets TaxTotal field to given value.
 
 HasTaxTotal returns a boolean if a field has been set.
 
+### SetTaxTotalNil
+
+`func (o *QuoteDetailsResponse) SetTaxTotalNil(b bool)`
+
+ SetTaxTotalNil sets the value for TaxTotal to be an explicit nil
+
+### UnsetTaxTotal
+`func (o *QuoteDetailsResponse) UnsetTaxTotal()`
+
+UnsetTaxTotal ensures that no value is present for TaxTotal, not even an explicit nil
 ### GetExtendedQuotePriceTotal
 
 `func (o *QuoteDetailsResponse) GetExtendedQuotePriceTotal() float32`
@@ -1040,6 +1050,16 @@ SetFreightAmount sets FreightAmount field to given value.
 
 HasFreightAmount returns a boolean if a field has been set.
 
+### SetFreightAmountNil
+
+`func (o *QuoteDetailsResponse) SetFreightAmountNil(b bool)`
+
+ SetFreightAmountNil sets the value for FreightAmount to be an explicit nil
+
+### UnsetFreightAmount
+`func (o *QuoteDetailsResponse) UnsetFreightAmount()`
+
+UnsetFreightAmount ensures that no value is present for FreightAmount, not even an explicit nil
 ### GetTotalQuoteAmount
 
 `func (o *QuoteDetailsResponse) GetTotalQuoteAmount() string`

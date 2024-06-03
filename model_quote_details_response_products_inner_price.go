@@ -32,8 +32,8 @@ type QuoteDetailsResponseProductsInnerPrice struct {
 	Type *string `json:"type,omitempty"`
 	RecurringPriceModel *string `json:"recurringPriceModel,omitempty"`
 	UnitOfMeasure *string `json:"unitOfMeasure,omitempty"`
-	Tax *float32 `json:"tax,omitempty"`
-	Extrafees *float32 `json:"extrafees,omitempty"`
+	Tax NullableFloat32 `json:"tax,omitempty"`
+	Extrafees NullableFloat32 `json:"extrafees,omitempty"`
 	ExtraFeesDetails []QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner `json:"extraFeesDetails,omitempty"`
 	Discounts []QuoteDetailsResponseProductsInnerPriceDiscountsInner `json:"discounts,omitempty"`
 }
@@ -311,68 +311,88 @@ func (o *QuoteDetailsResponseProductsInnerPrice) SetUnitOfMeasure(v string) {
 	o.UnitOfMeasure = &v
 }
 
-// GetTax returns the Tax field value if set, zero value otherwise.
+// GetTax returns the Tax field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QuoteDetailsResponseProductsInnerPrice) GetTax() float32 {
-	if o == nil || IsNil(o.Tax) {
+	if o == nil || IsNil(o.Tax.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.Tax
+	return *o.Tax.Get()
 }
 
 // GetTaxOk returns a tuple with the Tax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QuoteDetailsResponseProductsInnerPrice) GetTaxOk() (*float32, bool) {
-	if o == nil || IsNil(o.Tax) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Tax, true
+	return o.Tax.Get(), o.Tax.IsSet()
 }
 
 // HasTax returns a boolean if a field has been set.
 func (o *QuoteDetailsResponseProductsInnerPrice) HasTax() bool {
-	if o != nil && !IsNil(o.Tax) {
+	if o != nil && o.Tax.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTax gets a reference to the given float32 and assigns it to the Tax field.
+// SetTax gets a reference to the given NullableFloat32 and assigns it to the Tax field.
 func (o *QuoteDetailsResponseProductsInnerPrice) SetTax(v float32) {
-	o.Tax = &v
+	o.Tax.Set(&v)
+}
+// SetTaxNil sets the value for Tax to be an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) SetTaxNil() {
+	o.Tax.Set(nil)
 }
 
-// GetExtrafees returns the Extrafees field value if set, zero value otherwise.
+// UnsetTax ensures that no value is present for Tax, not even an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) UnsetTax() {
+	o.Tax.Unset()
+}
+
+// GetExtrafees returns the Extrafees field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QuoteDetailsResponseProductsInnerPrice) GetExtrafees() float32 {
-	if o == nil || IsNil(o.Extrafees) {
+	if o == nil || IsNil(o.Extrafees.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.Extrafees
+	return *o.Extrafees.Get()
 }
 
 // GetExtrafeesOk returns a tuple with the Extrafees field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QuoteDetailsResponseProductsInnerPrice) GetExtrafeesOk() (*float32, bool) {
-	if o == nil || IsNil(o.Extrafees) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Extrafees, true
+	return o.Extrafees.Get(), o.Extrafees.IsSet()
 }
 
 // HasExtrafees returns a boolean if a field has been set.
 func (o *QuoteDetailsResponseProductsInnerPrice) HasExtrafees() bool {
-	if o != nil && !IsNil(o.Extrafees) {
+	if o != nil && o.Extrafees.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExtrafees gets a reference to the given float32 and assigns it to the Extrafees field.
+// SetExtrafees gets a reference to the given NullableFloat32 and assigns it to the Extrafees field.
 func (o *QuoteDetailsResponseProductsInnerPrice) SetExtrafees(v float32) {
-	o.Extrafees = &v
+	o.Extrafees.Set(&v)
+}
+// SetExtrafeesNil sets the value for Extrafees to be an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) SetExtrafeesNil() {
+	o.Extrafees.Set(nil)
+}
+
+// UnsetExtrafees ensures that no value is present for Extrafees, not even an explicit nil
+func (o *QuoteDetailsResponseProductsInnerPrice) UnsetExtrafees() {
+	o.Extrafees.Unset()
 }
 
 // GetExtraFeesDetails returns the ExtraFeesDetails field value if set, zero value otherwise.
@@ -473,11 +493,11 @@ func (o QuoteDetailsResponseProductsInnerPrice) ToMap() (map[string]interface{},
 	if !IsNil(o.UnitOfMeasure) {
 		toSerialize["unitOfMeasure"] = o.UnitOfMeasure
 	}
-	if !IsNil(o.Tax) {
-		toSerialize["tax"] = o.Tax
+	if o.Tax.IsSet() {
+		toSerialize["tax"] = o.Tax.Get()
 	}
-	if !IsNil(o.Extrafees) {
-		toSerialize["extrafees"] = o.Extrafees
+	if o.Extrafees.IsSet() {
+		toSerialize["extrafees"] = o.Extrafees.Get()
 	}
 	if !IsNil(o.ExtraFeesDetails) {
 		toSerialize["extraFeesDetails"] = o.ExtraFeesDetails

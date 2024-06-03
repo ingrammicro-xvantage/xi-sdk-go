@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** |  | [optional] 
 **RecurringPriceModel** | Pointer to **string** |  | [optional] 
 **UnitOfMeasure** | Pointer to **string** |  | [optional] 
-**Tax** | Pointer to **float32** |  | [optional] 
-**Extrafees** | Pointer to **float32** |  | [optional] 
+**Tax** | Pointer to **NullableFloat32** |  | [optional] 
+**Extrafees** | Pointer to **NullableFloat32** |  | [optional] 
 **ExtraFeesDetails** | Pointer to [**[]QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner**](QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner.md) |  | [optional] 
 **Discounts** | Pointer to [**[]QuoteDetailsResponseProductsInnerPriceDiscountsInner**](QuoteDetailsResponseProductsInnerPriceDiscountsInner.md) |  | [optional] 
 
@@ -261,6 +261,16 @@ SetTax sets Tax field to given value.
 
 HasTax returns a boolean if a field has been set.
 
+### SetTaxNil
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetTaxNil(b bool)`
+
+ SetTaxNil sets the value for Tax to be an explicit nil
+
+### UnsetTax
+`func (o *QuoteDetailsResponseProductsInnerPrice) UnsetTax()`
+
+UnsetTax ensures that no value is present for Tax, not even an explicit nil
 ### GetExtrafees
 
 `func (o *QuoteDetailsResponseProductsInnerPrice) GetExtrafees() float32`
@@ -286,6 +296,16 @@ SetExtrafees sets Extrafees field to given value.
 
 HasExtrafees returns a boolean if a field has been set.
 
+### SetExtrafeesNil
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetExtrafeesNil(b bool)`
+
+ SetExtrafeesNil sets the value for Extrafees to be an explicit nil
+
+### UnsetExtrafees
+`func (o *QuoteDetailsResponseProductsInnerPrice) UnsetExtrafees()`
+
+UnsetExtrafees ensures that no value is present for Extrafees, not even an explicit nil
 ### GetExtraFeesDetails
 
 `func (o *QuoteDetailsResponseProductsInnerPrice) GetExtraFeesDetails() []QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner`
