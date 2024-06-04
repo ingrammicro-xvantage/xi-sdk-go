@@ -27,6 +27,8 @@ type QuoteSearchResponse struct {
 	PageNumber *int32 `json:"pageNumber,omitempty"`
 	// The quote details for the requested criteria.
 	Quotes []QuoteSearchResponseQuotesInner `json:"quotes,omitempty"`
+	NextPage *string `json:"nextPage,omitempty"`
+	PrevPage *string `json:"prevPage,omitempty"`
 }
 
 // NewQuoteSearchResponse instantiates a new QuoteSearchResponse object
@@ -174,6 +176,70 @@ func (o *QuoteSearchResponse) SetQuotes(v []QuoteSearchResponseQuotesInner) {
 	o.Quotes = v
 }
 
+// GetNextPage returns the NextPage field value if set, zero value otherwise.
+func (o *QuoteSearchResponse) GetNextPage() string {
+	if o == nil || IsNil(o.NextPage) {
+		var ret string
+		return ret
+	}
+	return *o.NextPage
+}
+
+// GetNextPageOk returns a tuple with the NextPage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteSearchResponse) GetNextPageOk() (*string, bool) {
+	if o == nil || IsNil(o.NextPage) {
+		return nil, false
+	}
+	return o.NextPage, true
+}
+
+// HasNextPage returns a boolean if a field has been set.
+func (o *QuoteSearchResponse) HasNextPage() bool {
+	if o != nil && !IsNil(o.NextPage) {
+		return true
+	}
+
+	return false
+}
+
+// SetNextPage gets a reference to the given string and assigns it to the NextPage field.
+func (o *QuoteSearchResponse) SetNextPage(v string) {
+	o.NextPage = &v
+}
+
+// GetPrevPage returns the PrevPage field value if set, zero value otherwise.
+func (o *QuoteSearchResponse) GetPrevPage() string {
+	if o == nil || IsNil(o.PrevPage) {
+		var ret string
+		return ret
+	}
+	return *o.PrevPage
+}
+
+// GetPrevPageOk returns a tuple with the PrevPage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteSearchResponse) GetPrevPageOk() (*string, bool) {
+	if o == nil || IsNil(o.PrevPage) {
+		return nil, false
+	}
+	return o.PrevPage, true
+}
+
+// HasPrevPage returns a boolean if a field has been set.
+func (o *QuoteSearchResponse) HasPrevPage() bool {
+	if o != nil && !IsNil(o.PrevPage) {
+		return true
+	}
+
+	return false
+}
+
+// SetPrevPage gets a reference to the given string and assigns it to the PrevPage field.
+func (o *QuoteSearchResponse) SetPrevPage(v string) {
+	o.PrevPage = &v
+}
+
 func (o QuoteSearchResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -195,6 +261,12 @@ func (o QuoteSearchResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Quotes) {
 		toSerialize["quotes"] = o.Quotes
+	}
+	if !IsNil(o.NextPage) {
+		toSerialize["nextPage"] = o.NextPage
+	}
+	if !IsNil(o.PrevPage) {
+		toSerialize["prevPage"] = o.PrevPage
 	}
 	return toSerialize, nil
 }

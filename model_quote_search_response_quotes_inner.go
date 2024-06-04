@@ -26,6 +26,8 @@ type QuoteSearchResponseQuotesInner struct {
 	QuoteNumber *string `json:"quoteNumber,omitempty"`
 	// When a quote has been revised and updated, the quote number remains the same throughout the lifecycle of the quote, however, a Revision number is updated for each revision of the quote.  The revision numbers is associated with the Unique Quote Number.
 	Revision *string `json:"revision,omitempty"`
+	// The country-specific three digit ISO 4217 currency code for the order.
+	CurrencyCode *string `json:"currencyCode,omitempty"`
 	// End User Name is the end customer name that is associated with a quote in Ingram Micros CRM.
 	EndUserContact *string `json:"endUserContact,omitempty"`
 	// Special Pricing Bid Number, also refers to as Dart Number relates to a unique pricing deal associated with a vendor for the quote.
@@ -194,6 +196,38 @@ func (o *QuoteSearchResponseQuotesInner) HasRevision() bool {
 // SetRevision gets a reference to the given string and assigns it to the Revision field.
 func (o *QuoteSearchResponseQuotesInner) SetRevision(v string) {
 	o.Revision = &v
+}
+
+// GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise.
+func (o *QuoteSearchResponseQuotesInner) GetCurrencyCode() string {
+	if o == nil || IsNil(o.CurrencyCode) {
+		var ret string
+		return ret
+	}
+	return *o.CurrencyCode
+}
+
+// GetCurrencyCodeOk returns a tuple with the CurrencyCode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QuoteSearchResponseQuotesInner) GetCurrencyCodeOk() (*string, bool) {
+	if o == nil || IsNil(o.CurrencyCode) {
+		return nil, false
+	}
+	return o.CurrencyCode, true
+}
+
+// HasCurrencyCode returns a boolean if a field has been set.
+func (o *QuoteSearchResponseQuotesInner) HasCurrencyCode() bool {
+	if o != nil && !IsNil(o.CurrencyCode) {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrencyCode gets a reference to the given string and assigns it to the CurrencyCode field.
+func (o *QuoteSearchResponseQuotesInner) SetCurrencyCode(v string) {
+	o.CurrencyCode = &v
 }
 
 // GetEndUserContact returns the EndUserContact field value if set, zero value otherwise.
@@ -601,6 +635,9 @@ func (o QuoteSearchResponseQuotesInner) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.Revision) {
 		toSerialize["revision"] = o.Revision
+	}
+	if !IsNil(o.CurrencyCode) {
+		toSerialize["currencyCode"] = o.CurrencyCode
 	}
 	if !IsNil(o.EndUserContact) {
 		toSerialize["endUserContact"] = o.EndUserContact
