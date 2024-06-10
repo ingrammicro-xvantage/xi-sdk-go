@@ -1036,6 +1036,197 @@ func (a *OrdersAPIService) PostCreateorderV6Execute(r ApiPostCreateorderV6Reques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiPostCreateorderV7Request struct {
+	ctx context.Context
+	ApiService *OrdersAPIService
+	iMCustomerNumber *string
+	iMCountryCode *string
+	iMCorrelationID *string
+	asyncOrderCreateDTO *AsyncOrderCreateDTO
+	iMSenderID *string
+}
+
+// Your unique Ingram Micro customer number.
+func (r ApiPostCreateorderV7Request) IMCustomerNumber(iMCustomerNumber string) ApiPostCreateorderV7Request {
+	r.iMCustomerNumber = &iMCustomerNumber
+	return r
+}
+
+// Two-character ISO country code.
+func (r ApiPostCreateorderV7Request) IMCountryCode(iMCountryCode string) ApiPostCreateorderV7Request {
+	r.iMCountryCode = &iMCountryCode
+	return r
+}
+
+// Unique transaction number to identify each transaction accross all the systems.
+func (r ApiPostCreateorderV7Request) IMCorrelationID(iMCorrelationID string) ApiPostCreateorderV7Request {
+	r.iMCorrelationID = &iMCorrelationID
+	return r
+}
+
+func (r ApiPostCreateorderV7Request) AsyncOrderCreateDTO(asyncOrderCreateDTO AsyncOrderCreateDTO) ApiPostCreateorderV7Request {
+	r.asyncOrderCreateDTO = &asyncOrderCreateDTO
+	return r
+}
+
+// Unique value used to identify the sender of the transaction.
+func (r ApiPostCreateorderV7Request) IMSenderID(iMSenderID string) ApiPostCreateorderV7Request {
+	r.iMSenderID = &iMSenderID
+	return r
+}
+
+func (r ApiPostCreateorderV7Request) Execute() (*AsyncOrderCreateResponse, *http.Response, error) {
+	return r.ApiService.PostCreateorderV7Execute(r)
+}
+
+/*
+PostCreateorderV7 Create your Order v7
+
+This API will allow customers to perform both standard ordering and quote to order functionality via a single API enabling them to have a single endpoint to cater to all types of orders.
+
+This approach will standardize the ordering flow for customers where they will get the response for all orders on to their webhooks.
+
+It provides the much-awaited async ordering flow for Reseller API where large orders can also be placed via a single API with guaranteed delivery.
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiPostCreateorderV7Request
+*/
+func (a *OrdersAPIService) PostCreateorderV7(ctx context.Context) ApiPostCreateorderV7Request {
+	return ApiPostCreateorderV7Request{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return AsyncOrderCreateResponse
+func (a *OrdersAPIService) PostCreateorderV7Execute(r ApiPostCreateorderV7Request) (*AsyncOrderCreateResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *AsyncOrderCreateResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersAPIService.PostCreateorderV7")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/resellers/v7/orders"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.iMCustomerNumber == nil {
+		return localVarReturnValue, nil, reportError("iMCustomerNumber is required and must be specified")
+	}
+	if strlen(*r.iMCustomerNumber) > 10 {
+		return localVarReturnValue, nil, reportError("iMCustomerNumber must have less than 10 elements")
+	}
+	if r.iMCountryCode == nil {
+		return localVarReturnValue, nil, reportError("iMCountryCode is required and must be specified")
+	}
+	if strlen(*r.iMCountryCode) < 2 {
+		return localVarReturnValue, nil, reportError("iMCountryCode must have at least 2 elements")
+	}
+	if strlen(*r.iMCountryCode) > 2 {
+		return localVarReturnValue, nil, reportError("iMCountryCode must have less than 2 elements")
+	}
+	if r.iMCorrelationID == nil {
+		return localVarReturnValue, nil, reportError("iMCorrelationID is required and must be specified")
+	}
+	if strlen(*r.iMCorrelationID) > 32 {
+		return localVarReturnValue, nil, reportError("iMCorrelationID must have less than 32 elements")
+	}
+	if r.asyncOrderCreateDTO == nil {
+		return localVarReturnValue, nil, reportError("asyncOrderCreateDTO is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
+	if r.iMSenderID != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+	}
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	// body params
+	localVarPostBody = r.asyncOrderCreateDTO
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v PostCreateorderV7400Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v PostCreateorderV7500Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiPutOrdermodifyRequest struct {
 	ctx context.Context
 	ApiService *OrdersAPIService

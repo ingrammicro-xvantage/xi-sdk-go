@@ -195,7 +195,7 @@ func (a *FreightEstimateAPIService) PostFreightestimateExecute(r ApiPostFreighte
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
-			var v GetResellerV6ValidateQuote500Response
+			var v PostCreateorderV7500Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

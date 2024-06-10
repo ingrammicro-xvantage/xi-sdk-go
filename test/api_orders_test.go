@@ -73,6 +73,18 @@ func Test_xi_sdk_resellers_OrdersAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test OrdersAPIService PostCreateorderV7", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.OrdersAPI.PostCreateorderV7(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test OrdersAPIService PutOrdermodify", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

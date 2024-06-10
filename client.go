@@ -52,8 +52,6 @@ type APIClient struct {
 
 	AccesstokenAPI *AccesstokenAPIService
 
-	AsyncOrderCreateAPI *AsyncOrderCreateAPIService
-
 	DealsAPI *DealsAPIService
 
 	FreightEstimateAPI *FreightEstimateAPIService
@@ -92,7 +90,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 
 	// API Services
 	c.AccesstokenAPI = (*AccesstokenAPIService)(&c.common)
-	c.AsyncOrderCreateAPI = (*AsyncOrderCreateAPIService)(&c.common)
 	c.DealsAPI = (*DealsAPIService)(&c.common)
 	c.FreightEstimateAPI = (*FreightEstimateAPIService)(&c.common)
 	c.InvoicesAPI = (*InvoicesAPIService)(&c.common)
@@ -196,7 +193,7 @@ func parameterAddToHeaderOrQuery(headerOrQueryParams interface{}, keyPrefix stri
 					return
 				}
 				if t, ok := obj.(time.Time); ok {
-					parameterAddToHeaderOrQuery(headerOrQueryParams, keyPrefix, t.Format(time.RFC3339), collectionType)
+					parameterAddToHeaderOrQuery(headerOrQueryParams, keyPrefix, t.Format(time.RFC3339Nano), collectionType)
 					return
 				}
 				value = v.Type().String() + " value"

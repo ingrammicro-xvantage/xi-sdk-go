@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**GetOrderdetailsV61**](OrdersAPI.md#GetOrderdetailsV61) | **Get** /resellers/v6.1/orders/{ordernumber} | Get Order Details v6.1
 [**GetResellersV6Ordersearch**](OrdersAPI.md#GetResellersV6Ordersearch) | **Get** /resellers/v6/orders/search | Search your Orders
 [**PostCreateorderV6**](OrdersAPI.md#PostCreateorderV6) | **Post** /resellers/v6/orders | Create your Order
+[**PostCreateorderV7**](OrdersAPI.md#PostCreateorderV7) | **Post** /resellers/v7/orders | Create your Order v7
 [**PutOrdermodify**](OrdersAPI.md#PutOrdermodify) | **Put** /resellers/v6/orders/{orderNumber} | Modify your Order
 
 
@@ -29,7 +30,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -40,8 +41,8 @@ func main() {
 	regionCode := "CS" // string | Region code for sandbox testing - Not for use in production. (optional)
 	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany (optional)
 
-	configuration := xi_sdk_resellers.NewConfiguration()
-	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
 	r, err := apiClient.OrdersAPI.DeleteOrdercancel(context.Background(), orderNumber).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).RegionCode(regionCode).IMSenderID(iMSenderID).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrdersAPI.DeleteOrdercancel``: %v\n", err)
@@ -108,7 +109,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -123,8 +124,8 @@ func main() {
 	isIml := true // bool | True/False only for IML customers. (optional)
 	regionCode := "regionCode_example" // string | Region code for sandbox testing - Not for use in production. (optional)
 
-	configuration := xi_sdk_resellers.NewConfiguration()
-	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
 	resp, r, err := apiClient.OrdersAPI.GetOrderdetailsV61(context.Background(), ordernumber).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).IngramOrderDate(ingramOrderDate).VendorNumber(vendorNumber).SimulateStatus(simulateStatus).IsIml(isIml).RegionCode(regionCode).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrdersAPI.GetOrderdetailsV61``: %v\n", err)
@@ -196,7 +197,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -223,8 +224,8 @@ func main() {
 	vendorName := "vendorName_example" // string | Name of the vendor. (optional)
 	specialBidNumber := "specialBidNumber_example" // string | The bid number provided to the reseller by the vendor for special pricing and discounts. Line-level bid numbers take precedence over header-level bid numbers.*Currently, this feature is not available in Australia (optional)
 
-	configuration := xi_sdk_resellers.NewConfiguration()
-	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
 	resp, r, err := apiClient.OrdersAPI.GetResellersV6Ordersearch(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IngramOrderNumber(ingramOrderNumber).OrderStatus(orderStatus).OrderStatusIn(orderStatusIn).IngramOrderDate(ingramOrderDate).IngramOrderDateBt(ingramOrderDateBt).IMSenderID(iMSenderID).CustomerOrderNumber(customerOrderNumber).PageSize(pageSize).PageNumber(pageNumber).EndCustomerOrderNumber(endCustomerOrderNumber).InvoiceDateBt(invoiceDateBt).ShipDateBt(shipDateBt).DeliveryDateBt(deliveryDateBt).IngramPartNumber(ingramPartNumber).VendorPartNumber(vendorPartNumber).SerialNumber(serialNumber).TrackingNumber(trackingNumber).VendorName(vendorName).SpecialBidNumber(specialBidNumber).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrdersAPI.GetResellersV6Ordersearch``: %v\n", err)
@@ -304,7 +305,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -314,8 +315,8 @@ func main() {
 	orderCreateRequest := *openapiclient.NewOrderCreateRequest("CustomerOrderNumber_example") // OrderCreateRequest | 
 	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany (optional)
 
-	configuration := xi_sdk_resellers.NewConfiguration()
-	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
 	resp, r, err := apiClient.OrdersAPI.PostCreateorderV6(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).OrderCreateRequest(orderCreateRequest).IMSenderID(iMSenderID).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrdersAPI.PostCreateorderV6``: %v\n", err)
@@ -361,6 +362,80 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## PostCreateorderV7
+
+> AsyncOrderCreateResponse PostCreateorderV7(ctx).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).AsyncOrderCreateDTO(asyncOrderCreateDTO).IMSenderID(iMSenderID).Execute()
+
+Create your Order v7
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	iMCustomerNumber := "20-222222" // string | Your unique Ingram Micro customer number.
+	iMCountryCode := "US" // string | Two-character ISO country code.
+	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction accross all the systems.
+	asyncOrderCreateDTO := *openapiclient.NewAsyncOrderCreateDTO() // AsyncOrderCreateDTO | 
+	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OrdersAPI.PostCreateorderV7(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).AsyncOrderCreateDTO(asyncOrderCreateDTO).IMSenderID(iMSenderID).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OrdersAPI.PostCreateorderV7``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PostCreateorderV7`: AsyncOrderCreateResponse
+	fmt.Fprintf(os.Stdout, "Response from `OrdersAPI.PostCreateorderV7`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostCreateorderV7Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iMCustomerNumber** | **string** | Your unique Ingram Micro customer number. | 
+ **iMCountryCode** | **string** | Two-character ISO country code. | 
+ **iMCorrelationID** | **string** | Unique transaction number to identify each transaction accross all the systems. | 
+ **asyncOrderCreateDTO** | [**AsyncOrderCreateDTO**](AsyncOrderCreateDTO.md) |  | 
+ **iMSenderID** | **string** | Unique value used to identify the sender of the transaction. | 
+
+### Return type
+
+[**AsyncOrderCreateResponse**](AsyncOrderCreateResponse.md)
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PutOrdermodify
 
 > OrderModifyResponse PutOrdermodify(ctx, orderNumber).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).OrderModifyRequest(orderModifyRequest).ActionCode(actionCode).RegionCode(regionCode).IMSenderID(iMSenderID).Execute()
@@ -378,7 +453,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	xi_sdk_resellers "https://github.com/ingrammicro-xvantage/xi-sdk-resellers-go"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -391,8 +466,8 @@ func main() {
 	regionCode := "CS" // string | Region code paramter to be used only for order release functionality.Region code is only for sandbox not for production (optional)
 	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany (optional)
 
-	configuration := xi_sdk_resellers.NewConfiguration()
-	apiClient := xi_sdk_resellers.NewAPIClient(configuration)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
 	resp, r, err := apiClient.OrdersAPI.PutOrdermodify(context.Background(), orderNumber).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).OrderModifyRequest(orderModifyRequest).ActionCode(actionCode).RegionCode(regionCode).IMSenderID(iMSenderID).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OrdersAPI.PutOrdermodify``: %v\n", err)

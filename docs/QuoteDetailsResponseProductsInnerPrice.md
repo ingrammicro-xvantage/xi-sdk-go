@@ -9,11 +9,13 @@ Name | Type | Description | Notes
 **ExtendedMsrp** | Pointer to **float32** | Extended MSRP - Manufacturer Suggested Retail Price X Quantity | [optional] 
 **ExtendedQuotePrice** | Pointer to **float32** | Extended reseller quoted price (cost to reseller) X Quantity | [optional] 
 **DiscountOffList** | Pointer to **string** | Discount off list percentage extended | [optional] 
-**Vendorprice** | Pointer to **float32** |  | [optional] 
-**Extendedvendorprice** | Pointer to **float32** |  | [optional] 
-**TotalVisibleReserveQuantity** | Pointer to **int32** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **RecurringPriceModel** | Pointer to **string** |  | [optional] 
+**UnitOfMeasure** | Pointer to **string** |  | [optional] 
+**Tax** | Pointer to **NullableFloat32** |  | [optional] 
+**Extrafees** | Pointer to **NullableFloat32** |  | [optional] 
+**ExtraFeesDetails** | Pointer to [**[]QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner**](QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner.md) |  | [optional] 
+**Discounts** | Pointer to [**[]QuoteDetailsResponseProductsInnerPriceDiscountsInner**](QuoteDetailsResponseProductsInnerPriceDiscountsInner.md) |  | [optional] 
 
 ## Methods
 
@@ -159,81 +161,6 @@ SetDiscountOffList sets DiscountOffList field to given value.
 
 HasDiscountOffList returns a boolean if a field has been set.
 
-### GetVendorprice
-
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetVendorprice() float32`
-
-GetVendorprice returns the Vendorprice field if non-nil, zero value otherwise.
-
-### GetVendorpriceOk
-
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetVendorpriceOk() (*float32, bool)`
-
-GetVendorpriceOk returns a tuple with the Vendorprice field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVendorprice
-
-`func (o *QuoteDetailsResponseProductsInnerPrice) SetVendorprice(v float32)`
-
-SetVendorprice sets Vendorprice field to given value.
-
-### HasVendorprice
-
-`func (o *QuoteDetailsResponseProductsInnerPrice) HasVendorprice() bool`
-
-HasVendorprice returns a boolean if a field has been set.
-
-### GetExtendedvendorprice
-
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedvendorprice() float32`
-
-GetExtendedvendorprice returns the Extendedvendorprice field if non-nil, zero value otherwise.
-
-### GetExtendedvendorpriceOk
-
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetExtendedvendorpriceOk() (*float32, bool)`
-
-GetExtendedvendorpriceOk returns a tuple with the Extendedvendorprice field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExtendedvendorprice
-
-`func (o *QuoteDetailsResponseProductsInnerPrice) SetExtendedvendorprice(v float32)`
-
-SetExtendedvendorprice sets Extendedvendorprice field to given value.
-
-### HasExtendedvendorprice
-
-`func (o *QuoteDetailsResponseProductsInnerPrice) HasExtendedvendorprice() bool`
-
-HasExtendedvendorprice returns a boolean if a field has been set.
-
-### GetTotalVisibleReserveQuantity
-
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetTotalVisibleReserveQuantity() int32`
-
-GetTotalVisibleReserveQuantity returns the TotalVisibleReserveQuantity field if non-nil, zero value otherwise.
-
-### GetTotalVisibleReserveQuantityOk
-
-`func (o *QuoteDetailsResponseProductsInnerPrice) GetTotalVisibleReserveQuantityOk() (*int32, bool)`
-
-GetTotalVisibleReserveQuantityOk returns a tuple with the TotalVisibleReserveQuantity field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTotalVisibleReserveQuantity
-
-`func (o *QuoteDetailsResponseProductsInnerPrice) SetTotalVisibleReserveQuantity(v int32)`
-
-SetTotalVisibleReserveQuantity sets TotalVisibleReserveQuantity field to given value.
-
-### HasTotalVisibleReserveQuantity
-
-`func (o *QuoteDetailsResponseProductsInnerPrice) HasTotalVisibleReserveQuantity() bool`
-
-HasTotalVisibleReserveQuantity returns a boolean if a field has been set.
-
 ### GetType
 
 `func (o *QuoteDetailsResponseProductsInnerPrice) GetType() string`
@@ -283,6 +210,151 @@ SetRecurringPriceModel sets RecurringPriceModel field to given value.
 `func (o *QuoteDetailsResponseProductsInnerPrice) HasRecurringPriceModel() bool`
 
 HasRecurringPriceModel returns a boolean if a field has been set.
+
+### GetUnitOfMeasure
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetUnitOfMeasure() string`
+
+GetUnitOfMeasure returns the UnitOfMeasure field if non-nil, zero value otherwise.
+
+### GetUnitOfMeasureOk
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetUnitOfMeasureOk() (*string, bool)`
+
+GetUnitOfMeasureOk returns a tuple with the UnitOfMeasure field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnitOfMeasure
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetUnitOfMeasure(v string)`
+
+SetUnitOfMeasure sets UnitOfMeasure field to given value.
+
+### HasUnitOfMeasure
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) HasUnitOfMeasure() bool`
+
+HasUnitOfMeasure returns a boolean if a field has been set.
+
+### GetTax
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetTax() float32`
+
+GetTax returns the Tax field if non-nil, zero value otherwise.
+
+### GetTaxOk
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetTaxOk() (*float32, bool)`
+
+GetTaxOk returns a tuple with the Tax field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTax
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetTax(v float32)`
+
+SetTax sets Tax field to given value.
+
+### HasTax
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) HasTax() bool`
+
+HasTax returns a boolean if a field has been set.
+
+### SetTaxNil
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetTaxNil(b bool)`
+
+ SetTaxNil sets the value for Tax to be an explicit nil
+
+### UnsetTax
+`func (o *QuoteDetailsResponseProductsInnerPrice) UnsetTax()`
+
+UnsetTax ensures that no value is present for Tax, not even an explicit nil
+### GetExtrafees
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetExtrafees() float32`
+
+GetExtrafees returns the Extrafees field if non-nil, zero value otherwise.
+
+### GetExtrafeesOk
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetExtrafeesOk() (*float32, bool)`
+
+GetExtrafeesOk returns a tuple with the Extrafees field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtrafees
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetExtrafees(v float32)`
+
+SetExtrafees sets Extrafees field to given value.
+
+### HasExtrafees
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) HasExtrafees() bool`
+
+HasExtrafees returns a boolean if a field has been set.
+
+### SetExtrafeesNil
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetExtrafeesNil(b bool)`
+
+ SetExtrafeesNil sets the value for Extrafees to be an explicit nil
+
+### UnsetExtrafees
+`func (o *QuoteDetailsResponseProductsInnerPrice) UnsetExtrafees()`
+
+UnsetExtrafees ensures that no value is present for Extrafees, not even an explicit nil
+### GetExtraFeesDetails
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetExtraFeesDetails() []QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner`
+
+GetExtraFeesDetails returns the ExtraFeesDetails field if non-nil, zero value otherwise.
+
+### GetExtraFeesDetailsOk
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetExtraFeesDetailsOk() (*[]QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner, bool)`
+
+GetExtraFeesDetailsOk returns a tuple with the ExtraFeesDetails field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtraFeesDetails
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetExtraFeesDetails(v []QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner)`
+
+SetExtraFeesDetails sets ExtraFeesDetails field to given value.
+
+### HasExtraFeesDetails
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) HasExtraFeesDetails() bool`
+
+HasExtraFeesDetails returns a boolean if a field has been set.
+
+### GetDiscounts
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetDiscounts() []QuoteDetailsResponseProductsInnerPriceDiscountsInner`
+
+GetDiscounts returns the Discounts field if non-nil, zero value otherwise.
+
+### GetDiscountsOk
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) GetDiscountsOk() (*[]QuoteDetailsResponseProductsInnerPriceDiscountsInner, bool)`
+
+GetDiscountsOk returns a tuple with the Discounts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscounts
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) SetDiscounts(v []QuoteDetailsResponseProductsInnerPriceDiscountsInner)`
+
+SetDiscounts sets Discounts field to given value.
+
+### HasDiscounts
+
+`func (o *QuoteDetailsResponseProductsInnerPrice) HasDiscounts() bool`
+
+HasDiscounts returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

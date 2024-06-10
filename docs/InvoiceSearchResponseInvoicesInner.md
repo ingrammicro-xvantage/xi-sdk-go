@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PaymentTermsDueDate** | Pointer to **string** | Payment Terms Due date. | [optional] 
+**SpecialBidNumbers** | Pointer to **[]string** |  | [optional] 
 **ErpOrderNumber** | Pointer to **string** | Order number | [optional] 
 **InvoiceNumber** | Pointer to **string** | Invoice no. | [optional] 
 **InvoiceStatus** | Pointer to **string** | Invoice Status. | [optional] 
@@ -62,6 +63,31 @@ SetPaymentTermsDueDate sets PaymentTermsDueDate field to given value.
 `func (o *InvoiceSearchResponseInvoicesInner) HasPaymentTermsDueDate() bool`
 
 HasPaymentTermsDueDate returns a boolean if a field has been set.
+
+### GetSpecialBidNumbers
+
+`func (o *InvoiceSearchResponseInvoicesInner) GetSpecialBidNumbers() []string`
+
+GetSpecialBidNumbers returns the SpecialBidNumbers field if non-nil, zero value otherwise.
+
+### GetSpecialBidNumbersOk
+
+`func (o *InvoiceSearchResponseInvoicesInner) GetSpecialBidNumbersOk() (*[]string, bool)`
+
+GetSpecialBidNumbersOk returns a tuple with the SpecialBidNumbers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSpecialBidNumbers
+
+`func (o *InvoiceSearchResponseInvoicesInner) SetSpecialBidNumbers(v []string)`
+
+SetSpecialBidNumbers sets SpecialBidNumbers field to given value.
+
+### HasSpecialBidNumbers
+
+`func (o *InvoiceSearchResponseInvoicesInner) HasSpecialBidNumbers() bool`
+
+HasSpecialBidNumbers returns a boolean if a field has been set.
 
 ### GetErpOrderNumber
 

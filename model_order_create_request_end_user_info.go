@@ -46,7 +46,7 @@ type OrderCreateRequestEndUserInfo struct {
 	// The end user/customer's two-character ISO country code.
 	CountryCode *string `json:"countryCode,omitempty"`
 	// The end user/customer's phone number.
-	PhoneNumber *int32 `json:"phoneNumber,omitempty"`
+	PhoneNumber *string `json:"phoneNumber,omitempty"`
 	// The end user/customer's email.
 	Email *string `json:"email,omitempty"`
 }
@@ -485,9 +485,9 @@ func (o *OrderCreateRequestEndUserInfo) SetCountryCode(v string) {
 }
 
 // GetPhoneNumber returns the PhoneNumber field value if set, zero value otherwise.
-func (o *OrderCreateRequestEndUserInfo) GetPhoneNumber() int32 {
+func (o *OrderCreateRequestEndUserInfo) GetPhoneNumber() string {
 	if o == nil || IsNil(o.PhoneNumber) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.PhoneNumber
@@ -495,7 +495,7 @@ func (o *OrderCreateRequestEndUserInfo) GetPhoneNumber() int32 {
 
 // GetPhoneNumberOk returns a tuple with the PhoneNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCreateRequestEndUserInfo) GetPhoneNumberOk() (*int32, bool) {
+func (o *OrderCreateRequestEndUserInfo) GetPhoneNumberOk() (*string, bool) {
 	if o == nil || IsNil(o.PhoneNumber) {
 		return nil, false
 	}
@@ -511,8 +511,8 @@ func (o *OrderCreateRequestEndUserInfo) HasPhoneNumber() bool {
 	return false
 }
 
-// SetPhoneNumber gets a reference to the given int32 and assigns it to the PhoneNumber field.
-func (o *OrderCreateRequestEndUserInfo) SetPhoneNumber(v int32) {
+// SetPhoneNumber gets a reference to the given string and assigns it to the PhoneNumber field.
+func (o *OrderCreateRequestEndUserInfo) SetPhoneNumber(v string) {
 	o.PhoneNumber = &v
 }
 

@@ -9,11 +9,11 @@ Name | Type | Description | Notes
 **CompanyName** | Pointer to **string** | The company name for the end user/customer. | [optional] 
 **Name1** | Pointer to **string** |  | [optional] 
 **Name2** | Pointer to **string** |  | [optional] 
-**ContactId** | Pointer to **string** | The contact Id for the end user/customer. | [optional] 
 **AddressLine1** | Pointer to **string** | The address line 1 for the end user/customer. | [optional] 
 **AddressLine2** | Pointer to **string** | The address line 2 for the end user/customer. | [optional] 
 **AddressLine3** | Pointer to **string** | The address line 3 for the end user/customer. | [optional] 
 **Contact** | Pointer to **string** | The contact name for the end user/customer. | [optional] 
+**Name3** | Pointer to **string** |  | [optional] 
 **City** | Pointer to **string** | The end user/customer&#39;s city. | [optional] 
 **State** | Pointer to **string** | The end user/customer&#39;s state. | [optional] 
 **PostalCode** | Pointer to **string** | The end user/customer&#39;s zip or postal code. | [optional] 
@@ -166,31 +166,6 @@ SetName2 sets Name2 field to given value.
 
 HasName2 returns a boolean if a field has been set.
 
-### GetContactId
-
-`func (o *AsyncOrderCreateDTOEndUserInfo) GetContactId() string`
-
-GetContactId returns the ContactId field if non-nil, zero value otherwise.
-
-### GetContactIdOk
-
-`func (o *AsyncOrderCreateDTOEndUserInfo) GetContactIdOk() (*string, bool)`
-
-GetContactIdOk returns a tuple with the ContactId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetContactId
-
-`func (o *AsyncOrderCreateDTOEndUserInfo) SetContactId(v string)`
-
-SetContactId sets ContactId field to given value.
-
-### HasContactId
-
-`func (o *AsyncOrderCreateDTOEndUserInfo) HasContactId() bool`
-
-HasContactId returns a boolean if a field has been set.
-
 ### GetAddressLine1
 
 `func (o *AsyncOrderCreateDTOEndUserInfo) GetAddressLine1() string`
@@ -290,6 +265,31 @@ SetContact sets Contact field to given value.
 `func (o *AsyncOrderCreateDTOEndUserInfo) HasContact() bool`
 
 HasContact returns a boolean if a field has been set.
+
+### GetName3
+
+`func (o *AsyncOrderCreateDTOEndUserInfo) GetName3() string`
+
+GetName3 returns the Name3 field if non-nil, zero value otherwise.
+
+### GetName3Ok
+
+`func (o *AsyncOrderCreateDTOEndUserInfo) GetName3Ok() (*string, bool)`
+
+GetName3Ok returns a tuple with the Name3 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName3
+
+`func (o *AsyncOrderCreateDTOEndUserInfo) SetName3(v string)`
+
+SetName3 sets Name3 field to given value.
+
+### HasName3
+
+`func (o *AsyncOrderCreateDTOEndUserInfo) HasName3() bool`
+
+HasName3 returns a boolean if a field has been set.
 
 ### GetCity
 

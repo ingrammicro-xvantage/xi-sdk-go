@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the GetResellerV6ValidateQuote500Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GetResellerV6ValidateQuote500Response{}
+// checks if the PostCreateorderV7500Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PostCreateorderV7500Response{}
 
-// GetResellerV6ValidateQuote500Response struct for GetResellerV6ValidateQuote500Response
-type GetResellerV6ValidateQuote500Response struct {
+// PostCreateorderV7500Response struct for PostCreateorderV7500Response
+type PostCreateorderV7500Response struct {
 	// Unique Id to identify error.
 	Traceid *string `json:"traceid,omitempty"`
 	// Describes the type of the error.
@@ -28,25 +28,25 @@ type GetResellerV6ValidateQuote500Response struct {
 	Fields []map[string]interface{} `json:"fields,omitempty"`
 }
 
-// NewGetResellerV6ValidateQuote500Response instantiates a new GetResellerV6ValidateQuote500Response object
+// NewPostCreateorderV7500Response instantiates a new PostCreateorderV7500Response object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetResellerV6ValidateQuote500Response() *GetResellerV6ValidateQuote500Response {
-	this := GetResellerV6ValidateQuote500Response{}
+func NewPostCreateorderV7500Response() *PostCreateorderV7500Response {
+	this := PostCreateorderV7500Response{}
 	return &this
 }
 
-// NewGetResellerV6ValidateQuote500ResponseWithDefaults instantiates a new GetResellerV6ValidateQuote500Response object
+// NewPostCreateorderV7500ResponseWithDefaults instantiates a new PostCreateorderV7500Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGetResellerV6ValidateQuote500ResponseWithDefaults() *GetResellerV6ValidateQuote500Response {
-	this := GetResellerV6ValidateQuote500Response{}
+func NewPostCreateorderV7500ResponseWithDefaults() *PostCreateorderV7500Response {
+	this := PostCreateorderV7500Response{}
 	return &this
 }
 
 // GetTraceid returns the Traceid field value if set, zero value otherwise.
-func (o *GetResellerV6ValidateQuote500Response) GetTraceid() string {
+func (o *PostCreateorderV7500Response) GetTraceid() string {
 	if o == nil || IsNil(o.Traceid) {
 		var ret string
 		return ret
@@ -56,7 +56,7 @@ func (o *GetResellerV6ValidateQuote500Response) GetTraceid() string {
 
 // GetTraceidOk returns a tuple with the Traceid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetResellerV6ValidateQuote500Response) GetTraceidOk() (*string, bool) {
+func (o *PostCreateorderV7500Response) GetTraceidOk() (*string, bool) {
 	if o == nil || IsNil(o.Traceid) {
 		return nil, false
 	}
@@ -64,7 +64,7 @@ func (o *GetResellerV6ValidateQuote500Response) GetTraceidOk() (*string, bool) {
 }
 
 // HasTraceid returns a boolean if a field has been set.
-func (o *GetResellerV6ValidateQuote500Response) HasTraceid() bool {
+func (o *PostCreateorderV7500Response) HasTraceid() bool {
 	if o != nil && !IsNil(o.Traceid) {
 		return true
 	}
@@ -73,12 +73,12 @@ func (o *GetResellerV6ValidateQuote500Response) HasTraceid() bool {
 }
 
 // SetTraceid gets a reference to the given string and assigns it to the Traceid field.
-func (o *GetResellerV6ValidateQuote500Response) SetTraceid(v string) {
+func (o *PostCreateorderV7500Response) SetTraceid(v string) {
 	o.Traceid = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *GetResellerV6ValidateQuote500Response) GetType() string {
+func (o *PostCreateorderV7500Response) GetType() string {
 	if o == nil || IsNil(o.Type) {
 		var ret string
 		return ret
@@ -88,7 +88,7 @@ func (o *GetResellerV6ValidateQuote500Response) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetResellerV6ValidateQuote500Response) GetTypeOk() (*string, bool) {
+func (o *PostCreateorderV7500Response) GetTypeOk() (*string, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -96,7 +96,7 @@ func (o *GetResellerV6ValidateQuote500Response) GetTypeOk() (*string, bool) {
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *GetResellerV6ValidateQuote500Response) HasType() bool {
+func (o *PostCreateorderV7500Response) HasType() bool {
 	if o != nil && !IsNil(o.Type) {
 		return true
 	}
@@ -105,12 +105,12 @@ func (o *GetResellerV6ValidateQuote500Response) HasType() bool {
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
-func (o *GetResellerV6ValidateQuote500Response) SetType(v string) {
+func (o *PostCreateorderV7500Response) SetType(v string) {
 	o.Type = &v
 }
 
 // GetMessage returns the Message field value if set, zero value otherwise.
-func (o *GetResellerV6ValidateQuote500Response) GetMessage() string {
+func (o *PostCreateorderV7500Response) GetMessage() string {
 	if o == nil || IsNil(o.Message) {
 		var ret string
 		return ret
@@ -120,7 +120,7 @@ func (o *GetResellerV6ValidateQuote500Response) GetMessage() string {
 
 // GetMessageOk returns a tuple with the Message field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetResellerV6ValidateQuote500Response) GetMessageOk() (*string, bool) {
+func (o *PostCreateorderV7500Response) GetMessageOk() (*string, bool) {
 	if o == nil || IsNil(o.Message) {
 		return nil, false
 	}
@@ -128,7 +128,7 @@ func (o *GetResellerV6ValidateQuote500Response) GetMessageOk() (*string, bool) {
 }
 
 // HasMessage returns a boolean if a field has been set.
-func (o *GetResellerV6ValidateQuote500Response) HasMessage() bool {
+func (o *PostCreateorderV7500Response) HasMessage() bool {
 	if o != nil && !IsNil(o.Message) {
 		return true
 	}
@@ -137,12 +137,12 @@ func (o *GetResellerV6ValidateQuote500Response) HasMessage() bool {
 }
 
 // SetMessage gets a reference to the given string and assigns it to the Message field.
-func (o *GetResellerV6ValidateQuote500Response) SetMessage(v string) {
+func (o *PostCreateorderV7500Response) SetMessage(v string) {
 	o.Message = &v
 }
 
 // GetFields returns the Fields field value if set, zero value otherwise.
-func (o *GetResellerV6ValidateQuote500Response) GetFields() []map[string]interface{} {
+func (o *PostCreateorderV7500Response) GetFields() []map[string]interface{} {
 	if o == nil || IsNil(o.Fields) {
 		var ret []map[string]interface{}
 		return ret
@@ -152,7 +152,7 @@ func (o *GetResellerV6ValidateQuote500Response) GetFields() []map[string]interfa
 
 // GetFieldsOk returns a tuple with the Fields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetResellerV6ValidateQuote500Response) GetFieldsOk() ([]map[string]interface{}, bool) {
+func (o *PostCreateorderV7500Response) GetFieldsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Fields) {
 		return nil, false
 	}
@@ -160,7 +160,7 @@ func (o *GetResellerV6ValidateQuote500Response) GetFieldsOk() ([]map[string]inte
 }
 
 // HasFields returns a boolean if a field has been set.
-func (o *GetResellerV6ValidateQuote500Response) HasFields() bool {
+func (o *PostCreateorderV7500Response) HasFields() bool {
 	if o != nil && !IsNil(o.Fields) {
 		return true
 	}
@@ -169,11 +169,11 @@ func (o *GetResellerV6ValidateQuote500Response) HasFields() bool {
 }
 
 // SetFields gets a reference to the given []map[string]interface{} and assigns it to the Fields field.
-func (o *GetResellerV6ValidateQuote500Response) SetFields(v []map[string]interface{}) {
+func (o *PostCreateorderV7500Response) SetFields(v []map[string]interface{}) {
 	o.Fields = v
 }
 
-func (o GetResellerV6ValidateQuote500Response) MarshalJSON() ([]byte, error) {
+func (o PostCreateorderV7500Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -181,7 +181,7 @@ func (o GetResellerV6ValidateQuote500Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o GetResellerV6ValidateQuote500Response) ToMap() (map[string]interface{}, error) {
+func (o PostCreateorderV7500Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Traceid) {
 		toSerialize["traceid"] = o.Traceid
@@ -198,38 +198,38 @@ func (o GetResellerV6ValidateQuote500Response) ToMap() (map[string]interface{}, 
 	return toSerialize, nil
 }
 
-type NullableGetResellerV6ValidateQuote500Response struct {
-	value *GetResellerV6ValidateQuote500Response
+type NullablePostCreateorderV7500Response struct {
+	value *PostCreateorderV7500Response
 	isSet bool
 }
 
-func (v NullableGetResellerV6ValidateQuote500Response) Get() *GetResellerV6ValidateQuote500Response {
+func (v NullablePostCreateorderV7500Response) Get() *PostCreateorderV7500Response {
 	return v.value
 }
 
-func (v *NullableGetResellerV6ValidateQuote500Response) Set(val *GetResellerV6ValidateQuote500Response) {
+func (v *NullablePostCreateorderV7500Response) Set(val *PostCreateorderV7500Response) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGetResellerV6ValidateQuote500Response) IsSet() bool {
+func (v NullablePostCreateorderV7500Response) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGetResellerV6ValidateQuote500Response) Unset() {
+func (v *NullablePostCreateorderV7500Response) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGetResellerV6ValidateQuote500Response(val *GetResellerV6ValidateQuote500Response) *NullableGetResellerV6ValidateQuote500Response {
-	return &NullableGetResellerV6ValidateQuote500Response{value: val, isSet: true}
+func NewNullablePostCreateorderV7500Response(val *PostCreateorderV7500Response) *NullablePostCreateorderV7500Response {
+	return &NullablePostCreateorderV7500Response{value: val, isSet: true}
 }
 
-func (v NullableGetResellerV6ValidateQuote500Response) MarshalJSON() ([]byte, error) {
+func (v NullablePostCreateorderV7500Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGetResellerV6ValidateQuote500Response) UnmarshalJSON(src []byte) error {
+func (v *NullablePostCreateorderV7500Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

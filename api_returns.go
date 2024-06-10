@@ -178,7 +178,7 @@ func (a *ReturnsAPIService) GetResellersV6ReturnsdetailsExecute(r ApiGetReseller
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
-			var v GetResellerV6ValidateQuote500Response
+			var v PostCreateorderV7500Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -503,7 +503,7 @@ func (a *ReturnsAPIService) GetResellersV6ReturnssearchExecute(r ApiGetResellers
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
-			var v GetResellerV6ValidateQuote500Response
+			var v PostCreateorderV7500Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -686,7 +686,7 @@ func (a *ReturnsAPIService) PostReturnscreateExecute(r ApiPostReturnscreateReque
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 500 {
-			var v GetResellerV6ValidateQuote500Response
+			var v PostCreateorderV7500Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

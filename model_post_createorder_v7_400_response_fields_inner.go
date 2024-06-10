@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the PostAsyncOrderCreateV7400ResponseFieldsInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PostAsyncOrderCreateV7400ResponseFieldsInner{}
+// checks if the PostCreateorderV7400ResponseFieldsInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PostCreateorderV7400ResponseFieldsInner{}
 
-// PostAsyncOrderCreateV7400ResponseFieldsInner struct for PostAsyncOrderCreateV7400ResponseFieldsInner
-type PostAsyncOrderCreateV7400ResponseFieldsInner struct {
+// PostCreateorderV7400ResponseFieldsInner struct for PostCreateorderV7400ResponseFieldsInner
+type PostCreateorderV7400ResponseFieldsInner struct {
 	// Name of the field.
 	Field *string `json:"field,omitempty"`
 	// A filed level error message.
@@ -27,25 +27,25 @@ type PostAsyncOrderCreateV7400ResponseFieldsInner struct {
 	Value *string `json:"value,omitempty"`
 }
 
-// NewPostAsyncOrderCreateV7400ResponseFieldsInner instantiates a new PostAsyncOrderCreateV7400ResponseFieldsInner object
+// NewPostCreateorderV7400ResponseFieldsInner instantiates a new PostCreateorderV7400ResponseFieldsInner object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPostAsyncOrderCreateV7400ResponseFieldsInner() *PostAsyncOrderCreateV7400ResponseFieldsInner {
-	this := PostAsyncOrderCreateV7400ResponseFieldsInner{}
+func NewPostCreateorderV7400ResponseFieldsInner() *PostCreateorderV7400ResponseFieldsInner {
+	this := PostCreateorderV7400ResponseFieldsInner{}
 	return &this
 }
 
-// NewPostAsyncOrderCreateV7400ResponseFieldsInnerWithDefaults instantiates a new PostAsyncOrderCreateV7400ResponseFieldsInner object
+// NewPostCreateorderV7400ResponseFieldsInnerWithDefaults instantiates a new PostCreateorderV7400ResponseFieldsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPostAsyncOrderCreateV7400ResponseFieldsInnerWithDefaults() *PostAsyncOrderCreateV7400ResponseFieldsInner {
-	this := PostAsyncOrderCreateV7400ResponseFieldsInner{}
+func NewPostCreateorderV7400ResponseFieldsInnerWithDefaults() *PostCreateorderV7400ResponseFieldsInner {
+	this := PostCreateorderV7400ResponseFieldsInner{}
 	return &this
 }
 
 // GetField returns the Field field value if set, zero value otherwise.
-func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) GetField() string {
+func (o *PostCreateorderV7400ResponseFieldsInner) GetField() string {
 	if o == nil || IsNil(o.Field) {
 		var ret string
 		return ret
@@ -55,7 +55,7 @@ func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) GetField() string {
 
 // GetFieldOk returns a tuple with the Field field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) GetFieldOk() (*string, bool) {
+func (o *PostCreateorderV7400ResponseFieldsInner) GetFieldOk() (*string, bool) {
 	if o == nil || IsNil(o.Field) {
 		return nil, false
 	}
@@ -63,7 +63,7 @@ func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) GetFieldOk() (*string, bo
 }
 
 // HasField returns a boolean if a field has been set.
-func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) HasField() bool {
+func (o *PostCreateorderV7400ResponseFieldsInner) HasField() bool {
 	if o != nil && !IsNil(o.Field) {
 		return true
 	}
@@ -72,12 +72,12 @@ func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) HasField() bool {
 }
 
 // SetField gets a reference to the given string and assigns it to the Field field.
-func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) SetField(v string) {
+func (o *PostCreateorderV7400ResponseFieldsInner) SetField(v string) {
 	o.Field = &v
 }
 
 // GetMessage returns the Message field value if set, zero value otherwise.
-func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) GetMessage() string {
+func (o *PostCreateorderV7400ResponseFieldsInner) GetMessage() string {
 	if o == nil || IsNil(o.Message) {
 		var ret string
 		return ret
@@ -87,7 +87,7 @@ func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) GetMessage() string {
 
 // GetMessageOk returns a tuple with the Message field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) GetMessageOk() (*string, bool) {
+func (o *PostCreateorderV7400ResponseFieldsInner) GetMessageOk() (*string, bool) {
 	if o == nil || IsNil(o.Message) {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) GetMessageOk() (*string, 
 }
 
 // HasMessage returns a boolean if a field has been set.
-func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) HasMessage() bool {
+func (o *PostCreateorderV7400ResponseFieldsInner) HasMessage() bool {
 	if o != nil && !IsNil(o.Message) {
 		return true
 	}
@@ -104,12 +104,12 @@ func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) HasMessage() bool {
 }
 
 // SetMessage gets a reference to the given string and assigns it to the Message field.
-func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) SetMessage(v string) {
+func (o *PostCreateorderV7400ResponseFieldsInner) SetMessage(v string) {
 	o.Message = &v
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) GetValue() string {
+func (o *PostCreateorderV7400ResponseFieldsInner) GetValue() string {
 	if o == nil || IsNil(o.Value) {
 		var ret string
 		return ret
@@ -119,7 +119,7 @@ func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) GetValueOk() (*string, bool) {
+func (o *PostCreateorderV7400ResponseFieldsInner) GetValueOk() (*string, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -127,7 +127,7 @@ func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) GetValueOk() (*string, bo
 }
 
 // HasValue returns a boolean if a field has been set.
-func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) HasValue() bool {
+func (o *PostCreateorderV7400ResponseFieldsInner) HasValue() bool {
 	if o != nil && !IsNil(o.Value) {
 		return true
 	}
@@ -136,11 +136,11 @@ func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) HasValue() bool {
 }
 
 // SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *PostAsyncOrderCreateV7400ResponseFieldsInner) SetValue(v string) {
+func (o *PostCreateorderV7400ResponseFieldsInner) SetValue(v string) {
 	o.Value = &v
 }
 
-func (o PostAsyncOrderCreateV7400ResponseFieldsInner) MarshalJSON() ([]byte, error) {
+func (o PostCreateorderV7400ResponseFieldsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -148,7 +148,7 @@ func (o PostAsyncOrderCreateV7400ResponseFieldsInner) MarshalJSON() ([]byte, err
 	return json.Marshal(toSerialize)
 }
 
-func (o PostAsyncOrderCreateV7400ResponseFieldsInner) ToMap() (map[string]interface{}, error) {
+func (o PostCreateorderV7400ResponseFieldsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Field) {
 		toSerialize["field"] = o.Field
@@ -162,38 +162,38 @@ func (o PostAsyncOrderCreateV7400ResponseFieldsInner) ToMap() (map[string]interf
 	return toSerialize, nil
 }
 
-type NullablePostAsyncOrderCreateV7400ResponseFieldsInner struct {
-	value *PostAsyncOrderCreateV7400ResponseFieldsInner
+type NullablePostCreateorderV7400ResponseFieldsInner struct {
+	value *PostCreateorderV7400ResponseFieldsInner
 	isSet bool
 }
 
-func (v NullablePostAsyncOrderCreateV7400ResponseFieldsInner) Get() *PostAsyncOrderCreateV7400ResponseFieldsInner {
+func (v NullablePostCreateorderV7400ResponseFieldsInner) Get() *PostCreateorderV7400ResponseFieldsInner {
 	return v.value
 }
 
-func (v *NullablePostAsyncOrderCreateV7400ResponseFieldsInner) Set(val *PostAsyncOrderCreateV7400ResponseFieldsInner) {
+func (v *NullablePostCreateorderV7400ResponseFieldsInner) Set(val *PostCreateorderV7400ResponseFieldsInner) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullablePostAsyncOrderCreateV7400ResponseFieldsInner) IsSet() bool {
+func (v NullablePostCreateorderV7400ResponseFieldsInner) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullablePostAsyncOrderCreateV7400ResponseFieldsInner) Unset() {
+func (v *NullablePostCreateorderV7400ResponseFieldsInner) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullablePostAsyncOrderCreateV7400ResponseFieldsInner(val *PostAsyncOrderCreateV7400ResponseFieldsInner) *NullablePostAsyncOrderCreateV7400ResponseFieldsInner {
-	return &NullablePostAsyncOrderCreateV7400ResponseFieldsInner{value: val, isSet: true}
+func NewNullablePostCreateorderV7400ResponseFieldsInner(val *PostCreateorderV7400ResponseFieldsInner) *NullablePostCreateorderV7400ResponseFieldsInner {
+	return &NullablePostCreateorderV7400ResponseFieldsInner{value: val, isSet: true}
 }
 
-func (v NullablePostAsyncOrderCreateV7400ResponseFieldsInner) MarshalJSON() ([]byte, error) {
+func (v NullablePostCreateorderV7400ResponseFieldsInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullablePostAsyncOrderCreateV7400ResponseFieldsInner) UnmarshalJSON(src []byte) error {
+func (v *NullablePostCreateorderV7400ResponseFieldsInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

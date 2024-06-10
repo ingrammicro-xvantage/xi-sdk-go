@@ -1,5 +1,7 @@
 # Go API client for xi_sdk_resellers
 
+# Go API client for xi_sdk_resellers
+
 For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
 # Installation
@@ -74,7 +76,6 @@ ctx = context.WithValue(context.Background(), xi_sdk_resellers.ContextOperationS
 ## Getting Started
 
 Quickstart on creating an application can be found [here](getting-started.md)
-
 ## Documentation for API Endpoints
 
 All URIs are relative to *https://api.ingrammicro.com:443*
@@ -82,7 +83,6 @@ All URIs are relative to *https://api.ingrammicro.com:443*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccesstokenAPI* | [**GetAccesstoken**](docs/AccesstokenAPI.md#getaccesstoken) | **Get** /oauth/oauth20/token | Accesstoken
-*AsyncOrderCreateAPI* | [**PostAsyncOrderCreateV7**](docs/AsyncOrderCreateAPI.md#postasyncordercreatev7) | **Post** /resellers/v7/orders | Async Order Create
 *DealsAPI* | [**GetResellersV6Dealsdetails**](docs/DealsAPI.md#getresellersv6dealsdetails) | **Get** /resellers/v6/deals/{dealId} | Deals Details
 *DealsAPI* | [**GetResellersV6Dealssearch**](docs/DealsAPI.md#getresellersv6dealssearch) | **Get** /resellers/v6/deals/search | Deals Search
 *FreightEstimateAPI* | [**PostFreightestimate**](docs/FreightEstimateAPI.md#postfreightestimate) | **Post** /resellers/v6/freightestimate | Freight Estimate
@@ -93,6 +93,7 @@ Class | Method | HTTP request | Description
 *OrdersAPI* | [**GetOrderdetailsV61**](docs/OrdersAPI.md#getorderdetailsv61) | **Get** /resellers/v6.1/orders/{ordernumber} | Get Order Details v6.1
 *OrdersAPI* | [**GetResellersV6Ordersearch**](docs/OrdersAPI.md#getresellersv6ordersearch) | **Get** /resellers/v6/orders/search | Search your Orders
 *OrdersAPI* | [**PostCreateorderV6**](docs/OrdersAPI.md#postcreateorderv6) | **Post** /resellers/v6/orders | Create your Order
+*OrdersAPI* | [**PostCreateorderV7**](docs/OrdersAPI.md#postcreateorderv7) | **Post** /resellers/v7/orders | Create your Order v7
 *OrdersAPI* | [**PutOrdermodify**](docs/OrdersAPI.md#putordermodify) | **Put** /resellers/v6/orders/{orderNumber} | Modify your Order
 *ProductCatalogAPI* | [**GetResellerV6Productdetail**](docs/ProductCatalogAPI.md#getresellerv6productdetail) | **Get** /resellers/v6/catalog/details/{ingramPartNumber} | Product Details
 *ProductCatalogAPI* | [**GetResellerV6Productsearch**](docs/ProductCatalogAPI.md#getresellerv6productsearch) | **Get** /resellers/v6/catalog | Search Products
@@ -151,7 +152,6 @@ Class | Method | HTTP request | Description
  - [GetAccesstoken500ResponseFaultDetail](docs/GetAccesstoken500ResponseFaultDetail.md)
  - [GetResellerV6ValidateQuote400Response](docs/GetResellerV6ValidateQuote400Response.md)
  - [GetResellerV6ValidateQuote400ResponseFieldsInner](docs/GetResellerV6ValidateQuote400ResponseFieldsInner.md)
- - [GetResellerV6ValidateQuote500Response](docs/GetResellerV6ValidateQuote500Response.md)
  - [InvoiceDetailsv61Response](docs/InvoiceDetailsv61Response.md)
  - [InvoiceDetailsv61ResponseBillToInfo](docs/InvoiceDetailsv61ResponseBillToInfo.md)
  - [InvoiceDetailsv61ResponseFxRateInfo](docs/InvoiceDetailsv61ResponseFxRateInfo.md)
@@ -235,8 +235,9 @@ Class | Method | HTTP request | Description
  - [OrderStatusAsyncNotificationRequestResourceInnerLinesInnerShipmentDetailsInner](docs/OrderStatusAsyncNotificationRequestResourceInnerLinesInnerShipmentDetailsInner.md)
  - [OrderStatusAsyncNotificationRequestResourceInnerLinesInnerShipmentDetailsInnerPackageDetailsInner](docs/OrderStatusAsyncNotificationRequestResourceInnerLinesInnerShipmentDetailsInnerPackageDetailsInner.md)
  - [OrderStatusAsyncNotificationRequestResourceInnerLinksInner](docs/OrderStatusAsyncNotificationRequestResourceInnerLinksInner.md)
- - [PostAsyncOrderCreateV7400Response](docs/PostAsyncOrderCreateV7400Response.md)
- - [PostAsyncOrderCreateV7400ResponseFieldsInner](docs/PostAsyncOrderCreateV7400ResponseFieldsInner.md)
+ - [PostCreateorderV7400Response](docs/PostCreateorderV7400Response.md)
+ - [PostCreateorderV7400ResponseFieldsInner](docs/PostCreateorderV7400ResponseFieldsInner.md)
+ - [PostCreateorderV7500Response](docs/PostCreateorderV7500Response.md)
  - [PostRenewalssearch400Response](docs/PostRenewalssearch400Response.md)
  - [PriceAndAvailabilityRequest](docs/PriceAndAvailabilityRequest.md)
  - [PriceAndAvailabilityRequestAdditionalAttributesInner](docs/PriceAndAvailabilityRequestAdditionalAttributesInner.md)
@@ -266,8 +267,12 @@ Class | Method | HTTP request | Description
  - [QuoteDetailsResponseAdditionalAttributesInner](docs/QuoteDetailsResponseAdditionalAttributesInner.md)
  - [QuoteDetailsResponseEndUserInfo](docs/QuoteDetailsResponseEndUserInfo.md)
  - [QuoteDetailsResponseProductsInner](docs/QuoteDetailsResponseProductsInner.md)
+ - [QuoteDetailsResponseProductsInnerBillDetailsInner](docs/QuoteDetailsResponseProductsInnerBillDetailsInner.md)
  - [QuoteDetailsResponseProductsInnerPrice](docs/QuoteDetailsResponseProductsInnerPrice.md)
+ - [QuoteDetailsResponseProductsInnerPriceDiscountsInner](docs/QuoteDetailsResponseProductsInnerPriceDiscountsInner.md)
+ - [QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner](docs/QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner.md)
  - [QuoteDetailsResponseResellerInfo](docs/QuoteDetailsResponseResellerInfo.md)
+ - [QuoteDetailsResponseShippingInfo](docs/QuoteDetailsResponseShippingInfo.md)
  - [QuoteSearchResponse](docs/QuoteSearchResponse.md)
  - [QuoteSearchResponseQuotesInner](docs/QuoteSearchResponseQuotesInner.md)
  - [QuoteSearchResponseQuotesInnerLinks](docs/QuoteSearchResponseQuotesInnerLinks.md)
@@ -303,19 +308,20 @@ Class | Method | HTTP request | Description
  - [ValidateQuoteResponseVmfAdditionalAttributesInner](docs/ValidateQuoteResponseVmfAdditionalAttributesInner.md)
 
 
-## Documentation for Authorization
+## Documentation For Authorization
 
 
 Authentication schemes defined for the API:
 ### application
 
+
 - **Type**: OAuth
 - **Flow**: application
-- **Authorization URL**: https://api.ingrammicro.com:443/oauth/oauth20/token?grant_type=client_credentials&client_id={ClientId}&client_secret={clientSecret}
-- **Method**: Get
+- **Authorization URL**: 
 - **Scopes**: 
-  - write: allows modifying resources
-  - read: allows reading resources
+ - **write**: allows modifying resources
+ - **read**: allows reading resources
+ - **description**: 
 
 Example
 
@@ -359,11 +365,3 @@ Each of these functions takes a value of the given basic type and returns a poin
 ## Contact
 
 For any inquiries or support, please feel free to contact us at:
-
-<<<<<<< HEAD
-- Email: xi_support@ingrammicro.com
-
-
-=======
-- Email: xi_support@ingrammicro.com
->>>>>>> main

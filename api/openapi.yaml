@@ -33,12 +33,6 @@ tags:
     \ not accessible through this API.\n  \n*Host Production URL - https://api.ingrammicro.com:443/resellers/v6*\
     \  "
   name: Quotes
-- description: |
-    This API will allow customers to perform both standard ordering and quote to order functionality via a single API enabling them to have a single endpoint to cater to all types of orders.
-
-    This approach will standardize the ordering flow for customers where they will get the response for all orders on to their webhooks.
-    It provides the much-awaited async ordering flow for Reseller API where large orders can also be placed via a single API with guaranteed delivery.
-  name: AsyncOrderCreate
 - description: |2
 
     The Ingram Micro Invoice v6 API endpoint provide real-time information for invoices. Users can:
@@ -1524,6 +1518,165 @@ paths:
       summary: Order Status
       tags:
       - OrderStatus
+  /resellers/v7/orders:
+    post:
+      description: |
+        This API will allow customers to perform both standard ordering and quote to order functionality via a single API enabling them to have a single endpoint to cater to all types of orders.
+
+        This approach will standardize the ordering flow for customers where they will get the response for all orders on to their webhooks.
+
+        It provides the much-awaited async ordering flow for Reseller API where large orders can also be placed via a single API with guaranteed delivery.
+      operationId: post-createorder_v7
+      parameters:
+      - description: Your unique Ingram Micro customer number.
+        explode: false
+        in: header
+        name: IM-CustomerNumber
+        required: true
+        schema:
+          example: 20-222222
+          maxLength: 10
+          type: string
+        style: simple
+      - description: Two-character ISO country code.
+        explode: false
+        in: header
+        name: IM-CountryCode
+        required: true
+        schema:
+          example: US
+          maxLength: 2
+          minLength: 2
+          type: string
+        style: simple
+      - description: Unique value used to identify the sender of the transaction.
+        explode: false
+        in: header
+        name: IM-SenderID
+        required: false
+        schema:
+          example: MyCompany
+          maxLength: 32
+          type: string
+        style: simple
+      - description: Unique transaction number to identify each transaction accross
+          all the systems.
+        explode: false
+        in: header
+        name: IM-CorrelationID
+        required: true
+        schema:
+          example: fbac82ba-cf0a-4bcf-fc03-0c5084
+          maxLength: 32
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            examples:
+              Sample:
+                value:
+                  quoteNumber: QUO-14551943-D2Y9L9
+                  customerOrderNumber: "12345"
+                  enduserOrderNumber: ""
+                  billToAddressId: XYZ
+                  endUserInfo:
+                    companyName: ABC TECH
+                    contact: "44045678"
+                    addressLine1: Texas
+                    addressLine2: "4"
+                    addressLine3: ""
+                    city: ""
+                    state: ""
+                    postalCode: ""
+                    countryCode: US
+                    email: abc@gmail.com
+                    phoneNumber: "445678901"
+                  shipToInfo:
+                    addressId: "12345"
+                    companyName: ""
+                    contact: ""
+                    addressLine1: Texas
+                    addressLine2: "4"
+                    addressLine3: ""
+                    city: ""
+                    state: ""
+                    postalCode: ""
+                    countryCode: US
+                    email: abc@gmail.com
+                  additionalAttributes:
+                  - attributeName: VEND_AUTH_NBR_FLG
+                    attributeValue: ABC1234
+                  vmfAdditionalAttributes:
+                  - attributeName: ""
+                    attributeValue: ""
+                    attributeDescription: ""
+                  lines:
+                  - customerLineNumber: "12"
+                    ingramPartNumber: YN6231
+                    quantity: "2"
+                    vmfAdditionalAttributesLines:
+                    - attributeName: ""
+                      attributeValue: ""
+                      attributeDescription: ""
+            schema:
+              $ref: '#/components/schemas/AsyncOrderCreateDTO'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                "200":
+                  description: OK
+                  value:
+                    quoteNumber: QUO-148378-R0M3Z6
+                    confirmationNumber: 1669783293
+                    message: "Thank you for submitting the order request, it’s currently\
+                      \ under process.We will notify you of the status via the Order\
+                      \ Status webhook."
+              schema:
+                $ref: '#/components/schemas/AsyncOrderCreateResponse'
+          description: Success
+        "400":
+          content:
+            application/json:
+              examples:
+                "400":
+                  description: Bad Request
+                  value:
+                    errors:
+                    - traceid: "123456"
+                      type: /errors/validation-failed
+                      message: customer validation failed
+                      fields:
+                      - field: IM-CountryCode
+                        message: Required field is missing
+                        value: null
+              schema:
+                $ref: '#/components/schemas/post_createorder_v7_400_response'
+          description: Bad Request
+        "500":
+          content:
+            application/json:
+              examples:
+                "500":
+                  description: Internal Server Error
+                  value:
+                    errors:
+                    - traceid: "123456"
+                      type: /errors/system-errors
+                      message: "Some unexpected error occured, please contact support\
+                        \ team for more details"
+              schema:
+                $ref: '#/components/schemas/post_createorder_v7_500_response'
+          description: Server Error
+      security:
+      - application:
+        - read
+      summary: Create your Order v7
+      tags:
+      - Orders
   /resellers/v6/orders:
     post:
       description: "Instantly create and place orders. The POST API supports stocked\
@@ -5639,7 +5792,7 @@ paths:
                       message: "Some unexpected error occured, please contact support\
                         \ team for more details"
               schema:
-                $ref: '#/components/schemas/get_reseller_v6_validateQuote_500_response'
+                $ref: '#/components/schemas/post_createorder_v7_500_response'
           description: Internal Server Error
       security:
       - application:
@@ -5647,165 +5800,6 @@ paths:
       summary: Validate Quote
       tags:
       - Quotes
-  /resellers/v7/orders:
-    post:
-      description: |
-        This API will allow customers to perform both standard ordering and quote to order functionality via a single API enabling them to have a single endpoint to cater to all types of orders.
-
-        This approach will standardize the ordering flow for customers where they will get the response for all orders on to their webhooks.
-
-        It provides the much-awaited async ordering flow for Reseller API where large orders can also be placed via a single API with guaranteed delivery.
-      operationId: post-AsyncOrderCreate_v7
-      parameters:
-      - description: Your unique Ingram Micro customer number.
-        explode: false
-        in: header
-        name: IM-CustomerNumber
-        required: true
-        schema:
-          example: 20-222222
-          maxLength: 10
-          type: string
-        style: simple
-      - description: Two-character ISO country code.
-        explode: false
-        in: header
-        name: IM-CountryCode
-        required: true
-        schema:
-          example: US
-          maxLength: 2
-          minLength: 2
-          type: string
-        style: simple
-      - description: Unique value used to identify the sender of the transaction.
-        explode: false
-        in: header
-        name: IM-SenderID
-        required: false
-        schema:
-          example: MyCompany
-          maxLength: 32
-          type: string
-        style: simple
-      - description: Unique transaction number to identify each transaction accross
-          all the systems.
-        explode: false
-        in: header
-        name: IM-CorrelationID
-        required: true
-        schema:
-          example: fbac82ba-cf0a-4bcf-fc03-0c5084
-          maxLength: 32
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            examples:
-              Sample:
-                value:
-                  quoteNumber: QUO-14551943-D2Y9L9
-                  customerOrderNumber: "12345"
-                  enduserOrderNumber: ""
-                  billToAddressId: XYZ
-                  endUserInfo:
-                    companyName: ABC TECH
-                    contact: "44045678"
-                    addressLine1: Texas
-                    addressLine2: "4"
-                    addressLine3: ""
-                    city: ""
-                    state: ""
-                    postalCode: ""
-                    countryCode: US
-                    email: abc@gmail.com
-                    phoneNumber: "445678901"
-                  shipToInfo:
-                    addressId: "12345"
-                    companyName: ""
-                    contact: ""
-                    addressLine1: Texas
-                    addressLine2: "4"
-                    addressLine3: ""
-                    city: ""
-                    state: ""
-                    postalCode: ""
-                    countryCode: US
-                    email: abc@gmail.com
-                  additionalAttributes:
-                  - attributeName: VEND_AUTH_NBR_FLG
-                    attributeValue: ABC1234
-                  vmfAdditionalAttributes:
-                  - attributeName: ""
-                    attributeValue: ""
-                    attributeDescription: ""
-                  lines:
-                  - customerLineNumber: "12"
-                    ingramPartNumber: YN6231
-                    quantity: "2"
-                    vmfAdditionalAttributesLines:
-                    - attributeName: ""
-                      attributeValue: ""
-                      attributeDescription: ""
-            schema:
-              $ref: '#/components/schemas/AsyncOrderCreateDTO'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              examples:
-                "200":
-                  description: OK
-                  value:
-                    quoteNumber: QUO-148378-R0M3Z6
-                    confirmationNumber: 1669783293
-                    message: "Thank you for submitting the order request, it’s currently\
-                      \ under process.We will notify you of the status via the Order\
-                      \ Status webhook."
-              schema:
-                $ref: '#/components/schemas/AsyncOrderCreateResponse'
-          description: Success
-        "400":
-          content:
-            application/json:
-              examples:
-                "400":
-                  description: Bad Request
-                  value:
-                    errors:
-                    - traceid: "123456"
-                      type: /errors/validation-failed
-                      message: customer validation failed
-                      fields:
-                      - field: IM-CountryCode
-                        message: Required field is missing
-                        value: null
-              schema:
-                $ref: '#/components/schemas/post_AsyncOrderCreate_v7_400_response'
-          description: Bad Request
-        "500":
-          content:
-            application/json:
-              examples:
-                "500":
-                  description: Internal Server Error
-                  value:
-                    errors:
-                    - traceid: "123456"
-                      type: /errors/system-errors
-                      message: "Some unexpected error occured, please contact support\
-                        \ team for more details"
-              schema:
-                $ref: '#/components/schemas/get_reseller_v6_validateQuote_500_response'
-          description: Server Error
-      security:
-      - application:
-        - read
-      summary: Async Order Create
-      tags:
-      - AsyncOrderCreate
   /resellers/v6/invoices:
     get:
       description: Search your Ingram Micro invoices. This endpoint searches by multiple
@@ -6577,7 +6571,7 @@ paths:
                         Micro API support team
                       fields: []
               schema:
-                $ref: '#/components/schemas/get_reseller_v6_validateQuote_500_response'
+                $ref: '#/components/schemas/post_createorder_v7_500_response'
           description: Internal Server Error
       security:
       - application:
@@ -6744,7 +6738,7 @@ paths:
                         Micro API support team
                       fields: []
               schema:
-                $ref: '#/components/schemas/get_reseller_v6_validateQuote_500_response'
+                $ref: '#/components/schemas/post_createorder_v7_500_response'
           description: Internal Server Error
       security:
       - application:
@@ -6915,7 +6909,7 @@ paths:
                         Micro API support team
                       fields: []
               schema:
-                $ref: '#/components/schemas/get_reseller_v6_validateQuote_500_response'
+                $ref: '#/components/schemas/post_createorder_v7_500_response'
           description: Internal Server Error
       security:
       - application:
@@ -7073,7 +7067,7 @@ paths:
                         Micro API support team
                       fields: []
               schema:
-                $ref: '#/components/schemas/get_reseller_v6_validateQuote_500_response'
+                $ref: '#/components/schemas/post_createorder_v7_500_response'
           description: Internal Server Error
       security:
       - application:
@@ -7333,7 +7327,7 @@ paths:
                         Micro API support team
                       fields: []
               schema:
-                $ref: '#/components/schemas/get_reseller_v6_validateQuote_500_response'
+                $ref: '#/components/schemas/post_createorder_v7_500_response'
           description: Internal Server Error
       security:
       - application:
@@ -7476,7 +7470,7 @@ paths:
                         Micro API support team
                       fields: []
               schema:
-                $ref: '#/components/schemas/get_reseller_v6_validateQuote_500_response'
+                $ref: '#/components/schemas/post_createorder_v7_500_response'
           description: Internal Server Error
       security:
       - application:
@@ -7629,7 +7623,7 @@ paths:
                         Micro API support team
                       fields: []
               schema:
-                $ref: '#/components/schemas/get_reseller_v6_validateQuote_500_response'
+                $ref: '#/components/schemas/post_createorder_v7_500_response'
           description: Internal Server Error
       security:
       - application:
@@ -7822,7 +7816,7 @@ paths:
                         Micro API support team
                       fields: []
               schema:
-                $ref: '#/components/schemas/get_reseller_v6_validateQuote_500_response'
+                $ref: '#/components/schemas/post_createorder_v7_500_response'
           description: Internal Server Error
       security:
       - application:
@@ -7853,7 +7847,7 @@ components:
           city: city
           companyName: companyName
           postalCode: postalCode
-          phoneNumber: 6
+          phoneNumber: phoneNumber
           countryCode: countryCode
           contact: contact
           addressLine1: addressLine1
@@ -7909,8 +7903,8 @@ components:
         acceptBackOrder: true
         lines:
         - ingramPartNumber: ingramPartNumber
-          unitPrice: 5.962133916683182
-          quantity: 1
+          unitPrice: 1.4658129805029452
+          quantity: 6
           specialBidNumber: specialBidNumber
           notes: notes
           endUserInfo:
@@ -7918,7 +7912,7 @@ components:
             city: city
             companyName: companyName
             postalCode: postalCode
-            phoneNumber: 2.3021358869347655
+            phoneNumber: 5.637376656633329
             countryCode: countryCode
             contact: contact
             addressLine1: addressLine1
@@ -7934,7 +7928,7 @@ components:
             city: city
             companyName: companyName
             postalCode: postalCode
-            phoneNumber: 2.3021358869347655
+            phoneNumber: 5.637376656633329
             countryCode: countryCode
             contact: contact
             addressLine1: addressLine1
@@ -7946,7 +7940,7 @@ components:
             addressLine4: addressLine4
             name1: name1
             email: email
-          endUserPrice: 5.637376656633329
+          endUserPrice: 5.962133916683182
           warrantyInfo:
           - hardwareLineLink: hardwareLineLink
             directLineLink: directLineLink
@@ -7979,8 +7973,8 @@ components:
           - attributeValue: attributeValue
             attributeName: attributeName
         - ingramPartNumber: ingramPartNumber
-          unitPrice: 5.962133916683182
-          quantity: 1
+          unitPrice: 1.4658129805029452
+          quantity: 6
           specialBidNumber: specialBidNumber
           notes: notes
           endUserInfo:
@@ -7988,7 +7982,7 @@ components:
             city: city
             companyName: companyName
             postalCode: postalCode
-            phoneNumber: 2.3021358869347655
+            phoneNumber: 5.637376656633329
             countryCode: countryCode
             contact: contact
             addressLine1: addressLine1
@@ -8004,7 +7998,7 @@ components:
             city: city
             companyName: companyName
             postalCode: postalCode
-            phoneNumber: 2.3021358869347655
+            phoneNumber: 5.637376656633329
             countryCode: countryCode
             contact: contact
             addressLine1: addressLine1
@@ -8016,7 +8010,7 @@ components:
             addressLine4: addressLine4
             name1: name1
             email: email
-          endUserPrice: 5.637376656633329
+          endUserPrice: 5.962133916683182
           warrantyInfo:
           - hardwareLineLink: hardwareLineLink
             directLineLink: directLineLink
@@ -8110,10 +8104,10 @@ components:
         notes: notes
         endUserInfo:
           endUserId: endUserId
-          contactId: contactId
           city: city
           companyName: companyName
           postalCode: postalCode
+          name3: name3
           phoneNumber: phoneNumber
           countryCode: countryCode
           contact: contact
@@ -8127,6 +8121,7 @@ components:
           name1: name1
           email: email
         vendAuthNumber: vendAuthNumber
+        endCustomerOrderNumber: endCustomerOrderNumber
         billToAddressId: billToAddressId
         warrantyInfo:
         - hardwareLineLink: hardwareLineLink
@@ -8195,7 +8190,6 @@ components:
           carrierCode: carrierCode
           signatureRequired: true
           requestedDeliveryDate: requestedDeliveryDate
-        endcustomerOrderNumber: endcustomerOrderNumber
         resellerInfo:
           city: city
           companyName: companyName
@@ -8313,7 +8307,7 @@ components:
           maxLength: 35
           nullable: true
           type: string
-        endcustomerOrderNumber:
+        endCustomerOrderNumber:
           description: The end customer's order number for reference in their system.
           maxLength: 35
           nullable: true
@@ -9960,8 +9954,10 @@ components:
     QuoteSearchResponse:
       example:
         pageNumber: 1
+        nextPage: nextPage
         pageSize: 6
         recordsFound: 0
+        prevPage: prevPage
         quotes:
         - lastModifiedDate: lastModifiedDate
           endUserName: endUserName
@@ -9980,6 +9976,7 @@ components:
             href: href
             type: type
           quoteTotal: 5.962133916683182
+          currencyCode: currencyCode
           quoteName: quoteName
           ingramQuoteDate: ingramQuoteDate
         - lastModifiedDate: lastModifiedDate
@@ -9999,6 +9996,7 @@ components:
             href: href
             type: type
           quoteTotal: 5.962133916683182
+          currencyCode: currencyCode
           quoteName: quoteName
           ingramQuoteDate: ingramQuoteDate
       properties:
@@ -10017,75 +10015,183 @@ components:
           items:
             $ref: '#/components/schemas/QuoteSearchResponse_quotes_inner'
           type: array
+        nextPage:
+          type: string
+        prevPage:
+          type: string
       type: object
     QuoteDetailsResponse:
       example:
         quantityTotal: 7
-        quoteSubType: quoteSubType
+        shippingInfo:
+          phoneNumber: phoneNumber
+          city: city
+          companyName: companyName
+          postalCode: postalCode
+          addressLine1: addressLine1
+          addressLine2: addressLine2
+          addressLine3: addressLine3
+          state: state
+          shpToGstinNumber: shpToGstinNumber
+          email: email
+        taxTotal: 4.965218492984954
         leaseInfo: leaseInfo
         dateClosed: dateClosed
+        imWarehouse: imWarehouse
         quoteType: quoteType
         products:
-        - ingramPartNumber: ingramPartNumber
-          coo: coo
+        - coo: coo
           vpnCategory: vpnCategory
-          quantity: 0
           notes: notes
-          resellerMargin: resellerMargin
+          endDate: endDate
           description: description
-          weight: 6
-          vendorName: vendorName
+          requestedStartDate: requestedStartDate
           isSubscription: true
           ean: ean
           terms: terms
           price:
             quotePrice: 1.4658129805029452
-            totalVisibleReserveQuantity: 3
-            extendedvendorprice: 9.301444243932576
+            extrafees: 9.301444243932576
+            unitOfMeasure: unitOfMeasure
+            discounts:
+            - amount: 2.027123023002322
+              description: description
+              avaliableQunatity: 4
+              bidVersion: bidVersion
+              validFrom: validFrom
+              type: type
+              bidNumber: bidNumber
+              minimumQuantity: 7
+              discountOffList: 1.2315135367772556
+              expirationDate: expirationDate
+              validTo: validTo
+            - amount: 2.027123023002322
+              description: description
+              avaliableQunatity: 4
+              bidVersion: bidVersion
+              validFrom: validFrom
+              type: type
+              bidNumber: bidNumber
+              minimumQuantity: 7
+              discountOffList: 1.2315135367772556
+              expirationDate: expirationDate
+              validTo: validTo
             msrp: 5.962133916683182
             extendedQuotePrice: 2.3021358869347655
             recurringPriceModel: recurringPriceModel
-            vendorprice: 7.061401241503109
+            tax: 7.061401241503109
             type: type
+            extraFeesDetails:
+            - extraFeesAmount: 3.616076749251911
+              extraFeesDescription: extraFeesDescription
+            - extraFeesAmount: 3.616076749251911
+              extraFeesDescription: extraFeesDescription
             extendedMsrp: 5.637376656633329
             discountOffList: discountOffList
-          quoteProductGuid: quoteProductGuid
           vendorPartNumber: vendorPartNumber
-          lineNumber: lineNumber
-          weightUom: weightUom
           quoteProductsSupplierPartAuxiliaryId: quoteProductsSupplierPartAuxiliaryId
           isSuggestionProduct: true
-        - ingramPartNumber: ingramPartNumber
-          coo: coo
-          vpnCategory: vpnCategory
+          ingramPartNumber: ingramPartNumber
+          billDetails:
+          - unit: unit
+            type: type
+            frequency: 1
+            unitValue: unitValue
+          - unit: unit
+            type: type
+            frequency: 1
+            unitValue: unitValue
           quantity: 0
-          notes: notes
+          serialNumber: serialNumber
           resellerMargin: resellerMargin
-          description: description
-          weight: 6
+          weight: 6.027456183070403
           vendorName: vendorName
+          quoteProductGuid: quoteProductGuid
+          planDescription: planDescription
+          lineNumber: lineNumber
+          weightUom: weightUom
+          startDate: startDate
+        - coo: coo
+          vpnCategory: vpnCategory
+          notes: notes
+          endDate: endDate
+          description: description
+          requestedStartDate: requestedStartDate
           isSubscription: true
           ean: ean
           terms: terms
           price:
             quotePrice: 1.4658129805029452
-            totalVisibleReserveQuantity: 3
-            extendedvendorprice: 9.301444243932576
+            extrafees: 9.301444243932576
+            unitOfMeasure: unitOfMeasure
+            discounts:
+            - amount: 2.027123023002322
+              description: description
+              avaliableQunatity: 4
+              bidVersion: bidVersion
+              validFrom: validFrom
+              type: type
+              bidNumber: bidNumber
+              minimumQuantity: 7
+              discountOffList: 1.2315135367772556
+              expirationDate: expirationDate
+              validTo: validTo
+            - amount: 2.027123023002322
+              description: description
+              avaliableQunatity: 4
+              bidVersion: bidVersion
+              validFrom: validFrom
+              type: type
+              bidNumber: bidNumber
+              minimumQuantity: 7
+              discountOffList: 1.2315135367772556
+              expirationDate: expirationDate
+              validTo: validTo
             msrp: 5.962133916683182
             extendedQuotePrice: 2.3021358869347655
             recurringPriceModel: recurringPriceModel
-            vendorprice: 7.061401241503109
+            tax: 7.061401241503109
             type: type
+            extraFeesDetails:
+            - extraFeesAmount: 3.616076749251911
+              extraFeesDescription: extraFeesDescription
+            - extraFeesAmount: 3.616076749251911
+              extraFeesDescription: extraFeesDescription
             extendedMsrp: 5.637376656633329
             discountOffList: discountOffList
-          quoteProductGuid: quoteProductGuid
           vendorPartNumber: vendorPartNumber
-          lineNumber: lineNumber
-          weightUom: weightUom
           quoteProductsSupplierPartAuxiliaryId: quoteProductsSupplierPartAuxiliaryId
           isSuggestionProduct: true
+          ingramPartNumber: ingramPartNumber
+          billDetails:
+          - unit: unit
+            type: type
+            frequency: 1
+            unitValue: unitValue
+          - unit: unit
+            type: type
+            frequency: 1
+            unitValue: unitValue
+          quantity: 0
+          serialNumber: serialNumber
+          resellerMargin: resellerMargin
+          weight: 6.027456183070403
+          vendorName: vendorName
+          quoteProductGuid: quoteProductGuid
+          planDescription: planDescription
+          lineNumber: lineNumber
+          weightUom: weightUom
+          startDate: startDate
+        statusReason: statusReason
+        imWarehouseGstNumber: imWarehouseGstNumber
         leasingInstructions: leasingInstructions
-        productsCount: 2
+        productsCount: 1
+        extraFeesTotalDetails:
+        - extraFeesAmount: 3.616076749251911
+          extraFeesDescription: extraFeesDescription
+        - extraFeesAmount: 3.616076749251911
+          extraFeesDescription: extraFeesDescription
+        vendorQuoteNumber: vendorQuoteNumber
         specialBidEffectiveDate: specialBidEffectiveDate
         endUserInfo:
           phoneNumber: phoneNumber
@@ -10100,14 +10206,18 @@ components:
           email: email
           marketSegment: marketSegment
         introPreamble: introPreamble
-        extendedMsrpTotal: 4.145608029883936
+        extendedMsrpTotal: 6.84685269835264
+        freightAmount: 9.965781217890562
         lastModifiedDate: lastModifiedDate
         legalTerms: legalTerms
         specialBidExpirationDate: specialBidExpirationDate
         quoteNumber: quoteNumber
+        extraFeesTotal: 1.1730742509559433
         revision: revision
-        extendedQuotePriceTotal: 1.2315135367772556
+        quoteGuid: quoteGuid
+        extendedQuotePriceTotal: 5.025004791520295
         customerNeed: customerNeed
+        paymentTermsName: paymentTermsName
         resellerInfo:
           phoneNumber: phoneNumber
           contact: contact
@@ -10141,6 +10251,8 @@ components:
             \ included in the filter can be retrieved as a subset of all available\
             \ customer quotes."
           type: string
+        quoteGuid:
+          type: string
         revision:
           description: "When a quote has been revised and updated, the quote number\
             \ remains the same throughout the lifecycle of the quote, however, a Revision\
@@ -10173,9 +10285,13 @@ components:
           description: If a price discount has been applied to the quote - The date
             the discount expires and will no longer be applicable.
           type: string
+        vendorQuoteNumber:
+          type: string
         status:
           description: This refers to the primary status of the quote.  API responses
             will return
+          type: string
+        statusReason:
           type: string
         closingReason:
           description: Closing Reason for quote.
@@ -10209,12 +10325,20 @@ components:
         leasingInstructions:
           description: Leasing information
           type: string
-        quoteSubType:
+        imWarehouse:
+          description: Warehouse name and Address
+          type: string
+        imWarehouseGstNumber:
+          description: Warehouse GST Number
+          type: string
+        paymentTermsName:
           type: string
         resellerInfo:
           $ref: '#/components/schemas/QuoteDetailsResponse_resellerInfo'
         endUserInfo:
           $ref: '#/components/schemas/QuoteDetailsResponse_endUserInfo'
+        shippingInfo:
+          $ref: '#/components/schemas/QuoteDetailsResponse_shippingInfo'
         products:
           items:
             $ref: '#/components/schemas/QuoteDetailsResponse_products_inner'
@@ -10229,10 +10353,25 @@ components:
         quantityTotal:
           description: Total quantity of all items in the quote.
           type: integer
+        extraFeesTotal:
+          format: deciaml
+          type: number
+        extraFeesTotalDetails:
+          items:
+            $ref: '#/components/schemas/QuoteDetailsResponse_products_inner_price_extraFeesDetails_inner'
+          type: array
+        taxTotal:
+          format: decimal
+          nullable: true
+          type: number
         extendedQuotePriceTotal:
           description: Total amount of quoted price for all products in the quote
             including both solution products and suggested products.
           format: decimal
+          type: number
+        freightAmount:
+          format: decimal
+          nullable: true
           type: number
         totalQuoteAmount:
           type: string
@@ -10505,6 +10644,9 @@ components:
           invoicedAmountDue: 5.962133916683182
           endCustomerOrderNumber: endCustomerOrderNumber
           invoiceAmountInclTax: 5.637376656633329
+          specialBidNumbers:
+          - specialBidNumbers
+          - specialBidNumbers
           invoiceDate: invoiceDate
           customerOrderNumber: customerOrderNumber
           invoiceDueDate: invoiceDueDate
@@ -10519,6 +10661,9 @@ components:
           invoicedAmountDue: 5.962133916683182
           endCustomerOrderNumber: endCustomerOrderNumber
           invoiceAmountInclTax: 5.637376656633329
+          specialBidNumbers:
+          - specialBidNumbers
+          - specialBidNumbers
           invoiceDate: invoiceDate
           customerOrderNumber: customerOrderNumber
           invoiceDueDate: invoiceDueDate
@@ -11542,6 +11687,72 @@ components:
         fault:
           $ref: '#/components/schemas/get_accesstoken_500_response_fault'
       type: object
+    post_createorder_v7_400_response_fields_inner:
+      example:
+        field: field
+        message: message
+        value: value
+      properties:
+        field:
+          description: Name of the field.
+          type: string
+        message:
+          description: A filed level error message.
+          type: string
+        value:
+          description: Value of the message.
+          type: string
+      type: object
+    post_createorder_v7_400_response:
+      example:
+        traceid: traceid
+        type: type
+        message: message
+        fields:
+        - field: field
+          message: message
+          value: value
+        - field: field
+          message: message
+          value: value
+      properties:
+        traceid:
+          description: A unique trace id to identify the issue.
+          type: string
+        type:
+          description: Type of the error message.
+          type: string
+        message:
+          description: A detailed error message.
+          type: string
+        fields:
+          items:
+            $ref: '#/components/schemas/post_createorder_v7_400_response_fields_inner'
+          type: array
+      type: object
+    post_createorder_v7_500_response:
+      example:
+        traceid: traceid
+        type: type
+        message: message
+        fields:
+        - "{}"
+        - "{}"
+      properties:
+        traceid:
+          description: Unique Id to identify error.
+          type: string
+        type:
+          description: Describes the type of the error.
+          type: string
+        message:
+          description: Describes the error message.
+          type: string
+        fields:
+          items:
+            type: object
+          type: array
+      type: object
     get_reseller_v6_validateQuote_400_response_fields_inner:
       example:
         field: field
@@ -11583,72 +11794,6 @@ components:
         fields:
           items:
             $ref: '#/components/schemas/get_reseller_v6_validateQuote_400_response_fields_inner'
-          type: array
-      type: object
-    get_reseller_v6_validateQuote_500_response:
-      example:
-        traceid: traceid
-        type: type
-        message: message
-        fields:
-        - "{}"
-        - "{}"
-      properties:
-        traceid:
-          description: Unique Id to identify error.
-          type: string
-        type:
-          description: Describes the type of the error.
-          type: string
-        message:
-          description: Describes the error message.
-          type: string
-        fields:
-          items:
-            type: object
-          type: array
-      type: object
-    post_AsyncOrderCreate_v7_400_response_fields_inner:
-      example:
-        field: field
-        message: message
-        value: value
-      properties:
-        field:
-          description: Name of the field.
-          type: string
-        message:
-          description: A filed level error message.
-          type: string
-        value:
-          description: Value of the message.
-          type: string
-      type: object
-    post_AsyncOrderCreate_v7_400_response:
-      example:
-        traceid: traceid
-        type: type
-        message: message
-        fields:
-        - field: field
-          message: message
-          value: value
-        - field: field
-          message: message
-          value: value
-      properties:
-        traceid:
-          description: A unique trace id to identify the issue.
-          type: string
-        type:
-          description: Type of the error message.
-          type: string
-        message:
-          description: A detailed error message.
-          type: string
-        fields:
-          items:
-            $ref: '#/components/schemas/post_AsyncOrderCreate_v7_400_response_fields_inner'
           type: array
       type: object
     post_renewalssearch_400_response:
@@ -11834,7 +11979,7 @@ components:
         city: city
         companyName: companyName
         postalCode: postalCode
-        phoneNumber: 6
+        phoneNumber: phoneNumber
         countryCode: countryCode
         contact: contact
         addressLine1: addressLine1
@@ -11900,7 +12045,7 @@ components:
           type: string
         phoneNumber:
           description: The end user/customer's phone number.
-          type: integer
+          type: string
         email:
           description: The end user/customer's email.
           type: string
@@ -11982,7 +12127,7 @@ components:
         city: city
         companyName: companyName
         postalCode: postalCode
-        phoneNumber: 2.3021358869347655
+        phoneNumber: 5.637376656633329
         countryCode: countryCode
         contact: contact
         addressLine1: addressLine1
@@ -12053,8 +12198,8 @@ components:
     OrderCreateRequest_lines_inner:
       example:
         ingramPartNumber: ingramPartNumber
-        unitPrice: 5.962133916683182
-        quantity: 1
+        unitPrice: 1.4658129805029452
+        quantity: 6
         specialBidNumber: specialBidNumber
         notes: notes
         endUserInfo:
@@ -12062,7 +12207,7 @@ components:
           city: city
           companyName: companyName
           postalCode: postalCode
-          phoneNumber: 2.3021358869347655
+          phoneNumber: 5.637376656633329
           countryCode: countryCode
           contact: contact
           addressLine1: addressLine1
@@ -12078,7 +12223,7 @@ components:
           city: city
           companyName: companyName
           postalCode: postalCode
-          phoneNumber: 2.3021358869347655
+          phoneNumber: 5.637376656633329
           countryCode: countryCode
           contact: contact
           addressLine1: addressLine1
@@ -12090,7 +12235,7 @@ components:
           addressLine4: addressLine4
           name1: name1
           email: email
-        endUserPrice: 5.637376656633329
+        endUserPrice: 5.962133916683182
         warrantyInfo:
         - hardwareLineLink: hardwareLineLink
           directLineLink: directLineLink
@@ -12320,10 +12465,10 @@ components:
         reseller. Used to determine pricing and discounts.
       example:
         endUserId: endUserId
-        contactId: contactId
         city: city
         companyName: companyName
         postalCode: postalCode
+        name3: name3
         phoneNumber: phoneNumber
         countryCode: countryCode
         contact: contact
@@ -12350,9 +12495,6 @@ components:
           type: string
         name2:
           type: string
-        contactId:
-          description: The contact Id for the end user/customer.
-          type: string
         addressLine1:
           description: The address line 1 for the end user/customer.
           type: string
@@ -12364,6 +12506,8 @@ components:
           type: string
         contact:
           description: The contact name for the end user/customer.
+          type: string
+        name3:
           type: string
         city:
           description: The end user/customer's city.
@@ -15707,6 +15851,7 @@ components:
           href: href
           type: type
         quoteTotal: 5.962133916683182
+        currencyCode: currencyCode
         quoteName: quoteName
         ingramQuoteDate: ingramQuoteDate
       properties:
@@ -15728,6 +15873,10 @@ components:
             \ remains the same throughout the lifecycle of the quote, however, a Revision\
             \ number is updated for each revision of the quote.  The revision numbers\
             \ is associated with the Unique Quote Number."
+          type: string
+        currencyCode:
+          description: The country-specific three digit ISO 4217 currency code for
+            the order.
           type: string
         endUserContact:
           description: End User Name is the end customer name that is associated with
@@ -15844,16 +15993,138 @@ components:
             \ may receive special pricing due to their segmentation."
           type: string
       type: object
+    QuoteDetailsResponse_shippingInfo:
+      example:
+        phoneNumber: phoneNumber
+        city: city
+        companyName: companyName
+        postalCode: postalCode
+        addressLine1: addressLine1
+        addressLine2: addressLine2
+        addressLine3: addressLine3
+        state: state
+        shpToGstinNumber: shpToGstinNumber
+        email: email
+      properties:
+        companyName:
+          description: Contact name  of shipping info associated with the quote.
+          type: string
+        addressLine1:
+          description: Address line 1 for shipping info associated with the quote
+          type: string
+        addressLine2:
+          description: Address line 2 for shipping info associated with the quote.
+          type: string
+        addressLine3:
+          description: Address line 3 for shipping info associated with the quote.
+          type: string
+        city:
+          description: City for shipping info associated with the quote
+          type: string
+        state:
+          description: Two letter state abreviation for shipping info associated with
+            the quote
+          type: string
+        email:
+          description: Email of shipping info the quote associated with the quote.
+          type: string
+        phoneNumber:
+          description: Phone number of shipping info associated with the quote.
+          type: string
+        postalCode:
+          description: Zip code of shipping info associated with the quote.
+          type: string
+        shpToGstinNumber:
+          type: string
+      type: object
+    QuoteDetailsResponse_products_inner_price_extraFeesDetails_inner:
+      example:
+        extraFeesAmount: 3.616076749251911
+        extraFeesDescription: extraFeesDescription
+      properties:
+        extraFeesDescription:
+          type: string
+        extraFeesAmount:
+          format: decimal
+          type: number
+      type: object
+    QuoteDetailsResponse_products_inner_price_discounts_inner:
+      example:
+        amount: 2.027123023002322
+        description: description
+        avaliableQunatity: 4
+        bidVersion: bidVersion
+        validFrom: validFrom
+        type: type
+        bidNumber: bidNumber
+        minimumQuantity: 7
+        discountOffList: 1.2315135367772556
+        expirationDate: expirationDate
+        validTo: validTo
+      properties:
+        type:
+          type: string
+        amount:
+          format: decimal
+          type: number
+        expirationDate:
+          type: string
+        description:
+          type: string
+        avaliableQunatity:
+          type: integer
+        minimumQuantity:
+          type: integer
+        bidNumber:
+          type: string
+        bidVersion:
+          type: string
+        validFrom:
+          type: string
+        validTo:
+          type: string
+        discountOffList:
+          format: decimal
+          type: number
+      type: object
     QuoteDetailsResponse_products_inner_price:
       example:
         quotePrice: 1.4658129805029452
-        totalVisibleReserveQuantity: 3
-        extendedvendorprice: 9.301444243932576
+        extrafees: 9.301444243932576
+        unitOfMeasure: unitOfMeasure
+        discounts:
+        - amount: 2.027123023002322
+          description: description
+          avaliableQunatity: 4
+          bidVersion: bidVersion
+          validFrom: validFrom
+          type: type
+          bidNumber: bidNumber
+          minimumQuantity: 7
+          discountOffList: 1.2315135367772556
+          expirationDate: expirationDate
+          validTo: validTo
+        - amount: 2.027123023002322
+          description: description
+          avaliableQunatity: 4
+          bidVersion: bidVersion
+          validFrom: validFrom
+          type: type
+          bidNumber: bidNumber
+          minimumQuantity: 7
+          discountOffList: 1.2315135367772556
+          expirationDate: expirationDate
+          validTo: validTo
         msrp: 5.962133916683182
         extendedQuotePrice: 2.3021358869347655
         recurringPriceModel: recurringPriceModel
-        vendorprice: 7.061401241503109
+        tax: 7.061401241503109
         type: type
+        extraFeesDetails:
+        - extraFeesAmount: 3.616076749251911
+          extraFeesDescription: extraFeesDescription
+        - extraFeesAmount: 3.616076749251911
+          extraFeesDescription: extraFeesDescription
         extendedMsrp: 5.637376656633329
         discountOffList: discountOffList
       properties:
@@ -15876,50 +16147,118 @@ components:
         discountOffList:
           description: Discount off list percentage extended
           type: string
-        vendorprice:
-          format: decimal
-          type: number
-        extendedvendorprice:
-          format: decimal
-          type: number
-        totalVisibleReserveQuantity:
-          type: integer
         type:
           type: string
         recurringPriceModel:
           type: string
+        unitOfMeasure:
+          type: string
+        tax:
+          format: decimal
+          nullable: true
+          type: number
+        extrafees:
+          format: decimal
+          nullable: true
+          type: number
+        extraFeesDetails:
+          items:
+            $ref: '#/components/schemas/QuoteDetailsResponse_products_inner_price_extraFeesDetails_inner'
+          type: array
+        discounts:
+          items:
+            $ref: '#/components/schemas/QuoteDetailsResponse_products_inner_price_discounts_inner'
+          type: array
+      type: object
+    QuoteDetailsResponse_products_inner_billDetails_inner:
+      example:
+        unit: unit
+        type: type
+        frequency: 1
+        unitValue: unitValue
+      properties:
+        type:
+          type: string
+        unit:
+          type: string
+        frequency:
+          type: integer
+        unitValue:
+          type: string
       type: object
     QuoteDetailsResponse_products_inner:
       example:
-        ingramPartNumber: ingramPartNumber
         coo: coo
         vpnCategory: vpnCategory
-        quantity: 0
         notes: notes
-        resellerMargin: resellerMargin
+        endDate: endDate
         description: description
-        weight: 6
-        vendorName: vendorName
+        requestedStartDate: requestedStartDate
         isSubscription: true
         ean: ean
         terms: terms
         price:
           quotePrice: 1.4658129805029452
-          totalVisibleReserveQuantity: 3
-          extendedvendorprice: 9.301444243932576
+          extrafees: 9.301444243932576
+          unitOfMeasure: unitOfMeasure
+          discounts:
+          - amount: 2.027123023002322
+            description: description
+            avaliableQunatity: 4
+            bidVersion: bidVersion
+            validFrom: validFrom
+            type: type
+            bidNumber: bidNumber
+            minimumQuantity: 7
+            discountOffList: 1.2315135367772556
+            expirationDate: expirationDate
+            validTo: validTo
+          - amount: 2.027123023002322
+            description: description
+            avaliableQunatity: 4
+            bidVersion: bidVersion
+            validFrom: validFrom
+            type: type
+            bidNumber: bidNumber
+            minimumQuantity: 7
+            discountOffList: 1.2315135367772556
+            expirationDate: expirationDate
+            validTo: validTo
           msrp: 5.962133916683182
           extendedQuotePrice: 2.3021358869347655
           recurringPriceModel: recurringPriceModel
-          vendorprice: 7.061401241503109
+          tax: 7.061401241503109
           type: type
+          extraFeesDetails:
+          - extraFeesAmount: 3.616076749251911
+            extraFeesDescription: extraFeesDescription
+          - extraFeesAmount: 3.616076749251911
+            extraFeesDescription: extraFeesDescription
           extendedMsrp: 5.637376656633329
           discountOffList: discountOffList
-        quoteProductGuid: quoteProductGuid
         vendorPartNumber: vendorPartNumber
-        lineNumber: lineNumber
-        weightUom: weightUom
         quoteProductsSupplierPartAuxiliaryId: quoteProductsSupplierPartAuxiliaryId
         isSuggestionProduct: true
+        ingramPartNumber: ingramPartNumber
+        billDetails:
+        - unit: unit
+          type: type
+          frequency: 1
+          unitValue: unitValue
+        - unit: unit
+          type: type
+          frequency: 1
+          unitValue: unitValue
+        quantity: 0
+        serialNumber: serialNumber
+        resellerMargin: resellerMargin
+        weight: 6.027456183070403
+        vendorName: vendorName
+        quoteProductGuid: quoteProductGuid
+        planDescription: planDescription
+        lineNumber: lineNumber
+        weightUom: weightUom
+        startDate: startDate
       properties:
         quoteProductGuid:
           description: Quote Product GUID  is the primary quote key in Ingram Micro's
@@ -15960,7 +16299,8 @@ components:
             \ following Imperial standards - weight is presented as pounds with decimal.\
             \  In countries following metric standards, weight is provided as kilograms\
             \ with decimal."
-          type: integer
+          format: decimal
+          type: number
         weightUom:
           description: Unit of measure
           type: string
@@ -15983,12 +16323,26 @@ components:
         terms:
           description: Terms of the quote
           type: string
+        planDescription:
+          type: string
         isSubscription:
           type: boolean
         resellerMargin:
           type: string
+        requestedStartDate:
+          type: string
+        startDate:
+          type: string
+        endDate:
+          type: string
+        serialNumber:
+          type: string
         price:
           $ref: '#/components/schemas/QuoteDetailsResponse_products_inner_price'
+        billDetails:
+          items:
+            $ref: '#/components/schemas/QuoteDetailsResponse_products_inner_billDetails_inner'
+          type: array
       type: object
     QuoteDetailsResponse_additionalAttributes_inner:
       example:
@@ -16346,6 +16700,9 @@ components:
         invoicedAmountDue: 5.962133916683182
         endCustomerOrderNumber: endCustomerOrderNumber
         invoiceAmountInclTax: 5.637376656633329
+        specialBidNumbers:
+        - specialBidNumbers
+        - specialBidNumbers
         invoiceDate: invoiceDate
         customerOrderNumber: customerOrderNumber
         invoiceDueDate: invoiceDueDate
@@ -16360,6 +16717,11 @@ components:
         paymentTermsDueDate:
           description: Payment Terms Due date.
           type: string
+        specialBidNumbers:
+          items:
+            description: List of Ingram Micro Special Bid Number
+            type: string
+          type: array
         erpOrderNumber:
           description: Order number
           type: string

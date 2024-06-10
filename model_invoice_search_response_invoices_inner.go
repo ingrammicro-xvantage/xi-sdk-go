@@ -21,6 +21,7 @@ var _ MappedNullable = &InvoiceSearchResponseInvoicesInner{}
 type InvoiceSearchResponseInvoicesInner struct {
 	// Payment Terms Due date.
 	PaymentTermsDueDate *string `json:"paymentTermsDueDate,omitempty"`
+	SpecialBidNumbers []string `json:"specialBidNumbers,omitempty"`
 	// Order number
 	ErpOrderNumber *string `json:"erpOrderNumber,omitempty"`
 	// Invoice no.
@@ -93,6 +94,38 @@ func (o *InvoiceSearchResponseInvoicesInner) HasPaymentTermsDueDate() bool {
 // SetPaymentTermsDueDate gets a reference to the given string and assigns it to the PaymentTermsDueDate field.
 func (o *InvoiceSearchResponseInvoicesInner) SetPaymentTermsDueDate(v string) {
 	o.PaymentTermsDueDate = &v
+}
+
+// GetSpecialBidNumbers returns the SpecialBidNumbers field value if set, zero value otherwise.
+func (o *InvoiceSearchResponseInvoicesInner) GetSpecialBidNumbers() []string {
+	if o == nil || IsNil(o.SpecialBidNumbers) {
+		var ret []string
+		return ret
+	}
+	return o.SpecialBidNumbers
+}
+
+// GetSpecialBidNumbersOk returns a tuple with the SpecialBidNumbers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvoiceSearchResponseInvoicesInner) GetSpecialBidNumbersOk() ([]string, bool) {
+	if o == nil || IsNil(o.SpecialBidNumbers) {
+		return nil, false
+	}
+	return o.SpecialBidNumbers, true
+}
+
+// HasSpecialBidNumbers returns a boolean if a field has been set.
+func (o *InvoiceSearchResponseInvoicesInner) HasSpecialBidNumbers() bool {
+	if o != nil && !IsNil(o.SpecialBidNumbers) {
+		return true
+	}
+
+	return false
+}
+
+// SetSpecialBidNumbers gets a reference to the given []string and assigns it to the SpecialBidNumbers field.
+func (o *InvoiceSearchResponseInvoicesInner) SetSpecialBidNumbers(v []string) {
+	o.SpecialBidNumbers = v
 }
 
 // GetErpOrderNumber returns the ErpOrderNumber field value if set, zero value otherwise.
@@ -523,6 +556,9 @@ func (o InvoiceSearchResponseInvoicesInner) ToMap() (map[string]interface{}, err
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.PaymentTermsDueDate) {
 		toSerialize["paymentTermsDueDate"] = o.PaymentTermsDueDate
+	}
+	if !IsNil(o.SpecialBidNumbers) {
+		toSerialize["specialBidNumbers"] = o.SpecialBidNumbers
 	}
 	if !IsNil(o.ErpOrderNumber) {
 		toSerialize["erpOrderNumber"] = o.ErpOrderNumber
