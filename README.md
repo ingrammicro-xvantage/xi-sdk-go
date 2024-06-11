@@ -1,6 +1,5 @@
 # Go API client for xi_sdk_resellers
 
-# Go API client for xi_sdk_resellers
 
 For resellers seeking to innovate with Ingram Micro's API solutions, automate your eCommerce experience with our array of API's and webhooks to craft a seamless journey for your customers.
 
