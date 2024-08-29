@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **CustomerPartNumber** | Pointer to **string** | Reseller / end-user’s part number for the product. | [optional] 
 **ProductAuthorized** | Pointer to **string** | Boolean that indicates whether a product is authorized. | [optional] 
 **Description** | Pointer to **string** | The description given for the product. | [optional] 
-**ProductDetailDescription** | Pointer to **string** | The detailed description given for the product. | [optional] 
 **Upc** | Pointer to **string** | The UPC code for the product. Consists of 12 numeric digits that are uniquely assigned to each trade item. | [optional] 
 **ProductCategory** | Pointer to **string** | The category of the product. | [optional] 
 **ProductSubCategory** | Pointer to **string** | The sub-category of the product. | [optional] 
@@ -19,7 +18,6 @@ Name | Type | Description | Notes
 **ProductClass** | Pointer to **string** | Indicates whether the product is directly shipped from the vendor’s warehouse or if the product ships from Ingram Micro’s warehouse. Class Codes are Ingram classifications on how skus are stocked A &#x3D; Product that is stocked usually in all IM warehouses and replenished on a regular basis. B &#x3D; Product that is stocked in limited IM warehouses and replenished on a regular basis C &#x3D; Product that is stocked in fewer IM warehouses and replenished on a regular basis. D &#x3D; Product that Ingram Micro has elected to discontinue. E &#x3D; Product that will be phased out later, according to the vendor. You may not want to replenish this product, but instead sell down what is in stock. F &#x3D; Product that we carry for a specific customer or supplier under a contractual agreement. N &#x3D; New Sku. Classification before first receipt O &#x3D; Discontinued product to be liquidated S&#x3D; Order for Specialized Demand (Order to backorder) X&#x3D; direct ship from Vendor V &#x3D; product that vendor has elected to discontinue. | [optional] 
 **Indicators** | Pointer to [**ProductDetailResponseIndicators**](ProductDetailResponseIndicators.md) |  | [optional] 
 **CiscoFields** | Pointer to [**ProductDetailResponseCiscoFields**](ProductDetailResponseCiscoFields.md) |  | [optional] 
-**TechnicalSpecifications** | Pointer to [**[]ProductDetailResponseTechnicalSpecificationsInner**](ProductDetailResponseTechnicalSpecificationsInner.md) | Technical specifications of the product. | [optional] 
 **WarrantyInformation** | Pointer to **[]map[string]interface{}** | Warranty information related to the product. | [optional] 
 **AdditionalInformation** | Pointer to [**ProductDetailResponseAdditionalInformation**](ProductDetailResponseAdditionalInformation.md) |  | [optional] 
 
@@ -166,31 +164,6 @@ SetDescription sets Description field to given value.
 `func (o *ProductDetailResponse) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
-
-### GetProductDetailDescription
-
-`func (o *ProductDetailResponse) GetProductDetailDescription() string`
-
-GetProductDetailDescription returns the ProductDetailDescription field if non-nil, zero value otherwise.
-
-### GetProductDetailDescriptionOk
-
-`func (o *ProductDetailResponse) GetProductDetailDescriptionOk() (*string, bool)`
-
-GetProductDetailDescriptionOk returns a tuple with the ProductDetailDescription field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProductDetailDescription
-
-`func (o *ProductDetailResponse) SetProductDetailDescription(v string)`
-
-SetProductDetailDescription sets ProductDetailDescription field to given value.
-
-### HasProductDetailDescription
-
-`func (o *ProductDetailResponse) HasProductDetailDescription() bool`
-
-HasProductDetailDescription returns a boolean if a field has been set.
 
 ### GetUpc
 
@@ -416,31 +389,6 @@ SetCiscoFields sets CiscoFields field to given value.
 `func (o *ProductDetailResponse) HasCiscoFields() bool`
 
 HasCiscoFields returns a boolean if a field has been set.
-
-### GetTechnicalSpecifications
-
-`func (o *ProductDetailResponse) GetTechnicalSpecifications() []ProductDetailResponseTechnicalSpecificationsInner`
-
-GetTechnicalSpecifications returns the TechnicalSpecifications field if non-nil, zero value otherwise.
-
-### GetTechnicalSpecificationsOk
-
-`func (o *ProductDetailResponse) GetTechnicalSpecificationsOk() (*[]ProductDetailResponseTechnicalSpecificationsInner, bool)`
-
-GetTechnicalSpecificationsOk returns a tuple with the TechnicalSpecifications field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTechnicalSpecifications
-
-`func (o *ProductDetailResponse) SetTechnicalSpecifications(v []ProductDetailResponseTechnicalSpecificationsInner)`
-
-SetTechnicalSpecifications sets TechnicalSpecifications field to given value.
-
-### HasTechnicalSpecifications
-
-`func (o *ProductDetailResponse) HasTechnicalSpecifications() bool`
-
-HasTechnicalSpecifications returns a boolean if a field has been set.
 
 ### GetWarrantyInformation
 

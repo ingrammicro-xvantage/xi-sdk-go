@@ -29,8 +29,6 @@ type ProductDetailResponse struct {
 	ProductAuthorized *string `json:"productAuthorized,omitempty"`
 	// The description given for the product.
 	Description *string `json:"description,omitempty"`
-	// The detailed description given for the product.
-	ProductDetailDescription *string `json:"productDetailDescription,omitempty"`
 	// The UPC code for the product. Consists of 12 numeric digits that are uniquely assigned to each trade item.
 	Upc *string `json:"upc,omitempty"`
 	// The category of the product.
@@ -47,8 +45,6 @@ type ProductDetailResponse struct {
 	ProductClass *string `json:"productClass,omitempty"`
 	Indicators *ProductDetailResponseIndicators `json:"indicators,omitempty"`
 	CiscoFields *ProductDetailResponseCiscoFields `json:"ciscoFields,omitempty"`
-	// Technical specifications of the product.
-	TechnicalSpecifications []ProductDetailResponseTechnicalSpecificationsInner `json:"technicalSpecifications,omitempty"`
 	// Warranty information related to the product.
 	WarrantyInformation []map[string]interface{} `json:"warrantyInformation,omitempty"`
 	AdditionalInformation *ProductDetailResponseAdditionalInformation `json:"additionalInformation,omitempty"`
@@ -229,38 +225,6 @@ func (o *ProductDetailResponse) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *ProductDetailResponse) SetDescription(v string) {
 	o.Description = &v
-}
-
-// GetProductDetailDescription returns the ProductDetailDescription field value if set, zero value otherwise.
-func (o *ProductDetailResponse) GetProductDetailDescription() string {
-	if o == nil || IsNil(o.ProductDetailDescription) {
-		var ret string
-		return ret
-	}
-	return *o.ProductDetailDescription
-}
-
-// GetProductDetailDescriptionOk returns a tuple with the ProductDetailDescription field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ProductDetailResponse) GetProductDetailDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.ProductDetailDescription) {
-		return nil, false
-	}
-	return o.ProductDetailDescription, true
-}
-
-// HasProductDetailDescription returns a boolean if a field has been set.
-func (o *ProductDetailResponse) HasProductDetailDescription() bool {
-	if o != nil && !IsNil(o.ProductDetailDescription) {
-		return true
-	}
-
-	return false
-}
-
-// SetProductDetailDescription gets a reference to the given string and assigns it to the ProductDetailDescription field.
-func (o *ProductDetailResponse) SetProductDetailDescription(v string) {
-	o.ProductDetailDescription = &v
 }
 
 // GetUpc returns the Upc field value if set, zero value otherwise.
@@ -551,38 +515,6 @@ func (o *ProductDetailResponse) SetCiscoFields(v ProductDetailResponseCiscoField
 	o.CiscoFields = &v
 }
 
-// GetTechnicalSpecifications returns the TechnicalSpecifications field value if set, zero value otherwise.
-func (o *ProductDetailResponse) GetTechnicalSpecifications() []ProductDetailResponseTechnicalSpecificationsInner {
-	if o == nil || IsNil(o.TechnicalSpecifications) {
-		var ret []ProductDetailResponseTechnicalSpecificationsInner
-		return ret
-	}
-	return o.TechnicalSpecifications
-}
-
-// GetTechnicalSpecificationsOk returns a tuple with the TechnicalSpecifications field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ProductDetailResponse) GetTechnicalSpecificationsOk() ([]ProductDetailResponseTechnicalSpecificationsInner, bool) {
-	if o == nil || IsNil(o.TechnicalSpecifications) {
-		return nil, false
-	}
-	return o.TechnicalSpecifications, true
-}
-
-// HasTechnicalSpecifications returns a boolean if a field has been set.
-func (o *ProductDetailResponse) HasTechnicalSpecifications() bool {
-	if o != nil && !IsNil(o.TechnicalSpecifications) {
-		return true
-	}
-
-	return false
-}
-
-// SetTechnicalSpecifications gets a reference to the given []ProductDetailResponseTechnicalSpecificationsInner and assigns it to the TechnicalSpecifications field.
-func (o *ProductDetailResponse) SetTechnicalSpecifications(v []ProductDetailResponseTechnicalSpecificationsInner) {
-	o.TechnicalSpecifications = v
-}
-
 // GetWarrantyInformation returns the WarrantyInformation field value if set, zero value otherwise.
 func (o *ProductDetailResponse) GetWarrantyInformation() []map[string]interface{} {
 	if o == nil || IsNil(o.WarrantyInformation) {
@@ -672,9 +604,6 @@ func (o ProductDetailResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if !IsNil(o.ProductDetailDescription) {
-		toSerialize["productDetailDescription"] = o.ProductDetailDescription
-	}
 	if !IsNil(o.Upc) {
 		toSerialize["upc"] = o.Upc
 	}
@@ -701,9 +630,6 @@ func (o ProductDetailResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CiscoFields) {
 		toSerialize["ciscoFields"] = o.CiscoFields
-	}
-	if !IsNil(o.TechnicalSpecifications) {
-		toSerialize["technicalSpecifications"] = o.TechnicalSpecifications
 	}
 	if !IsNil(o.WarrantyInformation) {
 		toSerialize["warrantyInformation"] = o.WarrantyInformation

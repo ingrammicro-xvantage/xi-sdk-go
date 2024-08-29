@@ -109,8 +109,8 @@ func (a *StockUpdateAPIService) ResellersV1WebhooksAvailabilityupdatePostExecute
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "targeturl", r.targeturl, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "x-hub-signature", r.xHubSignature, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "targeturl", r.targeturl, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "x-hub-signature", r.xHubSignature, "simple", "")
 	// body params
 	localVarPostBody = r.availabilityAsyncNotificationRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

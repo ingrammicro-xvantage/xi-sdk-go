@@ -142,12 +142,12 @@ func (a *ProductCatalogAPIService) GetResellerV6ProductdetailExecute(r ApiGetRes
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
 	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -389,26 +389,26 @@ func (a *ProductCatalogAPIService) GetResellerV6ProductsearchExecute(r ApiGetRes
 	}
 
 	if r.pageNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pageNumber", r.pageNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageNumber", r.pageNumber, "form", "")
 	}
 	if r.pageSize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	}
 	if r.type_ != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "form", "")
 	}
 	if r.hasDiscounts != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "hasDiscounts", r.hasDiscounts, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hasDiscounts", r.hasDiscounts, "form", "")
 	}
 	if r.vendor != nil {
 		t := *r.vendor
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vendor", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vendor", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "vendor", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "vendor", t, "form", "multi")
 		}
 	}
 	if r.vendorPartNumber != nil {
@@ -416,31 +416,31 @@ func (a *ProductCatalogAPIService) GetResellerV6ProductsearchExecute(r ApiGetRes
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "vendorPartNumber", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "vendorPartNumber", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "vendorPartNumber", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "vendorPartNumber", t, "form", "multi")
 		}
 	}
 	if r.vendorNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "vendorNumber", r.vendorNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "vendorNumber", r.vendorNumber, "form", "")
 	}
 	if r.keyword != nil {
 		t := *r.keyword
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "keyword", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "keyword", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "keyword", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "keyword", t, "form", "multi")
 		}
 	}
 	if r.category != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "category", r.category, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "category", r.category, "form", "")
 	}
 	if r.skipAuthorisation != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "skipAuthorisation", r.skipAuthorisation, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "skipAuthorisation", r.skipAuthorisation, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -459,14 +459,14 @@ func (a *ProductCatalogAPIService) GetResellerV6ProductsearchExecute(r ApiGetRes
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
 	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
 	if r.acceptLanguage != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "Accept-Language", r.acceptLanguage, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Accept-Language", r.acceptLanguage, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -667,10 +667,10 @@ func (a *ProductCatalogAPIService) PostPriceandavailabilityExecute(r ApiPostPric
 		return localVarReturnValue, nil, reportError("priceAndAvailabilityRequest is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "includeAvailability", r.includeAvailability, "")
-	parameterAddToHeaderOrQuery(localVarQueryParams, "includePricing", r.includePricing, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "includeAvailability", r.includeAvailability, "form", "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "includePricing", r.includePricing, "form", "")
 	if r.includeProductAttributes != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeProductAttributes", r.includeProductAttributes, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeProductAttributes", r.includeProductAttributes, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -689,11 +689,11 @@ func (a *ProductCatalogAPIService) PostPriceandavailabilityExecute(r ApiPostPric
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
 	}
 	// body params
 	localVarPostBody = r.priceAndAvailabilityRequest

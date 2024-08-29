@@ -157,11 +157,11 @@ func (a *DealsAPIService) GetResellersV6DealsdetailsExecute(r ApiGetResellersV6D
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-ApplicationId", r.iMApplicationId, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-Environment", r.iMEnvironment, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-ApplicationId", r.iMApplicationId, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-Environment", r.iMEnvironment, "simple", "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -350,19 +350,19 @@ func (a *DealsAPIService) GetResellersV6DealssearchExecute(r ApiGetResellersV6De
 	}
 
 	if r.endUser != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "endUser", r.endUser, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "endUser", r.endUser, "form", "")
 	}
 	if r.vendor != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "vendor", r.vendor, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "vendor", r.vendor, "form", "")
 	}
 	if r.dealId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "dealId", r.dealId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "dealId", r.dealId, "form", "")
 	}
 	if r.size != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "Size", r.size, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "Size", r.size, "form", "")
 	}
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "Page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "Page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -381,11 +381,11 @@ func (a *DealsAPIService) GetResellersV6DealssearchExecute(r ApiGetResellersV6De
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
+	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "")
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
