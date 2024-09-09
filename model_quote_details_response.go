@@ -41,6 +41,7 @@ type QuoteDetailsResponse struct {
 	// If a price discount has been applied to the quote - The date the discount expires and will no longer be applicable.
 	SpecialBidExpirationDate *string `json:"specialBidExpirationDate,omitempty"`
 	VendorQuoteNumber *string `json:"vendorQuoteNumber,omitempty"`
+	IsPartialOrderAllowed NullableBool `json:"isPartialOrderAllowed,omitempty"`
 	// This refers to the primary status of the quote.  API responses will return
 	Status *string `json:"status,omitempty"`
 	StatusReason *string `json:"statusReason,omitempty"`
@@ -486,6 +487,48 @@ func (o *QuoteDetailsResponse) HasVendorQuoteNumber() bool {
 // SetVendorQuoteNumber gets a reference to the given string and assigns it to the VendorQuoteNumber field.
 func (o *QuoteDetailsResponse) SetVendorQuoteNumber(v string) {
 	o.VendorQuoteNumber = &v
+}
+
+// GetIsPartialOrderAllowed returns the IsPartialOrderAllowed field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *QuoteDetailsResponse) GetIsPartialOrderAllowed() bool {
+	if o == nil || IsNil(o.IsPartialOrderAllowed.Get()) {
+		var ret bool
+		return ret
+	}
+	return *o.IsPartialOrderAllowed.Get()
+}
+
+// GetIsPartialOrderAllowedOk returns a tuple with the IsPartialOrderAllowed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *QuoteDetailsResponse) GetIsPartialOrderAllowedOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.IsPartialOrderAllowed.Get(), o.IsPartialOrderAllowed.IsSet()
+}
+
+// HasIsPartialOrderAllowed returns a boolean if a field has been set.
+func (o *QuoteDetailsResponse) HasIsPartialOrderAllowed() bool {
+	if o != nil && o.IsPartialOrderAllowed.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetIsPartialOrderAllowed gets a reference to the given NullableBool and assigns it to the IsPartialOrderAllowed field.
+func (o *QuoteDetailsResponse) SetIsPartialOrderAllowed(v bool) {
+	o.IsPartialOrderAllowed.Set(&v)
+}
+// SetIsPartialOrderAllowedNil sets the value for IsPartialOrderAllowed to be an explicit nil
+func (o *QuoteDetailsResponse) SetIsPartialOrderAllowedNil() {
+	o.IsPartialOrderAllowed.Set(nil)
+}
+
+// UnsetIsPartialOrderAllowed ensures that no value is present for IsPartialOrderAllowed, not even an explicit nil
+func (o *QuoteDetailsResponse) UnsetIsPartialOrderAllowed() {
+	o.IsPartialOrderAllowed.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -1481,6 +1524,9 @@ func (o QuoteDetailsResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.VendorQuoteNumber) {
 		toSerialize["vendorQuoteNumber"] = o.VendorQuoteNumber
+	}
+	if o.IsPartialOrderAllowed.IsSet() {
+		toSerialize["isPartialOrderAllowed"] = o.IsPartialOrderAllowed.Get()
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status

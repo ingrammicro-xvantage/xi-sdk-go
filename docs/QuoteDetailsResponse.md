@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **SpecialBidEffectiveDate** | Pointer to **string** | If price discount has been applied to the quote - the starting date the discount begins. | [optional] 
 **SpecialBidExpirationDate** | Pointer to **string** | If a price discount has been applied to the quote - The date the discount expires and will no longer be applicable. | [optional] 
 **VendorQuoteNumber** | Pointer to **string** |  | [optional] 
+**IsPartialOrderAllowed** | Pointer to **NullableBool** |  | [optional] 
 **Status** | Pointer to **string** | This refers to the primary status of the quote.  API responses will return | [optional] 
 **StatusReason** | Pointer to **string** |  | [optional] 
 **ClosingReason** | Pointer to **string** | Closing Reason for quote. | [optional] 
@@ -365,6 +366,41 @@ SetVendorQuoteNumber sets VendorQuoteNumber field to given value.
 
 HasVendorQuoteNumber returns a boolean if a field has been set.
 
+### GetIsPartialOrderAllowed
+
+`func (o *QuoteDetailsResponse) GetIsPartialOrderAllowed() bool`
+
+GetIsPartialOrderAllowed returns the IsPartialOrderAllowed field if non-nil, zero value otherwise.
+
+### GetIsPartialOrderAllowedOk
+
+`func (o *QuoteDetailsResponse) GetIsPartialOrderAllowedOk() (*bool, bool)`
+
+GetIsPartialOrderAllowedOk returns a tuple with the IsPartialOrderAllowed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsPartialOrderAllowed
+
+`func (o *QuoteDetailsResponse) SetIsPartialOrderAllowed(v bool)`
+
+SetIsPartialOrderAllowed sets IsPartialOrderAllowed field to given value.
+
+### HasIsPartialOrderAllowed
+
+`func (o *QuoteDetailsResponse) HasIsPartialOrderAllowed() bool`
+
+HasIsPartialOrderAllowed returns a boolean if a field has been set.
+
+### SetIsPartialOrderAllowedNil
+
+`func (o *QuoteDetailsResponse) SetIsPartialOrderAllowedNil(b bool)`
+
+ SetIsPartialOrderAllowedNil sets the value for IsPartialOrderAllowed to be an explicit nil
+
+### UnsetIsPartialOrderAllowed
+`func (o *QuoteDetailsResponse) UnsetIsPartialOrderAllowed()`
+
+UnsetIsPartialOrderAllowed ensures that no value is present for IsPartialOrderAllowed, not even an explicit nil
 ### GetStatus
 
 `func (o *QuoteDetailsResponse) GetStatus() string`
