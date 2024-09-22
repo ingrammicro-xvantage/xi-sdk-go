@@ -30,7 +30,6 @@ type ApiGetResellersV6DealsdetailsRequest struct {
 	iMCountryCode *string
 	iMCorrelationID *string
 	iMApplicationId *string
-	iMEnvironment *string
 	dealId string
 }
 
@@ -55,12 +54,6 @@ func (r ApiGetResellersV6DealsdetailsRequest) IMCorrelationID(iMCorrelationID st
 // Unique value used to identify the sender of the transaction. Example: MyCompany
 func (r ApiGetResellersV6DealsdetailsRequest) IMApplicationId(iMApplicationId string) ApiGetResellersV6DealsdetailsRequest {
 	r.iMApplicationId = &iMApplicationId
-	return r
-}
-
-// Environment name.
-func (r ApiGetResellersV6DealsdetailsRequest) IMEnvironment(iMEnvironment string) ApiGetResellersV6DealsdetailsRequest {
-	r.iMEnvironment = &iMEnvironment
 	return r
 }
 
@@ -133,12 +126,6 @@ func (a *DealsAPIService) GetResellersV6DealsdetailsExecute(r ApiGetResellersV6D
 	if strlen(*r.iMApplicationId) > 32 {
 		return localVarReturnValue, nil, reportError("iMApplicationId must have less than 32 elements")
 	}
-	if r.iMEnvironment == nil {
-		return localVarReturnValue, nil, reportError("iMEnvironment is required and must be specified")
-	}
-	if strlen(*r.iMEnvironment) > 32 {
-		return localVarReturnValue, nil, reportError("iMEnvironment must have less than 32 elements")
-	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -161,7 +148,6 @@ func (a *DealsAPIService) GetResellersV6DealsdetailsExecute(r ApiGetResellersV6D
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-ApplicationId", r.iMApplicationId, "simple", "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-Environment", r.iMEnvironment, "simple", "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
