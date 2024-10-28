@@ -19,8 +19,7 @@ var _ MappedNullable = &PriceAndAvailabilityRequestAvailabilityByWarehouseInner{
 
 // PriceAndAvailabilityRequestAvailabilityByWarehouseInner struct for PriceAndAvailabilityRequestAvailabilityByWarehouseInner
 type PriceAndAvailabilityRequestAvailabilityByWarehouseInner struct {
-	// Plant/warehouse Id of a particular location in order to get just the inventory of that location.
-	AvailabilityByWarehouseId *string `json:"availabilityByWarehouseId,omitempty"`
+	AvailabilityByWarehouseId *PriceAndAvailabilityRequestAvailabilityByWarehouseInnerAvailabilityByWarehouseId `json:"availabilityByWarehouseId,omitempty"`
 	// Pass boolean value as input, if true the response will contain warehouse location details, if false the response will not hold warehouse location details. By default value is true.
 	AvailabilityForAllLocation *bool `json:"availabilityForAllLocation,omitempty"`
 }
@@ -43,9 +42,9 @@ func NewPriceAndAvailabilityRequestAvailabilityByWarehouseInnerWithDefaults() *P
 }
 
 // GetAvailabilityByWarehouseId returns the AvailabilityByWarehouseId field value if set, zero value otherwise.
-func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) GetAvailabilityByWarehouseId() string {
+func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) GetAvailabilityByWarehouseId() PriceAndAvailabilityRequestAvailabilityByWarehouseInnerAvailabilityByWarehouseId {
 	if o == nil || IsNil(o.AvailabilityByWarehouseId) {
-		var ret string
+		var ret PriceAndAvailabilityRequestAvailabilityByWarehouseInnerAvailabilityByWarehouseId
 		return ret
 	}
 	return *o.AvailabilityByWarehouseId
@@ -53,7 +52,7 @@ func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) GetAvailabilit
 
 // GetAvailabilityByWarehouseIdOk returns a tuple with the AvailabilityByWarehouseId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) GetAvailabilityByWarehouseIdOk() (*string, bool) {
+func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) GetAvailabilityByWarehouseIdOk() (*PriceAndAvailabilityRequestAvailabilityByWarehouseInnerAvailabilityByWarehouseId, bool) {
 	if o == nil || IsNil(o.AvailabilityByWarehouseId) {
 		return nil, false
 	}
@@ -69,8 +68,8 @@ func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) HasAvailabilit
 	return false
 }
 
-// SetAvailabilityByWarehouseId gets a reference to the given string and assigns it to the AvailabilityByWarehouseId field.
-func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) SetAvailabilityByWarehouseId(v string) {
+// SetAvailabilityByWarehouseId gets a reference to the given PriceAndAvailabilityRequestAvailabilityByWarehouseInnerAvailabilityByWarehouseId and assigns it to the AvailabilityByWarehouseId field.
+func (o *PriceAndAvailabilityRequestAvailabilityByWarehouseInner) SetAvailabilityByWarehouseId(v PriceAndAvailabilityRequestAvailabilityByWarehouseInnerAvailabilityByWarehouseId) {
 	o.AvailabilityByWarehouseId = &v
 }
 

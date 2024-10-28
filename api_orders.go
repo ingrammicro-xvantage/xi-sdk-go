@@ -1042,7 +1042,7 @@ type ApiPostCreateorderV7Request struct {
 	iMCustomerNumber *string
 	iMCountryCode *string
 	iMCorrelationID *string
-	asyncOrderCreateDTO *AsyncOrderCreateDTO
+	orderCreateV7Request *OrderCreateV7Request
 	iMSenderID *string
 }
 
@@ -1058,36 +1058,31 @@ func (r ApiPostCreateorderV7Request) IMCountryCode(iMCountryCode string) ApiPost
 	return r
 }
 
-// Unique transaction number to identify each transaction accross all the systems.
+// Unique transaction number to identify each transaction across all the systems.
 func (r ApiPostCreateorderV7Request) IMCorrelationID(iMCorrelationID string) ApiPostCreateorderV7Request {
 	r.iMCorrelationID = &iMCorrelationID
 	return r
 }
 
-func (r ApiPostCreateorderV7Request) AsyncOrderCreateDTO(asyncOrderCreateDTO AsyncOrderCreateDTO) ApiPostCreateorderV7Request {
-	r.asyncOrderCreateDTO = &asyncOrderCreateDTO
+func (r ApiPostCreateorderV7Request) OrderCreateV7Request(orderCreateV7Request OrderCreateV7Request) ApiPostCreateorderV7Request {
+	r.orderCreateV7Request = &orderCreateV7Request
 	return r
 }
 
-// Unique value used to identify the sender of the transaction.
+// Unique value used to identify the sender of the transaction. Example: MyCompany
 func (r ApiPostCreateorderV7Request) IMSenderID(iMSenderID string) ApiPostCreateorderV7Request {
 	r.iMSenderID = &iMSenderID
 	return r
 }
 
-func (r ApiPostCreateorderV7Request) Execute() (*AsyncOrderCreateResponse, *http.Response, error) {
+func (r ApiPostCreateorderV7Request) Execute() (*OrderCreateV7Response201, *http.Response, error) {
 	return r.ApiService.PostCreateorderV7Execute(r)
 }
 
 /*
 PostCreateorderV7 Create your Order v7
 
-This API will allow customers to perform both standard ordering and quote to order functionality via a single API enabling them to have a single endpoint to cater to all types of orders.
-
-This approach will standardize the ordering flow for customers where they will get the response for all orders on to their webhooks.
-
-It provides the much-awaited async ordering flow for Reseller API where large orders can also be placed via a single API with guaranteed delivery.
-
+The Order Create v7 allows our customers to create orders asynchronously. The customer can create either standard orders using stocked SKUs and/or create a “Quote to Order” using the existing quote which is in “Ready to Order” status, or the customer can create an order using the “Configure to order” (CTO) quote. Upon successful submission of the order create request, a confirmation message will be returned as an API response. <br > <br > Once the order is processed, Ingram Micro will notify customers via webhook using a pre-defined callback URL as an HTTP post regarding the updates related to the order. Upon successful order creation, a notification will be sent via webhook regarding the order details, in the event of any error occurring during the order creation process, an error message will be delivered via webhook. Nightly system unavailability will delay response Async response. <br > <br > The key differentiator between standard ordering and “Quote To Order” is the optional input field in the request body which is “quoteNumber”. If a customer passes the quote number in the request body, the order will be processed as a “Quote To Order” using the details from the quote. Any SKUs, quantity, or price information that are passed in the lines object within the request will be ignored in the case of “Quote To Order”.<br > <br > **Prerequisite:** Pre-defined callback URL <br > <br > **Standard ordering::**<br><br>Ingram Micro recommends that you provide the ingramPartNumber for each SKU contained in each order. NOTE: You must have net terms to use the Ingram Micro Order Create API. Ingram Micro offers trade credit when using our APIs, and repayment is based on net terms. For example, if your net terms agreement is net 30, you will have 30 days to make a full payment. Ingram Micro does not allow credit card transactions for API ordering. <br><br>[**Key differences between v6 and v7 Migration**](https://developer.ingrammicro.com/reseller/page/v6-and-v7-migration) <br><br> <br><br>**Quote to Order / Configure to Order:**<br><br>If customers are planning to use Quote to Order or Configure to Order Quotes, it’s recommended to validate the quote using the “Validate Quote” endpoint before creating an order using the quote. Validate Quote endpoint will not only validate the quote but also outline all the mandatory fields required by the vendor at a header level and at the line level which a customer needs to pass to the Quote to Order endpoint request. For a detailed understanding of the “Validate Quote” endpoint, review the “Validate Quote” endpoint documentation. <br><br> **How it works:**<br><br>- The customer validates the quote with a quote number from the Validate Quote endpoint.<br>- The customer copies all the mandatory fields required by the vendor and adds them to the QTO request body.<br>- The customer provides all the values for Vendor mandatory fields along with other required information for QTO to create an order.<br>- After the order creation request receipt acknowledgment from the QTO endpoint, all further order creation updates will be provided via webhook push notification.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostCreateorderV7Request
@@ -1100,13 +1095,13 @@ func (a *OrdersAPIService) PostCreateorderV7(ctx context.Context) ApiPostCreateo
 }
 
 // Execute executes the request
-//  @return AsyncOrderCreateResponse
-func (a *OrdersAPIService) PostCreateorderV7Execute(r ApiPostCreateorderV7Request) (*AsyncOrderCreateResponse, *http.Response, error) {
+//  @return OrderCreateV7Response201
+func (a *OrdersAPIService) PostCreateorderV7Execute(r ApiPostCreateorderV7Request) (*OrderCreateV7Response201, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AsyncOrderCreateResponse
+		localVarReturnValue  *OrderCreateV7Response201
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersAPIService.PostCreateorderV7")
@@ -1140,8 +1135,8 @@ func (a *OrdersAPIService) PostCreateorderV7Execute(r ApiPostCreateorderV7Reques
 	if strlen(*r.iMCorrelationID) > 32 {
 		return localVarReturnValue, nil, reportError("iMCorrelationID must have less than 32 elements")
 	}
-	if r.asyncOrderCreateDTO == nil {
-		return localVarReturnValue, nil, reportError("asyncOrderCreateDTO is required and must be specified")
+	if r.orderCreateV7Request == nil {
+		return localVarReturnValue, nil, reportError("orderCreateV7Request is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1168,7 +1163,7 @@ func (a *OrdersAPIService) PostCreateorderV7Execute(r ApiPostCreateorderV7Reques
 	}
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
 	// body params
-	localVarPostBody = r.asyncOrderCreateDTO
+	localVarPostBody = r.orderCreateV7Request
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

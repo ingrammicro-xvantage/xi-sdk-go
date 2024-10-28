@@ -5,6 +5,7 @@ All URIs are relative to *https://api.ingrammicro.com:443*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetResellerV6Productdetail**](ProductCatalogAPI.md#GetResellerV6Productdetail) | **Get** /resellers/v6/catalog/details/{ingramPartNumber} | Product Details
+[**GetResellerV6ProductdetailCmp**](ProductCatalogAPI.md#GetResellerV6ProductdetailCmp) | **Get** /resellers/v6/catalog/details | Product Details
 [**GetResellerV6Productsearch**](ProductCatalogAPI.md#GetResellerV6Productsearch) | **Get** /resellers/v6/catalog | Search Products
 [**PostPriceandavailability**](ProductCatalogAPI.md#PostPriceandavailability) | **Post** /resellers/v6/catalog/priceandavailability | Price and Availability
 
@@ -88,9 +89,87 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetResellerV6ProductdetailCmp
+
+> ProductDetailResponse GetResellerV6ProductdetailCmp(ctx).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).VendorPartNumber(vendorPartNumber).PlanName(planName).PlanId(planId).Execute()
+
+Product Details
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	iMCustomerNumber := "20-222222" // string | Your unique Ingram Micro customer number
+	iMCountryCode := "US" // string | Two-character ISO country code.
+	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction across all the systems
+	iMSenderID := "MyCompany" // string | Sender Identification text (optional)
+	vendorPartNumber := "vendorPartNumber_example" // string | Vendor’s part number for the product. (optional)
+	planName := "planName_example" // string | Name of the subscription plan (optional)
+	planId := "planId_example" // string | Id of the subscription plan.   <span style='color:red'>To search for details of subscription products, customer must pass either vendorPartNumber, planName or planId.</span> (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ProductCatalogAPI.GetResellerV6ProductdetailCmp(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).VendorPartNumber(vendorPartNumber).PlanName(planName).PlanId(planId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductCatalogAPI.GetResellerV6ProductdetailCmp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetResellerV6ProductdetailCmp`: ProductDetailResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductCatalogAPI.GetResellerV6ProductdetailCmp`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetResellerV6ProductdetailCmpRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iMCustomerNumber** | **string** | Your unique Ingram Micro customer number | 
+ **iMCountryCode** | **string** | Two-character ISO country code. | 
+ **iMCorrelationID** | **string** | Unique transaction number to identify each transaction across all the systems | 
+ **iMSenderID** | **string** | Sender Identification text | 
+ **vendorPartNumber** | **string** | Vendor’s part number for the product. | 
+ **planName** | **string** | Name of the subscription plan | 
+ **planId** | **string** | Id of the subscription plan.   &lt;span style&#x3D;&#39;color:red&#39;&gt;To search for details of subscription products, customer must pass either vendorPartNumber, planName or planId.&lt;/span&gt; | 
+
+### Return type
+
+[**ProductDetailResponse**](ProductDetailResponse.md)
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetResellerV6Productsearch
 
-> ProductSearchResponse GetResellerV6Productsearch(ctx).IMCustomerNumber(iMCustomerNumber).IMCorrelationID(iMCorrelationID).IMCountryCode(iMCountryCode).PageNumber(pageNumber).PageSize(pageSize).IMSenderID(iMSenderID).Type_(type_).HasDiscounts(hasDiscounts).Vendor(vendor).VendorPartNumber(vendorPartNumber).AcceptLanguage(acceptLanguage).VendorNumber(vendorNumber).Keyword(keyword).Category(category).SkipAuthorisation(skipAuthorisation).Execute()
+> ProductSearchResponse GetResellerV6Productsearch(ctx).IMCustomerNumber(iMCustomerNumber).IMCorrelationID(iMCorrelationID).IMCountryCode(iMCountryCode).PageNumber(pageNumber).PageSize(pageSize).IMSenderID(iMSenderID).Type_(type_).HasDiscounts(hasDiscounts).Vendor(vendor).VendorPartNumber(vendorPartNumber).AcceptLanguage(acceptLanguage).VendorNumber(vendorNumber).Keyword(keyword).Category(category).SkipAuthorisation(skipAuthorisation).GroupName(groupName).PlanID(planID).ShowGroupInfo(showGroupInfo).Execute()
 
 Search Products
 
@@ -124,10 +203,13 @@ func main() {
 	keyword := []string{"Inner_example"} // []string | Keyword search,can be ingram part number or vendor part number or product title or vendor nameKeyword search. Can be Ingram Micro part number, vender part number, product title, or vendor name. (optional)
 	category := "Accessories" // string | The category of the product. Example: Displays. (optional)
 	skipAuthorisation := "true" // string | This parameter is True when you want Skip the authorization, so template will work like current B2b template. (optional)
+	groupName := "Microsoft Defender for Endpoint P2 (NCE COM MTH)" // string | Name of the Product Group (optional)
+	planID := openapiclient.get_reseller_v6_productsearch_planID_parameter{Int32: new(int32)} // GetResellerV6ProductsearchPlanIDParameter | ID of the plan (optional)
+	showGroupInfo := true // bool | In case of value true, below Group related information will displayed without the plan info. Group Name, Group Description, Number of plans, link in the group. A link will be provided if customer want to see all the plans in that group. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductCatalogAPI.GetResellerV6Productsearch(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCorrelationID(iMCorrelationID).IMCountryCode(iMCountryCode).PageNumber(pageNumber).PageSize(pageSize).IMSenderID(iMSenderID).Type_(type_).HasDiscounts(hasDiscounts).Vendor(vendor).VendorPartNumber(vendorPartNumber).AcceptLanguage(acceptLanguage).VendorNumber(vendorNumber).Keyword(keyword).Category(category).SkipAuthorisation(skipAuthorisation).Execute()
+	resp, r, err := apiClient.ProductCatalogAPI.GetResellerV6Productsearch(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCorrelationID(iMCorrelationID).IMCountryCode(iMCountryCode).PageNumber(pageNumber).PageSize(pageSize).IMSenderID(iMSenderID).Type_(type_).HasDiscounts(hasDiscounts).Vendor(vendor).VendorPartNumber(vendorPartNumber).AcceptLanguage(acceptLanguage).VendorNumber(vendorNumber).Keyword(keyword).Category(category).SkipAuthorisation(skipAuthorisation).GroupName(groupName).PlanID(planID).ShowGroupInfo(showGroupInfo).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ProductCatalogAPI.GetResellerV6Productsearch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -163,6 +245,9 @@ Name | Type | Description  | Notes
  **keyword** | **[]string** | Keyword search,can be ingram part number or vendor part number or product title or vendor nameKeyword search. Can be Ingram Micro part number, vender part number, product title, or vendor name. | 
  **category** | **string** | The category of the product. Example: Displays. | 
  **skipAuthorisation** | **string** | This parameter is True when you want Skip the authorization, so template will work like current B2b template. | 
+ **groupName** | **string** | Name of the Product Group | 
+ **planID** | [**GetResellerV6ProductsearchPlanIDParameter**](GetResellerV6ProductsearchPlanIDParameter.md) | ID of the plan | 
+ **showGroupInfo** | **bool** | In case of value true, below Group related information will displayed without the plan info. Group Name, Group Description, Number of plans, link in the group. A link will be provided if customer want to see all the plans in that group. | 
 
 ### Return type
 

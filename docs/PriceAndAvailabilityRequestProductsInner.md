@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IngramPartNumber** | Pointer to **string** | Ingram Micro unique part number for the product. | [optional] 
-**VendorPartNumber** | Pointer to **string** | Vendor’s part number for the product. | [optional] 
-**CustomerPartNumber** | Pointer to **string** | Reseller/end-user’s part number for the product. | [optional] 
-**Upc** | Pointer to **string** | The UPC code for the product. Consists of 12 numeric digits that are uniquely assigned to each trade item. | [optional] 
-**QuantityRequested** | Pointer to **string** | Number of quantity of the Product. | [optional] 
+**IngramPartNumber** | Pointer to **NullableString** | Ingram Micro unique part number for the product. | [optional] 
+**VendorPartNumber** | Pointer to **NullableString** | Vendor’s part number for the product. | [optional] 
+**CustomerPartNumber** | Pointer to **NullableString** | Reseller/end-user’s part number for the product. | [optional] 
+**Upc** | Pointer to **NullableString** | The UPC code for the product. Consists of 12 numeric digits that are uniquely assigned to each trade item. | [optional] 
+**QuantityRequested** | Pointer to [**NullablePriceAndAvailabilityRequestProductsInnerQuantityRequested**](PriceAndAvailabilityRequestProductsInnerQuantityRequested.md) |  | [optional] 
+**PlanID** | Pointer to [**NullablePriceAndAvailabilityRequestProductsInnerPlanID**](PriceAndAvailabilityRequestProductsInnerPlanID.md) |  | [optional] 
 **AdditionalAttributes** | Pointer to [**[]PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner**](PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner.md) |  | [optional] 
 
 ## Methods
@@ -55,6 +56,16 @@ SetIngramPartNumber sets IngramPartNumber field to given value.
 
 HasIngramPartNumber returns a boolean if a field has been set.
 
+### SetIngramPartNumberNil
+
+`func (o *PriceAndAvailabilityRequestProductsInner) SetIngramPartNumberNil(b bool)`
+
+ SetIngramPartNumberNil sets the value for IngramPartNumber to be an explicit nil
+
+### UnsetIngramPartNumber
+`func (o *PriceAndAvailabilityRequestProductsInner) UnsetIngramPartNumber()`
+
+UnsetIngramPartNumber ensures that no value is present for IngramPartNumber, not even an explicit nil
 ### GetVendorPartNumber
 
 `func (o *PriceAndAvailabilityRequestProductsInner) GetVendorPartNumber() string`
@@ -80,6 +91,16 @@ SetVendorPartNumber sets VendorPartNumber field to given value.
 
 HasVendorPartNumber returns a boolean if a field has been set.
 
+### SetVendorPartNumberNil
+
+`func (o *PriceAndAvailabilityRequestProductsInner) SetVendorPartNumberNil(b bool)`
+
+ SetVendorPartNumberNil sets the value for VendorPartNumber to be an explicit nil
+
+### UnsetVendorPartNumber
+`func (o *PriceAndAvailabilityRequestProductsInner) UnsetVendorPartNumber()`
+
+UnsetVendorPartNumber ensures that no value is present for VendorPartNumber, not even an explicit nil
 ### GetCustomerPartNumber
 
 `func (o *PriceAndAvailabilityRequestProductsInner) GetCustomerPartNumber() string`
@@ -105,6 +126,16 @@ SetCustomerPartNumber sets CustomerPartNumber field to given value.
 
 HasCustomerPartNumber returns a boolean if a field has been set.
 
+### SetCustomerPartNumberNil
+
+`func (o *PriceAndAvailabilityRequestProductsInner) SetCustomerPartNumberNil(b bool)`
+
+ SetCustomerPartNumberNil sets the value for CustomerPartNumber to be an explicit nil
+
+### UnsetCustomerPartNumber
+`func (o *PriceAndAvailabilityRequestProductsInner) UnsetCustomerPartNumber()`
+
+UnsetCustomerPartNumber ensures that no value is present for CustomerPartNumber, not even an explicit nil
 ### GetUpc
 
 `func (o *PriceAndAvailabilityRequestProductsInner) GetUpc() string`
@@ -130,22 +161,32 @@ SetUpc sets Upc field to given value.
 
 HasUpc returns a boolean if a field has been set.
 
+### SetUpcNil
+
+`func (o *PriceAndAvailabilityRequestProductsInner) SetUpcNil(b bool)`
+
+ SetUpcNil sets the value for Upc to be an explicit nil
+
+### UnsetUpc
+`func (o *PriceAndAvailabilityRequestProductsInner) UnsetUpc()`
+
+UnsetUpc ensures that no value is present for Upc, not even an explicit nil
 ### GetQuantityRequested
 
-`func (o *PriceAndAvailabilityRequestProductsInner) GetQuantityRequested() string`
+`func (o *PriceAndAvailabilityRequestProductsInner) GetQuantityRequested() PriceAndAvailabilityRequestProductsInnerQuantityRequested`
 
 GetQuantityRequested returns the QuantityRequested field if non-nil, zero value otherwise.
 
 ### GetQuantityRequestedOk
 
-`func (o *PriceAndAvailabilityRequestProductsInner) GetQuantityRequestedOk() (*string, bool)`
+`func (o *PriceAndAvailabilityRequestProductsInner) GetQuantityRequestedOk() (*PriceAndAvailabilityRequestProductsInnerQuantityRequested, bool)`
 
 GetQuantityRequestedOk returns a tuple with the QuantityRequested field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQuantityRequested
 
-`func (o *PriceAndAvailabilityRequestProductsInner) SetQuantityRequested(v string)`
+`func (o *PriceAndAvailabilityRequestProductsInner) SetQuantityRequested(v PriceAndAvailabilityRequestProductsInnerQuantityRequested)`
 
 SetQuantityRequested sets QuantityRequested field to given value.
 
@@ -155,6 +196,51 @@ SetQuantityRequested sets QuantityRequested field to given value.
 
 HasQuantityRequested returns a boolean if a field has been set.
 
+### SetQuantityRequestedNil
+
+`func (o *PriceAndAvailabilityRequestProductsInner) SetQuantityRequestedNil(b bool)`
+
+ SetQuantityRequestedNil sets the value for QuantityRequested to be an explicit nil
+
+### UnsetQuantityRequested
+`func (o *PriceAndAvailabilityRequestProductsInner) UnsetQuantityRequested()`
+
+UnsetQuantityRequested ensures that no value is present for QuantityRequested, not even an explicit nil
+### GetPlanID
+
+`func (o *PriceAndAvailabilityRequestProductsInner) GetPlanID() PriceAndAvailabilityRequestProductsInnerPlanID`
+
+GetPlanID returns the PlanID field if non-nil, zero value otherwise.
+
+### GetPlanIDOk
+
+`func (o *PriceAndAvailabilityRequestProductsInner) GetPlanIDOk() (*PriceAndAvailabilityRequestProductsInnerPlanID, bool)`
+
+GetPlanIDOk returns a tuple with the PlanID field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanID
+
+`func (o *PriceAndAvailabilityRequestProductsInner) SetPlanID(v PriceAndAvailabilityRequestProductsInnerPlanID)`
+
+SetPlanID sets PlanID field to given value.
+
+### HasPlanID
+
+`func (o *PriceAndAvailabilityRequestProductsInner) HasPlanID() bool`
+
+HasPlanID returns a boolean if a field has been set.
+
+### SetPlanIDNil
+
+`func (o *PriceAndAvailabilityRequestProductsInner) SetPlanIDNil(b bool)`
+
+ SetPlanIDNil sets the value for PlanID to be an explicit nil
+
+### UnsetPlanID
+`func (o *PriceAndAvailabilityRequestProductsInner) UnsetPlanID()`
+
+UnsetPlanID ensures that no value is present for PlanID, not even an explicit nil
 ### GetAdditionalAttributes
 
 `func (o *PriceAndAvailabilityRequestProductsInner) GetAdditionalAttributes() []PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner`

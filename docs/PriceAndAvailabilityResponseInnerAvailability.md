@@ -102,6 +102,16 @@ SetAvailabilityByWarehouse sets AvailabilityByWarehouse field to given value.
 
 HasAvailabilityByWarehouse returns a boolean if a field has been set.
 
+### SetAvailabilityByWarehouseNil
+
+`func (o *PriceAndAvailabilityResponseInnerAvailability) SetAvailabilityByWarehouseNil(b bool)`
+
+ SetAvailabilityByWarehouseNil sets the value for AvailabilityByWarehouse to be an explicit nil
+
+### UnsetAvailabilityByWarehouse
+`func (o *PriceAndAvailabilityResponseInnerAvailability) UnsetAvailabilityByWarehouse()`
+
+UnsetAvailabilityByWarehouse ensures that no value is present for AvailabilityByWarehouse, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

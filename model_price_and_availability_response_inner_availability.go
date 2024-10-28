@@ -107,9 +107,9 @@ func (o *PriceAndAvailabilityResponseInnerAvailability) SetTotalAvailability(v i
 	o.TotalAvailability = &v
 }
 
-// GetAvailabilityByWarehouse returns the AvailabilityByWarehouse field value if set, zero value otherwise.
+// GetAvailabilityByWarehouse returns the AvailabilityByWarehouse field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerAvailability) GetAvailabilityByWarehouse() []PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner {
-	if o == nil || IsNil(o.AvailabilityByWarehouse) {
+	if o == nil {
 		var ret []PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner
 		return ret
 	}
@@ -118,6 +118,7 @@ func (o *PriceAndAvailabilityResponseInnerAvailability) GetAvailabilityByWarehou
 
 // GetAvailabilityByWarehouseOk returns a tuple with the AvailabilityByWarehouse field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerAvailability) GetAvailabilityByWarehouseOk() ([]PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner, bool) {
 	if o == nil || IsNil(o.AvailabilityByWarehouse) {
 		return nil, false
@@ -155,7 +156,7 @@ func (o PriceAndAvailabilityResponseInnerAvailability) ToMap() (map[string]inter
 	if !IsNil(o.TotalAvailability) {
 		toSerialize["totalAvailability"] = o.TotalAvailability
 	}
-	if !IsNil(o.AvailabilityByWarehouse) {
+	if o.AvailabilityByWarehouse != nil {
 		toSerialize["availabilityByWarehouse"] = o.AvailabilityByWarehouse
 	}
 	return toSerialize, nil

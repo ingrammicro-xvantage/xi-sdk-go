@@ -23,10 +23,8 @@ type ProductDetailResponse struct {
 	IngramPartNumber *string `json:"ingramPartNumber,omitempty"`
 	// Vendor’s part number for the product.
 	VendorPartNumber *string `json:"vendorPartNumber,omitempty"`
-	// Reseller / end-user’s part number for the product.
-	CustomerPartNumber *string `json:"customerPartNumber,omitempty"`
 	// Boolean that indicates whether a product is authorized.
-	ProductAuthorized *string `json:"productAuthorized,omitempty"`
+	ProductAuthorized *bool `json:"productAuthorized,omitempty"`
 	// The description given for the product.
 	Description *string `json:"description,omitempty"`
 	// The UPC code for the product. Consists of 12 numeric digits that are uniquely assigned to each trade item.
@@ -34,7 +32,7 @@ type ProductDetailResponse struct {
 	// The category of the product.
 	ProductCategory *string `json:"productCategory,omitempty"`
 	// The sub-category of the product.
-	ProductSubCategory *string `json:"productSubCategory,omitempty"`
+	ProductSubcategory *string `json:"productSubcategory,omitempty"`
 	// Vendor name for the order.
 	VendorName *string `json:"vendorName,omitempty"`
 	// Vendor number that identifies the product.
@@ -43,11 +41,17 @@ type ProductDetailResponse struct {
 	ProductStatusCode *string `json:"productStatusCode,omitempty"`
 	// Indicates whether the product is directly shipped from the vendor’s warehouse or if the product ships from Ingram Micro’s warehouse. Class Codes are Ingram classifications on how skus are stocked A = Product that is stocked usually in all IM warehouses and replenished on a regular basis. B = Product that is stocked in limited IM warehouses and replenished on a regular basis C = Product that is stocked in fewer IM warehouses and replenished on a regular basis. D = Product that Ingram Micro has elected to discontinue. E = Product that will be phased out later, according to the vendor. You may not want to replenish this product, but instead sell down what is in stock. F = Product that we carry for a specific customer or supplier under a contractual agreement. N = New Sku. Classification before first receipt O = Discontinued product to be liquidated S= Order for Specialized Demand (Order to backorder) X= direct ship from Vendor V = product that vendor has elected to discontinue.
 	ProductClass *string `json:"productClass,omitempty"`
-	Indicators *ProductDetailResponseIndicators `json:"indicators,omitempty"`
-	CiscoFields *ProductDetailResponseCiscoFields `json:"ciscoFields,omitempty"`
+	// Reseller / end-user’s part number for the product.
+	CustomerPartNumber *string `json:"customerPartNumber,omitempty"`
+	// Indicators of the Product
+	Indicators []ProductDetailResponseIndicatorsInner `json:"indicators,omitempty"`
+	// Cisco product related information.
+	CiscoFields []ProductDetailResponseCiscoFieldsInner `json:"ciscoFields,omitempty"`
 	// Warranty information related to the product.
 	WarrantyInformation []map[string]interface{} `json:"warrantyInformation,omitempty"`
 	AdditionalInformation *ProductDetailResponseAdditionalInformation `json:"additionalInformation,omitempty"`
+	// Subscription product Details
+	SubscriptionDetails []ProductDetailResponseSubscriptionDetailsInner `json:"subscriptionDetails,omitempty"`
 }
 
 // NewProductDetailResponse instantiates a new ProductDetailResponse object
@@ -131,42 +135,10 @@ func (o *ProductDetailResponse) SetVendorPartNumber(v string) {
 	o.VendorPartNumber = &v
 }
 
-// GetCustomerPartNumber returns the CustomerPartNumber field value if set, zero value otherwise.
-func (o *ProductDetailResponse) GetCustomerPartNumber() string {
-	if o == nil || IsNil(o.CustomerPartNumber) {
-		var ret string
-		return ret
-	}
-	return *o.CustomerPartNumber
-}
-
-// GetCustomerPartNumberOk returns a tuple with the CustomerPartNumber field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ProductDetailResponse) GetCustomerPartNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.CustomerPartNumber) {
-		return nil, false
-	}
-	return o.CustomerPartNumber, true
-}
-
-// HasCustomerPartNumber returns a boolean if a field has been set.
-func (o *ProductDetailResponse) HasCustomerPartNumber() bool {
-	if o != nil && !IsNil(o.CustomerPartNumber) {
-		return true
-	}
-
-	return false
-}
-
-// SetCustomerPartNumber gets a reference to the given string and assigns it to the CustomerPartNumber field.
-func (o *ProductDetailResponse) SetCustomerPartNumber(v string) {
-	o.CustomerPartNumber = &v
-}
-
 // GetProductAuthorized returns the ProductAuthorized field value if set, zero value otherwise.
-func (o *ProductDetailResponse) GetProductAuthorized() string {
+func (o *ProductDetailResponse) GetProductAuthorized() bool {
 	if o == nil || IsNil(o.ProductAuthorized) {
-		var ret string
+		var ret bool
 		return ret
 	}
 	return *o.ProductAuthorized
@@ -174,7 +146,7 @@ func (o *ProductDetailResponse) GetProductAuthorized() string {
 
 // GetProductAuthorizedOk returns a tuple with the ProductAuthorized field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponse) GetProductAuthorizedOk() (*string, bool) {
+func (o *ProductDetailResponse) GetProductAuthorizedOk() (*bool, bool) {
 	if o == nil || IsNil(o.ProductAuthorized) {
 		return nil, false
 	}
@@ -190,8 +162,8 @@ func (o *ProductDetailResponse) HasProductAuthorized() bool {
 	return false
 }
 
-// SetProductAuthorized gets a reference to the given string and assigns it to the ProductAuthorized field.
-func (o *ProductDetailResponse) SetProductAuthorized(v string) {
+// SetProductAuthorized gets a reference to the given bool and assigns it to the ProductAuthorized field.
+func (o *ProductDetailResponse) SetProductAuthorized(v bool) {
 	o.ProductAuthorized = &v
 }
 
@@ -291,36 +263,36 @@ func (o *ProductDetailResponse) SetProductCategory(v string) {
 	o.ProductCategory = &v
 }
 
-// GetProductSubCategory returns the ProductSubCategory field value if set, zero value otherwise.
-func (o *ProductDetailResponse) GetProductSubCategory() string {
-	if o == nil || IsNil(o.ProductSubCategory) {
+// GetProductSubcategory returns the ProductSubcategory field value if set, zero value otherwise.
+func (o *ProductDetailResponse) GetProductSubcategory() string {
+	if o == nil || IsNil(o.ProductSubcategory) {
 		var ret string
 		return ret
 	}
-	return *o.ProductSubCategory
+	return *o.ProductSubcategory
 }
 
-// GetProductSubCategoryOk returns a tuple with the ProductSubCategory field value if set, nil otherwise
+// GetProductSubcategoryOk returns a tuple with the ProductSubcategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponse) GetProductSubCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.ProductSubCategory) {
+func (o *ProductDetailResponse) GetProductSubcategoryOk() (*string, bool) {
+	if o == nil || IsNil(o.ProductSubcategory) {
 		return nil, false
 	}
-	return o.ProductSubCategory, true
+	return o.ProductSubcategory, true
 }
 
-// HasProductSubCategory returns a boolean if a field has been set.
-func (o *ProductDetailResponse) HasProductSubCategory() bool {
-	if o != nil && !IsNil(o.ProductSubCategory) {
+// HasProductSubcategory returns a boolean if a field has been set.
+func (o *ProductDetailResponse) HasProductSubcategory() bool {
+	if o != nil && !IsNil(o.ProductSubcategory) {
 		return true
 	}
 
 	return false
 }
 
-// SetProductSubCategory gets a reference to the given string and assigns it to the ProductSubCategory field.
-func (o *ProductDetailResponse) SetProductSubCategory(v string) {
-	o.ProductSubCategory = &v
+// SetProductSubcategory gets a reference to the given string and assigns it to the ProductSubcategory field.
+func (o *ProductDetailResponse) SetProductSubcategory(v string) {
+	o.ProductSubcategory = &v
 }
 
 // GetVendorName returns the VendorName field value if set, zero value otherwise.
@@ -451,18 +423,50 @@ func (o *ProductDetailResponse) SetProductClass(v string) {
 	o.ProductClass = &v
 }
 
-// GetIndicators returns the Indicators field value if set, zero value otherwise.
-func (o *ProductDetailResponse) GetIndicators() ProductDetailResponseIndicators {
-	if o == nil || IsNil(o.Indicators) {
-		var ret ProductDetailResponseIndicators
+// GetCustomerPartNumber returns the CustomerPartNumber field value if set, zero value otherwise.
+func (o *ProductDetailResponse) GetCustomerPartNumber() string {
+	if o == nil || IsNil(o.CustomerPartNumber) {
+		var ret string
 		return ret
 	}
-	return *o.Indicators
+	return *o.CustomerPartNumber
+}
+
+// GetCustomerPartNumberOk returns a tuple with the CustomerPartNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductDetailResponse) GetCustomerPartNumberOk() (*string, bool) {
+	if o == nil || IsNil(o.CustomerPartNumber) {
+		return nil, false
+	}
+	return o.CustomerPartNumber, true
+}
+
+// HasCustomerPartNumber returns a boolean if a field has been set.
+func (o *ProductDetailResponse) HasCustomerPartNumber() bool {
+	if o != nil && !IsNil(o.CustomerPartNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomerPartNumber gets a reference to the given string and assigns it to the CustomerPartNumber field.
+func (o *ProductDetailResponse) SetCustomerPartNumber(v string) {
+	o.CustomerPartNumber = &v
+}
+
+// GetIndicators returns the Indicators field value if set, zero value otherwise.
+func (o *ProductDetailResponse) GetIndicators() []ProductDetailResponseIndicatorsInner {
+	if o == nil || IsNil(o.Indicators) {
+		var ret []ProductDetailResponseIndicatorsInner
+		return ret
+	}
+	return o.Indicators
 }
 
 // GetIndicatorsOk returns a tuple with the Indicators field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponse) GetIndicatorsOk() (*ProductDetailResponseIndicators, bool) {
+func (o *ProductDetailResponse) GetIndicatorsOk() ([]ProductDetailResponseIndicatorsInner, bool) {
 	if o == nil || IsNil(o.Indicators) {
 		return nil, false
 	}
@@ -478,23 +482,23 @@ func (o *ProductDetailResponse) HasIndicators() bool {
 	return false
 }
 
-// SetIndicators gets a reference to the given ProductDetailResponseIndicators and assigns it to the Indicators field.
-func (o *ProductDetailResponse) SetIndicators(v ProductDetailResponseIndicators) {
-	o.Indicators = &v
+// SetIndicators gets a reference to the given []ProductDetailResponseIndicatorsInner and assigns it to the Indicators field.
+func (o *ProductDetailResponse) SetIndicators(v []ProductDetailResponseIndicatorsInner) {
+	o.Indicators = v
 }
 
 // GetCiscoFields returns the CiscoFields field value if set, zero value otherwise.
-func (o *ProductDetailResponse) GetCiscoFields() ProductDetailResponseCiscoFields {
+func (o *ProductDetailResponse) GetCiscoFields() []ProductDetailResponseCiscoFieldsInner {
 	if o == nil || IsNil(o.CiscoFields) {
-		var ret ProductDetailResponseCiscoFields
+		var ret []ProductDetailResponseCiscoFieldsInner
 		return ret
 	}
-	return *o.CiscoFields
+	return o.CiscoFields
 }
 
 // GetCiscoFieldsOk returns a tuple with the CiscoFields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponse) GetCiscoFieldsOk() (*ProductDetailResponseCiscoFields, bool) {
+func (o *ProductDetailResponse) GetCiscoFieldsOk() ([]ProductDetailResponseCiscoFieldsInner, bool) {
 	if o == nil || IsNil(o.CiscoFields) {
 		return nil, false
 	}
@@ -510,9 +514,9 @@ func (o *ProductDetailResponse) HasCiscoFields() bool {
 	return false
 }
 
-// SetCiscoFields gets a reference to the given ProductDetailResponseCiscoFields and assigns it to the CiscoFields field.
-func (o *ProductDetailResponse) SetCiscoFields(v ProductDetailResponseCiscoFields) {
-	o.CiscoFields = &v
+// SetCiscoFields gets a reference to the given []ProductDetailResponseCiscoFieldsInner and assigns it to the CiscoFields field.
+func (o *ProductDetailResponse) SetCiscoFields(v []ProductDetailResponseCiscoFieldsInner) {
+	o.CiscoFields = v
 }
 
 // GetWarrantyInformation returns the WarrantyInformation field value if set, zero value otherwise.
@@ -579,6 +583,38 @@ func (o *ProductDetailResponse) SetAdditionalInformation(v ProductDetailResponse
 	o.AdditionalInformation = &v
 }
 
+// GetSubscriptionDetails returns the SubscriptionDetails field value if set, zero value otherwise.
+func (o *ProductDetailResponse) GetSubscriptionDetails() []ProductDetailResponseSubscriptionDetailsInner {
+	if o == nil || IsNil(o.SubscriptionDetails) {
+		var ret []ProductDetailResponseSubscriptionDetailsInner
+		return ret
+	}
+	return o.SubscriptionDetails
+}
+
+// GetSubscriptionDetailsOk returns a tuple with the SubscriptionDetails field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProductDetailResponse) GetSubscriptionDetailsOk() ([]ProductDetailResponseSubscriptionDetailsInner, bool) {
+	if o == nil || IsNil(o.SubscriptionDetails) {
+		return nil, false
+	}
+	return o.SubscriptionDetails, true
+}
+
+// HasSubscriptionDetails returns a boolean if a field has been set.
+func (o *ProductDetailResponse) HasSubscriptionDetails() bool {
+	if o != nil && !IsNil(o.SubscriptionDetails) {
+		return true
+	}
+
+	return false
+}
+
+// SetSubscriptionDetails gets a reference to the given []ProductDetailResponseSubscriptionDetailsInner and assigns it to the SubscriptionDetails field.
+func (o *ProductDetailResponse) SetSubscriptionDetails(v []ProductDetailResponseSubscriptionDetailsInner) {
+	o.SubscriptionDetails = v
+}
+
 func (o ProductDetailResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -595,9 +631,6 @@ func (o ProductDetailResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.VendorPartNumber) {
 		toSerialize["vendorPartNumber"] = o.VendorPartNumber
 	}
-	if !IsNil(o.CustomerPartNumber) {
-		toSerialize["customerPartNumber"] = o.CustomerPartNumber
-	}
 	if !IsNil(o.ProductAuthorized) {
 		toSerialize["productAuthorized"] = o.ProductAuthorized
 	}
@@ -610,8 +643,8 @@ func (o ProductDetailResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ProductCategory) {
 		toSerialize["productCategory"] = o.ProductCategory
 	}
-	if !IsNil(o.ProductSubCategory) {
-		toSerialize["productSubCategory"] = o.ProductSubCategory
+	if !IsNil(o.ProductSubcategory) {
+		toSerialize["productSubcategory"] = o.ProductSubcategory
 	}
 	if !IsNil(o.VendorName) {
 		toSerialize["vendorName"] = o.VendorName
@@ -625,6 +658,9 @@ func (o ProductDetailResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ProductClass) {
 		toSerialize["productClass"] = o.ProductClass
 	}
+	if !IsNil(o.CustomerPartNumber) {
+		toSerialize["customerPartNumber"] = o.CustomerPartNumber
+	}
 	if !IsNil(o.Indicators) {
 		toSerialize["indicators"] = o.Indicators
 	}
@@ -636,6 +672,9 @@ func (o ProductDetailResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.AdditionalInformation) {
 		toSerialize["additionalInformation"] = o.AdditionalInformation
+	}
+	if !IsNil(o.SubscriptionDetails) {
+		toSerialize["subscriptionDetails"] = o.SubscriptionDetails
 	}
 	return toSerialize, nil
 }
