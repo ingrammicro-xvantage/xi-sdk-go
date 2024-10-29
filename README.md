@@ -93,6 +93,7 @@ Class | Method | HTTP request | Description
 *OrdersAPI* | [**PostCreateorderV7**](docs/OrdersAPI.md#postcreateorderv7) | **Post** /resellers/v7/orders | Create your Order v7
 *OrdersAPI* | [**PutOrdermodify**](docs/OrdersAPI.md#putordermodify) | **Put** /resellers/v6/orders/{orderNumber} | Modify your Order
 *ProductCatalogAPI* | [**GetResellerV6Productdetail**](docs/ProductCatalogAPI.md#getresellerv6productdetail) | **Get** /resellers/v6/catalog/details/{ingramPartNumber} | Product Details
+*ProductCatalogAPI* | [**GetResellerV6ProductdetailCmp**](docs/ProductCatalogAPI.md#getresellerv6productdetailcmp) | **Get** /resellers/v6/catalog/details | Product Details
 *ProductCatalogAPI* | [**GetResellerV6Productsearch**](docs/ProductCatalogAPI.md#getresellerv6productsearch) | **Get** /resellers/v6/catalog | Search Products
 *ProductCatalogAPI* | [**PostPriceandavailability**](docs/ProductCatalogAPI.md#postpriceandavailability) | **Post** /resellers/v6/catalog/priceandavailability | Price and Availability
 *QuotesAPI* | [**GetQuotessearchV6**](docs/QuotesAPI.md#getquotessearchv6) | **Get** /resellers/v6/quotes/search | Quote Search
