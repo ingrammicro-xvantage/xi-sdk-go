@@ -32,6 +32,9 @@ type ApiGetResellerV6ProductdetailRequest struct {
 	iMCountryCode *string
 	iMCorrelationID *string
 	iMSenderID *string
+	vendorPartNumber *string
+	planName *string
+	planId *string
 }
 
 // Your unique Ingram Micro customer number
@@ -46,7 +49,7 @@ func (r ApiGetResellerV6ProductdetailRequest) IMCountryCode(iMCountryCode string
 	return r
 }
 
-// Unique transaction number to identify each transaction accross all the systems
+// Unique transaction number to identify each transaction across all the systems
 func (r ApiGetResellerV6ProductdetailRequest) IMCorrelationID(iMCorrelationID string) ApiGetResellerV6ProductdetailRequest {
 	r.iMCorrelationID = &iMCorrelationID
 	return r
@@ -55,6 +58,24 @@ func (r ApiGetResellerV6ProductdetailRequest) IMCorrelationID(iMCorrelationID st
 // Sender Identification text
 func (r ApiGetResellerV6ProductdetailRequest) IMSenderID(iMSenderID string) ApiGetResellerV6ProductdetailRequest {
 	r.iMSenderID = &iMSenderID
+	return r
+}
+
+// Vendor’s part number for the product.
+func (r ApiGetResellerV6ProductdetailRequest) VendorPartNumber(vendorPartNumber string) ApiGetResellerV6ProductdetailRequest {
+	r.vendorPartNumber = &vendorPartNumber
+	return r
+}
+
+// Name of the subscription plan
+func (r ApiGetResellerV6ProductdetailRequest) PlanName(planName string) ApiGetResellerV6ProductdetailRequest {
+	r.planName = &planName
+	return r
+}
+
+// Id of the subscription plan.   &lt;span style&#x3D;&#39;color:red&#39;&gt;To search for details of subscription products, customer must pass either vendorPartNumber, planName or planId.&lt;/span&gt;
+func (r ApiGetResellerV6ProductdetailRequest) PlanId(planId string) ApiGetResellerV6ProductdetailRequest {
+	r.planId = &planId
 	return r
 }
 
@@ -103,213 +124,6 @@ func (a *ProductCatalogAPIService) GetResellerV6ProductdetailExecute(r ApiGetRes
 	if strlen(r.ingramPartNumber) > 6 {
 		return localVarReturnValue, nil, reportError("ingramPartNumber must have less than 6 elements")
 	}
-	if r.iMCustomerNumber == nil {
-		return localVarReturnValue, nil, reportError("iMCustomerNumber is required and must be specified")
-	}
-	if strlen(*r.iMCustomerNumber) > 10 {
-		return localVarReturnValue, nil, reportError("iMCustomerNumber must have less than 10 elements")
-	}
-	if r.iMCountryCode == nil {
-		return localVarReturnValue, nil, reportError("iMCountryCode is required and must be specified")
-	}
-	if strlen(*r.iMCountryCode) < 2 {
-		return localVarReturnValue, nil, reportError("iMCountryCode must have at least 2 elements")
-	}
-	if strlen(*r.iMCountryCode) > 2 {
-		return localVarReturnValue, nil, reportError("iMCountryCode must have less than 2 elements")
-	}
-	if r.iMCorrelationID == nil {
-		return localVarReturnValue, nil, reportError("iMCorrelationID is required and must be specified")
-	}
-	if strlen(*r.iMCorrelationID) > 32 {
-		return localVarReturnValue, nil, reportError("iMCorrelationID must have less than 32 elements")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
-	if r.iMSenderID != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-SenderID", r.iMSenderID, "simple", "")
-	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 404 {
-			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 500 {
-			var v ErrorResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiGetResellerV6ProductdetailCmpRequest struct {
-	ctx context.Context
-	ApiService *ProductCatalogAPIService
-	iMCustomerNumber *string
-	iMCountryCode *string
-	iMCorrelationID *string
-	iMSenderID *string
-	vendorPartNumber *string
-	planName *string
-	planId *string
-}
-
-// Your unique Ingram Micro customer number
-func (r ApiGetResellerV6ProductdetailCmpRequest) IMCustomerNumber(iMCustomerNumber string) ApiGetResellerV6ProductdetailCmpRequest {
-	r.iMCustomerNumber = &iMCustomerNumber
-	return r
-}
-
-// Two-character ISO country code.
-func (r ApiGetResellerV6ProductdetailCmpRequest) IMCountryCode(iMCountryCode string) ApiGetResellerV6ProductdetailCmpRequest {
-	r.iMCountryCode = &iMCountryCode
-	return r
-}
-
-// Unique transaction number to identify each transaction across all the systems
-func (r ApiGetResellerV6ProductdetailCmpRequest) IMCorrelationID(iMCorrelationID string) ApiGetResellerV6ProductdetailCmpRequest {
-	r.iMCorrelationID = &iMCorrelationID
-	return r
-}
-
-// Sender Identification text
-func (r ApiGetResellerV6ProductdetailCmpRequest) IMSenderID(iMSenderID string) ApiGetResellerV6ProductdetailCmpRequest {
-	r.iMSenderID = &iMSenderID
-	return r
-}
-
-// Vendor’s part number for the product.
-func (r ApiGetResellerV6ProductdetailCmpRequest) VendorPartNumber(vendorPartNumber string) ApiGetResellerV6ProductdetailCmpRequest {
-	r.vendorPartNumber = &vendorPartNumber
-	return r
-}
-
-// Name of the subscription plan
-func (r ApiGetResellerV6ProductdetailCmpRequest) PlanName(planName string) ApiGetResellerV6ProductdetailCmpRequest {
-	r.planName = &planName
-	return r
-}
-
-// Id of the subscription plan.   &lt;span style&#x3D;&#39;color:red&#39;&gt;To search for details of subscription products, customer must pass either vendorPartNumber, planName or planId.&lt;/span&gt;
-func (r ApiGetResellerV6ProductdetailCmpRequest) PlanId(planId string) ApiGetResellerV6ProductdetailCmpRequest {
-	r.planId = &planId
-	return r
-}
-
-func (r ApiGetResellerV6ProductdetailCmpRequest) Execute() (*ProductDetailResponse, *http.Response, error) {
-	return r.ApiService.GetResellerV6ProductdetailCmpExecute(r)
-}
-
-/*
-GetResellerV6ProductdetailCmp Product Details
-
-Search all the product-related details using a unique Ingram Part Number.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetResellerV6ProductdetailCmpRequest
-*/
-func (a *ProductCatalogAPIService) GetResellerV6ProductdetailCmp(ctx context.Context) ApiGetResellerV6ProductdetailCmpRequest {
-	return ApiGetResellerV6ProductdetailCmpRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return ProductDetailResponse
-func (a *ProductCatalogAPIService) GetResellerV6ProductdetailCmpExecute(r ApiGetResellerV6ProductdetailCmpRequest) (*ProductDetailResponse, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ProductDetailResponse
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductCatalogAPIService.GetResellerV6ProductdetailCmp")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/resellers/v6/catalog/details"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
 	if r.iMCustomerNumber == nil {
 		return localVarReturnValue, nil, reportError("iMCustomerNumber is required and must be specified")
 	}
