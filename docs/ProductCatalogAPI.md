@@ -5,7 +5,7 @@ All URIs are relative to *https://api.ingrammicro.com:443*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetResellerV6Productdetail**](ProductCatalogAPI.md#GetResellerV6Productdetail) | **Get** /resellers/v6/catalog/details/{ingramPartNumber} | Product Details
-[**GetResellerV6ProductdetailCmp**](ProductCatalogAPI.md#GetResellerV6ProductdetailCmp) | **Get** /resellers/v6/catalog/details | Product Details
+[**GetResellerV6Productdetailcmp**](ProductCatalogAPI.md#GetResellerV6Productdetailcmp) | **Get** /resellers/v6/catalog/details | Product Details
 [**GetResellerV6Productsearch**](ProductCatalogAPI.md#GetResellerV6Productsearch) | **Get** /resellers/v6/catalog | Search Products
 [**PostPriceandavailability**](ProductCatalogAPI.md#PostPriceandavailability) | **Post** /resellers/v6/catalog/priceandavailability | Price and Availability
 
@@ -89,9 +89,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetResellerV6ProductdetailCmp
+## GetResellerV6Productdetailcmp
 
-> ProductDetailResponse GetResellerV6ProductdetailCmp(ctx).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).VendorPartNumber(vendorPartNumber).PlanName(planName).PlanId(planId).Execute()
+> ProductDetailResponse GetResellerV6Productdetailcmp(ctx).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).PlanName(planName).PlanId(planId).VendorPartNumber(vendorPartNumber).Execute()
 
 Product Details
 
@@ -114,19 +114,19 @@ func main() {
 	iMCountryCode := "US" // string | Two-character ISO country code.
 	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction across all the systems
 	iMSenderID := "MyCompany" // string | Sender Identification text (optional)
-	vendorPartNumber := "vendorPartNumber_example" // string | Vendor’s part number for the product. (optional)
 	planName := "planName_example" // string | Name of the subscription plan (optional)
 	planId := "planId_example" // string | Id of the subscription plan.   <span style='color:red'>To search for details of subscription products, customer must pass either vendorPartNumber, planName or planId.</span> (optional)
+	vendorPartNumber := "vendorPartNumber_example" // string | Vendor’s part number for the product. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductCatalogAPI.GetResellerV6ProductdetailCmp(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).VendorPartNumber(vendorPartNumber).PlanName(planName).PlanId(planId).Execute()
+	resp, r, err := apiClient.ProductCatalogAPI.GetResellerV6Productdetailcmp(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMSenderID(iMSenderID).PlanName(planName).PlanId(planId).VendorPartNumber(vendorPartNumber).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProductCatalogAPI.GetResellerV6ProductdetailCmp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ProductCatalogAPI.GetResellerV6Productdetailcmp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetResellerV6ProductdetailCmp`: ProductDetailResponse
-	fmt.Fprintf(os.Stdout, "Response from `ProductCatalogAPI.GetResellerV6ProductdetailCmp`: %v\n", resp)
+	// response from `GetResellerV6Productdetailcmp`: ProductDetailResponse
+	fmt.Fprintf(os.Stdout, "Response from `ProductCatalogAPI.GetResellerV6Productdetailcmp`: %v\n", resp)
 }
 ```
 
@@ -136,7 +136,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetResellerV6ProductdetailCmpRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetResellerV6ProductdetailcmpRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -145,9 +145,9 @@ Name | Type | Description  | Notes
  **iMCountryCode** | **string** | Two-character ISO country code. | 
  **iMCorrelationID** | **string** | Unique transaction number to identify each transaction across all the systems | 
  **iMSenderID** | **string** | Sender Identification text | 
- **vendorPartNumber** | **string** | Vendor’s part number for the product. | 
  **planName** | **string** | Name of the subscription plan | 
  **planId** | **string** | Id of the subscription plan.   &lt;span style&#x3D;&#39;color:red&#39;&gt;To search for details of subscription products, customer must pass either vendorPartNumber, planName or planId.&lt;/span&gt; | 
+ **vendorPartNumber** | **string** | Vendor’s part number for the product. | 
 
 ### Return type
 

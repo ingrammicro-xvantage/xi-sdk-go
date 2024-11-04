@@ -217,74 +217,74 @@ func (a *ProductCatalogAPIService) GetResellerV6ProductdetailExecute(r ApiGetRes
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetResellerV6ProductdetailCmpRequest struct {
+type ApiGetResellerV6ProductdetailcmpRequest struct {
 	ctx context.Context
 	ApiService *ProductCatalogAPIService
 	iMCustomerNumber *string
 	iMCountryCode *string
 	iMCorrelationID *string
 	iMSenderID *string
-	vendorPartNumber *string
 	planName *string
 	planId *string
+	vendorPartNumber *string
 }
 
 // Your unique Ingram Micro customer number
-func (r ApiGetResellerV6ProductdetailCmpRequest) IMCustomerNumber(iMCustomerNumber string) ApiGetResellerV6ProductdetailCmpRequest {
+func (r ApiGetResellerV6ProductdetailcmpRequest) IMCustomerNumber(iMCustomerNumber string) ApiGetResellerV6ProductdetailcmpRequest {
 	r.iMCustomerNumber = &iMCustomerNumber
 	return r
 }
 
 // Two-character ISO country code.
-func (r ApiGetResellerV6ProductdetailCmpRequest) IMCountryCode(iMCountryCode string) ApiGetResellerV6ProductdetailCmpRequest {
+func (r ApiGetResellerV6ProductdetailcmpRequest) IMCountryCode(iMCountryCode string) ApiGetResellerV6ProductdetailcmpRequest {
 	r.iMCountryCode = &iMCountryCode
 	return r
 }
 
 // Unique transaction number to identify each transaction across all the systems
-func (r ApiGetResellerV6ProductdetailCmpRequest) IMCorrelationID(iMCorrelationID string) ApiGetResellerV6ProductdetailCmpRequest {
+func (r ApiGetResellerV6ProductdetailcmpRequest) IMCorrelationID(iMCorrelationID string) ApiGetResellerV6ProductdetailcmpRequest {
 	r.iMCorrelationID = &iMCorrelationID
 	return r
 }
 
 // Sender Identification text
-func (r ApiGetResellerV6ProductdetailCmpRequest) IMSenderID(iMSenderID string) ApiGetResellerV6ProductdetailCmpRequest {
+func (r ApiGetResellerV6ProductdetailcmpRequest) IMSenderID(iMSenderID string) ApiGetResellerV6ProductdetailcmpRequest {
 	r.iMSenderID = &iMSenderID
 	return r
 }
 
-// Vendor’s part number for the product.
-func (r ApiGetResellerV6ProductdetailCmpRequest) VendorPartNumber(vendorPartNumber string) ApiGetResellerV6ProductdetailCmpRequest {
-	r.vendorPartNumber = &vendorPartNumber
-	return r
-}
-
 // Name of the subscription plan
-func (r ApiGetResellerV6ProductdetailCmpRequest) PlanName(planName string) ApiGetResellerV6ProductdetailCmpRequest {
+func (r ApiGetResellerV6ProductdetailcmpRequest) PlanName(planName string) ApiGetResellerV6ProductdetailcmpRequest {
 	r.planName = &planName
 	return r
 }
 
 // Id of the subscription plan.   &lt;span style&#x3D;&#39;color:red&#39;&gt;To search for details of subscription products, customer must pass either vendorPartNumber, planName or planId.&lt;/span&gt;
-func (r ApiGetResellerV6ProductdetailCmpRequest) PlanId(planId string) ApiGetResellerV6ProductdetailCmpRequest {
+func (r ApiGetResellerV6ProductdetailcmpRequest) PlanId(planId string) ApiGetResellerV6ProductdetailcmpRequest {
 	r.planId = &planId
 	return r
 }
 
-func (r ApiGetResellerV6ProductdetailCmpRequest) Execute() (*ProductDetailResponse, *http.Response, error) {
-	return r.ApiService.GetResellerV6ProductdetailCmpExecute(r)
+// Vendor’s part number for the product.
+func (r ApiGetResellerV6ProductdetailcmpRequest) VendorPartNumber(vendorPartNumber string) ApiGetResellerV6ProductdetailcmpRequest {
+	r.vendorPartNumber = &vendorPartNumber
+	return r
+}
+
+func (r ApiGetResellerV6ProductdetailcmpRequest) Execute() (*ProductDetailResponse, *http.Response, error) {
+	return r.ApiService.GetResellerV6ProductdetailcmpExecute(r)
 }
 
 /*
-GetResellerV6ProductdetailCmp Product Details
+GetResellerV6Productdetailcmp Product Details
 
-Search all the product-related details using a unique Ingram Part Number.
+Search all the product-related details.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetResellerV6ProductdetailCmpRequest
+ @return ApiGetResellerV6ProductdetailcmpRequest
 */
-func (a *ProductCatalogAPIService) GetResellerV6ProductdetailCmp(ctx context.Context) ApiGetResellerV6ProductdetailCmpRequest {
-	return ApiGetResellerV6ProductdetailCmpRequest{
+func (a *ProductCatalogAPIService) GetResellerV6Productdetailcmp(ctx context.Context) ApiGetResellerV6ProductdetailcmpRequest {
+	return ApiGetResellerV6ProductdetailcmpRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -292,7 +292,7 @@ func (a *ProductCatalogAPIService) GetResellerV6ProductdetailCmp(ctx context.Con
 
 // Execute executes the request
 //  @return ProductDetailResponse
-func (a *ProductCatalogAPIService) GetResellerV6ProductdetailCmpExecute(r ApiGetResellerV6ProductdetailCmpRequest) (*ProductDetailResponse, *http.Response, error) {
+func (a *ProductCatalogAPIService) GetResellerV6ProductdetailcmpExecute(r ApiGetResellerV6ProductdetailcmpRequest) (*ProductDetailResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -300,7 +300,7 @@ func (a *ProductCatalogAPIService) GetResellerV6ProductdetailCmpExecute(r ApiGet
 		localVarReturnValue  *ProductDetailResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductCatalogAPIService.GetResellerV6ProductdetailCmp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductCatalogAPIService.GetResellerV6Productdetailcmp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -332,14 +332,14 @@ func (a *ProductCatalogAPIService) GetResellerV6ProductdetailCmpExecute(r ApiGet
 		return localVarReturnValue, nil, reportError("iMCorrelationID must have less than 32 elements")
 	}
 
-	if r.vendorPartNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "vendorPartNumber", r.vendorPartNumber, "form", "")
-	}
 	if r.planName != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "planName", r.planName, "form", "")
 	}
 	if r.planId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "planId", r.planId, "form", "")
+	}
+	if r.vendorPartNumber != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "vendorPartNumber", r.vendorPartNumber, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
