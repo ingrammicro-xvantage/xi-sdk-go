@@ -1,4 +1,4 @@
-# ProductDetailResponseCiscoFieldsInner
+# ProductDetailResponseCiscoFields
 
 ## Properties
 
@@ -14,195 +14,195 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewProductDetailResponseCiscoFieldsInner
+### NewProductDetailResponseCiscoFields
 
-`func NewProductDetailResponseCiscoFieldsInner() *ProductDetailResponseCiscoFieldsInner`
+`func NewProductDetailResponseCiscoFields() *ProductDetailResponseCiscoFields`
 
-NewProductDetailResponseCiscoFieldsInner instantiates a new ProductDetailResponseCiscoFieldsInner object
+NewProductDetailResponseCiscoFields instantiates a new ProductDetailResponseCiscoFields object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewProductDetailResponseCiscoFieldsInnerWithDefaults
+### NewProductDetailResponseCiscoFieldsWithDefaults
 
-`func NewProductDetailResponseCiscoFieldsInnerWithDefaults() *ProductDetailResponseCiscoFieldsInner`
+`func NewProductDetailResponseCiscoFieldsWithDefaults() *ProductDetailResponseCiscoFields`
 
-NewProductDetailResponseCiscoFieldsInnerWithDefaults instantiates a new ProductDetailResponseCiscoFieldsInner object
+NewProductDetailResponseCiscoFieldsWithDefaults instantiates a new ProductDetailResponseCiscoFields object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetProductSubGroup
 
-`func (o *ProductDetailResponseCiscoFieldsInner) GetProductSubGroup() string`
+`func (o *ProductDetailResponseCiscoFields) GetProductSubGroup() string`
 
 GetProductSubGroup returns the ProductSubGroup field if non-nil, zero value otherwise.
 
 ### GetProductSubGroupOk
 
-`func (o *ProductDetailResponseCiscoFieldsInner) GetProductSubGroupOk() (*string, bool)`
+`func (o *ProductDetailResponseCiscoFields) GetProductSubGroupOk() (*string, bool)`
 
 GetProductSubGroupOk returns a tuple with the ProductSubGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProductSubGroup
 
-`func (o *ProductDetailResponseCiscoFieldsInner) SetProductSubGroup(v string)`
+`func (o *ProductDetailResponseCiscoFields) SetProductSubGroup(v string)`
 
 SetProductSubGroup sets ProductSubGroup field to given value.
 
 ### HasProductSubGroup
 
-`func (o *ProductDetailResponseCiscoFieldsInner) HasProductSubGroup() bool`
+`func (o *ProductDetailResponseCiscoFields) HasProductSubGroup() bool`
 
 HasProductSubGroup returns a boolean if a field has been set.
 
 ### GetServiceProgramName
 
-`func (o *ProductDetailResponseCiscoFieldsInner) GetServiceProgramName() string`
+`func (o *ProductDetailResponseCiscoFields) GetServiceProgramName() string`
 
 GetServiceProgramName returns the ServiceProgramName field if non-nil, zero value otherwise.
 
 ### GetServiceProgramNameOk
 
-`func (o *ProductDetailResponseCiscoFieldsInner) GetServiceProgramNameOk() (*string, bool)`
+`func (o *ProductDetailResponseCiscoFields) GetServiceProgramNameOk() (*string, bool)`
 
 GetServiceProgramNameOk returns a tuple with the ServiceProgramName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServiceProgramName
 
-`func (o *ProductDetailResponseCiscoFieldsInner) SetServiceProgramName(v string)`
+`func (o *ProductDetailResponseCiscoFields) SetServiceProgramName(v string)`
 
 SetServiceProgramName sets ServiceProgramName field to given value.
 
 ### HasServiceProgramName
 
-`func (o *ProductDetailResponseCiscoFieldsInner) HasServiceProgramName() bool`
+`func (o *ProductDetailResponseCiscoFields) HasServiceProgramName() bool`
 
 HasServiceProgramName returns a boolean if a field has been set.
 
 ### GetItemCatalogCategory
 
-`func (o *ProductDetailResponseCiscoFieldsInner) GetItemCatalogCategory() string`
+`func (o *ProductDetailResponseCiscoFields) GetItemCatalogCategory() string`
 
 GetItemCatalogCategory returns the ItemCatalogCategory field if non-nil, zero value otherwise.
 
 ### GetItemCatalogCategoryOk
 
-`func (o *ProductDetailResponseCiscoFieldsInner) GetItemCatalogCategoryOk() (*string, bool)`
+`func (o *ProductDetailResponseCiscoFields) GetItemCatalogCategoryOk() (*string, bool)`
 
 GetItemCatalogCategoryOk returns a tuple with the ItemCatalogCategory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetItemCatalogCategory
 
-`func (o *ProductDetailResponseCiscoFieldsInner) SetItemCatalogCategory(v string)`
+`func (o *ProductDetailResponseCiscoFields) SetItemCatalogCategory(v string)`
 
 SetItemCatalogCategory sets ItemCatalogCategory field to given value.
 
 ### HasItemCatalogCategory
 
-`func (o *ProductDetailResponseCiscoFieldsInner) HasItemCatalogCategory() bool`
+`func (o *ProductDetailResponseCiscoFields) HasItemCatalogCategory() bool`
 
 HasItemCatalogCategory returns a boolean if a field has been set.
 
 ### GetConfigurationIndicator
 
-`func (o *ProductDetailResponseCiscoFieldsInner) GetConfigurationIndicator() string`
+`func (o *ProductDetailResponseCiscoFields) GetConfigurationIndicator() string`
 
 GetConfigurationIndicator returns the ConfigurationIndicator field if non-nil, zero value otherwise.
 
 ### GetConfigurationIndicatorOk
 
-`func (o *ProductDetailResponseCiscoFieldsInner) GetConfigurationIndicatorOk() (*string, bool)`
+`func (o *ProductDetailResponseCiscoFields) GetConfigurationIndicatorOk() (*string, bool)`
 
 GetConfigurationIndicatorOk returns a tuple with the ConfigurationIndicator field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfigurationIndicator
 
-`func (o *ProductDetailResponseCiscoFieldsInner) SetConfigurationIndicator(v string)`
+`func (o *ProductDetailResponseCiscoFields) SetConfigurationIndicator(v string)`
 
 SetConfigurationIndicator sets ConfigurationIndicator field to given value.
 
 ### HasConfigurationIndicator
 
-`func (o *ProductDetailResponseCiscoFieldsInner) HasConfigurationIndicator() bool`
+`func (o *ProductDetailResponseCiscoFields) HasConfigurationIndicator() bool`
 
 HasConfigurationIndicator returns a boolean if a field has been set.
 
 ### GetInternalBusinessEntity
 
-`func (o *ProductDetailResponseCiscoFieldsInner) GetInternalBusinessEntity() string`
+`func (o *ProductDetailResponseCiscoFields) GetInternalBusinessEntity() string`
 
 GetInternalBusinessEntity returns the InternalBusinessEntity field if non-nil, zero value otherwise.
 
 ### GetInternalBusinessEntityOk
 
-`func (o *ProductDetailResponseCiscoFieldsInner) GetInternalBusinessEntityOk() (*string, bool)`
+`func (o *ProductDetailResponseCiscoFields) GetInternalBusinessEntityOk() (*string, bool)`
 
 GetInternalBusinessEntityOk returns a tuple with the InternalBusinessEntity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInternalBusinessEntity
 
-`func (o *ProductDetailResponseCiscoFieldsInner) SetInternalBusinessEntity(v string)`
+`func (o *ProductDetailResponseCiscoFields) SetInternalBusinessEntity(v string)`
 
 SetInternalBusinessEntity sets InternalBusinessEntity field to given value.
 
 ### HasInternalBusinessEntity
 
-`func (o *ProductDetailResponseCiscoFieldsInner) HasInternalBusinessEntity() bool`
+`func (o *ProductDetailResponseCiscoFields) HasInternalBusinessEntity() bool`
 
 HasInternalBusinessEntity returns a boolean if a field has been set.
 
 ### GetItemType
 
-`func (o *ProductDetailResponseCiscoFieldsInner) GetItemType() string`
+`func (o *ProductDetailResponseCiscoFields) GetItemType() string`
 
 GetItemType returns the ItemType field if non-nil, zero value otherwise.
 
 ### GetItemTypeOk
 
-`func (o *ProductDetailResponseCiscoFieldsInner) GetItemTypeOk() (*string, bool)`
+`func (o *ProductDetailResponseCiscoFields) GetItemTypeOk() (*string, bool)`
 
 GetItemTypeOk returns a tuple with the ItemType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetItemType
 
-`func (o *ProductDetailResponseCiscoFieldsInner) SetItemType(v string)`
+`func (o *ProductDetailResponseCiscoFields) SetItemType(v string)`
 
 SetItemType sets ItemType field to given value.
 
 ### HasItemType
 
-`func (o *ProductDetailResponseCiscoFieldsInner) HasItemType() bool`
+`func (o *ProductDetailResponseCiscoFields) HasItemType() bool`
 
 HasItemType returns a boolean if a field has been set.
 
 ### GetGlobalListPrice
 
-`func (o *ProductDetailResponseCiscoFieldsInner) GetGlobalListPrice() string`
+`func (o *ProductDetailResponseCiscoFields) GetGlobalListPrice() string`
 
 GetGlobalListPrice returns the GlobalListPrice field if non-nil, zero value otherwise.
 
 ### GetGlobalListPriceOk
 
-`func (o *ProductDetailResponseCiscoFieldsInner) GetGlobalListPriceOk() (*string, bool)`
+`func (o *ProductDetailResponseCiscoFields) GetGlobalListPriceOk() (*string, bool)`
 
 GetGlobalListPriceOk returns a tuple with the GlobalListPrice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGlobalListPrice
 
-`func (o *ProductDetailResponseCiscoFieldsInner) SetGlobalListPrice(v string)`
+`func (o *ProductDetailResponseCiscoFields) SetGlobalListPrice(v string)`
 
 SetGlobalListPrice sets GlobalListPrice field to given value.
 
 ### HasGlobalListPrice
 
-`func (o *ProductDetailResponseCiscoFieldsInner) HasGlobalListPrice() bool`
+`func (o *ProductDetailResponseCiscoFields) HasGlobalListPrice() bool`
 
 HasGlobalListPrice returns a boolean if a field has been set.
 

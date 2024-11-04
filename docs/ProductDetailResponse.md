@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **ProductStatusCode** | Pointer to **string** | Status code of the product. | [optional] 
 **ProductClass** | Pointer to **string** | Indicates whether the product is directly shipped from the vendor’s warehouse or if the product ships from Ingram Micro’s warehouse. Class Codes are Ingram classifications on how skus are stocked A &#x3D; Product that is stocked usually in all IM warehouses and replenished on a regular basis. B &#x3D; Product that is stocked in limited IM warehouses and replenished on a regular basis C &#x3D; Product that is stocked in fewer IM warehouses and replenished on a regular basis. D &#x3D; Product that Ingram Micro has elected to discontinue. E &#x3D; Product that will be phased out later, according to the vendor. You may not want to replenish this product, but instead sell down what is in stock. F &#x3D; Product that we carry for a specific customer or supplier under a contractual agreement. N &#x3D; New Sku. Classification before first receipt O &#x3D; Discontinued product to be liquidated S&#x3D; Order for Specialized Demand (Order to backorder) X&#x3D; direct ship from Vendor V &#x3D; product that vendor has elected to discontinue. | [optional] 
 **CustomerPartNumber** | Pointer to **string** | Reseller / end-user’s part number for the product. | [optional] 
-**Indicators** | Pointer to [**[]ProductDetailResponseIndicatorsInner**](ProductDetailResponseIndicatorsInner.md) | Indicators of the Product | [optional] 
-**CiscoFields** | Pointer to [**[]ProductDetailResponseCiscoFieldsInner**](ProductDetailResponseCiscoFieldsInner.md) | Cisco product related information. | [optional] 
+**Indicators** | Pointer to [**ProductDetailResponseIndicators**](ProductDetailResponseIndicators.md) |  | [optional] 
+**CiscoFields** | Pointer to [**ProductDetailResponseCiscoFields**](ProductDetailResponseCiscoFields.md) |  | [optional] 
 **WarrantyInformation** | Pointer to **[]map[string]interface{}** | Warranty information related to the product. | [optional] 
 **AdditionalInformation** | Pointer to [**ProductDetailResponseAdditionalInformation**](ProductDetailResponseAdditionalInformation.md) |  | [optional] 
 **SubscriptionDetails** | Pointer to [**[]ProductDetailResponseSubscriptionDetailsInner**](ProductDetailResponseSubscriptionDetailsInner.md) | Subscription product Details | [optional] 
@@ -343,20 +343,20 @@ HasCustomerPartNumber returns a boolean if a field has been set.
 
 ### GetIndicators
 
-`func (o *ProductDetailResponse) GetIndicators() []ProductDetailResponseIndicatorsInner`
+`func (o *ProductDetailResponse) GetIndicators() ProductDetailResponseIndicators`
 
 GetIndicators returns the Indicators field if non-nil, zero value otherwise.
 
 ### GetIndicatorsOk
 
-`func (o *ProductDetailResponse) GetIndicatorsOk() (*[]ProductDetailResponseIndicatorsInner, bool)`
+`func (o *ProductDetailResponse) GetIndicatorsOk() (*ProductDetailResponseIndicators, bool)`
 
 GetIndicatorsOk returns a tuple with the Indicators field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIndicators
 
-`func (o *ProductDetailResponse) SetIndicators(v []ProductDetailResponseIndicatorsInner)`
+`func (o *ProductDetailResponse) SetIndicators(v ProductDetailResponseIndicators)`
 
 SetIndicators sets Indicators field to given value.
 
@@ -368,20 +368,20 @@ HasIndicators returns a boolean if a field has been set.
 
 ### GetCiscoFields
 
-`func (o *ProductDetailResponse) GetCiscoFields() []ProductDetailResponseCiscoFieldsInner`
+`func (o *ProductDetailResponse) GetCiscoFields() ProductDetailResponseCiscoFields`
 
 GetCiscoFields returns the CiscoFields field if non-nil, zero value otherwise.
 
 ### GetCiscoFieldsOk
 
-`func (o *ProductDetailResponse) GetCiscoFieldsOk() (*[]ProductDetailResponseCiscoFieldsInner, bool)`
+`func (o *ProductDetailResponse) GetCiscoFieldsOk() (*ProductDetailResponseCiscoFields, bool)`
 
 GetCiscoFieldsOk returns a tuple with the CiscoFields field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCiscoFields
 
-`func (o *ProductDetailResponse) SetCiscoFields(v []ProductDetailResponseCiscoFieldsInner)`
+`func (o *ProductDetailResponse) SetCiscoFields(v ProductDetailResponseCiscoFields)`
 
 SetCiscoFields sets CiscoFields field to given value.
 

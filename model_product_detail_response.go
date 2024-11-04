@@ -43,10 +43,8 @@ type ProductDetailResponse struct {
 	ProductClass *string `json:"productClass,omitempty"`
 	// Reseller / end-user’s part number for the product.
 	CustomerPartNumber *string `json:"customerPartNumber,omitempty"`
-	// Indicators of the Product
-	Indicators []ProductDetailResponseIndicatorsInner `json:"indicators,omitempty"`
-	// Cisco product related information.
-	CiscoFields []ProductDetailResponseCiscoFieldsInner `json:"ciscoFields,omitempty"`
+	Indicators *ProductDetailResponseIndicators `json:"indicators,omitempty"`
+	CiscoFields *ProductDetailResponseCiscoFields `json:"ciscoFields,omitempty"`
 	// Warranty information related to the product.
 	WarrantyInformation []map[string]interface{} `json:"warrantyInformation,omitempty"`
 	AdditionalInformation *ProductDetailResponseAdditionalInformation `json:"additionalInformation,omitempty"`
@@ -456,17 +454,17 @@ func (o *ProductDetailResponse) SetCustomerPartNumber(v string) {
 }
 
 // GetIndicators returns the Indicators field value if set, zero value otherwise.
-func (o *ProductDetailResponse) GetIndicators() []ProductDetailResponseIndicatorsInner {
+func (o *ProductDetailResponse) GetIndicators() ProductDetailResponseIndicators {
 	if o == nil || IsNil(o.Indicators) {
-		var ret []ProductDetailResponseIndicatorsInner
+		var ret ProductDetailResponseIndicators
 		return ret
 	}
-	return o.Indicators
+	return *o.Indicators
 }
 
 // GetIndicatorsOk returns a tuple with the Indicators field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponse) GetIndicatorsOk() ([]ProductDetailResponseIndicatorsInner, bool) {
+func (o *ProductDetailResponse) GetIndicatorsOk() (*ProductDetailResponseIndicators, bool) {
 	if o == nil || IsNil(o.Indicators) {
 		return nil, false
 	}
@@ -482,23 +480,23 @@ func (o *ProductDetailResponse) HasIndicators() bool {
 	return false
 }
 
-// SetIndicators gets a reference to the given []ProductDetailResponseIndicatorsInner and assigns it to the Indicators field.
-func (o *ProductDetailResponse) SetIndicators(v []ProductDetailResponseIndicatorsInner) {
-	o.Indicators = v
+// SetIndicators gets a reference to the given ProductDetailResponseIndicators and assigns it to the Indicators field.
+func (o *ProductDetailResponse) SetIndicators(v ProductDetailResponseIndicators) {
+	o.Indicators = &v
 }
 
 // GetCiscoFields returns the CiscoFields field value if set, zero value otherwise.
-func (o *ProductDetailResponse) GetCiscoFields() []ProductDetailResponseCiscoFieldsInner {
+func (o *ProductDetailResponse) GetCiscoFields() ProductDetailResponseCiscoFields {
 	if o == nil || IsNil(o.CiscoFields) {
-		var ret []ProductDetailResponseCiscoFieldsInner
+		var ret ProductDetailResponseCiscoFields
 		return ret
 	}
-	return o.CiscoFields
+	return *o.CiscoFields
 }
 
 // GetCiscoFieldsOk returns a tuple with the CiscoFields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ProductDetailResponse) GetCiscoFieldsOk() ([]ProductDetailResponseCiscoFieldsInner, bool) {
+func (o *ProductDetailResponse) GetCiscoFieldsOk() (*ProductDetailResponseCiscoFields, bool) {
 	if o == nil || IsNil(o.CiscoFields) {
 		return nil, false
 	}
@@ -514,9 +512,9 @@ func (o *ProductDetailResponse) HasCiscoFields() bool {
 	return false
 }
 
-// SetCiscoFields gets a reference to the given []ProductDetailResponseCiscoFieldsInner and assigns it to the CiscoFields field.
-func (o *ProductDetailResponse) SetCiscoFields(v []ProductDetailResponseCiscoFieldsInner) {
-	o.CiscoFields = v
+// SetCiscoFields gets a reference to the given ProductDetailResponseCiscoFields and assigns it to the CiscoFields field.
+func (o *ProductDetailResponse) SetCiscoFields(v ProductDetailResponseCiscoFields) {
+	o.CiscoFields = &v
 }
 
 // GetWarrantyInformation returns the WarrantyInformation field value if set, zero value otherwise.
