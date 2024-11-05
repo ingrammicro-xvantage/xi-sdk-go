@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Index** | Pointer to **float32** |  | [optional] 
 **ProductStatusCode** | Pointer to **string** | Codes signifying whether the sku is active or not. | [optional] 
 **ProductStatusMessage** | Pointer to **string** | Message returned saying whether sku is active. | [optional] 
 **IngramPartNumber** | Pointer to **string** | Ingram Micro unique part number for the product. | [optional] 
@@ -51,6 +52,31 @@ will change when the set of required properties is changed
 NewPriceAndAvailabilityResponseInnerWithDefaults instantiates a new PriceAndAvailabilityResponseInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetIndex
+
+`func (o *PriceAndAvailabilityResponseInner) GetIndex() float32`
+
+GetIndex returns the Index field if non-nil, zero value otherwise.
+
+### GetIndexOk
+
+`func (o *PriceAndAvailabilityResponseInner) GetIndexOk() (*float32, bool)`
+
+GetIndexOk returns a tuple with the Index field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndex
+
+`func (o *PriceAndAvailabilityResponseInner) SetIndex(v float32)`
+
+SetIndex sets Index field to given value.
+
+### HasIndex
+
+`func (o *PriceAndAvailabilityResponseInner) HasIndex() bool`
+
+HasIndex returns a boolean if a field has been set.
 
 ### GetProductStatusCode
 
@@ -807,16 +833,6 @@ SetReserveInventoryDetails sets ReserveInventoryDetails field to given value.
 
 HasReserveInventoryDetails returns a boolean if a field has been set.
 
-### SetReserveInventoryDetailsNil
-
-`func (o *PriceAndAvailabilityResponseInner) SetReserveInventoryDetailsNil(b bool)`
-
- SetReserveInventoryDetailsNil sets the value for ReserveInventoryDetails to be an explicit nil
-
-### UnsetReserveInventoryDetails
-`func (o *PriceAndAvailabilityResponseInner) UnsetReserveInventoryDetails()`
-
-UnsetReserveInventoryDetails ensures that no value is present for ReserveInventoryDetails, not even an explicit nil
 ### GetPricing
 
 `func (o *PriceAndAvailabilityResponseInner) GetPricing() PriceAndAvailabilityResponseInnerPricing`

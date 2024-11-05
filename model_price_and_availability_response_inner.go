@@ -19,6 +19,7 @@ var _ MappedNullable = &PriceAndAvailabilityResponseInner{}
 
 // PriceAndAvailabilityResponseInner struct for PriceAndAvailabilityResponseInner
 type PriceAndAvailabilityResponseInner struct {
+	Index *float32 `json:"index,omitempty"`
 	// Codes signifying whether the sku is active or not.
 	ProductStatusCode *string `json:"productStatusCode,omitempty"`
 	// Message returned saying whether sku is active.
@@ -87,6 +88,38 @@ func NewPriceAndAvailabilityResponseInner() *PriceAndAvailabilityResponseInner {
 func NewPriceAndAvailabilityResponseInnerWithDefaults() *PriceAndAvailabilityResponseInner {
 	this := PriceAndAvailabilityResponseInner{}
 	return &this
+}
+
+// GetIndex returns the Index field value if set, zero value otherwise.
+func (o *PriceAndAvailabilityResponseInner) GetIndex() float32 {
+	if o == nil || IsNil(o.Index) {
+		var ret float32
+		return ret
+	}
+	return *o.Index
+}
+
+// GetIndexOk returns a tuple with the Index field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceAndAvailabilityResponseInner) GetIndexOk() (*float32, bool) {
+	if o == nil || IsNil(o.Index) {
+		return nil, false
+	}
+	return o.Index, true
+}
+
+// HasIndex returns a boolean if a field has been set.
+func (o *PriceAndAvailabilityResponseInner) HasIndex() bool {
+	if o != nil && !IsNil(o.Index) {
+		return true
+	}
+
+	return false
+}
+
+// SetIndex gets a reference to the given float32 and assigns it to the Index field.
+func (o *PriceAndAvailabilityResponseInner) SetIndex(v float32) {
+	o.Index = &v
 }
 
 // GetProductStatusCode returns the ProductStatusCode field value if set, zero value otherwise.
@@ -973,9 +1006,9 @@ func (o *PriceAndAvailabilityResponseInner) UnsetAvailability() {
 	o.Availability.Unset()
 }
 
-// GetReserveInventoryDetails returns the ReserveInventoryDetails field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetReserveInventoryDetails returns the ReserveInventoryDetails field value if set, zero value otherwise.
 func (o *PriceAndAvailabilityResponseInner) GetReserveInventoryDetails() []PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner {
-	if o == nil {
+	if o == nil || IsNil(o.ReserveInventoryDetails) {
 		var ret []PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner
 		return ret
 	}
@@ -984,7 +1017,6 @@ func (o *PriceAndAvailabilityResponseInner) GetReserveInventoryDetails() []Price
 
 // GetReserveInventoryDetailsOk returns a tuple with the ReserveInventoryDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInner) GetReserveInventoryDetailsOk() ([]PriceAndAvailabilityResponseInnerReserveInventoryDetailsInner, bool) {
 	if o == nil || IsNil(o.ReserveInventoryDetails) {
 		return nil, false
@@ -1198,6 +1230,9 @@ func (o PriceAndAvailabilityResponseInner) MarshalJSON() ([]byte, error) {
 
 func (o PriceAndAvailabilityResponseInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Index) {
+		toSerialize["index"] = o.Index
+	}
 	if !IsNil(o.ProductStatusCode) {
 		toSerialize["productStatusCode"] = o.ProductStatusCode
 	}
@@ -1264,7 +1299,7 @@ func (o PriceAndAvailabilityResponseInner) ToMap() (map[string]interface{}, erro
 	if o.Availability.IsSet() {
 		toSerialize["availability"] = o.Availability.Get()
 	}
-	if o.ReserveInventoryDetails != nil {
+	if !IsNil(o.ReserveInventoryDetails) {
 		toSerialize["reserveInventoryDetails"] = o.ReserveInventoryDetails
 	}
 	if o.Pricing.IsSet() {

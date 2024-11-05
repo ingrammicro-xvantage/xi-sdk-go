@@ -19,16 +19,17 @@ var _ MappedNullable = &PriceAndAvailabilityResponseInnerSubscriptionPriceInnerO
 
 // PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner struct for PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner
 type PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner struct {
-	// The resource id of the subscription product.
 	ResourceId *string `json:"resourceId,omitempty"`
+	// The resource id of the subscription product.
+	ResourceUId *string `json:"resourceUId,omitempty"`
 	// The name of the resource of the subscription product.
 	ResourceName *string `json:"resourceName,omitempty"`
 	// Vendor’s part number for the subscription product.
 	VendorPartNumber *string `json:"vendorPartNumber,omitempty"`
 	// Minimum unit needs to purchased.
-	MinUnits *string `json:"minUnits,omitempty"`
+	MinUnits *float32 `json:"minUnits,omitempty"`
 	// Maximum unit available for a purchase.
-	MaxUnits *string `json:"maxUnits,omitempty"`
+	MaxUnits *float32 `json:"maxUnits,omitempty"`
 	// Recurring price model
 	Recurringpricemodel *string `json:"recurringpricemodel,omitempty"`
 	// Unit of mesaure for a subscription product.
@@ -85,6 +86,38 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) Ha
 // SetResourceId gets a reference to the given string and assigns it to the ResourceId field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetResourceId(v string) {
 	o.ResourceId = &v
+}
+
+// GetResourceUId returns the ResourceUId field value if set, zero value otherwise.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetResourceUId() string {
+	if o == nil || IsNil(o.ResourceUId) {
+		var ret string
+		return ret
+	}
+	return *o.ResourceUId
+}
+
+// GetResourceUIdOk returns a tuple with the ResourceUId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetResourceUIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ResourceUId) {
+		return nil, false
+	}
+	return o.ResourceUId, true
+}
+
+// HasResourceUId returns a boolean if a field has been set.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) HasResourceUId() bool {
+	if o != nil && !IsNil(o.ResourceUId) {
+		return true
+	}
+
+	return false
+}
+
+// SetResourceUId gets a reference to the given string and assigns it to the ResourceUId field.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetResourceUId(v string) {
+	o.ResourceUId = &v
 }
 
 // GetResourceName returns the ResourceName field value if set, zero value otherwise.
@@ -152,9 +185,9 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) Se
 }
 
 // GetMinUnits returns the MinUnits field value if set, zero value otherwise.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMinUnits() string {
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMinUnits() float32 {
 	if o == nil || IsNil(o.MinUnits) {
-		var ret string
+		var ret float32
 		return ret
 	}
 	return *o.MinUnits
@@ -162,7 +195,7 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) Ge
 
 // GetMinUnitsOk returns a tuple with the MinUnits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMinUnitsOk() (*string, bool) {
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMinUnitsOk() (*float32, bool) {
 	if o == nil || IsNil(o.MinUnits) {
 		return nil, false
 	}
@@ -178,15 +211,15 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) Ha
 	return false
 }
 
-// SetMinUnits gets a reference to the given string and assigns it to the MinUnits field.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetMinUnits(v string) {
+// SetMinUnits gets a reference to the given float32 and assigns it to the MinUnits field.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetMinUnits(v float32) {
 	o.MinUnits = &v
 }
 
 // GetMaxUnits returns the MaxUnits field value if set, zero value otherwise.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMaxUnits() string {
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMaxUnits() float32 {
 	if o == nil || IsNil(o.MaxUnits) {
-		var ret string
+		var ret float32
 		return ret
 	}
 	return *o.MaxUnits
@@ -194,7 +227,7 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) Ge
 
 // GetMaxUnitsOk returns a tuple with the MaxUnits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMaxUnitsOk() (*string, bool) {
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMaxUnitsOk() (*float32, bool) {
 	if o == nil || IsNil(o.MaxUnits) {
 		return nil, false
 	}
@@ -210,8 +243,8 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) Ha
 	return false
 }
 
-// SetMaxUnits gets a reference to the given string and assigns it to the MaxUnits field.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetMaxUnits(v string) {
+// SetMaxUnits gets a reference to the given float32 and assigns it to the MaxUnits field.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetMaxUnits(v float32) {
 	o.MaxUnits = &v
 }
 
@@ -387,6 +420,9 @@ func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) ToM
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.ResourceId) {
 		toSerialize["resourceId"] = o.ResourceId
+	}
+	if !IsNil(o.ResourceUId) {
+		toSerialize["resourceUId"] = o.ResourceUId
 	}
 	if !IsNil(o.ResourceName) {
 		toSerialize["resourceName"] = o.ResourceName

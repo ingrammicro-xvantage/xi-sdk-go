@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ResourceId** | Pointer to **string** | The resource id of the subscription product. | [optional] 
+**ResourceId** | Pointer to **string** |  | [optional] 
+**ResourceUId** | Pointer to **string** | The resource id of the subscription product. | [optional] 
 **ResourceName** | Pointer to **string** | The name of the resource of the subscription product. | [optional] 
 **VendorPartNumber** | Pointer to **string** | Vendor’s part number for the subscription product. | [optional] 
-**MinUnits** | Pointer to **string** | Minimum unit needs to purchased. | [optional] 
-**MaxUnits** | Pointer to **string** | Maximum unit available for a purchase. | [optional] 
+**MinUnits** | Pointer to **float32** | Minimum unit needs to purchased. | [optional] 
+**MaxUnits** | Pointer to **float32** | Maximum unit available for a purchase. | [optional] 
 **Recurringpricemodel** | Pointer to **string** | Recurring price model | [optional] 
 **UnitOfMeasure** | Pointer to **string** | Unit of mesaure for a subscription product. | [optional] 
 **ResourcePricing** | Pointer to [**[]PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner**](PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner.md) |  | [optional] 
@@ -58,6 +59,31 @@ SetResourceId sets ResourceId field to given value.
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) HasResourceId() bool`
 
 HasResourceId returns a boolean if a field has been set.
+
+### GetResourceUId
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetResourceUId() string`
+
+GetResourceUId returns the ResourceUId field if non-nil, zero value otherwise.
+
+### GetResourceUIdOk
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetResourceUIdOk() (*string, bool)`
+
+GetResourceUIdOk returns a tuple with the ResourceUId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceUId
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetResourceUId(v string)`
+
+SetResourceUId sets ResourceUId field to given value.
+
+### HasResourceUId
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) HasResourceUId() bool`
+
+HasResourceUId returns a boolean if a field has been set.
 
 ### GetResourceName
 
@@ -111,20 +137,20 @@ HasVendorPartNumber returns a boolean if a field has been set.
 
 ### GetMinUnits
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMinUnits() string`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMinUnits() float32`
 
 GetMinUnits returns the MinUnits field if non-nil, zero value otherwise.
 
 ### GetMinUnitsOk
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMinUnitsOk() (*string, bool)`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMinUnitsOk() (*float32, bool)`
 
 GetMinUnitsOk returns a tuple with the MinUnits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinUnits
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetMinUnits(v string)`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetMinUnits(v float32)`
 
 SetMinUnits sets MinUnits field to given value.
 
@@ -136,20 +162,20 @@ HasMinUnits returns a boolean if a field has been set.
 
 ### GetMaxUnits
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMaxUnits() string`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMaxUnits() float32`
 
 GetMaxUnits returns the MaxUnits field if non-nil, zero value otherwise.
 
 ### GetMaxUnitsOk
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMaxUnitsOk() (*string, bool)`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMaxUnitsOk() (*float32, bool)`
 
 GetMaxUnitsOk returns a tuple with the MaxUnits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxUnits
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetMaxUnits(v string)`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetMaxUnits(v float32)`
 
 SetMaxUnits sets MaxUnits field to given value.
 

@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Price** | Pointer to **float32** | Fee price of the line item. | [optional] 
 **Type** | Pointer to **string** | The type of the fees. | [optional] 
+**Msrp** | Pointer to **float32** |  | [optional] 
+**Code** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -75,6 +77,56 @@ SetType sets Type field to given value.
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+### GetMsrp
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetMsrp() float32`
+
+GetMsrp returns the Msrp field if non-nil, zero value otherwise.
+
+### GetMsrpOk
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetMsrpOk() (*float32, bool)`
+
+GetMsrpOk returns a tuple with the Msrp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMsrp
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) SetMsrp(v float32)`
+
+SetMsrp sets Msrp field to given value.
+
+### HasMsrp
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) HasMsrp() bool`
+
+HasMsrp returns a boolean if a field has been set.
+
+### GetCode
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetCode() string`
+
+GetCode returns the Code field if non-nil, zero value otherwise.
+
+### GetCodeOk
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetCodeOk() (*string, bool)`
+
+GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCode
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) SetCode(v string)`
+
+SetCode sets Code field to given value.
+
+### HasCode
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) HasCode() bool`
+
+HasCode returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

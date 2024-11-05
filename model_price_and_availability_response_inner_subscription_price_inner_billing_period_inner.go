@@ -22,7 +22,7 @@ type PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner s
 	// The unit of the billing period.
 	BillingPeriodUnit *string `json:"billingPeriodUnit,omitempty"`
 	// The billing period value.
-	BillingPeriod *string `json:"billingPeriod,omitempty"`
+	BillingPeriod *float32 `json:"billingPeriod,omitempty"`
 }
 
 // NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner instantiates a new PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner object
@@ -75,9 +75,9 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInn
 }
 
 // GetBillingPeriod returns the BillingPeriod field value if set, zero value otherwise.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner) GetBillingPeriod() string {
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner) GetBillingPeriod() float32 {
 	if o == nil || IsNil(o.BillingPeriod) {
-		var ret string
+		var ret float32
 		return ret
 	}
 	return *o.BillingPeriod
@@ -85,7 +85,7 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInn
 
 // GetBillingPeriodOk returns a tuple with the BillingPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner) GetBillingPeriodOk() (*string, bool) {
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner) GetBillingPeriodOk() (*float32, bool) {
 	if o == nil || IsNil(o.BillingPeriod) {
 		return nil, false
 	}
@@ -101,8 +101,8 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInn
 	return false
 }
 
-// SetBillingPeriod gets a reference to the given string and assigns it to the BillingPeriod field.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner) SetBillingPeriod(v string) {
+// SetBillingPeriod gets a reference to the given float32 and assigns it to the BillingPeriod field.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner) SetBillingPeriod(v float32) {
 	o.BillingPeriod = &v
 }
 

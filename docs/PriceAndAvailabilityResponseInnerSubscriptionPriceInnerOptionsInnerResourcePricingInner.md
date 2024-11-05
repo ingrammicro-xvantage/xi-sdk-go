@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | Name of the type of pricing. | [optional] 
-**Quantity** | Pointer to **int32** | Quantity of the line item. | [optional] 
+**Quantity** | Pointer to **string** | Quantity of the line item. | [optional] 
 **Msrp** | Pointer to **float32** | Manufacturer Suggested Retail Price. | [optional] 
 **UnitPrice** | Pointer to **float32** | The unit price of the line item. | [optional] 
 **Margin** | Pointer to **float32** | Reseller’s margin percentage | [optional] 
@@ -58,20 +58,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetQuantity
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetQuantity() int32`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetQuantity() string`
 
 GetQuantity returns the Quantity field if non-nil, zero value otherwise.
 
 ### GetQuantityOk
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetQuantityOk() (*int32, bool)`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetQuantityOk() (*string, bool)`
 
 GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQuantity
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetQuantity(v int32)`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetQuantity(v string)`
 
 SetQuantity sets Quantity field to given value.
 

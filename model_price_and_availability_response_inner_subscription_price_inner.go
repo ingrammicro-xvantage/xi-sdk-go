@@ -19,12 +19,13 @@ var _ MappedNullable = &PriceAndAvailabilityResponseInnerSubscriptionPriceInner{
 
 // PriceAndAvailabilityResponseInnerSubscriptionPriceInner struct for PriceAndAvailabilityResponseInnerSubscriptionPriceInner
 type PriceAndAvailabilityResponseInnerSubscriptionPriceInner struct {
+	Index *float32 `json:"index,omitempty"`
 	// Id of the plan.
 	PlanId *string `json:"planId,omitempty"`
 	// Name of the plan.
 	PlanName *string `json:"planName,omitempty"`
 	// The description of the plan.
-	PlanDescription *float32 `json:"planDescription,omitempty"`
+	PlanDescription *string `json:"planDescription,omitempty"`
 	Groups []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner `json:"groups,omitempty"`
 	BillingPeriod []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner `json:"billingPeriod,omitempty"`
 	SubscriptionPeriod []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner `json:"subscriptionPeriod,omitempty"`
@@ -46,6 +47,38 @@ func NewPriceAndAvailabilityResponseInnerSubscriptionPriceInner() *PriceAndAvail
 func NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerWithDefaults() *PriceAndAvailabilityResponseInnerSubscriptionPriceInner {
 	this := PriceAndAvailabilityResponseInnerSubscriptionPriceInner{}
 	return &this
+}
+
+// GetIndex returns the Index field value if set, zero value otherwise.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetIndex() float32 {
+	if o == nil || IsNil(o.Index) {
+		var ret float32
+		return ret
+	}
+	return *o.Index
+}
+
+// GetIndexOk returns a tuple with the Index field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetIndexOk() (*float32, bool) {
+	if o == nil || IsNil(o.Index) {
+		return nil, false
+	}
+	return o.Index, true
+}
+
+// HasIndex returns a boolean if a field has been set.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) HasIndex() bool {
+	if o != nil && !IsNil(o.Index) {
+		return true
+	}
+
+	return false
+}
+
+// SetIndex gets a reference to the given float32 and assigns it to the Index field.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetIndex(v float32) {
+	o.Index = &v
 }
 
 // GetPlanId returns the PlanId field value if set, zero value otherwise.
@@ -113,9 +146,9 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanName(v 
 }
 
 // GetPlanDescription returns the PlanDescription field value if set, zero value otherwise.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanDescription() float32 {
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanDescription() string {
 	if o == nil || IsNil(o.PlanDescription) {
-		var ret float32
+		var ret string
 		return ret
 	}
 	return *o.PlanDescription
@@ -123,7 +156,7 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanDescrip
 
 // GetPlanDescriptionOk returns a tuple with the PlanDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanDescriptionOk() (*float32, bool) {
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanDescriptionOk() (*string, bool) {
 	if o == nil || IsNil(o.PlanDescription) {
 		return nil, false
 	}
@@ -139,8 +172,8 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) HasPlanDescrip
 	return false
 }
 
-// SetPlanDescription gets a reference to the given float32 and assigns it to the PlanDescription field.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanDescription(v float32) {
+// SetPlanDescription gets a reference to the given string and assigns it to the PlanDescription field.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanDescription(v string) {
 	o.PlanDescription = &v
 }
 
@@ -282,6 +315,9 @@ func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInner) MarshalJSON() (
 
 func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Index) {
+		toSerialize["index"] = o.Index
+	}
 	if !IsNil(o.PlanId) {
 		toSerialize["planId"] = o.PlanId
 	}

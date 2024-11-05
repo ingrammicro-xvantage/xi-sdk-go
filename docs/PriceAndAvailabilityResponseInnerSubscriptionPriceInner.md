@@ -4,9 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Index** | Pointer to **float32** |  | [optional] 
 **PlanId** | Pointer to **string** | Id of the plan. | [optional] 
 **PlanName** | Pointer to **string** | Name of the plan. | [optional] 
-**PlanDescription** | Pointer to **float32** | The description of the plan. | [optional] 
+**PlanDescription** | Pointer to **string** | The description of the plan. | [optional] 
 **Groups** | Pointer to [**[]PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner**](PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner.md) |  | [optional] 
 **BillingPeriod** | Pointer to [**[]PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner**](PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner.md) |  | [optional] 
 **SubscriptionPeriod** | Pointer to [**[]PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner**](PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner.md) |  | [optional] 
@@ -30,6 +31,31 @@ will change when the set of required properties is changed
 NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerWithDefaults instantiates a new PriceAndAvailabilityResponseInnerSubscriptionPriceInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetIndex
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetIndex() float32`
+
+GetIndex returns the Index field if non-nil, zero value otherwise.
+
+### GetIndexOk
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetIndexOk() (*float32, bool)`
+
+GetIndexOk returns a tuple with the Index field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndex
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetIndex(v float32)`
+
+SetIndex sets Index field to given value.
+
+### HasIndex
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) HasIndex() bool`
+
+HasIndex returns a boolean if a field has been set.
 
 ### GetPlanId
 
@@ -83,20 +109,20 @@ HasPlanName returns a boolean if a field has been set.
 
 ### GetPlanDescription
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanDescription() float32`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanDescription() string`
 
 GetPlanDescription returns the PlanDescription field if non-nil, zero value otherwise.
 
 ### GetPlanDescriptionOk
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanDescriptionOk() (*float32, bool)`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanDescriptionOk() (*string, bool)`
 
 GetPlanDescriptionOk returns a tuple with the PlanDescription field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanDescription
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanDescription(v float32)`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanDescription(v string)`
 
 SetPlanDescription sets PlanDescription field to given value.
 

@@ -23,6 +23,8 @@ type PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInne
 	Price *float32 `json:"price,omitempty"`
 	// The type of the fees.
 	Type *string `json:"type,omitempty"`
+	Msrp *float32 `json:"msrp,omitempty"`
+	Code *string `json:"code,omitempty"`
 }
 
 // NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner instantiates a new PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner object
@@ -106,6 +108,70 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFees
 	o.Type = &v
 }
 
+// GetMsrp returns the Msrp field value if set, zero value otherwise.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetMsrp() float32 {
+	if o == nil || IsNil(o.Msrp) {
+		var ret float32
+		return ret
+	}
+	return *o.Msrp
+}
+
+// GetMsrpOk returns a tuple with the Msrp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetMsrpOk() (*float32, bool) {
+	if o == nil || IsNil(o.Msrp) {
+		return nil, false
+	}
+	return o.Msrp, true
+}
+
+// HasMsrp returns a boolean if a field has been set.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) HasMsrp() bool {
+	if o != nil && !IsNil(o.Msrp) {
+		return true
+	}
+
+	return false
+}
+
+// SetMsrp gets a reference to the given float32 and assigns it to the Msrp field.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) SetMsrp(v float32) {
+	o.Msrp = &v
+}
+
+// GetCode returns the Code field value if set, zero value otherwise.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetCode() string {
+	if o == nil || IsNil(o.Code) {
+		var ret string
+		return ret
+	}
+	return *o.Code
+}
+
+// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetCodeOk() (*string, bool) {
+	if o == nil || IsNil(o.Code) {
+		return nil, false
+	}
+	return o.Code, true
+}
+
+// HasCode returns a boolean if a field has been set.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) HasCode() bool {
+	if o != nil && !IsNil(o.Code) {
+		return true
+	}
+
+	return false
+}
+
+// SetCode gets a reference to the given string and assigns it to the Code field.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) SetCode(v string) {
+	o.Code = &v
+}
+
 func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -121,6 +187,12 @@ func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesI
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.Msrp) {
+		toSerialize["msrp"] = o.Msrp
+	}
+	if !IsNil(o.Code) {
+		toSerialize["code"] = o.Code
 	}
 	return toSerialize, nil
 }

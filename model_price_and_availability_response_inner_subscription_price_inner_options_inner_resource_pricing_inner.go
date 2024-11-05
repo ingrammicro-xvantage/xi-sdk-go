@@ -22,7 +22,7 @@ type PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResource
 	// Name of the type of pricing.
 	Name *string `json:"name,omitempty"`
 	// Quantity of the line item.
-	Quantity *int32 `json:"quantity,omitempty"`
+	Quantity *string `json:"quantity,omitempty"`
 	// Manufacturer Suggested Retail Price.
 	Msrp *float32 `json:"msrp,omitempty"`
 	// The unit price of the line item.
@@ -85,9 +85,9 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerReso
 }
 
 // GetQuantity returns the Quantity field value if set, zero value otherwise.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetQuantity() int32 {
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetQuantity() string {
 	if o == nil || IsNil(o.Quantity) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Quantity
@@ -95,7 +95,7 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerReso
 
 // GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetQuantityOk() (*int32, bool) {
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetQuantityOk() (*string, bool) {
 	if o == nil || IsNil(o.Quantity) {
 		return nil, false
 	}
@@ -111,8 +111,8 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerReso
 	return false
 }
 
-// SetQuantity gets a reference to the given int32 and assigns it to the Quantity field.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetQuantity(v int32) {
+// SetQuantity gets a reference to the given string and assigns it to the Quantity field.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetQuantity(v string) {
 	o.Quantity = &v
 }
 
