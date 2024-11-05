@@ -24,7 +24,7 @@ type OrderCreateV7Request struct {
 	// The reseller's order number for reference in their system.
 	CustomerOrderNumber *string `json:"customerOrderNumber,omitempty"`
 	// The end customer's order number for reference in their system.
-	EndCustomerOrderNumber *string `json:"endCustomerOrderNumber,omitempty"`
+	EndCustomerOrderNumber NullableString `json:"endCustomerOrderNumber,omitempty"`
 	// Order header level notes.
 	Notes *string `json:"notes,omitempty"`
 	// Suffix used to identify billing address. Created during onboarding. Resellers are provided with one or more address IDs depending on how many bill to addresses they need for various flooring companies they are using for credit.
@@ -127,36 +127,46 @@ func (o *OrderCreateV7Request) SetCustomerOrderNumber(v string) {
 	o.CustomerOrderNumber = &v
 }
 
-// GetEndCustomerOrderNumber returns the EndCustomerOrderNumber field value if set, zero value otherwise.
+// GetEndCustomerOrderNumber returns the EndCustomerOrderNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7Request) GetEndCustomerOrderNumber() string {
-	if o == nil || IsNil(o.EndCustomerOrderNumber) {
+	if o == nil || IsNil(o.EndCustomerOrderNumber.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.EndCustomerOrderNumber
+	return *o.EndCustomerOrderNumber.Get()
 }
 
 // GetEndCustomerOrderNumberOk returns a tuple with the EndCustomerOrderNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7Request) GetEndCustomerOrderNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.EndCustomerOrderNumber) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EndCustomerOrderNumber, true
+	return o.EndCustomerOrderNumber.Get(), o.EndCustomerOrderNumber.IsSet()
 }
 
 // HasEndCustomerOrderNumber returns a boolean if a field has been set.
 func (o *OrderCreateV7Request) HasEndCustomerOrderNumber() bool {
-	if o != nil && !IsNil(o.EndCustomerOrderNumber) {
+	if o != nil && o.EndCustomerOrderNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEndCustomerOrderNumber gets a reference to the given string and assigns it to the EndCustomerOrderNumber field.
+// SetEndCustomerOrderNumber gets a reference to the given NullableString and assigns it to the EndCustomerOrderNumber field.
 func (o *OrderCreateV7Request) SetEndCustomerOrderNumber(v string) {
-	o.EndCustomerOrderNumber = &v
+	o.EndCustomerOrderNumber.Set(&v)
+}
+// SetEndCustomerOrderNumberNil sets the value for EndCustomerOrderNumber to be an explicit nil
+func (o *OrderCreateV7Request) SetEndCustomerOrderNumberNil() {
+	o.EndCustomerOrderNumber.Set(nil)
+}
+
+// UnsetEndCustomerOrderNumber ensures that no value is present for EndCustomerOrderNumber, not even an explicit nil
+func (o *OrderCreateV7Request) UnsetEndCustomerOrderNumber() {
+	o.EndCustomerOrderNumber.Unset()
 }
 
 // GetNotes returns the Notes field value if set, zero value otherwise.
@@ -559,8 +569,8 @@ func (o OrderCreateV7Request) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomerOrderNumber) {
 		toSerialize["customerOrderNumber"] = o.CustomerOrderNumber
 	}
-	if !IsNil(o.EndCustomerOrderNumber) {
-		toSerialize["endCustomerOrderNumber"] = o.EndCustomerOrderNumber
+	if o.EndCustomerOrderNumber.IsSet() {
+		toSerialize["endCustomerOrderNumber"] = o.EndCustomerOrderNumber.Get()
 	}
 	if !IsNil(o.Notes) {
 		toSerialize["notes"] = o.Notes
