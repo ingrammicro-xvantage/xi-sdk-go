@@ -6,10 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Index** | Pointer to **float32** |  | [optional] 
 **PlanId** | Pointer to **string** | Id of the plan. | [optional] 
+**PlanUId** | Pointer to **string** |  | [optional] 
 **PlanName** | Pointer to **string** | Name of the plan. | [optional] 
 **PlanDescription** | Pointer to **string** | The description of the plan. | [optional] 
 **Groups** | Pointer to [**[]PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner**](PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner.md) |  | [optional] 
-**BillingPeriod** | Pointer to [**[]PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner**](PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner.md) |  | [optional] 
+**BillingPeriod** | Pointer to [**PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod**](PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod.md) |  | [optional] 
 **SubscriptionPeriod** | Pointer to [**[]PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner**](PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner.md) |  | [optional] 
 **Options** | Pointer to [**[]PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner**](PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner.md) |  | [optional] 
 
@@ -81,6 +82,31 @@ SetPlanId sets PlanId field to given value.
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) HasPlanId() bool`
 
 HasPlanId returns a boolean if a field has been set.
+
+### GetPlanUId
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanUId() string`
+
+GetPlanUId returns the PlanUId field if non-nil, zero value otherwise.
+
+### GetPlanUIdOk
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanUIdOk() (*string, bool)`
+
+GetPlanUIdOk returns a tuple with the PlanUId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanUId
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanUId(v string)`
+
+SetPlanUId sets PlanUId field to given value.
+
+### HasPlanUId
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) HasPlanUId() bool`
+
+HasPlanUId returns a boolean if a field has been set.
 
 ### GetPlanName
 
@@ -159,20 +185,20 @@ HasGroups returns a boolean if a field has been set.
 
 ### GetBillingPeriod
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetBillingPeriod() []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetBillingPeriod() PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod`
 
 GetBillingPeriod returns the BillingPeriod field if non-nil, zero value otherwise.
 
 ### GetBillingPeriodOk
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetBillingPeriodOk() (*[]PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner, bool)`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetBillingPeriodOk() (*PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod, bool)`
 
 GetBillingPeriodOk returns a tuple with the BillingPeriod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBillingPeriod
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetBillingPeriod(v []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner)`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetBillingPeriod(v PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod)`
 
 SetBillingPeriod sets BillingPeriod field to given value.
 

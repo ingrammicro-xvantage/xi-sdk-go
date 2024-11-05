@@ -22,12 +22,13 @@ type PriceAndAvailabilityResponseInnerSubscriptionPriceInner struct {
 	Index *float32 `json:"index,omitempty"`
 	// Id of the plan.
 	PlanId *string `json:"planId,omitempty"`
+	PlanUId *string `json:"planUId,omitempty"`
 	// Name of the plan.
 	PlanName *string `json:"planName,omitempty"`
 	// The description of the plan.
 	PlanDescription *string `json:"planDescription,omitempty"`
 	Groups []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner `json:"groups,omitempty"`
-	BillingPeriod []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner `json:"billingPeriod,omitempty"`
+	BillingPeriod *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod `json:"billingPeriod,omitempty"`
 	SubscriptionPeriod []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner `json:"subscriptionPeriod,omitempty"`
 	Options []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner `json:"options,omitempty"`
 }
@@ -111,6 +112,38 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) HasPlanId() bo
 // SetPlanId gets a reference to the given string and assigns it to the PlanId field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanId(v string) {
 	o.PlanId = &v
+}
+
+// GetPlanUId returns the PlanUId field value if set, zero value otherwise.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanUId() string {
+	if o == nil || IsNil(o.PlanUId) {
+		var ret string
+		return ret
+	}
+	return *o.PlanUId
+}
+
+// GetPlanUIdOk returns a tuple with the PlanUId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanUIdOk() (*string, bool) {
+	if o == nil || IsNil(o.PlanUId) {
+		return nil, false
+	}
+	return o.PlanUId, true
+}
+
+// HasPlanUId returns a boolean if a field has been set.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) HasPlanUId() bool {
+	if o != nil && !IsNil(o.PlanUId) {
+		return true
+	}
+
+	return false
+}
+
+// SetPlanUId gets a reference to the given string and assigns it to the PlanUId field.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanUId(v string) {
+	o.PlanUId = &v
 }
 
 // GetPlanName returns the PlanName field value if set, zero value otherwise.
@@ -210,17 +243,17 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetGroups(v []
 }
 
 // GetBillingPeriod returns the BillingPeriod field value if set, zero value otherwise.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetBillingPeriod() []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner {
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetBillingPeriod() PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod {
 	if o == nil || IsNil(o.BillingPeriod) {
-		var ret []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner
+		var ret PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod
 		return ret
 	}
-	return o.BillingPeriod
+	return *o.BillingPeriod
 }
 
 // GetBillingPeriodOk returns a tuple with the BillingPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetBillingPeriodOk() ([]PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner, bool) {
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetBillingPeriodOk() (*PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod, bool) {
 	if o == nil || IsNil(o.BillingPeriod) {
 		return nil, false
 	}
@@ -236,9 +269,9 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) HasBillingPeri
 	return false
 }
 
-// SetBillingPeriod gets a reference to the given []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner and assigns it to the BillingPeriod field.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetBillingPeriod(v []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodInner) {
-	o.BillingPeriod = v
+// SetBillingPeriod gets a reference to the given PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod and assigns it to the BillingPeriod field.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetBillingPeriod(v PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod) {
+	o.BillingPeriod = &v
 }
 
 // GetSubscriptionPeriod returns the SubscriptionPeriod field value if set, zero value otherwise.
@@ -320,6 +353,9 @@ func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInner) ToMap() (map[st
 	}
 	if !IsNil(o.PlanId) {
 		toSerialize["planId"] = o.PlanId
+	}
+	if !IsNil(o.PlanUId) {
+		toSerialize["planUId"] = o.PlanUId
 	}
 	if !IsNil(o.PlanName) {
 		toSerialize["planName"] = o.PlanName
