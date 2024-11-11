@@ -204,7 +204,7 @@ func main() {
 	category := "Accessories" // string | The category of the product. Example: Displays. (optional)
 	skipAuthorisation := "true" // string | This parameter is True when you want Skip the authorization, so template will work like current B2b template. (optional)
 	groupName := "Microsoft Defender for Endpoint P2 (NCE COM MTH)" // string | Name of the Product Group (optional)
-	planID := openapiclient.get_reseller_v6_productsearch_planID_parameter{Int32: new(int32)} // GetResellerV6ProductsearchPlanIDParameter | ID of the plan (optional)
+	planID := "471490" // string | ID of the plan (optional)
 	showGroupInfo := true // bool | In case of value true, below Group related information will displayed without the plan info. Group Name, Group Description, Number of plans, link in the group. A link will be provided if customer want to see all the plans in that group. (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
  **category** | **string** | The category of the product. Example: Displays. | 
  **skipAuthorisation** | **string** | This parameter is True when you want Skip the authorization, so template will work like current B2b template. | 
  **groupName** | **string** | Name of the Product Group | 
- **planID** | [**GetResellerV6ProductsearchPlanIDParameter**](GetResellerV6ProductsearchPlanIDParameter.md) | ID of the plan | 
+ **planID** | **string** | ID of the plan | 
  **showGroupInfo** | **bool** | In case of value true, below Group related information will displayed without the plan info. Group Name, Group Description, Number of plans, link in the group. A link will be provided if customer want to see all the plans in that group. | 
 
 ### Return type

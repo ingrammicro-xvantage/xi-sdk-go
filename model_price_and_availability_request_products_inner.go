@@ -27,8 +27,10 @@ type PriceAndAvailabilityRequestProductsInner struct {
 	CustomerPartNumber NullableString `json:"customerPartNumber,omitempty"`
 	// The UPC code for the product. Consists of 12 numeric digits that are uniquely assigned to each trade item.
 	Upc NullableString `json:"upc,omitempty"`
-	QuantityRequested NullablePriceAndAvailabilityRequestProductsInnerQuantityRequested `json:"quantityRequested,omitempty"`
-	PlanID NullablePriceAndAvailabilityRequestProductsInnerPlanID `json:"planID,omitempty"`
+	// Number of quantity of the Product.
+	QuantityRequested NullableString `json:"quantityRequested,omitempty"`
+	// Id of the plan
+	PlanID NullableString `json:"planID,omitempty"`
 	AdditionalAttributes []PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner `json:"additionalAttributes,omitempty"`
 }
 
@@ -218,9 +220,9 @@ func (o *PriceAndAvailabilityRequestProductsInner) UnsetUpc() {
 }
 
 // GetQuantityRequested returns the QuantityRequested field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PriceAndAvailabilityRequestProductsInner) GetQuantityRequested() PriceAndAvailabilityRequestProductsInnerQuantityRequested {
+func (o *PriceAndAvailabilityRequestProductsInner) GetQuantityRequested() string {
 	if o == nil || IsNil(o.QuantityRequested.Get()) {
-		var ret PriceAndAvailabilityRequestProductsInnerQuantityRequested
+		var ret string
 		return ret
 	}
 	return *o.QuantityRequested.Get()
@@ -229,7 +231,7 @@ func (o *PriceAndAvailabilityRequestProductsInner) GetQuantityRequested() PriceA
 // GetQuantityRequestedOk returns a tuple with the QuantityRequested field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PriceAndAvailabilityRequestProductsInner) GetQuantityRequestedOk() (*PriceAndAvailabilityRequestProductsInnerQuantityRequested, bool) {
+func (o *PriceAndAvailabilityRequestProductsInner) GetQuantityRequestedOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -245,8 +247,8 @@ func (o *PriceAndAvailabilityRequestProductsInner) HasQuantityRequested() bool {
 	return false
 }
 
-// SetQuantityRequested gets a reference to the given NullablePriceAndAvailabilityRequestProductsInnerQuantityRequested and assigns it to the QuantityRequested field.
-func (o *PriceAndAvailabilityRequestProductsInner) SetQuantityRequested(v PriceAndAvailabilityRequestProductsInnerQuantityRequested) {
+// SetQuantityRequested gets a reference to the given NullableString and assigns it to the QuantityRequested field.
+func (o *PriceAndAvailabilityRequestProductsInner) SetQuantityRequested(v string) {
 	o.QuantityRequested.Set(&v)
 }
 // SetQuantityRequestedNil sets the value for QuantityRequested to be an explicit nil
@@ -260,9 +262,9 @@ func (o *PriceAndAvailabilityRequestProductsInner) UnsetQuantityRequested() {
 }
 
 // GetPlanID returns the PlanID field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PriceAndAvailabilityRequestProductsInner) GetPlanID() PriceAndAvailabilityRequestProductsInnerPlanID {
+func (o *PriceAndAvailabilityRequestProductsInner) GetPlanID() string {
 	if o == nil || IsNil(o.PlanID.Get()) {
-		var ret PriceAndAvailabilityRequestProductsInnerPlanID
+		var ret string
 		return ret
 	}
 	return *o.PlanID.Get()
@@ -271,7 +273,7 @@ func (o *PriceAndAvailabilityRequestProductsInner) GetPlanID() PriceAndAvailabil
 // GetPlanIDOk returns a tuple with the PlanID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PriceAndAvailabilityRequestProductsInner) GetPlanIDOk() (*PriceAndAvailabilityRequestProductsInnerPlanID, bool) {
+func (o *PriceAndAvailabilityRequestProductsInner) GetPlanIDOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -287,8 +289,8 @@ func (o *PriceAndAvailabilityRequestProductsInner) HasPlanID() bool {
 	return false
 }
 
-// SetPlanID gets a reference to the given NullablePriceAndAvailabilityRequestProductsInnerPlanID and assigns it to the PlanID field.
-func (o *PriceAndAvailabilityRequestProductsInner) SetPlanID(v PriceAndAvailabilityRequestProductsInnerPlanID) {
+// SetPlanID gets a reference to the given NullableString and assigns it to the PlanID field.
+func (o *PriceAndAvailabilityRequestProductsInner) SetPlanID(v string) {
 	o.PlanID.Set(&v)
 }
 // SetPlanIDNil sets the value for PlanID to be an explicit nil

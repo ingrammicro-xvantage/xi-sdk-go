@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **VendorPartNumber** | Pointer to **NullableString** | Vendor’s part number for the product. | [optional] 
 **CustomerPartNumber** | Pointer to **NullableString** | Reseller/end-user’s part number for the product. | [optional] 
 **Upc** | Pointer to **NullableString** | The UPC code for the product. Consists of 12 numeric digits that are uniquely assigned to each trade item. | [optional] 
-**QuantityRequested** | Pointer to [**NullablePriceAndAvailabilityRequestProductsInnerQuantityRequested**](PriceAndAvailabilityRequestProductsInnerQuantityRequested.md) |  | [optional] 
-**PlanID** | Pointer to [**NullablePriceAndAvailabilityRequestProductsInnerPlanID**](PriceAndAvailabilityRequestProductsInnerPlanID.md) |  | [optional] 
+**QuantityRequested** | Pointer to **NullableString** | Number of quantity of the Product. | [optional] 
+**PlanID** | Pointer to **NullableString** | Id of the plan | [optional] 
 **AdditionalAttributes** | Pointer to [**[]PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner**](PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner.md) |  | [optional] 
 
 ## Methods
@@ -173,20 +173,20 @@ HasUpc returns a boolean if a field has been set.
 UnsetUpc ensures that no value is present for Upc, not even an explicit nil
 ### GetQuantityRequested
 
-`func (o *PriceAndAvailabilityRequestProductsInner) GetQuantityRequested() PriceAndAvailabilityRequestProductsInnerQuantityRequested`
+`func (o *PriceAndAvailabilityRequestProductsInner) GetQuantityRequested() string`
 
 GetQuantityRequested returns the QuantityRequested field if non-nil, zero value otherwise.
 
 ### GetQuantityRequestedOk
 
-`func (o *PriceAndAvailabilityRequestProductsInner) GetQuantityRequestedOk() (*PriceAndAvailabilityRequestProductsInnerQuantityRequested, bool)`
+`func (o *PriceAndAvailabilityRequestProductsInner) GetQuantityRequestedOk() (*string, bool)`
 
 GetQuantityRequestedOk returns a tuple with the QuantityRequested field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQuantityRequested
 
-`func (o *PriceAndAvailabilityRequestProductsInner) SetQuantityRequested(v PriceAndAvailabilityRequestProductsInnerQuantityRequested)`
+`func (o *PriceAndAvailabilityRequestProductsInner) SetQuantityRequested(v string)`
 
 SetQuantityRequested sets QuantityRequested field to given value.
 
@@ -208,20 +208,20 @@ HasQuantityRequested returns a boolean if a field has been set.
 UnsetQuantityRequested ensures that no value is present for QuantityRequested, not even an explicit nil
 ### GetPlanID
 
-`func (o *PriceAndAvailabilityRequestProductsInner) GetPlanID() PriceAndAvailabilityRequestProductsInnerPlanID`
+`func (o *PriceAndAvailabilityRequestProductsInner) GetPlanID() string`
 
 GetPlanID returns the PlanID field if non-nil, zero value otherwise.
 
 ### GetPlanIDOk
 
-`func (o *PriceAndAvailabilityRequestProductsInner) GetPlanIDOk() (*PriceAndAvailabilityRequestProductsInnerPlanID, bool)`
+`func (o *PriceAndAvailabilityRequestProductsInner) GetPlanIDOk() (*string, bool)`
 
 GetPlanIDOk returns a tuple with the PlanID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanID
 
-`func (o *PriceAndAvailabilityRequestProductsInner) SetPlanID(v PriceAndAvailabilityRequestProductsInnerPlanID)`
+`func (o *PriceAndAvailabilityRequestProductsInner) SetPlanID(v string)`
 
 SetPlanID sets PlanID field to given value.
 

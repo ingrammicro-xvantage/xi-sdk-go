@@ -452,7 +452,7 @@ type ApiGetResellerV6ProductsearchRequest struct {
 	category *string
 	skipAuthorisation *string
 	groupName *string
-	planID *GetResellerV6ProductsearchPlanIDParameter
+	planID *string
 	showGroupInfo *bool
 }
 
@@ -553,7 +553,7 @@ func (r ApiGetResellerV6ProductsearchRequest) GroupName(groupName string) ApiGet
 }
 
 // ID of the plan
-func (r ApiGetResellerV6ProductsearchRequest) PlanID(planID GetResellerV6ProductsearchPlanIDParameter) ApiGetResellerV6ProductsearchRequest {
+func (r ApiGetResellerV6ProductsearchRequest) PlanID(planID string) ApiGetResellerV6ProductsearchRequest {
 	r.planID = &planID
 	return r
 }
