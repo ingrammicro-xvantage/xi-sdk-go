@@ -303,9 +303,9 @@ func (o *PriceAndAvailabilityRequestProductsInner) UnsetPlanID() {
 	o.PlanID.Unset()
 }
 
-// GetAdditionalAttributes returns the AdditionalAttributes field value if set, zero value otherwise.
+// GetAdditionalAttributes returns the AdditionalAttributes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityRequestProductsInner) GetAdditionalAttributes() []PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner {
-	if o == nil || IsNil(o.AdditionalAttributes) {
+	if o == nil {
 		var ret []PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner
 		return ret
 	}
@@ -314,6 +314,7 @@ func (o *PriceAndAvailabilityRequestProductsInner) GetAdditionalAttributes() []P
 
 // GetAdditionalAttributesOk returns a tuple with the AdditionalAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityRequestProductsInner) GetAdditionalAttributesOk() ([]PriceAndAvailabilityRequestProductsInnerAdditionalAttributesInner, bool) {
 	if o == nil || IsNil(o.AdditionalAttributes) {
 		return nil, false
@@ -363,7 +364,7 @@ func (o PriceAndAvailabilityRequestProductsInner) ToMap() (map[string]interface{
 	if o.PlanID.IsSet() {
 		toSerialize["planID"] = o.PlanID.Get()
 	}
-	if !IsNil(o.AdditionalAttributes) {
+	if o.AdditionalAttributes != nil {
 		toSerialize["additionalAttributes"] = o.AdditionalAttributes
 	}
 	return toSerialize, nil

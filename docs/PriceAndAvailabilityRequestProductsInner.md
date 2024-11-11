@@ -266,6 +266,16 @@ SetAdditionalAttributes sets AdditionalAttributes field to given value.
 
 HasAdditionalAttributes returns a boolean if a field has been set.
 
+### SetAdditionalAttributesNil
+
+`func (o *PriceAndAvailabilityRequestProductsInner) SetAdditionalAttributesNil(b bool)`
+
+ SetAdditionalAttributesNil sets the value for AdditionalAttributes to be an explicit nil
+
+### UnsetAdditionalAttributes
+`func (o *PriceAndAvailabilityRequestProductsInner) UnsetAdditionalAttributes()`
+
+UnsetAdditionalAttributes ensures that no value is present for AdditionalAttributes, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
