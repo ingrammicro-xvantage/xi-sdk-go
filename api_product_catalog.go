@@ -791,9 +791,9 @@ type ApiPostPriceandavailabilityRequest struct {
 	iMCustomerNumber *string
 	iMCountryCode *string
 	iMCorrelationID *string
-	priceAndAvailabilityRequest *PriceAndAvailabilityRequest
 	includeProductAttributes *bool
 	iMSenderID *string
+	priceAndAvailabilityRequest *PriceAndAvailabilityRequest
 }
 
 // Pass boolean value as input, if true the response will contain warehouse availability details, if false the response will not hold warehouse availability details
@@ -826,11 +826,6 @@ func (r ApiPostPriceandavailabilityRequest) IMCorrelationID(iMCorrelationID stri
 	return r
 }
 
-func (r ApiPostPriceandavailabilityRequest) PriceAndAvailabilityRequest(priceAndAvailabilityRequest PriceAndAvailabilityRequest) ApiPostPriceandavailabilityRequest {
-	r.priceAndAvailabilityRequest = &priceAndAvailabilityRequest
-	return r
-}
-
 // Pass boolean value as input, if true the response will contain detailed attributes related to the Product, if false or not sent the response will contain very few Product details.
 func (r ApiPostPriceandavailabilityRequest) IncludeProductAttributes(includeProductAttributes bool) ApiPostPriceandavailabilityRequest {
 	r.includeProductAttributes = &includeProductAttributes
@@ -840,6 +835,11 @@ func (r ApiPostPriceandavailabilityRequest) IncludeProductAttributes(includeProd
 // Unique value used to identify the sender of the transaction. Example: MyCompany
 func (r ApiPostPriceandavailabilityRequest) IMSenderID(iMSenderID string) ApiPostPriceandavailabilityRequest {
 	r.iMSenderID = &iMSenderID
+	return r
+}
+
+func (r ApiPostPriceandavailabilityRequest) PriceAndAvailabilityRequest(priceAndAvailabilityRequest PriceAndAvailabilityRequest) ApiPostPriceandavailabilityRequest {
+	r.priceAndAvailabilityRequest = &priceAndAvailabilityRequest
 	return r
 }
 
@@ -908,9 +908,6 @@ func (a *ProductCatalogAPIService) PostPriceandavailabilityExecute(r ApiPostPric
 	}
 	if strlen(*r.iMCorrelationID) > 32 {
 		return localVarReturnValue, nil, reportError("iMCorrelationID must have less than 32 elements")
-	}
-	if r.priceAndAvailabilityRequest == nil {
-		return localVarReturnValue, nil, reportError("priceAndAvailabilityRequest is required and must be specified")
 	}
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "includeAvailability", r.includeAvailability, "form", "")

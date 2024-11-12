@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ## PostPriceandavailability
 
-> []PriceAndAvailabilityResponseInner PostPriceandavailability(ctx).IncludeAvailability(includeAvailability).IncludePricing(includePricing).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).PriceAndAvailabilityRequest(priceAndAvailabilityRequest).IncludeProductAttributes(includeProductAttributes).IMSenderID(iMSenderID).Execute()
+> []PriceAndAvailabilityResponseInner PostPriceandavailability(ctx).IncludeAvailability(includeAvailability).IncludePricing(includePricing).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IncludeProductAttributes(includeProductAttributes).IMSenderID(iMSenderID).PriceAndAvailabilityRequest(priceAndAvailabilityRequest).Execute()
 
 Price and Availability
 
@@ -293,13 +293,13 @@ func main() {
 	iMCustomerNumber := "20-222222" // string | Your unique Ingram Micro customer number.
 	iMCountryCode := "US" // string | Two-character ISO country code.
 	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction across all the systems.
-	priceAndAvailabilityRequest := *openapiclient.NewPriceAndAvailabilityRequest() // PriceAndAvailabilityRequest | 
 	includeProductAttributes := true // bool | Pass boolean value as input, if true the response will contain detailed attributes related to the Product, if false or not sent the response will contain very few Product details. (optional)
 	iMSenderID := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany (optional)
+	priceAndAvailabilityRequest := *openapiclient.NewPriceAndAvailabilityRequest() // PriceAndAvailabilityRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProductCatalogAPI.PostPriceandavailability(context.Background()).IncludeAvailability(includeAvailability).IncludePricing(includePricing).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).PriceAndAvailabilityRequest(priceAndAvailabilityRequest).IncludeProductAttributes(includeProductAttributes).IMSenderID(iMSenderID).Execute()
+	resp, r, err := apiClient.ProductCatalogAPI.PostPriceandavailability(context.Background()).IncludeAvailability(includeAvailability).IncludePricing(includePricing).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IncludeProductAttributes(includeProductAttributes).IMSenderID(iMSenderID).PriceAndAvailabilityRequest(priceAndAvailabilityRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ProductCatalogAPI.PostPriceandavailability``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -325,9 +325,9 @@ Name | Type | Description  | Notes
  **iMCustomerNumber** | **string** | Your unique Ingram Micro customer number. | 
  **iMCountryCode** | **string** | Two-character ISO country code. | 
  **iMCorrelationID** | **string** | Unique transaction number to identify each transaction across all the systems. | 
- **priceAndAvailabilityRequest** | [**PriceAndAvailabilityRequest**](PriceAndAvailabilityRequest.md) |  | 
  **includeProductAttributes** | **bool** | Pass boolean value as input, if true the response will contain detailed attributes related to the Product, if false or not sent the response will contain very few Product details. | 
  **iMSenderID** | **string** | Unique value used to identify the sender of the transaction. Example: MyCompany | 
+ **priceAndAvailabilityRequest** | [**PriceAndAvailabilityRequest**](PriceAndAvailabilityRequest.md) |  | 
 
 ### Return type
 
