@@ -75,7 +75,7 @@ type QuoteDetailsResponse struct {
 	// Total number of products included in the quote
 	ProductsCount *int32 `json:"productsCount,omitempty"`
 	// Total extended MSRP for all products included in the quote
-	ExtendedMsrpTotal *float32 `json:"extendedMsrpTotal,omitempty"`
+	ExtendedMsrpTotal NullableFloat32 `json:"extendedMsrpTotal,omitempty"`
 	// Total quantity of all items in the quote.
 	QuantityTotal *int32 `json:"quantityTotal,omitempty"`
 	ExtraFeesTotal *float32 `json:"extraFeesTotal,omitempty"`
@@ -1171,36 +1171,46 @@ func (o *QuoteDetailsResponse) SetProductsCount(v int32) {
 	o.ProductsCount = &v
 }
 
-// GetExtendedMsrpTotal returns the ExtendedMsrpTotal field value if set, zero value otherwise.
+// GetExtendedMsrpTotal returns the ExtendedMsrpTotal field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QuoteDetailsResponse) GetExtendedMsrpTotal() float32 {
-	if o == nil || IsNil(o.ExtendedMsrpTotal) {
+	if o == nil || IsNil(o.ExtendedMsrpTotal.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.ExtendedMsrpTotal
+	return *o.ExtendedMsrpTotal.Get()
 }
 
 // GetExtendedMsrpTotalOk returns a tuple with the ExtendedMsrpTotal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QuoteDetailsResponse) GetExtendedMsrpTotalOk() (*float32, bool) {
-	if o == nil || IsNil(o.ExtendedMsrpTotal) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExtendedMsrpTotal, true
+	return o.ExtendedMsrpTotal.Get(), o.ExtendedMsrpTotal.IsSet()
 }
 
 // HasExtendedMsrpTotal returns a boolean if a field has been set.
 func (o *QuoteDetailsResponse) HasExtendedMsrpTotal() bool {
-	if o != nil && !IsNil(o.ExtendedMsrpTotal) {
+	if o != nil && o.ExtendedMsrpTotal.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExtendedMsrpTotal gets a reference to the given float32 and assigns it to the ExtendedMsrpTotal field.
+// SetExtendedMsrpTotal gets a reference to the given NullableFloat32 and assigns it to the ExtendedMsrpTotal field.
 func (o *QuoteDetailsResponse) SetExtendedMsrpTotal(v float32) {
-	o.ExtendedMsrpTotal = &v
+	o.ExtendedMsrpTotal.Set(&v)
+}
+// SetExtendedMsrpTotalNil sets the value for ExtendedMsrpTotal to be an explicit nil
+func (o *QuoteDetailsResponse) SetExtendedMsrpTotalNil() {
+	o.ExtendedMsrpTotal.Set(nil)
+}
+
+// UnsetExtendedMsrpTotal ensures that no value is present for ExtendedMsrpTotal, not even an explicit nil
+func (o *QuoteDetailsResponse) UnsetExtendedMsrpTotal() {
+	o.ExtendedMsrpTotal.Unset()
 }
 
 // GetQuantityTotal returns the QuantityTotal field value if set, zero value otherwise.
@@ -1588,8 +1598,8 @@ func (o QuoteDetailsResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ProductsCount) {
 		toSerialize["productsCount"] = o.ProductsCount
 	}
-	if !IsNil(o.ExtendedMsrpTotal) {
-		toSerialize["extendedMsrpTotal"] = o.ExtendedMsrpTotal
+	if o.ExtendedMsrpTotal.IsSet() {
+		toSerialize["extendedMsrpTotal"] = o.ExtendedMsrpTotal.Get()
 	}
 	if !IsNil(o.QuantityTotal) {
 		toSerialize["quantityTotal"] = o.QuantityTotal

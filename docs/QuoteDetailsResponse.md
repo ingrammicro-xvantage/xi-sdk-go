@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **ShippingInfo** | Pointer to [**QuoteDetailsResponseShippingInfo**](QuoteDetailsResponseShippingInfo.md) |  | [optional] 
 **Products** | Pointer to [**[]QuoteDetailsResponseProductsInner**](QuoteDetailsResponseProductsInner.md) |  | [optional] 
 **ProductsCount** | Pointer to **int32** | Total number of products included in the quote | [optional] 
-**ExtendedMsrpTotal** | Pointer to **float32** | Total extended MSRP for all products included in the quote | [optional] 
+**ExtendedMsrpTotal** | Pointer to **NullableFloat32** | Total extended MSRP for all products included in the quote | [optional] 
 **QuantityTotal** | Pointer to **int32** | Total quantity of all items in the quote. | [optional] 
 **ExtraFeesTotal** | Pointer to **float32** |  | [optional] 
 **ExtraFeesTotalDetails** | Pointer to [**[]QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner**](QuoteDetailsResponseProductsInnerPriceExtraFeesDetailsInner.md) |  | [optional] 
@@ -926,6 +926,16 @@ SetExtendedMsrpTotal sets ExtendedMsrpTotal field to given value.
 
 HasExtendedMsrpTotal returns a boolean if a field has been set.
 
+### SetExtendedMsrpTotalNil
+
+`func (o *QuoteDetailsResponse) SetExtendedMsrpTotalNil(b bool)`
+
+ SetExtendedMsrpTotalNil sets the value for ExtendedMsrpTotal to be an explicit nil
+
+### UnsetExtendedMsrpTotal
+`func (o *QuoteDetailsResponse) UnsetExtendedMsrpTotal()`
+
+UnsetExtendedMsrpTotal ensures that no value is present for ExtendedMsrpTotal, not even an explicit nil
 ### GetQuantityTotal
 
 `func (o *QuoteDetailsResponse) GetQuantityTotal() int32`
