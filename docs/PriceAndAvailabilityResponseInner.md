@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Index** | Pointer to **float32** |  | [optional] 
-**ProductStatusCode** | Pointer to **string** | Codes signifying whether the sku is active or not. | [optional] 
-**ProductStatusMessage** | Pointer to **string** | Message returned saying whether sku is active. | [optional] 
-**IngramPartNumber** | Pointer to **string** | Ingram Micro unique part number for the product. | [optional] 
+**ProductStatusCode** | Pointer to **NullableString** | Codes signifying whether the sku is active or not. | [optional] 
+**ProductStatusMessage** | Pointer to **NullableString** | Message returned saying whether sku is active. | [optional] 
+**IngramPartNumber** | Pointer to **NullableString** | Ingram Micro unique part number for the product. | [optional] 
 **VendorPartNumber** | Pointer to **NullableString** | Vendor’s part number for the product. | [optional] 
 **ExtendedVendorPartNumber** | Pointer to **NullableString** | Extended Vendor Part Number. *Currently, this feature is not available in these countries (Mexico, Turkey, New Zealand, Colombia, Chile, Brazil, Peru, Western Sahara). | [optional] 
 **CustomerPartNumber** | Pointer to **NullableString** | Reseller / end-user’s part number for the product. | [optional] 
-**Upc** | Pointer to **string** | The UPC code for the product. Consists of 12 numeric digits that are uniquely assigned to each trade item. | [optional] 
+**Upc** | Pointer to **NullableString** | The UPC code for the product. Consists of 12 numeric digits that are uniquely assigned to each trade item. | [optional] 
 **PartNumberType** | Pointer to **NullableString** | Number type of the part. | [optional] 
 **VendorNumber** | Pointer to **NullableString** | Vendor number that identifies the product. | [optional] 
 **VendorName** | Pointer to **NullableString** | Vendor name for the order. | [optional] 
@@ -103,6 +103,16 @@ SetProductStatusCode sets ProductStatusCode field to given value.
 
 HasProductStatusCode returns a boolean if a field has been set.
 
+### SetProductStatusCodeNil
+
+`func (o *PriceAndAvailabilityResponseInner) SetProductStatusCodeNil(b bool)`
+
+ SetProductStatusCodeNil sets the value for ProductStatusCode to be an explicit nil
+
+### UnsetProductStatusCode
+`func (o *PriceAndAvailabilityResponseInner) UnsetProductStatusCode()`
+
+UnsetProductStatusCode ensures that no value is present for ProductStatusCode, not even an explicit nil
 ### GetProductStatusMessage
 
 `func (o *PriceAndAvailabilityResponseInner) GetProductStatusMessage() string`
@@ -128,6 +138,16 @@ SetProductStatusMessage sets ProductStatusMessage field to given value.
 
 HasProductStatusMessage returns a boolean if a field has been set.
 
+### SetProductStatusMessageNil
+
+`func (o *PriceAndAvailabilityResponseInner) SetProductStatusMessageNil(b bool)`
+
+ SetProductStatusMessageNil sets the value for ProductStatusMessage to be an explicit nil
+
+### UnsetProductStatusMessage
+`func (o *PriceAndAvailabilityResponseInner) UnsetProductStatusMessage()`
+
+UnsetProductStatusMessage ensures that no value is present for ProductStatusMessage, not even an explicit nil
 ### GetIngramPartNumber
 
 `func (o *PriceAndAvailabilityResponseInner) GetIngramPartNumber() string`
@@ -153,6 +173,16 @@ SetIngramPartNumber sets IngramPartNumber field to given value.
 
 HasIngramPartNumber returns a boolean if a field has been set.
 
+### SetIngramPartNumberNil
+
+`func (o *PriceAndAvailabilityResponseInner) SetIngramPartNumberNil(b bool)`
+
+ SetIngramPartNumberNil sets the value for IngramPartNumber to be an explicit nil
+
+### UnsetIngramPartNumber
+`func (o *PriceAndAvailabilityResponseInner) UnsetIngramPartNumber()`
+
+UnsetIngramPartNumber ensures that no value is present for IngramPartNumber, not even an explicit nil
 ### GetVendorPartNumber
 
 `func (o *PriceAndAvailabilityResponseInner) GetVendorPartNumber() string`
@@ -283,6 +313,16 @@ SetUpc sets Upc field to given value.
 
 HasUpc returns a boolean if a field has been set.
 
+### SetUpcNil
+
+`func (o *PriceAndAvailabilityResponseInner) SetUpcNil(b bool)`
+
+ SetUpcNil sets the value for Upc to be an explicit nil
+
+### UnsetUpc
+`func (o *PriceAndAvailabilityResponseInner) UnsetUpc()`
+
+UnsetUpc ensures that no value is present for Upc, not even an explicit nil
 ### GetPartNumberType
 
 `func (o *PriceAndAvailabilityResponseInner) GetPartNumberType() string`

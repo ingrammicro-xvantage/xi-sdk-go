@@ -20,9 +20,9 @@ var _ MappedNullable = &PriceAndAvailabilityResponseInnerSubscriptionPriceInnerB
 // PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod struct for PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod
 type PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod struct {
 	// The unit of the billing period.
-	BillingPeriodUnit *string `json:"billingPeriodUnit,omitempty"`
+	BillingPeriodUnit NullableString `json:"billingPeriodUnit,omitempty"`
 	// The billing period value.
-	BillingPeriod *float32 `json:"billingPeriod,omitempty"`
+	BillingPeriod NullableFloat32 `json:"billingPeriod,omitempty"`
 }
 
 // NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod instantiates a new PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod object
@@ -42,68 +42,88 @@ func NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriodWith
 	return &this
 }
 
-// GetBillingPeriodUnit returns the BillingPeriodUnit field value if set, zero value otherwise.
+// GetBillingPeriodUnit returns the BillingPeriodUnit field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod) GetBillingPeriodUnit() string {
-	if o == nil || IsNil(o.BillingPeriodUnit) {
+	if o == nil || IsNil(o.BillingPeriodUnit.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.BillingPeriodUnit
+	return *o.BillingPeriodUnit.Get()
 }
 
 // GetBillingPeriodUnitOk returns a tuple with the BillingPeriodUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod) GetBillingPeriodUnitOk() (*string, bool) {
-	if o == nil || IsNil(o.BillingPeriodUnit) {
+	if o == nil {
 		return nil, false
 	}
-	return o.BillingPeriodUnit, true
+	return o.BillingPeriodUnit.Get(), o.BillingPeriodUnit.IsSet()
 }
 
 // HasBillingPeriodUnit returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod) HasBillingPeriodUnit() bool {
-	if o != nil && !IsNil(o.BillingPeriodUnit) {
+	if o != nil && o.BillingPeriodUnit.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetBillingPeriodUnit gets a reference to the given string and assigns it to the BillingPeriodUnit field.
+// SetBillingPeriodUnit gets a reference to the given NullableString and assigns it to the BillingPeriodUnit field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod) SetBillingPeriodUnit(v string) {
-	o.BillingPeriodUnit = &v
+	o.BillingPeriodUnit.Set(&v)
+}
+// SetBillingPeriodUnitNil sets the value for BillingPeriodUnit to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod) SetBillingPeriodUnitNil() {
+	o.BillingPeriodUnit.Set(nil)
 }
 
-// GetBillingPeriod returns the BillingPeriod field value if set, zero value otherwise.
+// UnsetBillingPeriodUnit ensures that no value is present for BillingPeriodUnit, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod) UnsetBillingPeriodUnit() {
+	o.BillingPeriodUnit.Unset()
+}
+
+// GetBillingPeriod returns the BillingPeriod field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod) GetBillingPeriod() float32 {
-	if o == nil || IsNil(o.BillingPeriod) {
+	if o == nil || IsNil(o.BillingPeriod.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.BillingPeriod
+	return *o.BillingPeriod.Get()
 }
 
 // GetBillingPeriodOk returns a tuple with the BillingPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod) GetBillingPeriodOk() (*float32, bool) {
-	if o == nil || IsNil(o.BillingPeriod) {
+	if o == nil {
 		return nil, false
 	}
-	return o.BillingPeriod, true
+	return o.BillingPeriod.Get(), o.BillingPeriod.IsSet()
 }
 
 // HasBillingPeriod returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod) HasBillingPeriod() bool {
-	if o != nil && !IsNil(o.BillingPeriod) {
+	if o != nil && o.BillingPeriod.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetBillingPeriod gets a reference to the given float32 and assigns it to the BillingPeriod field.
+// SetBillingPeriod gets a reference to the given NullableFloat32 and assigns it to the BillingPeriod field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod) SetBillingPeriod(v float32) {
-	o.BillingPeriod = &v
+	o.BillingPeriod.Set(&v)
+}
+// SetBillingPeriodNil sets the value for BillingPeriod to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod) SetBillingPeriodNil() {
+	o.BillingPeriod.Set(nil)
+}
+
+// UnsetBillingPeriod ensures that no value is present for BillingPeriod, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod) UnsetBillingPeriod() {
+	o.BillingPeriod.Unset()
 }
 
 func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod) MarshalJSON() ([]byte, error) {
@@ -116,11 +136,11 @@ func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod) Ma
 
 func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.BillingPeriodUnit) {
-		toSerialize["billingPeriodUnit"] = o.BillingPeriodUnit
+	if o.BillingPeriodUnit.IsSet() {
+		toSerialize["billingPeriodUnit"] = o.BillingPeriodUnit.Get()
 	}
-	if !IsNil(o.BillingPeriod) {
-		toSerialize["billingPeriod"] = o.BillingPeriod
+	if o.BillingPeriod.IsSet() {
+		toSerialize["billingPeriod"] = o.BillingPeriod.Get()
 	}
 	return toSerialize, nil
 }

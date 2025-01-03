@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CurrencyCode** | Pointer to **string** | The 3-digit ISO currency code. | [optional] 
-**Quantity** | Pointer to **int32** | Quantity of the line item. | [optional] 
-**Msrp** | Pointer to **float32** | Manufacturer Suggested Retail Price. | [optional] 
-**UnitPrice** | Pointer to **float32** | The unit price of the line item. | [optional] 
-**Margin** | Pointer to **float32** | Reseller’s margin percentage | [optional] 
+**CurrencyCode** | Pointer to **NullableString** | The 3-digit ISO currency code. | [optional] 
+**Quantity** | Pointer to **NullableInt32** | Quantity of the line item. | [optional] 
+**Msrp** | Pointer to **NullableFloat32** | Manufacturer Suggested Retail Price. | [optional] 
+**UnitPrice** | Pointer to **NullableFloat32** | The unit price of the line item. | [optional] 
+**Margin** | Pointer to **NullableFloat32** | Reseller’s margin percentage | [optional] 
 
 ## Methods
 
@@ -54,6 +54,16 @@ SetCurrencyCode sets CurrencyCode field to given value.
 
 HasCurrencyCode returns a boolean if a field has been set.
 
+### SetCurrencyCodeNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) SetCurrencyCodeNil(b bool)`
+
+ SetCurrencyCodeNil sets the value for CurrencyCode to be an explicit nil
+
+### UnsetCurrencyCode
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) UnsetCurrencyCode()`
+
+UnsetCurrencyCode ensures that no value is present for CurrencyCode, not even an explicit nil
 ### GetQuantity
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) GetQuantity() int32`
@@ -79,6 +89,16 @@ SetQuantity sets Quantity field to given value.
 
 HasQuantity returns a boolean if a field has been set.
 
+### SetQuantityNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) SetQuantityNil(b bool)`
+
+ SetQuantityNil sets the value for Quantity to be an explicit nil
+
+### UnsetQuantity
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) UnsetQuantity()`
+
+UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
 ### GetMsrp
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) GetMsrp() float32`
@@ -104,6 +124,16 @@ SetMsrp sets Msrp field to given value.
 
 HasMsrp returns a boolean if a field has been set.
 
+### SetMsrpNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) SetMsrpNil(b bool)`
+
+ SetMsrpNil sets the value for Msrp to be an explicit nil
+
+### UnsetMsrp
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) UnsetMsrp()`
+
+UnsetMsrp ensures that no value is present for Msrp, not even an explicit nil
 ### GetUnitPrice
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) GetUnitPrice() float32`
@@ -129,6 +159,16 @@ SetUnitPrice sets UnitPrice field to given value.
 
 HasUnitPrice returns a boolean if a field has been set.
 
+### SetUnitPriceNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) SetUnitPriceNil(b bool)`
+
+ SetUnitPriceNil sets the value for UnitPrice to be an explicit nil
+
+### UnsetUnitPrice
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) UnsetUnitPrice()`
+
+UnsetUnitPrice ensures that no value is present for UnitPrice, not even an explicit nil
 ### GetMargin
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) GetMargin() float32`
@@ -154,6 +194,16 @@ SetMargin sets Margin field to given value.
 
 HasMargin returns a boolean if a field has been set.
 
+### SetMarginNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) SetMarginNil(b bool)`
+
+ SetMarginNil sets the value for Margin to be an explicit nil
+
+### UnsetMargin
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) UnsetMargin()`
+
+UnsetMargin ensures that no value is present for Margin, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

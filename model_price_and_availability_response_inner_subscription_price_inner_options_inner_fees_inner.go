@@ -20,11 +20,11 @@ var _ MappedNullable = &PriceAndAvailabilityResponseInnerSubscriptionPriceInnerO
 // PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner struct for PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner
 type PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner struct {
 	// Fee price of the line item.
-	Price *float32 `json:"price,omitempty"`
+	Price NullableFloat32 `json:"price,omitempty"`
 	// The type of the fees.
-	Type *string `json:"type,omitempty"`
-	Msrp *float32 `json:"msrp,omitempty"`
-	Code *string `json:"code,omitempty"`
+	Type NullableString `json:"type,omitempty"`
+	Msrp NullableFloat32 `json:"msrp,omitempty"`
+	Code NullableString `json:"code,omitempty"`
 }
 
 // NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner instantiates a new PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner object
@@ -44,132 +44,172 @@ func NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesI
 	return &this
 }
 
-// GetPrice returns the Price field value if set, zero value otherwise.
+// GetPrice returns the Price field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetPrice() float32 {
-	if o == nil || IsNil(o.Price) {
+	if o == nil || IsNil(o.Price.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.Price
+	return *o.Price.Get()
 }
 
 // GetPriceOk returns a tuple with the Price field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetPriceOk() (*float32, bool) {
-	if o == nil || IsNil(o.Price) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Price, true
+	return o.Price.Get(), o.Price.IsSet()
 }
 
 // HasPrice returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) HasPrice() bool {
-	if o != nil && !IsNil(o.Price) {
+	if o != nil && o.Price.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPrice gets a reference to the given float32 and assigns it to the Price field.
+// SetPrice gets a reference to the given NullableFloat32 and assigns it to the Price field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) SetPrice(v float32) {
-	o.Price = &v
+	o.Price.Set(&v)
+}
+// SetPriceNil sets the value for Price to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) SetPriceNil() {
+	o.Price.Set(nil)
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
+// UnsetPrice ensures that no value is present for Price, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) UnsetPrice() {
+	o.Price.Unset()
+}
+
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetType() string {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || IsNil(o.Type.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Type
+	return *o.Type.Get()
 }
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Type, true
+	return o.Type.Get(), o.Type.IsSet()
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) HasType() bool {
-	if o != nil && !IsNil(o.Type) {
+	if o != nil && o.Type.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
+// SetType gets a reference to the given NullableString and assigns it to the Type field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) SetType(v string) {
-	o.Type = &v
+	o.Type.Set(&v)
+}
+// SetTypeNil sets the value for Type to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) SetTypeNil() {
+	o.Type.Set(nil)
 }
 
-// GetMsrp returns the Msrp field value if set, zero value otherwise.
+// UnsetType ensures that no value is present for Type, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) UnsetType() {
+	o.Type.Unset()
+}
+
+// GetMsrp returns the Msrp field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetMsrp() float32 {
-	if o == nil || IsNil(o.Msrp) {
+	if o == nil || IsNil(o.Msrp.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.Msrp
+	return *o.Msrp.Get()
 }
 
 // GetMsrpOk returns a tuple with the Msrp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetMsrpOk() (*float32, bool) {
-	if o == nil || IsNil(o.Msrp) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Msrp, true
+	return o.Msrp.Get(), o.Msrp.IsSet()
 }
 
 // HasMsrp returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) HasMsrp() bool {
-	if o != nil && !IsNil(o.Msrp) {
+	if o != nil && o.Msrp.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMsrp gets a reference to the given float32 and assigns it to the Msrp field.
+// SetMsrp gets a reference to the given NullableFloat32 and assigns it to the Msrp field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) SetMsrp(v float32) {
-	o.Msrp = &v
+	o.Msrp.Set(&v)
+}
+// SetMsrpNil sets the value for Msrp to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) SetMsrpNil() {
+	o.Msrp.Set(nil)
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
+// UnsetMsrp ensures that no value is present for Msrp, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) UnsetMsrp() {
+	o.Msrp.Unset()
+}
+
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetCode() string {
-	if o == nil || IsNil(o.Code) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Code
+	return *o.Code.Get()
 }
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Code, true
+	return o.Code.Get(), o.Code.IsSet()
 }
 
 // HasCode returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) HasCode() bool {
-	if o != nil && !IsNil(o.Code) {
+	if o != nil && o.Code.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given string and assigns it to the Code field.
+// SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) SetCode(v string) {
-	o.Code = &v
+	o.Code.Set(&v)
+}
+// SetCodeNil sets the value for Code to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) SetCodeNil() {
+	o.Code.Set(nil)
+}
+
+// UnsetCode ensures that no value is present for Code, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) UnsetCode() {
+	o.Code.Unset()
 }
 
 func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) MarshalJSON() ([]byte, error) {
@@ -182,17 +222,17 @@ func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesI
 
 func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Price) {
-		toSerialize["price"] = o.Price
+	if o.Price.IsSet() {
+		toSerialize["price"] = o.Price.Get()
 	}
-	if !IsNil(o.Type) {
-		toSerialize["type"] = o.Type
+	if o.Type.IsSet() {
+		toSerialize["type"] = o.Type.Get()
 	}
-	if !IsNil(o.Msrp) {
-		toSerialize["msrp"] = o.Msrp
+	if o.Msrp.IsSet() {
+		toSerialize["msrp"] = o.Msrp.Get()
 	}
-	if !IsNil(o.Code) {
-		toSerialize["code"] = o.Code
+	if o.Code.IsSet() {
+		toSerialize["code"] = o.Code.Get()
 	}
 	return toSerialize, nil
 }

@@ -22,7 +22,7 @@ type PriceAndAvailabilityResponseInnerAvailability struct {
 	// Boolean that indicates if the product ordered is available
 	Available *bool `json:"available,omitempty"`
 	// The total amount of available products
-	TotalAvailability *int32 `json:"totalAvailability,omitempty"`
+	TotalAvailability NullableInt32 `json:"totalAvailability,omitempty"`
 	AvailabilityByWarehouse []PriceAndAvailabilityResponseInnerAvailabilityAvailabilityByWarehouseInner `json:"availabilityByWarehouse,omitempty"`
 }
 
@@ -75,36 +75,46 @@ func (o *PriceAndAvailabilityResponseInnerAvailability) SetAvailable(v bool) {
 	o.Available = &v
 }
 
-// GetTotalAvailability returns the TotalAvailability field value if set, zero value otherwise.
+// GetTotalAvailability returns the TotalAvailability field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerAvailability) GetTotalAvailability() int32 {
-	if o == nil || IsNil(o.TotalAvailability) {
+	if o == nil || IsNil(o.TotalAvailability.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.TotalAvailability
+	return *o.TotalAvailability.Get()
 }
 
 // GetTotalAvailabilityOk returns a tuple with the TotalAvailability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerAvailability) GetTotalAvailabilityOk() (*int32, bool) {
-	if o == nil || IsNil(o.TotalAvailability) {
+	if o == nil {
 		return nil, false
 	}
-	return o.TotalAvailability, true
+	return o.TotalAvailability.Get(), o.TotalAvailability.IsSet()
 }
 
 // HasTotalAvailability returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerAvailability) HasTotalAvailability() bool {
-	if o != nil && !IsNil(o.TotalAvailability) {
+	if o != nil && o.TotalAvailability.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTotalAvailability gets a reference to the given int32 and assigns it to the TotalAvailability field.
+// SetTotalAvailability gets a reference to the given NullableInt32 and assigns it to the TotalAvailability field.
 func (o *PriceAndAvailabilityResponseInnerAvailability) SetTotalAvailability(v int32) {
-	o.TotalAvailability = &v
+	o.TotalAvailability.Set(&v)
+}
+// SetTotalAvailabilityNil sets the value for TotalAvailability to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailability) SetTotalAvailabilityNil() {
+	o.TotalAvailability.Set(nil)
+}
+
+// UnsetTotalAvailability ensures that no value is present for TotalAvailability, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerAvailability) UnsetTotalAvailability() {
+	o.TotalAvailability.Unset()
 }
 
 // GetAvailabilityByWarehouse returns the AvailabilityByWarehouse field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -153,8 +163,8 @@ func (o PriceAndAvailabilityResponseInnerAvailability) ToMap() (map[string]inter
 	if !IsNil(o.Available) {
 		toSerialize["available"] = o.Available
 	}
-	if !IsNil(o.TotalAvailability) {
-		toSerialize["totalAvailability"] = o.TotalAvailability
+	if o.TotalAvailability.IsSet() {
+		toSerialize["totalAvailability"] = o.TotalAvailability.Get()
 	}
 	if o.AvailabilityByWarehouse != nil {
 		toSerialize["availabilityByWarehouse"] = o.AvailabilityByWarehouse

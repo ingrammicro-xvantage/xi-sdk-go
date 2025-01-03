@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CurrencyCode** | Pointer to **string** | The 3-digit ISO currency code. | [optional] 
-**Discount** | Pointer to **float32** | The discount for the line item. | [optional] 
-**DiscountType** | Pointer to **string** | The type of the discount | [optional] 
-**DiscountQtyLimit** | Pointer to **int32** | The quantity available at the discounted price | [optional] 
-**DiscountExpiryDate** | Pointer to **string** | The date when discount expires. | [optional] 
-**VendorProgramName** | Pointer to **string** | The vendors discount program name. | [optional] 
+**CurrencyCode** | Pointer to **NullableString** | The 3-digit ISO currency code. | [optional] 
+**Discount** | Pointer to **NullableFloat32** | The discount for the line item. | [optional] 
+**DiscountType** | Pointer to **NullableString** | The type of the discount | [optional] 
+**DiscountQtyLimit** | Pointer to **NullableInt32** | The quantity available at the discounted price | [optional] 
+**DiscountExpiryDate** | Pointer to **NullableString** | The date when discount expires. | [optional] 
+**VendorProgramName** | Pointer to **NullableString** | The vendors discount program name. | [optional] 
 
 ## Methods
 
@@ -55,6 +55,16 @@ SetCurrencyCode sets CurrencyCode field to given value.
 
 HasCurrencyCode returns a boolean if a field has been set.
 
+### SetCurrencyCodeNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetCurrencyCodeNil(b bool)`
+
+ SetCurrencyCodeNil sets the value for CurrencyCode to be an explicit nil
+
+### UnsetCurrencyCode
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) UnsetCurrencyCode()`
+
+UnsetCurrencyCode ensures that no value is present for CurrencyCode, not even an explicit nil
 ### GetDiscount
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) GetDiscount() float32`
@@ -80,6 +90,16 @@ SetDiscount sets Discount field to given value.
 
 HasDiscount returns a boolean if a field has been set.
 
+### SetDiscountNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetDiscountNil(b bool)`
+
+ SetDiscountNil sets the value for Discount to be an explicit nil
+
+### UnsetDiscount
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) UnsetDiscount()`
+
+UnsetDiscount ensures that no value is present for Discount, not even an explicit nil
 ### GetDiscountType
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) GetDiscountType() string`
@@ -105,6 +125,16 @@ SetDiscountType sets DiscountType field to given value.
 
 HasDiscountType returns a boolean if a field has been set.
 
+### SetDiscountTypeNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetDiscountTypeNil(b bool)`
+
+ SetDiscountTypeNil sets the value for DiscountType to be an explicit nil
+
+### UnsetDiscountType
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) UnsetDiscountType()`
+
+UnsetDiscountType ensures that no value is present for DiscountType, not even an explicit nil
 ### GetDiscountQtyLimit
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) GetDiscountQtyLimit() int32`
@@ -130,6 +160,16 @@ SetDiscountQtyLimit sets DiscountQtyLimit field to given value.
 
 HasDiscountQtyLimit returns a boolean if a field has been set.
 
+### SetDiscountQtyLimitNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetDiscountQtyLimitNil(b bool)`
+
+ SetDiscountQtyLimitNil sets the value for DiscountQtyLimit to be an explicit nil
+
+### UnsetDiscountQtyLimit
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) UnsetDiscountQtyLimit()`
+
+UnsetDiscountQtyLimit ensures that no value is present for DiscountQtyLimit, not even an explicit nil
 ### GetDiscountExpiryDate
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) GetDiscountExpiryDate() string`
@@ -155,6 +195,16 @@ SetDiscountExpiryDate sets DiscountExpiryDate field to given value.
 
 HasDiscountExpiryDate returns a boolean if a field has been set.
 
+### SetDiscountExpiryDateNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetDiscountExpiryDateNil(b bool)`
+
+ SetDiscountExpiryDateNil sets the value for DiscountExpiryDate to be an explicit nil
+
+### UnsetDiscountExpiryDate
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) UnsetDiscountExpiryDate()`
+
+UnsetDiscountExpiryDate ensures that no value is present for DiscountExpiryDate, not even an explicit nil
 ### GetVendorProgramName
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) GetVendorProgramName() string`
@@ -180,6 +230,16 @@ SetVendorProgramName sets VendorProgramName field to given value.
 
 HasVendorProgramName returns a boolean if a field has been set.
 
+### SetVendorProgramNameNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetVendorProgramNameNil(b bool)`
+
+ SetVendorProgramNameNil sets the value for VendorProgramName to be an explicit nil
+
+### UnsetVendorProgramName
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) UnsetVendorProgramName()`
+
+UnsetVendorProgramName ensures that no value is present for VendorProgramName, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

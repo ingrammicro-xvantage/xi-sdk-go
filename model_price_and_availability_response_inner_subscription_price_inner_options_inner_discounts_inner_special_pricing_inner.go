@@ -20,17 +20,17 @@ var _ MappedNullable = &PriceAndAvailabilityResponseInnerSubscriptionPriceInnerO
 // PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner struct for PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner
 type PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner struct {
 	// The 3-digit ISO currency code.
-	CurrencyCode *string `json:"currencyCode,omitempty"`
+	CurrencyCode NullableString `json:"currencyCode,omitempty"`
 	// The discount for the line item.
-	Discount *float32 `json:"discount,omitempty"`
+	Discount NullableFloat32 `json:"discount,omitempty"`
 	// The type of the discount
-	DiscountType *string `json:"discountType,omitempty"`
+	DiscountType NullableString `json:"discountType,omitempty"`
 	// The quantity available at the discounted price
-	DiscountQtyLimit *int32 `json:"discountQtyLimit,omitempty"`
+	DiscountQtyLimit NullableInt32 `json:"discountQtyLimit,omitempty"`
 	// The date when discount expires.
-	DiscountExpiryDate *string `json:"discountExpiryDate,omitempty"`
+	DiscountExpiryDate NullableString `json:"discountExpiryDate,omitempty"`
 	// The vendors discount program name.
-	VendorProgramName *string `json:"vendorProgramName,omitempty"`
+	VendorProgramName NullableString `json:"vendorProgramName,omitempty"`
 }
 
 // NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner instantiates a new PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner object
@@ -50,196 +50,256 @@ func NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDisco
 	return &this
 }
 
-// GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise.
+// GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) GetCurrencyCode() string {
-	if o == nil || IsNil(o.CurrencyCode) {
+	if o == nil || IsNil(o.CurrencyCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CurrencyCode
+	return *o.CurrencyCode.Get()
 }
 
 // GetCurrencyCodeOk returns a tuple with the CurrencyCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) GetCurrencyCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.CurrencyCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CurrencyCode, true
+	return o.CurrencyCode.Get(), o.CurrencyCode.IsSet()
 }
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) HasCurrencyCode() bool {
-	if o != nil && !IsNil(o.CurrencyCode) {
+	if o != nil && o.CurrencyCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCurrencyCode gets a reference to the given string and assigns it to the CurrencyCode field.
+// SetCurrencyCode gets a reference to the given NullableString and assigns it to the CurrencyCode field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetCurrencyCode(v string) {
-	o.CurrencyCode = &v
+	o.CurrencyCode.Set(&v)
+}
+// SetCurrencyCodeNil sets the value for CurrencyCode to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetCurrencyCodeNil() {
+	o.CurrencyCode.Set(nil)
 }
 
-// GetDiscount returns the Discount field value if set, zero value otherwise.
+// UnsetCurrencyCode ensures that no value is present for CurrencyCode, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) UnsetCurrencyCode() {
+	o.CurrencyCode.Unset()
+}
+
+// GetDiscount returns the Discount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) GetDiscount() float32 {
-	if o == nil || IsNil(o.Discount) {
+	if o == nil || IsNil(o.Discount.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.Discount
+	return *o.Discount.Get()
 }
 
 // GetDiscountOk returns a tuple with the Discount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) GetDiscountOk() (*float32, bool) {
-	if o == nil || IsNil(o.Discount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Discount, true
+	return o.Discount.Get(), o.Discount.IsSet()
 }
 
 // HasDiscount returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) HasDiscount() bool {
-	if o != nil && !IsNil(o.Discount) {
+	if o != nil && o.Discount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDiscount gets a reference to the given float32 and assigns it to the Discount field.
+// SetDiscount gets a reference to the given NullableFloat32 and assigns it to the Discount field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetDiscount(v float32) {
-	o.Discount = &v
+	o.Discount.Set(&v)
+}
+// SetDiscountNil sets the value for Discount to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetDiscountNil() {
+	o.Discount.Set(nil)
 }
 
-// GetDiscountType returns the DiscountType field value if set, zero value otherwise.
+// UnsetDiscount ensures that no value is present for Discount, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) UnsetDiscount() {
+	o.Discount.Unset()
+}
+
+// GetDiscountType returns the DiscountType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) GetDiscountType() string {
-	if o == nil || IsNil(o.DiscountType) {
+	if o == nil || IsNil(o.DiscountType.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DiscountType
+	return *o.DiscountType.Get()
 }
 
 // GetDiscountTypeOk returns a tuple with the DiscountType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) GetDiscountTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.DiscountType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DiscountType, true
+	return o.DiscountType.Get(), o.DiscountType.IsSet()
 }
 
 // HasDiscountType returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) HasDiscountType() bool {
-	if o != nil && !IsNil(o.DiscountType) {
+	if o != nil && o.DiscountType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDiscountType gets a reference to the given string and assigns it to the DiscountType field.
+// SetDiscountType gets a reference to the given NullableString and assigns it to the DiscountType field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetDiscountType(v string) {
-	o.DiscountType = &v
+	o.DiscountType.Set(&v)
+}
+// SetDiscountTypeNil sets the value for DiscountType to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetDiscountTypeNil() {
+	o.DiscountType.Set(nil)
 }
 
-// GetDiscountQtyLimit returns the DiscountQtyLimit field value if set, zero value otherwise.
+// UnsetDiscountType ensures that no value is present for DiscountType, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) UnsetDiscountType() {
+	o.DiscountType.Unset()
+}
+
+// GetDiscountQtyLimit returns the DiscountQtyLimit field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) GetDiscountQtyLimit() int32 {
-	if o == nil || IsNil(o.DiscountQtyLimit) {
+	if o == nil || IsNil(o.DiscountQtyLimit.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.DiscountQtyLimit
+	return *o.DiscountQtyLimit.Get()
 }
 
 // GetDiscountQtyLimitOk returns a tuple with the DiscountQtyLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) GetDiscountQtyLimitOk() (*int32, bool) {
-	if o == nil || IsNil(o.DiscountQtyLimit) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DiscountQtyLimit, true
+	return o.DiscountQtyLimit.Get(), o.DiscountQtyLimit.IsSet()
 }
 
 // HasDiscountQtyLimit returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) HasDiscountQtyLimit() bool {
-	if o != nil && !IsNil(o.DiscountQtyLimit) {
+	if o != nil && o.DiscountQtyLimit.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDiscountQtyLimit gets a reference to the given int32 and assigns it to the DiscountQtyLimit field.
+// SetDiscountQtyLimit gets a reference to the given NullableInt32 and assigns it to the DiscountQtyLimit field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetDiscountQtyLimit(v int32) {
-	o.DiscountQtyLimit = &v
+	o.DiscountQtyLimit.Set(&v)
+}
+// SetDiscountQtyLimitNil sets the value for DiscountQtyLimit to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetDiscountQtyLimitNil() {
+	o.DiscountQtyLimit.Set(nil)
 }
 
-// GetDiscountExpiryDate returns the DiscountExpiryDate field value if set, zero value otherwise.
+// UnsetDiscountQtyLimit ensures that no value is present for DiscountQtyLimit, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) UnsetDiscountQtyLimit() {
+	o.DiscountQtyLimit.Unset()
+}
+
+// GetDiscountExpiryDate returns the DiscountExpiryDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) GetDiscountExpiryDate() string {
-	if o == nil || IsNil(o.DiscountExpiryDate) {
+	if o == nil || IsNil(o.DiscountExpiryDate.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.DiscountExpiryDate
+	return *o.DiscountExpiryDate.Get()
 }
 
 // GetDiscountExpiryDateOk returns a tuple with the DiscountExpiryDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) GetDiscountExpiryDateOk() (*string, bool) {
-	if o == nil || IsNil(o.DiscountExpiryDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DiscountExpiryDate, true
+	return o.DiscountExpiryDate.Get(), o.DiscountExpiryDate.IsSet()
 }
 
 // HasDiscountExpiryDate returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) HasDiscountExpiryDate() bool {
-	if o != nil && !IsNil(o.DiscountExpiryDate) {
+	if o != nil && o.DiscountExpiryDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDiscountExpiryDate gets a reference to the given string and assigns it to the DiscountExpiryDate field.
+// SetDiscountExpiryDate gets a reference to the given NullableString and assigns it to the DiscountExpiryDate field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetDiscountExpiryDate(v string) {
-	o.DiscountExpiryDate = &v
+	o.DiscountExpiryDate.Set(&v)
+}
+// SetDiscountExpiryDateNil sets the value for DiscountExpiryDate to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetDiscountExpiryDateNil() {
+	o.DiscountExpiryDate.Set(nil)
 }
 
-// GetVendorProgramName returns the VendorProgramName field value if set, zero value otherwise.
+// UnsetDiscountExpiryDate ensures that no value is present for DiscountExpiryDate, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) UnsetDiscountExpiryDate() {
+	o.DiscountExpiryDate.Unset()
+}
+
+// GetVendorProgramName returns the VendorProgramName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) GetVendorProgramName() string {
-	if o == nil || IsNil(o.VendorProgramName) {
+	if o == nil || IsNil(o.VendorProgramName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.VendorProgramName
+	return *o.VendorProgramName.Get()
 }
 
 // GetVendorProgramNameOk returns a tuple with the VendorProgramName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) GetVendorProgramNameOk() (*string, bool) {
-	if o == nil || IsNil(o.VendorProgramName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VendorProgramName, true
+	return o.VendorProgramName.Get(), o.VendorProgramName.IsSet()
 }
 
 // HasVendorProgramName returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) HasVendorProgramName() bool {
-	if o != nil && !IsNil(o.VendorProgramName) {
+	if o != nil && o.VendorProgramName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVendorProgramName gets a reference to the given string and assigns it to the VendorProgramName field.
+// SetVendorProgramName gets a reference to the given NullableString and assigns it to the VendorProgramName field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetVendorProgramName(v string) {
-	o.VendorProgramName = &v
+	o.VendorProgramName.Set(&v)
+}
+// SetVendorProgramNameNil sets the value for VendorProgramName to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) SetVendorProgramNameNil() {
+	o.VendorProgramName.Set(nil)
+}
+
+// UnsetVendorProgramName ensures that no value is present for VendorProgramName, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) UnsetVendorProgramName() {
+	o.VendorProgramName.Unset()
 }
 
 func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) MarshalJSON() ([]byte, error) {
@@ -252,23 +312,23 @@ func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDisco
 
 func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerSpecialPricingInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CurrencyCode) {
-		toSerialize["currencyCode"] = o.CurrencyCode
+	if o.CurrencyCode.IsSet() {
+		toSerialize["currencyCode"] = o.CurrencyCode.Get()
 	}
-	if !IsNil(o.Discount) {
-		toSerialize["discount"] = o.Discount
+	if o.Discount.IsSet() {
+		toSerialize["discount"] = o.Discount.Get()
 	}
-	if !IsNil(o.DiscountType) {
-		toSerialize["discountType"] = o.DiscountType
+	if o.DiscountType.IsSet() {
+		toSerialize["discountType"] = o.DiscountType.Get()
 	}
-	if !IsNil(o.DiscountQtyLimit) {
-		toSerialize["discountQtyLimit"] = o.DiscountQtyLimit
+	if o.DiscountQtyLimit.IsSet() {
+		toSerialize["discountQtyLimit"] = o.DiscountQtyLimit.Get()
 	}
-	if !IsNil(o.DiscountExpiryDate) {
-		toSerialize["discountExpiryDate"] = o.DiscountExpiryDate
+	if o.DiscountExpiryDate.IsSet() {
+		toSerialize["discountExpiryDate"] = o.DiscountExpiryDate.Get()
 	}
-	if !IsNil(o.VendorProgramName) {
-		toSerialize["vendorProgramName"] = o.VendorProgramName
+	if o.VendorProgramName.IsSet() {
+		toSerialize["vendorProgramName"] = o.VendorProgramName.Get()
 	}
 	return toSerialize, nil
 }

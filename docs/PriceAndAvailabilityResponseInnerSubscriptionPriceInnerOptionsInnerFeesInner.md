@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Price** | Pointer to **float32** | Fee price of the line item. | [optional] 
-**Type** | Pointer to **string** | The type of the fees. | [optional] 
-**Msrp** | Pointer to **float32** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
+**Price** | Pointer to **NullableFloat32** | Fee price of the line item. | [optional] 
+**Type** | Pointer to **NullableString** | The type of the fees. | [optional] 
+**Msrp** | Pointer to **NullableFloat32** |  | [optional] 
+**Code** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -53,6 +53,16 @@ SetPrice sets Price field to given value.
 
 HasPrice returns a boolean if a field has been set.
 
+### SetPriceNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) SetPriceNil(b bool)`
+
+ SetPriceNil sets the value for Price to be an explicit nil
+
+### UnsetPrice
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) UnsetPrice()`
+
+UnsetPrice ensures that no value is present for Price, not even an explicit nil
 ### GetType
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetType() string`
@@ -78,6 +88,16 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### SetTypeNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetMsrp
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetMsrp() float32`
@@ -103,6 +123,16 @@ SetMsrp sets Msrp field to given value.
 
 HasMsrp returns a boolean if a field has been set.
 
+### SetMsrpNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) SetMsrpNil(b bool)`
+
+ SetMsrpNil sets the value for Msrp to be an explicit nil
+
+### UnsetMsrp
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) UnsetMsrp()`
+
+UnsetMsrp ensures that no value is present for Msrp, not even an explicit nil
 ### GetCode
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) GetCode() string`
@@ -128,6 +158,16 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

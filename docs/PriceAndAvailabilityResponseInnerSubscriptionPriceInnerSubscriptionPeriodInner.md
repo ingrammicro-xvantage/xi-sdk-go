@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SubscriptionPeriodUnit** | Pointer to **string** | The unit of the subscription period. | [optional] 
-**SubscriptionPeriod** | Pointer to **string** | The subscription period value. | [optional] 
+**SubscriptionPeriodUnit** | Pointer to **NullableString** | The unit of the subscription period. | [optional] 
+**SubscriptionPeriod** | Pointer to **NullableString** | The subscription period value. | [optional] 
 
 ## Methods
 
@@ -51,6 +51,16 @@ SetSubscriptionPeriodUnit sets SubscriptionPeriodUnit field to given value.
 
 HasSubscriptionPeriodUnit returns a boolean if a field has been set.
 
+### SetSubscriptionPeriodUnitNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) SetSubscriptionPeriodUnitNil(b bool)`
+
+ SetSubscriptionPeriodUnitNil sets the value for SubscriptionPeriodUnit to be an explicit nil
+
+### UnsetSubscriptionPeriodUnit
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) UnsetSubscriptionPeriodUnit()`
+
+UnsetSubscriptionPeriodUnit ensures that no value is present for SubscriptionPeriodUnit, not even an explicit nil
 ### GetSubscriptionPeriod
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) GetSubscriptionPeriod() string`
@@ -76,6 +86,16 @@ SetSubscriptionPeriod sets SubscriptionPeriod field to given value.
 
 HasSubscriptionPeriod returns a boolean if a field has been set.
 
+### SetSubscriptionPeriodNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) SetSubscriptionPeriodNil(b bool)`
+
+ SetSubscriptionPeriodNil sets the value for SubscriptionPeriod to be an explicit nil
+
+### UnsetSubscriptionPeriod
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) UnsetSubscriptionPeriod()`
+
+UnsetSubscriptionPeriod ensures that no value is present for SubscriptionPeriod, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

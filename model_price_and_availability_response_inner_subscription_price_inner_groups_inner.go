@@ -20,9 +20,9 @@ var _ MappedNullable = &PriceAndAvailabilityResponseInnerSubscriptionPriceInnerG
 // PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner struct for PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner
 type PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner struct {
 	// The name of the group
-	GroupName *string `json:"groupName,omitempty"`
+	GroupName NullableString `json:"groupName,omitempty"`
 	// The description of the group.
-	GroupDescription *string `json:"groupDescription,omitempty"`
+	GroupDescription NullableString `json:"groupDescription,omitempty"`
 }
 
 // NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner instantiates a new PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner object
@@ -42,68 +42,88 @@ func NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInnerWithDe
 	return &this
 }
 
-// GetGroupName returns the GroupName field value if set, zero value otherwise.
+// GetGroupName returns the GroupName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) GetGroupName() string {
-	if o == nil || IsNil(o.GroupName) {
+	if o == nil || IsNil(o.GroupName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GroupName
+	return *o.GroupName.Get()
 }
 
 // GetGroupNameOk returns a tuple with the GroupName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) GetGroupNameOk() (*string, bool) {
-	if o == nil || IsNil(o.GroupName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GroupName, true
+	return o.GroupName.Get(), o.GroupName.IsSet()
 }
 
 // HasGroupName returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) HasGroupName() bool {
-	if o != nil && !IsNil(o.GroupName) {
+	if o != nil && o.GroupName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGroupName gets a reference to the given string and assigns it to the GroupName field.
+// SetGroupName gets a reference to the given NullableString and assigns it to the GroupName field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) SetGroupName(v string) {
-	o.GroupName = &v
+	o.GroupName.Set(&v)
+}
+// SetGroupNameNil sets the value for GroupName to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) SetGroupNameNil() {
+	o.GroupName.Set(nil)
 }
 
-// GetGroupDescription returns the GroupDescription field value if set, zero value otherwise.
+// UnsetGroupName ensures that no value is present for GroupName, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) UnsetGroupName() {
+	o.GroupName.Unset()
+}
+
+// GetGroupDescription returns the GroupDescription field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) GetGroupDescription() string {
-	if o == nil || IsNil(o.GroupDescription) {
+	if o == nil || IsNil(o.GroupDescription.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.GroupDescription
+	return *o.GroupDescription.Get()
 }
 
 // GetGroupDescriptionOk returns a tuple with the GroupDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) GetGroupDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.GroupDescription) {
+	if o == nil {
 		return nil, false
 	}
-	return o.GroupDescription, true
+	return o.GroupDescription.Get(), o.GroupDescription.IsSet()
 }
 
 // HasGroupDescription returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) HasGroupDescription() bool {
-	if o != nil && !IsNil(o.GroupDescription) {
+	if o != nil && o.GroupDescription.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGroupDescription gets a reference to the given string and assigns it to the GroupDescription field.
+// SetGroupDescription gets a reference to the given NullableString and assigns it to the GroupDescription field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) SetGroupDescription(v string) {
-	o.GroupDescription = &v
+	o.GroupDescription.Set(&v)
+}
+// SetGroupDescriptionNil sets the value for GroupDescription to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) SetGroupDescriptionNil() {
+	o.GroupDescription.Set(nil)
+}
+
+// UnsetGroupDescription ensures that no value is present for GroupDescription, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) UnsetGroupDescription() {
+	o.GroupDescription.Unset()
 }
 
 func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) MarshalJSON() ([]byte, error) {
@@ -116,11 +136,11 @@ func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) Mars
 
 func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GroupName) {
-		toSerialize["groupName"] = o.GroupName
+	if o.GroupName.IsSet() {
+		toSerialize["groupName"] = o.GroupName.Get()
 	}
-	if !IsNil(o.GroupDescription) {
-		toSerialize["groupDescription"] = o.GroupDescription
+	if o.GroupDescription.IsSet() {
+		toSerialize["groupDescription"] = o.GroupDescription.Get()
 	}
 	return toSerialize, nil
 }

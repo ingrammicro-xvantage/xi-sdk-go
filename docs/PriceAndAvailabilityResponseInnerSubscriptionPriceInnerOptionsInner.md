@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ResourceId** | Pointer to **string** |  | [optional] 
-**ResourceUId** | Pointer to **string** | The resource id of the subscription product. | [optional] 
-**ResourceName** | Pointer to **string** | The name of the resource of the subscription product. | [optional] 
-**VendorPartNumber** | Pointer to **string** | Vendor’s part number for the subscription product. | [optional] 
-**MinUnits** | Pointer to **float32** | Minimum unit needs to purchased. | [optional] 
-**MaxUnits** | Pointer to **float32** | Maximum unit available for a purchase. | [optional] 
-**Recurringpricemodel** | Pointer to **string** | Recurring price model | [optional] 
-**UnitOfMeasure** | Pointer to **string** | Unit of mesaure for a subscription product. | [optional] 
+**ResourceId** | Pointer to **NullableString** |  | [optional] 
+**ResourceUId** | Pointer to **NullableString** | The resource id of the subscription product. | [optional] 
+**ResourceName** | Pointer to **NullableString** | The name of the resource of the subscription product. | [optional] 
+**VendorPartNumber** | Pointer to **NullableString** | Vendor’s part number for the subscription product. | [optional] 
+**MinUnits** | Pointer to **NullableFloat32** | Minimum unit needs to purchased. | [optional] 
+**MaxUnits** | Pointer to **NullableFloat32** | Maximum unit available for a purchase. | [optional] 
+**Recurringpricemodel** | Pointer to **NullableString** | Recurring price model | [optional] 
+**UnitOfMeasure** | Pointer to **NullableString** | Unit of mesaure for a subscription product. | [optional] 
 **ResourcePricing** | Pointer to [**[]PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner**](PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner.md) |  | [optional] 
 **Discounts** | Pointer to [**[]PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInner**](PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInner.md) |  | [optional] 
 **Fees** | Pointer to [**[]PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner**](PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner.md) |  | [optional] 
@@ -60,6 +60,16 @@ SetResourceId sets ResourceId field to given value.
 
 HasResourceId returns a boolean if a field has been set.
 
+### SetResourceIdNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetResourceIdNil(b bool)`
+
+ SetResourceIdNil sets the value for ResourceId to be an explicit nil
+
+### UnsetResourceId
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) UnsetResourceId()`
+
+UnsetResourceId ensures that no value is present for ResourceId, not even an explicit nil
 ### GetResourceUId
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetResourceUId() string`
@@ -85,6 +95,16 @@ SetResourceUId sets ResourceUId field to given value.
 
 HasResourceUId returns a boolean if a field has been set.
 
+### SetResourceUIdNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetResourceUIdNil(b bool)`
+
+ SetResourceUIdNil sets the value for ResourceUId to be an explicit nil
+
+### UnsetResourceUId
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) UnsetResourceUId()`
+
+UnsetResourceUId ensures that no value is present for ResourceUId, not even an explicit nil
 ### GetResourceName
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetResourceName() string`
@@ -110,6 +130,16 @@ SetResourceName sets ResourceName field to given value.
 
 HasResourceName returns a boolean if a field has been set.
 
+### SetResourceNameNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetResourceNameNil(b bool)`
+
+ SetResourceNameNil sets the value for ResourceName to be an explicit nil
+
+### UnsetResourceName
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) UnsetResourceName()`
+
+UnsetResourceName ensures that no value is present for ResourceName, not even an explicit nil
 ### GetVendorPartNumber
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetVendorPartNumber() string`
@@ -135,6 +165,16 @@ SetVendorPartNumber sets VendorPartNumber field to given value.
 
 HasVendorPartNumber returns a boolean if a field has been set.
 
+### SetVendorPartNumberNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetVendorPartNumberNil(b bool)`
+
+ SetVendorPartNumberNil sets the value for VendorPartNumber to be an explicit nil
+
+### UnsetVendorPartNumber
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) UnsetVendorPartNumber()`
+
+UnsetVendorPartNumber ensures that no value is present for VendorPartNumber, not even an explicit nil
 ### GetMinUnits
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMinUnits() float32`
@@ -160,6 +200,16 @@ SetMinUnits sets MinUnits field to given value.
 
 HasMinUnits returns a boolean if a field has been set.
 
+### SetMinUnitsNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetMinUnitsNil(b bool)`
+
+ SetMinUnitsNil sets the value for MinUnits to be an explicit nil
+
+### UnsetMinUnits
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) UnsetMinUnits()`
+
+UnsetMinUnits ensures that no value is present for MinUnits, not even an explicit nil
 ### GetMaxUnits
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMaxUnits() float32`
@@ -185,6 +235,16 @@ SetMaxUnits sets MaxUnits field to given value.
 
 HasMaxUnits returns a boolean if a field has been set.
 
+### SetMaxUnitsNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetMaxUnitsNil(b bool)`
+
+ SetMaxUnitsNil sets the value for MaxUnits to be an explicit nil
+
+### UnsetMaxUnits
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) UnsetMaxUnits()`
+
+UnsetMaxUnits ensures that no value is present for MaxUnits, not even an explicit nil
 ### GetRecurringpricemodel
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetRecurringpricemodel() string`
@@ -210,6 +270,16 @@ SetRecurringpricemodel sets Recurringpricemodel field to given value.
 
 HasRecurringpricemodel returns a boolean if a field has been set.
 
+### SetRecurringpricemodelNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetRecurringpricemodelNil(b bool)`
+
+ SetRecurringpricemodelNil sets the value for Recurringpricemodel to be an explicit nil
+
+### UnsetRecurringpricemodel
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) UnsetRecurringpricemodel()`
+
+UnsetRecurringpricemodel ensures that no value is present for Recurringpricemodel, not even an explicit nil
 ### GetUnitOfMeasure
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetUnitOfMeasure() string`
@@ -235,6 +305,16 @@ SetUnitOfMeasure sets UnitOfMeasure field to given value.
 
 HasUnitOfMeasure returns a boolean if a field has been set.
 
+### SetUnitOfMeasureNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetUnitOfMeasureNil(b bool)`
+
+ SetUnitOfMeasureNil sets the value for UnitOfMeasure to be an explicit nil
+
+### UnsetUnitOfMeasure
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) UnsetUnitOfMeasure()`
+
+UnsetUnitOfMeasure ensures that no value is present for UnitOfMeasure, not even an explicit nil
 ### GetResourcePricing
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetResourcePricing() []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner`

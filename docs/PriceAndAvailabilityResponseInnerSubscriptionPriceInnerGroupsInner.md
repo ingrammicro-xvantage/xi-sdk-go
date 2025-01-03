@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GroupName** | Pointer to **string** | The name of the group | [optional] 
-**GroupDescription** | Pointer to **string** | The description of the group. | [optional] 
+**GroupName** | Pointer to **NullableString** | The name of the group | [optional] 
+**GroupDescription** | Pointer to **NullableString** | The description of the group. | [optional] 
 
 ## Methods
 
@@ -51,6 +51,16 @@ SetGroupName sets GroupName field to given value.
 
 HasGroupName returns a boolean if a field has been set.
 
+### SetGroupNameNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) SetGroupNameNil(b bool)`
+
+ SetGroupNameNil sets the value for GroupName to be an explicit nil
+
+### UnsetGroupName
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) UnsetGroupName()`
+
+UnsetGroupName ensures that no value is present for GroupName, not even an explicit nil
 ### GetGroupDescription
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) GetGroupDescription() string`
@@ -76,6 +86,16 @@ SetGroupDescription sets GroupDescription field to given value.
 
 HasGroupDescription returns a boolean if a field has been set.
 
+### SetGroupDescriptionNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) SetGroupDescriptionNil(b bool)`
+
+ SetGroupDescriptionNil sets the value for GroupDescription to be an explicit nil
+
+### UnsetGroupDescription
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner) UnsetGroupDescription()`
+
+UnsetGroupDescription ensures that no value is present for GroupDescription, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

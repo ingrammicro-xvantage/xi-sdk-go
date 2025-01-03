@@ -19,14 +19,14 @@ var _ MappedNullable = &PriceAndAvailabilityResponseInnerSubscriptionPriceInner{
 
 // PriceAndAvailabilityResponseInnerSubscriptionPriceInner struct for PriceAndAvailabilityResponseInnerSubscriptionPriceInner
 type PriceAndAvailabilityResponseInnerSubscriptionPriceInner struct {
-	Index *float32 `json:"index,omitempty"`
+	Index NullableFloat32 `json:"index,omitempty"`
 	// Id of the plan.
-	PlanId *string `json:"planId,omitempty"`
-	PlanUId *string `json:"planUId,omitempty"`
+	PlanId NullableString `json:"planId,omitempty"`
+	PlanUId NullableString `json:"planUId,omitempty"`
 	// Name of the plan.
-	PlanName *string `json:"planName,omitempty"`
+	PlanName NullableString `json:"planName,omitempty"`
 	// The description of the plan.
-	PlanDescription *string `json:"planDescription,omitempty"`
+	PlanDescription NullableString `json:"planDescription,omitempty"`
 	Groups []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner `json:"groups,omitempty"`
 	BillingPeriod *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod `json:"billingPeriod,omitempty"`
 	SubscriptionPeriod []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner `json:"subscriptionPeriod,omitempty"`
@@ -50,164 +50,214 @@ func NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerWithDefaults() *P
 	return &this
 }
 
-// GetIndex returns the Index field value if set, zero value otherwise.
+// GetIndex returns the Index field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetIndex() float32 {
-	if o == nil || IsNil(o.Index) {
+	if o == nil || IsNil(o.Index.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.Index
+	return *o.Index.Get()
 }
 
 // GetIndexOk returns a tuple with the Index field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetIndexOk() (*float32, bool) {
-	if o == nil || IsNil(o.Index) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Index, true
+	return o.Index.Get(), o.Index.IsSet()
 }
 
 // HasIndex returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) HasIndex() bool {
-	if o != nil && !IsNil(o.Index) {
+	if o != nil && o.Index.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIndex gets a reference to the given float32 and assigns it to the Index field.
+// SetIndex gets a reference to the given NullableFloat32 and assigns it to the Index field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetIndex(v float32) {
-	o.Index = &v
+	o.Index.Set(&v)
+}
+// SetIndexNil sets the value for Index to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetIndexNil() {
+	o.Index.Set(nil)
 }
 
-// GetPlanId returns the PlanId field value if set, zero value otherwise.
+// UnsetIndex ensures that no value is present for Index, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) UnsetIndex() {
+	o.Index.Unset()
+}
+
+// GetPlanId returns the PlanId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanId() string {
-	if o == nil || IsNil(o.PlanId) {
+	if o == nil || IsNil(o.PlanId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PlanId
+	return *o.PlanId.Get()
 }
 
 // GetPlanIdOk returns a tuple with the PlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PlanId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PlanId, true
+	return o.PlanId.Get(), o.PlanId.IsSet()
 }
 
 // HasPlanId returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) HasPlanId() bool {
-	if o != nil && !IsNil(o.PlanId) {
+	if o != nil && o.PlanId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPlanId gets a reference to the given string and assigns it to the PlanId field.
+// SetPlanId gets a reference to the given NullableString and assigns it to the PlanId field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanId(v string) {
-	o.PlanId = &v
+	o.PlanId.Set(&v)
+}
+// SetPlanIdNil sets the value for PlanId to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanIdNil() {
+	o.PlanId.Set(nil)
 }
 
-// GetPlanUId returns the PlanUId field value if set, zero value otherwise.
+// UnsetPlanId ensures that no value is present for PlanId, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) UnsetPlanId() {
+	o.PlanId.Unset()
+}
+
+// GetPlanUId returns the PlanUId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanUId() string {
-	if o == nil || IsNil(o.PlanUId) {
+	if o == nil || IsNil(o.PlanUId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PlanUId
+	return *o.PlanUId.Get()
 }
 
 // GetPlanUIdOk returns a tuple with the PlanUId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanUIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PlanUId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PlanUId, true
+	return o.PlanUId.Get(), o.PlanUId.IsSet()
 }
 
 // HasPlanUId returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) HasPlanUId() bool {
-	if o != nil && !IsNil(o.PlanUId) {
+	if o != nil && o.PlanUId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPlanUId gets a reference to the given string and assigns it to the PlanUId field.
+// SetPlanUId gets a reference to the given NullableString and assigns it to the PlanUId field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanUId(v string) {
-	o.PlanUId = &v
+	o.PlanUId.Set(&v)
+}
+// SetPlanUIdNil sets the value for PlanUId to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanUIdNil() {
+	o.PlanUId.Set(nil)
 }
 
-// GetPlanName returns the PlanName field value if set, zero value otherwise.
+// UnsetPlanUId ensures that no value is present for PlanUId, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) UnsetPlanUId() {
+	o.PlanUId.Unset()
+}
+
+// GetPlanName returns the PlanName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanName() string {
-	if o == nil || IsNil(o.PlanName) {
+	if o == nil || IsNil(o.PlanName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PlanName
+	return *o.PlanName.Get()
 }
 
 // GetPlanNameOk returns a tuple with the PlanName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanNameOk() (*string, bool) {
-	if o == nil || IsNil(o.PlanName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PlanName, true
+	return o.PlanName.Get(), o.PlanName.IsSet()
 }
 
 // HasPlanName returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) HasPlanName() bool {
-	if o != nil && !IsNil(o.PlanName) {
+	if o != nil && o.PlanName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPlanName gets a reference to the given string and assigns it to the PlanName field.
+// SetPlanName gets a reference to the given NullableString and assigns it to the PlanName field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanName(v string) {
-	o.PlanName = &v
+	o.PlanName.Set(&v)
+}
+// SetPlanNameNil sets the value for PlanName to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanNameNil() {
+	o.PlanName.Set(nil)
 }
 
-// GetPlanDescription returns the PlanDescription field value if set, zero value otherwise.
+// UnsetPlanName ensures that no value is present for PlanName, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) UnsetPlanName() {
+	o.PlanName.Unset()
+}
+
+// GetPlanDescription returns the PlanDescription field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanDescription() string {
-	if o == nil || IsNil(o.PlanDescription) {
+	if o == nil || IsNil(o.PlanDescription.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PlanDescription
+	return *o.PlanDescription.Get()
 }
 
 // GetPlanDescriptionOk returns a tuple with the PlanDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.PlanDescription) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PlanDescription, true
+	return o.PlanDescription.Get(), o.PlanDescription.IsSet()
 }
 
 // HasPlanDescription returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) HasPlanDescription() bool {
-	if o != nil && !IsNil(o.PlanDescription) {
+	if o != nil && o.PlanDescription.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPlanDescription gets a reference to the given string and assigns it to the PlanDescription field.
+// SetPlanDescription gets a reference to the given NullableString and assigns it to the PlanDescription field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanDescription(v string) {
-	o.PlanDescription = &v
+	o.PlanDescription.Set(&v)
+}
+// SetPlanDescriptionNil sets the value for PlanDescription to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanDescriptionNil() {
+	o.PlanDescription.Set(nil)
+}
+
+// UnsetPlanDescription ensures that no value is present for PlanDescription, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) UnsetPlanDescription() {
+	o.PlanDescription.Unset()
 }
 
 // GetGroups returns the Groups field value if set, zero value otherwise.
@@ -348,20 +398,20 @@ func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInner) MarshalJSON() (
 
 func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Index) {
-		toSerialize["index"] = o.Index
+	if o.Index.IsSet() {
+		toSerialize["index"] = o.Index.Get()
 	}
-	if !IsNil(o.PlanId) {
-		toSerialize["planId"] = o.PlanId
+	if o.PlanId.IsSet() {
+		toSerialize["planId"] = o.PlanId.Get()
 	}
-	if !IsNil(o.PlanUId) {
-		toSerialize["planUId"] = o.PlanUId
+	if o.PlanUId.IsSet() {
+		toSerialize["planUId"] = o.PlanUId.Get()
 	}
-	if !IsNil(o.PlanName) {
-		toSerialize["planName"] = o.PlanName
+	if o.PlanName.IsSet() {
+		toSerialize["planName"] = o.PlanName.Get()
 	}
-	if !IsNil(o.PlanDescription) {
-		toSerialize["planDescription"] = o.PlanDescription
+	if o.PlanDescription.IsSet() {
+		toSerialize["planDescription"] = o.PlanDescription.Get()
 	}
 	if !IsNil(o.Groups) {
 		toSerialize["groups"] = o.Groups

@@ -20,19 +20,19 @@ var _ MappedNullable = &PriceAndAvailabilityResponseInnerSubscriptionPriceInnerO
 // PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner struct for PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner
 type PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner struct {
 	// Name of the type of pricing.
-	Name *string `json:"name,omitempty"`
+	Name NullableString `json:"name,omitempty"`
 	// Quantity of the line item.
-	Quantity *string `json:"quantity,omitempty"`
+	Quantity NullableString `json:"quantity,omitempty"`
 	// Manufacturer Suggested Retail Price.
-	Msrp *float32 `json:"msrp,omitempty"`
+	Msrp NullableFloat32 `json:"msrp,omitempty"`
 	// The unit price of the line item.
-	UnitPrice *float32 `json:"unitPrice,omitempty"`
+	UnitPrice NullableFloat32 `json:"unitPrice,omitempty"`
 	// Reseller’s margin percentage
-	Margin *float32 `json:"margin,omitempty"`
+	Margin NullableFloat32 `json:"margin,omitempty"`
 	// The 3-digit ISO currency code.
-	CurrencyCode *string `json:"currencyCode,omitempty"`
+	CurrencyCode NullableString `json:"currencyCode,omitempty"`
 	// The subscription period of the line item.
-	SubscriptionPeriod *string `json:"subscriptionPeriod,omitempty"`
+	SubscriptionPeriod NullableString `json:"subscriptionPeriod,omitempty"`
 }
 
 // NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner instantiates a new PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner object
@@ -52,228 +52,298 @@ func NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResou
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetName() string {
-	if o == nil || IsNil(o.Name) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Name
+	return *o.Name.Get()
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Name, true
+	return o.Name.Get(), o.Name.IsSet()
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) HasName() bool {
-	if o != nil && !IsNil(o.Name) {
+	if o != nil && o.Name.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName gets a reference to the given NullableString and assigns it to the Name field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetName(v string) {
-	o.Name = &v
+	o.Name.Set(&v)
+}
+// SetNameNil sets the value for Name to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetNameNil() {
+	o.Name.Set(nil)
 }
 
-// GetQuantity returns the Quantity field value if set, zero value otherwise.
+// UnsetName ensures that no value is present for Name, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) UnsetName() {
+	o.Name.Unset()
+}
+
+// GetQuantity returns the Quantity field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetQuantity() string {
-	if o == nil || IsNil(o.Quantity) {
+	if o == nil || IsNil(o.Quantity.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Quantity
+	return *o.Quantity.Get()
 }
 
 // GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetQuantityOk() (*string, bool) {
-	if o == nil || IsNil(o.Quantity) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Quantity, true
+	return o.Quantity.Get(), o.Quantity.IsSet()
 }
 
 // HasQuantity returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) HasQuantity() bool {
-	if o != nil && !IsNil(o.Quantity) {
+	if o != nil && o.Quantity.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetQuantity gets a reference to the given string and assigns it to the Quantity field.
+// SetQuantity gets a reference to the given NullableString and assigns it to the Quantity field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetQuantity(v string) {
-	o.Quantity = &v
+	o.Quantity.Set(&v)
+}
+// SetQuantityNil sets the value for Quantity to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetQuantityNil() {
+	o.Quantity.Set(nil)
 }
 
-// GetMsrp returns the Msrp field value if set, zero value otherwise.
+// UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) UnsetQuantity() {
+	o.Quantity.Unset()
+}
+
+// GetMsrp returns the Msrp field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetMsrp() float32 {
-	if o == nil || IsNil(o.Msrp) {
+	if o == nil || IsNil(o.Msrp.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.Msrp
+	return *o.Msrp.Get()
 }
 
 // GetMsrpOk returns a tuple with the Msrp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetMsrpOk() (*float32, bool) {
-	if o == nil || IsNil(o.Msrp) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Msrp, true
+	return o.Msrp.Get(), o.Msrp.IsSet()
 }
 
 // HasMsrp returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) HasMsrp() bool {
-	if o != nil && !IsNil(o.Msrp) {
+	if o != nil && o.Msrp.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMsrp gets a reference to the given float32 and assigns it to the Msrp field.
+// SetMsrp gets a reference to the given NullableFloat32 and assigns it to the Msrp field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetMsrp(v float32) {
-	o.Msrp = &v
+	o.Msrp.Set(&v)
+}
+// SetMsrpNil sets the value for Msrp to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetMsrpNil() {
+	o.Msrp.Set(nil)
 }
 
-// GetUnitPrice returns the UnitPrice field value if set, zero value otherwise.
+// UnsetMsrp ensures that no value is present for Msrp, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) UnsetMsrp() {
+	o.Msrp.Unset()
+}
+
+// GetUnitPrice returns the UnitPrice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetUnitPrice() float32 {
-	if o == nil || IsNil(o.UnitPrice) {
+	if o == nil || IsNil(o.UnitPrice.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.UnitPrice
+	return *o.UnitPrice.Get()
 }
 
 // GetUnitPriceOk returns a tuple with the UnitPrice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetUnitPriceOk() (*float32, bool) {
-	if o == nil || IsNil(o.UnitPrice) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UnitPrice, true
+	return o.UnitPrice.Get(), o.UnitPrice.IsSet()
 }
 
 // HasUnitPrice returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) HasUnitPrice() bool {
-	if o != nil && !IsNil(o.UnitPrice) {
+	if o != nil && o.UnitPrice.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUnitPrice gets a reference to the given float32 and assigns it to the UnitPrice field.
+// SetUnitPrice gets a reference to the given NullableFloat32 and assigns it to the UnitPrice field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetUnitPrice(v float32) {
-	o.UnitPrice = &v
+	o.UnitPrice.Set(&v)
+}
+// SetUnitPriceNil sets the value for UnitPrice to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetUnitPriceNil() {
+	o.UnitPrice.Set(nil)
 }
 
-// GetMargin returns the Margin field value if set, zero value otherwise.
+// UnsetUnitPrice ensures that no value is present for UnitPrice, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) UnsetUnitPrice() {
+	o.UnitPrice.Unset()
+}
+
+// GetMargin returns the Margin field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetMargin() float32 {
-	if o == nil || IsNil(o.Margin) {
+	if o == nil || IsNil(o.Margin.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.Margin
+	return *o.Margin.Get()
 }
 
 // GetMarginOk returns a tuple with the Margin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetMarginOk() (*float32, bool) {
-	if o == nil || IsNil(o.Margin) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Margin, true
+	return o.Margin.Get(), o.Margin.IsSet()
 }
 
 // HasMargin returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) HasMargin() bool {
-	if o != nil && !IsNil(o.Margin) {
+	if o != nil && o.Margin.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMargin gets a reference to the given float32 and assigns it to the Margin field.
+// SetMargin gets a reference to the given NullableFloat32 and assigns it to the Margin field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetMargin(v float32) {
-	o.Margin = &v
+	o.Margin.Set(&v)
+}
+// SetMarginNil sets the value for Margin to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetMarginNil() {
+	o.Margin.Set(nil)
 }
 
-// GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise.
+// UnsetMargin ensures that no value is present for Margin, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) UnsetMargin() {
+	o.Margin.Unset()
+}
+
+// GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetCurrencyCode() string {
-	if o == nil || IsNil(o.CurrencyCode) {
+	if o == nil || IsNil(o.CurrencyCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CurrencyCode
+	return *o.CurrencyCode.Get()
 }
 
 // GetCurrencyCodeOk returns a tuple with the CurrencyCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetCurrencyCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.CurrencyCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CurrencyCode, true
+	return o.CurrencyCode.Get(), o.CurrencyCode.IsSet()
 }
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) HasCurrencyCode() bool {
-	if o != nil && !IsNil(o.CurrencyCode) {
+	if o != nil && o.CurrencyCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCurrencyCode gets a reference to the given string and assigns it to the CurrencyCode field.
+// SetCurrencyCode gets a reference to the given NullableString and assigns it to the CurrencyCode field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetCurrencyCode(v string) {
-	o.CurrencyCode = &v
+	o.CurrencyCode.Set(&v)
+}
+// SetCurrencyCodeNil sets the value for CurrencyCode to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetCurrencyCodeNil() {
+	o.CurrencyCode.Set(nil)
 }
 
-// GetSubscriptionPeriod returns the SubscriptionPeriod field value if set, zero value otherwise.
+// UnsetCurrencyCode ensures that no value is present for CurrencyCode, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) UnsetCurrencyCode() {
+	o.CurrencyCode.Unset()
+}
+
+// GetSubscriptionPeriod returns the SubscriptionPeriod field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetSubscriptionPeriod() string {
-	if o == nil || IsNil(o.SubscriptionPeriod) {
+	if o == nil || IsNil(o.SubscriptionPeriod.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SubscriptionPeriod
+	return *o.SubscriptionPeriod.Get()
 }
 
 // GetSubscriptionPeriodOk returns a tuple with the SubscriptionPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetSubscriptionPeriodOk() (*string, bool) {
-	if o == nil || IsNil(o.SubscriptionPeriod) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SubscriptionPeriod, true
+	return o.SubscriptionPeriod.Get(), o.SubscriptionPeriod.IsSet()
 }
 
 // HasSubscriptionPeriod returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) HasSubscriptionPeriod() bool {
-	if o != nil && !IsNil(o.SubscriptionPeriod) {
+	if o != nil && o.SubscriptionPeriod.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSubscriptionPeriod gets a reference to the given string and assigns it to the SubscriptionPeriod field.
+// SetSubscriptionPeriod gets a reference to the given NullableString and assigns it to the SubscriptionPeriod field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetSubscriptionPeriod(v string) {
-	o.SubscriptionPeriod = &v
+	o.SubscriptionPeriod.Set(&v)
+}
+// SetSubscriptionPeriodNil sets the value for SubscriptionPeriod to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetSubscriptionPeriodNil() {
+	o.SubscriptionPeriod.Set(nil)
+}
+
+// UnsetSubscriptionPeriod ensures that no value is present for SubscriptionPeriod, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) UnsetSubscriptionPeriod() {
+	o.SubscriptionPeriod.Unset()
 }
 
 func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) MarshalJSON() ([]byte, error) {
@@ -286,26 +356,26 @@ func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResou
 
 func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
+	if o.Name.IsSet() {
+		toSerialize["name"] = o.Name.Get()
 	}
-	if !IsNil(o.Quantity) {
-		toSerialize["quantity"] = o.Quantity
+	if o.Quantity.IsSet() {
+		toSerialize["quantity"] = o.Quantity.Get()
 	}
-	if !IsNil(o.Msrp) {
-		toSerialize["msrp"] = o.Msrp
+	if o.Msrp.IsSet() {
+		toSerialize["msrp"] = o.Msrp.Get()
 	}
-	if !IsNil(o.UnitPrice) {
-		toSerialize["unitPrice"] = o.UnitPrice
+	if o.UnitPrice.IsSet() {
+		toSerialize["unitPrice"] = o.UnitPrice.Get()
 	}
-	if !IsNil(o.Margin) {
-		toSerialize["margin"] = o.Margin
+	if o.Margin.IsSet() {
+		toSerialize["margin"] = o.Margin.Get()
 	}
-	if !IsNil(o.CurrencyCode) {
-		toSerialize["currencyCode"] = o.CurrencyCode
+	if o.CurrencyCode.IsSet() {
+		toSerialize["currencyCode"] = o.CurrencyCode.Get()
 	}
-	if !IsNil(o.SubscriptionPeriod) {
-		toSerialize["subscriptionPeriod"] = o.SubscriptionPeriod
+	if o.SubscriptionPeriod.IsSet() {
+		toSerialize["subscriptionPeriod"] = o.SubscriptionPeriod.Get()
 	}
 	return toSerialize, nil
 }

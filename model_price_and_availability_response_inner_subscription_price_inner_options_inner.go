@@ -19,21 +19,21 @@ var _ MappedNullable = &PriceAndAvailabilityResponseInnerSubscriptionPriceInnerO
 
 // PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner struct for PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner
 type PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner struct {
-	ResourceId *string `json:"resourceId,omitempty"`
+	ResourceId NullableString `json:"resourceId,omitempty"`
 	// The resource id of the subscription product.
-	ResourceUId *string `json:"resourceUId,omitempty"`
+	ResourceUId NullableString `json:"resourceUId,omitempty"`
 	// The name of the resource of the subscription product.
-	ResourceName *string `json:"resourceName,omitempty"`
+	ResourceName NullableString `json:"resourceName,omitempty"`
 	// Vendor’s part number for the subscription product.
-	VendorPartNumber *string `json:"vendorPartNumber,omitempty"`
+	VendorPartNumber NullableString `json:"vendorPartNumber,omitempty"`
 	// Minimum unit needs to purchased.
-	MinUnits *float32 `json:"minUnits,omitempty"`
+	MinUnits NullableFloat32 `json:"minUnits,omitempty"`
 	// Maximum unit available for a purchase.
-	MaxUnits *float32 `json:"maxUnits,omitempty"`
+	MaxUnits NullableFloat32 `json:"maxUnits,omitempty"`
 	// Recurring price model
-	Recurringpricemodel *string `json:"recurringpricemodel,omitempty"`
+	Recurringpricemodel NullableString `json:"recurringpricemodel,omitempty"`
 	// Unit of mesaure for a subscription product.
-	UnitOfMeasure *string `json:"unitOfMeasure,omitempty"`
+	UnitOfMeasure NullableString `json:"unitOfMeasure,omitempty"`
 	ResourcePricing []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner `json:"resourcePricing,omitempty"`
 	Discounts []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInner `json:"discounts,omitempty"`
 	Fees []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerFeesInner `json:"fees,omitempty"`
@@ -56,260 +56,340 @@ func NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerWithD
 	return &this
 }
 
-// GetResourceId returns the ResourceId field value if set, zero value otherwise.
+// GetResourceId returns the ResourceId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetResourceId() string {
-	if o == nil || IsNil(o.ResourceId) {
+	if o == nil || IsNil(o.ResourceId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResourceId
+	return *o.ResourceId.Get()
 }
 
 // GetResourceIdOk returns a tuple with the ResourceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetResourceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourceId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResourceId, true
+	return o.ResourceId.Get(), o.ResourceId.IsSet()
 }
 
 // HasResourceId returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) HasResourceId() bool {
-	if o != nil && !IsNil(o.ResourceId) {
+	if o != nil && o.ResourceId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResourceId gets a reference to the given string and assigns it to the ResourceId field.
+// SetResourceId gets a reference to the given NullableString and assigns it to the ResourceId field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetResourceId(v string) {
-	o.ResourceId = &v
+	o.ResourceId.Set(&v)
+}
+// SetResourceIdNil sets the value for ResourceId to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetResourceIdNil() {
+	o.ResourceId.Set(nil)
 }
 
-// GetResourceUId returns the ResourceUId field value if set, zero value otherwise.
+// UnsetResourceId ensures that no value is present for ResourceId, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) UnsetResourceId() {
+	o.ResourceId.Unset()
+}
+
+// GetResourceUId returns the ResourceUId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetResourceUId() string {
-	if o == nil || IsNil(o.ResourceUId) {
+	if o == nil || IsNil(o.ResourceUId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResourceUId
+	return *o.ResourceUId.Get()
 }
 
 // GetResourceUIdOk returns a tuple with the ResourceUId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetResourceUIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourceUId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResourceUId, true
+	return o.ResourceUId.Get(), o.ResourceUId.IsSet()
 }
 
 // HasResourceUId returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) HasResourceUId() bool {
-	if o != nil && !IsNil(o.ResourceUId) {
+	if o != nil && o.ResourceUId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResourceUId gets a reference to the given string and assigns it to the ResourceUId field.
+// SetResourceUId gets a reference to the given NullableString and assigns it to the ResourceUId field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetResourceUId(v string) {
-	o.ResourceUId = &v
+	o.ResourceUId.Set(&v)
+}
+// SetResourceUIdNil sets the value for ResourceUId to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetResourceUIdNil() {
+	o.ResourceUId.Set(nil)
 }
 
-// GetResourceName returns the ResourceName field value if set, zero value otherwise.
+// UnsetResourceUId ensures that no value is present for ResourceUId, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) UnsetResourceUId() {
+	o.ResourceUId.Unset()
+}
+
+// GetResourceName returns the ResourceName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetResourceName() string {
-	if o == nil || IsNil(o.ResourceName) {
+	if o == nil || IsNil(o.ResourceName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ResourceName
+	return *o.ResourceName.Get()
 }
 
 // GetResourceNameOk returns a tuple with the ResourceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetResourceNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourceName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ResourceName, true
+	return o.ResourceName.Get(), o.ResourceName.IsSet()
 }
 
 // HasResourceName returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) HasResourceName() bool {
-	if o != nil && !IsNil(o.ResourceName) {
+	if o != nil && o.ResourceName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResourceName gets a reference to the given string and assigns it to the ResourceName field.
+// SetResourceName gets a reference to the given NullableString and assigns it to the ResourceName field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetResourceName(v string) {
-	o.ResourceName = &v
+	o.ResourceName.Set(&v)
+}
+// SetResourceNameNil sets the value for ResourceName to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetResourceNameNil() {
+	o.ResourceName.Set(nil)
 }
 
-// GetVendorPartNumber returns the VendorPartNumber field value if set, zero value otherwise.
+// UnsetResourceName ensures that no value is present for ResourceName, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) UnsetResourceName() {
+	o.ResourceName.Unset()
+}
+
+// GetVendorPartNumber returns the VendorPartNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetVendorPartNumber() string {
-	if o == nil || IsNil(o.VendorPartNumber) {
+	if o == nil || IsNil(o.VendorPartNumber.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.VendorPartNumber
+	return *o.VendorPartNumber.Get()
 }
 
 // GetVendorPartNumberOk returns a tuple with the VendorPartNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetVendorPartNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.VendorPartNumber) {
+	if o == nil {
 		return nil, false
 	}
-	return o.VendorPartNumber, true
+	return o.VendorPartNumber.Get(), o.VendorPartNumber.IsSet()
 }
 
 // HasVendorPartNumber returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) HasVendorPartNumber() bool {
-	if o != nil && !IsNil(o.VendorPartNumber) {
+	if o != nil && o.VendorPartNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetVendorPartNumber gets a reference to the given string and assigns it to the VendorPartNumber field.
+// SetVendorPartNumber gets a reference to the given NullableString and assigns it to the VendorPartNumber field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetVendorPartNumber(v string) {
-	o.VendorPartNumber = &v
+	o.VendorPartNumber.Set(&v)
+}
+// SetVendorPartNumberNil sets the value for VendorPartNumber to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetVendorPartNumberNil() {
+	o.VendorPartNumber.Set(nil)
 }
 
-// GetMinUnits returns the MinUnits field value if set, zero value otherwise.
+// UnsetVendorPartNumber ensures that no value is present for VendorPartNumber, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) UnsetVendorPartNumber() {
+	o.VendorPartNumber.Unset()
+}
+
+// GetMinUnits returns the MinUnits field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMinUnits() float32 {
-	if o == nil || IsNil(o.MinUnits) {
+	if o == nil || IsNil(o.MinUnits.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.MinUnits
+	return *o.MinUnits.Get()
 }
 
 // GetMinUnitsOk returns a tuple with the MinUnits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMinUnitsOk() (*float32, bool) {
-	if o == nil || IsNil(o.MinUnits) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MinUnits, true
+	return o.MinUnits.Get(), o.MinUnits.IsSet()
 }
 
 // HasMinUnits returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) HasMinUnits() bool {
-	if o != nil && !IsNil(o.MinUnits) {
+	if o != nil && o.MinUnits.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMinUnits gets a reference to the given float32 and assigns it to the MinUnits field.
+// SetMinUnits gets a reference to the given NullableFloat32 and assigns it to the MinUnits field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetMinUnits(v float32) {
-	o.MinUnits = &v
+	o.MinUnits.Set(&v)
+}
+// SetMinUnitsNil sets the value for MinUnits to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetMinUnitsNil() {
+	o.MinUnits.Set(nil)
 }
 
-// GetMaxUnits returns the MaxUnits field value if set, zero value otherwise.
+// UnsetMinUnits ensures that no value is present for MinUnits, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) UnsetMinUnits() {
+	o.MinUnits.Unset()
+}
+
+// GetMaxUnits returns the MaxUnits field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMaxUnits() float32 {
-	if o == nil || IsNil(o.MaxUnits) {
+	if o == nil || IsNil(o.MaxUnits.Get()) {
 		var ret float32
 		return ret
 	}
-	return *o.MaxUnits
+	return *o.MaxUnits.Get()
 }
 
 // GetMaxUnitsOk returns a tuple with the MaxUnits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetMaxUnitsOk() (*float32, bool) {
-	if o == nil || IsNil(o.MaxUnits) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxUnits, true
+	return o.MaxUnits.Get(), o.MaxUnits.IsSet()
 }
 
 // HasMaxUnits returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) HasMaxUnits() bool {
-	if o != nil && !IsNil(o.MaxUnits) {
+	if o != nil && o.MaxUnits.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxUnits gets a reference to the given float32 and assigns it to the MaxUnits field.
+// SetMaxUnits gets a reference to the given NullableFloat32 and assigns it to the MaxUnits field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetMaxUnits(v float32) {
-	o.MaxUnits = &v
+	o.MaxUnits.Set(&v)
+}
+// SetMaxUnitsNil sets the value for MaxUnits to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetMaxUnitsNil() {
+	o.MaxUnits.Set(nil)
 }
 
-// GetRecurringpricemodel returns the Recurringpricemodel field value if set, zero value otherwise.
+// UnsetMaxUnits ensures that no value is present for MaxUnits, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) UnsetMaxUnits() {
+	o.MaxUnits.Unset()
+}
+
+// GetRecurringpricemodel returns the Recurringpricemodel field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetRecurringpricemodel() string {
-	if o == nil || IsNil(o.Recurringpricemodel) {
+	if o == nil || IsNil(o.Recurringpricemodel.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Recurringpricemodel
+	return *o.Recurringpricemodel.Get()
 }
 
 // GetRecurringpricemodelOk returns a tuple with the Recurringpricemodel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetRecurringpricemodelOk() (*string, bool) {
-	if o == nil || IsNil(o.Recurringpricemodel) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Recurringpricemodel, true
+	return o.Recurringpricemodel.Get(), o.Recurringpricemodel.IsSet()
 }
 
 // HasRecurringpricemodel returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) HasRecurringpricemodel() bool {
-	if o != nil && !IsNil(o.Recurringpricemodel) {
+	if o != nil && o.Recurringpricemodel.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRecurringpricemodel gets a reference to the given string and assigns it to the Recurringpricemodel field.
+// SetRecurringpricemodel gets a reference to the given NullableString and assigns it to the Recurringpricemodel field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetRecurringpricemodel(v string) {
-	o.Recurringpricemodel = &v
+	o.Recurringpricemodel.Set(&v)
+}
+// SetRecurringpricemodelNil sets the value for Recurringpricemodel to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetRecurringpricemodelNil() {
+	o.Recurringpricemodel.Set(nil)
 }
 
-// GetUnitOfMeasure returns the UnitOfMeasure field value if set, zero value otherwise.
+// UnsetRecurringpricemodel ensures that no value is present for Recurringpricemodel, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) UnsetRecurringpricemodel() {
+	o.Recurringpricemodel.Unset()
+}
+
+// GetUnitOfMeasure returns the UnitOfMeasure field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetUnitOfMeasure() string {
-	if o == nil || IsNil(o.UnitOfMeasure) {
+	if o == nil || IsNil(o.UnitOfMeasure.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.UnitOfMeasure
+	return *o.UnitOfMeasure.Get()
 }
 
 // GetUnitOfMeasureOk returns a tuple with the UnitOfMeasure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) GetUnitOfMeasureOk() (*string, bool) {
-	if o == nil || IsNil(o.UnitOfMeasure) {
+	if o == nil {
 		return nil, false
 	}
-	return o.UnitOfMeasure, true
+	return o.UnitOfMeasure.Get(), o.UnitOfMeasure.IsSet()
 }
 
 // HasUnitOfMeasure returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) HasUnitOfMeasure() bool {
-	if o != nil && !IsNil(o.UnitOfMeasure) {
+	if o != nil && o.UnitOfMeasure.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUnitOfMeasure gets a reference to the given string and assigns it to the UnitOfMeasure field.
+// SetUnitOfMeasure gets a reference to the given NullableString and assigns it to the UnitOfMeasure field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetUnitOfMeasure(v string) {
-	o.UnitOfMeasure = &v
+	o.UnitOfMeasure.Set(&v)
+}
+// SetUnitOfMeasureNil sets the value for UnitOfMeasure to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) SetUnitOfMeasureNil() {
+	o.UnitOfMeasure.Set(nil)
+}
+
+// UnsetUnitOfMeasure ensures that no value is present for UnitOfMeasure, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) UnsetUnitOfMeasure() {
+	o.UnitOfMeasure.Unset()
 }
 
 // GetResourcePricing returns the ResourcePricing field value if set, zero value otherwise.
@@ -418,29 +498,29 @@ func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) Mar
 
 func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ResourceId) {
-		toSerialize["resourceId"] = o.ResourceId
+	if o.ResourceId.IsSet() {
+		toSerialize["resourceId"] = o.ResourceId.Get()
 	}
-	if !IsNil(o.ResourceUId) {
-		toSerialize["resourceUId"] = o.ResourceUId
+	if o.ResourceUId.IsSet() {
+		toSerialize["resourceUId"] = o.ResourceUId.Get()
 	}
-	if !IsNil(o.ResourceName) {
-		toSerialize["resourceName"] = o.ResourceName
+	if o.ResourceName.IsSet() {
+		toSerialize["resourceName"] = o.ResourceName.Get()
 	}
-	if !IsNil(o.VendorPartNumber) {
-		toSerialize["vendorPartNumber"] = o.VendorPartNumber
+	if o.VendorPartNumber.IsSet() {
+		toSerialize["vendorPartNumber"] = o.VendorPartNumber.Get()
 	}
-	if !IsNil(o.MinUnits) {
-		toSerialize["minUnits"] = o.MinUnits
+	if o.MinUnits.IsSet() {
+		toSerialize["minUnits"] = o.MinUnits.Get()
 	}
-	if !IsNil(o.MaxUnits) {
-		toSerialize["maxUnits"] = o.MaxUnits
+	if o.MaxUnits.IsSet() {
+		toSerialize["maxUnits"] = o.MaxUnits.Get()
 	}
-	if !IsNil(o.Recurringpricemodel) {
-		toSerialize["recurringpricemodel"] = o.Recurringpricemodel
+	if o.Recurringpricemodel.IsSet() {
+		toSerialize["recurringpricemodel"] = o.Recurringpricemodel.Get()
 	}
-	if !IsNil(o.UnitOfMeasure) {
-		toSerialize["unitOfMeasure"] = o.UnitOfMeasure
+	if o.UnitOfMeasure.IsSet() {
+		toSerialize["unitOfMeasure"] = o.UnitOfMeasure.Get()
 	}
 	if !IsNil(o.ResourcePricing) {
 		toSerialize["resourcePricing"] = o.ResourcePricing

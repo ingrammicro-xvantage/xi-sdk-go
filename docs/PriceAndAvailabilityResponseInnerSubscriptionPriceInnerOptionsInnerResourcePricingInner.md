@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** | Name of the type of pricing. | [optional] 
-**Quantity** | Pointer to **string** | Quantity of the line item. | [optional] 
-**Msrp** | Pointer to **float32** | Manufacturer Suggested Retail Price. | [optional] 
-**UnitPrice** | Pointer to **float32** | The unit price of the line item. | [optional] 
-**Margin** | Pointer to **float32** | Reseller’s margin percentage | [optional] 
-**CurrencyCode** | Pointer to **string** | The 3-digit ISO currency code. | [optional] 
-**SubscriptionPeriod** | Pointer to **string** | The subscription period of the line item. | [optional] 
+**Name** | Pointer to **NullableString** | Name of the type of pricing. | [optional] 
+**Quantity** | Pointer to **NullableString** | Quantity of the line item. | [optional] 
+**Msrp** | Pointer to **NullableFloat32** | Manufacturer Suggested Retail Price. | [optional] 
+**UnitPrice** | Pointer to **NullableFloat32** | The unit price of the line item. | [optional] 
+**Margin** | Pointer to **NullableFloat32** | Reseller’s margin percentage | [optional] 
+**CurrencyCode** | Pointer to **NullableString** | The 3-digit ISO currency code. | [optional] 
+**SubscriptionPeriod** | Pointer to **NullableString** | The subscription period of the line item. | [optional] 
 
 ## Methods
 
@@ -56,6 +56,16 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### SetNameNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetNameNil(b bool)`
+
+ SetNameNil sets the value for Name to be an explicit nil
+
+### UnsetName
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) UnsetName()`
+
+UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetQuantity
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetQuantity() string`
@@ -81,6 +91,16 @@ SetQuantity sets Quantity field to given value.
 
 HasQuantity returns a boolean if a field has been set.
 
+### SetQuantityNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetQuantityNil(b bool)`
+
+ SetQuantityNil sets the value for Quantity to be an explicit nil
+
+### UnsetQuantity
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) UnsetQuantity()`
+
+UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
 ### GetMsrp
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetMsrp() float32`
@@ -106,6 +126,16 @@ SetMsrp sets Msrp field to given value.
 
 HasMsrp returns a boolean if a field has been set.
 
+### SetMsrpNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetMsrpNil(b bool)`
+
+ SetMsrpNil sets the value for Msrp to be an explicit nil
+
+### UnsetMsrp
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) UnsetMsrp()`
+
+UnsetMsrp ensures that no value is present for Msrp, not even an explicit nil
 ### GetUnitPrice
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetUnitPrice() float32`
@@ -131,6 +161,16 @@ SetUnitPrice sets UnitPrice field to given value.
 
 HasUnitPrice returns a boolean if a field has been set.
 
+### SetUnitPriceNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetUnitPriceNil(b bool)`
+
+ SetUnitPriceNil sets the value for UnitPrice to be an explicit nil
+
+### UnsetUnitPrice
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) UnsetUnitPrice()`
+
+UnsetUnitPrice ensures that no value is present for UnitPrice, not even an explicit nil
 ### GetMargin
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetMargin() float32`
@@ -156,6 +196,16 @@ SetMargin sets Margin field to given value.
 
 HasMargin returns a boolean if a field has been set.
 
+### SetMarginNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetMarginNil(b bool)`
+
+ SetMarginNil sets the value for Margin to be an explicit nil
+
+### UnsetMargin
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) UnsetMargin()`
+
+UnsetMargin ensures that no value is present for Margin, not even an explicit nil
 ### GetCurrencyCode
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetCurrencyCode() string`
@@ -181,6 +231,16 @@ SetCurrencyCode sets CurrencyCode field to given value.
 
 HasCurrencyCode returns a boolean if a field has been set.
 
+### SetCurrencyCodeNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetCurrencyCodeNil(b bool)`
+
+ SetCurrencyCodeNil sets the value for CurrencyCode to be an explicit nil
+
+### UnsetCurrencyCode
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) UnsetCurrencyCode()`
+
+UnsetCurrencyCode ensures that no value is present for CurrencyCode, not even an explicit nil
 ### GetSubscriptionPeriod
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) GetSubscriptionPeriod() string`
@@ -206,6 +266,16 @@ SetSubscriptionPeriod sets SubscriptionPeriod field to given value.
 
 HasSubscriptionPeriod returns a boolean if a field has been set.
 
+### SetSubscriptionPeriodNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) SetSubscriptionPeriodNil(b bool)`
+
+ SetSubscriptionPeriodNil sets the value for SubscriptionPeriod to be an explicit nil
+
+### UnsetSubscriptionPeriod
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerResourcePricingInner) UnsetSubscriptionPeriod()`
+
+UnsetSubscriptionPeriod ensures that no value is present for SubscriptionPeriod, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -20,9 +20,9 @@ var _ MappedNullable = &PriceAndAvailabilityResponseInnerSubscriptionPriceInnerS
 // PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner struct for PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner
 type PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner struct {
 	// The unit of the subscription period.
-	SubscriptionPeriodUnit *string `json:"subscriptionPeriodUnit,omitempty"`
+	SubscriptionPeriodUnit NullableString `json:"subscriptionPeriodUnit,omitempty"`
 	// The subscription period value.
-	SubscriptionPeriod *string `json:"subscriptionPeriod,omitempty"`
+	SubscriptionPeriod NullableString `json:"subscriptionPeriod,omitempty"`
 }
 
 // NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner instantiates a new PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner object
@@ -42,68 +42,88 @@ func NewPriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPerio
 	return &this
 }
 
-// GetSubscriptionPeriodUnit returns the SubscriptionPeriodUnit field value if set, zero value otherwise.
+// GetSubscriptionPeriodUnit returns the SubscriptionPeriodUnit field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) GetSubscriptionPeriodUnit() string {
-	if o == nil || IsNil(o.SubscriptionPeriodUnit) {
+	if o == nil || IsNil(o.SubscriptionPeriodUnit.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SubscriptionPeriodUnit
+	return *o.SubscriptionPeriodUnit.Get()
 }
 
 // GetSubscriptionPeriodUnitOk returns a tuple with the SubscriptionPeriodUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) GetSubscriptionPeriodUnitOk() (*string, bool) {
-	if o == nil || IsNil(o.SubscriptionPeriodUnit) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SubscriptionPeriodUnit, true
+	return o.SubscriptionPeriodUnit.Get(), o.SubscriptionPeriodUnit.IsSet()
 }
 
 // HasSubscriptionPeriodUnit returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) HasSubscriptionPeriodUnit() bool {
-	if o != nil && !IsNil(o.SubscriptionPeriodUnit) {
+	if o != nil && o.SubscriptionPeriodUnit.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSubscriptionPeriodUnit gets a reference to the given string and assigns it to the SubscriptionPeriodUnit field.
+// SetSubscriptionPeriodUnit gets a reference to the given NullableString and assigns it to the SubscriptionPeriodUnit field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) SetSubscriptionPeriodUnit(v string) {
-	o.SubscriptionPeriodUnit = &v
+	o.SubscriptionPeriodUnit.Set(&v)
+}
+// SetSubscriptionPeriodUnitNil sets the value for SubscriptionPeriodUnit to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) SetSubscriptionPeriodUnitNil() {
+	o.SubscriptionPeriodUnit.Set(nil)
 }
 
-// GetSubscriptionPeriod returns the SubscriptionPeriod field value if set, zero value otherwise.
+// UnsetSubscriptionPeriodUnit ensures that no value is present for SubscriptionPeriodUnit, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) UnsetSubscriptionPeriodUnit() {
+	o.SubscriptionPeriodUnit.Unset()
+}
+
+// GetSubscriptionPeriod returns the SubscriptionPeriod field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) GetSubscriptionPeriod() string {
-	if o == nil || IsNil(o.SubscriptionPeriod) {
+	if o == nil || IsNil(o.SubscriptionPeriod.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.SubscriptionPeriod
+	return *o.SubscriptionPeriod.Get()
 }
 
 // GetSubscriptionPeriodOk returns a tuple with the SubscriptionPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) GetSubscriptionPeriodOk() (*string, bool) {
-	if o == nil || IsNil(o.SubscriptionPeriod) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SubscriptionPeriod, true
+	return o.SubscriptionPeriod.Get(), o.SubscriptionPeriod.IsSet()
 }
 
 // HasSubscriptionPeriod returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) HasSubscriptionPeriod() bool {
-	if o != nil && !IsNil(o.SubscriptionPeriod) {
+	if o != nil && o.SubscriptionPeriod.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSubscriptionPeriod gets a reference to the given string and assigns it to the SubscriptionPeriod field.
+// SetSubscriptionPeriod gets a reference to the given NullableString and assigns it to the SubscriptionPeriod field.
 func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) SetSubscriptionPeriod(v string) {
-	o.SubscriptionPeriod = &v
+	o.SubscriptionPeriod.Set(&v)
+}
+// SetSubscriptionPeriodNil sets the value for SubscriptionPeriod to be an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) SetSubscriptionPeriodNil() {
+	o.SubscriptionPeriod.Set(nil)
+}
+
+// UnsetSubscriptionPeriod ensures that no value is present for SubscriptionPeriod, not even an explicit nil
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) UnsetSubscriptionPeriod() {
+	o.SubscriptionPeriod.Unset()
 }
 
 func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) MarshalJSON() ([]byte, error) {
@@ -116,11 +136,11 @@ func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPerio
 
 func (o PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SubscriptionPeriodUnit) {
-		toSerialize["subscriptionPeriodUnit"] = o.SubscriptionPeriodUnit
+	if o.SubscriptionPeriodUnit.IsSet() {
+		toSerialize["subscriptionPeriodUnit"] = o.SubscriptionPeriodUnit.Get()
 	}
-	if !IsNil(o.SubscriptionPeriod) {
-		toSerialize["subscriptionPeriod"] = o.SubscriptionPeriod
+	if o.SubscriptionPeriod.IsSet() {
+		toSerialize["subscriptionPeriod"] = o.SubscriptionPeriod.Get()
 	}
 	return toSerialize, nil
 }

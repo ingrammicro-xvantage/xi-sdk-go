@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Index** | Pointer to **float32** |  | [optional] 
-**PlanId** | Pointer to **string** | Id of the plan. | [optional] 
-**PlanUId** | Pointer to **string** |  | [optional] 
-**PlanName** | Pointer to **string** | Name of the plan. | [optional] 
-**PlanDescription** | Pointer to **string** | The description of the plan. | [optional] 
+**Index** | Pointer to **NullableFloat32** |  | [optional] 
+**PlanId** | Pointer to **NullableString** | Id of the plan. | [optional] 
+**PlanUId** | Pointer to **NullableString** |  | [optional] 
+**PlanName** | Pointer to **NullableString** | Name of the plan. | [optional] 
+**PlanDescription** | Pointer to **NullableString** | The description of the plan. | [optional] 
 **Groups** | Pointer to [**[]PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner**](PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner.md) |  | [optional] 
 **BillingPeriod** | Pointer to [**PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod**](PriceAndAvailabilityResponseInnerSubscriptionPriceInnerBillingPeriod.md) |  | [optional] 
 **SubscriptionPeriod** | Pointer to [**[]PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner**](PriceAndAvailabilityResponseInnerSubscriptionPriceInnerSubscriptionPeriodInner.md) |  | [optional] 
@@ -58,6 +58,16 @@ SetIndex sets Index field to given value.
 
 HasIndex returns a boolean if a field has been set.
 
+### SetIndexNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetIndexNil(b bool)`
+
+ SetIndexNil sets the value for Index to be an explicit nil
+
+### UnsetIndex
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) UnsetIndex()`
+
+UnsetIndex ensures that no value is present for Index, not even an explicit nil
 ### GetPlanId
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanId() string`
@@ -83,6 +93,16 @@ SetPlanId sets PlanId field to given value.
 
 HasPlanId returns a boolean if a field has been set.
 
+### SetPlanIdNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanIdNil(b bool)`
+
+ SetPlanIdNil sets the value for PlanId to be an explicit nil
+
+### UnsetPlanId
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) UnsetPlanId()`
+
+UnsetPlanId ensures that no value is present for PlanId, not even an explicit nil
 ### GetPlanUId
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanUId() string`
@@ -108,6 +128,16 @@ SetPlanUId sets PlanUId field to given value.
 
 HasPlanUId returns a boolean if a field has been set.
 
+### SetPlanUIdNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanUIdNil(b bool)`
+
+ SetPlanUIdNil sets the value for PlanUId to be an explicit nil
+
+### UnsetPlanUId
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) UnsetPlanUId()`
+
+UnsetPlanUId ensures that no value is present for PlanUId, not even an explicit nil
 ### GetPlanName
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanName() string`
@@ -133,6 +163,16 @@ SetPlanName sets PlanName field to given value.
 
 HasPlanName returns a boolean if a field has been set.
 
+### SetPlanNameNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanNameNil(b bool)`
+
+ SetPlanNameNil sets the value for PlanName to be an explicit nil
+
+### UnsetPlanName
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) UnsetPlanName()`
+
+UnsetPlanName ensures that no value is present for PlanName, not even an explicit nil
 ### GetPlanDescription
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetPlanDescription() string`
@@ -158,6 +198,16 @@ SetPlanDescription sets PlanDescription field to given value.
 
 HasPlanDescription returns a boolean if a field has been set.
 
+### SetPlanDescriptionNil
+
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) SetPlanDescriptionNil(b bool)`
+
+ SetPlanDescriptionNil sets the value for PlanDescription to be an explicit nil
+
+### UnsetPlanDescription
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) UnsetPlanDescription()`
+
+UnsetPlanDescription ensures that no value is present for PlanDescription, not even an explicit nil
 ### GetGroups
 
 `func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInner) GetGroups() []PriceAndAvailabilityResponseInnerSubscriptionPriceInnerGroupsInner`
