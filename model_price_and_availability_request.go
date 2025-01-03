@@ -20,9 +20,9 @@ var _ MappedNullable = &PriceAndAvailabilityRequest{}
 // PriceAndAvailabilityRequest struct for PriceAndAvailabilityRequest
 type PriceAndAvailabilityRequest struct {
 	// Boolean value that will display Discount details in the response when true.
-	ShowAvailableDiscounts *bool `json:"showAvailableDiscounts,omitempty"`
+	ShowAvailableDiscounts NullableBool `json:"showAvailableDiscounts,omitempty"`
 	// Boolean value that will display reserve inventory details in the response when true.
-	ShowReserveInventoryDetails *bool `json:"showReserveInventoryDetails,omitempty"`
+	ShowReserveInventoryDetails NullableBool `json:"showReserveInventoryDetails,omitempty"`
 	// Pre-approved special pricing/bid number provided to the reseller by the vendor for special pricing and discounts. Used to track the bid number where different line items have different bid numbers.
 	SpecialBidNumber NullableString `json:"specialBidNumber,omitempty"`
 	AvailabilityByWarehouse []PriceAndAvailabilityRequestAvailabilityByWarehouseInner `json:"availabilityByWarehouse,omitempty"`
@@ -47,68 +47,88 @@ func NewPriceAndAvailabilityRequestWithDefaults() *PriceAndAvailabilityRequest {
 	return &this
 }
 
-// GetShowAvailableDiscounts returns the ShowAvailableDiscounts field value if set, zero value otherwise.
+// GetShowAvailableDiscounts returns the ShowAvailableDiscounts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityRequest) GetShowAvailableDiscounts() bool {
-	if o == nil || IsNil(o.ShowAvailableDiscounts) {
+	if o == nil || IsNil(o.ShowAvailableDiscounts.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.ShowAvailableDiscounts
+	return *o.ShowAvailableDiscounts.Get()
 }
 
 // GetShowAvailableDiscountsOk returns a tuple with the ShowAvailableDiscounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityRequest) GetShowAvailableDiscountsOk() (*bool, bool) {
-	if o == nil || IsNil(o.ShowAvailableDiscounts) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ShowAvailableDiscounts, true
+	return o.ShowAvailableDiscounts.Get(), o.ShowAvailableDiscounts.IsSet()
 }
 
 // HasShowAvailableDiscounts returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityRequest) HasShowAvailableDiscounts() bool {
-	if o != nil && !IsNil(o.ShowAvailableDiscounts) {
+	if o != nil && o.ShowAvailableDiscounts.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetShowAvailableDiscounts gets a reference to the given bool and assigns it to the ShowAvailableDiscounts field.
+// SetShowAvailableDiscounts gets a reference to the given NullableBool and assigns it to the ShowAvailableDiscounts field.
 func (o *PriceAndAvailabilityRequest) SetShowAvailableDiscounts(v bool) {
-	o.ShowAvailableDiscounts = &v
+	o.ShowAvailableDiscounts.Set(&v)
+}
+// SetShowAvailableDiscountsNil sets the value for ShowAvailableDiscounts to be an explicit nil
+func (o *PriceAndAvailabilityRequest) SetShowAvailableDiscountsNil() {
+	o.ShowAvailableDiscounts.Set(nil)
 }
 
-// GetShowReserveInventoryDetails returns the ShowReserveInventoryDetails field value if set, zero value otherwise.
+// UnsetShowAvailableDiscounts ensures that no value is present for ShowAvailableDiscounts, not even an explicit nil
+func (o *PriceAndAvailabilityRequest) UnsetShowAvailableDiscounts() {
+	o.ShowAvailableDiscounts.Unset()
+}
+
+// GetShowReserveInventoryDetails returns the ShowReserveInventoryDetails field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PriceAndAvailabilityRequest) GetShowReserveInventoryDetails() bool {
-	if o == nil || IsNil(o.ShowReserveInventoryDetails) {
+	if o == nil || IsNil(o.ShowReserveInventoryDetails.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.ShowReserveInventoryDetails
+	return *o.ShowReserveInventoryDetails.Get()
 }
 
 // GetShowReserveInventoryDetailsOk returns a tuple with the ShowReserveInventoryDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceAndAvailabilityRequest) GetShowReserveInventoryDetailsOk() (*bool, bool) {
-	if o == nil || IsNil(o.ShowReserveInventoryDetails) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ShowReserveInventoryDetails, true
+	return o.ShowReserveInventoryDetails.Get(), o.ShowReserveInventoryDetails.IsSet()
 }
 
 // HasShowReserveInventoryDetails returns a boolean if a field has been set.
 func (o *PriceAndAvailabilityRequest) HasShowReserveInventoryDetails() bool {
-	if o != nil && !IsNil(o.ShowReserveInventoryDetails) {
+	if o != nil && o.ShowReserveInventoryDetails.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetShowReserveInventoryDetails gets a reference to the given bool and assigns it to the ShowReserveInventoryDetails field.
+// SetShowReserveInventoryDetails gets a reference to the given NullableBool and assigns it to the ShowReserveInventoryDetails field.
 func (o *PriceAndAvailabilityRequest) SetShowReserveInventoryDetails(v bool) {
-	o.ShowReserveInventoryDetails = &v
+	o.ShowReserveInventoryDetails.Set(&v)
+}
+// SetShowReserveInventoryDetailsNil sets the value for ShowReserveInventoryDetails to be an explicit nil
+func (o *PriceAndAvailabilityRequest) SetShowReserveInventoryDetailsNil() {
+	o.ShowReserveInventoryDetails.Set(nil)
+}
+
+// UnsetShowReserveInventoryDetails ensures that no value is present for ShowReserveInventoryDetails, not even an explicit nil
+func (o *PriceAndAvailabilityRequest) UnsetShowReserveInventoryDetails() {
+	o.ShowReserveInventoryDetails.Unset()
 }
 
 // GetSpecialBidNumber returns the SpecialBidNumber field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -261,11 +281,11 @@ func (o PriceAndAvailabilityRequest) MarshalJSON() ([]byte, error) {
 
 func (o PriceAndAvailabilityRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ShowAvailableDiscounts) {
-		toSerialize["showAvailableDiscounts"] = o.ShowAvailableDiscounts
+	if o.ShowAvailableDiscounts.IsSet() {
+		toSerialize["showAvailableDiscounts"] = o.ShowAvailableDiscounts.Get()
 	}
-	if !IsNil(o.ShowReserveInventoryDetails) {
-		toSerialize["showReserveInventoryDetails"] = o.ShowReserveInventoryDetails
+	if o.ShowReserveInventoryDetails.IsSet() {
+		toSerialize["showReserveInventoryDetails"] = o.ShowReserveInventoryDetails.Get()
 	}
 	if o.SpecialBidNumber.IsSet() {
 		toSerialize["specialBidNumber"] = o.SpecialBidNumber.Get()
