@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **Notes** | Pointer to **string** | The attribute field data. | [optional] 
 **EndUserInfo** | Pointer to [**[]OrderCreateV7RequestLinesInnerEndUserInfoInner**](OrderCreateV7RequestLinesInnerEndUserInfoInner.md) |  | [optional] 
 **AdditionalAttributes** | Pointer to [**[]OrderCreateV7RequestLinesInnerAdditionalAttributesInner**](OrderCreateV7RequestLinesInnerAdditionalAttributesInner.md) |  | [optional] 
-**WarrantyInfo** | Pointer to [**[]OrderCreateV7RequestLinesInnerWarrantyInfoInner**](OrderCreateV7RequestLinesInnerWarrantyInfoInner.md) |  | [optional] 
 **VmfAdditionalAttributesLines** | Pointer to [**[]OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner**](OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner.md) |  | [optional] 
 
 ## Methods
@@ -285,31 +284,6 @@ SetAdditionalAttributes sets AdditionalAttributes field to given value.
 `func (o *OrderCreateV7RequestLinesInner) HasAdditionalAttributes() bool`
 
 HasAdditionalAttributes returns a boolean if a field has been set.
-
-### GetWarrantyInfo
-
-`func (o *OrderCreateV7RequestLinesInner) GetWarrantyInfo() []OrderCreateV7RequestLinesInnerWarrantyInfoInner`
-
-GetWarrantyInfo returns the WarrantyInfo field if non-nil, zero value otherwise.
-
-### GetWarrantyInfoOk
-
-`func (o *OrderCreateV7RequestLinesInner) GetWarrantyInfoOk() (*[]OrderCreateV7RequestLinesInnerWarrantyInfoInner, bool)`
-
-GetWarrantyInfoOk returns a tuple with the WarrantyInfo field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWarrantyInfo
-
-`func (o *OrderCreateV7RequestLinesInner) SetWarrantyInfo(v []OrderCreateV7RequestLinesInnerWarrantyInfoInner)`
-
-SetWarrantyInfo sets WarrantyInfo field to given value.
-
-### HasWarrantyInfo
-
-`func (o *OrderCreateV7RequestLinesInner) HasWarrantyInfo() bool`
-
-HasWarrantyInfo returns a boolean if a field has been set.
 
 ### GetVmfAdditionalAttributesLines
 

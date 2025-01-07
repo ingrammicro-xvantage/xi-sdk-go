@@ -37,7 +37,6 @@ type OrderCreateV7RequestLinesInner struct {
 	Notes *string `json:"notes,omitempty"`
 	EndUserInfo []OrderCreateV7RequestLinesInnerEndUserInfoInner `json:"endUserInfo,omitempty"`
 	AdditionalAttributes []OrderCreateV7RequestLinesInnerAdditionalAttributesInner `json:"additionalAttributes,omitempty"`
-	WarrantyInfo []OrderCreateV7RequestLinesInnerWarrantyInfoInner `json:"warrantyInfo,omitempty"`
 	VmfAdditionalAttributesLines []OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner `json:"vmfAdditionalAttributesLines,omitempty"`
 }
 
@@ -378,38 +377,6 @@ func (o *OrderCreateV7RequestLinesInner) SetAdditionalAttributes(v []OrderCreate
 	o.AdditionalAttributes = v
 }
 
-// GetWarrantyInfo returns the WarrantyInfo field value if set, zero value otherwise.
-func (o *OrderCreateV7RequestLinesInner) GetWarrantyInfo() []OrderCreateV7RequestLinesInnerWarrantyInfoInner {
-	if o == nil || IsNil(o.WarrantyInfo) {
-		var ret []OrderCreateV7RequestLinesInnerWarrantyInfoInner
-		return ret
-	}
-	return o.WarrantyInfo
-}
-
-// GetWarrantyInfoOk returns a tuple with the WarrantyInfo field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *OrderCreateV7RequestLinesInner) GetWarrantyInfoOk() ([]OrderCreateV7RequestLinesInnerWarrantyInfoInner, bool) {
-	if o == nil || IsNil(o.WarrantyInfo) {
-		return nil, false
-	}
-	return o.WarrantyInfo, true
-}
-
-// HasWarrantyInfo returns a boolean if a field has been set.
-func (o *OrderCreateV7RequestLinesInner) HasWarrantyInfo() bool {
-	if o != nil && !IsNil(o.WarrantyInfo) {
-		return true
-	}
-
-	return false
-}
-
-// SetWarrantyInfo gets a reference to the given []OrderCreateV7RequestLinesInnerWarrantyInfoInner and assigns it to the WarrantyInfo field.
-func (o *OrderCreateV7RequestLinesInner) SetWarrantyInfo(v []OrderCreateV7RequestLinesInnerWarrantyInfoInner) {
-	o.WarrantyInfo = v
-}
-
 // GetVmfAdditionalAttributesLines returns the VmfAdditionalAttributesLines field value if set, zero value otherwise.
 func (o *OrderCreateV7RequestLinesInner) GetVmfAdditionalAttributesLines() []OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner {
 	if o == nil || IsNil(o.VmfAdditionalAttributesLines) {
@@ -481,9 +448,6 @@ func (o OrderCreateV7RequestLinesInner) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.AdditionalAttributes) {
 		toSerialize["additionalAttributes"] = o.AdditionalAttributes
-	}
-	if !IsNil(o.WarrantyInfo) {
-		toSerialize["warrantyInfo"] = o.WarrantyInfo
 	}
 	if !IsNil(o.VmfAdditionalAttributesLines) {
 		toSerialize["vmfAdditionalAttributesLines"] = o.VmfAdditionalAttributesLines
