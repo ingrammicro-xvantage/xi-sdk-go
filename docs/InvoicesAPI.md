@@ -34,7 +34,7 @@ func main() {
 	iMCustomerNumber := "20-222222" // string | Your unique Ingram Micro customer number.
 	iMCountryCode := "US" // string | Two-character ISO country code.
 	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction across all the systems.
-	iMApplicationID := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany. (optional)
+	iMApplicationID := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany.
 	customerType := "invoice" // string | it should be invoice or order (optional)
 	includeSerialNumbers := false // bool | if serial in the response send as true or else false (optional)
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ## GetResellersV6Invoicesearch
 
-> InvoiceSearchResponse GetResellersV6Invoicesearch(ctx).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMApplicationID(iMApplicationID).PaymentTermsNetDate(paymentTermsNetDate).InvoiceDate(invoiceDate).InvoiceDueDate(invoiceDueDate).OrderDate(orderDate).OrderFromDate(orderFromDate).OrderToDate(orderToDate).OrderNumber(orderNumber).DeliveryNumber(deliveryNumber).InvoiceNumber(invoiceNumber).InvoiceStatus(invoiceStatus).InvoiceType(invoiceType).CustomerOrderNumber(customerOrderNumber).EndCustomerOrderNumber(endCustomerOrderNumber).SpecialBidNumber(specialBidNumber).InvoiceFromDueDate(invoiceFromDueDate).InvoiceToDueDate(invoiceToDueDate).InvoiceFromDate(invoiceFromDate).InvoiceToDate(invoiceToDate).PageSize(pageSize).PageNumber(pageNumber).Orderby(orderby).Direction(direction).SerialNumber(serialNumber).Execute()
+> InvoiceSearchResponse GetResellersV6Invoicesearch(ctx).IMApplicationID(iMApplicationID).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).PaymentTermsNetDate(paymentTermsNetDate).InvoiceDate(invoiceDate).InvoiceDueDate(invoiceDueDate).OrderDate(orderDate).OrderFromDate(orderFromDate).OrderToDate(orderToDate).OrderNumber(orderNumber).DeliveryNumber(deliveryNumber).InvoiceNumber(invoiceNumber).InvoiceStatus(invoiceStatus).InvoiceType(invoiceType).CustomerOrderNumber(customerOrderNumber).EndCustomerOrderNumber(endCustomerOrderNumber).SpecialBidNumber(specialBidNumber).InvoiceFromDueDate(invoiceFromDueDate).InvoiceToDueDate(invoiceToDueDate).InvoiceFromDate(invoiceFromDate).InvoiceToDate(invoiceToDate).PageSize(pageSize).PageNumber(pageNumber).Orderby(orderby).Direction(direction).SerialNumber(serialNumber).Execute()
 
 Search your invoice
 
@@ -112,10 +112,10 @@ import (
 )
 
 func main() {
+	iMApplicationID := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany
 	iMCustomerNumber := "20-222222" // string | Your unique Ingram Micro customer number.
 	iMCountryCode := "US" // string | Two-character ISO country code.
 	iMCorrelationID := "fbac82ba-cf0a-4bcf-fc03-0c5084" // string | Unique transaction number to identify each transaction across all the systems.
-	iMApplicationID := "MyCompany" // string | Unique value used to identify the sender of the transaction. Example: MyCompany (optional)
 	paymentTermsNetDate := "2021-04-23" // string | Search by payment terms net date(yyyy-MM-dd). (optional)
 	invoiceDate := "2021-04-23" // string | Search by invoice date(yyyy-MM-dd). (optional)
 	invoiceDueDate := "2021-04-23" // string | Search by invoice date from(yyyy-MM-dd). (optional)
@@ -142,7 +142,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.InvoicesAPI.GetResellersV6Invoicesearch(context.Background()).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).IMApplicationID(iMApplicationID).PaymentTermsNetDate(paymentTermsNetDate).InvoiceDate(invoiceDate).InvoiceDueDate(invoiceDueDate).OrderDate(orderDate).OrderFromDate(orderFromDate).OrderToDate(orderToDate).OrderNumber(orderNumber).DeliveryNumber(deliveryNumber).InvoiceNumber(invoiceNumber).InvoiceStatus(invoiceStatus).InvoiceType(invoiceType).CustomerOrderNumber(customerOrderNumber).EndCustomerOrderNumber(endCustomerOrderNumber).SpecialBidNumber(specialBidNumber).InvoiceFromDueDate(invoiceFromDueDate).InvoiceToDueDate(invoiceToDueDate).InvoiceFromDate(invoiceFromDate).InvoiceToDate(invoiceToDate).PageSize(pageSize).PageNumber(pageNumber).Orderby(orderby).Direction(direction).SerialNumber(serialNumber).Execute()
+	resp, r, err := apiClient.InvoicesAPI.GetResellersV6Invoicesearch(context.Background()).IMApplicationID(iMApplicationID).IMCustomerNumber(iMCustomerNumber).IMCountryCode(iMCountryCode).IMCorrelationID(iMCorrelationID).PaymentTermsNetDate(paymentTermsNetDate).InvoiceDate(invoiceDate).InvoiceDueDate(invoiceDueDate).OrderDate(orderDate).OrderFromDate(orderFromDate).OrderToDate(orderToDate).OrderNumber(orderNumber).DeliveryNumber(deliveryNumber).InvoiceNumber(invoiceNumber).InvoiceStatus(invoiceStatus).InvoiceType(invoiceType).CustomerOrderNumber(customerOrderNumber).EndCustomerOrderNumber(endCustomerOrderNumber).SpecialBidNumber(specialBidNumber).InvoiceFromDueDate(invoiceFromDueDate).InvoiceToDueDate(invoiceToDueDate).InvoiceFromDate(invoiceFromDate).InvoiceToDate(invoiceToDate).PageSize(pageSize).PageNumber(pageNumber).Orderby(orderby).Direction(direction).SerialNumber(serialNumber).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `InvoicesAPI.GetResellersV6Invoicesearch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -163,10 +163,10 @@ Other parameters are passed through a pointer to a apiGetResellersV6Invoicesearc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **iMApplicationID** | **string** | Unique value used to identify the sender of the transaction. Example: MyCompany | 
  **iMCustomerNumber** | **string** | Your unique Ingram Micro customer number. | 
  **iMCountryCode** | **string** | Two-character ISO country code. | 
  **iMCorrelationID** | **string** | Unique transaction number to identify each transaction across all the systems. | 
- **iMApplicationID** | **string** | Unique value used to identify the sender of the transaction. Example: MyCompany | 
  **paymentTermsNetDate** | **string** | Search by payment terms net date(yyyy-MM-dd). | 
  **invoiceDate** | **string** | Search by invoice date(yyyy-MM-dd). | 
  **invoiceDueDate** | **string** | Search by invoice date from(yyyy-MM-dd). | 
