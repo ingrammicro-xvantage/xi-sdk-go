@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CarrierCode** | Pointer to **string** | The code for the shipping carrier for the line item. | [optional] 
-**RequestedDeliveryDate** | Pointer to **string** | The reseller-requested delivery date in UTC format. Delivery date is not guaranteed. Must be a future date. | [optional] 
-**ShipComplete** | Pointer to **string** | Specifies whether the shipment will be shipped only when all products are fulfilled. The value of this field along with acceptBackOrder field decides the value of backorderflag. If this field is set, acceptBackOrder field is ignored. Possible values for this field are true, C, P, E.With value as true or C, backorderflag will be set as C.With value as P, or E, backorderflag will be set as P or E respectively.C &#x3D; Ship complete at distribution level.P &#x3D; ship complete at line level.E &#x3D; ship complete across all distributions. | [optional] 
-**ShippingInstructions** | Pointer to **string** | Any special shipping instructions for the order. | [optional] 
-**FreightAccountNumber** | Pointer to **string** | The reseller &#39;s shipping account number with carrier. Used to bill the shipping carrier directly from the reseller&#39;s account with the carrier. | [optional] 
-**SignatureRequired** | Pointer to **bool** | Specifies whether a signature is required for delivery. Default is False. | [optional] 
+**CarrierCode** | Pointer to **NullableString** | The code for the shipping carrier for the line item. | [optional] 
+**RequestedDeliveryDate** | Pointer to **NullableString** | The reseller-requested delivery date in UTC format. Delivery date is not guaranteed. Must be a future date. | [optional] 
+**ShipComplete** | Pointer to **NullableString** | Specifies whether the shipment will be shipped only when all products are fulfilled. The value of this field along with acceptBackOrder field decides the value of backorderflag. If this field is set, acceptBackOrder field is ignored. Possible values for this field are true, C, P, E.With value as true or C, backorderflag will be set as C.With value as P, or E, backorderflag will be set as P or E respectively.C &#x3D; Ship complete at distribution level.P &#x3D; ship complete at line level.E &#x3D; ship complete across all distributions. | [optional] 
+**ShippingInstructions** | Pointer to **NullableString** | Any special shipping instructions for the order. | [optional] 
+**FreightAccountNumber** | Pointer to **NullableString** | The reseller &#39;s shipping account number with carrier. Used to bill the shipping carrier directly from the reseller&#39;s account with the carrier. | [optional] 
+**SignatureRequired** | Pointer to **NullableBool** | Specifies whether a signature is required for delivery. Default is False. | [optional] 
 
 ## Methods
 
@@ -55,6 +55,16 @@ SetCarrierCode sets CarrierCode field to given value.
 
 HasCarrierCode returns a boolean if a field has been set.
 
+### SetCarrierCodeNil
+
+`func (o *OrderCreateV7RequestShipmentDetails) SetCarrierCodeNil(b bool)`
+
+ SetCarrierCodeNil sets the value for CarrierCode to be an explicit nil
+
+### UnsetCarrierCode
+`func (o *OrderCreateV7RequestShipmentDetails) UnsetCarrierCode()`
+
+UnsetCarrierCode ensures that no value is present for CarrierCode, not even an explicit nil
 ### GetRequestedDeliveryDate
 
 `func (o *OrderCreateV7RequestShipmentDetails) GetRequestedDeliveryDate() string`
@@ -80,6 +90,16 @@ SetRequestedDeliveryDate sets RequestedDeliveryDate field to given value.
 
 HasRequestedDeliveryDate returns a boolean if a field has been set.
 
+### SetRequestedDeliveryDateNil
+
+`func (o *OrderCreateV7RequestShipmentDetails) SetRequestedDeliveryDateNil(b bool)`
+
+ SetRequestedDeliveryDateNil sets the value for RequestedDeliveryDate to be an explicit nil
+
+### UnsetRequestedDeliveryDate
+`func (o *OrderCreateV7RequestShipmentDetails) UnsetRequestedDeliveryDate()`
+
+UnsetRequestedDeliveryDate ensures that no value is present for RequestedDeliveryDate, not even an explicit nil
 ### GetShipComplete
 
 `func (o *OrderCreateV7RequestShipmentDetails) GetShipComplete() string`
@@ -105,6 +125,16 @@ SetShipComplete sets ShipComplete field to given value.
 
 HasShipComplete returns a boolean if a field has been set.
 
+### SetShipCompleteNil
+
+`func (o *OrderCreateV7RequestShipmentDetails) SetShipCompleteNil(b bool)`
+
+ SetShipCompleteNil sets the value for ShipComplete to be an explicit nil
+
+### UnsetShipComplete
+`func (o *OrderCreateV7RequestShipmentDetails) UnsetShipComplete()`
+
+UnsetShipComplete ensures that no value is present for ShipComplete, not even an explicit nil
 ### GetShippingInstructions
 
 `func (o *OrderCreateV7RequestShipmentDetails) GetShippingInstructions() string`
@@ -130,6 +160,16 @@ SetShippingInstructions sets ShippingInstructions field to given value.
 
 HasShippingInstructions returns a boolean if a field has been set.
 
+### SetShippingInstructionsNil
+
+`func (o *OrderCreateV7RequestShipmentDetails) SetShippingInstructionsNil(b bool)`
+
+ SetShippingInstructionsNil sets the value for ShippingInstructions to be an explicit nil
+
+### UnsetShippingInstructions
+`func (o *OrderCreateV7RequestShipmentDetails) UnsetShippingInstructions()`
+
+UnsetShippingInstructions ensures that no value is present for ShippingInstructions, not even an explicit nil
 ### GetFreightAccountNumber
 
 `func (o *OrderCreateV7RequestShipmentDetails) GetFreightAccountNumber() string`
@@ -155,6 +195,16 @@ SetFreightAccountNumber sets FreightAccountNumber field to given value.
 
 HasFreightAccountNumber returns a boolean if a field has been set.
 
+### SetFreightAccountNumberNil
+
+`func (o *OrderCreateV7RequestShipmentDetails) SetFreightAccountNumberNil(b bool)`
+
+ SetFreightAccountNumberNil sets the value for FreightAccountNumber to be an explicit nil
+
+### UnsetFreightAccountNumber
+`func (o *OrderCreateV7RequestShipmentDetails) UnsetFreightAccountNumber()`
+
+UnsetFreightAccountNumber ensures that no value is present for FreightAccountNumber, not even an explicit nil
 ### GetSignatureRequired
 
 `func (o *OrderCreateV7RequestShipmentDetails) GetSignatureRequired() bool`
@@ -180,6 +230,16 @@ SetSignatureRequired sets SignatureRequired field to given value.
 
 HasSignatureRequired returns a boolean if a field has been set.
 
+### SetSignatureRequiredNil
+
+`func (o *OrderCreateV7RequestShipmentDetails) SetSignatureRequiredNil(b bool)`
+
+ SetSignatureRequiredNil sets the value for SignatureRequired to be an explicit nil
+
+### UnsetSignatureRequired
+`func (o *OrderCreateV7RequestShipmentDetails) UnsetSignatureRequired()`
+
+UnsetSignatureRequired ensures that no value is present for SignatureRequired, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

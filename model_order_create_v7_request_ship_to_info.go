@@ -20,29 +20,29 @@ var _ MappedNullable = &OrderCreateV7RequestShipToInfo{}
 // OrderCreateV7RequestShipToInfo The shipping information provided by the reseller.
 type OrderCreateV7RequestShipToInfo struct {
 	// The ID references the resellers address in Ingram Micro's system for shipping. Provided to resellers during the onboarding process.
-	AddressId *string `json:"addressId,omitempty"`
+	AddressId NullableString `json:"addressId,omitempty"`
 	// The company contact provided by the reseller.
-	Contact *string `json:"contact,omitempty"`
+	Contact NullableString `json:"contact,omitempty"`
 	// The reseller's company name or the End-User's Name
-	CompanyName *string `json:"companyName,omitempty"`
+	CompanyName NullableString `json:"companyName,omitempty"`
 	// The street address and building or house number the order will be shipped to.
-	AddressLine1 *string `json:"addressLine1,omitempty"`
+	AddressLine1 NullableString `json:"addressLine1,omitempty"`
 	// The apartment number the order will be shipped to.
-	AddressLine2 *string `json:"addressLine2,omitempty"`
+	AddressLine2 NullableString `json:"addressLine2,omitempty"`
 	// The city the order will be shipped to.
-	City *string `json:"city,omitempty"`
+	City NullableString `json:"city,omitempty"`
 	// The state the order will be shipped to.
-	State *string `json:"state,omitempty"`
+	State NullableString `json:"state,omitempty"`
 	// End User Name
-	PostalCode *string `json:"postalCode,omitempty"`
+	PostalCode NullableString `json:"postalCode,omitempty"`
 	// The zip or postal code the order will be shipped to.
-	CountryCode *string `json:"countryCode,omitempty"`
+	CountryCode NullableString `json:"countryCode,omitempty"`
 	// The company contact email address.
-	Email *string `json:"email,omitempty"`
+	Email NullableString `json:"email,omitempty"`
 	// 
-	ShippingNotes *string `json:"shippingNotes,omitempty"`
+	ShippingNotes NullableString `json:"shippingNotes,omitempty"`
 	// The company contact phone number.
-	PhoneNumber *string `json:"phoneNumber,omitempty"`
+	PhoneNumber NullableString `json:"phoneNumber,omitempty"`
 }
 
 // NewOrderCreateV7RequestShipToInfo instantiates a new OrderCreateV7RequestShipToInfo object
@@ -62,388 +62,508 @@ func NewOrderCreateV7RequestShipToInfoWithDefaults() *OrderCreateV7RequestShipTo
 	return &this
 }
 
-// GetAddressId returns the AddressId field value if set, zero value otherwise.
+// GetAddressId returns the AddressId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipToInfo) GetAddressId() string {
-	if o == nil || IsNil(o.AddressId) {
+	if o == nil || IsNil(o.AddressId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AddressId
+	return *o.AddressId.Get()
 }
 
 // GetAddressIdOk returns a tuple with the AddressId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipToInfo) GetAddressIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AddressId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AddressId, true
+	return o.AddressId.Get(), o.AddressId.IsSet()
 }
 
 // HasAddressId returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipToInfo) HasAddressId() bool {
-	if o != nil && !IsNil(o.AddressId) {
+	if o != nil && o.AddressId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAddressId gets a reference to the given string and assigns it to the AddressId field.
+// SetAddressId gets a reference to the given NullableString and assigns it to the AddressId field.
 func (o *OrderCreateV7RequestShipToInfo) SetAddressId(v string) {
-	o.AddressId = &v
+	o.AddressId.Set(&v)
+}
+// SetAddressIdNil sets the value for AddressId to be an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) SetAddressIdNil() {
+	o.AddressId.Set(nil)
 }
 
-// GetContact returns the Contact field value if set, zero value otherwise.
+// UnsetAddressId ensures that no value is present for AddressId, not even an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) UnsetAddressId() {
+	o.AddressId.Unset()
+}
+
+// GetContact returns the Contact field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipToInfo) GetContact() string {
-	if o == nil || IsNil(o.Contact) {
+	if o == nil || IsNil(o.Contact.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Contact
+	return *o.Contact.Get()
 }
 
 // GetContactOk returns a tuple with the Contact field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipToInfo) GetContactOk() (*string, bool) {
-	if o == nil || IsNil(o.Contact) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Contact, true
+	return o.Contact.Get(), o.Contact.IsSet()
 }
 
 // HasContact returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipToInfo) HasContact() bool {
-	if o != nil && !IsNil(o.Contact) {
+	if o != nil && o.Contact.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContact gets a reference to the given string and assigns it to the Contact field.
+// SetContact gets a reference to the given NullableString and assigns it to the Contact field.
 func (o *OrderCreateV7RequestShipToInfo) SetContact(v string) {
-	o.Contact = &v
+	o.Contact.Set(&v)
+}
+// SetContactNil sets the value for Contact to be an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) SetContactNil() {
+	o.Contact.Set(nil)
 }
 
-// GetCompanyName returns the CompanyName field value if set, zero value otherwise.
+// UnsetContact ensures that no value is present for Contact, not even an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) UnsetContact() {
+	o.Contact.Unset()
+}
+
+// GetCompanyName returns the CompanyName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipToInfo) GetCompanyName() string {
-	if o == nil || IsNil(o.CompanyName) {
+	if o == nil || IsNil(o.CompanyName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CompanyName
+	return *o.CompanyName.Get()
 }
 
 // GetCompanyNameOk returns a tuple with the CompanyName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipToInfo) GetCompanyNameOk() (*string, bool) {
-	if o == nil || IsNil(o.CompanyName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CompanyName, true
+	return o.CompanyName.Get(), o.CompanyName.IsSet()
 }
 
 // HasCompanyName returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipToInfo) HasCompanyName() bool {
-	if o != nil && !IsNil(o.CompanyName) {
+	if o != nil && o.CompanyName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCompanyName gets a reference to the given string and assigns it to the CompanyName field.
+// SetCompanyName gets a reference to the given NullableString and assigns it to the CompanyName field.
 func (o *OrderCreateV7RequestShipToInfo) SetCompanyName(v string) {
-	o.CompanyName = &v
+	o.CompanyName.Set(&v)
+}
+// SetCompanyNameNil sets the value for CompanyName to be an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) SetCompanyNameNil() {
+	o.CompanyName.Set(nil)
 }
 
-// GetAddressLine1 returns the AddressLine1 field value if set, zero value otherwise.
+// UnsetCompanyName ensures that no value is present for CompanyName, not even an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) UnsetCompanyName() {
+	o.CompanyName.Unset()
+}
+
+// GetAddressLine1 returns the AddressLine1 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipToInfo) GetAddressLine1() string {
-	if o == nil || IsNil(o.AddressLine1) {
+	if o == nil || IsNil(o.AddressLine1.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AddressLine1
+	return *o.AddressLine1.Get()
 }
 
 // GetAddressLine1Ok returns a tuple with the AddressLine1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipToInfo) GetAddressLine1Ok() (*string, bool) {
-	if o == nil || IsNil(o.AddressLine1) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AddressLine1, true
+	return o.AddressLine1.Get(), o.AddressLine1.IsSet()
 }
 
 // HasAddressLine1 returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipToInfo) HasAddressLine1() bool {
-	if o != nil && !IsNil(o.AddressLine1) {
+	if o != nil && o.AddressLine1.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAddressLine1 gets a reference to the given string and assigns it to the AddressLine1 field.
+// SetAddressLine1 gets a reference to the given NullableString and assigns it to the AddressLine1 field.
 func (o *OrderCreateV7RequestShipToInfo) SetAddressLine1(v string) {
-	o.AddressLine1 = &v
+	o.AddressLine1.Set(&v)
+}
+// SetAddressLine1Nil sets the value for AddressLine1 to be an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) SetAddressLine1Nil() {
+	o.AddressLine1.Set(nil)
 }
 
-// GetAddressLine2 returns the AddressLine2 field value if set, zero value otherwise.
+// UnsetAddressLine1 ensures that no value is present for AddressLine1, not even an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) UnsetAddressLine1() {
+	o.AddressLine1.Unset()
+}
+
+// GetAddressLine2 returns the AddressLine2 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipToInfo) GetAddressLine2() string {
-	if o == nil || IsNil(o.AddressLine2) {
+	if o == nil || IsNil(o.AddressLine2.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AddressLine2
+	return *o.AddressLine2.Get()
 }
 
 // GetAddressLine2Ok returns a tuple with the AddressLine2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipToInfo) GetAddressLine2Ok() (*string, bool) {
-	if o == nil || IsNil(o.AddressLine2) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AddressLine2, true
+	return o.AddressLine2.Get(), o.AddressLine2.IsSet()
 }
 
 // HasAddressLine2 returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipToInfo) HasAddressLine2() bool {
-	if o != nil && !IsNil(o.AddressLine2) {
+	if o != nil && o.AddressLine2.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAddressLine2 gets a reference to the given string and assigns it to the AddressLine2 field.
+// SetAddressLine2 gets a reference to the given NullableString and assigns it to the AddressLine2 field.
 func (o *OrderCreateV7RequestShipToInfo) SetAddressLine2(v string) {
-	o.AddressLine2 = &v
+	o.AddressLine2.Set(&v)
+}
+// SetAddressLine2Nil sets the value for AddressLine2 to be an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) SetAddressLine2Nil() {
+	o.AddressLine2.Set(nil)
 }
 
-// GetCity returns the City field value if set, zero value otherwise.
+// UnsetAddressLine2 ensures that no value is present for AddressLine2, not even an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) UnsetAddressLine2() {
+	o.AddressLine2.Unset()
+}
+
+// GetCity returns the City field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipToInfo) GetCity() string {
-	if o == nil || IsNil(o.City) {
+	if o == nil || IsNil(o.City.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.City
+	return *o.City.Get()
 }
 
 // GetCityOk returns a tuple with the City field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipToInfo) GetCityOk() (*string, bool) {
-	if o == nil || IsNil(o.City) {
+	if o == nil {
 		return nil, false
 	}
-	return o.City, true
+	return o.City.Get(), o.City.IsSet()
 }
 
 // HasCity returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipToInfo) HasCity() bool {
-	if o != nil && !IsNil(o.City) {
+	if o != nil && o.City.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCity gets a reference to the given string and assigns it to the City field.
+// SetCity gets a reference to the given NullableString and assigns it to the City field.
 func (o *OrderCreateV7RequestShipToInfo) SetCity(v string) {
-	o.City = &v
+	o.City.Set(&v)
+}
+// SetCityNil sets the value for City to be an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) SetCityNil() {
+	o.City.Set(nil)
 }
 
-// GetState returns the State field value if set, zero value otherwise.
+// UnsetCity ensures that no value is present for City, not even an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) UnsetCity() {
+	o.City.Unset()
+}
+
+// GetState returns the State field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipToInfo) GetState() string {
-	if o == nil || IsNil(o.State) {
+	if o == nil || IsNil(o.State.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.State
+	return *o.State.Get()
 }
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipToInfo) GetStateOk() (*string, bool) {
-	if o == nil || IsNil(o.State) {
+	if o == nil {
 		return nil, false
 	}
-	return o.State, true
+	return o.State.Get(), o.State.IsSet()
 }
 
 // HasState returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipToInfo) HasState() bool {
-	if o != nil && !IsNil(o.State) {
+	if o != nil && o.State.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetState gets a reference to the given string and assigns it to the State field.
+// SetState gets a reference to the given NullableString and assigns it to the State field.
 func (o *OrderCreateV7RequestShipToInfo) SetState(v string) {
-	o.State = &v
+	o.State.Set(&v)
+}
+// SetStateNil sets the value for State to be an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) SetStateNil() {
+	o.State.Set(nil)
 }
 
-// GetPostalCode returns the PostalCode field value if set, zero value otherwise.
+// UnsetState ensures that no value is present for State, not even an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) UnsetState() {
+	o.State.Unset()
+}
+
+// GetPostalCode returns the PostalCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipToInfo) GetPostalCode() string {
-	if o == nil || IsNil(o.PostalCode) {
+	if o == nil || IsNil(o.PostalCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PostalCode
+	return *o.PostalCode.Get()
 }
 
 // GetPostalCodeOk returns a tuple with the PostalCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipToInfo) GetPostalCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.PostalCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PostalCode, true
+	return o.PostalCode.Get(), o.PostalCode.IsSet()
 }
 
 // HasPostalCode returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipToInfo) HasPostalCode() bool {
-	if o != nil && !IsNil(o.PostalCode) {
+	if o != nil && o.PostalCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPostalCode gets a reference to the given string and assigns it to the PostalCode field.
+// SetPostalCode gets a reference to the given NullableString and assigns it to the PostalCode field.
 func (o *OrderCreateV7RequestShipToInfo) SetPostalCode(v string) {
-	o.PostalCode = &v
+	o.PostalCode.Set(&v)
+}
+// SetPostalCodeNil sets the value for PostalCode to be an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) SetPostalCodeNil() {
+	o.PostalCode.Set(nil)
 }
 
-// GetCountryCode returns the CountryCode field value if set, zero value otherwise.
+// UnsetPostalCode ensures that no value is present for PostalCode, not even an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) UnsetPostalCode() {
+	o.PostalCode.Unset()
+}
+
+// GetCountryCode returns the CountryCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipToInfo) GetCountryCode() string {
-	if o == nil || IsNil(o.CountryCode) {
+	if o == nil || IsNil(o.CountryCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CountryCode
+	return *o.CountryCode.Get()
 }
 
 // GetCountryCodeOk returns a tuple with the CountryCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipToInfo) GetCountryCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.CountryCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CountryCode, true
+	return o.CountryCode.Get(), o.CountryCode.IsSet()
 }
 
 // HasCountryCode returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipToInfo) HasCountryCode() bool {
-	if o != nil && !IsNil(o.CountryCode) {
+	if o != nil && o.CountryCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCountryCode gets a reference to the given string and assigns it to the CountryCode field.
+// SetCountryCode gets a reference to the given NullableString and assigns it to the CountryCode field.
 func (o *OrderCreateV7RequestShipToInfo) SetCountryCode(v string) {
-	o.CountryCode = &v
+	o.CountryCode.Set(&v)
+}
+// SetCountryCodeNil sets the value for CountryCode to be an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) SetCountryCodeNil() {
+	o.CountryCode.Set(nil)
 }
 
-// GetEmail returns the Email field value if set, zero value otherwise.
+// UnsetCountryCode ensures that no value is present for CountryCode, not even an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) UnsetCountryCode() {
+	o.CountryCode.Unset()
+}
+
+// GetEmail returns the Email field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipToInfo) GetEmail() string {
-	if o == nil || IsNil(o.Email) {
+	if o == nil || IsNil(o.Email.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Email
+	return *o.Email.Get()
 }
 
 // GetEmailOk returns a tuple with the Email field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipToInfo) GetEmailOk() (*string, bool) {
-	if o == nil || IsNil(o.Email) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Email, true
+	return o.Email.Get(), o.Email.IsSet()
 }
 
 // HasEmail returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipToInfo) HasEmail() bool {
-	if o != nil && !IsNil(o.Email) {
+	if o != nil && o.Email.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEmail gets a reference to the given string and assigns it to the Email field.
+// SetEmail gets a reference to the given NullableString and assigns it to the Email field.
 func (o *OrderCreateV7RequestShipToInfo) SetEmail(v string) {
-	o.Email = &v
+	o.Email.Set(&v)
+}
+// SetEmailNil sets the value for Email to be an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) SetEmailNil() {
+	o.Email.Set(nil)
 }
 
-// GetShippingNotes returns the ShippingNotes field value if set, zero value otherwise.
+// UnsetEmail ensures that no value is present for Email, not even an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) UnsetEmail() {
+	o.Email.Unset()
+}
+
+// GetShippingNotes returns the ShippingNotes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipToInfo) GetShippingNotes() string {
-	if o == nil || IsNil(o.ShippingNotes) {
+	if o == nil || IsNil(o.ShippingNotes.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ShippingNotes
+	return *o.ShippingNotes.Get()
 }
 
 // GetShippingNotesOk returns a tuple with the ShippingNotes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipToInfo) GetShippingNotesOk() (*string, bool) {
-	if o == nil || IsNil(o.ShippingNotes) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ShippingNotes, true
+	return o.ShippingNotes.Get(), o.ShippingNotes.IsSet()
 }
 
 // HasShippingNotes returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipToInfo) HasShippingNotes() bool {
-	if o != nil && !IsNil(o.ShippingNotes) {
+	if o != nil && o.ShippingNotes.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetShippingNotes gets a reference to the given string and assigns it to the ShippingNotes field.
+// SetShippingNotes gets a reference to the given NullableString and assigns it to the ShippingNotes field.
 func (o *OrderCreateV7RequestShipToInfo) SetShippingNotes(v string) {
-	o.ShippingNotes = &v
+	o.ShippingNotes.Set(&v)
+}
+// SetShippingNotesNil sets the value for ShippingNotes to be an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) SetShippingNotesNil() {
+	o.ShippingNotes.Set(nil)
 }
 
-// GetPhoneNumber returns the PhoneNumber field value if set, zero value otherwise.
+// UnsetShippingNotes ensures that no value is present for ShippingNotes, not even an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) UnsetShippingNotes() {
+	o.ShippingNotes.Unset()
+}
+
+// GetPhoneNumber returns the PhoneNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipToInfo) GetPhoneNumber() string {
-	if o == nil || IsNil(o.PhoneNumber) {
+	if o == nil || IsNil(o.PhoneNumber.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PhoneNumber
+	return *o.PhoneNumber.Get()
 }
 
 // GetPhoneNumberOk returns a tuple with the PhoneNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipToInfo) GetPhoneNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.PhoneNumber) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PhoneNumber, true
+	return o.PhoneNumber.Get(), o.PhoneNumber.IsSet()
 }
 
 // HasPhoneNumber returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipToInfo) HasPhoneNumber() bool {
-	if o != nil && !IsNil(o.PhoneNumber) {
+	if o != nil && o.PhoneNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPhoneNumber gets a reference to the given string and assigns it to the PhoneNumber field.
+// SetPhoneNumber gets a reference to the given NullableString and assigns it to the PhoneNumber field.
 func (o *OrderCreateV7RequestShipToInfo) SetPhoneNumber(v string) {
-	o.PhoneNumber = &v
+	o.PhoneNumber.Set(&v)
+}
+// SetPhoneNumberNil sets the value for PhoneNumber to be an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) SetPhoneNumberNil() {
+	o.PhoneNumber.Set(nil)
+}
+
+// UnsetPhoneNumber ensures that no value is present for PhoneNumber, not even an explicit nil
+func (o *OrderCreateV7RequestShipToInfo) UnsetPhoneNumber() {
+	o.PhoneNumber.Unset()
 }
 
 func (o OrderCreateV7RequestShipToInfo) MarshalJSON() ([]byte, error) {
@@ -456,41 +576,41 @@ func (o OrderCreateV7RequestShipToInfo) MarshalJSON() ([]byte, error) {
 
 func (o OrderCreateV7RequestShipToInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AddressId) {
-		toSerialize["addressId"] = o.AddressId
+	if o.AddressId.IsSet() {
+		toSerialize["addressId"] = o.AddressId.Get()
 	}
-	if !IsNil(o.Contact) {
-		toSerialize["contact"] = o.Contact
+	if o.Contact.IsSet() {
+		toSerialize["contact"] = o.Contact.Get()
 	}
-	if !IsNil(o.CompanyName) {
-		toSerialize["companyName"] = o.CompanyName
+	if o.CompanyName.IsSet() {
+		toSerialize["companyName"] = o.CompanyName.Get()
 	}
-	if !IsNil(o.AddressLine1) {
-		toSerialize["addressLine1"] = o.AddressLine1
+	if o.AddressLine1.IsSet() {
+		toSerialize["addressLine1"] = o.AddressLine1.Get()
 	}
-	if !IsNil(o.AddressLine2) {
-		toSerialize["addressLine2"] = o.AddressLine2
+	if o.AddressLine2.IsSet() {
+		toSerialize["addressLine2"] = o.AddressLine2.Get()
 	}
-	if !IsNil(o.City) {
-		toSerialize["city"] = o.City
+	if o.City.IsSet() {
+		toSerialize["city"] = o.City.Get()
 	}
-	if !IsNil(o.State) {
-		toSerialize["state"] = o.State
+	if o.State.IsSet() {
+		toSerialize["state"] = o.State.Get()
 	}
-	if !IsNil(o.PostalCode) {
-		toSerialize["postalCode"] = o.PostalCode
+	if o.PostalCode.IsSet() {
+		toSerialize["postalCode"] = o.PostalCode.Get()
 	}
-	if !IsNil(o.CountryCode) {
-		toSerialize["countryCode"] = o.CountryCode
+	if o.CountryCode.IsSet() {
+		toSerialize["countryCode"] = o.CountryCode.Get()
 	}
-	if !IsNil(o.Email) {
-		toSerialize["email"] = o.Email
+	if o.Email.IsSet() {
+		toSerialize["email"] = o.Email.Get()
 	}
-	if !IsNil(o.ShippingNotes) {
-		toSerialize["shippingNotes"] = o.ShippingNotes
+	if o.ShippingNotes.IsSet() {
+		toSerialize["shippingNotes"] = o.ShippingNotes.Get()
 	}
-	if !IsNil(o.PhoneNumber) {
-		toSerialize["phoneNumber"] = o.PhoneNumber
+	if o.PhoneNumber.IsSet() {
+		toSerialize["phoneNumber"] = o.PhoneNumber.Get()
 	}
 	return toSerialize, nil
 }

@@ -20,17 +20,17 @@ var _ MappedNullable = &OrderCreateV7RequestShipmentDetails{}
 // OrderCreateV7RequestShipmentDetails Shipping details for the order provided by the customer.
 type OrderCreateV7RequestShipmentDetails struct {
 	// The code for the shipping carrier for the line item.
-	CarrierCode *string `json:"carrierCode,omitempty"`
+	CarrierCode NullableString `json:"carrierCode,omitempty"`
 	// The reseller-requested delivery date in UTC format. Delivery date is not guaranteed. Must be a future date.
-	RequestedDeliveryDate *string `json:"requestedDeliveryDate,omitempty"`
+	RequestedDeliveryDate NullableString `json:"requestedDeliveryDate,omitempty"`
 	// Specifies whether the shipment will be shipped only when all products are fulfilled. The value of this field along with acceptBackOrder field decides the value of backorderflag. If this field is set, acceptBackOrder field is ignored. Possible values for this field are true, C, P, E.With value as true or C, backorderflag will be set as C.With value as P, or E, backorderflag will be set as P or E respectively.C = Ship complete at distribution level.P = ship complete at line level.E = ship complete across all distributions.
-	ShipComplete *string `json:"shipComplete,omitempty"`
+	ShipComplete NullableString `json:"shipComplete,omitempty"`
 	// Any special shipping instructions for the order.
-	ShippingInstructions *string `json:"shippingInstructions,omitempty"`
+	ShippingInstructions NullableString `json:"shippingInstructions,omitempty"`
 	// The reseller 's shipping account number with carrier. Used to bill the shipping carrier directly from the reseller's account with the carrier.
-	FreightAccountNumber *string `json:"freightAccountNumber,omitempty"`
+	FreightAccountNumber NullableString `json:"freightAccountNumber,omitempty"`
 	// Specifies whether a signature is required for delivery. Default is False.
-	SignatureRequired *bool `json:"signatureRequired,omitempty"`
+	SignatureRequired NullableBool `json:"signatureRequired,omitempty"`
 }
 
 // NewOrderCreateV7RequestShipmentDetails instantiates a new OrderCreateV7RequestShipmentDetails object
@@ -50,196 +50,256 @@ func NewOrderCreateV7RequestShipmentDetailsWithDefaults() *OrderCreateV7RequestS
 	return &this
 }
 
-// GetCarrierCode returns the CarrierCode field value if set, zero value otherwise.
+// GetCarrierCode returns the CarrierCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipmentDetails) GetCarrierCode() string {
-	if o == nil || IsNil(o.CarrierCode) {
+	if o == nil || IsNil(o.CarrierCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CarrierCode
+	return *o.CarrierCode.Get()
 }
 
 // GetCarrierCodeOk returns a tuple with the CarrierCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipmentDetails) GetCarrierCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.CarrierCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CarrierCode, true
+	return o.CarrierCode.Get(), o.CarrierCode.IsSet()
 }
 
 // HasCarrierCode returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipmentDetails) HasCarrierCode() bool {
-	if o != nil && !IsNil(o.CarrierCode) {
+	if o != nil && o.CarrierCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCarrierCode gets a reference to the given string and assigns it to the CarrierCode field.
+// SetCarrierCode gets a reference to the given NullableString and assigns it to the CarrierCode field.
 func (o *OrderCreateV7RequestShipmentDetails) SetCarrierCode(v string) {
-	o.CarrierCode = &v
+	o.CarrierCode.Set(&v)
+}
+// SetCarrierCodeNil sets the value for CarrierCode to be an explicit nil
+func (o *OrderCreateV7RequestShipmentDetails) SetCarrierCodeNil() {
+	o.CarrierCode.Set(nil)
 }
 
-// GetRequestedDeliveryDate returns the RequestedDeliveryDate field value if set, zero value otherwise.
+// UnsetCarrierCode ensures that no value is present for CarrierCode, not even an explicit nil
+func (o *OrderCreateV7RequestShipmentDetails) UnsetCarrierCode() {
+	o.CarrierCode.Unset()
+}
+
+// GetRequestedDeliveryDate returns the RequestedDeliveryDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipmentDetails) GetRequestedDeliveryDate() string {
-	if o == nil || IsNil(o.RequestedDeliveryDate) {
+	if o == nil || IsNil(o.RequestedDeliveryDate.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.RequestedDeliveryDate
+	return *o.RequestedDeliveryDate.Get()
 }
 
 // GetRequestedDeliveryDateOk returns a tuple with the RequestedDeliveryDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipmentDetails) GetRequestedDeliveryDateOk() (*string, bool) {
-	if o == nil || IsNil(o.RequestedDeliveryDate) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RequestedDeliveryDate, true
+	return o.RequestedDeliveryDate.Get(), o.RequestedDeliveryDate.IsSet()
 }
 
 // HasRequestedDeliveryDate returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipmentDetails) HasRequestedDeliveryDate() bool {
-	if o != nil && !IsNil(o.RequestedDeliveryDate) {
+	if o != nil && o.RequestedDeliveryDate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRequestedDeliveryDate gets a reference to the given string and assigns it to the RequestedDeliveryDate field.
+// SetRequestedDeliveryDate gets a reference to the given NullableString and assigns it to the RequestedDeliveryDate field.
 func (o *OrderCreateV7RequestShipmentDetails) SetRequestedDeliveryDate(v string) {
-	o.RequestedDeliveryDate = &v
+	o.RequestedDeliveryDate.Set(&v)
+}
+// SetRequestedDeliveryDateNil sets the value for RequestedDeliveryDate to be an explicit nil
+func (o *OrderCreateV7RequestShipmentDetails) SetRequestedDeliveryDateNil() {
+	o.RequestedDeliveryDate.Set(nil)
 }
 
-// GetShipComplete returns the ShipComplete field value if set, zero value otherwise.
+// UnsetRequestedDeliveryDate ensures that no value is present for RequestedDeliveryDate, not even an explicit nil
+func (o *OrderCreateV7RequestShipmentDetails) UnsetRequestedDeliveryDate() {
+	o.RequestedDeliveryDate.Unset()
+}
+
+// GetShipComplete returns the ShipComplete field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipmentDetails) GetShipComplete() string {
-	if o == nil || IsNil(o.ShipComplete) {
+	if o == nil || IsNil(o.ShipComplete.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ShipComplete
+	return *o.ShipComplete.Get()
 }
 
 // GetShipCompleteOk returns a tuple with the ShipComplete field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipmentDetails) GetShipCompleteOk() (*string, bool) {
-	if o == nil || IsNil(o.ShipComplete) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ShipComplete, true
+	return o.ShipComplete.Get(), o.ShipComplete.IsSet()
 }
 
 // HasShipComplete returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipmentDetails) HasShipComplete() bool {
-	if o != nil && !IsNil(o.ShipComplete) {
+	if o != nil && o.ShipComplete.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetShipComplete gets a reference to the given string and assigns it to the ShipComplete field.
+// SetShipComplete gets a reference to the given NullableString and assigns it to the ShipComplete field.
 func (o *OrderCreateV7RequestShipmentDetails) SetShipComplete(v string) {
-	o.ShipComplete = &v
+	o.ShipComplete.Set(&v)
+}
+// SetShipCompleteNil sets the value for ShipComplete to be an explicit nil
+func (o *OrderCreateV7RequestShipmentDetails) SetShipCompleteNil() {
+	o.ShipComplete.Set(nil)
 }
 
-// GetShippingInstructions returns the ShippingInstructions field value if set, zero value otherwise.
+// UnsetShipComplete ensures that no value is present for ShipComplete, not even an explicit nil
+func (o *OrderCreateV7RequestShipmentDetails) UnsetShipComplete() {
+	o.ShipComplete.Unset()
+}
+
+// GetShippingInstructions returns the ShippingInstructions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipmentDetails) GetShippingInstructions() string {
-	if o == nil || IsNil(o.ShippingInstructions) {
+	if o == nil || IsNil(o.ShippingInstructions.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ShippingInstructions
+	return *o.ShippingInstructions.Get()
 }
 
 // GetShippingInstructionsOk returns a tuple with the ShippingInstructions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipmentDetails) GetShippingInstructionsOk() (*string, bool) {
-	if o == nil || IsNil(o.ShippingInstructions) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ShippingInstructions, true
+	return o.ShippingInstructions.Get(), o.ShippingInstructions.IsSet()
 }
 
 // HasShippingInstructions returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipmentDetails) HasShippingInstructions() bool {
-	if o != nil && !IsNil(o.ShippingInstructions) {
+	if o != nil && o.ShippingInstructions.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetShippingInstructions gets a reference to the given string and assigns it to the ShippingInstructions field.
+// SetShippingInstructions gets a reference to the given NullableString and assigns it to the ShippingInstructions field.
 func (o *OrderCreateV7RequestShipmentDetails) SetShippingInstructions(v string) {
-	o.ShippingInstructions = &v
+	o.ShippingInstructions.Set(&v)
+}
+// SetShippingInstructionsNil sets the value for ShippingInstructions to be an explicit nil
+func (o *OrderCreateV7RequestShipmentDetails) SetShippingInstructionsNil() {
+	o.ShippingInstructions.Set(nil)
 }
 
-// GetFreightAccountNumber returns the FreightAccountNumber field value if set, zero value otherwise.
+// UnsetShippingInstructions ensures that no value is present for ShippingInstructions, not even an explicit nil
+func (o *OrderCreateV7RequestShipmentDetails) UnsetShippingInstructions() {
+	o.ShippingInstructions.Unset()
+}
+
+// GetFreightAccountNumber returns the FreightAccountNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipmentDetails) GetFreightAccountNumber() string {
-	if o == nil || IsNil(o.FreightAccountNumber) {
+	if o == nil || IsNil(o.FreightAccountNumber.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.FreightAccountNumber
+	return *o.FreightAccountNumber.Get()
 }
 
 // GetFreightAccountNumberOk returns a tuple with the FreightAccountNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipmentDetails) GetFreightAccountNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.FreightAccountNumber) {
+	if o == nil {
 		return nil, false
 	}
-	return o.FreightAccountNumber, true
+	return o.FreightAccountNumber.Get(), o.FreightAccountNumber.IsSet()
 }
 
 // HasFreightAccountNumber returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipmentDetails) HasFreightAccountNumber() bool {
-	if o != nil && !IsNil(o.FreightAccountNumber) {
+	if o != nil && o.FreightAccountNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetFreightAccountNumber gets a reference to the given string and assigns it to the FreightAccountNumber field.
+// SetFreightAccountNumber gets a reference to the given NullableString and assigns it to the FreightAccountNumber field.
 func (o *OrderCreateV7RequestShipmentDetails) SetFreightAccountNumber(v string) {
-	o.FreightAccountNumber = &v
+	o.FreightAccountNumber.Set(&v)
+}
+// SetFreightAccountNumberNil sets the value for FreightAccountNumber to be an explicit nil
+func (o *OrderCreateV7RequestShipmentDetails) SetFreightAccountNumberNil() {
+	o.FreightAccountNumber.Set(nil)
 }
 
-// GetSignatureRequired returns the SignatureRequired field value if set, zero value otherwise.
+// UnsetFreightAccountNumber ensures that no value is present for FreightAccountNumber, not even an explicit nil
+func (o *OrderCreateV7RequestShipmentDetails) UnsetFreightAccountNumber() {
+	o.FreightAccountNumber.Unset()
+}
+
+// GetSignatureRequired returns the SignatureRequired field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestShipmentDetails) GetSignatureRequired() bool {
-	if o == nil || IsNil(o.SignatureRequired) {
+	if o == nil || IsNil(o.SignatureRequired.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.SignatureRequired
+	return *o.SignatureRequired.Get()
 }
 
 // GetSignatureRequiredOk returns a tuple with the SignatureRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipmentDetails) GetSignatureRequiredOk() (*bool, bool) {
-	if o == nil || IsNil(o.SignatureRequired) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SignatureRequired, true
+	return o.SignatureRequired.Get(), o.SignatureRequired.IsSet()
 }
 
 // HasSignatureRequired returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipmentDetails) HasSignatureRequired() bool {
-	if o != nil && !IsNil(o.SignatureRequired) {
+	if o != nil && o.SignatureRequired.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSignatureRequired gets a reference to the given bool and assigns it to the SignatureRequired field.
+// SetSignatureRequired gets a reference to the given NullableBool and assigns it to the SignatureRequired field.
 func (o *OrderCreateV7RequestShipmentDetails) SetSignatureRequired(v bool) {
-	o.SignatureRequired = &v
+	o.SignatureRequired.Set(&v)
+}
+// SetSignatureRequiredNil sets the value for SignatureRequired to be an explicit nil
+func (o *OrderCreateV7RequestShipmentDetails) SetSignatureRequiredNil() {
+	o.SignatureRequired.Set(nil)
+}
+
+// UnsetSignatureRequired ensures that no value is present for SignatureRequired, not even an explicit nil
+func (o *OrderCreateV7RequestShipmentDetails) UnsetSignatureRequired() {
+	o.SignatureRequired.Unset()
 }
 
 func (o OrderCreateV7RequestShipmentDetails) MarshalJSON() ([]byte, error) {
@@ -252,23 +312,23 @@ func (o OrderCreateV7RequestShipmentDetails) MarshalJSON() ([]byte, error) {
 
 func (o OrderCreateV7RequestShipmentDetails) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CarrierCode) {
-		toSerialize["carrierCode"] = o.CarrierCode
+	if o.CarrierCode.IsSet() {
+		toSerialize["carrierCode"] = o.CarrierCode.Get()
 	}
-	if !IsNil(o.RequestedDeliveryDate) {
-		toSerialize["requestedDeliveryDate"] = o.RequestedDeliveryDate
+	if o.RequestedDeliveryDate.IsSet() {
+		toSerialize["requestedDeliveryDate"] = o.RequestedDeliveryDate.Get()
 	}
-	if !IsNil(o.ShipComplete) {
-		toSerialize["shipComplete"] = o.ShipComplete
+	if o.ShipComplete.IsSet() {
+		toSerialize["shipComplete"] = o.ShipComplete.Get()
 	}
-	if !IsNil(o.ShippingInstructions) {
-		toSerialize["shippingInstructions"] = o.ShippingInstructions
+	if o.ShippingInstructions.IsSet() {
+		toSerialize["shippingInstructions"] = o.ShippingInstructions.Get()
 	}
-	if !IsNil(o.FreightAccountNumber) {
-		toSerialize["freightAccountNumber"] = o.FreightAccountNumber
+	if o.FreightAccountNumber.IsSet() {
+		toSerialize["freightAccountNumber"] = o.FreightAccountNumber.Get()
 	}
-	if !IsNil(o.SignatureRequired) {
-		toSerialize["signatureRequired"] = o.SignatureRequired
+	if o.SignatureRequired.IsSet() {
+		toSerialize["signatureRequired"] = o.SignatureRequired.Get()
 	}
 	return toSerialize, nil
 }

@@ -20,27 +20,27 @@ var _ MappedNullable = &OrderCreateV7RequestEndUserInfo{}
 // OrderCreateV7RequestEndUserInfo The contact information for the end user/customer provided by the reseller. Used to determine pricing and discounts
 type OrderCreateV7RequestEndUserInfo struct {
 	// ID for the end user/customer in Ingram Micro's system.
-	EndUserId *string `json:"endUserId,omitempty"`
+	EndUserId NullableString `json:"endUserId,omitempty"`
 	// The contact name for the end user/customer.
-	Contact *string `json:"contact,omitempty"`
+	Contact NullableString `json:"contact,omitempty"`
 	// The company name for the end user/customer. Required for Impulse countries.
-	CompanyName *string `json:"companyName,omitempty"`
+	CompanyName NullableString `json:"companyName,omitempty"`
 	// The end user/customer's street address and building or house number. Required for Impulse countries.
-	AddressLine1 *string `json:"addressLine1,omitempty"`
+	AddressLine1 NullableString `json:"addressLine1,omitempty"`
 	// The end user/customer's apartment number.
-	AddressLine2 *string `json:"addressLine2,omitempty"`
+	AddressLine2 NullableString `json:"addressLine2,omitempty"`
 	// The end user/customer's city. Required for Impulse countries.
-	City *string `json:"city,omitempty"`
+	City NullableString `json:"city,omitempty"`
 	// The end user/customer's state. Required for Impulse countries but optional for EMEA countries.
-	State *string `json:"state,omitempty"`
+	State NullableString `json:"state,omitempty"`
 	// The end user/customer's zip or postal code. Required for Impulse countries.
-	PostalCode *string `json:"postalCode,omitempty"`
+	PostalCode NullableString `json:"postalCode,omitempty"`
 	// The end user/customer's two-character ISO country code.
-	CountryCode *string `json:"countryCode,omitempty"`
+	CountryCode NullableString `json:"countryCode,omitempty"`
 	// The end user/customer's phone number.
-	PhoneNumber *int32 `json:"phoneNumber,omitempty"`
+	PhoneNumber NullableString `json:"phoneNumber,omitempty"`
 	// The end user/customer's email.
-	Email *string `json:"email,omitempty"`
+	Email NullableString `json:"email,omitempty"`
 }
 
 // NewOrderCreateV7RequestEndUserInfo instantiates a new OrderCreateV7RequestEndUserInfo object
@@ -60,356 +60,466 @@ func NewOrderCreateV7RequestEndUserInfoWithDefaults() *OrderCreateV7RequestEndUs
 	return &this
 }
 
-// GetEndUserId returns the EndUserId field value if set, zero value otherwise.
+// GetEndUserId returns the EndUserId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestEndUserInfo) GetEndUserId() string {
-	if o == nil || IsNil(o.EndUserId) {
+	if o == nil || IsNil(o.EndUserId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.EndUserId
+	return *o.EndUserId.Get()
 }
 
 // GetEndUserIdOk returns a tuple with the EndUserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestEndUserInfo) GetEndUserIdOk() (*string, bool) {
-	if o == nil || IsNil(o.EndUserId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.EndUserId, true
+	return o.EndUserId.Get(), o.EndUserId.IsSet()
 }
 
 // HasEndUserId returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestEndUserInfo) HasEndUserId() bool {
-	if o != nil && !IsNil(o.EndUserId) {
+	if o != nil && o.EndUserId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEndUserId gets a reference to the given string and assigns it to the EndUserId field.
+// SetEndUserId gets a reference to the given NullableString and assigns it to the EndUserId field.
 func (o *OrderCreateV7RequestEndUserInfo) SetEndUserId(v string) {
-	o.EndUserId = &v
+	o.EndUserId.Set(&v)
+}
+// SetEndUserIdNil sets the value for EndUserId to be an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) SetEndUserIdNil() {
+	o.EndUserId.Set(nil)
 }
 
-// GetContact returns the Contact field value if set, zero value otherwise.
+// UnsetEndUserId ensures that no value is present for EndUserId, not even an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) UnsetEndUserId() {
+	o.EndUserId.Unset()
+}
+
+// GetContact returns the Contact field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestEndUserInfo) GetContact() string {
-	if o == nil || IsNil(o.Contact) {
+	if o == nil || IsNil(o.Contact.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Contact
+	return *o.Contact.Get()
 }
 
 // GetContactOk returns a tuple with the Contact field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestEndUserInfo) GetContactOk() (*string, bool) {
-	if o == nil || IsNil(o.Contact) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Contact, true
+	return o.Contact.Get(), o.Contact.IsSet()
 }
 
 // HasContact returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestEndUserInfo) HasContact() bool {
-	if o != nil && !IsNil(o.Contact) {
+	if o != nil && o.Contact.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContact gets a reference to the given string and assigns it to the Contact field.
+// SetContact gets a reference to the given NullableString and assigns it to the Contact field.
 func (o *OrderCreateV7RequestEndUserInfo) SetContact(v string) {
-	o.Contact = &v
+	o.Contact.Set(&v)
+}
+// SetContactNil sets the value for Contact to be an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) SetContactNil() {
+	o.Contact.Set(nil)
 }
 
-// GetCompanyName returns the CompanyName field value if set, zero value otherwise.
+// UnsetContact ensures that no value is present for Contact, not even an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) UnsetContact() {
+	o.Contact.Unset()
+}
+
+// GetCompanyName returns the CompanyName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestEndUserInfo) GetCompanyName() string {
-	if o == nil || IsNil(o.CompanyName) {
+	if o == nil || IsNil(o.CompanyName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CompanyName
+	return *o.CompanyName.Get()
 }
 
 // GetCompanyNameOk returns a tuple with the CompanyName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestEndUserInfo) GetCompanyNameOk() (*string, bool) {
-	if o == nil || IsNil(o.CompanyName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CompanyName, true
+	return o.CompanyName.Get(), o.CompanyName.IsSet()
 }
 
 // HasCompanyName returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestEndUserInfo) HasCompanyName() bool {
-	if o != nil && !IsNil(o.CompanyName) {
+	if o != nil && o.CompanyName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCompanyName gets a reference to the given string and assigns it to the CompanyName field.
+// SetCompanyName gets a reference to the given NullableString and assigns it to the CompanyName field.
 func (o *OrderCreateV7RequestEndUserInfo) SetCompanyName(v string) {
-	o.CompanyName = &v
+	o.CompanyName.Set(&v)
+}
+// SetCompanyNameNil sets the value for CompanyName to be an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) SetCompanyNameNil() {
+	o.CompanyName.Set(nil)
 }
 
-// GetAddressLine1 returns the AddressLine1 field value if set, zero value otherwise.
+// UnsetCompanyName ensures that no value is present for CompanyName, not even an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) UnsetCompanyName() {
+	o.CompanyName.Unset()
+}
+
+// GetAddressLine1 returns the AddressLine1 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestEndUserInfo) GetAddressLine1() string {
-	if o == nil || IsNil(o.AddressLine1) {
+	if o == nil || IsNil(o.AddressLine1.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AddressLine1
+	return *o.AddressLine1.Get()
 }
 
 // GetAddressLine1Ok returns a tuple with the AddressLine1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestEndUserInfo) GetAddressLine1Ok() (*string, bool) {
-	if o == nil || IsNil(o.AddressLine1) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AddressLine1, true
+	return o.AddressLine1.Get(), o.AddressLine1.IsSet()
 }
 
 // HasAddressLine1 returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestEndUserInfo) HasAddressLine1() bool {
-	if o != nil && !IsNil(o.AddressLine1) {
+	if o != nil && o.AddressLine1.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAddressLine1 gets a reference to the given string and assigns it to the AddressLine1 field.
+// SetAddressLine1 gets a reference to the given NullableString and assigns it to the AddressLine1 field.
 func (o *OrderCreateV7RequestEndUserInfo) SetAddressLine1(v string) {
-	o.AddressLine1 = &v
+	o.AddressLine1.Set(&v)
+}
+// SetAddressLine1Nil sets the value for AddressLine1 to be an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) SetAddressLine1Nil() {
+	o.AddressLine1.Set(nil)
 }
 
-// GetAddressLine2 returns the AddressLine2 field value if set, zero value otherwise.
+// UnsetAddressLine1 ensures that no value is present for AddressLine1, not even an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) UnsetAddressLine1() {
+	o.AddressLine1.Unset()
+}
+
+// GetAddressLine2 returns the AddressLine2 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestEndUserInfo) GetAddressLine2() string {
-	if o == nil || IsNil(o.AddressLine2) {
+	if o == nil || IsNil(o.AddressLine2.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AddressLine2
+	return *o.AddressLine2.Get()
 }
 
 // GetAddressLine2Ok returns a tuple with the AddressLine2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestEndUserInfo) GetAddressLine2Ok() (*string, bool) {
-	if o == nil || IsNil(o.AddressLine2) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AddressLine2, true
+	return o.AddressLine2.Get(), o.AddressLine2.IsSet()
 }
 
 // HasAddressLine2 returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestEndUserInfo) HasAddressLine2() bool {
-	if o != nil && !IsNil(o.AddressLine2) {
+	if o != nil && o.AddressLine2.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAddressLine2 gets a reference to the given string and assigns it to the AddressLine2 field.
+// SetAddressLine2 gets a reference to the given NullableString and assigns it to the AddressLine2 field.
 func (o *OrderCreateV7RequestEndUserInfo) SetAddressLine2(v string) {
-	o.AddressLine2 = &v
+	o.AddressLine2.Set(&v)
+}
+// SetAddressLine2Nil sets the value for AddressLine2 to be an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) SetAddressLine2Nil() {
+	o.AddressLine2.Set(nil)
 }
 
-// GetCity returns the City field value if set, zero value otherwise.
+// UnsetAddressLine2 ensures that no value is present for AddressLine2, not even an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) UnsetAddressLine2() {
+	o.AddressLine2.Unset()
+}
+
+// GetCity returns the City field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestEndUserInfo) GetCity() string {
-	if o == nil || IsNil(o.City) {
+	if o == nil || IsNil(o.City.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.City
+	return *o.City.Get()
 }
 
 // GetCityOk returns a tuple with the City field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestEndUserInfo) GetCityOk() (*string, bool) {
-	if o == nil || IsNil(o.City) {
+	if o == nil {
 		return nil, false
 	}
-	return o.City, true
+	return o.City.Get(), o.City.IsSet()
 }
 
 // HasCity returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestEndUserInfo) HasCity() bool {
-	if o != nil && !IsNil(o.City) {
+	if o != nil && o.City.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCity gets a reference to the given string and assigns it to the City field.
+// SetCity gets a reference to the given NullableString and assigns it to the City field.
 func (o *OrderCreateV7RequestEndUserInfo) SetCity(v string) {
-	o.City = &v
+	o.City.Set(&v)
+}
+// SetCityNil sets the value for City to be an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) SetCityNil() {
+	o.City.Set(nil)
 }
 
-// GetState returns the State field value if set, zero value otherwise.
+// UnsetCity ensures that no value is present for City, not even an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) UnsetCity() {
+	o.City.Unset()
+}
+
+// GetState returns the State field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestEndUserInfo) GetState() string {
-	if o == nil || IsNil(o.State) {
+	if o == nil || IsNil(o.State.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.State
+	return *o.State.Get()
 }
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestEndUserInfo) GetStateOk() (*string, bool) {
-	if o == nil || IsNil(o.State) {
+	if o == nil {
 		return nil, false
 	}
-	return o.State, true
+	return o.State.Get(), o.State.IsSet()
 }
 
 // HasState returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestEndUserInfo) HasState() bool {
-	if o != nil && !IsNil(o.State) {
+	if o != nil && o.State.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetState gets a reference to the given string and assigns it to the State field.
+// SetState gets a reference to the given NullableString and assigns it to the State field.
 func (o *OrderCreateV7RequestEndUserInfo) SetState(v string) {
-	o.State = &v
+	o.State.Set(&v)
+}
+// SetStateNil sets the value for State to be an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) SetStateNil() {
+	o.State.Set(nil)
 }
 
-// GetPostalCode returns the PostalCode field value if set, zero value otherwise.
+// UnsetState ensures that no value is present for State, not even an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) UnsetState() {
+	o.State.Unset()
+}
+
+// GetPostalCode returns the PostalCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestEndUserInfo) GetPostalCode() string {
-	if o == nil || IsNil(o.PostalCode) {
+	if o == nil || IsNil(o.PostalCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.PostalCode
+	return *o.PostalCode.Get()
 }
 
 // GetPostalCodeOk returns a tuple with the PostalCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestEndUserInfo) GetPostalCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.PostalCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PostalCode, true
+	return o.PostalCode.Get(), o.PostalCode.IsSet()
 }
 
 // HasPostalCode returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestEndUserInfo) HasPostalCode() bool {
-	if o != nil && !IsNil(o.PostalCode) {
+	if o != nil && o.PostalCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPostalCode gets a reference to the given string and assigns it to the PostalCode field.
+// SetPostalCode gets a reference to the given NullableString and assigns it to the PostalCode field.
 func (o *OrderCreateV7RequestEndUserInfo) SetPostalCode(v string) {
-	o.PostalCode = &v
+	o.PostalCode.Set(&v)
+}
+// SetPostalCodeNil sets the value for PostalCode to be an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) SetPostalCodeNil() {
+	o.PostalCode.Set(nil)
 }
 
-// GetCountryCode returns the CountryCode field value if set, zero value otherwise.
+// UnsetPostalCode ensures that no value is present for PostalCode, not even an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) UnsetPostalCode() {
+	o.PostalCode.Unset()
+}
+
+// GetCountryCode returns the CountryCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestEndUserInfo) GetCountryCode() string {
-	if o == nil || IsNil(o.CountryCode) {
+	if o == nil || IsNil(o.CountryCode.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.CountryCode
+	return *o.CountryCode.Get()
 }
 
 // GetCountryCodeOk returns a tuple with the CountryCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestEndUserInfo) GetCountryCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.CountryCode) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CountryCode, true
+	return o.CountryCode.Get(), o.CountryCode.IsSet()
 }
 
 // HasCountryCode returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestEndUserInfo) HasCountryCode() bool {
-	if o != nil && !IsNil(o.CountryCode) {
+	if o != nil && o.CountryCode.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCountryCode gets a reference to the given string and assigns it to the CountryCode field.
+// SetCountryCode gets a reference to the given NullableString and assigns it to the CountryCode field.
 func (o *OrderCreateV7RequestEndUserInfo) SetCountryCode(v string) {
-	o.CountryCode = &v
+	o.CountryCode.Set(&v)
+}
+// SetCountryCodeNil sets the value for CountryCode to be an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) SetCountryCodeNil() {
+	o.CountryCode.Set(nil)
 }
 
-// GetPhoneNumber returns the PhoneNumber field value if set, zero value otherwise.
-func (o *OrderCreateV7RequestEndUserInfo) GetPhoneNumber() int32 {
-	if o == nil || IsNil(o.PhoneNumber) {
-		var ret int32
+// UnsetCountryCode ensures that no value is present for CountryCode, not even an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) UnsetCountryCode() {
+	o.CountryCode.Unset()
+}
+
+// GetPhoneNumber returns the PhoneNumber field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *OrderCreateV7RequestEndUserInfo) GetPhoneNumber() string {
+	if o == nil || IsNil(o.PhoneNumber.Get()) {
+		var ret string
 		return ret
 	}
-	return *o.PhoneNumber
+	return *o.PhoneNumber.Get()
 }
 
 // GetPhoneNumberOk returns a tuple with the PhoneNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCreateV7RequestEndUserInfo) GetPhoneNumberOk() (*int32, bool) {
-	if o == nil || IsNil(o.PhoneNumber) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *OrderCreateV7RequestEndUserInfo) GetPhoneNumberOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PhoneNumber, true
+	return o.PhoneNumber.Get(), o.PhoneNumber.IsSet()
 }
 
 // HasPhoneNumber returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestEndUserInfo) HasPhoneNumber() bool {
-	if o != nil && !IsNil(o.PhoneNumber) {
+	if o != nil && o.PhoneNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPhoneNumber gets a reference to the given int32 and assigns it to the PhoneNumber field.
-func (o *OrderCreateV7RequestEndUserInfo) SetPhoneNumber(v int32) {
-	o.PhoneNumber = &v
+// SetPhoneNumber gets a reference to the given NullableString and assigns it to the PhoneNumber field.
+func (o *OrderCreateV7RequestEndUserInfo) SetPhoneNumber(v string) {
+	o.PhoneNumber.Set(&v)
+}
+// SetPhoneNumberNil sets the value for PhoneNumber to be an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) SetPhoneNumberNil() {
+	o.PhoneNumber.Set(nil)
 }
 
-// GetEmail returns the Email field value if set, zero value otherwise.
+// UnsetPhoneNumber ensures that no value is present for PhoneNumber, not even an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) UnsetPhoneNumber() {
+	o.PhoneNumber.Unset()
+}
+
+// GetEmail returns the Email field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestEndUserInfo) GetEmail() string {
-	if o == nil || IsNil(o.Email) {
+	if o == nil || IsNil(o.Email.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Email
+	return *o.Email.Get()
 }
 
 // GetEmailOk returns a tuple with the Email field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestEndUserInfo) GetEmailOk() (*string, bool) {
-	if o == nil || IsNil(o.Email) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Email, true
+	return o.Email.Get(), o.Email.IsSet()
 }
 
 // HasEmail returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestEndUserInfo) HasEmail() bool {
-	if o != nil && !IsNil(o.Email) {
+	if o != nil && o.Email.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetEmail gets a reference to the given string and assigns it to the Email field.
+// SetEmail gets a reference to the given NullableString and assigns it to the Email field.
 func (o *OrderCreateV7RequestEndUserInfo) SetEmail(v string) {
-	o.Email = &v
+	o.Email.Set(&v)
+}
+// SetEmailNil sets the value for Email to be an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) SetEmailNil() {
+	o.Email.Set(nil)
+}
+
+// UnsetEmail ensures that no value is present for Email, not even an explicit nil
+func (o *OrderCreateV7RequestEndUserInfo) UnsetEmail() {
+	o.Email.Unset()
 }
 
 func (o OrderCreateV7RequestEndUserInfo) MarshalJSON() ([]byte, error) {
@@ -422,38 +532,38 @@ func (o OrderCreateV7RequestEndUserInfo) MarshalJSON() ([]byte, error) {
 
 func (o OrderCreateV7RequestEndUserInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EndUserId) {
-		toSerialize["endUserId"] = o.EndUserId
+	if o.EndUserId.IsSet() {
+		toSerialize["endUserId"] = o.EndUserId.Get()
 	}
-	if !IsNil(o.Contact) {
-		toSerialize["contact"] = o.Contact
+	if o.Contact.IsSet() {
+		toSerialize["contact"] = o.Contact.Get()
 	}
-	if !IsNil(o.CompanyName) {
-		toSerialize["companyName"] = o.CompanyName
+	if o.CompanyName.IsSet() {
+		toSerialize["companyName"] = o.CompanyName.Get()
 	}
-	if !IsNil(o.AddressLine1) {
-		toSerialize["addressLine1"] = o.AddressLine1
+	if o.AddressLine1.IsSet() {
+		toSerialize["addressLine1"] = o.AddressLine1.Get()
 	}
-	if !IsNil(o.AddressLine2) {
-		toSerialize["addressLine2"] = o.AddressLine2
+	if o.AddressLine2.IsSet() {
+		toSerialize["addressLine2"] = o.AddressLine2.Get()
 	}
-	if !IsNil(o.City) {
-		toSerialize["city"] = o.City
+	if o.City.IsSet() {
+		toSerialize["city"] = o.City.Get()
 	}
-	if !IsNil(o.State) {
-		toSerialize["state"] = o.State
+	if o.State.IsSet() {
+		toSerialize["state"] = o.State.Get()
 	}
-	if !IsNil(o.PostalCode) {
-		toSerialize["postalCode"] = o.PostalCode
+	if o.PostalCode.IsSet() {
+		toSerialize["postalCode"] = o.PostalCode.Get()
 	}
-	if !IsNil(o.CountryCode) {
-		toSerialize["countryCode"] = o.CountryCode
+	if o.CountryCode.IsSet() {
+		toSerialize["countryCode"] = o.CountryCode.Get()
 	}
-	if !IsNil(o.PhoneNumber) {
-		toSerialize["phoneNumber"] = o.PhoneNumber
+	if o.PhoneNumber.IsSet() {
+		toSerialize["phoneNumber"] = o.PhoneNumber.Get()
 	}
-	if !IsNil(o.Email) {
-		toSerialize["email"] = o.Email
+	if o.Email.IsSet() {
+		toSerialize["email"] = o.Email.Get()
 	}
 	return toSerialize, nil
 }

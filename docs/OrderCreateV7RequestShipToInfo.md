@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AddressId** | Pointer to **string** | The ID references the resellers address in Ingram Micro&#39;s system for shipping. Provided to resellers during the onboarding process. | [optional] 
-**Contact** | Pointer to **string** | The company contact provided by the reseller. | [optional] 
-**CompanyName** | Pointer to **string** | The reseller&#39;s company name or the End-User&#39;s Name | [optional] 
-**AddressLine1** | Pointer to **string** | The street address and building or house number the order will be shipped to. | [optional] 
-**AddressLine2** | Pointer to **string** | The apartment number the order will be shipped to. | [optional] 
-**City** | Pointer to **string** | The city the order will be shipped to. | [optional] 
-**State** | Pointer to **string** | The state the order will be shipped to. | [optional] 
-**PostalCode** | Pointer to **string** | End User Name | [optional] 
-**CountryCode** | Pointer to **string** | The zip or postal code the order will be shipped to. | [optional] 
-**Email** | Pointer to **string** | The company contact email address. | [optional] 
-**ShippingNotes** | Pointer to **string** |  | [optional] 
-**PhoneNumber** | Pointer to **string** | The company contact phone number. | [optional] 
+**AddressId** | Pointer to **NullableString** | The ID references the resellers address in Ingram Micro&#39;s system for shipping. Provided to resellers during the onboarding process. | [optional] 
+**Contact** | Pointer to **NullableString** | The company contact provided by the reseller. | [optional] 
+**CompanyName** | Pointer to **NullableString** | The reseller&#39;s company name or the End-User&#39;s Name | [optional] 
+**AddressLine1** | Pointer to **NullableString** | The street address and building or house number the order will be shipped to. | [optional] 
+**AddressLine2** | Pointer to **NullableString** | The apartment number the order will be shipped to. | [optional] 
+**City** | Pointer to **NullableString** | The city the order will be shipped to. | [optional] 
+**State** | Pointer to **NullableString** | The state the order will be shipped to. | [optional] 
+**PostalCode** | Pointer to **NullableString** | End User Name | [optional] 
+**CountryCode** | Pointer to **NullableString** | The zip or postal code the order will be shipped to. | [optional] 
+**Email** | Pointer to **NullableString** | The company contact email address. | [optional] 
+**ShippingNotes** | Pointer to **NullableString** |  | [optional] 
+**PhoneNumber** | Pointer to **NullableString** | The company contact phone number. | [optional] 
 
 ## Methods
 
@@ -61,6 +61,16 @@ SetAddressId sets AddressId field to given value.
 
 HasAddressId returns a boolean if a field has been set.
 
+### SetAddressIdNil
+
+`func (o *OrderCreateV7RequestShipToInfo) SetAddressIdNil(b bool)`
+
+ SetAddressIdNil sets the value for AddressId to be an explicit nil
+
+### UnsetAddressId
+`func (o *OrderCreateV7RequestShipToInfo) UnsetAddressId()`
+
+UnsetAddressId ensures that no value is present for AddressId, not even an explicit nil
 ### GetContact
 
 `func (o *OrderCreateV7RequestShipToInfo) GetContact() string`
@@ -86,6 +96,16 @@ SetContact sets Contact field to given value.
 
 HasContact returns a boolean if a field has been set.
 
+### SetContactNil
+
+`func (o *OrderCreateV7RequestShipToInfo) SetContactNil(b bool)`
+
+ SetContactNil sets the value for Contact to be an explicit nil
+
+### UnsetContact
+`func (o *OrderCreateV7RequestShipToInfo) UnsetContact()`
+
+UnsetContact ensures that no value is present for Contact, not even an explicit nil
 ### GetCompanyName
 
 `func (o *OrderCreateV7RequestShipToInfo) GetCompanyName() string`
@@ -111,6 +131,16 @@ SetCompanyName sets CompanyName field to given value.
 
 HasCompanyName returns a boolean if a field has been set.
 
+### SetCompanyNameNil
+
+`func (o *OrderCreateV7RequestShipToInfo) SetCompanyNameNil(b bool)`
+
+ SetCompanyNameNil sets the value for CompanyName to be an explicit nil
+
+### UnsetCompanyName
+`func (o *OrderCreateV7RequestShipToInfo) UnsetCompanyName()`
+
+UnsetCompanyName ensures that no value is present for CompanyName, not even an explicit nil
 ### GetAddressLine1
 
 `func (o *OrderCreateV7RequestShipToInfo) GetAddressLine1() string`
@@ -136,6 +166,16 @@ SetAddressLine1 sets AddressLine1 field to given value.
 
 HasAddressLine1 returns a boolean if a field has been set.
 
+### SetAddressLine1Nil
+
+`func (o *OrderCreateV7RequestShipToInfo) SetAddressLine1Nil(b bool)`
+
+ SetAddressLine1Nil sets the value for AddressLine1 to be an explicit nil
+
+### UnsetAddressLine1
+`func (o *OrderCreateV7RequestShipToInfo) UnsetAddressLine1()`
+
+UnsetAddressLine1 ensures that no value is present for AddressLine1, not even an explicit nil
 ### GetAddressLine2
 
 `func (o *OrderCreateV7RequestShipToInfo) GetAddressLine2() string`
@@ -161,6 +201,16 @@ SetAddressLine2 sets AddressLine2 field to given value.
 
 HasAddressLine2 returns a boolean if a field has been set.
 
+### SetAddressLine2Nil
+
+`func (o *OrderCreateV7RequestShipToInfo) SetAddressLine2Nil(b bool)`
+
+ SetAddressLine2Nil sets the value for AddressLine2 to be an explicit nil
+
+### UnsetAddressLine2
+`func (o *OrderCreateV7RequestShipToInfo) UnsetAddressLine2()`
+
+UnsetAddressLine2 ensures that no value is present for AddressLine2, not even an explicit nil
 ### GetCity
 
 `func (o *OrderCreateV7RequestShipToInfo) GetCity() string`
@@ -186,6 +236,16 @@ SetCity sets City field to given value.
 
 HasCity returns a boolean if a field has been set.
 
+### SetCityNil
+
+`func (o *OrderCreateV7RequestShipToInfo) SetCityNil(b bool)`
+
+ SetCityNil sets the value for City to be an explicit nil
+
+### UnsetCity
+`func (o *OrderCreateV7RequestShipToInfo) UnsetCity()`
+
+UnsetCity ensures that no value is present for City, not even an explicit nil
 ### GetState
 
 `func (o *OrderCreateV7RequestShipToInfo) GetState() string`
@@ -211,6 +271,16 @@ SetState sets State field to given value.
 
 HasState returns a boolean if a field has been set.
 
+### SetStateNil
+
+`func (o *OrderCreateV7RequestShipToInfo) SetStateNil(b bool)`
+
+ SetStateNil sets the value for State to be an explicit nil
+
+### UnsetState
+`func (o *OrderCreateV7RequestShipToInfo) UnsetState()`
+
+UnsetState ensures that no value is present for State, not even an explicit nil
 ### GetPostalCode
 
 `func (o *OrderCreateV7RequestShipToInfo) GetPostalCode() string`
@@ -236,6 +306,16 @@ SetPostalCode sets PostalCode field to given value.
 
 HasPostalCode returns a boolean if a field has been set.
 
+### SetPostalCodeNil
+
+`func (o *OrderCreateV7RequestShipToInfo) SetPostalCodeNil(b bool)`
+
+ SetPostalCodeNil sets the value for PostalCode to be an explicit nil
+
+### UnsetPostalCode
+`func (o *OrderCreateV7RequestShipToInfo) UnsetPostalCode()`
+
+UnsetPostalCode ensures that no value is present for PostalCode, not even an explicit nil
 ### GetCountryCode
 
 `func (o *OrderCreateV7RequestShipToInfo) GetCountryCode() string`
@@ -261,6 +341,16 @@ SetCountryCode sets CountryCode field to given value.
 
 HasCountryCode returns a boolean if a field has been set.
 
+### SetCountryCodeNil
+
+`func (o *OrderCreateV7RequestShipToInfo) SetCountryCodeNil(b bool)`
+
+ SetCountryCodeNil sets the value for CountryCode to be an explicit nil
+
+### UnsetCountryCode
+`func (o *OrderCreateV7RequestShipToInfo) UnsetCountryCode()`
+
+UnsetCountryCode ensures that no value is present for CountryCode, not even an explicit nil
 ### GetEmail
 
 `func (o *OrderCreateV7RequestShipToInfo) GetEmail() string`
@@ -286,6 +376,16 @@ SetEmail sets Email field to given value.
 
 HasEmail returns a boolean if a field has been set.
 
+### SetEmailNil
+
+`func (o *OrderCreateV7RequestShipToInfo) SetEmailNil(b bool)`
+
+ SetEmailNil sets the value for Email to be an explicit nil
+
+### UnsetEmail
+`func (o *OrderCreateV7RequestShipToInfo) UnsetEmail()`
+
+UnsetEmail ensures that no value is present for Email, not even an explicit nil
 ### GetShippingNotes
 
 `func (o *OrderCreateV7RequestShipToInfo) GetShippingNotes() string`
@@ -311,6 +411,16 @@ SetShippingNotes sets ShippingNotes field to given value.
 
 HasShippingNotes returns a boolean if a field has been set.
 
+### SetShippingNotesNil
+
+`func (o *OrderCreateV7RequestShipToInfo) SetShippingNotesNil(b bool)`
+
+ SetShippingNotesNil sets the value for ShippingNotes to be an explicit nil
+
+### UnsetShippingNotes
+`func (o *OrderCreateV7RequestShipToInfo) UnsetShippingNotes()`
+
+UnsetShippingNotes ensures that no value is present for ShippingNotes, not even an explicit nil
 ### GetPhoneNumber
 
 `func (o *OrderCreateV7RequestShipToInfo) GetPhoneNumber() string`
@@ -336,6 +446,16 @@ SetPhoneNumber sets PhoneNumber field to given value.
 
 HasPhoneNumber returns a boolean if a field has been set.
 
+### SetPhoneNumberNil
+
+`func (o *OrderCreateV7RequestShipToInfo) SetPhoneNumberNil(b bool)`
+
+ SetPhoneNumberNil sets the value for PhoneNumber to be an explicit nil
+
+### UnsetPhoneNumber
+`func (o *OrderCreateV7RequestShipToInfo) UnsetPhoneNumber()`
+
+UnsetPhoneNumber ensures that no value is present for PhoneNumber, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

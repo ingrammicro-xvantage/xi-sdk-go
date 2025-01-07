@@ -20,9 +20,9 @@ var _ MappedNullable = &OrderCreateV7RequestAdditionalAttributesInner{}
 // OrderCreateV7RequestAdditionalAttributesInner struct for OrderCreateV7RequestAdditionalAttributesInner
 type OrderCreateV7RequestAdditionalAttributesInner struct {
 	// **allowPartialOrder:** Allow orders with failed lines.    **DpasRating:** DX rating by Department of Defense is the highest rating by the highest offices and meant to be top priority. DO any other gov offices at the federal level to priotize.    **DpasProgramId:** Identifies the actual agency that signed off on the DPAS priority.    **allowDuplicateCustomerOrderNumber:** Allow orders with duplicate customer PO numbers. Enables resellers to have the same PO number for multiple orders.     **euDepId:** DEP ID would be the 'End User DEP/ABM Organization ID' up to 32 characters and is assigned by Apple.    **depOrderNbr:** depordernbr is 'End User PO to reseller' Can appear in message lines or dedicated end user po#.    **govtProgramType:** Program type, “PA” for government orders, “ED” for education order.    **govtEndUserType:** Type of end user of the program. F = Federal, S = State, E = Local, K = K-12 school, and H = Higher Education    **govtSolicitationNumber:** Education order’s contract number    **govtPublicPrivateCode:** Determines TAX / NO TAX.   'P' PUBLIC SECTOR,   'R' PRIVATE SECTOR.  Value needs only to be provided for EDUCATION order.    **govtEndUserData:** Name of the End user of the program. For example, STATE OF OHIO, CHICAGO SCHOOLDISTRICT etc.    **govtEndUserPostalCode:** 9 CHAR FIELD / Zip Code of the End user of the order.    **dynamicMessageLine1:** Custom Dynamic Message line 1.    **allowOrderOnCustomerHold:** Boolean value flag which allows a customer to create an order with the hold status.
-	AttributeName *string `json:"attributeName,omitempty"`
+	AttributeName NullableString `json:"attributeName,omitempty"`
 	// The attribute field data.
-	AttributeValue *string `json:"attributeValue,omitempty"`
+	AttributeValue NullableString `json:"attributeValue,omitempty"`
 }
 
 // NewOrderCreateV7RequestAdditionalAttributesInner instantiates a new OrderCreateV7RequestAdditionalAttributesInner object
@@ -42,68 +42,88 @@ func NewOrderCreateV7RequestAdditionalAttributesInnerWithDefaults() *OrderCreate
 	return &this
 }
 
-// GetAttributeName returns the AttributeName field value if set, zero value otherwise.
+// GetAttributeName returns the AttributeName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestAdditionalAttributesInner) GetAttributeName() string {
-	if o == nil || IsNil(o.AttributeName) {
+	if o == nil || IsNil(o.AttributeName.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AttributeName
+	return *o.AttributeName.Get()
 }
 
 // GetAttributeNameOk returns a tuple with the AttributeName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestAdditionalAttributesInner) GetAttributeNameOk() (*string, bool) {
-	if o == nil || IsNil(o.AttributeName) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AttributeName, true
+	return o.AttributeName.Get(), o.AttributeName.IsSet()
 }
 
 // HasAttributeName returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestAdditionalAttributesInner) HasAttributeName() bool {
-	if o != nil && !IsNil(o.AttributeName) {
+	if o != nil && o.AttributeName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributeName gets a reference to the given string and assigns it to the AttributeName field.
+// SetAttributeName gets a reference to the given NullableString and assigns it to the AttributeName field.
 func (o *OrderCreateV7RequestAdditionalAttributesInner) SetAttributeName(v string) {
-	o.AttributeName = &v
+	o.AttributeName.Set(&v)
+}
+// SetAttributeNameNil sets the value for AttributeName to be an explicit nil
+func (o *OrderCreateV7RequestAdditionalAttributesInner) SetAttributeNameNil() {
+	o.AttributeName.Set(nil)
 }
 
-// GetAttributeValue returns the AttributeValue field value if set, zero value otherwise.
+// UnsetAttributeName ensures that no value is present for AttributeName, not even an explicit nil
+func (o *OrderCreateV7RequestAdditionalAttributesInner) UnsetAttributeName() {
+	o.AttributeName.Unset()
+}
+
+// GetAttributeValue returns the AttributeValue field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OrderCreateV7RequestAdditionalAttributesInner) GetAttributeValue() string {
-	if o == nil || IsNil(o.AttributeValue) {
+	if o == nil || IsNil(o.AttributeValue.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.AttributeValue
+	return *o.AttributeValue.Get()
 }
 
 // GetAttributeValueOk returns a tuple with the AttributeValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestAdditionalAttributesInner) GetAttributeValueOk() (*string, bool) {
-	if o == nil || IsNil(o.AttributeValue) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AttributeValue, true
+	return o.AttributeValue.Get(), o.AttributeValue.IsSet()
 }
 
 // HasAttributeValue returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestAdditionalAttributesInner) HasAttributeValue() bool {
-	if o != nil && !IsNil(o.AttributeValue) {
+	if o != nil && o.AttributeValue.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributeValue gets a reference to the given string and assigns it to the AttributeValue field.
+// SetAttributeValue gets a reference to the given NullableString and assigns it to the AttributeValue field.
 func (o *OrderCreateV7RequestAdditionalAttributesInner) SetAttributeValue(v string) {
-	o.AttributeValue = &v
+	o.AttributeValue.Set(&v)
+}
+// SetAttributeValueNil sets the value for AttributeValue to be an explicit nil
+func (o *OrderCreateV7RequestAdditionalAttributesInner) SetAttributeValueNil() {
+	o.AttributeValue.Set(nil)
+}
+
+// UnsetAttributeValue ensures that no value is present for AttributeValue, not even an explicit nil
+func (o *OrderCreateV7RequestAdditionalAttributesInner) UnsetAttributeValue() {
+	o.AttributeValue.Unset()
 }
 
 func (o OrderCreateV7RequestAdditionalAttributesInner) MarshalJSON() ([]byte, error) {
@@ -116,11 +136,11 @@ func (o OrderCreateV7RequestAdditionalAttributesInner) MarshalJSON() ([]byte, er
 
 func (o OrderCreateV7RequestAdditionalAttributesInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AttributeName) {
-		toSerialize["attributeName"] = o.AttributeName
+	if o.AttributeName.IsSet() {
+		toSerialize["attributeName"] = o.AttributeName.Get()
 	}
-	if !IsNil(o.AttributeValue) {
-		toSerialize["attributeValue"] = o.AttributeValue
+	if o.AttributeValue.IsSet() {
+		toSerialize["attributeValue"] = o.AttributeValue.Get()
 	}
 	return toSerialize, nil
 }

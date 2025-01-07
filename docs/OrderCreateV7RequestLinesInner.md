@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CustomerLineNumber** | Pointer to **string** | The reseller&#39;s line item number for reference in their system. The customer line number needs to be a unique numeric value between 1 and 884. In the event we receive duplicate values or alphanumeric values in the customer line number, we will re-sequence the customer line number. To prevent re-sequencing, please use a unique numeric value between 1 and 884 in the customer line number. | [optional] 
-**IngramPartNumber** | Pointer to **string** | The unique IngramMicro part number. | [optional] 
-**VendorPartNumber** | Pointer to **string** | The vendor&#39;s part number for the line item. | [optional] 
+**IngramPartNumber** | Pointer to **NullableString** | The unique IngramMicro part number. | [optional] 
+**VendorPartNumber** | Pointer to **NullableString** | The vendor&#39;s part number for the line item. | [optional] 
 **Quantity** | Pointer to **int32** | The requested quantity of the line item. | [optional] 
-**UnitPrice** | Pointer to **float32** | The reseller-requested unit price for the line item. The unit price is not guaranteed. | [optional] 
-**SpecialBidNumber** | Pointer to **string** | The line-level bid number provided to the reseller by the vendor for special pricing and discounts. Used to track the bid number in the case of split orders or where different line items have different bid numbers. Line-level bid number take precedence over header-level bid numbers. | [optional] 
-**EndUserPrice** | Pointer to **float32** | The end-user price. Required for Export Orders. | [optional] 
-**Notes** | Pointer to **string** | The attribute field data. | [optional] 
+**UnitPrice** | Pointer to **NullableFloat32** | The reseller-requested unit price for the line item. The unit price is not guaranteed. | [optional] 
+**SpecialBidNumber** | Pointer to **NullableString** | The line-level bid number provided to the reseller by the vendor for special pricing and discounts. Used to track the bid number in the case of split orders or where different line items have different bid numbers. Line-level bid number take precedence over header-level bid numbers. | [optional] 
+**EndUserPrice** | Pointer to **NullableFloat32** | The end-user price. Required for Export Orders. | [optional] 
+**Notes** | Pointer to **NullableString** | The attribute field data. | [optional] 
 **EndUserInfo** | Pointer to [**[]OrderCreateV7RequestLinesInnerEndUserInfoInner**](OrderCreateV7RequestLinesInnerEndUserInfoInner.md) |  | [optional] 
 **AdditionalAttributes** | Pointer to [**[]OrderCreateV7RequestLinesInnerAdditionalAttributesInner**](OrderCreateV7RequestLinesInnerAdditionalAttributesInner.md) |  | [optional] 
 **VmfAdditionalAttributesLines** | Pointer to [**[]OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner**](OrderCreateV7RequestLinesInnerVmfAdditionalAttributesLinesInner.md) |  | [optional] 
@@ -85,6 +85,16 @@ SetIngramPartNumber sets IngramPartNumber field to given value.
 
 HasIngramPartNumber returns a boolean if a field has been set.
 
+### SetIngramPartNumberNil
+
+`func (o *OrderCreateV7RequestLinesInner) SetIngramPartNumberNil(b bool)`
+
+ SetIngramPartNumberNil sets the value for IngramPartNumber to be an explicit nil
+
+### UnsetIngramPartNumber
+`func (o *OrderCreateV7RequestLinesInner) UnsetIngramPartNumber()`
+
+UnsetIngramPartNumber ensures that no value is present for IngramPartNumber, not even an explicit nil
 ### GetVendorPartNumber
 
 `func (o *OrderCreateV7RequestLinesInner) GetVendorPartNumber() string`
@@ -110,6 +120,16 @@ SetVendorPartNumber sets VendorPartNumber field to given value.
 
 HasVendorPartNumber returns a boolean if a field has been set.
 
+### SetVendorPartNumberNil
+
+`func (o *OrderCreateV7RequestLinesInner) SetVendorPartNumberNil(b bool)`
+
+ SetVendorPartNumberNil sets the value for VendorPartNumber to be an explicit nil
+
+### UnsetVendorPartNumber
+`func (o *OrderCreateV7RequestLinesInner) UnsetVendorPartNumber()`
+
+UnsetVendorPartNumber ensures that no value is present for VendorPartNumber, not even an explicit nil
 ### GetQuantity
 
 `func (o *OrderCreateV7RequestLinesInner) GetQuantity() int32`
@@ -160,6 +180,16 @@ SetUnitPrice sets UnitPrice field to given value.
 
 HasUnitPrice returns a boolean if a field has been set.
 
+### SetUnitPriceNil
+
+`func (o *OrderCreateV7RequestLinesInner) SetUnitPriceNil(b bool)`
+
+ SetUnitPriceNil sets the value for UnitPrice to be an explicit nil
+
+### UnsetUnitPrice
+`func (o *OrderCreateV7RequestLinesInner) UnsetUnitPrice()`
+
+UnsetUnitPrice ensures that no value is present for UnitPrice, not even an explicit nil
 ### GetSpecialBidNumber
 
 `func (o *OrderCreateV7RequestLinesInner) GetSpecialBidNumber() string`
@@ -185,6 +215,16 @@ SetSpecialBidNumber sets SpecialBidNumber field to given value.
 
 HasSpecialBidNumber returns a boolean if a field has been set.
 
+### SetSpecialBidNumberNil
+
+`func (o *OrderCreateV7RequestLinesInner) SetSpecialBidNumberNil(b bool)`
+
+ SetSpecialBidNumberNil sets the value for SpecialBidNumber to be an explicit nil
+
+### UnsetSpecialBidNumber
+`func (o *OrderCreateV7RequestLinesInner) UnsetSpecialBidNumber()`
+
+UnsetSpecialBidNumber ensures that no value is present for SpecialBidNumber, not even an explicit nil
 ### GetEndUserPrice
 
 `func (o *OrderCreateV7RequestLinesInner) GetEndUserPrice() float32`
@@ -210,6 +250,16 @@ SetEndUserPrice sets EndUserPrice field to given value.
 
 HasEndUserPrice returns a boolean if a field has been set.
 
+### SetEndUserPriceNil
+
+`func (o *OrderCreateV7RequestLinesInner) SetEndUserPriceNil(b bool)`
+
+ SetEndUserPriceNil sets the value for EndUserPrice to be an explicit nil
+
+### UnsetEndUserPrice
+`func (o *OrderCreateV7RequestLinesInner) UnsetEndUserPrice()`
+
+UnsetEndUserPrice ensures that no value is present for EndUserPrice, not even an explicit nil
 ### GetNotes
 
 `func (o *OrderCreateV7RequestLinesInner) GetNotes() string`
@@ -235,6 +285,16 @@ SetNotes sets Notes field to given value.
 
 HasNotes returns a boolean if a field has been set.
 
+### SetNotesNil
+
+`func (o *OrderCreateV7RequestLinesInner) SetNotesNil(b bool)`
+
+ SetNotesNil sets the value for Notes to be an explicit nil
+
+### UnsetNotes
+`func (o *OrderCreateV7RequestLinesInner) UnsetNotes()`
+
+UnsetNotes ensures that no value is present for Notes, not even an explicit nil
 ### GetEndUserInfo
 
 `func (o *OrderCreateV7RequestLinesInner) GetEndUserInfo() []OrderCreateV7RequestLinesInnerEndUserInfoInner`
@@ -260,6 +320,16 @@ SetEndUserInfo sets EndUserInfo field to given value.
 
 HasEndUserInfo returns a boolean if a field has been set.
 
+### SetEndUserInfoNil
+
+`func (o *OrderCreateV7RequestLinesInner) SetEndUserInfoNil(b bool)`
+
+ SetEndUserInfoNil sets the value for EndUserInfo to be an explicit nil
+
+### UnsetEndUserInfo
+`func (o *OrderCreateV7RequestLinesInner) UnsetEndUserInfo()`
+
+UnsetEndUserInfo ensures that no value is present for EndUserInfo, not even an explicit nil
 ### GetAdditionalAttributes
 
 `func (o *OrderCreateV7RequestLinesInner) GetAdditionalAttributes() []OrderCreateV7RequestLinesInnerAdditionalAttributesInner`
