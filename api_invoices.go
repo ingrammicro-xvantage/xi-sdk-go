@@ -142,12 +142,6 @@ func (a *InvoicesAPIService) GetInvoicedetailsV61Execute(r ApiGetInvoicedetailsV
 	if strlen(*r.iMCorrelationID) > 32 {
 		return localVarReturnValue, nil, reportError("iMCorrelationID must have less than 32 elements")
 	}
-	if r.iMApplicationID == nil {
-		return localVarReturnValue, nil, reportError("iMApplicationID is required and must be specified")
-	}
-	if strlen(*r.iMApplicationID) > 32 {
-		return localVarReturnValue, nil, reportError("iMApplicationID must have less than 32 elements")
-	}
 
 	if r.customerType != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "customerType", r.customerType, "form", "")
@@ -175,7 +169,9 @@ func (a *InvoicesAPIService) GetInvoicedetailsV61Execute(r ApiGetInvoicedetailsV
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-ApplicationID", r.iMApplicationID, "simple", "")
+	if r.iMApplicationID != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-ApplicationID", r.iMApplicationID, "simple", "")
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -237,10 +233,10 @@ func (a *InvoicesAPIService) GetInvoicedetailsV61Execute(r ApiGetInvoicedetailsV
 type ApiGetResellersV6InvoicesearchRequest struct {
 	ctx context.Context
 	ApiService *InvoicesAPIService
-	iMApplicationID *string
 	iMCustomerNumber *string
 	iMCountryCode *string
 	iMCorrelationID *string
+	iMApplicationID *string
 	paymentTermsNetDate *string
 	invoiceDate *string
 	invoiceDueDate *string
@@ -266,12 +262,6 @@ type ApiGetResellersV6InvoicesearchRequest struct {
 	serialNumber *string
 }
 
-// Unique value used to identify the sender of the transaction. Example: MyCompany
-func (r ApiGetResellersV6InvoicesearchRequest) IMApplicationID(iMApplicationID string) ApiGetResellersV6InvoicesearchRequest {
-	r.iMApplicationID = &iMApplicationID
-	return r
-}
-
 // Your unique Ingram Micro customer number.
 func (r ApiGetResellersV6InvoicesearchRequest) IMCustomerNumber(iMCustomerNumber string) ApiGetResellersV6InvoicesearchRequest {
 	r.iMCustomerNumber = &iMCustomerNumber
@@ -287,6 +277,12 @@ func (r ApiGetResellersV6InvoicesearchRequest) IMCountryCode(iMCountryCode strin
 // Unique transaction number to identify each transaction across all the systems.
 func (r ApiGetResellersV6InvoicesearchRequest) IMCorrelationID(iMCorrelationID string) ApiGetResellersV6InvoicesearchRequest {
 	r.iMCorrelationID = &iMCorrelationID
+	return r
+}
+
+// Unique value used to identify the sender of the transaction. Example: MyCompany
+func (r ApiGetResellersV6InvoicesearchRequest) IMApplicationID(iMApplicationID string) ApiGetResellersV6InvoicesearchRequest {
+	r.iMApplicationID = &iMApplicationID
 	return r
 }
 
@@ -467,12 +463,6 @@ func (a *InvoicesAPIService) GetResellersV6InvoicesearchExecute(r ApiGetReseller
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.iMApplicationID == nil {
-		return localVarReturnValue, nil, reportError("iMApplicationID is required and must be specified")
-	}
-	if strlen(*r.iMApplicationID) > 32 {
-		return localVarReturnValue, nil, reportError("iMApplicationID must have less than 32 elements")
-	}
 	if r.iMCustomerNumber == nil {
 		return localVarReturnValue, nil, reportError("iMCustomerNumber is required and must be specified")
 	}
@@ -597,7 +587,9 @@ func (a *InvoicesAPIService) GetResellersV6InvoicesearchExecute(r ApiGetReseller
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-ApplicationID", r.iMApplicationID, "simple", "")
+	if r.iMApplicationID != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-ApplicationID", r.iMApplicationID, "simple", "")
+	}
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CustomerNumber", r.iMCustomerNumber, "simple", "")
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CountryCode", r.iMCountryCode, "simple", "")
 	parameterAddToHeaderOrQuery(localVarHeaderParams, "IM-CorrelationID", r.iMCorrelationID, "simple", "")

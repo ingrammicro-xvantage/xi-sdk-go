@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AddressId** | Pointer to **NullableString** | The ID references the resellers address in Ingram Micro&#39;s system for shipping. Provided to resellers during the onboarding process. | [optional] 
+**AddressId** | Pointer to **string** | The ID references the resellers address in Ingram Micro&#39;s system for shipping. Provided to resellers during the onboarding process. | [optional] 
 **Contact** | Pointer to **NullableString** | The company contact provided by the reseller. | [optional] 
 **CompanyName** | Pointer to **NullableString** | The reseller&#39;s company name or the End-User&#39;s Name | [optional] 
 **AddressLine1** | Pointer to **NullableString** | The street address and building or house number the order will be shipped to. | [optional] 
@@ -61,16 +61,6 @@ SetAddressId sets AddressId field to given value.
 
 HasAddressId returns a boolean if a field has been set.
 
-### SetAddressIdNil
-
-`func (o *OrderCreateV7RequestShipToInfo) SetAddressIdNil(b bool)`
-
- SetAddressIdNil sets the value for AddressId to be an explicit nil
-
-### UnsetAddressId
-`func (o *OrderCreateV7RequestShipToInfo) UnsetAddressId()`
-
-UnsetAddressId ensures that no value is present for AddressId, not even an explicit nil
 ### GetContact
 
 `func (o *OrderCreateV7RequestShipToInfo) GetContact() string`

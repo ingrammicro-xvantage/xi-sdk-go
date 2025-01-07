@@ -20,7 +20,7 @@ var _ MappedNullable = &OrderCreateV7RequestShipToInfo{}
 // OrderCreateV7RequestShipToInfo The shipping information provided by the reseller.
 type OrderCreateV7RequestShipToInfo struct {
 	// The ID references the resellers address in Ingram Micro's system for shipping. Provided to resellers during the onboarding process.
-	AddressId NullableString `json:"addressId,omitempty"`
+	AddressId *string `json:"addressId,omitempty"`
 	// The company contact provided by the reseller.
 	Contact NullableString `json:"contact,omitempty"`
 	// The reseller's company name or the End-User's Name
@@ -62,46 +62,36 @@ func NewOrderCreateV7RequestShipToInfoWithDefaults() *OrderCreateV7RequestShipTo
 	return &this
 }
 
-// GetAddressId returns the AddressId field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetAddressId returns the AddressId field value if set, zero value otherwise.
 func (o *OrderCreateV7RequestShipToInfo) GetAddressId() string {
-	if o == nil || IsNil(o.AddressId.Get()) {
+	if o == nil || IsNil(o.AddressId) {
 		var ret string
 		return ret
 	}
-	return *o.AddressId.Get()
+	return *o.AddressId
 }
 
 // GetAddressIdOk returns a tuple with the AddressId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderCreateV7RequestShipToInfo) GetAddressIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AddressId) {
 		return nil, false
 	}
-	return o.AddressId.Get(), o.AddressId.IsSet()
+	return o.AddressId, true
 }
 
 // HasAddressId returns a boolean if a field has been set.
 func (o *OrderCreateV7RequestShipToInfo) HasAddressId() bool {
-	if o != nil && o.AddressId.IsSet() {
+	if o != nil && !IsNil(o.AddressId) {
 		return true
 	}
 
 	return false
 }
 
-// SetAddressId gets a reference to the given NullableString and assigns it to the AddressId field.
+// SetAddressId gets a reference to the given string and assigns it to the AddressId field.
 func (o *OrderCreateV7RequestShipToInfo) SetAddressId(v string) {
-	o.AddressId.Set(&v)
-}
-// SetAddressIdNil sets the value for AddressId to be an explicit nil
-func (o *OrderCreateV7RequestShipToInfo) SetAddressIdNil() {
-	o.AddressId.Set(nil)
-}
-
-// UnsetAddressId ensures that no value is present for AddressId, not even an explicit nil
-func (o *OrderCreateV7RequestShipToInfo) UnsetAddressId() {
-	o.AddressId.Unset()
+	o.AddressId = &v
 }
 
 // GetContact returns the Contact field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -576,8 +566,8 @@ func (o OrderCreateV7RequestShipToInfo) MarshalJSON() ([]byte, error) {
 
 func (o OrderCreateV7RequestShipToInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AddressId.IsSet() {
-		toSerialize["addressId"] = o.AddressId.Get()
+	if !IsNil(o.AddressId) {
+		toSerialize["addressId"] = o.AddressId
 	}
 	if o.Contact.IsSet() {
 		toSerialize["contact"] = o.Contact.Get()
