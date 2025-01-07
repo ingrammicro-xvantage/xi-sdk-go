@@ -22,7 +22,7 @@ type PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscount
 	// The 3-digit ISO currency code.
 	CurrencyCode NullableString `json:"currencyCode,omitempty"`
 	// Quantity of the line item.
-	Quantity NullableInt32 `json:"quantity,omitempty"`
+	Quantity NullableString `json:"quantity,omitempty"`
 	// Manufacturer Suggested Retail Price.
 	Msrp NullableFloat32 `json:"msrp,omitempty"`
 	// The unit price of the line item.
@@ -91,9 +91,9 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDisc
 }
 
 // GetQuantity returns the Quantity field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) GetQuantity() int32 {
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) GetQuantity() string {
 	if o == nil || IsNil(o.Quantity.Get()) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Quantity.Get()
@@ -102,7 +102,7 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDisc
 // GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) GetQuantityOk() (*int32, bool) {
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) GetQuantityOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -118,8 +118,8 @@ func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDisc
 	return false
 }
 
-// SetQuantity gets a reference to the given NullableInt32 and assigns it to the Quantity field.
-func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) SetQuantity(v int32) {
+// SetQuantity gets a reference to the given NullableString and assigns it to the Quantity field.
+func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) SetQuantity(v string) {
 	o.Quantity.Set(&v)
 }
 // SetQuantityNil sets the value for Quantity to be an explicit nil

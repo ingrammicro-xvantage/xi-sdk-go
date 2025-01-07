@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CurrencyCode** | Pointer to **NullableString** | The 3-digit ISO currency code. | [optional] 
-**Quantity** | Pointer to **NullableInt32** | Quantity of the line item. | [optional] 
+**Quantity** | Pointer to **NullableString** | Quantity of the line item. | [optional] 
 **Msrp** | Pointer to **NullableFloat32** | Manufacturer Suggested Retail Price. | [optional] 
 **UnitPrice** | Pointer to **NullableFloat32** | The unit price of the line item. | [optional] 
 **Margin** | Pointer to **NullableFloat32** | Reseller’s margin percentage | [optional] 
@@ -66,20 +66,20 @@ HasCurrencyCode returns a boolean if a field has been set.
 UnsetCurrencyCode ensures that no value is present for CurrencyCode, not even an explicit nil
 ### GetQuantity
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) GetQuantity() int32`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) GetQuantity() string`
 
 GetQuantity returns the Quantity field if non-nil, zero value otherwise.
 
 ### GetQuantityOk
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) GetQuantityOk() (*int32, bool)`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) GetQuantityOk() (*string, bool)`
 
 GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQuantity
 
-`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) SetQuantity(v int32)`
+`func (o *PriceAndAvailabilityResponseInnerSubscriptionPriceInnerOptionsInnerDiscountsInnerVolumeDiscountsInner) SetQuantity(v string)`
 
 SetQuantity sets Quantity field to given value.
 
